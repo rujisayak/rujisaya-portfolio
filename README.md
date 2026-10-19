@@ -3,6 +3,9 @@
 เว็บไซต์พอร์ตโฟลิโอส่วนตัวของ **คุณรุจิสยา เกื้อกูล (Toey)** ตำแหน่ง **Mid-level UX/UI Designer**
 ดีไซน์สไตล์มินิมอล โมเดิร์น คลีน เรียบหรู ตามแบบอย่าง [Matt Fredette's Portfolio](https://www.mattfredette.com/#case-studies) พร้อมเชื่อมต่อกับฐานข้อมูล **MongoDB Atlas** แบบ Real-time
 
+- 🌐 **Live Website (Vercel):** [https://rujisaya-portfolio.vercel.app](https://rujisaya-portfolio.vercel.app)
+- 🐙 **GitHub Repository:** [https://github.com/rujisayak/rujisaya-portfolio](https://github.com/rujisayak/rujisaya-portfolio)
+
 ---
 
 ## 🌟 จุดเด่นของเว็บไซต์ (Features)
