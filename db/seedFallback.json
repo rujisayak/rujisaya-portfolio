@@ -241,6 +241,36 @@
         "Standardized component annotation token system"
       ],
       "createdAt": "2026-10-19T05:44:24.876Z"
+    },
+    {
+      "_id": "6ad5ae385ad4fac1c62c988b",
+      "id": "brand-identity-logo-design",
+      "title": "Brand Identity & Client Logo Design",
+      "category": "BRAND IDENTITY & GRAPHIC DESIGN",
+      "badge": "Client Work",
+      "summary": "Created unique, memorable brand identities and logos for clients across diverse industries — including apparel, craft brewery, artisan bakery, entertainment, and handmade pottery.",
+      "image": "/assets/portfolio/logo_showcase.png",
+      "tags": [
+        "Branding",
+        "Logo Design",
+        "Illustrator",
+        "Visual Identity",
+        "Vector Art"
+      ],
+      "role": "Brand & Visual Designer",
+      "duration": "Selected Client Works",
+      "impact": "Delivered distinctive visual identities for 6+ commercial brands across apparel, hospitality, craft, and film.",
+      "challenge": "Each client operated in a contrasting market segment, necessitating deep research into industry aesthetics, competitive differentiation, and scalable vector marks that adapt across web and physical packaging.",
+      "solution": "Designed versatile black-and-white vector marks with bespoke typography and tailored symbolism, ensuring legibility at micro favicon sizes and high-impact signage.",
+      "keyFeatures": [
+        "Simple Cloth: Modern geometric sewing needle emblem for minimalist fashion retailer",
+        "Hook & Fish Brew Pub: Nautical anchor and laurel crest with vintage collegiate typography",
+        "Northern Est. 2007: Textured mountain ridge illustration for outdoor lifestyle brand",
+        "The Bakery: Warm steaming loaf mark paired with timeless editorial serif typography",
+        "Light Filmstrip: Creative fusion of a film reel, lightbulb idea, and film negative strip for entertainment distribution",
+        "Serpent Handcrafts: Mystical serpent coiled around artisan ceramic vase under crescent moon"
+      ],
+      "createdAt": "2026-10-19T10:50:00.000Z"
     }
   ]
 }

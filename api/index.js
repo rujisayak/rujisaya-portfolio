@@ -69,16 +69,29 @@ router.get('/profile', async (req, res) => {
   }
 });
 
-// Case studies list
+// Case studies list with auto-sync
 router.get('/case-studies', async (req, res) => {
   try {
+    const fallback = getFallbackData();
+    const fallbackStudies = fallback.caseStudies || [];
     const db = await getDB();
     if (db) {
-      const list = await db.collection('case_studies').find({}).toArray();
+      let list = await db.collection('case_studies').find({}).toArray();
+      // If MongoDB has fewer studies than local definitions, automatically sync!
+      if (list.length < fallbackStudies.length) {
+        for (const s of fallbackStudies) {
+          const { _id, ...rest } = s;
+          await db.collection('case_studies').updateOne(
+            { id: s.id },
+            { $set: { ...rest, updatedAt: new Date() } },
+            { upsert: true }
+          );
+        }
+        list = await db.collection('case_studies').find({}).toArray();
+      }
       if (list && list.length > 0) return res.json(list);
     }
-    const fallback = getFallbackData();
-    res.json(fallback.caseStudies);
+    res.json(fallbackStudies);
   } catch (err) {
     console.error("Error in /case-studies:", err);
     res.json(getFallbackData().caseStudies);

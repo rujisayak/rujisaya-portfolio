@@ -144,6 +144,8 @@ function initFilterTabs() {
         renderCaseStudies(allCaseStudies.filter(s => s.id.includes('analytics') || s.id.includes('risk')));
       } else if (filter === 'handoff') {
         renderCaseStudies(allCaseStudies.filter(s => s.id.includes('handoff') || s.tags.includes('Developer Handoff')));
+      } else if (filter === 'branding') {
+        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('brand') || s.category.includes('BRAND') || (s.tags && s.tags.includes('Logo Design'))));
       }
     });
   });
