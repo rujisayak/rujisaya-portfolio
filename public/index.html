@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rujisaya Kuekool | UX/UI Designer Portfolio</title>
+  <meta name="description" content="Portfolio of Rujisaya Kuekool (Toey) - Mid-level UX/UI Designer specializing in cybersecurity platforms, data-driven dashboards, and backend developer collaboration.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/avatar_square.png">
+
+  <!-- Google Fonts: Bricolage Grotesque & Inter (Matt Fredette Style) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Floating Header / Navbar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo">
+        <span class="logo-mark">R</span>
+        <div class="brand-text">
+          <span class="brand-name">Rujisaya Kuekool</span>
+          <span class="brand-role">UX/UI Designer</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#case-studies" class="nav-link">Case Studies</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#resume" class="nav-link">Resume</a>
+        <a href="#contact" class="nav-link contact-pill">Let's Connect</a>
+      </nav>
+
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#case-studies" class="mobile-nav-link">Case Studies</a>
+      <a href="#about" class="mobile-nav-link">About Me</a>
+      <a href="#resume" class="mobile-nav-link">Resume</a>
+      <a href="#contact" class="mobile-nav-link mobile-cta">Let's Connect</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span class="status-text">Available for UX/UI Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight-serif">Rujisaya!</span><br>
+            <span class="hero-subtitle">UX/UI Designer</span>
+          </h1>
+
+          <p class="hero-bio">
+            Mid-level UX/UI Designer with <strong>2+ years of experience</strong> crafting intuitive cybersecurity platforms and data-driven dashboards. Specialized in responsive design, Figma design systems, and bridging the gap with backend developers through detailed UI flows.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#case-studies" class="btn btn-primary">
+              Explore Case Studies
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              Let's Connect
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/Rujisaya Resume.pdf" target="_blank" class="btn btn-ghost">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Resume PDF
+            </a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="stat-card">
+              <span class="stat-num">2+</span>
+              <span class="stat-label">Years CyberSec UX</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">3.73</span>
+              <span class="stat-label">First Class Honors (IT)</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Figma & Dev Synergy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-glow"></div>
+            <img src="/assets/avatar_square.png" alt="Rujisaya Kuekool" class="avatar-img">
+            <div class="avatar-tag">
+              <span class="tag-title">Security Pitch Co., Ltd.</span>
+              <span class="tag-desc">UX/UI Designer (2023 - Present)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES SECTION (#case-studies) -->
+    <section id="case-studies" class="case-studies-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-pretitle">SELECTED WORKS</div>
+          <h2 class="section-title">Case Studies</h2>
+          <p class="section-subtitle">
+            Deep-dives into designing complex security workflows, analytical dashboards, and developer-aligned interaction systems.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-bar" id="categoryFilters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="threat">Threat Intelligence</button>
+          <button class="filter-btn" data-filter="rules">Rule Engine & Logic</button>
+          <button class="filter-btn" data-filter="operations">Incident Response</button>
+          <button class="filter-btn" data-filter="analytics">Data & Analytics</button>
+          <button class="filter-btn" data-filter="handoff">Dev Handoff & UI Flows</button>
+        </div>
+
+        <!-- Projects Grid / Cards List -->
+        <div class="case-studies-list" id="caseStudiesContainer">
+          <!-- Dynamically populated from MongoDB API -->
+          <div class="loading-spinner">Loading case studies from MongoDB Atlas...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME SECTION (#about) -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-narrative">
+            <div class="section-pretitle">MY BACKGROUND</div>
+            <h2 class="section-title">Designing Intuitive Tools for Complex Environments</h2>
+            
+            <p class="lead-text">
+              I am a UX/UI designer who believes that good design is especially vital in high-stakes environments like cybersecurity and enterprise operations.
+            </p>
+            <p>
+              Having graduated with <strong>First Class Honors (GPA 3.73)</strong> in Information Technology from Suan Dusit University, I bring both a user-empathy lens and technical literacy to every project. I speak the developer's language, allowing me to map out comprehensive interaction flows and API expectations that make implementation seamless.
+            </p>
+            <p>
+              Over the past 2+ years at <strong>Security Pitch Company Limited</strong>, I've designed detection rule engines, threat monitoring portals, SIEM dashboards, and interactive analytics tools, transforming dense raw data into clear, actionable interfaces.
+            </p>
+
+            <div class="skills-block">
+              <h3 class="subsection-title">Core Toolkit & Disciplines</h3>
+              
+              <div class="skills-group">
+                <span class="group-label">Design & Prototyping:</span>
+                <div class="skill-pills">
+                  <span class="pill">Figma (Expert)</span>
+                  <span class="pill">Design Systems</span>
+                  <span class="pill">Interactive Prototyping</span>
+                  <span class="pill">Adobe XD</span>
+                  <span class="pill">Photoshop</span>
+                  <span class="pill">Illustrator</span>
+                </div>
+              </div>
+
+              <div class="skills-group">
+                <span class="group-label">UX Disciplines:</span>
+                <div class="skill-pills">
+                  <span class="pill">Wireframing</span>
+                  <span class="pill">User Research</span>
+                  <span class="pill">Prototype Testing</span>
+                  <span class="pill">Information Architecture</span>
+                  <span class="pill">Heuristic Evaluation</span>
+                </div>
+              </div>
+
+              <div class="skills-group">
+                <span class="group-label">Technical & Dev Collaboration:</span>
+                <div class="skill-pills">
+                  <span class="pill highlight-pill">Backend UI Flow Documentation</span>
+                  <span class="pill">API Contract Mapping</span>
+                  <span class="pill">Cybersecurity Basics</span>
+                  <span class="pill">Frontend QA Verification</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-timeline-col">
+            <div class="timeline-box">
+              <h3 class="subsection-title">Experience & Education</h3>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-meta">
+                  <span class="timeline-period">May 2023 – Present</span>
+                  <span class="timeline-badge">Current Role</span>
+                </div>
+                <h4 class="timeline-role">UX/UI Designer</h4>
+                <div class="timeline-org">Security Pitch Company Limited • Bangkok, TH</div>
+                <ul class="timeline-bullets">
+                  <li>Designed end-to-end UX/UI for enterprise cybersecurity platforms and SIEM products.</li>
+                  <li>Created responsive interfaces, user journey flows, and high-fidelity design systems in Figma.</li>
+                  <li>Bridged backend developers by documenting detailed API interaction flows and validation states.</li>
+                  <li>Conducted usability reviews on beta releases to streamline workflows and reduce friction.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-meta">
+                  <span class="timeline-period">January 2023 – April 2023</span>
+                </div>
+                <h4 class="timeline-role">UX/UI Intern</h4>
+                <div class="timeline-org">Security Pitch Company Limited • Bangkok, TH</div>
+                <ul class="timeline-bullets">
+                  <li>Drafted wireframes and UI specs based on requirements from Business Analysts (BA).</li>
+                  <li>Iterated on UX user flows to improve usability for complex backend features.</li>
+                  <li>Documented UI interaction flows to support backend API architecture.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker education-marker"></div>
+                <div class="timeline-meta">
+                  <span class="timeline-period">2019 – 2023</span>
+                  <span class="timeline-badge honors-badge">First Class Honors</span>
+                </div>
+                <h4 class="timeline-role">Bachelor of Information Technology</h4>
+                <div class="timeline-org">Suan Dusit University • GPA 3.73 / 4.0</div>
+                <p class="timeline-desc">
+                  Focused on Software Systems, Database Design, HCI, and Data Structures.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME & DOWNLOAD SECTION (#resume) -->
+    <section id="resume" class="resume-section">
+      <div class="container">
+        <div class="resume-card">
+          <div class="resume-info">
+            <div class="section-pretitle">CREDENTIALS</div>
+            <h2 class="section-title">Resume & Portfolio Deck</h2>
+            <p class="resume-text">
+              View the complete summary of my professional experience, education, skills, and design portfolio. Available for immediate download in PDF format.
+            </p>
+            
+            <div class="resume-actions">
+              <a href="/Rujisaya Resume.pdf" target="_blank" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Download Resume (PDF)
+              </a>
+              <a href="/PortfolioRujisaya.pdf" target="_blank" class="btn btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                Full Portfolio Deck (12 Pages)
+              </a>
+            </div>
+
+            <div class="resume-checklist">
+              <div class="check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>2+ Years Cybersecurity Dashboard Experience</span>
+              </div>
+              <div class="check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>First Class Honors in IT (Suan Dusit University)</span>
+              </div>
+              <div class="check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Proven Developer Handoff & UI Flow Documentation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-preview-wrapper">
+            <a href="/Rujisaya Resume.pdf" target="_blank" class="resume-preview-link">
+              <img src="/assets/resume_preview.png" alt="Rujisaya Resume Preview" class="resume-preview-img">
+              <div class="resume-hover-overlay">
+                <span>Click to Open PDF ↗</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION (#contact) -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-header">
+          <div class="section-pretitle">LIKE WHAT YOU SEE?</div>
+          <h2 class="contact-headline">Let's Connect!</h2>
+          <p class="contact-subheadline">
+            I am always open to discussing new design roles, innovative product challenges, or creative collaborations.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Channels -->
+          <div class="contact-channels">
+            <div class="channel-card copyable" data-copy="rujisaya1002@gmail.com">
+              <div class="channel-icon email-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM22 6l-10 7L2 6"/></svg>
+              </div>
+              <div class="channel-details">
+                <span class="channel-label">Email Address</span>
+                <span class="channel-value">rujisaya1002@gmail.com</span>
+              </div>
+              <button class="copy-btn" title="Copy email">Copy</button>
+            </div>
+
+            <div class="channel-card copyable" data-copy="0854722195">
+              <div class="channel-icon phone-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div class="channel-details">
+                <span class="channel-label">Phone</span>
+                <span class="channel-value">(+66) 85 472 2195</span>
+              </div>
+              <button class="copy-btn" title="Copy phone">Copy</button>
+            </div>
+
+            <div class="channel-card copyable" data-copy="baitoeyrujisaya">
+              <div class="channel-icon line-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              </div>
+              <div class="channel-details">
+                <span class="channel-label">LINE ID</span>
+                <span class="channel-value">baitoeyrujisaya</span>
+              </div>
+              <button class="copy-btn" title="Copy LINE ID">Copy</button>
+            </div>
+
+            <div class="channel-card location-card">
+              <div class="channel-icon location-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0zM12 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+              </div>
+              <div class="channel-details">
+                <span class="channel-label">Location</span>
+                <span class="channel-value">Bangkok, Thailand (On-site / Remote / Hybrid)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MongoDB-connected Contact Form -->
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form">
+              <h3 class="form-title">Send a Direct Message</h3>
+              <p class="form-desc">Messages submitted here are saved directly into the MongoDB Atlas database.</p>
+
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Sarah Jenkins" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email *</label>
+                <input type="email" id="email" name="email" placeholder="e.g. sarah@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="e.g. UX/UI Designer Position / Project Collaboration">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="4" placeholder="Hello Toey, we are interested in your cybersecurity UX experience..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                <span>Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+
+              <div id="formAlert" class="form-alert hidden"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CASE STUDY MODAL -->
+  <div class="modal-overlay" id="caseStudyModal">
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-copyright">© 2026 Rujisaya Kuekool</span>
+        <span class="footer-subtext">Product & UX/UI Designer • Bangkok, TH</span>
+      </div>
+
+      <div class="footer-right">
+        <div class="db-status-badge">
+          <span class="db-dot"></span>
+          <span class="db-text" id="dbStatusText">MongoDB Atlas: Connected</span>
+        </div>
+        <a href="#home" class="back-to-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

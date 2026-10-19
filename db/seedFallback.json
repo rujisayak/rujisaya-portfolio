@@ -1,0 +1,246 @@
+{
+  "profile": {
+    "_id": "6ad5ae385ad4fac1c62c9884",
+    "name": "Rujisaya Kuekool",
+    "nickname": "Toey (ToeyR)",
+    "title": "UX/UI Designer | Mid-level",
+    "headline": "Mid-level UX/UI Designer specialized in cybersecurity platforms, data-driven dashboards, and intuitive workflows.",
+    "summary": "Mid-level UX/UI Designer with 2+ years of experience in cybersecurity platforms and data-driven dashboards. Specialized in responsive design, prototype testing, and design systems using Figma. Strong background in collaborating with backend developers by creating detailed UI flows that streamline API development and improve workflow efficiency.",
+    "avatar": "/assets/avatar_square.png",
+    "resumeUrl": "/Rujisaya Resume.pdf",
+    "portfolioPdfUrl": "/PortfolioRujisaya.pdf",
+    "contact": {
+      "email": "rujisaya1002@gmail.com",
+      "phone": "(+66) 85 472 2195",
+      "lineId": "baitoeyrujisaya",
+      "location": "Bangkok, Thailand"
+    },
+    "education": [
+      {
+        "institution": "Suan Dusit University",
+        "degree": "Bachelor of Information Technology",
+        "period": "2019 - 2023",
+        "honors": "First Class Honors (GPA: 3.73/4.0)"
+      }
+    ],
+    "experience": [
+      {
+        "company": "Security Pitch Company Limited",
+        "location": "Bangkok, TH",
+        "role": "UX/UI Designer",
+        "period": "May 2023 – Present (2+ years)",
+        "highlights": [
+          "Designed and customized end-to-end UX/UI for enterprise cybersecurity platforms, aligning with critical business and security compliance requirements.",
+          "Built responsive, accessible interfaces and collaborated closely with backend teams to integrate complex security data effectively.",
+          "Reviewed frontend beta releases and provided structured feedback to developers, helping improve usability, edge-case coverage, and workflow productivity.",
+          "Validated complex UI flows with interactive prototypes and gathered internal feedback to refine user experience prior to production releases."
+        ]
+      },
+      {
+        "company": "Security Pitch Company Limited",
+        "location": "Bangkok, TH",
+        "role": "UX/UI Intern",
+        "period": "January 2023 - April 2023",
+        "highlights": [
+          "Designed and drafted intuitive user interfaces based on requirements provided by Business Analysts (BA).",
+          "Adjusted UX/UI flows according to updated user stories and feedback loops to maximize operational efficiency.",
+          "Created wireframes, high-fidelity mockups, and UI design systems based on software specifications from BA/SA.",
+          "Documented detailed UI flows to support backend API design and ensure smooth, ambiguity-free collaboration with developers."
+        ]
+      }
+    ],
+    "skills": {
+      "designTools": [
+        "Figma (Expert)",
+        "Adobe XD",
+        "Photoshop",
+        "Illustrator",
+        "Premiere Pro",
+        "After Effects"
+      ],
+      "uxDisciplines": [
+        "Wireframing",
+        "Prototyping",
+        "Design Systems",
+        "User Research",
+        "Usability Testing",
+        "UI Flow Documentation"
+      ],
+      "technical": [
+        "Backend API Flow Mapping",
+        "Developer Handoff",
+        "Cybersecurity Basics",
+        "Information Architecture"
+      ]
+    },
+    "updatedAt": "2026-10-19T05:44:24.790Z"
+  },
+  "caseStudies": [
+    {
+      "_id": "6ad5ae385ad4fac1c62c9885",
+      "id": "cybersecurity-threat-intelligence",
+      "title": "Cybersecurity Threat Intelligence Dashboard",
+      "category": "CYBERSECURITY & THREAT INTEL",
+      "badge": "Enterprise Platform",
+      "summary": "A multilingual backend dashboard that aggregates global cybersecurity news into one streamlined interface, helping security teams monitor threats in real time across regions and languages.",
+      "image": "/assets/portfolio/page_4.png",
+      "tags": [
+        "SIEM",
+        "Threat Intelligence",
+        "Multilingual",
+        "Figma",
+        "Responsive Web"
+      ],
+      "role": "UX/UI Designer",
+      "duration": "6 Months",
+      "impact": "Cut threat monitoring triage time by 40% across multinational security operations teams.",
+      "challenge": "Security analysts had to manually visit fragmented global feeds and news outlets, struggling with language barriers and delayed threat response.",
+      "solution": "Designed a consolidated threat feed with unified card architecture, language translation toggles, automated keyword highlighting, and direct alert escalation.",
+      "keyFeatures": [
+        "Multilingual live news aggregation with one-click translation",
+        "Real-time threat level tagging (Phishing, DDoS, Ransomware, Exploit)",
+        "Source verification and reading time indicators",
+        "Seamless integration with SIEM detection alerts"
+      ],
+      "createdAt": "2026-10-19T05:44:24.876Z"
+    },
+    {
+      "_id": "6ad5ae385ad4fac1c62c9886",
+      "id": "detection-rule-engine",
+      "title": "Detection Rule Engine & Anomaly Logic Builder",
+      "category": "BACKEND WORKFLOW & LOGIC BUILDER",
+      "badge": "Core Security Infrastructure",
+      "summary": "A backend interface for configuring detection rules that define abnormal behavior, condition threshold logic, anomaly scanning frequencies, and automatic risk calculations.",
+      "image": "/assets/portfolio/page_5.png",
+      "tags": [
+        "Rule Engine",
+        "Condition Builder",
+        "SIEM Logic",
+        "API Flow",
+        "Figma"
+      ],
+      "role": "UX/UI Designer",
+      "duration": "4 Months",
+      "impact": "Reduced rule configuration errors by 65% and shortened backend API integration cycles.",
+      "challenge": "Defining complex multi-variable logic (AND/OR trees, thresholds, time windows) was intimidating and prone to syntactic mistakes for non-developer operators.",
+      "solution": "Created an intuitive visual tree builder with progressive disclosure, allowing analysts to configure rule conditions step-by-step with live preview and automatic validation.",
+      "keyFeatures": [
+        "Visual node-based condition builder for complex AND/OR logic",
+        "Threshold escalation triggers based on frequency and time window",
+        "Automated risk scoring calculator",
+        "Template presets for common cybersecurity anomaly patterns"
+      ],
+      "createdAt": "2026-10-19T05:44:24.876Z"
+    },
+    {
+      "_id": "6ad5ae385ad4fac1c62c9887",
+      "id": "case-management-system",
+      "title": "Collaborative Case Management Workspace",
+      "category": "INCIDENT RESPONSE & TRIAGE",
+      "badge": "Workflow Optimization",
+      "summary": "A centralized case management UI for handling abnormal events triggered by detection rules. Enables analyst assignment, priority levels, threaded comments, tagging, case history, and file uploads.",
+      "image": "/assets/portfolio/page_6.png",
+      "tags": [
+        "Case Management",
+        "Kanban & Table Views",
+        "Incident Response",
+        "Collaboration"
+      ],
+      "role": "UX/UI Designer",
+      "duration": "5 Months",
+      "impact": "Enhanced cross-analyst response speed and eliminated duplicate incident investigations.",
+      "challenge": "Analysts were tracking incidents through disparate spreadsheets and chat tools, leading to missing context, lost audit trails, and slow resolution.",
+      "solution": "Engineered a unified incident response hub featuring dual views (Kanban board for macro progress + detailed table for batch triage) paired with a flyout incident inspector.",
+      "keyFeatures": [
+        "Flexible views: Interactive Kanban board & dense data table",
+        "Quick-action flyout panel with status controls, assignees, and severity",
+        "Audit log history tracking every configuration change and comment",
+        "Multi-format attachment support for forensic evidence"
+      ],
+      "createdAt": "2026-10-19T05:44:24.876Z"
+    },
+    {
+      "_id": "6ad5ae385ad4fac1c62c9888",
+      "id": "risk-management-dashboard",
+      "title": "Executive Risk Management & Posture Dashboard",
+      "category": "DATA VISUALIZATION & ANALYTICS",
+      "badge": "Security Analytics",
+      "summary": "A visual dashboard that summarizes case data across team members, with multi-interval filtering (3d, 5d, 1w, 1m), resolution velocity metrics, period-over-period comparisons, and severity timelines.",
+      "image": "/assets/portfolio/page_7.png",
+      "tags": [
+        "Executive Dashboard",
+        "Risk Heatmaps",
+        "Trend Analytics",
+        "Data-Driven UI"
+      ],
+      "role": "UX/UI Designer",
+      "duration": "3 Months",
+      "impact": "Gave CISOs and SecOps leaders instant visibility into organizational risk posture and team bandwidth.",
+      "challenge": "Translating hundreds of thousands of raw security logs into actionable executive metrics without overwhelming the user.",
+      "solution": "Designed high-signal visual widgets: hourly threat heatmaps, resolution progress rings, severity distribution area charts, and prioritised recommendation cards.",
+      "keyFeatures": [
+        "Dynamic time-window comparative filters (3 Days to 1 Month)",
+        "Hourly risk scoring heatmap by threat vector and likelihood",
+        "Severity breakdown timeline visualizing attack wave patterns",
+        "Prioritized mitigation recommendation feed based on risk delta"
+      ],
+      "createdAt": "2026-10-19T05:44:24.876Z"
+    },
+    {
+      "_id": "6ad5ae385ad4fac1c62c9889",
+      "id": "data-analytics-dashboard-builder",
+      "title": "Interactive Custom Dataset & Dashboard Builder",
+      "category": "PRODUCT DESIGN & BUILDER TOOLS",
+      "badge": "Self-Service Analytics",
+      "summary": "A self-service visualization engine allowing users to upload custom datasets, choose configurable charts, map data dimensions, and generate dynamic dashboards for deep reporting.",
+      "image": "/assets/portfolio/page_8.png",
+      "tags": [
+        "Dashboard Builder",
+        "Chart Mapping",
+        "Self-Service",
+        "Figma",
+        "Data UX"
+      ],
+      "role": "UX/UI Designer",
+      "duration": "4 Months",
+      "impact": "Enabled non-technical stakeholders to build custom reports in under 5 minutes without engineering requests.",
+      "challenge": "Custom data visualization required engineers to write bespoke queries and render charts manually.",
+      "solution": "Crafted a drag-and-drop builder interface with chart type recommendations based on selected data types (numbers, categorical, temporal).",
+      "keyFeatures": [
+        "Drag-and-drop column field mapping for axes and metrics",
+        "Intelligent chart type recommendation (Bar, Line, Pie, Metric)",
+        "Real-time chart preview with interactive filtering",
+        "One-click report scheduling and export"
+      ],
+      "createdAt": "2026-10-19T05:44:24.876Z"
+    },
+    {
+      "_id": "6ad5ae385ad4fac1c62c988a",
+      "id": "ux-developer-handoff-case-studies",
+      "title": "Backend UI Flow Documentation & Developer Handoff",
+      "category": "UX ARCHITECTURE & API INTEGRATION",
+      "badge": "Design Engineering Synergy",
+      "summary": "Detailed UI flow blueprints featuring step-by-step state logic, error boundaries, input validation rules, and API payload contracts to streamline cross-functional development.",
+      "image": "/assets/portfolio/page_9.png",
+      "secondaryImage": "/assets/portfolio/page_10.png",
+      "tags": [
+        "Developer Handoff",
+        "UI Flows",
+        "API Documentation",
+        "Validation Logic"
+      ],
+      "role": "UX/UI Designer",
+      "duration": "Ongoing Practice",
+      "impact": "Eliminated 50%+ of back-and-forth design-to-engineering questions and accelerated backend API readiness.",
+      "challenge": "Traditional UI mockups leave ambiguous gaps in edge cases, loading states, validation triggers, and API payload expectations.",
+      "solution": "Developed an annotated UI flow methodology embedding backend endpoint pointers, data transformation notes, and validation criteria directly into Figma handoffs.",
+      "keyFeatures": [
+        "State-by-state interaction flows with error and empty state callouts",
+        "Explicit backend API payload contracts linked to UI form controls",
+        "Auto-schema generation workflow mapping file uploads to database entities",
+        "Standardized component annotation token system"
+      ],
+      "createdAt": "2026-10-19T05:44:24.876Z"
+    }
+  ]
+}
