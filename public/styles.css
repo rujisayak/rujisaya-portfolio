@@ -465,78 +465,12 @@ button {
   letter-spacing: -0.01em;
 }
 
-/* Folder Positions on Desktop Canvas */
-.item-folder-tl { top: 8%; left: 16%; }
-.item-folder-tr { top: 12%; right: 18%; }
-.item-folder-bl { bottom: 2%; left: 24%; }
-
-/* App Icons */
-.app-squircle {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  transition: var(--transition);
-}
-
-.figma-squircle {
-  background: #000000;
-}
-
-.notion-squircle {
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.notion-n {
-  font-family: serif;
-  font-weight: 900;
-  font-size: 1.625rem;
-  color: #000000;
-}
-
-.app-circle {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #FFFFFF;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.safari-compass {
-  font-size: 1.375rem;
-}
-
-.item-app-figma { top: 40%; right: 10%; }
-.item-app-notion { top: 5%; left: 32%; }
-.item-app-safari { bottom: 12%; left: 35%; }
-
-/* Mini Thumbnails */
-.item-thumb {
-  background: #FFFFFF;
-  padding: 4px;
-  border-radius: 6px;
-  box-shadow: 0 6px 18px rgba(46, 31, 26, 0.12);
-}
-
-.thumb-mini-img {
-  width: 58px;
-  height: 68px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.item-thumb-1 { top: 4%; right: 30%; }
-.item-thumb-2 { bottom: 16%; left: 14%; }
-.item-thumb-3 { bottom: 4%; right: 16%; }
-.item-thumb-4 { bottom: 6%; right: 33%; }
+/* Folder Positions on Desktop Canvas (Menu Items) */
+.item-folder-projects { top: 12%; left: 12%; }
+.item-folder-about    { top: 12%; right: 12%; }
+.item-folder-resume   { bottom: 8%; left: 14%; }
+.item-folder-activity { bottom: 8%; left: 29%; }
+.item-folder-contact  { bottom: 8%; right: 14%; }
 
 /* Positioning Banner below Desktop */
 .hero-positioning-banner {
@@ -1879,12 +1813,27 @@ button {
   }
 
   .desktop-canvas {
-    padding: 1.5rem 1rem;
-    min-height: 380px;
+    padding: 1.5rem 0.75rem 2rem;
+    min-height: 360px;
   }
 
-  .desktop-item:not(.center-folder-showcase) {
-    display: none;
+  .desktop-main-display {
+    height: 350px;
+  }
+
+  .item-folder-projects { top: 6%; left: 4%; }
+  .item-folder-about    { top: 6%; right: 4%; }
+  .item-folder-activity { bottom: 4%; left: 4%; }
+  .item-folder-resume   { bottom: 4%; left: 36%; }
+  .item-folder-contact  { bottom: 4%; right: 4%; }
+
+  .mini-folder {
+    width: 48px;
+    height: 40px;
+  }
+
+  .desktop-item-label {
+    font-size: 0.6875rem;
   }
 
   .hero-cursive-script {

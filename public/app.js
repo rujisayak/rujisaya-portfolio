@@ -75,7 +75,7 @@ async function loadPortfolioData() {
     console.error("Error loading case studies:", err);
     const container = document.getElementById('caseStudiesContainer');
     if (container) {
-      container.innerHTML = `<div class="loading-spinner">Could not load case studies. Please refresh.</div>`;
+      container.innerHTML = `<div class="loading-spinner">Could not load projects. Please refresh.</div>`;
     }
   }
 }
@@ -86,7 +86,7 @@ function renderCaseStudies(studies) {
   if (!container) return;
 
   if (!studies || studies.length === 0) {
-    container.innerHTML = `<div class="loading-spinner">No case studies found for this category.</div>`;
+    container.innerHTML = `<div class="loading-spinner">No projects found for this category.</div>`;
     return;
   }
 
@@ -136,8 +136,8 @@ function renderCaseStudies(studies) {
               ${(study.tags || []).map(t => `<span class="project-tag-pill">${escapeHtml(t)}</span>`).join('')}
             </div>
 
-            <button class="project-action-btn" onclick="openCaseStudyModal('${study.id}')" aria-label="Open case study for ${escapeHtml(study.title)}">
-              <span>View Case Study</span>
+            <button class="project-action-btn" onclick="openCaseStudyModal('${study.id}')" aria-label="Open project details for ${escapeHtml(study.title)}">
+              <span>View Project</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
@@ -216,7 +216,7 @@ function openCaseStudyModal(studyId) {
         <span class="dossier-stamp-text">PROJECT DOSSIER // ${escapeHtml(study.id.toUpperCase())}</span>
       </div>
       <div class="modal-header-badges">
-        <span class="case-category">${escapeHtml(study.category || 'CASE STUDY')}</span>
+        <span class="case-category">${escapeHtml(study.category || 'PROJECT')}</span>
         ${study.badge ? `<span class="case-badge">${escapeHtml(study.badge)}</span>` : ''}
       </div>
     </div>
