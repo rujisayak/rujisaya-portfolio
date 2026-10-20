@@ -118,6 +118,34 @@ router.get('/case-studies/:id', async (req, res) => {
   }
 });
 
+// Activities endpoint with auto-sync
+router.get('/activities', async (req, res) => {
+  try {
+    const fallback = getFallbackData();
+    const fallbackActivities = fallback.activities || [];
+    const db = await getDB();
+    if (db) {
+      let list = await db.collection('activities').find({}).sort({ order: 1 }).toArray();
+      if (!list || list.length < fallbackActivities.length) {
+        for (const act of fallbackActivities) {
+          const { _id, ...rest } = act;
+          await db.collection('activities').updateOne(
+            { id: act.id },
+            { $set: { ...rest, updatedAt: new Date() } },
+            { upsert: true }
+          );
+        }
+        list = await db.collection('activities').find({}).sort({ order: 1 }).toArray();
+      }
+      if (list && list.length > 0) return res.json(list);
+    }
+    res.json(fallbackActivities);
+  } catch (err) {
+    console.error("Error in /activities:", err);
+    res.json(getFallbackData().activities || []);
+  }
+});
+
 // Submit contact form to MongoDB
 router.post('/contact', async (req, res) => {
   try {

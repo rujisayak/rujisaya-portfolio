@@ -2,7 +2,9 @@
 // Dynamic Data Integration from MongoDB Atlas API
 
 let allCaseStudies = [];
+let allActivities = [];
 let currentFilter = 'featured';
+let currentActFilter = 'all';
 let lastFocusedElement = null;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initModalA11y();
   loadPortfolioData();
+  loadActivitiesData();
 });
 
 // Mobile Nav & Scroll Spy
@@ -326,24 +329,144 @@ function closeCaseStudyModal() {
   }
 }
 
-// Modal Listeners & Focus Trapping
-function initModalA11y() {
-  const modal = document.getElementById('caseStudyModal');
-  const closeBtn = document.getElementById('modalClose');
+// ==========================================================================
+// Activities Section Logic
+// ==========================================================================
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeCaseStudyModal);
+async function loadActivitiesData() {
+  try {
+    const res = await fetch('/api/activities');
+    if (!res.ok) throw new Error('Failed to load activities');
+    allActivities = await res.json();
+    renderActivities(allActivities);
+    initActivityFilters();
+  } catch (err) {
+    console.error("Error loading activities:", err);
+    const container = document.getElementById('activityContainer');
+    if (container) {
+      container.innerHTML = `<div class="loading-spinner">Could not load activities. Please refresh.</div>`;
+    }
+  }
+}
+
+function renderActivities(activities) {
+  const container = document.getElementById('activityContainer');
+  if (!container) return;
+
+  if (!activities || activities.length === 0) {
+    container.innerHTML = `<div class="loading-spinner">No moments found for this category.</div>`;
+    return;
   }
 
+  container.innerHTML = activities.map(act => `
+    <article class="activity-card" onclick="openActivityModal('${act.id}')" role="button" tabindex="0" aria-label="View photo: ${escapeHtml(act.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openActivityModal('${act.id}');}">
+      <div class="activity-img-frame">
+        <img src="${act.image}" alt="${escapeHtml(act.title)}" class="activity-img" loading="lazy">
+        <div class="activity-overlay">
+          <span class="activity-zoom-btn">View Moment ↗</span>
+        </div>
+      </div>
+      <div class="activity-card-body">
+        <div class="activity-meta-row">
+          <span class="activity-tag-pill">${escapeHtml(act.tag || act.categoryLabel || 'Moment')}</span>
+          <span class="activity-date">${escapeHtml(act.date || '')}</span>
+        </div>
+        <h3 class="activity-title">${escapeHtml(act.title)}</h3>
+        <p class="activity-caption">${escapeHtml(act.caption)}</p>
+      </div>
+    </article>
+  `).join('');
+}
+
+function initActivityFilters() {
+  const filterBtns = document.querySelectorAll('[data-act-filter]');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const filter = btn.getAttribute('data-act-filter');
+      currentActFilter = filter;
+
+      if (filter === 'all') {
+        renderActivities(allActivities);
+      } else {
+        renderActivities(allActivities.filter(a => a.category === filter));
+      }
+    });
+  });
+}
+
+function openActivityModal(actId) {
+  const act = allActivities.find(a => a.id === actId);
+  if (!act) return;
+
+  lastFocusedElement = document.activeElement;
+
+  const modal = document.getElementById('activityModal');
+  const modalBody = document.getElementById('actModalBody');
+
+  modalBody.innerHTML = `
+    <div class="act-modal-img-wrap">
+      <img src="${act.image}" alt="${escapeHtml(act.title)}" class="act-modal-img">
+    </div>
+    <div class="act-modal-info">
+      <div class="activity-meta-row">
+        <span class="activity-tag-pill">${escapeHtml(act.tag || act.categoryLabel || 'Moment')}</span>
+        <span class="activity-date">${escapeHtml(act.date || '')}</span>
+      </div>
+      <h2 class="act-modal-title" id="actModalTitle">${escapeHtml(act.title)}</h2>
+      <p class="act-modal-caption">${escapeHtml(act.caption)}</p>
+    </div>
+  `;
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  const closeBtn = document.getElementById('actModalClose');
+  if (closeBtn) closeBtn.focus();
+}
+
+function closeActivityModal() {
+  const modal = document.getElementById('activityModal');
   if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
+}
+
+// Modal Listeners & Focus Trapping
+function initModalA11y() {
+  const csModal = document.getElementById('caseStudyModal');
+  const csCloseBtn = document.getElementById('modalClose');
+  const actModal = document.getElementById('activityModal');
+  const actCloseBtn = document.getElementById('actModalClose');
+
+  if (csCloseBtn) csCloseBtn.addEventListener('click', closeCaseStudyModal);
+  if (actCloseBtn) actCloseBtn.addEventListener('click', closeActivityModal);
+
+  [csModal, actModal].forEach(modal => {
+    if (!modal) return;
+    
     modal.addEventListener('click', (e) => {
-      if (e.target.id === 'caseStudyModal') closeCaseStudyModal();
+      if (e.target === modal) {
+        if (modal === csModal) closeCaseStudyModal();
+        if (modal === actModal) closeActivityModal();
+      }
     });
 
-    // Keyboard navigation & trap focus
     modal.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeCaseStudyModal();
+        if (modal === csModal) closeCaseStudyModal();
+        if (modal === actModal) closeActivityModal();
         return;
       }
 
@@ -367,7 +490,7 @@ function initModalA11y() {
         }
       }
     });
-  }
+  });
 }
 
 // Copy to Clipboard with Accessible Toast

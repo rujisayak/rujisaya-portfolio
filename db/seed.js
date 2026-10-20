@@ -272,6 +272,196 @@ const caseStudiesData = [
   }
 ];
 
+const activitiesData = [
+  {
+    id: "act-01",
+    order: 1,
+    title: "Portrait & Daily Vibes",
+    category: "lifestyle",
+    categoryLabel: "Lifestyle",
+    date: "Jan 2025",
+    image: "/assets/activity/act_06_rujisaya_portrait.jpg",
+    caption: "Bringing good energy, curiosity, and smiles to work and everyday life.",
+    tag: "Personal"
+  },
+  {
+    id: "act-02",
+    order: 2,
+    title: "Stadium Concert Night",
+    category: "concerts",
+    categoryLabel: "Live Music",
+    date: "2026",
+    image: "/assets/activity/act_16_stadium_concert.jpg",
+    caption: "Electric atmosphere with an ocean of glowing lightsticks across the stadium arena.",
+    tag: "Concert"
+  },
+  {
+    id: "act-03",
+    order: 3,
+    title: "Art & Neon Spatial Exhibition",
+    category: "creative",
+    categoryLabel: "Art & Design",
+    date: "Mar 2025",
+    image: "/assets/activity/act_12_art_exhibition.jpg",
+    caption: "Exploring immersive light installations, spatial design, and sensory color palettes.",
+    tag: "Exhibition"
+  },
+  {
+    id: "act-04",
+    order: 4,
+    title: "Fluffy Mood Booster",
+    category: "pets",
+    categoryLabel: "Life & Pets",
+    date: "Dec 2024",
+    image: "/assets/activity/act_04_dog_pet.jpg",
+    caption: "A sweet puppy holding a flower to deliver warmth and joy.",
+    tag: "Companion"
+  },
+  {
+    id: "act-05",
+    order: 5,
+    title: "Concert Glow & Lightsticks",
+    category: "concerts",
+    categoryLabel: "Live Music",
+    date: "Feb 2025",
+    image: "/assets/activity/act_10_concert_lights.jpg",
+    caption: "Singing along with fellow fans under vibrant neon lightstick waves.",
+    tag: "Concert"
+  },
+  {
+    id: "act-06",
+    order: 6,
+    title: "Weekend Cafe Hopping",
+    category: "lifestyle",
+    categoryLabel: "Lifestyle",
+    date: "Feb 2025",
+    image: "/assets/activity/act_08_cafe_food.jpg",
+    caption: "Discovering aesthetic cafes, delicious dishes, and relaxed weekend conversations.",
+    tag: "Food & Cafe"
+  },
+  {
+    id: "act-07",
+    order: 7,
+    title: "Stickers & Character Collectibles",
+    category: "creative",
+    categoryLabel: "Art & Design",
+    date: "2026",
+    image: "/assets/activity/act_17_design_collectibles.jpg",
+    caption: "Collecting playful character art, custom stickers, and graphic illustrations.",
+    tag: "Design Inspo"
+  },
+  {
+    id: "act-08",
+    order: 8,
+    title: "Afternoon Cozy Cat Nap",
+    category: "pets",
+    categoryLabel: "Life & Pets",
+    date: "Jan 2025",
+    image: "/assets/activity/act_18_cat.jpg",
+    caption: "The most peaceful furry companion taking a sweet afternoon nap.",
+    tag: "Companion"
+  },
+  {
+    id: "act-09",
+    order: 9,
+    title: "Weekend Moments & Explorations",
+    category: "lifestyle",
+    categoryLabel: "Lifestyle",
+    date: "Dec 2024",
+    image: "/assets/activity/act_03_rujisaya_selfie.jpg",
+    caption: "Exploring local creative spots and capturing everyday positive memories.",
+    tag: "Lifestyle"
+  },
+  {
+    id: "act-10",
+    order: 10,
+    title: "Concert Tickets & Photocards",
+    category: "concerts",
+    categoryLabel: "Live Music",
+    date: "Mar 2025",
+    image: "/assets/activity/act_11_concert_tickets.jpg",
+    caption: "Cherished keepsake ticket stubs and special edition artist photocards.",
+    tag: "Collectibles"
+  },
+  {
+    id: "act-11",
+    order: 11,
+    title: "Design Pop-ups & Creative Booths",
+    category: "creative",
+    categoryLabel: "Art & Design",
+    date: "2024",
+    image: "/assets/activity/act_01_event.jpg",
+    caption: "Observing creative retail layouts, interactive installations, and brand pop-ups.",
+    tag: "Events"
+  },
+  {
+    id: "act-12",
+    order: 12,
+    title: "Floral Color Inspiration",
+    category: "creative",
+    categoryLabel: "Art & Design",
+    date: "2026",
+    image: "/assets/activity/act_15_flower_bouquet.jpg",
+    caption: "Fresh bouquets and rich natural color gradients that inspire UI palettes.",
+    tag: "Color Inspo"
+  },
+  {
+    id: "act-13",
+    order: 13,
+    title: "Street Style & City Walks",
+    category: "lifestyle",
+    categoryLabel: "Lifestyle",
+    date: "Feb 2025",
+    image: "/assets/activity/act_09_street_sneakers.jpg",
+    caption: "Comfortable sneakers on for long city walks and finding new architectural details.",
+    tag: "Streetwear"
+  },
+  {
+    id: "act-14",
+    order: 14,
+    title: "Theater & Cheering Banners",
+    category: "concerts",
+    categoryLabel: "Live Music",
+    date: "Mar 2025",
+    image: "/assets/activity/act_13_fan_cheering.jpg",
+    caption: "Holding hand banners high together in the theater for our favorite performers.",
+    tag: "Live Music"
+  },
+  {
+    id: "act-15",
+    order: 15,
+    title: "Casual Mirror Fit Check",
+    category: "lifestyle",
+    categoryLabel: "Lifestyle",
+    date: "Dec 2024",
+    image: "/assets/activity/act_05_rujisaya_mirror.jpg",
+    caption: "Everyday casual style and good vibes before heading out into the city.",
+    tag: "Personal"
+  },
+  {
+    id: "act-16",
+    order: 16,
+    title: "Stadium Venue Arrival",
+    category: "concerts",
+    categoryLabel: "Live Music",
+    date: "Aug 2025",
+    image: "/assets/activity/act_14_tickets_venue.jpg",
+    caption: "The tingling excitement outside the stadium gates right before the show.",
+    tag: "Live Music"
+  },
+  {
+    id: "act-17",
+    order: 17,
+    title: "Desk Setup & Sketch Notes",
+    category: "creative",
+    categoryLabel: "Art & Design",
+    date: "Dec 2024",
+    image: "/assets/activity/act_02_workshop.jpg",
+    caption: "Favorite stationery, notebook sketches, and cute desk toys where ideas begin.",
+    tag: "Desk Setup"
+  }
+];
+
 async function seed() {
   const client = new MongoClient(uri);
   try {
@@ -291,6 +481,12 @@ async function seed() {
     await caseStudiesCol.insertMany(caseStudiesData.map(c => ({ ...c, createdAt: new Date() })));
     console.log(`Seeded ${caseStudiesData.length} case studies.`);
 
+    // Activities collection
+    const activitiesCol = db.collection("activities");
+    await activitiesCol.deleteMany({});
+    await activitiesCol.insertMany(activitiesData.map(a => ({ ...a, createdAt: new Date() })));
+    console.log(`Seeded ${activitiesData.length} activity items.`);
+
     console.log("Database seeding completed successfully!");
   } catch (err) {
     console.error("Seeding error:", err);
@@ -303,4 +499,4 @@ if (require.main === module) {
   seed();
 }
 
-module.exports = { profileData, caseStudiesData };
+module.exports = { profileData, caseStudiesData, activitiesData };

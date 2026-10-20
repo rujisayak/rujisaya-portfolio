@@ -4,3 +4,5 @@ node_modules/
 *.log
 .system_generated/
 .vercel
+/Activity/
+public/assets/avatar_square_old.png

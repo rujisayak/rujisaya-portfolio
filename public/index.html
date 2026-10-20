@@ -33,6 +33,7 @@
         <a href="#case-studies" class="nav-link">Case Studies</a>
         <a href="#about" class="nav-link">About Me</a>
         <a href="#resume" class="nav-link">Resume</a>
+        <a href="#activity" class="nav-link">Activities</a>
         <a href="#contact" class="nav-link contact-pill">Let's Connect</a>
       </nav>
 
@@ -49,6 +50,7 @@
       <a href="#case-studies" class="mobile-nav-link">Case Studies</a>
       <a href="#about" class="mobile-nav-link">About Me</a>
       <a href="#resume" class="mobile-nav-link">Resume</a>
+      <a href="#activity" class="mobile-nav-link">Activities</a>
       <a href="#contact" class="mobile-nav-link mobile-cta">Let's Connect</a>
     </div>
   </header>
@@ -315,6 +317,33 @@
       </div>
     </section>
 
+    <!-- ACTIVITIES & LIFE SECTION (#activity) -->
+    <section id="activity" class="activity-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-pretitle">BEYOND THE SCREEN</div>
+          <h2 class="section-title">Activities & Life Moments</h2>
+          <p class="section-subtitle">
+            A glimpse into my life outside of Figma — concerts, design exhibitions, cafe explorations, cute companions, and creative sparks that inspire my work.
+          </p>
+        </div>
+
+        <!-- Activity Filter Tabs -->
+        <div class="filter-bar" id="activityFilters" role="tablist" aria-label="Activity categories">
+          <button class="filter-btn active" data-act-filter="all" role="tab" aria-selected="true">All Moments (17)</button>
+          <button class="filter-btn" data-act-filter="concerts" role="tab" aria-selected="false">🎵 Live Music & Concerts</button>
+          <button class="filter-btn" data-act-filter="creative" role="tab" aria-selected="false">🎨 Art & Exhibitions</button>
+          <button class="filter-btn" data-act-filter="lifestyle" role="tab" aria-selected="false">☕️ Lifestyle & Cafes</button>
+          <button class="filter-btn" data-act-filter="pets" role="tab" aria-selected="false">🐾 Companions & Pets</button>
+        </div>
+
+        <!-- Activity Cards Grid -->
+        <div class="activity-grid" id="activityContainer">
+          <div class="loading-spinner">Loading activity moments...</div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT SECTION (#contact) -->
     <section id="contact" class="contact-section">
       <div class="container">
@@ -417,6 +446,16 @@
     <div class="modal-container">
       <button class="modal-close" id="modalClose" aria-label="Close case study details">&times;</button>
       <div class="modal-body" id="modalBody">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY LIGHTBOX MODAL -->
+  <div class="modal-overlay" id="activityModal" role="dialog" aria-modal="true" aria-labelledby="actModalTitle" tabindex="-1">
+    <div class="modal-container activity-modal-container">
+      <button class="modal-close" id="actModalClose" aria-label="Close activity preview">&times;</button>
+      <div class="activity-modal-content" id="actModalBody">
         <!-- Rendered by JS -->
       </div>
     </div>
