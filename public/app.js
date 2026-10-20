@@ -80,67 +80,76 @@ async function loadPortfolioData() {
   }
 }
 
-// Render Case Studies Cards with Folder & Dossier Metaphor
+// Render Case Studies Cards (Matching Behance Screenshot 4)
 function renderCaseStudies(studies) {
   const container = document.getElementById('caseStudiesContainer');
   if (!container) return;
 
   if (!studies || studies.length === 0) {
-    container.innerHTML = `<div class="loading-spinner">No case dossiers found for this category.</div>`;
+    container.innerHTML = `<div class="loading-spinner">No case studies found for this category.</div>`;
     return;
   }
 
   container.innerHTML = studies.map((study, idx) => {
-    const folioNum = String(idx + 1).padStart(2, '0');
+    const projNum = idx + 1;
     const cleanGoal = study.designGoal ? study.designGoal.replace(/^Design Goal:\s*/i, '') : '';
+    // Format chunky lowercase title
+    const shortTitle = study.title.includes('&') 
+      ? study.title.split('&')[0].trim().toLowerCase() 
+      : study.title.toLowerCase();
 
     return `
-      <article class="case-card folder-card" data-id="${study.id}">
-        <!-- Archival Folder Tab Ear -->
-        <div class="folder-tab-bar">
-          <div class="folder-tab-badge">
-            <span class="folder-tab-icon">📁</span>
-            <span class="folder-tab-num">DOSSIER // ${folioNum}</span>
-            <span class="folder-tab-slug">${escapeHtml(study.id)}</span>
-          </div>
-          <div class="folder-tab-meta">
-            <span class="case-category">${escapeHtml(study.category || 'CASE STUDY')}</span>
-            ${study.badge ? `<span class="case-badge">${escapeHtml(study.badge)}</span>` : ''}
-          </div>
+      <article class="project-showcase-card" data-id="${study.id}">
+        <!-- Top Meta Row -->
+        <div class="project-card-header">
+          <span class="project-num-label">project ${projNum}</span>
+          <span class="project-category-label">${escapeHtml(study.category ? study.category.toLowerCase() : 'enterprise ux')}</span>
         </div>
 
-        <div class="folder-body-grid">
-          <div class="case-content">
-            <h3 class="case-title">${escapeHtml(study.title)}</h3>
-            <p class="case-summary">${escapeHtml(study.summary)}</p>
-
-            ${cleanGoal ? `
-              <div class="case-goal-pill">
-                <span class="goal-tag">SPEC GOAL //</span>
-                <span class="goal-text">${escapeHtml(cleanGoal)}</span>
-              </div>
-            ` : ''}
-
-            <div class="case-tags">
-              ${(study.tags || []).map(t => `<span class="case-tag">[ ${escapeHtml(t)} ]</span>`).join('')}
+        <div class="project-card-grid">
+          <!-- Left Column: Typography & Narrative -->
+          <div class="project-info-col">
+            <div class="project-title-row">
+              <h3 class="project-chunky-title">${escapeHtml(shortTitle)}</h3>
+              <span class="project-flower-sticker" aria-hidden="true">
+                <svg viewBox="0 0 50 50" class="flower-icon"><circle cx="25" cy="25" r="7"/><circle cx="25" cy="8" r="6"/><circle cx="25" cy="42" r="6"/><circle cx="8" cy="25" r="6"/><circle cx="42" cy="25" r="6"/><circle cx="13" cy="13" r="6"/><circle cx="37" cy="13" r="6"/><circle cx="13" cy="37" r="6"/><circle cx="37" cy="37" r="6"/></svg>
+              </span>
             </div>
 
-            <button class="case-cta-btn" onclick="openCaseStudyModal('${study.id}')" aria-label="Open case dossier for ${escapeHtml(study.title)}">
-              <span>Open Case Dossier</span>
+            <div class="project-desc-block">
+              <p class="desc-p">
+                <strong>About the project:</strong> ${escapeHtml(study.summary)}
+              </p>
+              ${cleanGoal ? `
+                <p class="desc-p">
+                  <strong>Result:</strong> ${escapeHtml(cleanGoal)}
+                </p>
+              ` : ''}
+              ${study.devCollaboration ? `
+                <p class="desc-p dev-spec-p">
+                  <strong>Dev Synergy:</strong> ${escapeHtml(study.devCollaboration)}
+                </p>
+              ` : ''}
+            </div>
+
+            <div class="project-tags-row">
+              ${(study.tags || []).map(t => `<span class="project-tag-pill">${escapeHtml(t)}</span>`).join('')}
+            </div>
+
+            <button class="project-action-btn" onclick="openCaseStudyModal('${study.id}')" aria-label="Open case study for ${escapeHtml(study.title)}">
+              <span>View Case Study</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
 
-          <div class="case-visual-wrapper" onclick="openCaseStudyModal('${study.id}')" role="button" tabindex="0" aria-label="Preview image for ${escapeHtml(study.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal('${study.id}');}">
-            <div class="case-mockup-header">
-              <div class="mockup-dots">
-                <span class="mockup-dot"></span>
-                <span class="mockup-dot"></span>
-                <span class="mockup-dot"></span>
-              </div>
-              <span class="mockup-slug-title">${escapeHtml(study.id)}.preview</span>
+          <!-- Right Column: Visual Mockup & Tilted Script Sticker -->
+          <div class="project-visual-col" onclick="openCaseStudyModal('${study.id}')" role="button" tabindex="0" aria-label="Preview image for ${escapeHtml(study.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal('${study.id}');}">
+            <div class="project-image-bezel">
+              <img src="${study.image}" alt="${escapeHtml(study.title)} preview" class="project-img" loading="lazy">
             </div>
-            <img src="${study.image}" alt="${escapeHtml(study.title)} interface preview" class="case-img" loading="lazy">
+            <div class="project-script-sticker">
+              <span>project ${projNum}</span>
+            </div>
           </div>
         </div>
       </article>
