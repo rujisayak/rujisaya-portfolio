@@ -64,12 +64,12 @@
           </div>
 
           <h1 class="hero-title">
-            Hi, I'm <span class="highlight-serif">Rujisaya!</span><br>
+            Hi, I'm <span class="highlight-serif">Rujisaya</span> —<br>
             <span class="hero-subtitle">UX/UI Designer</span>
           </h1>
 
           <p class="hero-bio">
-            Mid-level UX/UI Designer with <strong>2+ years of experience</strong> crafting intuitive cybersecurity platforms and data-driven dashboards. Specialized in responsive design, Figma design systems, and bridging the gap with backend developers through detailed UI flows.
+            I design intuitive enterprise experiences for complex systems, turning technical requirements and data-heavy workflows into clear, scalable interfaces. With <strong>2+ years of experience</strong> in cybersecurity products, I bridge UX design and technical implementation to create solutions that work for both users and developers.
           </p>
 
           <div class="hero-actions">
@@ -97,8 +97,8 @@
               <span class="stat-label">First Class Honors (IT)</span>
             </div>
             <div class="stat-card">
-              <span class="stat-num">100%</span>
-              <span class="stat-label">Figma & Dev Synergy</span>
+              <span class="stat-num">End-to-End</span>
+              <span class="stat-label">From UX Flows to Dev Handoff</span>
             </div>
           </div>
         </div>
@@ -128,14 +128,15 @@
         </div>
 
         <!-- Filter Tabs -->
-        <div class="filter-bar" id="categoryFilters">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="threat">Threat Intelligence</button>
-          <button class="filter-btn" data-filter="rules">Rule Engine & Logic</button>
-          <button class="filter-btn" data-filter="operations">Incident Response</button>
-          <button class="filter-btn" data-filter="analytics">Data & Analytics</button>
-          <button class="filter-btn" data-filter="handoff">Dev Handoff & UI Flows</button>
-          <button class="filter-btn" data-filter="branding">Brand & Logo Design</button>
+        <div class="filter-bar" id="categoryFilters" role="tablist" aria-label="Case study categories">
+          <button class="filter-btn active" data-filter="featured" role="tab" aria-selected="true">★ Featured Case Studies</button>
+          <button class="filter-btn" data-filter="all" role="tab" aria-selected="false">All Projects (7)</button>
+          <button class="filter-btn" data-filter="rules" role="tab" aria-selected="false">Rule Engine & Logic</button>
+          <button class="filter-btn" data-filter="operations" role="tab" aria-selected="false">Incident Response</button>
+          <button class="filter-btn" data-filter="handoff" role="tab" aria-selected="false">Dev Handoff & UI Flows</button>
+          <button class="filter-btn" data-filter="analytics" role="tab" aria-selected="false">Data & Dashboards</button>
+          <button class="filter-btn" data-filter="threat" role="tab" aria-selected="false">Threat Intel</button>
+          <button class="filter-btn" data-filter="branding" role="tab" aria-selected="false">Brand & Logo Design</button>
         </div>
 
         <!-- Projects Grid / Cards List -->
@@ -168,35 +169,45 @@
               <h3 class="subsection-title">Core Toolkit & Disciplines</h3>
               
               <div class="skills-group">
-                <span class="group-label">Design & Prototyping:</span>
+                <span class="group-label">Product & System Design:</span>
                 <div class="skill-pills">
-                  <span class="pill">Figma (Expert)</span>
-                  <span class="pill">Design Systems</span>
+                  <span class="pill">Information Architecture</span>
+                  <span class="pill">Complex Workflow Design</span>
+                  <span class="pill">Design Systems & Component Design</span>
+                  <span class="pill">Responsive Web Design</span>
+                  <span class="pill">Wireframing & Flow Mapping</span>
                   <span class="pill">Interactive Prototyping</span>
+                </div>
+              </div>
+
+              <div class="skills-group">
+                <span class="group-label">Research & Usability Evaluation:</span>
+                <div class="skill-pills">
+                  <span class="pill">Internal Prototype Testing</span>
+                  <span class="pill">Heuristic Evaluation</span>
+                  <span class="pill">Beta Usability Review & QA</span>
+                  <span class="pill">User Journey Mapping</span>
+                </div>
+              </div>
+
+              <div class="skills-group">
+                <span class="group-label">Design & Engineering Collaboration:</span>
+                <div class="skill-pills">
+                  <span class="pill highlight-pill">Backend UI Flow Documentation</span>
+                  <span class="pill">Validation & Error State Design</span>
+                  <span class="pill">API Contract & Parameter Alignment</span>
+                  <span class="pill">Developer Handoff Specifications</span>
+                </div>
+              </div>
+
+              <div class="skills-group">
+                <span class="group-label">Design Tools & Software:</span>
+                <div class="skill-pills">
+                  <span class="pill">Figma (Design Systems & Components)</span>
                   <span class="pill">Adobe XD</span>
                   <span class="pill">Photoshop</span>
                   <span class="pill">Illustrator</span>
-                </div>
-              </div>
-
-              <div class="skills-group">
-                <span class="group-label">UX Disciplines:</span>
-                <div class="skill-pills">
-                  <span class="pill">Wireframing</span>
-                  <span class="pill">User Research</span>
-                  <span class="pill">Prototype Testing</span>
-                  <span class="pill">Information Architecture</span>
-                  <span class="pill">Heuristic Evaluation</span>
-                </div>
-              </div>
-
-              <div class="skills-group">
-                <span class="group-label">Technical & Dev Collaboration:</span>
-                <div class="skill-pills">
-                  <span class="pill highlight-pill">Backend UI Flow Documentation</span>
-                  <span class="pill">API Contract Mapping</span>
-                  <span class="pill">Cybersecurity Basics</span>
-                  <span class="pill">Frontend QA Verification</span>
+                  <span class="pill">Premiere Pro</span>
                 </div>
               </div>
             </div>
@@ -402,9 +413,9 @@
   </main>
 
   <!-- CASE STUDY MODAL -->
-  <div class="modal-overlay" id="caseStudyModal">
+  <div class="modal-overlay" id="caseStudyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
     <div class="modal-container">
-      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <button class="modal-close" id="modalClose" aria-label="Close case study details">&times;</button>
       <div class="modal-body" id="modalBody">
         <!-- Rendered by JS -->
       </div>
@@ -412,21 +423,17 @@
   </div>
 
   <!-- Toast Notification -->
-  <div class="toast" id="toast">Copied to clipboard!</div>
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard!</div>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-left">
         <span class="footer-copyright">© 2026 Rujisaya Kuekool</span>
-        <span class="footer-subtext">Product & UX/UI Designer • Bangkok, TH</span>
+        <span class="footer-subtext">Product & UX/UI Designer • Enterprise & Cybersecurity Focus</span>
       </div>
 
       <div class="footer-right">
-        <div class="db-status-badge">
-          <span class="db-dot"></span>
-          <span class="db-text" id="dbStatusText">MongoDB Atlas: Connected</span>
-        </div>
         <a href="#home" class="back-to-top">Back to top ↑</a>
       </div>
     </div>

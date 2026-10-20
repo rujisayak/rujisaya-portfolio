@@ -2,13 +2,14 @@
 // Dynamic Data Integration from MongoDB Atlas API
 
 let allCaseStudies = [];
-let currentFilter = 'all';
+let currentFilter = 'featured';
+let lastFocusedElement = null;
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initCopyables();
   initContactForm();
-  checkDBStatus();
+  initModalA11y();
   loadPortfolioData();
 });
 
@@ -62,7 +63,10 @@ async function loadPortfolioData() {
     const res = await fetch('/api/case-studies');
     if (!res.ok) throw new Error('Failed to load case studies');
     allCaseStudies = await res.json();
-    renderCaseStudies(allCaseStudies);
+    
+    // By default, display the prioritized featured case studies
+    const featuredStudies = allCaseStudies.filter(s => s.featured);
+    renderCaseStudies(featuredStudies.length > 0 ? featuredStudies : allCaseStudies);
     initFilterTabs();
   } catch (err) {
     console.error("Error loading case studies:", err);
@@ -94,9 +98,9 @@ function renderCaseStudies(studies) {
         <h3 class="case-title">${escapeHtml(study.title)}</h3>
         <p class="case-summary">${escapeHtml(study.summary)}</p>
 
-        ${study.impact ? `
-          <div class="case-impact-pill">
-            <span>⚡️ ${escapeHtml(study.impact)}</span>
+        ${study.designGoal ? `
+          <div class="case-goal-pill">
+            <span>🎯 ${escapeHtml(study.designGoal)}</span>
           </div>
         ` : ''}
 
@@ -104,19 +108,19 @@ function renderCaseStudies(studies) {
           ${(study.tags || []).map(t => `<span class="case-tag">${escapeHtml(t)}</span>`).join('')}
         </div>
 
-        <button class="case-cta-btn" onclick="openCaseStudyModal('${study.id}')">
+        <button class="case-cta-btn" onclick="openCaseStudyModal('${study.id}')" aria-label="View case study for ${escapeHtml(study.title)}">
           View Case Study 
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
 
-      <div class="case-visual-wrapper" onclick="openCaseStudyModal('${study.id}')">
+      <div class="case-visual-wrapper" onclick="openCaseStudyModal('${study.id}')" role="button" tabindex="0" aria-label="Preview image for ${escapeHtml(study.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal('${study.id}');}">
         <div class="case-mockup-header">
           <span class="mockup-dot"></span>
           <span class="mockup-dot"></span>
           <span class="mockup-dot"></span>
         </div>
-        <img src="${study.image}" alt="${escapeHtml(study.title)}" class="case-img" loading="lazy">
+        <img src="${study.image}" alt="${escapeHtml(study.title)} interface preview" class="case-img" loading="lazy">
       </div>
     </article>
   `).join('');
@@ -127,93 +131,174 @@ function initFilterTabs() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      
       const filter = btn.getAttribute('data-filter');
       currentFilter = filter;
 
-      if (filter === 'all') {
+      if (filter === 'featured') {
+        renderCaseStudies(allCaseStudies.filter(s => s.featured));
+      } else if (filter === 'all') {
         renderCaseStudies(allCaseStudies);
-      } else if (filter === 'threat') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('threat') || s.category.includes('THREAT')));
       } else if (filter === 'rules') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('rule') || s.category.includes('LOGIC')));
+        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('rule') || (s.category && s.category.toUpperCase().includes('LOGIC'))));
       } else if (filter === 'operations') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('case-management') || s.id.includes('risk')));
-      } else if (filter === 'analytics') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('analytics') || s.id.includes('risk')));
+        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('case-management') || s.id.includes('risk') || (s.category && s.category.toUpperCase().includes('OPERATIONS'))));
       } else if (filter === 'handoff') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('handoff') || s.tags.includes('Developer Handoff')));
+        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('handoff') || (s.tags && s.tags.includes('Developer Handoff'))));
+      } else if (filter === 'analytics') {
+        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('analytics') || s.id.includes('risk') || (s.category && s.category.toUpperCase().includes('ANALYTICS'))));
+      } else if (filter === 'threat') {
+        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('threat') || (s.category && s.category.toUpperCase().includes('THREAT'))));
       } else if (filter === 'branding') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('brand') || s.category.includes('BRAND') || (s.tags && s.tags.includes('Logo Design'))));
+        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('brand') || (s.category && s.category.toUpperCase().includes('BRAND')) || (s.tags && s.tags.includes('Logo Design'))));
       }
     });
   });
 }
 
-// Case Study Modal
+// Case Study Modal with 8-Point Storytelling Structure
 function openCaseStudyModal(studyId) {
   const study = allCaseStudies.find(s => s.id === studyId);
   if (!study) return;
 
+  lastFocusedElement = document.activeElement;
+
   const modal = document.getElementById('caseStudyModal');
   const modalBody = document.getElementById('modalBody');
 
+  // Split multi-point decisions if structured as numbered strings
+  const decisionsHtml = study.keyDecisions ? study.keyDecisions.split('\n').filter(Boolean).map(dec => `
+    <li class="modal-decision-item">${escapeHtml(dec)}</li>
+  `).join('') : '';
+
   modalBody.innerHTML = `
+    <!-- 1. Header & Meta -->
     <div class="modal-header-meta">
       <span class="case-category">${escapeHtml(study.category || 'CASE STUDY')}</span>
       ${study.badge ? `<span class="case-badge">${escapeHtml(study.badge)}</span>` : ''}
     </div>
 
-    <h2 class="modal-title">${escapeHtml(study.title)}</h2>
+    <h2 class="modal-title" id="modalTitle">${escapeHtml(study.title)}</h2>
 
+    <!-- Project Specifications Grid -->
     <div class="modal-grid">
       <div class="modal-col">
-        <div class="modal-col-title">Role</div>
+        <div class="modal-col-title">Role & Ownership</div>
         <div class="modal-col-value">${escapeHtml(study.role || 'UX/UI Designer')}</div>
       </div>
       <div class="modal-col">
-        <div class="modal-col-title">Company / Platform</div>
-        <div class="modal-col-value">Security Pitch Co., Ltd.</div>
+        <div class="modal-col-title">Target Users</div>
+        <div class="modal-col-value">${escapeHtml(study.targetUsers || 'Security Analysts & Dev Teams')}</div>
       </div>
       <div class="modal-col">
-        <div class="modal-col-title">Primary Tool</div>
+        <div class="modal-col-title">Product Context</div>
+        <div class="modal-col-value">${escapeHtml(study.duration || 'Security Pitch Co., Ltd.')}</div>
+      </div>
+      <div class="modal-col">
+        <div class="modal-col-title">Core Toolkit</div>
         <div class="modal-col-value">Figma & Design System</div>
       </div>
     </div>
 
+    <!-- Visual Artifacts -->
     <div class="modal-img-wrapper">
-      <img src="${study.image}" alt="${escapeHtml(study.title)}" class="modal-img">
+      <img src="${study.image}" alt="${escapeHtml(study.title)} - Primary UI Screen" class="modal-img">
+      <div class="modal-img-caption">High-fidelity production interface designed in Figma with reusable components.</div>
     </div>
 
     ${study.secondaryImage ? `
       <div class="modal-img-wrapper">
-        <img src="${study.secondaryImage}" alt="${escapeHtml(study.title)} - Flow" class="modal-img">
+        <img src="${study.secondaryImage}" alt="${escapeHtml(study.title)} - User Flow & Handoff Specs" class="modal-img">
+        <div class="modal-img-caption">Comprehensive interaction flow blueprint and state specifications for developer implementation.</div>
       </div>
     ` : ''}
 
-    <h3 class="modal-section-title">The Challenge</h3>
-    <p class="modal-section-p">${escapeHtml(study.challenge || study.summary)}</p>
+    <!-- 2. The Problem & Challenges -->
+    <section class="modal-section">
+      <h3 class="modal-section-title">
+        <span class="modal-section-badge">01</span> The Problem & Operational Challenges
+      </h3>
+      <p class="modal-section-p">${escapeHtml(study.problem || study.challenge || study.summary)}</p>
+    </section>
 
-    <h3 class="modal-section-title">The UX & Design Solution</h3>
-    <p class="modal-section-p">${escapeHtml(study.solution || 'Designed intuitive, responsive user flows that empower analysts to make rapid, informed decisions.')}</p>
+    <!-- 3. Responsibilities & Personal Scope -->
+    ${study.responsibilities ? `
+      <section class="modal-section">
+        <h3 class="modal-section-title">
+          <span class="modal-section-badge">02</span> Designer Scope & Responsibilities
+        </h3>
+        <div class="modal-callout">
+          ${escapeHtml(study.responsibilities)}
+        </div>
+      </section>
+    ` : ''}
 
+    <!-- 4. UX Approach & Architecture -->
+    ${study.uxApproach ? `
+      <section class="modal-section">
+        <h3 class="modal-section-title">
+          <span class="modal-section-badge">03</span> UX Approach & Workflow Architecture
+        </h3>
+        <p class="modal-section-p">${escapeHtml(study.uxApproach)}</p>
+      </section>
+    ` : ''}
+
+    <!-- 5. Key Design Decisions & Trade-Offs -->
+    ${decisionsHtml ? `
+      <section class="modal-section">
+        <h3 class="modal-section-title">
+          <span class="modal-section-badge">04</span> Key Design Decisions & Trade-Offs
+        </h3>
+        <ul class="modal-decisions-list">
+          ${decisionsHtml}
+        </ul>
+      </section>
+    ` : ''}
+
+    <!-- 6. Key Interaction Features -->
     ${study.keyFeatures && study.keyFeatures.length > 0 ? `
-      <h3 class="modal-section-title">Key Interaction Features</h3>
-      <ul class="modal-features-list">
-        ${study.keyFeatures.map(f => `<li>${escapeHtml(f)}</li>`).join('')}
-      </ul>
+      <section class="modal-section">
+        <h3 class="modal-section-title">
+          <span class="modal-section-badge">05</span> Key Interaction Features
+        </h3>
+        <ul class="modal-features-list">
+          ${study.keyFeatures.map(f => `<li>${escapeHtml(f)}</li>`).join('')}
+        </ul>
+      </section>
     ` : ''}
 
-    ${study.impact ? `
-      <h3 class="modal-section-title">Impact & Outcome</h3>
-      <div class="case-impact-pill" style="margin-top: 0.5rem; margin-bottom: 2rem;">
-        <span>⚡️ ${escapeHtml(study.impact)}</span>
-      </div>
+    <!-- 7. Developer Collaboration & Specifications -->
+    ${study.devCollaboration ? `
+      <section class="modal-section">
+        <h3 class="modal-section-title">
+          <span class="modal-section-badge">06</span> Developer Collaboration & Implementation Alignment
+        </h3>
+        <div class="modal-callout dev-callout">
+          <strong>Engineering Synergy:</strong> ${escapeHtml(study.devCollaboration)}
+        </div>
+      </section>
     ` : ''}
 
-    <div style="border-top: 1px solid var(--border-light); padding-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-      <a href="/PortfolioRujisaya.pdf" target="_blank" class="btn btn-primary">
+    <!-- 8. Outcome & Qualitative Learnings -->
+    ${study.outcomeLearnings ? `
+      <section class="modal-section">
+        <h3 class="modal-section-title">
+          <span class="modal-section-badge">07</span> Qualitative Outcomes & Learnings
+        </h3>
+        <p class="modal-section-p">${escapeHtml(study.outcomeLearnings)}</p>
+      </section>
+    ` : ''}
+
+    <!-- Modal Footer Actions -->
+    <div class="modal-footer-actions">
+      <a href="/PortfolioRujisaya.pdf" target="_blank" class="btn btn-primary" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         View in Full Portfolio Deck (PDF)
       </a>
       <button class="btn btn-secondary" onclick="closeCaseStudyModal()">
@@ -224,6 +309,9 @@ function openCaseStudyModal(studyId) {
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  const closeBtn = document.getElementById('modalClose');
+  if (closeBtn) closeBtn.focus();
 }
 
 function closeCaseStudyModal() {
@@ -232,18 +320,57 @@ function closeCaseStudyModal() {
     modal.classList.remove('open');
     document.body.style.overflow = '';
   }
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
 }
 
-// Modal Listeners
-document.getElementById('modalClose')?.addEventListener('click', closeCaseStudyModal);
-document.getElementById('caseStudyModal')?.addEventListener('click', (e) => {
-  if (e.target.id === 'caseStudyModal') closeCaseStudyModal();
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeCaseStudyModal();
-});
+// Modal Listeners & Focus Trapping
+function initModalA11y() {
+  const modal = document.getElementById('caseStudyModal');
+  const closeBtn = document.getElementById('modalClose');
 
-// Copy to Clipboard with Toast
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeCaseStudyModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target.id === 'caseStudyModal') closeCaseStudyModal();
+    });
+
+    // Keyboard navigation & trap focus
+    modal.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCaseStudyModal();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    });
+  }
+}
+
+// Copy to Clipboard with Accessible Toast
 function initCopyables() {
   const copyCards = document.querySelectorAll('.copyable');
   copyCards.forEach(card => {
@@ -255,6 +382,17 @@ function initCopyables() {
         }).catch(() => {
           showToast(`Selected: ${textToCopy}`);
         });
+      }
+    });
+
+    // Keyboard support for copyable cards
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Copy ${card.querySelector('.channel-label')?.textContent || 'contact info'}`);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
       }
     });
   });
@@ -302,7 +440,7 @@ function initContactForm() {
       const data = await res.json();
 
       if (res.ok) {
-        alertBox.textContent = `✓ ${data.message || 'Message sent and stored in MongoDB successfully!'}`;
+        alertBox.textContent = `✓ ${data.message || 'Message sent and stored in database successfully!'}`;
         alertBox.className = 'form-alert success';
         form.reset();
       } else {
@@ -318,23 +456,6 @@ function initContactForm() {
       submitBtn.querySelector('span').textContent = 'Send Message';
     }
   });
-}
-
-// Live DB Status Check
-async function checkDBStatus() {
-  const statusText = document.getElementById('dbStatusText');
-  if (!statusText) return;
-  try {
-    const res = await fetch('/api/health');
-    const data = await res.json();
-    if (data.database === 'connected') {
-      statusText.textContent = 'MongoDB Atlas: Connected (rujik)';
-    } else {
-      statusText.textContent = 'Offline Mode';
-    }
-  } catch {
-    statusText.textContent = 'MongoDB: Standby';
-  }
 }
 
 // Helper utility

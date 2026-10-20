@@ -77,8 +77,9 @@ router.get('/case-studies', async (req, res) => {
     const db = await getDB();
     if (db) {
       let list = await db.collection('case_studies').find({}).toArray();
-      // If MongoDB has fewer studies than local definitions, automatically sync!
-      if (list.length < fallbackStudies.length) {
+      // Auto-sync enriched fields to MongoDB Atlas
+      const needsSync = list.length < fallbackStudies.length || (list.length > 0 && !list[0].designGoal);
+      if (needsSync) {
         for (const s of fallbackStudies) {
           const { _id, ...rest } = s;
           await db.collection('case_studies').updateOne(
