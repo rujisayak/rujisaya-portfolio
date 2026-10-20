@@ -80,53 +80,72 @@ async function loadPortfolioData() {
   }
 }
 
-// Render Case Studies Cards
+// Render Case Studies Cards with Folder & Dossier Metaphor
 function renderCaseStudies(studies) {
   const container = document.getElementById('caseStudiesContainer');
   if (!container) return;
 
   if (!studies || studies.length === 0) {
-    container.innerHTML = `<div class="loading-spinner">No case studies found for this category.</div>`;
+    container.innerHTML = `<div class="loading-spinner">No case dossiers found for this category.</div>`;
     return;
   }
 
-  container.innerHTML = studies.map(study => `
-    <article class="case-card" data-id="${study.id}">
-      <div class="case-content">
-        <div class="case-top-meta">
-          <span class="case-category">${escapeHtml(study.category || 'CASE STUDY')}</span>
-          ${study.badge ? `<span class="case-badge">${escapeHtml(study.badge)}</span>` : ''}
-        </div>
+  container.innerHTML = studies.map((study, idx) => {
+    const folioNum = String(idx + 1).padStart(2, '0');
+    const cleanGoal = study.designGoal ? study.designGoal.replace(/^Design Goal:\s*/i, '') : '';
 
-        <h3 class="case-title">${escapeHtml(study.title)}</h3>
-        <p class="case-summary">${escapeHtml(study.summary)}</p>
-
-        ${study.designGoal ? `
-          <div class="case-goal-pill">
-            <span>🎯 ${escapeHtml(study.designGoal)}</span>
+    return `
+      <article class="case-card folder-card" data-id="${study.id}">
+        <!-- Archival Folder Tab Ear -->
+        <div class="folder-tab-bar">
+          <div class="folder-tab-badge">
+            <span class="folder-tab-icon">📁</span>
+            <span class="folder-tab-num">DOSSIER // ${folioNum}</span>
+            <span class="folder-tab-slug">${escapeHtml(study.id)}</span>
           </div>
-        ` : ''}
-
-        <div class="case-tags">
-          ${(study.tags || []).map(t => `<span class="case-tag">${escapeHtml(t)}</span>`).join('')}
+          <div class="folder-tab-meta">
+            <span class="case-category">${escapeHtml(study.category || 'CASE STUDY')}</span>
+            ${study.badge ? `<span class="case-badge">${escapeHtml(study.badge)}</span>` : ''}
+          </div>
         </div>
 
-        <button class="case-cta-btn" onclick="openCaseStudyModal('${study.id}')" aria-label="View case study for ${escapeHtml(study.title)}">
-          View Case Study 
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </div>
+        <div class="folder-body-grid">
+          <div class="case-content">
+            <h3 class="case-title">${escapeHtml(study.title)}</h3>
+            <p class="case-summary">${escapeHtml(study.summary)}</p>
 
-      <div class="case-visual-wrapper" onclick="openCaseStudyModal('${study.id}')" role="button" tabindex="0" aria-label="Preview image for ${escapeHtml(study.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal('${study.id}');}">
-        <div class="case-mockup-header">
-          <span class="mockup-dot"></span>
-          <span class="mockup-dot"></span>
-          <span class="mockup-dot"></span>
+            ${cleanGoal ? `
+              <div class="case-goal-pill">
+                <span class="goal-tag">SPEC GOAL //</span>
+                <span class="goal-text">${escapeHtml(cleanGoal)}</span>
+              </div>
+            ` : ''}
+
+            <div class="case-tags">
+              ${(study.tags || []).map(t => `<span class="case-tag">[ ${escapeHtml(t)} ]</span>`).join('')}
+            </div>
+
+            <button class="case-cta-btn" onclick="openCaseStudyModal('${study.id}')" aria-label="Open case dossier for ${escapeHtml(study.title)}">
+              <span>Open Case Dossier</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <div class="case-visual-wrapper" onclick="openCaseStudyModal('${study.id}')" role="button" tabindex="0" aria-label="Preview image for ${escapeHtml(study.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal('${study.id}');}">
+            <div class="case-mockup-header">
+              <div class="mockup-dots">
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+              </div>
+              <span class="mockup-slug-title">${escapeHtml(study.id)}.preview</span>
+            </div>
+            <img src="${study.image}" alt="${escapeHtml(study.title)} interface preview" class="case-img" loading="lazy">
+          </div>
         </div>
-        <img src="${study.image}" alt="${escapeHtml(study.title)} interface preview" class="case-img" loading="lazy">
-      </div>
-    </article>
-  `).join('');
+      </article>
+    `;
+  }).join('');
 }
 
 // Filter Tabs Logic
@@ -183,8 +202,14 @@ function openCaseStudyModal(studyId) {
   modalBody.innerHTML = `
     <!-- 1. Header & Meta -->
     <div class="modal-header-meta">
-      <span class="case-category">${escapeHtml(study.category || 'CASE STUDY')}</span>
-      ${study.badge ? `<span class="case-badge">${escapeHtml(study.badge)}</span>` : ''}
+      <div class="modal-dossier-tag">
+        <span class="dossier-stamp-icon">📁</span>
+        <span class="dossier-stamp-text">PROJECT DOSSIER // ${escapeHtml(study.id.toUpperCase())}</span>
+      </div>
+      <div class="modal-header-badges">
+        <span class="case-category">${escapeHtml(study.category || 'CASE STUDY')}</span>
+        ${study.badge ? `<span class="case-badge">${escapeHtml(study.badge)}</span>` : ''}
+      </div>
     </div>
 
     <h2 class="modal-title" id="modalTitle">${escapeHtml(study.title)}</h2>
@@ -192,20 +217,20 @@ function openCaseStudyModal(studyId) {
     <!-- Project Specifications Grid -->
     <div class="modal-grid">
       <div class="modal-col">
-        <div class="modal-col-title">Role & Ownership</div>
+        <div class="modal-col-title">SPEC // ROLE</div>
         <div class="modal-col-value">${escapeHtml(study.role || 'UX/UI Designer')}</div>
       </div>
       <div class="modal-col">
-        <div class="modal-col-title">Target Users</div>
+        <div class="modal-col-title">SPEC // USERS</div>
         <div class="modal-col-value">${escapeHtml(study.targetUsers || 'Security Analysts & Dev Teams')}</div>
       </div>
       <div class="modal-col">
-        <div class="modal-col-title">Product Context</div>
+        <div class="modal-col-title">SPEC // CONTEXT</div>
         <div class="modal-col-value">${escapeHtml(study.duration || 'Security Pitch Co., Ltd.')}</div>
       </div>
       <div class="modal-col">
-        <div class="modal-col-title">Core Toolkit</div>
-        <div class="modal-col-value">Figma & Design System</div>
+        <div class="modal-col-title">SPEC // TOOLKIT</div>
+        <div class="modal-col-value">Figma &amp; Design System</div>
       </div>
     </div>
 
@@ -225,7 +250,7 @@ function openCaseStudyModal(studyId) {
     <!-- 2. The Problem & Challenges -->
     <section class="modal-section">
       <h3 class="modal-section-title">
-        <span class="modal-section-badge">01</span> The Problem & Operational Challenges
+        <span class="modal-section-badge">SEC // 01</span> The Problem &amp; Operational Challenges
       </h3>
       <p class="modal-section-p">${escapeHtml(study.problem || study.challenge || study.summary)}</p>
     </section>
@@ -234,7 +259,7 @@ function openCaseStudyModal(studyId) {
     ${study.responsibilities ? `
       <section class="modal-section">
         <h3 class="modal-section-title">
-          <span class="modal-section-badge">02</span> Designer Scope & Responsibilities
+          <span class="modal-section-badge">SEC // 02</span> Designer Scope &amp; Responsibilities
         </h3>
         <div class="modal-callout">
           ${escapeHtml(study.responsibilities)}
@@ -246,7 +271,7 @@ function openCaseStudyModal(studyId) {
     ${study.uxApproach ? `
       <section class="modal-section">
         <h3 class="modal-section-title">
-          <span class="modal-section-badge">03</span> UX Approach & Workflow Architecture
+          <span class="modal-section-badge">SEC // 03</span> UX Approach &amp; Workflow Architecture
         </h3>
         <p class="modal-section-p">${escapeHtml(study.uxApproach)}</p>
       </section>
@@ -256,7 +281,7 @@ function openCaseStudyModal(studyId) {
     ${decisionsHtml ? `
       <section class="modal-section">
         <h3 class="modal-section-title">
-          <span class="modal-section-badge">04</span> Key Design Decisions & Trade-Offs
+          <span class="modal-section-badge">SEC // 04</span> Key Design Decisions &amp; Trade-Offs
         </h3>
         <ul class="modal-decisions-list">
           ${decisionsHtml}
@@ -268,7 +293,7 @@ function openCaseStudyModal(studyId) {
     ${study.keyFeatures && study.keyFeatures.length > 0 ? `
       <section class="modal-section">
         <h3 class="modal-section-title">
-          <span class="modal-section-badge">05</span> Key Interaction Features
+          <span class="modal-section-badge">SEC // 05</span> Key Interaction Features
         </h3>
         <ul class="modal-features-list">
           ${study.keyFeatures.map(f => `<li>${escapeHtml(f)}</li>`).join('')}
@@ -280,7 +305,7 @@ function openCaseStudyModal(studyId) {
     ${study.devCollaboration ? `
       <section class="modal-section">
         <h3 class="modal-section-title">
-          <span class="modal-section-badge">06</span> Developer Collaboration & Implementation Alignment
+          <span class="modal-section-badge">SEC // 06</span> Developer Collaboration &amp; Implementation Alignment
         </h3>
         <div class="modal-callout dev-callout">
           <strong>Engineering Synergy:</strong> ${escapeHtml(study.devCollaboration)}
@@ -292,7 +317,7 @@ function openCaseStudyModal(studyId) {
     ${study.outcomeLearnings ? `
       <section class="modal-section">
         <h3 class="modal-section-title">
-          <span class="modal-section-badge">07</span> Qualitative Outcomes & Learnings
+          <span class="modal-section-badge">SEC // 07</span> Qualitative Outcomes &amp; Learnings
         </h3>
         <p class="modal-section-p">${escapeHtml(study.outcomeLearnings)}</p>
       </section>
@@ -358,24 +383,28 @@ function renderActivities(activities) {
     return;
   }
 
-  container.innerHTML = activities.map(act => `
-    <article class="activity-card" onclick="openActivityModal('${act.id}')" role="button" tabindex="0" aria-label="View photo: ${escapeHtml(act.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openActivityModal('${act.id}');}">
-      <div class="activity-img-frame">
-        <img src="${act.image}" alt="${escapeHtml(act.title)}" class="activity-img" loading="lazy">
-        <div class="activity-overlay">
-          <span class="activity-zoom-btn">View Moment ↗</span>
+  container.innerHTML = activities.map((act, idx) => {
+    const frameNum = String(idx + 1).padStart(2, '0');
+    return `
+      <article class="activity-card archival-polaroid" onclick="openActivityModal('${act.id}')" role="button" tabindex="0" aria-label="View photo: ${escapeHtml(act.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openActivityModal('${act.id}');}">
+        <div class="activity-img-frame">
+          <img src="${act.image}" alt="${escapeHtml(act.title)}" class="activity-img" loading="lazy">
+          <div class="activity-overlay">
+            <span class="activity-zoom-btn">Inspect Frame ↗</span>
+          </div>
         </div>
-      </div>
-      <div class="activity-card-body">
-        <div class="activity-meta-row">
-          <span class="activity-tag-pill">${escapeHtml(act.tag || act.categoryLabel || 'Moment')}</span>
-          <span class="activity-date">${escapeHtml(act.date || '')}</span>
+        <div class="activity-card-body">
+          <div class="activity-meta-row">
+            <span class="activity-frame-num">FRAME // ${frameNum}</span>
+            <span class="activity-tag-pill">${escapeHtml(act.tag || act.categoryLabel || 'Moment')}</span>
+            <span class="activity-date">${escapeHtml(act.date || '')}</span>
+          </div>
+          <h3 class="activity-title">${escapeHtml(act.title)}</h3>
+          <p class="activity-caption">${escapeHtml(act.caption)}</p>
         </div>
-        <h3 class="activity-title">${escapeHtml(act.title)}</h3>
-        <p class="activity-caption">${escapeHtml(act.caption)}</p>
-      </div>
-    </article>
-  `).join('');
+      </article>
+    `;
+  }).join('');
 }
 
 function initActivityFilters() {
