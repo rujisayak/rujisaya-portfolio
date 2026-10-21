@@ -193,7 +193,7 @@ const FALLBACK_CASE_STUDIES = [
     "featured": true,
     "date": "Jan 2026",
     "summary": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
-    "image": "/assets/portfolio/ami_booth_calendar.png",
+    "image": "/assets/portfolio/ami_screen_dashboard.png",
     "liveUrl": "https://ami-booth-planner.vercel.app/",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
@@ -206,15 +206,15 @@ const FALLBACK_CASE_STUDIES = [
     ],
     "previewCards": [
       {
-        "title": "Event Schedule & Calendar",
+        "title": "Month Grid Calendar & Conflict Detection",
         "date": "Jan 2026",
-        "image": "/assets/portfolio/ami_booth_calendar.png",
+        "image": "/assets/portfolio/ami_screen_calendar.png",
         "type": "laptop"
       },
       {
-        "title": "Date Conflict & Budget Ledger",
+        "title": "Booth Applications & Partial Acceptance",
         "date": "Oct 2025",
-        "image": "/assets/portfolio/ami_booth_screenshot_full.png",
+        "image": "/assets/portfolio/ami_screen_applications.png",
         "type": "card"
       }
     ],
@@ -323,18 +323,28 @@ const FALLBACK_CASE_STUDIES = [
           "value": "Conflict Detection & Budget Ledger"
         }
       ],
-      "image": "/assets/portfolio/ami_booth_calendar.png"
+      "image": "/assets/portfolio/ami_screen_calendar.png"
     },
     "multiScreens": [
       {
-        "title": "Month Grid Calendar",
-        "image": "/assets/portfolio/ami_booth_calendar.png",
-        "desc": "Visual monthly schedule with status badges"
+        "title": "Month Grid Calendar & Conflict Alerts",
+        "image": "/assets/portfolio/ami_screen_calendar.png",
+        "desc": "Visual monthly schedule with real-time conflict badges"
       },
       {
-        "title": "Applications & Conflict View",
-        "image": "/assets/portfolio/ami_booth_screenshot_full.png",
-        "desc": "Timeline list with overlapping date alerts and budget recalculation"
+        "title": "Booth Applications & Partial Acceptance",
+        "image": "/assets/portfolio/ami_screen_applications.png",
+        "desc": "Application workflow with partial day acceptance tracking"
+      },
+      {
+        "title": "Event Budget & Fee Ledger",
+        "image": "/assets/portfolio/ami_screen_budget.png",
+        "desc": "Outstanding booth fees, payment tracking and revenue calculations"
+      },
+      {
+        "title": "Operations Dashboard",
+        "image": "/assets/portfolio/ami_screen_dashboard.png",
+        "desc": "Central summary of confirmed events and upcoming deadlines"
       }
     ],
     "role": "UX/UI Designer & Full-Stack Developer",
@@ -1118,44 +1128,46 @@ function hydrateProjectDetailView(study) {
   }
 
   if (isAmi) {
-    const amiCal = '/assets/portfolio/ami_booth_calendar.png';
-    const amiFull = '/assets/portfolio/ami_booth_screenshot_full.png';
-    const amiCrop = '/assets/portfolio/ami_booth_screenshot.png';
+    const amiDash = '/assets/portfolio/ami_screen_dashboard.png';
+    const amiCal = '/assets/portfolio/ami_screen_calendar.png';
+    const amiApp = '/assets/portfolio/ami_screen_applications.png';
+    const amiBudget = '/assets/portfolio/ami_screen_budget.png';
+    const amiAuth = '/assets/portfolio/ami_screen_auth.png';
 
-    // Card 1: Main Dashboard / Landing View + Secondary View
-    setElementSrc('sc1FgImg', amiCal);
-    setElementText('sc1FgUrl', 'ami-booth-planner.vercel.app/calendar');
-    setElementSrc('sc1BgImg', amiFull);
-    setElementText('sc1BgUrl', 'ami-booth-planner.vercel.app/events');
+    // Card 1: Main Dashboard / Landing View + Secondary View (Auth layer used only once in background)
+    setElementSrc('sc1FgImg', amiDash);
+    setElementText('sc1FgUrl', 'ami-booth-planner.vercel.app/dashboard');
+    setElementSrc('sc1BgImg', amiAuth);
+    setElementText('sc1BgUrl', 'ami-booth-planner.vercel.app/login');
 
-    // Card 2: 3D Angled Laptop Closeup
+    // Card 2: 3D Angled Laptop Closeup (Hero Month Grid Calendar & Conflict Alerts)
     setElementSrc('sc2DisplayImg', amiCal);
 
-    // Card 3: Core Workflow Page 1 (Calendar / Booth Planner View)
+    // Card 3: Core Workflow Page 1 (Month Grid Calendar & Conflict Detection View)
     setElementSrc('sc3FgImg', amiCal);
-    setElementText('sc3FgUrl', 'ami-booth-planner.vercel.app/planner');
-    setElementSrc('sc3BgImg', amiCrop);
-    setElementText('sc3BgUrl', 'ami-booth-planner.vercel.app/timeline');
+    setElementText('sc3FgUrl', 'ami-booth-planner.vercel.app/calendar');
+    setElementSrc('sc3BgImg', amiDash);
+    setElementText('sc3BgUrl', 'ami-booth-planner.vercel.app/overview');
 
-    // Card 4: Core Workflow Page 2 (Applications & Conflict Detection View)
-    setElementSrc('sc4FgImg', amiFull);
+    // Card 4: Core Workflow Page 2 (Booth Applications & Partial Acceptance Workflow)
+    setElementSrc('sc4FgImg', amiApp);
     setElementText('sc4FgUrl', 'ami-booth-planner.vercel.app/applications');
-    setElementSrc('sc4BgImg', amiCrop);
+    setElementSrc('sc4BgImg', amiCal);
     setElementText('sc4BgUrl', 'ami-booth-planner.vercel.app/conflicts');
 
-    // Card 5: Analytics / Budget Ledger or Settings View
-    setElementSrc('sc5FgImg', amiCrop);
+    // Card 5: Analytics & Budget Ledger View (Financial Summary & Outstanding Fees)
+    setElementSrc('sc5FgImg', amiBudget);
     setElementText('sc5FgUrl', 'ami-booth-planner.vercel.app/budget');
-    setElementSrc('sc5BgImg', amiFull);
-    setElementText('sc5BgUrl', 'ami-booth-planner.vercel.app/summary');
+    setElementSrc('sc5BgImg', amiApp);
+    setElementText('sc5BgUrl', 'ami-booth-planner.vercel.app/expenses');
 
-    // Card 6: Tilted Multi-Page Masonry / Collage (Full Ecosystem)
-    setElementSrc('sc6Img1', amiCal);
-    setElementSrc('sc6Img2', amiFull);
-    setElementSrc('sc6Img3', amiCrop);
-    setElementSrc('sc6Img4', amiCal);
-    setElementSrc('sc6Img5', amiFull);
-    setElementSrc('sc6Img6', amiCrop);
+    // Card 6: Tilted Multi-Page Masonry / Collage (Full Multi-screen Ecosystem)
+    setElementSrc('sc6Img1', amiDash);
+    setElementSrc('sc6Img2', amiCal);
+    setElementSrc('sc6Img3', amiApp);
+    setElementSrc('sc6Img4', amiBudget);
+    setElementSrc('sc6Img5', amiAuth);
+    setElementSrc('sc6Img6', amiCal);
   } else {
     // Leaya / Enterprise
     const leayaFull = '/assets/portfolio/leaya_screenshot_full.png';
