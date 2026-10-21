@@ -262,7 +262,7 @@ function getHighlightSvg(icon) {
   </svg>`;
 }
 
-// Render Projects Showcase Cards (View 1: Bento Grid Product Showcase Directory)
+// Render Projects Showcase Cards (View 1: UI8-Inspired Card Grid Layout)
 function renderCaseStudies(studies) {
   const container = document.getElementById('caseStudiesContainer');
   if (!container) return;
@@ -274,82 +274,74 @@ function renderCaseStudies(studies) {
 
   container.innerHTML = studies.map((study, idx) => {
     const projNum = study.projectNum || (idx + 1);
-    const displayTitle = study.displayTitle || (study.title.includes('&') ? study.title.split('&')[0].trim() : study.title);
-    const categoryText = study.category || (study.id === 'ami-booth-planner' ? 'creator economy & events' : 'enterprise saas & hr tech');
+    const displayTitle = study.displayTitle || study.title;
+    const categoryText = study.category || (study.filterCategory === 'creator' ? 'creator economy & events' : 'enterprise saas & hr tech');
     const badgeText = study.badge || 'live interactive';
     const isLive = (study.badgeType === 'live') || badgeText.toLowerCase().includes('live');
-
-    const preview1 = (study.previewCards && study.previewCards[0]) ? study.previewCards[0] : {
-      title: "Interactive Dashboard",
-      date: study.date || "Jan 2026",
-      image: study.image
-    };
-
-    const preview2 = (study.previewCards && study.previewCards[1]) ? study.previewCards[1] : {
-      title: "System Matrix",
-      date: "Oct 2025",
-      image: (study.multiScreens && study.multiScreens[1] ? study.multiScreens[1].image : study.image)
-    };
+    const dateText = study.date || 'Jan 2026';
+    const tagsList = study.tags || [];
+    const tagsHtml = tagsList.slice(0, 4).map(tag => `<span class="gallery-tag-pill">${escapeHtml(tag)}</span>`).join('');
 
     return `
-      <article class="bento-project-card" data-id="${study.id}" onclick="openProjectDetail('${study.id}')" role="button" tabindex="0" aria-label="Open ${escapeHtml(study.fullTitle || study.title)} Bento Showcase" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('${study.id}');}">
-        <!-- Top Meta Row -->
-        <div class="bento-card-top-bar">
-          <div class="bento-meta-left">
-            <span class="bento-proj-index">project ${projNum}</span>
+      <article class="gallery-project-card" data-id="${study.id}">
+        <!-- Top Visual Thumbnail Mockup Frame -->
+        <div class="gallery-card-thumb-wrap" onclick="openProjectDetail('${study.id}')" role="button" tabindex="0" aria-label="Open ${escapeHtml(displayTitle)} detail showcase" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('${study.id}');}">
+          <div class="gallery-thumb-inner">
+            <img src="${study.image}" alt="${escapeHtml(displayTitle)} Preview" class="gallery-thumb-img" loading="lazy">
+            <div class="gallery-thumb-overlay"></div>
+          </div>
+          <!-- Badges floating on top of thumbnail -->
+          <div class="gallery-thumb-top-badges">
             <span class="bento-status-pill ${isLive ? 'status-pill-live' : 'status-pill-case'}">
               <span class="status-dot ${isLive ? 'green' : 'purple'}"></span>
               <span>${escapeHtml(badgeText)}</span>
             </span>
+            <span class="gallery-date-pill">${escapeHtml(dateText)}</span>
           </div>
-          <div class="bento-meta-right">
-            <span class="bento-category-tag">${escapeHtml(categoryText.toLowerCase())}</span>
+          <!-- Hover Quick Action -->
+          <div class="gallery-thumb-hover-action">
+            <button type="button" class="gallery-quick-live-btn" onclick="event.stopPropagation(); openInteractivePreview('${study.id}');" title="Launch Live Interactive Preview">
+              <span>▶ Quick Live Sandbox</span>
+            </button>
           </div>
         </div>
 
-        <!-- Project Title Row -->
-        <div class="bento-card-title-row">
-          <h3 class="bento-card-title">${escapeHtml(displayTitle)}</h3>
-          <span class="bento-open-hint">
-            <span>view showcase</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </span>
-        </div>
-
-        <!-- Inner Mockup Preview Boxes (2-Column Grid inside the card) -->
-        <div class="bento-preview-grid">
-          <!-- Box 1: Primary Dashboard Laptop Mockup -->
-          <div class="bento-preview-box">
-            <div class="mockup-laptop-wrap">
-              <div class="mockup-laptop-lid">
-                <div class="mockup-laptop-camera"></div>
-                <div class="mockup-laptop-screen">
-                  <img src="${preview1.image}" alt="${escapeHtml(displayTitle)} Preview 1" loading="lazy">
-                </div>
-              </div>
-              <div class="mockup-laptop-deck">
-                <div class="mockup-laptop-notch"></div>
-              </div>
-            </div>
-            <div class="preview-date-badge">${escapeHtml(preview1.date || 'Jan 2026')}</div>
+        <!-- Bottom Card Content Area -->
+        <div class="gallery-card-body">
+          <!-- Meta Row -->
+          <div class="gallery-card-meta-row">
+            <span class="gallery-proj-num">project ${projNum}</span>
+            <span class="gallery-cat-pill">${escapeHtml(categoryText.toLowerCase())}</span>
           </div>
 
-          <!-- Box 2: Secondary Perspective Card Mockup -->
-          <div class="bento-preview-box">
-            <div class="mockup-card-wrap">
-              <div class="mockup-floating-window">
-                <div class="mockup-window-header">
-                  <span class="w-dot red"></span>
-                  <span class="w-dot yellow"></span>
-                  <span class="w-dot green"></span>
-                  <span class="mockup-window-title">${escapeHtml(preview2.title || 'Interactive Screen')}</span>
-                </div>
-                <div class="mockup-window-body">
-                  <img src="${preview2.image}" alt="${escapeHtml(displayTitle)} Preview 2" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="preview-date-badge">${escapeHtml(preview2.date || 'Oct 2025')}</div>
+          <!-- Title Row -->
+          <div class="gallery-card-title-row" onclick="openProjectDetail('${study.id}')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('${study.id}');}">
+            <h3 class="gallery-card-title">${escapeHtml(displayTitle)}</h3>
+            <span class="gallery-title-arrow" aria-hidden="true">↗</span>
+          </div>
+
+          <!-- Short Summary Description -->
+          <p class="gallery-card-desc">${escapeHtml(study.summary)}</p>
+
+          <!-- Feature / Tech Tag Pills -->
+          <div class="gallery-card-tags">
+            ${tagsHtml}
+          </div>
+
+          <!-- Bottom Actions Row -->
+          <div class="gallery-card-actions">
+            <button type="button" class="gallery-action-btn btn-live-demo" onclick="openInteractivePreview('${study.id}')" title="Test interactive web application inside sandbox modal">
+              <span class="btn-play-icon">▶</span>
+              <span>Live Demo</span>
+            </button>
+            <button type="button" class="gallery-action-btn btn-showcase" onclick="openProjectDetail('${study.id}')" title="Explore full Bento Grid UX Case Study">
+              <span>Bento Showcase</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </button>
+            <a href="${escapeHtml(study.liveUrl || '#')}" target="_blank" rel="noopener noreferrer" class="gallery-action-btn btn-launch" title="Open live production app in new tab">
+              <span>Launch</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
           </div>
         </div>
       </article>
@@ -375,9 +367,9 @@ function initFilterTabs() {
       if (filter === 'all' || filter === 'featured') {
         renderCaseStudies(allCaseStudies);
       } else if (filter === 'enterprise') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id === 'leave-wfh-management' || s.filterCategory === 'enterprise' || (s.category && s.category.toUpperCase().includes('ENTERPRISE'))));
+        renderCaseStudies(allCaseStudies.filter(s => s.filterCategory === 'enterprise' || s.id.includes('leave') || s.id.includes('leaya') || (s.category && s.category.toLowerCase().includes('enterprise'))));
       } else if (filter === 'creator') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id === 'ami-booth-planner' || s.filterCategory === 'creator' || (s.category && s.category.toUpperCase().includes('CREATOR'))));
+        renderCaseStudies(allCaseStudies.filter(s => s.filterCategory === 'creator' || s.id.includes('ami') || (s.category && s.category.toLowerCase().includes('creator'))));
       }
     });
   });
