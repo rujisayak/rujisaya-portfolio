@@ -383,15 +383,21 @@ button {
   position: relative;
 }
 
-/* Year label */
+/* Year / Signature label (positioned neatly under the blue folder) */
 .hero-year-label {
+  position: absolute;
+  top: calc(52% + 94px);
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+  font-size: 0.8125rem;
   font-weight: 700;
   color: var(--text-main);
-  margin-top: 1.75rem;
   letter-spacing: -0.01em;
   z-index: 4;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 /* Center Blue Folder (Interactive) */
@@ -2270,6 +2276,11 @@ button {
   .center-folder-icon {
     width: 120px;
     height: 98px;
+  }
+
+  .hero-year-label {
+    top: calc(52% + 72px);
+    font-size: 0.75rem;
   }
 
   .project-showcase-card {
