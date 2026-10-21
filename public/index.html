@@ -77,7 +77,7 @@
 
       <nav class="desktop-nav">
         <a href="#home" class="nav-link active">Home</a>
-        <a href="#projects" class="nav-link">Projects</a>
+        <a href="/projects" class="nav-link">Projects</a>
         <a href="#about" class="nav-link">About Me</a>
         <a href="#resume" class="nav-link">Resume</a>
         <a href="#activity" class="nav-link">Activities</a>
@@ -94,7 +94,7 @@
     <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
       <a href="#home" class="mobile-nav-link">Home</a>
-      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="/projects" class="mobile-nav-link">Projects</a>
       <a href="#about" class="mobile-nav-link">About Me</a>
       <a href="#resume" class="mobile-nav-link">Resume</a>
       <a href="#activity" class="mobile-nav-link">Activities</a>
@@ -146,7 +146,7 @@
             </div>
 
             <!-- Desktop Menu Folder 1: Projects -->
-            <a href="#projects" class="desktop-item item-folder item-folder-projects desktop-anim-target" data-name="projects" title="Open Projects">
+            <a href="/projects" class="desktop-item item-folder item-folder-projects desktop-anim-target" data-name="projects" title="Open Projects">
               <svg class="mac-folder-svg mini-folder" viewBox="0 0 100 82" fill="none">
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
@@ -241,138 +241,57 @@
           <p class="case-section-subtitle">interactive web applications and enterprise platforms I designed &amp; developed</p>
         </div>
 
-        <!-- Filter Tabs -->
-        <div class="filter-bar" id="categoryFilters" role="tablist" aria-label="Project categories">
-          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">★ all projects (2)</button>
-          <button class="filter-btn" data-filter="enterprise" role="tab" aria-selected="false">enterprise saas &amp; hr</button>
-          <button class="filter-btn" data-filter="creator" role="tab" aria-selected="false">creator economy &amp; events</button>
+        <!-- Featured Projects 2x2 Grid (Top 4 Featured Preview) -->
+        <div class="featured-projects-grid" id="caseStudiesContainer">
+          <!-- Project 1: Leaya -->
+          <a href="/projects/leave-wfh-management" class="compact-project-card" data-category="enterprise" aria-label="View Leaya - All-in-One Employee Management Platform">
+            <div class="compact-card-thumb">
+              <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Leaya 🐾 Preview" loading="lazy" class="compact-thumb-img">
+              <span class="compact-date-badge">Jan 2026</span>
+            </div>
+            <div class="compact-card-footer">
+              <div class="compact-footer-row-main">
+                <h3 class="compact-card-title">Leaya 🐾</h3>
+                <span class="compact-status-pill">
+                  <span class="status-dot green"></span>
+                  <span class="compact-status-text">live</span>
+                </span>
+              </div>
+              <div class="compact-footer-row-sub">
+                <span class="compact-category-tag">enterprise saas &amp; hr tech</span>
+                <span class="compact-view-arrow">View Project →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Project 2: Ami Booth Planner -->
+          <a href="/projects/ami-booth-planner" class="compact-project-card" data-category="creator" aria-label="View Ami Booth Planner - All-in-One Creator Event Platform">
+            <div class="compact-card-thumb">
+              <img src="/assets/portfolio/ami_booth_calendar.png" alt="Ami Booth Planner 🎨 Preview" loading="lazy" class="compact-thumb-img">
+              <span class="compact-date-badge">Jan 2026</span>
+            </div>
+            <div class="compact-card-footer">
+              <div class="compact-footer-row-main">
+                <h3 class="compact-card-title">Ami Booth Planner 🎨</h3>
+                <span class="compact-status-pill">
+                  <span class="status-dot green"></span>
+                  <span class="compact-status-text">live</span>
+                </span>
+              </div>
+              <div class="compact-footer-row-sub">
+                <span class="compact-category-tag">creator economy &amp; events</span>
+                <span class="compact-view-arrow">View Project →</span>
+              </div>
+            </div>
+          </a>
         </div>
 
-        <!-- Projects Grid / Bento Cards Container (Matching Screenshot Exactly) -->
-        <div class="case-studies-list" id="caseStudiesContainer">
-          <article class="bento-project-card" data-id="leave-wfh-management" onclick="openProjectDetail('leave-wfh-management')" role="button" tabindex="0" aria-label="Open Leaya - All-in-One Employee Management Platform Bento Showcase" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('leave-wfh-management');}">
-            <!-- Top Meta Row -->
-            <div class="bento-card-top-bar">
-              <div class="bento-meta-left">
-                <span class="bento-proj-index">project 1</span>
-                <span class="bento-status-pill status-pill-live">
-                  <span class="status-dot green"></span>
-                  <span>live interactive</span>
-                </span>
-              </div>
-              <div class="bento-meta-right">
-                <span class="bento-category-tag">enterprise saas &amp; hr tech</span>
-              </div>
-            </div>
-
-            <!-- Project Title Row -->
-            <div class="bento-card-title-row">
-              <h3 class="bento-card-title">Leaya 🐾</h3>
-              <span class="bento-open-hint">
-                <span>view showcase</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
-              </span>
-            </div>
-
-            <!-- Inner Mockup Preview Boxes (2-Column Grid inside the card) -->
-            <div class="bento-preview-grid">
-              <!-- Box 1: Primary Dashboard Laptop Mockup -->
-              <div class="bento-preview-box">
-                <div class="mockup-laptop-wrap">
-                  <div class="mockup-laptop-lid">
-                    <div class="mockup-laptop-camera"></div>
-                    <div class="mockup-laptop-screen">
-                      <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Leaya 🐾 Preview 1" loading="lazy">
-                    </div>
-                  </div>
-                  <div class="mockup-laptop-deck">
-                    <div class="mockup-laptop-notch"></div>
-                  </div>
-                </div>
-                <div class="preview-date-badge">Jan 2026</div>
-              </div>
-
-              <!-- Box 2: Secondary Perspective Card Mockup -->
-              <div class="bento-preview-box">
-                <div class="mockup-card-wrap">
-                  <div class="mockup-floating-window">
-                    <div class="mockup-window-header">
-                      <span class="w-dot red"></span>
-                      <span class="w-dot yellow"></span>
-                      <span class="w-dot green"></span>
-                      <span class="mockup-window-title">Attendance &amp; RBAC Matrix</span>
-                    </div>
-                    <div class="mockup-window-body">
-                      <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Leaya 🐾 Preview 2" loading="lazy">
-                    </div>
-                  </div>
-                </div>
-                <div class="preview-date-badge">Oct 2025</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="bento-project-card" data-id="ami-booth-planner" onclick="openProjectDetail('ami-booth-planner')" role="button" tabindex="0" aria-label="Open Ami Booth Planner - All-in-One Creator Event Platform Bento Showcase" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('ami-booth-planner');}">
-            <!-- Top Meta Row -->
-            <div class="bento-card-top-bar">
-              <div class="bento-meta-left">
-                <span class="bento-proj-index">project 2</span>
-                <span class="bento-status-pill status-pill-live">
-                  <span class="status-dot green"></span>
-                  <span>live interactive</span>
-                </span>
-              </div>
-              <div class="bento-meta-right">
-                <span class="bento-category-tag">creator economy &amp; events</span>
-              </div>
-            </div>
-
-            <!-- Project Title Row -->
-            <div class="bento-card-title-row">
-              <h3 class="bento-card-title">Ami Booth Planner 🎨</h3>
-              <span class="bento-open-hint">
-                <span>view showcase</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
-              </span>
-            </div>
-
-            <!-- Inner Mockup Preview Boxes (2-Column Grid inside the card) -->
-            <div class="bento-preview-grid">
-              <!-- Box 1: Primary Dashboard Laptop Mockup -->
-              <div class="bento-preview-box">
-                <div class="mockup-laptop-wrap">
-                  <div class="mockup-laptop-lid">
-                    <div class="mockup-laptop-camera"></div>
-                    <div class="mockup-laptop-screen">
-                      <img src="/assets/portfolio/ami_booth_calendar.png" alt="Ami Booth Planner 🎨 Preview 1" loading="lazy">
-                    </div>
-                  </div>
-                  <div class="mockup-laptop-deck">
-                    <div class="mockup-laptop-notch"></div>
-                  </div>
-                </div>
-                <div class="preview-date-badge">Jan 2026</div>
-              </div>
-
-              <!-- Box 2: Secondary Perspective Card Mockup -->
-              <div class="bento-preview-box">
-                <div class="mockup-card-wrap">
-                  <div class="mockup-floating-window">
-                    <div class="mockup-window-header">
-                      <span class="w-dot red"></span>
-                      <span class="w-dot yellow"></span>
-                      <span class="w-dot green"></span>
-                      <span class="mockup-window-title">Date Conflict &amp; Budget Ledger</span>
-                    </div>
-                    <div class="mockup-window-body">
-                      <img src="/assets/portfolio/ami_booth_screenshot_full.png" alt="Ami Booth Planner 🎨 Preview 2" loading="lazy">
-                    </div>
-                  </div>
-                </div>
-                <div class="preview-date-badge">Oct 2025</div>
-              </div>
-            </div>
-          </article>
+        <!-- Prominent Show All Projects Button -->
+        <div class="show-all-projects-wrap">
+          <a href="/projects" class="btn-show-all-projects">
+            <span>Show All Projects</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -691,16 +610,6 @@
           <div class="loading-spinner">กำลังโหลด Interactive App Preview...</div>
         </div>
         <iframe id="previewIframe" src="" title="Live Project Preview" allow="clipboard-read; clipboard-write; geolocation"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- PROJECT DETAILS MODAL (Bento Grid Showcase) -->
-  <div class="modal-overlay bento-modal-overlay" id="caseStudyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
-    <div class="modal-container bento-modal-container">
-      <button class="modal-close bento-hidden-default-close" id="modalClose" aria-label="Close project details">&times;</button>
-      <div class="modal-body bento-modal-body" id="modalBody">
-        <!-- Rendered by JS -->
       </div>
     </div>
   </div>

@@ -10,6 +10,11 @@ app.get('/projects', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'projects.html'));
 });
 
+// Specific route for /projects/:slug detail page
+app.get('/projects/:slug', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'project-detail.html'));
+});
+
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, 'public')));
 

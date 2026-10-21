@@ -11,6 +11,10 @@
       "destination": "/public/projects.html"
     },
     {
+      "source": "/projects/:slug",
+      "destination": "/public/project-detail.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/public/$1"
     }

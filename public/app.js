@@ -5,6 +5,7 @@
 const FALLBACK_CASE_STUDIES = [
   {
     "id": "leave-wfh-management",
+    "slug": "leave-wfh-management",
     "projectNum": 1,
     "displayTitle": "Leaya 🐾",
     "fullTitle": "Leaya - All-in-One Employee Management Platform",
@@ -180,6 +181,7 @@ const FALLBACK_CASE_STUDIES = [
   },
   {
     "id": "ami-booth-planner",
+    "slug": "ami-booth-planner",
     "projectNum": 2,
     "displayTitle": "Ami Booth Planner 🎨",
     "fullTitle": "Ami Booth Planner - All-in-One Creator Event Platform",
@@ -404,6 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModalA11y();
   initInteractivePreview();
   initCursorRoaming();
+  initProjectDetailPage();
   
   Promise.allSettled([loadPortfolioData(), loadActivitiesData()]).then(() => {
     setTopProgress(100);
@@ -692,7 +695,7 @@ function getHighlightSvg(icon) {
   </svg>`;
 }
 
-// Render Projects Showcase Cards (View 1: Bento Grid Product Showcase Directory matching Image 2)
+// Render Projects Showcase Cards (Compact Card Grid Layout for Home and /projects)
 function renderCaseStudies(studies) {
   const container = document.getElementById('caseStudiesContainer');
   if (!container) return;
@@ -703,91 +706,42 @@ function renderCaseStudies(studies) {
   }
 
   if (!studies || studies.length === 0) {
-    container.innerHTML = `<div class="loading-spinner">No projects found for this category.</div>`;
+    container.innerHTML = `<div class="loading-spinner">No projects found matching your search.</div>`;
     return;
   }
 
-  container.innerHTML = studies.map((study, idx) => {
-    const projNum = study.projectNum || (idx + 1);
+  const isHomePage = !document.body.classList.contains('page-projects-archive') && !document.getElementById('projectSearchInput');
+  const displayList = isHomePage ? studies.slice(0, 4) : studies;
+
+  container.innerHTML = displayList.map(study => {
     const displayTitle = study.displayTitle || study.title;
     const categoryText = study.category || (study.id === 'ami-booth-planner' ? 'creator economy & events' : 'enterprise saas & hr tech');
-    const badgeText = study.badge || 'live interactive';
+    const badgeText = study.badge || 'live';
     const isLive = (study.badgeType === 'live') || badgeText.toLowerCase().includes('live');
-
-    const preview1 = (study.previewCards && study.previewCards[0]) ? study.previewCards[0] : {
-      title: "Interactive Dashboard",
-      date: study.date || "Jan 2026",
-      image: study.image
-    };
-
-    const preview2 = (study.previewCards && study.previewCards[1]) ? study.previewCards[1] : {
-      title: "System Matrix",
-      date: "Oct 2025",
-      image: (study.multiScreens && study.multiScreens[1] ? study.multiScreens[1].image : study.image)
-    };
+    const dateText = study.date || 'Jan 2026';
+    const slug = study.slug || study.id;
+    const coverImage = study.image || (study.previewCards && study.previewCards[0] ? study.previewCards[0].image : '/assets/portfolio/leaya_screenshot_full.png');
 
     return `
-      <article class="bento-project-card" data-id="${study.id}" onclick="openProjectDetail('${study.id}')" role="button" tabindex="0" aria-label="Open ${escapeHtml(study.fullTitle || study.title)} Bento Showcase" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('${study.id}');}">
-        <!-- Top Meta Row -->
-        <div class="bento-card-top-bar">
-          <div class="bento-meta-left">
-            <span class="bento-proj-index">project ${projNum}</span>
-            <span class="bento-status-pill ${isLive ? 'status-pill-live' : 'status-pill-case'}">
+      <a href="/projects/${encodeURIComponent(slug)}" class="compact-project-card" data-category="${study.filterCategory || 'all'}" aria-label="View ${escapeHtml(study.fullTitle || study.title)}">
+        <div class="compact-card-thumb">
+          <img src="${coverImage}" alt="${escapeHtml(displayTitle)} Preview" loading="lazy" class="compact-thumb-img">
+          <span class="compact-date-badge">${escapeHtml(dateText)}</span>
+        </div>
+        <div class="compact-card-footer">
+          <div class="compact-footer-row-main">
+            <h3 class="compact-card-title">${escapeHtml(displayTitle)}</h3>
+            <span class="compact-status-pill">
               <span class="status-dot ${isLive ? 'green' : 'purple'}"></span>
-              <span>${escapeHtml(badgeText)}</span>
+              <span class="compact-status-text">${escapeHtml(badgeText)}</span>
             </span>
           </div>
-          <div class="bento-meta-right">
-            <span class="bento-category-tag">${escapeHtml(categoryText.toLowerCase())}</span>
+          <div class="compact-footer-row-sub">
+            <span class="compact-category-tag">${escapeHtml(categoryText.toLowerCase())}</span>
+            <span class="compact-view-arrow">View Project →</span>
           </div>
         </div>
-
-        <!-- Project Title Row -->
-        <div class="bento-card-title-row">
-          <h3 class="bento-card-title">${escapeHtml(displayTitle)}</h3>
-          <span class="bento-open-hint">
-            <span>view showcase</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </span>
-        </div>
-
-        <!-- Inner Mockup Preview Boxes (2-Column Grid inside the card) -->
-        <div class="bento-preview-grid">
-          <!-- Box 1: Primary Dashboard Laptop Mockup -->
-          <div class="bento-preview-box">
-            <div class="mockup-laptop-wrap">
-              <div class="mockup-laptop-lid">
-                <div class="mockup-laptop-camera"></div>
-                <div class="mockup-laptop-screen">
-                  <img src="${preview1.image}" alt="${escapeHtml(displayTitle)} Preview 1" loading="lazy">
-                </div>
-              </div>
-              <div class="mockup-laptop-deck">
-                <div class="mockup-laptop-notch"></div>
-              </div>
-            </div>
-            <div class="preview-date-badge">${escapeHtml(preview1.date || 'Jan 2026')}</div>
-          </div>
-
-          <!-- Box 2: Secondary Perspective Card Mockup -->
-          <div class="bento-preview-box">
-            <div class="mockup-card-wrap">
-              <div class="mockup-floating-window">
-                <div class="mockup-window-header">
-                  <span class="w-dot red"></span>
-                  <span class="w-dot yellow"></span>
-                  <span class="w-dot green"></span>
-                  <span class="mockup-window-title">${escapeHtml(preview2.title || 'Interactive Screen')}</span>
-                </div>
-                <div class="mockup-window-body">
-                  <img src="${preview2.image}" alt="${escapeHtml(displayTitle)} Preview 2" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="preview-date-badge">${escapeHtml(preview2.date || 'Oct 2025')}</div>
-          </div>
-        </div>
-      </article>
+      </a>
     `;
   }).join('');
 }
@@ -954,16 +908,46 @@ function closeInteractivePreview() {
   }
 }
 
-// View 2: Project Detail / Showcase View (Bento Grid Layout)
-function openProjectDetail(studyId) {
-  const study = allCaseStudies.find(s => s.id === studyId);
+// ==========================================================================
+// View 3: Dedicated Standalone Project Detail Page (/projects/[slug])
+// ==========================================================================
+
+function findProjectBySlug(slug) {
+  if (!slug) return null;
+  const s = slug.toLowerCase().trim();
+  return allCaseStudies.find(item => {
+    if (item.id === s || (item.slug && item.slug === s)) return true;
+    if (s === 'leaya' && item.id === 'leave-wfh-management') return true;
+    if (s === 'ami' && item.id === 'ami-booth-planner') return true;
+    return item.id.includes(s) || (item.slug && item.slug.includes(s));
+  });
+}
+
+function initProjectDetailPage() {
+  const root = document.getElementById('projectDetailRoot');
+  if (!root) return; // Not on project detail page
+
+  const path = window.location.pathname;
+  const pathParts = path.split('/').filter(Boolean);
+  let slug = pathParts[pathParts.length - 1];
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('id')) {
+    slug = urlParams.get('id');
+  }
+
+  if (!slug || slug === 'projects' || slug === 'project-detail.html') {
+    slug = 'leave-wfh-management';
+  }
+
+  const study = findProjectBySlug(slug) || allCaseStudies[0];
+  if (study) {
+    hydrateProjectDetailView(study);
+  }
+}
+
+function hydrateProjectDetailView(study) {
   if (!study) return;
-
-  lastFocusedElement = document.activeElement;
-
-  const modal = document.getElementById('caseStudyModal');
-  const modalBody = document.getElementById('modalBody');
-  if (!modal || !modalBody) return;
 
   const fullTitle = study.fullTitle || study.title;
   const shortSubtitle = study.shortSubtitle || study.summary;
@@ -1018,292 +1002,186 @@ function openProjectDetail(studyId) {
     { title: "Detail Flow", image: study.image, desc: "Secondary view" }
   ];
 
-  const decisionsHtml = study.keyDecisions ? study.keyDecisions.split('\n').filter(Boolean).map(dec => `
-    <li class="bento-decision-item">${escapeHtml(dec)}</li>
-  `).join('') : '';
+  // Update Page Title & Breadcrumb
+  document.title = `${fullTitle} — Rujisaya Kuekool | UX/UI Designer`;
+  const crumbIndex = document.getElementById('crumbIndex');
+  if (crumbIndex) crumbIndex.textContent = `project ${study.projectNum || 1}`;
+  const crumbCat = document.getElementById('crumbCat');
+  if (crumbCat) crumbCat.textContent = (study.category || 'enterprise saas & hr tech').toLowerCase();
 
-  modalBody.innerHTML = `
-    <!-- Top Modal Nav Bar -->
-    <div class="bento-top-nav-bar">
-      <button class="bento-back-pill" onclick="closeProjectDetail()">
-        <span class="back-arrow">←</span>
-        <span>Back to Projects</span>
-      </button>
-      <div class="bento-top-meta-crumb">
-        <span>project ${study.projectNum || 1}</span>
-        <span class="crumb-divider">•</span>
-        <span class="crumb-cat">${escapeHtml(study.category || 'enterprise saas')}</span>
+  // Header Title & Subtitle
+  const titleEl = document.getElementById('detailHeaderTitle');
+  if (titleEl) titleEl.textContent = fullTitle;
+  const subtitleEl = document.getElementById('detailHeaderSubtitle');
+  if (subtitleEl) subtitleEl.textContent = shortSubtitle;
+
+  // Tech Stack Badges
+  const techBadgesEl = document.getElementById('detailTechBadges');
+  if (techBadgesEl) {
+    techBadgesEl.innerHTML = techStack.map(t => `
+      <div class="tech-icon-badge" title="${escapeHtml(t.name)}">
+        ${getTechSvg(t.type || t.name)}
       </div>
-      <button class="bento-close-circle" onclick="closeProjectDetail()" aria-label="Close Project Detail">&times;</button>
-    </div>
+    `).join('');
+  }
 
-    <!-- Section A: Project Detail Header -->
-    <header class="bento-detail-header">
-      <div class="bento-header-left">
-        <h1 class="bento-detail-title" id="modalTitle">${escapeHtml(fullTitle)}</h1>
-        <p class="bento-detail-subtitle">${escapeHtml(shortSubtitle)}</p>
+  // CTA Links
+  const ctaLive = document.getElementById('detailCtaLive');
+  if (ctaLive && study.liveUrl) ctaLive.href = study.liveUrl;
+  const ctaGithub = document.getElementById('detailCtaGithub');
+  if (ctaGithub && study.githubUrl) ctaGithub.href = study.githubUrl;
+
+  // Hero Mockup
+  const heroMockup = document.getElementById('detailHeroMockup');
+  if (heroMockup) {
+    heroMockup.src = study.image;
+    heroMockup.alt = `${fullTitle} Main Dashboard`;
+  }
+  const mobileMockup = document.getElementById('detailMobileMockup');
+  if (mobileMockup) {
+    mobileMockup.src = multiScreens[1] ? multiScreens[1].image : study.image;
+    mobileMockup.alt = `${fullTitle} Mobile Experience`;
+  }
+
+  // Pillars Grid
+  const pillarsGrid = document.getElementById('detailPillarsGrid');
+  if (pillarsGrid) {
+    pillarsGrid.innerHTML = pillars.map(p => `
+      <div class="bento-pillar-item">
+        <span class="pillar-icon-box">${getPillarSvg(p.icon)}</span>
+        <span class="pillar-label">${escapeHtml(p.label)}</span>
       </div>
+    `).join('');
+  }
 
-      <div class="bento-header-right">
-        <!-- Tech Stack Icons (40x40px rounded squares) -->
-        <div class="bento-tech-badges-row" aria-label="Technologies used">
-          ${techStack.map(t => `
-            <div class="tech-icon-badge" title="${escapeHtml(t.name)}">
-              ${getTechSvg(t.type || t.name)}
-            </div>
-          `).join('')}
-        </div>
-
-        <!-- CTA Pill Buttons -->
-        <div class="bento-cta-pills-row">
-          <button class="bento-cta-pill cta-live" onclick="closeProjectDetail(); openInteractivePreview('${study.id}');" aria-label="Open Live Interactive Demo">
-            <span class="pill-play-icon">▶</span>
-            <span>Live Demo</span>
-          </button>
-          <a href="${study.githubUrl || 'https://github.com/rujisayak'}" target="_blank" rel="noopener noreferrer" class="bento-cta-pill cta-github" aria-label="View on GitHub">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span>GitHub</span>
-          </a>
-        </div>
+  // Highlights Grid
+  const highlightsGrid = document.getElementById('detailHighlightsGrid');
+  if (highlightsGrid) {
+    highlightsGrid.innerHTML = highlights.map(h => `
+      <div class="dark-bento-box">
+        <div class="dark-box-icon">${getHighlightSvg(h.icon)}</div>
+        <div class="dark-box-label">${escapeHtml(h.label)}</div>
       </div>
-    </header>
+    `).join('');
+  }
 
-    <!-- Section B: Row 1: Hero Overview (60%) + Project Highlights (40%) -->
-    <div class="bento-row bento-row-hero">
-      <!-- Left Card (60% width) - Hero Mockup & Core Features -->
-      <div class="bento-card bento-card-hero">
-        <div class="bento-hero-mockup-scene">
-          <!-- 3D Angled Laptop -->
-          <div class="hero-laptop-3d">
-            <div class="hero-laptop-lid">
-              <div class="hero-laptop-camera"></div>
-              <div class="hero-laptop-screen">
-                <img src="${study.image}" alt="${escapeHtml(fullTitle)} Main Dashboard" loading="lazy">
-              </div>
-            </div>
-            <div class="hero-laptop-deck">
-              <div class="hero-laptop-notch"></div>
-            </div>
-          </div>
-
-          <!-- 3D Mobile Phone Floating in front -->
-          <div class="hero-mobile-3d">
-            <div class="hero-mobile-island"></div>
-            <div class="hero-mobile-screen">
-              <img src="${multiScreens[1] ? multiScreens[1].image : study.image}" alt="${escapeHtml(fullTitle)} Mobile Experience" loading="lazy">
-            </div>
-            <div class="hero-mobile-bar"></div>
-          </div>
-        </div>
-
-        <!-- Bottom 2x2 Mini Grid of Key Pillars -->
-        <div class="bento-pillars-grid">
-          ${pillars.map(p => `
-            <div class="bento-pillar-item">
-              <span class="pillar-icon-box">${getPillarSvg(p.icon)}</span>
-              <span class="pillar-label">${escapeHtml(p.label)}</span>
-            </div>
-          `).join('')}
-        </div>
+  // Style Guide
+  const headingFontEl = document.getElementById('detailHeadingFont');
+  if (headingFontEl) headingFontEl.textContent = styleGuide.headingFont || 'Display Bold';
+  const bodyFontEl = document.getElementById('detailBodyFont');
+  if (bodyFontEl) bodyFontEl.textContent = styleGuide.bodyFont || 'Inter';
+  const paletteCountEl = document.getElementById('detailPaletteCount');
+  if (paletteCountEl) paletteCountEl.textContent = `${styleGuide.palette.length} Palette Swatches`;
+  const swatchesRow = document.getElementById('detailSwatchesRow');
+  if (swatchesRow) {
+    swatchesRow.innerHTML = styleGuide.palette.map(c => `
+      <div class="color-swatch-box" title="${escapeHtml(c.name)} (${c.hex})">
+        <div class="color-swatch-circle" style="background-color: ${c.hex}; ${c.hex === '#FFFFFF' || c.hex === '#FAF7F2' || c.hex === '#FFF0F5' ? 'border: 1px solid #E5DEC9;' : ''}"></div>
+        <span class="color-hex-label">${escapeHtml(c.hex)}</span>
+        <span class="color-name-label">${escapeHtml(c.name)}</span>
       </div>
+    `).join('');
+  }
 
-      <!-- Right Card (40% width) - Project Highlights (6-Box Dark Bento) -->
-      <div class="bento-card bento-card-highlights">
-        <h3 class="bento-card-title-center">Project Highlights</h3>
-        <div class="bento-dark-grid">
-          ${highlights.map(h => `
-            <div class="dark-bento-box">
-              <div class="dark-box-icon">${getHighlightSvg(h.icon)}</div>
-              <div class="dark-box-label">${escapeHtml(h.label)}</div>
-            </div>
-          `).join('')}
-        </div>
+  // Feature Zoom
+  const zoomTitle = document.getElementById('detailZoomTitle');
+  if (zoomTitle) zoomTitle.textContent = featureZoom.title;
+  const zoomDesc = document.getElementById('detailZoomDesc');
+  if (zoomDesc) zoomDesc.textContent = featureZoom.description;
+  const zoomImg = document.getElementById('detailZoomImg');
+  if (zoomImg) {
+    zoomImg.src = featureZoom.image || study.image;
+    zoomImg.alt = featureZoom.title;
+  }
+  const zoomAddress = document.getElementById('detailWindowAddress');
+  if (zoomAddress && study.liveUrl) {
+    zoomAddress.textContent = study.liveUrl.replace('https://', '').replace(/\/$/, '');
+  }
+  const zoomTags = document.getElementById('detailZoomTags');
+  if (zoomTags && featureZoom.tags) {
+    zoomTags.innerHTML = featureZoom.tags.map(t => `
+      <div class="zoom-meta-pill">
+        <span class="pill-key">${escapeHtml(t.label)}:</span>
+        <span class="pill-value">${escapeHtml(t.value)}</span>
       </div>
-    </div>
+    `).join('');
+  }
 
-    <!-- Section C: Row 2: CI / Style Guide & Design System Card (Full Width) -->
-    <div class="bento-row bento-row-styleguide">
-      <div class="bento-card bento-card-styleguide">
-        <div class="styleguide-left">
-          <span class="bento-sublabel">Style Guide</span>
-          <h2 class="styleguide-font-hero">${escapeHtml(styleGuide.headingFont)}</h2>
-          <div class="styleguide-font-body-specimen">
-            <span class="body-font-tag">${escapeHtml(styleGuide.bodyFont)}</span>
-            <span class="body-font-alphabet">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890</span>
-          </div>
+  // Multi Screens
+  const screensGrid = document.getElementById('detailScreensGrid');
+  if (screensGrid) {
+    screensGrid.innerHTML = multiScreens.map((screen, sIdx) => `
+      <div class="screen-item-card">
+        <div class="screen-img-box">
+          <img src="${screen.image}" alt="${escapeHtml(screen.title)}" loading="lazy">
         </div>
-
-        <div class="styleguide-right">
-          <div class="styleguide-palette-meta">
-            <span class="bento-sublabel">Typography &amp; Color System</span>
-            <span class="palette-count-tag">${styleGuide.palette.length} Palette Swatches</span>
-          </div>
-          <div class="bento-color-swatches-row">
-            ${styleGuide.palette.map(c => `
-              <div class="color-swatch-box" title="${escapeHtml(c.name)} (${c.hex})">
-                <div class="color-swatch-circle" style="background-color: ${c.hex}; ${c.hex === '#FFFFFF' || c.hex === '#FAF7F2' || c.hex === '#FFF0F5' ? 'border: 1px solid #E5DEC9;' : ''}"></div>
-                <span class="color-hex-label">${escapeHtml(c.hex)}</span>
-                <span class="color-name-label">${escapeHtml(c.name)}</span>
-              </div>
-            `).join('')}
-          </div>
+        <div class="screen-meta-row">
+          <span class="screen-index-badge">0${sIdx + 1}</span>
+          <span class="screen-title-text">${escapeHtml(screen.title)}</span>
         </div>
       </div>
-    </div>
+    `).join('');
+  }
 
-    <!-- Section D: Row 3: Deep-Dive Feature Showcase & All Screens Grid -->
-    <div class="bento-row bento-row-deepdive">
-      <!-- Left Card: Standout Feature Zoom-in -->
-      <div class="bento-card bento-card-feature-zoom">
-        <div class="zoom-header-block">
-          <span class="bento-sublabel">Feature Spotlight</span>
-          <h3 class="zoom-feature-title">${escapeHtml(featureZoom.title)}</h3>
-          <p class="zoom-feature-desc">${escapeHtml(featureZoom.description)}</p>
-        </div>
+  // UX Narrative
+  const probEl = document.getElementById('detailProblemText');
+  if (probEl) probEl.textContent = study.problem || study.summary;
+  const respEl = document.getElementById('detailRespText');
+  if (respEl) respEl.textContent = study.responsibilities || '';
+  const devEl = document.getElementById('detailDevText');
+  if (devEl) devEl.innerHTML = `<strong>Engineering Synergy:</strong> ${escapeHtml(study.devCollaboration || '')}`;
+  const outcomeEl = document.getElementById('detailOutcomeText');
+  if (outcomeEl) outcomeEl.textContent = study.outcomeLearnings || '';
+  const decisionsList = document.getElementById('detailDecisionsList');
+  if (decisionsList && study.keyDecisions) {
+    decisionsList.innerHTML = study.keyDecisions.split('\n').filter(Boolean).map(dec => `
+      <li class="bento-decision-item">${escapeHtml(dec)}</li>
+    `).join('');
+  }
 
-        <!-- Floating Feature Tags/Pills -->
-        <div class="zoom-meta-tags-list">
-          ${(featureZoom.tags || []).map(t => `
-            <div class="zoom-meta-pill">
-              <span class="pill-key">${escapeHtml(t.label)}:</span>
-              <span class="pill-value">${escapeHtml(t.value)}</span>
-            </div>
-          `).join('')}
-        </div>
+  // Bottom Action Links
+  const bottomLive = document.getElementById('detailBottomLive');
+  if (bottomLive && study.liveUrl) bottomLive.href = study.liveUrl;
+  const bottomSandbox = document.getElementById('detailBottomSandbox');
+  if (bottomSandbox) {
+    bottomSandbox.setAttribute('onclick', `openInteractivePreview('${study.id}')`);
+  }
 
-        <!-- UI Window Mockup -->
-        <div class="zoom-ui-window">
-          <div class="window-nav-bar">
-            <div class="window-traffic-dots">
-              <span class="w-dot red"></span>
-              <span class="w-dot yellow"></span>
-              <span class="w-dot green"></span>
-            </div>
-            <div class="window-address-pill">${escapeHtml(study.liveUrl ? study.liveUrl.replace('https://', '') : 'production.app')}</div>
-          </div>
-          <div class="window-viewport-wrap">
-            <img src="${featureZoom.image || study.image}" alt="${escapeHtml(featureZoom.title)}" loading="lazy">
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Card: Multi-Screen Grid -->
-      <div class="bento-card bento-card-screens-grid">
-        <div class="screens-header-block">
-          <span class="bento-sublabel">Screen Ecosystem</span>
-          <h3 class="screens-grid-title">Comprehensive UI Workflows</h3>
-          <p class="screens-grid-desc">Consistent component patterns across ${multiScreens.length} responsive interfaces.</p>
-        </div>
-
-        <div class="bento-screens-cards-grid">
-          ${multiScreens.map((screen, sIdx) => `
-            <div class="screen-item-card">
-              <div class="screen-img-box">
-                <img src="${screen.image}" alt="${escapeHtml(screen.title)}" loading="lazy">
-              </div>
-              <div class="screen-meta-row">
-                <span class="screen-index-badge">0${sIdx + 1}</span>
-                <span class="screen-title-text">${escapeHtml(screen.title)}</span>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    </div>
-
-    <!-- Deep UX Research & Engineering Synergy Accordion -->
-    <details class="bento-ux-deepdive-details">
-      <summary class="bento-ux-summary">
-        <span class="summary-left">
-          <span class="summary-icon">📖</span>
-          <span class="summary-title">Deep UX Research &amp; Developer Handoff Narrative</span>
-        </span>
-        <span class="summary-toggle-btn">Read Case Study Story ↓</span>
-      </summary>
-
-      <div class="bento-ux-content">
-        <!-- Problem -->
-        <div class="ux-narrative-block">
-          <h4 class="ux-narrative-heading">01 // Problem &amp; Operational Challenges</h4>
-          <p class="ux-narrative-text">${escapeHtml(study.problem || study.summary)}</p>
-        </div>
-
-        <!-- Responsibilities -->
-        ${study.responsibilities ? `
-          <div class="ux-narrative-block">
-            <h4 class="ux-narrative-heading">02 // Personal Scope &amp; Responsibilities</h4>
-            <div class="ux-narrative-callout">${escapeHtml(study.responsibilities)}</div>
-          </div>
-        ` : ''}
-
-        <!-- Key Decisions -->
-        ${decisionsHtml ? `
-          <div class="ux-narrative-block">
-            <h4 class="ux-narrative-heading">03 // Key UX Decisions &amp; Trade-offs</h4>
-            <ul class="ux-decisions-list">${decisionsHtml}</ul>
-          </div>
-        ` : ''}
-
-        <!-- Dev Collaboration -->
-        ${study.devCollaboration ? `
-          <div class="ux-narrative-block">
-            <h4 class="ux-narrative-heading">04 // Developer Collaboration &amp; State Specifications</h4>
-            <div class="ux-narrative-callout dev-callout">
-              <strong>Engineering Synergy:</strong> ${escapeHtml(study.devCollaboration)}
-            </div>
-          </div>
-        ` : ''}
-
-        <!-- Outcome -->
-        ${study.outcomeLearnings ? `
-          <div class="ux-narrative-block">
-            <h4 class="ux-narrative-heading">05 // Qualitative Outcomes &amp; Impact</h4>
-            <p class="ux-narrative-text">${escapeHtml(study.outcomeLearnings)}</p>
-          </div>
-        ` : ''}
-      </div>
-    </details>
-
-    <!-- Bottom Action Bar -->
-    <div class="bento-bottom-actions">
-      <button class="btn btn-primary" onclick="closeProjectDetail(); openInteractivePreview('${study.id}');">
-        <span>▶ Launch Live Interactive Sandbox</span>
-      </button>
-      ${study.liveUrl ? `
-        <a href="${study.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-          <span>Open Live Production App ↗</span>
-        </a>
-      ` : ''}
-      <button class="btn btn-secondary" onclick="closeProjectDetail()">
-        <span>← Back to All Projects</span>
-      </button>
-    </div>
-  `;
-
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-
-  const modalContainer = modal.querySelector('.modal-container');
-  if (modalContainer) {
-    modalContainer.scrollTop = 0;
+  // Next Project Section Navigation
+  const currentIdx = allCaseStudies.findIndex(s => s.id === study.id || (s.slug && s.slug === study.slug));
+  const nextIdx = currentIdx >= 0 ? (currentIdx + 1) % allCaseStudies.length : 0;
+  const nextStudy = allCaseStudies[nextIdx];
+  if (nextStudy) {
+    const nextLink = document.getElementById('nextProjectLink');
+    if (nextLink) nextLink.href = `/projects/${nextStudy.slug || nextStudy.id}`;
+    const nextImg = document.getElementById('nextProjectImg');
+    if (nextImg) {
+      nextImg.src = nextStudy.image;
+      nextImg.alt = nextStudy.displayTitle || nextStudy.title;
+    }
+    const nextCat = document.getElementById('nextProjectCat');
+    if (nextCat) nextCat.textContent = (nextStudy.category || 'creator economy & events').toLowerCase();
+    const nextTitle = document.getElementById('nextProjectTitle');
+    if (nextTitle) nextTitle.textContent = nextStudy.displayTitle || nextStudy.title;
+    const nextDesc = document.getElementById('nextProjectDesc');
+    if (nextDesc) nextDesc.textContent = nextStudy.summary || nextStudy.shortSubtitle || '';
   }
 }
 
-// Alias for backwards compatibility
-function openCaseStudyModal(studyId) {
-  openProjectDetail(studyId);
+// True multi-page navigation handlers
+function openProjectDetail(studyId) {
+  if (!studyId) return;
+  const study = findProjectBySlug(studyId);
+  const targetSlug = study ? (study.slug || study.id) : studyId;
+  window.location.href = `/projects/${encodeURIComponent(targetSlug)}`;
 }
 
 function closeProjectDetail() {
-  const modal = document.getElementById('caseStudyModal');
-  if (modal) {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  if (lastFocusedElement) {
-    lastFocusedElement.focus();
-    lastFocusedElement = null;
-  }
+  window.location.href = '/projects';
+}
+
+function openCaseStudyModal(studyId) {
+  openProjectDetail(studyId);
 }
 
 function closeCaseStudyModal() {

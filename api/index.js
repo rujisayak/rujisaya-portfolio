@@ -105,13 +105,17 @@ const handleGetProjects = async (req, res) => {
 const handleGetSingleProject = async (req, res) => {
   try {
     const { id } = req.params;
-    const db = await getDB();
-    if (db) {
-      const item = await db.collection('case_studies').findOne({ id });
-      if (item) return res.json(item);
+    try {
+      const db = await getDB();
+      if (db) {
+        const item = await db.collection('case_studies').findOne({ id });
+        if (item) return res.json(item);
+      }
+    } catch (dbErr) {
+      console.warn("DB query failed, falling back to local seed:", dbErr.message);
     }
     const fallback = getFallbackData();
-    const item = fallback.caseStudies.find(s => s.id === id);
+    const item = (fallback.caseStudies || []).find(s => s.id === id || s.slug === id);
     if (item) return res.json(item);
     res.status(404).json({ error: "Project not found" });
   } catch (err) {
@@ -129,7 +133,13 @@ router.get('/projects', (req, res, next) => {
   }
   handleGetProjects(req, res);
 });
-router.get('/projects/:id', handleGetSingleProject);
+router.get('/projects/:id', (req, res, next) => {
+  // If requested from browser (HTML) on root /projects/:id (not /api/projects/:id)
+  if (req.baseUrl !== '/api' && req.accepts('html') && !req.xhr && (!req.headers.accept || !req.headers.accept.includes('application/json'))) {
+    return res.sendFile(path.join(__dirname, '..', 'public', 'project-detail.html'));
+  }
+  handleGetSingleProject(req, res);
+});
 
 // Activities endpoint with auto-sync
 router.get('/activities', async (req, res) => {
