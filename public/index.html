@@ -70,16 +70,16 @@
           </div>
 
           <!-- Main Desktop Centerpiece -->
-          <div class="desktop-main-display">
+          <div class="desktop-main-display" id="desktopMainDisplay">
             <!-- Cursive Script Accent -->
-            <div class="hero-cursive-script">designer</div>
+            <div class="hero-cursive-script">UX UI</div>
             <!-- Giant Chunky Title -->
             <h1 class="hero-chunky-title">portfolio</h1>
-            <!-- Year -->
-            <div class="hero-year-label">(2026)</div>
+            <!-- Year / Signature Label -->
+            <div class="hero-year-label">by Toeyruji</div>
 
-            <!-- Center Blue Folder with Retro Mac Cursor (Interactive) -->
-            <div class="center-folder-showcase" onclick="document.getElementById('projects')?.scrollIntoView({behavior:'smooth'})" role="button" tabindex="0" aria-label="Explore Projects">
+            <!-- Center Blue Folder (Interactive) -->
+            <div class="center-folder-showcase desktop-anim-target" data-name="portfolio" onclick="document.getElementById('projects')?.scrollIntoView({behavior:'smooth'})" role="button" tabindex="0" aria-label="Explore Projects">
               <svg class="mac-folder-svg center-folder-icon" viewBox="0 0 100 82" fill="none">
                 <defs>
                   <linearGradient id="folderGradBack" x1="0" y1="0" x2="0" y2="82" gradientUnits="userSpaceOnUse">
@@ -96,14 +96,10 @@
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="url(#folderGradFront)"/>
                 <rect x="7" y="25" width="86" height="1" fill="rgba(255,255,255,0.45)"/>
               </svg>
-              <!-- Retro Mac Mouse Pointer -->
-              <svg class="mac-cursor-svg" viewBox="0 0 24 32" fill="none">
-                <path d="M2 2L10.5 29L14.5 19L22.5 15.5L2 2Z" fill="white" stroke="#2E1F1A" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
             </div>
 
             <!-- Desktop Menu Folder 1: Projects -->
-            <a href="#projects" class="desktop-item item-folder item-folder-projects" title="Open Projects">
+            <a href="#projects" class="desktop-item item-folder item-folder-projects desktop-anim-target" data-name="projects" title="Open Projects">
               <svg class="mac-folder-svg mini-folder" viewBox="0 0 100 82" fill="none">
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
@@ -112,7 +108,7 @@
             </a>
 
             <!-- Desktop Menu Folder 2: About Me -->
-            <a href="#about" class="desktop-item item-folder item-folder-about" title="About Designer">
+            <a href="#about" class="desktop-item item-folder item-folder-about desktop-anim-target" data-name="about me" title="About Designer">
               <svg class="mac-folder-svg mini-folder" viewBox="0 0 100 82" fill="none">
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
@@ -121,7 +117,7 @@
             </a>
 
             <!-- Desktop Menu Folder 3: Resume -->
-            <a href="#resume" class="desktop-item item-folder item-folder-resume" title="Resume & Experience">
+            <a href="#resume" class="desktop-item item-folder item-folder-resume desktop-anim-target" data-name="resume" title="Resume & Experience">
               <svg class="mac-folder-svg mini-folder" viewBox="0 0 100 82" fill="none">
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
@@ -130,7 +126,7 @@
             </a>
 
             <!-- Desktop Menu Folder 4: Activities -->
-            <a href="#activity" class="desktop-item item-folder item-folder-activity" title="Activities & Life">
+            <a href="#activity" class="desktop-item item-folder item-folder-activity desktop-anim-target" data-name="activities" title="Activities & Life">
               <svg class="mac-folder-svg mini-folder" viewBox="0 0 100 82" fill="none">
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
@@ -139,13 +135,20 @@
             </a>
 
             <!-- Desktop Menu Folder 5: Let's Connect (Contact) -->
-            <a href="#contact" class="desktop-item item-folder item-folder-contact" title="Let's Connect">
+            <a href="#contact" class="desktop-item item-folder item-folder-contact desktop-anim-target" data-name="contact" title="Let's Connect">
               <svg class="mac-folder-svg mini-folder" viewBox="0 0 100 82" fill="none">
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
               </svg>
               <span class="desktop-item-label">contact</span>
             </a>
+
+            <!-- Animated Retro Mac Cursor (Glides across folders) -->
+            <div class="desktop-roaming-cursor" id="desktopRoamingCursor" aria-hidden="true">
+              <svg class="mac-cursor-svg" viewBox="0 0 24 32" fill="none">
+                <path d="M2 2L10.5 29L14.5 19L22.5 15.5L2 2Z" fill="white" stroke="#2E1F1A" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
           </div>
         </div>
 

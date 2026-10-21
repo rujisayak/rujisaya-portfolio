@@ -394,7 +394,7 @@ button {
   z-index: 4;
 }
 
-/* Center Blue Folder with Retro Mac Cursor */
+/* Center Blue Folder (Interactive) */
 .center-folder-showcase {
   position: absolute;
   top: 52%;
@@ -402,11 +402,13 @@ button {
   transform: translate(-50%, -40%);
   z-index: 3;
   cursor: pointer;
-  transition: var(--transition);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
 }
 
-.center-folder-showcase:hover {
-  transform: translate(-50%, -44%) scale(1.05);
+.center-folder-showcase:hover,
+.center-folder-showcase.auto-hover {
+  transform: translate(-50%, -46%) scale(1.12);
+  filter: drop-shadow(0 22px 42px rgba(63, 136, 204, 0.5));
 }
 
 .center-folder-icon {
@@ -415,20 +417,36 @@ button {
   filter: drop-shadow(0 14px 28px rgba(63, 136, 204, 0.35));
 }
 
+/* Roaming Animated Cursor on Desktop Canvas */
+.desktop-roaming-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 38px;
+  pointer-events: none;
+  z-index: 25;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.28));
+  transition: transform 0.95s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease;
+  will-change: transform;
+}
+
+.desktop-roaming-cursor.is-clicking .mac-cursor-svg {
+  transform: scale(0.85);
+}
+
+.desktop-roaming-cursor .mac-cursor-svg {
+  width: 26px;
+  height: 34px;
+  display: block;
+  transition: transform 0.15s ease;
+}
+
 /* Retro Mac Cursor Arrow */
 .mac-cursor-svg {
-  position: absolute;
-  right: -10px;
-  bottom: 0px;
   width: 32px;
   height: 42px;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
-  animation: cursorBounce 2.5s ease-in-out infinite;
-}
-
-@keyframes cursorBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px) translateX(3px); }
 }
 
 /* Floating Desktop Items */
@@ -439,18 +457,33 @@ button {
   align-items: center;
   gap: 0.375rem;
   cursor: pointer;
-  transition: var(--transition);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
   z-index: 5;
 }
 
-.desktop-item:hover {
-  transform: translateY(-4px) scale(1.05);
+.desktop-item:hover,
+.desktop-item.auto-hover {
+  transform: translateY(-8px) scale(1.18);
+  z-index: 12;
+}
+
+.desktop-item:hover .mini-folder,
+.desktop-item.auto-hover .mini-folder {
+  filter: drop-shadow(0 14px 28px rgba(63, 136, 204, 0.48));
+}
+
+.desktop-item:hover .desktop-item-label,
+.desktop-item.auto-hover .desktop-item-label {
+  background: #FFFFFF;
+  color: var(--text-main);
+  box-shadow: 0 4px 14px rgba(46, 31, 26, 0.18);
 }
 
 .mini-folder {
   width: 64px;
   height: 52px;
   filter: drop-shadow(0 6px 16px rgba(63, 136, 204, 0.25));
+  transition: filter 0.3s ease;
 }
 
 .desktop-item-label {

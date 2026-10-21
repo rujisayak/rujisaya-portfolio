@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initModalA11y();
   initInteractivePreview();
+  initCursorRoaming();
   loadPortfolioData();
   loadActivitiesData();
 });
@@ -59,6 +60,82 @@ function initNavigation() {
       }
     });
   });
+}
+
+// Animated Retro Cursor Roaming over Desktop Folders
+function initCursorRoaming() {
+  const container = document.getElementById('desktopMainDisplay');
+  const cursor = document.getElementById('desktopRoamingCursor');
+  if (!container || !cursor) return;
+
+  const targets = [
+    '.center-folder-showcase',
+    '.item-folder-projects',
+    '.item-folder-about',
+    '.item-folder-contact',
+    '.item-folder-activity',
+    '.item-folder-resume'
+  ];
+  let idx = 0;
+  let isPaused = false;
+  let tourTimer = null;
+  let resumeTimer = null;
+
+  function step() {
+    if (isPaused) return;
+    document.querySelectorAll('.desktop-anim-target').forEach(el => el.classList.remove('auto-hover'));
+
+    const selector = targets[idx];
+    const target = container.querySelector(selector);
+    if (!target) return;
+
+    const cRect = container.getBoundingClientRect();
+    const tRect = target.getBoundingClientRect();
+
+    const isCenter = selector === '.center-folder-showcase';
+    const x = (tRect.left - cRect.left) + tRect.width * (isCenter ? 0.68 : 0.6);
+    const y = (tRect.top - cRect.top) + tRect.height * (isCenter ? 0.65 : 0.55);
+
+    cursor.style.transform = `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`;
+
+    setTimeout(() => {
+      if (isPaused) return;
+      target.classList.add('auto-hover');
+      cursor.classList.add('is-clicking');
+      setTimeout(() => cursor.classList.remove('is-clicking'), 180);
+
+      tourTimer = setTimeout(() => {
+        if (isPaused) return;
+        target.classList.remove('auto-hover');
+        idx = (idx + 1) % targets.length;
+        step();
+      }, 1300);
+    }, 950);
+  }
+
+  // Initial delay before roaming starts
+  setTimeout(step, 800);
+
+  // Pause on real user mouse hover over canvas
+  const canvas = document.querySelector('.desktop-canvas') || container;
+  if (canvas) {
+    canvas.addEventListener('mouseenter', () => {
+      isPaused = true;
+      cursor.style.opacity = '0';
+      document.querySelectorAll('.desktop-anim-target').forEach(el => el.classList.remove('auto-hover'));
+      if (tourTimer) clearTimeout(tourTimer);
+      if (resumeTimer) clearTimeout(resumeTimer);
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => {
+        isPaused = false;
+        cursor.style.opacity = '1';
+        step();
+      }, 1500);
+    });
+  }
 }
 
 // Fetch Profile & Case Studies from API
