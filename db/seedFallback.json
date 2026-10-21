@@ -82,13 +82,20 @@
   "caseStudies": [
     {
       "id": "leave-wfh-management",
-      "title": "Leave & WFH Management System",
-      "category": "ENTERPRISE SAAS & HR TECH",
-      "badge": "Live Interactive App",
+      "projectNum": 1,
+      "displayTitle": "Leaya 🐾",
+      "fullTitle": "Leaya - All-in-One Employee Management Platform",
+      "shortSubtitle": "Empowering enterprise teams with interactive HR SaaS solutions.",
+      "category": "enterprise saas & hr tech",
+      "filterCategory": "enterprise",
+      "badge": "live interactive",
+      "badgeType": "live",
       "featured": true,
+      "date": "Jan 2026",
       "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
       "image": "/assets/portfolio/leave_wfh_screenshot.png",
       "liveUrl": "https://leave-wfh-management.vercel.app/",
+      "githubUrl": "https://github.com/rujisayak",
       "tags": [
         "Enterprise SaaS",
         "HR Operations",
@@ -96,6 +103,159 @@
         "TypeScript",
         "Tailwind CSS",
         "React 18"
+      ],
+      "previewCards": [
+        {
+          "title": "Interactive Dashboard",
+          "date": "Jan 2026",
+          "image": "/assets/portfolio/leave_wfh_screenshot.png",
+          "type": "laptop"
+        },
+        {
+          "title": "Attendance & RBAC Matrix",
+          "date": "Oct 2025",
+          "image": "/assets/portfolio/page_6.png",
+          "type": "card"
+        }
+      ],
+      "techStack": [
+        {
+          "name": "React 18",
+          "type": "react"
+        },
+        {
+          "name": "Figma",
+          "type": "figma"
+        },
+        {
+          "name": "Tailwind CSS",
+          "type": "tailwind"
+        },
+        {
+          "name": "TypeScript",
+          "type": "typescript"
+        }
+      ],
+      "pillars": [
+        {
+          "icon": "dashboard",
+          "label": "Interactive Dashboard"
+        },
+        {
+          "icon": "users",
+          "label": "Seamless HR Flow"
+        },
+        {
+          "icon": "analytics",
+          "label": "Team Analytics"
+        },
+        {
+          "icon": "workflows",
+          "label": "Automated Workflows"
+        }
+      ],
+      "highlights": [
+        {
+          "icon": "link",
+          "label": "100% Custom Components"
+        },
+        {
+          "icon": "analytics",
+          "label": "Interactive Analytics"
+        },
+        {
+          "icon": "database",
+          "label": "Complex Data Handling"
+        },
+        {
+          "icon": "uiux",
+          "label": "Seamless UI/UX"
+        },
+        {
+          "icon": "security",
+          "label": "Secure Data Flow"
+        },
+        {
+          "icon": "templates",
+          "label": "30+ Screen Templates"
+        }
+      ],
+      "styleGuide": {
+        "headingFont": "Leaya Bold",
+        "bodyFont": "Inter",
+        "palette": [
+          {
+            "name": "Warm Cream",
+            "hex": "#FAF7F2"
+          },
+          {
+            "name": "Dark Espresso",
+            "hex": "#231815"
+          },
+          {
+            "name": "Emerald Green",
+            "hex": "#10B981"
+          },
+          {
+            "name": "Accent Blue",
+            "hex": "#3B82F6"
+          },
+          {
+            "name": "Muted Slate",
+            "hex": "#64748B"
+          }
+        ]
+      },
+      "featureZoom": {
+        "title": "Automated Pro-rata Thai Labor Vacation Engine",
+        "description": "คำนวณโควตาวันลาพักร้อน Year 0 และ Year 1+ อัตโนมัติตามวันเริ่มงานและวันผ่านทดลองงาน พร้อมจำลองสิทธิ์ 3 บทบาท (Employee, Manager, HR Admin)",
+        "tags": [
+          {
+            "label": "Role",
+            "value": "End-to-End Product Designer"
+          },
+          {
+            "label": "Target Users",
+            "value": "HR, Managers & Hybrid Teams"
+          },
+          {
+            "label": "Key Solution",
+            "value": "Pro-rata Vacation & Weekly Matrix"
+          }
+        ],
+        "image": "/assets/portfolio/leave_wfh_screenshot.png"
+      },
+      "multiScreens": [
+        {
+          "title": "Dashboard Overview",
+          "image": "/assets/portfolio/leave_wfh_screenshot.png",
+          "desc": "Real-time leave balances & attendance status"
+        },
+        {
+          "title": "Team Attendance Matrix",
+          "image": "/assets/portfolio/page_6.png",
+          "desc": "Weekly in-office vs WFH headcount tracker"
+        },
+        {
+          "title": "Leave Request Drawer",
+          "image": "/assets/portfolio/page_7.png",
+          "desc": "Modal form with vacation policy validation"
+        },
+        {
+          "title": "Vacation Calculator Engine",
+          "image": "/assets/portfolio/page_8.png",
+          "desc": "Pro-rata Thai labor quota generator"
+        },
+        {
+          "title": "Employee Roster & Approval",
+          "image": "/assets/portfolio/page_9.png",
+          "desc": "Manager approval queue & team calendar"
+        },
+        {
+          "title": "3-Role RBAC Simulator",
+          "image": "/assets/portfolio/page_10.png",
+          "desc": "Instant permission test bench for QA"
+        }
       ],
       "role": "End-to-End Product Designer & Front-End Architecture",
       "targetUsers": "พนักงานทั่วไป (ยื่นใบลา/ขอ WFH), หัวหน้าทีม/ผู้จัดการ (คิวอนุมัติ & Team Matrix), ฝ่ายบุคคล/HR (ทะเบียนพนักงาน & คำนวณโควตา)",
@@ -117,13 +277,20 @@
     },
     {
       "id": "ami-booth-planner",
-      "title": "Ami's Booth Planner",
-      "category": "CREATOR SAAS & EVENT OPS",
-      "badge": "Live Interactive App",
+      "projectNum": 2,
+      "displayTitle": "Ami Booth Planner 🎨",
+      "fullTitle": "Ami Booth Planner - All-in-One Creator Event Platform",
+      "shortSubtitle": "Empowering indie creators & illustrators to organize events, detect date conflicts, and manage booth budgets seamlessly.",
+      "category": "creator economy & events",
+      "filterCategory": "creator",
+      "badge": "live interactive",
+      "badgeType": "live",
       "featured": true,
+      "date": "Jan 2026",
       "summary": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
       "image": "/assets/portfolio/ami_booth_screenshot.png",
       "liveUrl": "https://ami-booth-planner.vercel.app/",
+      "githubUrl": "https://github.com/rujisayak",
       "tags": [
         "Creator Economy",
         "Event Operations",
@@ -131,6 +298,159 @@
         "React 18",
         "MongoDB Atlas",
         "Date Conflict"
+      ],
+      "previewCards": [
+        {
+          "title": "Event Schedule & Calendar",
+          "date": "Jan 2026",
+          "image": "/assets/portfolio/ami_booth_screenshot.png",
+          "type": "laptop"
+        },
+        {
+          "title": "Date Conflict & Budget Ledger",
+          "date": "Oct 2025",
+          "image": "/assets/portfolio/page_11.png",
+          "type": "card"
+        }
+      ],
+      "techStack": [
+        {
+          "name": "React 18",
+          "type": "react"
+        },
+        {
+          "name": "Figma",
+          "type": "figma"
+        },
+        {
+          "name": "Material UI v6",
+          "type": "mui"
+        },
+        {
+          "name": "MongoDB Atlas",
+          "type": "mongodb"
+        }
+      ],
+      "pillars": [
+        {
+          "icon": "dashboard",
+          "label": "Calendar Conflict Detection"
+        },
+        {
+          "icon": "users",
+          "label": "Partial Acceptance Flow"
+        },
+        {
+          "icon": "analytics",
+          "label": "Budget Separation"
+        },
+        {
+          "icon": "workflows",
+          "label": "Cloud & Demo Sync"
+        }
+      ],
+      "highlights": [
+        {
+          "icon": "link",
+          "label": "100% Custom Components"
+        },
+        {
+          "icon": "analytics",
+          "label": "Smart Conflict Alerts"
+        },
+        {
+          "icon": "database",
+          "label": "Partial Day Acceptance"
+        },
+        {
+          "icon": "uiux",
+          "label": "Pastel Pink Design System"
+        },
+        {
+          "icon": "security",
+          "label": "Secure Cloud & Sandbox"
+        },
+        {
+          "icon": "templates",
+          "label": "20+ Creator Workflows"
+        }
+      ],
+      "styleGuide": {
+        "headingFont": "Ami Display",
+        "bodyFont": "Inter",
+        "palette": [
+          {
+            "name": "Blush White",
+            "hex": "#FFF0F5"
+          },
+          {
+            "name": "Dark Espresso",
+            "hex": "#231815"
+          },
+          {
+            "name": "Pastel Rose",
+            "hex": "#FF6B8B"
+          },
+          {
+            "name": "Lilac Purple",
+            "hex": "#8B5CF6"
+          },
+          {
+            "name": "Golden Honey",
+            "hex": "#F59E0B"
+          }
+        ]
+      },
+      "featureZoom": {
+        "title": "Smart Date Conflict & Partial Acceptance Engine",
+        "description": "ระบบตรวจจับวันสมัคร วันประกาศผล และวันจัดบูธที่ชนกันแบบเรียลไทม์ พร้อมรองรับงานหลายวันที่ได้รับการคัดเลือกเพียงบางวัน โดยคำนวณงบประมาณแยกตามวันที่ยืนยันจริง",
+        "tags": [
+          {
+            "label": "Role",
+            "value": "UX/UI Designer & Full-Stack Developer"
+          },
+          {
+            "label": "Target Users",
+            "value": "Illustrators, Comic Artists & Craft Brands"
+          },
+          {
+            "label": "Key Solution",
+            "value": "Conflict Detection & Budget Ledger"
+          }
+        ],
+        "image": "/assets/portfolio/ami_booth_screenshot.png"
+      },
+      "multiScreens": [
+        {
+          "title": "Month Grid Calendar",
+          "image": "/assets/portfolio/ami_booth_screenshot.png",
+          "desc": "Visual monthly schedule with status badges"
+        },
+        {
+          "title": "Agenda & Conflict View",
+          "image": "/assets/portfolio/page_11.png",
+          "desc": "Timeline list with overlapping date alerts"
+        },
+        {
+          "title": "Booth Application Ledger",
+          "image": "/assets/portfolio/page_12.png",
+          "desc": "Filterable table of all submitted events"
+        },
+        {
+          "title": "Partial Acceptance Modal",
+          "image": "/assets/portfolio/page_2.png",
+          "desc": "Day-by-day confirmation & fee recalibration"
+        },
+        {
+          "title": "Budget Analytics Breakdown",
+          "image": "/assets/portfolio/page_3.png",
+          "desc": "Paid vs pending expense transparency"
+        },
+        {
+          "title": "Demo Sandbox Mode",
+          "image": "/assets/portfolio/page_4.png",
+          "desc": "Local session testing without cloud credentials"
+        }
       ],
       "role": "UX/UI Designer & Full-Stack Developer",
       "targetUsers": "นักวาดภาพประกอบ (Illustrators), นักเขียนการ์ตูน, ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",

@@ -78,7 +78,8 @@ const handleGetProjects = async (req, res) => {
     if (db) {
       let list = await db.collection('case_studies').find({}).toArray();
       const fallbackIds = new Set(fallbackStudies.map(s => s.id));
-      const needsFullSync = list.length !== fallbackStudies.length || list.some(item => !fallbackIds.has(item.id));
+      const needsFullSync = list.length !== fallbackStudies.length || 
+        list.some(item => !fallbackIds.has(item.id) || !item.displayTitle || !item.highlights);
       
       if (needsFullSync) {
         await db.collection('case_studies').deleteMany({});
