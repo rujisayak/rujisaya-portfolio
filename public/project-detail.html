@@ -322,73 +322,208 @@
         </div>
       </div>
 
-      <!-- Section D: Row 3: Deep-Dive Feature Showcase & All Screens Grid -->
-      <div class="bento-row bento-row-deepdive">
-        <!-- Left Card: Standout Feature Zoom-in -->
-        <div class="bento-card bento-card-feature-zoom">
-          <div class="zoom-header-block">
-            <span class="bento-sublabel">Feature Spotlight</span>
-            <h3 class="zoom-feature-title" id="detailZoomTitle">Automated Pro-rata Thai Labor Vacation Engine</h3>
-            <p class="zoom-feature-desc" id="detailZoomDesc">คำนวณโควตาวันลาพักร้อน Year 0 และ Year 1+ อัตโนมัติตามวันเริ่มงานและวันผ่านทดลองงาน พร้อมจำลองสิทธิ์ 3 บทบาท (Employee, Manager, HR Admin)</p>
-          </div>
+      <!-- Section D: Horizontal Info Strip (3 Columns) -->
+      <div class="project-info-strip" id="projectInfoStrip">
+        <div class="info-strip-card">
+          <span class="info-strip-label"><span class="info-strip-dot"></span> Role</span>
+          <span class="info-strip-val" id="infoStripRole">End-to-End Product Designer &amp; Frontend</span>
+        </div>
+        <div class="info-strip-card">
+          <span class="info-strip-label"><span class="info-strip-dot"></span> Target Users</span>
+          <span class="info-strip-val" id="infoStripUsers">HR, People Operations &amp; Hybrid Teams</span>
+        </div>
+        <div class="info-strip-card">
+          <span class="info-strip-label"><span class="info-strip-dot"></span> Key Solution</span>
+          <span class="info-strip-val" id="infoStripSolution">Pro-rata Vacation Engine &amp; Attendance Matrix</span>
+        </div>
+      </div>
 
-          <!-- Floating Feature Tags/Pills -->
-          <div class="zoom-meta-tags-list" id="detailZoomTags">
-            <div class="zoom-meta-pill">
-              <span class="pill-key">Role:</span>
-              <span class="pill-value">End-to-End Product Designer</span>
-            </div>
-            <div class="zoom-meta-pill">
-              <span class="pill-key">Target Users:</span>
-              <span class="pill-value">HR, Managers &amp; Hybrid Teams</span>
-            </div>
-            <div class="zoom-meta-pill">
-              <span class="pill-key">Key Solution:</span>
-              <span class="pill-value">Pro-rata Vacation &amp; Weekly Matrix</span>
-            </div>
+      <!-- Section E: 2-Column Visual Showcase Grid (UI8 / Keraton Studio Aesthetic) -->
+      <div class="visual-showcase-grid" id="visualShowcaseGrid">
+        <!-- Card 1: Pattern A (Layered Browser Composition) -->
+        <div class="showcase-card card-theme-leaya-1" id="showcaseCard1">
+          <div class="showcase-card-header">
+            <span class="showcase-tag" id="sc1Tag">Overview &amp; Dashboard</span>
+            <span class="showcase-screen-name" id="sc1ScreenName">Interactive Web Portal</span>
           </div>
-
-          <!-- UI Window Mockup -->
-          <div class="zoom-ui-window">
-            <div class="window-nav-bar">
-              <div class="window-traffic-dots">
-                <span class="w-dot red"></span>
-                <span class="w-dot yellow"></span>
-                <span class="w-dot green"></span>
+          <div class="showcase-stage stage-layered">
+            <div class="browser-layer bg-layer">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="b-dot red"></span>
+                  <span class="b-dot yellow"></span>
+                  <span class="b-dot green"></span>
+                </div>
+                <div class="browser-url-pill" id="sc1BgUrl">leave-wfh-management.vercel.app/calendar</div>
               </div>
-              <div class="window-address-pill" id="detailWindowAddress">leave-wfh-management.vercel.app</div>
+              <div class="browser-screen">
+                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Secondary Screen View" id="sc1BgImg" loading="lazy">
+              </div>
             </div>
-            <div class="window-viewport-wrap">
-              <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Leaya Feature Showcase" id="detailZoomImg" loading="lazy">
+            <div class="browser-layer fg-layer">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="b-dot red"></span>
+                  <span class="b-dot yellow"></span>
+                  <span class="b-dot green"></span>
+                </div>
+                <div class="browser-url-pill" id="sc1FgUrl">leave-wfh-management.vercel.app/dashboard</div>
+              </div>
+              <div class="browser-screen">
+                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Primary Screen View" id="sc1FgImg" loading="lazy">
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Card: Multi-Screen Grid -->
-        <div class="bento-card bento-card-screens-grid">
-          <div class="screens-header-block">
-            <span class="bento-sublabel">Screen Ecosystem</span>
-            <h3 class="screens-grid-title">Comprehensive UI Workflows</h3>
-            <p class="screens-grid-desc">Consistent component patterns across 2 responsive interfaces.</p>
+        <!-- Card 2: Pattern B (3D Angled Device Closeup) -->
+        <div class="showcase-card card-theme-leaya-2 dark-header" id="showcaseCard2">
+          <div class="showcase-card-header">
+            <span class="showcase-tag" id="sc2Tag">Hero Experience</span>
+            <span class="showcase-screen-name" id="sc2ScreenName">High-Density Dashboard Display</span>
           </div>
-
-          <div class="bento-screens-cards-grid" id="detailScreensGrid">
-            <div class="screen-item-card">
-              <div class="screen-img-box">
-                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Dashboard Overview" loading="lazy">
+          <div class="showcase-stage stage-device">
+            <div class="device-laptop-stage">
+              <div class="device-laptop-lid">
+                <div class="device-laptop-camera"></div>
+                <div class="device-laptop-display">
+                  <img src="/assets/portfolio/leaya_screenshot_full.png" alt="3D Laptop Device Mockup" id="sc2DisplayImg" loading="lazy">
+                </div>
               </div>
-              <div class="screen-meta-row">
-                <span class="screen-index-badge">01</span>
-                <span class="screen-title-text">Dashboard Overview</span>
+              <div class="device-laptop-deck">
+                <div class="device-laptop-notch"></div>
               </div>
             </div>
-            <div class="screen-item-card">
-              <div class="screen-img-box">
-                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Team Attendance Matrix" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Card 3: Pattern A (Layered Browser Composition) -->
+        <div class="showcase-card card-theme-leaya-3" id="showcaseCard3">
+          <div class="showcase-card-header">
+            <span class="showcase-tag" id="sc3Tag">Core Workflow 01</span>
+            <span class="showcase-screen-name" id="sc3ScreenName">Weekly Attendance &amp; Headcount Matrix</span>
+          </div>
+          <div class="showcase-stage stage-layered">
+            <div class="browser-layer bg-layer">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="b-dot red"></span>
+                  <span class="b-dot yellow"></span>
+                  <span class="b-dot green"></span>
+                </div>
+                <div class="browser-url-pill" id="sc3BgUrl">leave-wfh-management.vercel.app/team</div>
               </div>
-              <div class="screen-meta-row">
-                <span class="screen-index-badge">02</span>
-                <span class="screen-title-text">Team Attendance Matrix</span>
+              <div class="browser-screen">
+                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Secondary Screen View" id="sc3BgImg" loading="lazy">
+              </div>
+            </div>
+            <div class="browser-layer fg-layer">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="b-dot red"></span>
+                  <span class="b-dot yellow"></span>
+                  <span class="b-dot green"></span>
+                </div>
+                <div class="browser-url-pill" id="sc3FgUrl">leave-wfh-management.vercel.app/matrix</div>
+              </div>
+              <div class="browser-screen">
+                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Primary Screen View" id="sc3FgImg" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Pattern A (Layered Browser Composition) -->
+        <div class="showcase-card card-theme-leaya-4" id="showcaseCard4">
+          <div class="showcase-card-header">
+            <span class="showcase-tag" id="sc4Tag">Core Workflow 02</span>
+            <span class="showcase-screen-name" id="sc4ScreenName">Team Approvals &amp; Conflict Detection</span>
+          </div>
+          <div class="showcase-stage stage-layered">
+            <div class="browser-layer bg-layer">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="b-dot red"></span>
+                  <span class="b-dot yellow"></span>
+                  <span class="b-dot green"></span>
+                </div>
+                <div class="browser-url-pill" id="sc4BgUrl">leave-wfh-management.vercel.app/requests</div>
+              </div>
+              <div class="browser-screen">
+                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Secondary Screen View" id="sc4BgImg" loading="lazy">
+              </div>
+            </div>
+            <div class="browser-layer fg-layer">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="b-dot red"></span>
+                  <span class="b-dot yellow"></span>
+                  <span class="b-dot green"></span>
+                </div>
+                <div class="browser-url-pill" id="sc4FgUrl">leave-wfh-management.vercel.app/approvals</div>
+              </div>
+              <div class="browser-screen">
+                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Primary Screen View" id="sc4FgImg" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Pattern A (Layered Browser Composition) -->
+        <div class="showcase-card card-theme-leaya-5" id="showcaseCard5">
+          <div class="showcase-card-header">
+            <span class="showcase-tag" id="sc5Tag">Analytics &amp; System Rules</span>
+            <span class="showcase-screen-name" id="sc5ScreenName">Pro-rata Vacation Engine &amp; Quotas</span>
+          </div>
+          <div class="showcase-stage stage-layered">
+            <div class="browser-layer bg-layer">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="b-dot red"></span>
+                  <span class="b-dot yellow"></span>
+                  <span class="b-dot green"></span>
+                </div>
+                <div class="browser-url-pill" id="sc5BgUrl">leave-wfh-management.vercel.app/analytics</div>
+              </div>
+              <div class="browser-screen">
+                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Secondary Screen View" id="sc5BgImg" loading="lazy">
+              </div>
+            </div>
+            <div class="browser-layer fg-layer">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span class="b-dot red"></span>
+                  <span class="b-dot yellow"></span>
+                  <span class="b-dot green"></span>
+                </div>
+                <div class="browser-url-pill" id="sc5FgUrl">leave-wfh-management.vercel.app/quotas</div>
+              </div>
+              <div class="browser-screen">
+                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Primary Screen View" id="sc5FgImg" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Pattern C (Tilted Multi-Page Masonry / Collage) -->
+        <div class="showcase-card card-theme-leaya-6 dark-header" id="showcaseCard6">
+          <div class="showcase-card-header">
+            <span class="showcase-tag" id="sc6Tag">Design System</span>
+            <span class="showcase-screen-name" id="sc6ScreenName">Complete Responsive UI Ecosystem</span>
+          </div>
+          <div class="showcase-stage stage-collage">
+            <div class="collage-tilted-grid" id="sc6CollageGrid">
+              <div class="collage-col col-1">
+                <div class="collage-screen-frame"><img src="/assets/portfolio/leaya_screenshot_full.png" alt="UI Screen 1" id="sc6Img1" loading="lazy"></div>
+                <div class="collage-screen-frame"><img src="/assets/portfolio/leave_wfh_screenshot.png" alt="UI Screen 2" id="sc6Img2" loading="lazy"></div>
+              </div>
+              <div class="collage-col col-2">
+                <div class="collage-screen-frame"><img src="/assets/portfolio/leave_wfh_screenshot.png" alt="UI Screen 3" id="sc6Img3" loading="lazy"></div>
+                <div class="collage-screen-frame"><img src="/assets/portfolio/leaya_screenshot_full.png" alt="UI Screen 4" id="sc6Img4" loading="lazy"></div>
+              </div>
+              <div class="collage-col col-3">
+                <div class="collage-screen-frame"><img src="/assets/portfolio/leaya_screenshot_full.png" alt="UI Screen 5" id="sc6Img5" loading="lazy"></div>
+                <div class="collage-screen-frame"><img src="/assets/portfolio/leave_wfh_screenshot.png" alt="UI Screen 6" id="sc6Img6" loading="lazy"></div>
               </div>
             </div>
           </div>

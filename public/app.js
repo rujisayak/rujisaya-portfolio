@@ -1083,7 +1083,145 @@ function hydrateProjectDetailView(study) {
     `).join('');
   }
 
-  // Feature Zoom
+  // Update 3-Column Info Strip
+  const infoRole = document.getElementById('infoStripRole');
+  if (infoRole) {
+    infoRole.textContent = study.role || "End-to-End Product Designer & Front-End";
+  }
+  const infoUsers = document.getElementById('infoStripUsers');
+  if (infoUsers) {
+    infoUsers.textContent = study.targetUsers ? (study.targetUsers.length > 55 ? study.targetUsers.substring(0, 52) + '...' : study.targetUsers) : "HR, People Operations & Hybrid Teams";
+  }
+  const infoSolution = document.getElementById('infoStripSolution');
+  if (infoSolution) {
+    infoSolution.textContent = study.keySolution || (study.id === 'ami-booth-planner' ? "Date Conflict Detection & Event Budget Ledger" : "Pro-rata Vacation Engine & Attendance Matrix");
+  }
+
+  // Visual-First Marketplace Showcase Grid (UI8 / Keraton Studio Aesthetic)
+  const isAmi = (study.id === 'ami-booth-planner' || (study.slug && study.slug.includes('ami')));
+  const themePrefix = isAmi ? 'card-theme-ami-' : 'card-theme-leaya-';
+
+  // Apply theme classes to showcase cards 1 to 6
+  for (let i = 1; i <= 6; i++) {
+    const cardEl = document.getElementById(`showcaseCard${i}`);
+    if (cardEl) {
+      for (let t = 1; t <= 6; t++) {
+        cardEl.classList.remove(`card-theme-leaya-${t}`, `card-theme-ami-${t}`);
+      }
+      cardEl.classList.add(`${themePrefix}${i}`);
+      if (i === 2 || i === 6) {
+        cardEl.classList.add('dark-header');
+      } else {
+        cardEl.classList.remove('dark-header');
+      }
+    }
+  }
+
+  if (isAmi) {
+    const amiCal = '/assets/portfolio/ami_booth_calendar.png';
+    const amiFull = '/assets/portfolio/ami_booth_screenshot_full.png';
+    const amiCrop = '/assets/portfolio/ami_booth_screenshot.png';
+
+    // Card 1
+    setElementText('sc1Tag', 'Overview & Calendar');
+    setElementText('sc1ScreenName', 'Event Schedule & Booth Tracker');
+    setElementSrc('sc1FgImg', amiCal);
+    setElementText('sc1FgUrl', 'ami-booth-planner.vercel.app/calendar');
+    setElementSrc('sc1BgImg', amiFull);
+    setElementText('sc1BgUrl', 'ami-booth-planner.vercel.app/events');
+
+    // Card 2 (3D Laptop)
+    setElementText('sc2Tag', 'Hero Experience');
+    setElementText('sc2ScreenName', 'Creator Event Hub Display');
+    setElementSrc('sc2DisplayImg', amiCal);
+
+    // Card 3
+    setElementText('sc3Tag', 'Core Workflow 01');
+    setElementText('sc3ScreenName', 'Conflict Alert & Application Management');
+    setElementSrc('sc3FgImg', amiFull);
+    setElementText('sc3FgUrl', 'ami-booth-planner.vercel.app/applications');
+    setElementSrc('sc3BgImg', amiCrop);
+    setElementText('sc3BgUrl', 'ami-booth-planner.vercel.app/conflicts');
+
+    // Card 4
+    setElementText('sc4Tag', 'Core Workflow 02');
+    setElementText('sc4ScreenName', 'Partial Day Acceptance & Pass Tracker');
+    setElementSrc('sc4FgImg', amiCrop);
+    setElementText('sc4FgUrl', 'ami-booth-planner.vercel.app/passes');
+    setElementSrc('sc4BgImg', amiCal);
+    setElementText('sc4BgUrl', 'ami-booth-planner.vercel.app/booths');
+
+    // Card 5
+    setElementText('sc5Tag', 'Budget & Financials');
+    setElementText('sc5ScreenName', 'Event Cost Breakdown & Revenue Ledger');
+    setElementSrc('sc5FgImg', amiFull);
+    setElementText('sc5FgUrl', 'ami-booth-planner.vercel.app/budget');
+    setElementSrc('sc5BgImg', amiCrop);
+    setElementText('sc5BgUrl', 'ami-booth-planner.vercel.app/summary');
+
+    // Card 6 (Collage)
+    setElementText('sc6Tag', 'Design System');
+    setElementText('sc6ScreenName', 'Pastel Pink Creator UI Suite');
+    setElementSrc('sc6Img1', amiCal);
+    setElementSrc('sc6Img2', amiFull);
+    setElementSrc('sc6Img3', amiCrop);
+    setElementSrc('sc6Img4', amiCal);
+    setElementSrc('sc6Img5', amiFull);
+    setElementSrc('sc6Img6', amiCrop);
+  } else {
+    // Leaya / Enterprise
+    const leayaFull = '/assets/portfolio/leaya_screenshot_full.png';
+    const leaveWfh = '/assets/portfolio/leave_wfh_screenshot.png';
+
+    // Card 1
+    setElementText('sc1Tag', 'Overview & Dashboard');
+    setElementText('sc1ScreenName', 'Interactive Web Portal');
+    setElementSrc('sc1FgImg', leayaFull);
+    setElementText('sc1FgUrl', 'leave-wfh-management.vercel.app/dashboard');
+    setElementSrc('sc1BgImg', leaveWfh);
+    setElementText('sc1BgUrl', 'leave-wfh-management.vercel.app/calendar');
+
+    // Card 2 (3D Laptop)
+    setElementText('sc2Tag', 'Hero Experience');
+    setElementText('sc2ScreenName', 'High-Density Dashboard Display');
+    setElementSrc('sc2DisplayImg', leayaFull);
+
+    // Card 3
+    setElementText('sc3Tag', 'Core Workflow 01');
+    setElementText('sc3ScreenName', 'Weekly Attendance & Headcount Matrix');
+    setElementSrc('sc3FgImg', leaveWfh);
+    setElementText('sc3FgUrl', 'leave-wfh-management.vercel.app/matrix');
+    setElementSrc('sc3BgImg', leayaFull);
+    setElementText('sc3BgUrl', 'leave-wfh-management.vercel.app/team');
+
+    // Card 4
+    setElementText('sc4Tag', 'Core Workflow 02');
+    setElementText('sc4ScreenName', 'Team Approvals & Conflict Detection');
+    setElementSrc('sc4FgImg', leayaFull);
+    setElementText('sc4FgUrl', 'leave-wfh-management.vercel.app/approvals');
+    setElementSrc('sc4BgImg', leaveWfh);
+    setElementText('sc4BgUrl', 'leave-wfh-management.vercel.app/requests');
+
+    // Card 5
+    setElementText('sc5Tag', 'Analytics & System Rules');
+    setElementText('sc5ScreenName', 'Pro-rata Vacation Engine & Quotas');
+    setElementSrc('sc5FgImg', leaveWfh);
+    setElementText('sc5FgUrl', 'leave-wfh-management.vercel.app/quotas');
+    setElementSrc('sc5BgImg', leayaFull);
+    setElementText('sc5BgUrl', 'leave-wfh-management.vercel.app/analytics');
+
+    // Card 6 (Collage)
+    setElementText('sc6Tag', 'Design System');
+    setElementText('sc6ScreenName', 'Complete Responsive UI Ecosystem');
+    setElementSrc('sc6Img1', leayaFull);
+    setElementSrc('sc6Img2', leaveWfh);
+    setElementSrc('sc6Img3', leaveWfh);
+    setElementSrc('sc6Img4', leayaFull);
+    setElementSrc('sc6Img5', leayaFull);
+    setElementSrc('sc6Img6', leaveWfh);
+  }
+
+  // Backward compatibility fallback for any legacy elements if present
   const zoomTitle = document.getElementById('detailZoomTitle');
   if (zoomTitle) zoomTitle.textContent = featureZoom.title;
   const zoomDesc = document.getElementById('detailZoomDesc');
@@ -1097,19 +1235,8 @@ function hydrateProjectDetailView(study) {
   if (zoomAddress && study.liveUrl) {
     zoomAddress.textContent = study.liveUrl.replace('https://', '').replace(/\/$/, '');
   }
-  const zoomTags = document.getElementById('detailZoomTags');
-  if (zoomTags && featureZoom.tags) {
-    zoomTags.innerHTML = featureZoom.tags.map(t => `
-      <div class="zoom-meta-pill">
-        <span class="pill-key">${escapeHtml(t.label)}:</span>
-        <span class="pill-value">${escapeHtml(t.value)}</span>
-      </div>
-    `).join('');
-  }
-
-  // Multi Screens
   const screensGrid = document.getElementById('detailScreensGrid');
-  if (screensGrid) {
+  if (screensGrid && multiScreens) {
     screensGrid.innerHTML = multiScreens.map((screen, sIdx) => `
       <div class="screen-item-card">
         <div class="screen-img-box">
@@ -1453,4 +1580,14 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function setElementText(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text;
+}
+
+function setElementSrc(id, src) {
+  const el = document.getElementById(id);
+  if (el) el.src = src;
 }
