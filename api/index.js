@@ -122,7 +122,13 @@ const handleGetSingleProject = async (req, res) => {
 
 router.get('/case-studies', handleGetProjects);
 router.get('/case-studies/:id', handleGetSingleProject);
-router.get('/projects', handleGetProjects);
+router.get('/projects', (req, res, next) => {
+  // If requested from browser (HTML) on root /projects (not /api/projects)
+  if (req.baseUrl !== '/api' && req.originalUrl.split('?')[0] === '/projects' && req.accepts('html') && !req.xhr && (!req.headers.accept || !req.headers.accept.includes('application/json'))) {
+    return res.sendFile(path.join(__dirname, '..', 'public', 'projects.html'));
+  }
+  handleGetProjects(req, res);
+});
 router.get('/projects/:id', handleGetSingleProject);
 
 // Activities endpoint with auto-sync

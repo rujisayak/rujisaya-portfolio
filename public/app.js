@@ -1,8 +1,6 @@
 // Frontend JavaScript for Rujisaya Kuekool Portfolio
 // Dynamic Data Integration from MongoDB Atlas API
 
-let allCaseStudies = [...FALLBACK_CASE_STUDIES];
-
 // Resilient Embedded Data Fallback (Ensures projects ALWAYS render immediately)
 const FALLBACK_CASE_STUDIES = [
   {
@@ -357,20 +355,60 @@ const FALLBACK_CASE_STUDIES = [
   }
 ];
 
+let allCaseStudies = [...FALLBACK_CASE_STUDIES];
 let allActivities = [];
 let currentFilter = 'featured';
 let currentActFilter = 'all';
 let lastFocusedElement = null;
 
+// Global Progress & Refresh Toast Helpers
+function setTopProgress(pct) {
+  if (typeof window.__setTopProgress === 'function') {
+    window.__setTopProgress(pct);
+  }
+}
+
+function showRefreshStatus(text) {
+  const pill = document.getElementById('pageRefreshStatus');
+  if (!pill) return;
+  const label = pill.querySelector('.refresh-pill-text');
+  if (label && text) label.textContent = text;
+  pill.classList.add('is-active');
+}
+
+function hideRefreshStatus(doneText) {
+  const pill = document.getElementById('pageRefreshStatus');
+  if (!pill) return;
+  if (doneText) {
+    const label = pill.querySelector('.refresh-pill-text');
+    if (label) label.textContent = doneText;
+    const spinner = pill.querySelector('.refresh-spinner-icon');
+    if (spinner) spinner.classList.add('is-done');
+  }
+  setTimeout(() => {
+    pill.classList.remove('is-active');
+    setTimeout(() => {
+      const spinner = pill.querySelector('.refresh-spinner-icon');
+      if (spinner) spinner.classList.remove('is-done');
+      const label = pill.querySelector('.refresh-pill-text');
+      if (label) label.textContent = 'Refreshing portfolio...';
+    }, 300);
+  }, 500);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  setTopProgress(65);
   initNavigation();
   initCopyables();
   initContactForm();
   initModalA11y();
   initInteractivePreview();
   initCursorRoaming();
-  loadPortfolioData();
-  loadActivitiesData();
+  
+  Promise.allSettled([loadPortfolioData(), loadActivitiesData()]).then(() => {
+    setTopProgress(100);
+    hideRefreshStatus('✓ Ready');
+  });
 });
 
 // Mobile Nav & Scroll Spy
@@ -442,10 +480,20 @@ function initCursorRoaming() {
 
     const selector = targets[idx];
     const target = container.querySelector(selector);
-    if (!target) return;
+    if (!target) {
+      idx = (idx + 1) % targets.length;
+      tourTimer = setTimeout(step, 300);
+      return;
+    }
 
     const cRect = container.getBoundingClientRect();
     const tRect = target.getBoundingClientRect();
+
+    if (tRect.width === 0 || tRect.height === 0) {
+      idx = (idx + 1) % targets.length;
+      tourTimer = setTimeout(step, 300);
+      return;
+    }
 
     const isCenter = selector === '.center-folder-showcase';
     const x = (tRect.left - cRect.left) + tRect.width * (isCenter ? 0.68 : 0.6);
@@ -468,8 +516,8 @@ function initCursorRoaming() {
     }, 950);
   }
 
-  // Initial delay before roaming starts
-  setTimeout(step, 800);
+  // Initial delay before roaming starts - quick start
+  setTimeout(step, 350);
 
   // Pause on real user mouse hover over canvas
   const canvas = document.querySelector('.desktop-canvas') || container;
@@ -488,9 +536,30 @@ function initCursorRoaming() {
         isPaused = false;
         cursor.style.opacity = '1';
         step();
-      }, 1500);
+      }, 700);
     });
   }
+
+  // Handle visibility changes so roaming doesn't get stuck when switching tabs
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      isPaused = true;
+      if (tourTimer) clearTimeout(tourTimer);
+      if (resumeTimer) clearTimeout(resumeTimer);
+    } else {
+      isPaused = false;
+      cursor.style.opacity = '1';
+      tourTimer = setTimeout(step, 300);
+    }
+  });
+
+  // Re-run step smoothly on window resize
+  window.addEventListener('resize', () => {
+    if (!isPaused) {
+      if (tourTimer) clearTimeout(tourTimer);
+      tourTimer = setTimeout(step, 200);
+    }
+  });
 }
 
 // Fetch Profile & Case Studies from API with bulletproof instant render

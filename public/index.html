@@ -15,8 +15,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@600;700&family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/styles.css">
+  <script>
+    // Immediate progress bar & refresh indicator
+    window.__setTopProgress = function(pct) {
+      var bar = document.getElementById('pageTopProgressBar');
+      if (bar) {
+        bar.style.opacity = '1';
+        bar.style.width = pct + '%';
+        if (pct >= 100) {
+          setTimeout(function() {
+            bar.style.opacity = '0';
+            setTimeout(function() { bar.style.width = '0%'; }, 350);
+          }, 300);
+        }
+      }
+    };
+    // Advance progress early as HTML parses
+    document.addEventListener('readystatechange', function() {
+      if (document.readyState === 'interactive') {
+        window.__setTopProgress(55);
+      } else if (document.readyState === 'complete') {
+        window.__setTopProgress(100);
+      }
+    });
+    // Trigger on browser reload / refresh
+    window.addEventListener('beforeunload', function() {
+      var bar = document.getElementById('pageTopProgressBar');
+      if (bar) {
+        bar.style.opacity = '1';
+        bar.style.width = '75%';
+      }
+      var pill = document.getElementById('pageRefreshStatus');
+      if (pill) {
+        pill.classList.add('is-active');
+      }
+    });
+  </script>
 </head>
 <body>
+  <!-- Top Global Page Loading / Refresh Bar -->
+  <div id="pageTopProgressBar" class="page-top-progress-bar" aria-hidden="true"></div>
+
+  <!-- Sleek Mac-Style Refresh / Sync Pill Indicator -->
+  <div id="pageRefreshStatus" class="page-refresh-status" aria-live="polite">
+    <div class="refresh-pill-content">
+      <span class="refresh-spinner-icon"></span>
+      <span class="refresh-pill-text">Refreshing portfolio...</span>
+    </div>
+  </div>
+
   <!-- Floating Header / Navbar -->
   <header class="site-header">
     <div class="nav-container">
@@ -203,7 +250,129 @@
 
         <!-- Projects Grid / Bento Cards Container (Matching Screenshot Exactly) -->
         <div class="case-studies-list" id="caseStudiesContainer">
-          <div class="loading-spinner">Loading projects...</div>
+          <article class="bento-project-card" data-id="leave-wfh-management" onclick="openProjectDetail('leave-wfh-management')" role="button" tabindex="0" aria-label="Open Leaya - All-in-One Employee Management Platform Bento Showcase" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('leave-wfh-management');}">
+            <!-- Top Meta Row -->
+            <div class="bento-card-top-bar">
+              <div class="bento-meta-left">
+                <span class="bento-proj-index">project 1</span>
+                <span class="bento-status-pill status-pill-live">
+                  <span class="status-dot green"></span>
+                  <span>live interactive</span>
+                </span>
+              </div>
+              <div class="bento-meta-right">
+                <span class="bento-category-tag">enterprise saas &amp; hr tech</span>
+              </div>
+            </div>
+
+            <!-- Project Title Row -->
+            <div class="bento-card-title-row">
+              <h3 class="bento-card-title">Leaya 🐾</h3>
+              <span class="bento-open-hint">
+                <span>view showcase</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </span>
+            </div>
+
+            <!-- Inner Mockup Preview Boxes (2-Column Grid inside the card) -->
+            <div class="bento-preview-grid">
+              <!-- Box 1: Primary Dashboard Laptop Mockup -->
+              <div class="bento-preview-box">
+                <div class="mockup-laptop-wrap">
+                  <div class="mockup-laptop-lid">
+                    <div class="mockup-laptop-camera"></div>
+                    <div class="mockup-laptop-screen">
+                      <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Leaya 🐾 Preview 1" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="mockup-laptop-deck">
+                    <div class="mockup-laptop-notch"></div>
+                  </div>
+                </div>
+                <div class="preview-date-badge">Jan 2026</div>
+              </div>
+
+              <!-- Box 2: Secondary Perspective Card Mockup -->
+              <div class="bento-preview-box">
+                <div class="mockup-card-wrap">
+                  <div class="mockup-floating-window">
+                    <div class="mockup-window-header">
+                      <span class="w-dot red"></span>
+                      <span class="w-dot yellow"></span>
+                      <span class="w-dot green"></span>
+                      <span class="mockup-window-title">Attendance &amp; RBAC Matrix</span>
+                    </div>
+                    <div class="mockup-window-body">
+                      <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Leaya 🐾 Preview 2" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+                <div class="preview-date-badge">Oct 2025</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="bento-project-card" data-id="ami-booth-planner" onclick="openProjectDetail('ami-booth-planner')" role="button" tabindex="0" aria-label="Open Ami Booth Planner - All-in-One Creator Event Platform Bento Showcase" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('ami-booth-planner');}">
+            <!-- Top Meta Row -->
+            <div class="bento-card-top-bar">
+              <div class="bento-meta-left">
+                <span class="bento-proj-index">project 2</span>
+                <span class="bento-status-pill status-pill-live">
+                  <span class="status-dot green"></span>
+                  <span>live interactive</span>
+                </span>
+              </div>
+              <div class="bento-meta-right">
+                <span class="bento-category-tag">creator economy &amp; events</span>
+              </div>
+            </div>
+
+            <!-- Project Title Row -->
+            <div class="bento-card-title-row">
+              <h3 class="bento-card-title">Ami Booth Planner 🎨</h3>
+              <span class="bento-open-hint">
+                <span>view showcase</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </span>
+            </div>
+
+            <!-- Inner Mockup Preview Boxes (2-Column Grid inside the card) -->
+            <div class="bento-preview-grid">
+              <!-- Box 1: Primary Dashboard Laptop Mockup -->
+              <div class="bento-preview-box">
+                <div class="mockup-laptop-wrap">
+                  <div class="mockup-laptop-lid">
+                    <div class="mockup-laptop-camera"></div>
+                    <div class="mockup-laptop-screen">
+                      <img src="/assets/portfolio/ami_booth_calendar.png" alt="Ami Booth Planner 🎨 Preview 1" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="mockup-laptop-deck">
+                    <div class="mockup-laptop-notch"></div>
+                  </div>
+                </div>
+                <div class="preview-date-badge">Jan 2026</div>
+              </div>
+
+              <!-- Box 2: Secondary Perspective Card Mockup -->
+              <div class="bento-preview-box">
+                <div class="mockup-card-wrap">
+                  <div class="mockup-floating-window">
+                    <div class="mockup-window-header">
+                      <span class="w-dot red"></span>
+                      <span class="w-dot yellow"></span>
+                      <span class="w-dot green"></span>
+                      <span class="mockup-window-title">Date Conflict &amp; Budget Ledger</span>
+                    </div>
+                    <div class="mockup-window-body">
+                      <img src="/assets/portfolio/ami_booth_screenshot_full.png" alt="Ami Booth Planner 🎨 Preview 2" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+                <div class="preview-date-badge">Oct 2025</div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
