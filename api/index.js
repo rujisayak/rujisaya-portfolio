@@ -69,23 +69,25 @@ router.get('/profile', async (req, res) => {
   }
 });
 
-// Case studies list with auto-sync
-router.get('/case-studies', async (req, res) => {
+// Projects / Case studies list with auto-sync
+const handleGetProjects = async (req, res) => {
   try {
     const fallback = getFallbackData();
     const fallbackStudies = fallback.caseStudies || [];
     const db = await getDB();
     if (db) {
       let list = await db.collection('case_studies').find({}).toArray();
-      // Auto-sync enriched fields to MongoDB Atlas
-      const needsSync = list.length < fallbackStudies.length || (list.length > 0 && !list[0].designGoal);
-      if (needsSync) {
-        for (const s of fallbackStudies) {
-          const { _id, ...rest } = s;
-          await db.collection('case_studies').updateOne(
-            { id: s.id },
-            { $set: { ...rest, updatedAt: new Date() } },
-            { upsert: true }
+      const fallbackIds = new Set(fallbackStudies.map(s => s.id));
+      const needsFullSync = list.length !== fallbackStudies.length || list.some(item => !fallbackIds.has(item.id));
+      
+      if (needsFullSync) {
+        await db.collection('case_studies').deleteMany({});
+        if (fallbackStudies.length > 0) {
+          await db.collection('case_studies').insertMany(
+            fallbackStudies.map(s => {
+              const { _id, ...rest } = s;
+              return { ...rest, createdAt: new Date(), updatedAt: new Date() };
+            })
           );
         }
         list = await db.collection('case_studies').find({}).toArray();
@@ -97,10 +99,9 @@ router.get('/case-studies', async (req, res) => {
     console.error("Error in /case-studies:", err);
     res.json(getFallbackData().caseStudies);
   }
-});
+};
 
-// Single case study
-router.get('/case-studies/:id', async (req, res) => {
+const handleGetSingleProject = async (req, res) => {
   try {
     const { id } = req.params;
     const db = await getDB();
@@ -111,12 +112,17 @@ router.get('/case-studies/:id', async (req, res) => {
     const fallback = getFallbackData();
     const item = fallback.caseStudies.find(s => s.id === id);
     if (item) return res.json(item);
-    res.status(404).json({ error: "Case study not found" });
+    res.status(404).json({ error: "Project not found" });
   } catch (err) {
     console.error("Error in /case-studies/:id:", err);
     res.status(500).json({ error: "Server error" });
   }
-});
+};
+
+router.get('/case-studies', handleGetProjects);
+router.get('/projects', handleGetProjects);
+router.get('/case-studies/:id', handleGetSingleProject);
+router.get('/projects/:id', handleGetSingleProject);
 
 // Activities endpoint with auto-sync
 router.get('/activities', async (req, res) => {

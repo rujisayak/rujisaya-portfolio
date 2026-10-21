@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyables();
   initContactForm();
   initModalA11y();
+  initInteractivePreview();
   loadPortfolioData();
   loadActivitiesData();
 });
@@ -80,7 +81,7 @@ async function loadPortfolioData() {
   }
 }
 
-// Render Case Studies Cards (Matching Behance Screenshot 4)
+// Render Case Studies Cards (Matching Behance Screenshot 4 + Interactive Sandbox)
 function renderCaseStudies(studies) {
   const container = document.getElementById('caseStudiesContainer');
   if (!container) return;
@@ -102,8 +103,11 @@ function renderCaseStudies(studies) {
       <article class="project-showcase-card" data-id="${study.id}">
         <!-- Top Meta Row -->
         <div class="project-card-header">
-          <span class="project-num-label">project ${projNum}</span>
-          <span class="project-category-label">${escapeHtml(study.category ? study.category.toLowerCase() : 'enterprise ux')}</span>
+          <div class="project-num-badge">
+            <span class="project-num-label">project ${projNum}</span>
+            <span class="project-live-indicator"><span class="pulse-dot"></span> Live Interactive</span>
+          </div>
+          <span class="project-category-label">${escapeHtml(study.category ? study.category.toLowerCase() : 'enterprise saas')}</span>
         </div>
 
         <div class="project-card-grid">
@@ -122,7 +126,7 @@ function renderCaseStudies(studies) {
               </p>
               ${cleanGoal ? `
                 <p class="desc-p">
-                  <strong>Result:</strong> ${escapeHtml(cleanGoal)}
+                  <strong>Result / Goal:</strong> ${escapeHtml(cleanGoal)}
                 </p>
               ` : ''}
               ${study.devCollaboration ? `
@@ -136,16 +140,35 @@ function renderCaseStudies(studies) {
               ${(study.tags || []).map(t => `<span class="project-tag-pill">${escapeHtml(t)}</span>`).join('')}
             </div>
 
-            <button class="project-action-btn" onclick="openCaseStudyModal('${study.id}')" aria-label="Open project details for ${escapeHtml(study.title)}">
-              <span>View Project</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
+            <!-- Action Buttons Row -->
+            <div class="project-actions-row">
+              <button class="btn btn-primary project-play-btn" onclick="openInteractivePreview('${study.id}')" aria-label="Open Interactive Preview for ${escapeHtml(study.title)}">
+                <span class="play-icon">▶</span>
+                <span>Interactive Live Preview</span>
+              </button>
+
+              ${study.liveUrl ? `
+                <a href="${study.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-external-btn" aria-label="Open live app in new tab">
+                  <span>Launch App ↗</span>
+                </a>
+              ` : ''}
+
+              <button class="project-details-link-btn" onclick="openCaseStudyModal('${study.id}')" aria-label="View design case study story">
+                <span>Case Study Story</span>
+              </button>
+            </div>
           </div>
 
-          <!-- Right Column: Visual Mockup & Tilted Script Sticker -->
-          <div class="project-visual-col" onclick="openCaseStudyModal('${study.id}')" role="button" tabindex="0" aria-label="Preview image for ${escapeHtml(study.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseStudyModal('${study.id}');}">
+          <!-- Right Column: Visual Mockup & Interactive Click Trigger -->
+          <div class="project-visual-col" onclick="openInteractivePreview('${study.id}')" role="button" tabindex="0" aria-label="Launch interactive preview for ${escapeHtml(study.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openInteractivePreview('${study.id}');}">
             <div class="project-image-bezel">
-              <img src="${study.image}" alt="${escapeHtml(study.title)} preview" class="project-img" loading="lazy">
+              <img src="${study.image}" alt="${escapeHtml(study.title)} screenshot" class="project-img" loading="lazy">
+              <div class="project-mockup-overlay">
+                <div class="overlay-play-pill">
+                  <span class="overlay-play-icon">▶</span>
+                  <span>คลิกเพื่อทดลองเล่น Interactive Preview</span>
+                </div>
+              </div>
             </div>
             <div class="project-script-sticker">
               <span>project ${projNum}</span>
@@ -172,25 +195,124 @@ function initFilterTabs() {
       const filter = btn.getAttribute('data-filter');
       currentFilter = filter;
 
-      if (filter === 'featured') {
-        renderCaseStudies(allCaseStudies.filter(s => s.featured));
-      } else if (filter === 'all') {
+      if (filter === 'all' || filter === 'featured') {
         renderCaseStudies(allCaseStudies);
-      } else if (filter === 'rules') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('rule') || (s.category && s.category.toUpperCase().includes('LOGIC'))));
-      } else if (filter === 'operations') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('case-management') || s.id.includes('risk') || (s.category && s.category.toUpperCase().includes('OPERATIONS'))));
-      } else if (filter === 'handoff') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('handoff') || (s.tags && s.tags.includes('Developer Handoff'))));
-      } else if (filter === 'analytics') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('analytics') || s.id.includes('risk') || (s.category && s.category.toUpperCase().includes('ANALYTICS'))));
-      } else if (filter === 'threat') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('threat') || (s.category && s.category.toUpperCase().includes('THREAT'))));
-      } else if (filter === 'branding') {
-        renderCaseStudies(allCaseStudies.filter(s => s.id.includes('brand') || (s.category && s.category.toUpperCase().includes('BRAND')) || (s.tags && s.tags.includes('Logo Design'))));
+      } else if (filter === 'enterprise') {
+        renderCaseStudies(allCaseStudies.filter(s => s.id === 'leave-wfh-management' || (s.category && s.category.toUpperCase().includes('ENTERPRISE'))));
+      } else if (filter === 'creator') {
+        renderCaseStudies(allCaseStudies.filter(s => s.id === 'ami-booth-planner' || (s.category && s.category.toUpperCase().includes('CREATOR'))));
       }
     });
   });
+}
+
+// Interactive Live Preview Modal Controller
+function initInteractivePreview() {
+  const modal = document.getElementById('interactivePreviewModal');
+  const closeBtn = document.getElementById('previewModalClose');
+  const reloadBtn = document.getElementById('previewReloadBtn');
+  const iframe = document.getElementById('previewIframe');
+  const loading = document.getElementById('previewIframeLoading');
+  const wrapper = document.getElementById('previewIframeWrapper');
+  const viewportBtns = document.querySelectorAll('.viewport-btn');
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeInteractivePreview);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeInteractivePreview();
+      }
+    });
+  }
+
+  if (reloadBtn && iframe) {
+    reloadBtn.addEventListener('click', () => {
+      if (loading) loading.style.display = 'flex';
+      const curSrc = iframe.src;
+      iframe.src = 'about:blank';
+      setTimeout(() => {
+        iframe.src = curSrc;
+      }, 120);
+    });
+  }
+
+  if (iframe && loading) {
+    iframe.addEventListener('load', () => {
+      if (iframe.src && iframe.src !== 'about:blank') {
+        loading.style.display = 'none';
+      }
+    });
+  }
+
+  // Viewport switchers (Desktop, Tablet, Mobile)
+  viewportBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      viewportBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const vp = btn.getAttribute('data-viewport');
+      if (wrapper) {
+        wrapper.className = `preview-iframe-wrapper viewport-${vp}`;
+      }
+    });
+  });
+
+  // ESC key listener
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const prevModal = document.getElementById('interactivePreviewModal');
+      if (prevModal && prevModal.classList.contains('active')) {
+        closeInteractivePreview();
+      }
+    }
+  });
+}
+
+function openInteractivePreview(projectId) {
+  const project = allCaseStudies.find(p => p.id === projectId);
+  if (!project || !project.liveUrl) return;
+
+  const modal = document.getElementById('interactivePreviewModal');
+  const iframe = document.getElementById('previewIframe');
+  const loading = document.getElementById('previewIframeLoading');
+  const urlDisplay = document.getElementById('previewUrlDisplay');
+  const externalLink = document.getElementById('previewExternalLink');
+  const wrapper = document.getElementById('previewIframeWrapper');
+
+  if (urlDisplay) urlDisplay.textContent = project.liveUrl;
+  if (externalLink) externalLink.href = project.liveUrl;
+  
+  if (wrapper) {
+    wrapper.className = 'preview-iframe-wrapper viewport-desktop';
+  }
+  document.querySelectorAll('.viewport-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-viewport') === 'desktop');
+  });
+
+  if (loading) loading.style.display = 'flex';
+
+  if (iframe) {
+    iframe.src = project.liveUrl;
+  }
+
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeInteractivePreview() {
+  const modal = document.getElementById('interactivePreviewModal');
+  const iframe = document.getElementById('previewIframe');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  if (iframe) {
+    iframe.src = 'about:blank';
+  }
 }
 
 // Case Study Modal with 8-Point Storytelling Structure
@@ -334,10 +456,14 @@ function openCaseStudyModal(studyId) {
 
     <!-- Modal Footer Actions -->
     <div class="modal-footer-actions">
-      <a href="/PortfolioRujisaya.pdf" target="_blank" class="btn btn-primary" rel="noopener noreferrer">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        View in Full Portfolio Deck (PDF)
-      </a>
+      ${study.liveUrl ? `
+        <button class="btn btn-primary" onclick="closeCaseStudyModal(); openInteractivePreview('${study.id}');">
+          <span>🎮 Launch Interactive Sandbox</span>
+        </button>
+        <a href="${study.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <span>Launch App ↗</span>
+        </a>
+      ` : ''}
       <button class="btn btn-secondary" onclick="closeCaseStudyModal()">
         Close
       </button>

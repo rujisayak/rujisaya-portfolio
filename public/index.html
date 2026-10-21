@@ -188,19 +188,14 @@
             <span class="desktop-item-label">projects</span>
           </div>
           <h2 class="chunky-display-title">projects</h2>
-          <p class="case-section-subtitle">some of the enterprise and cybersecurity designs I created in 2023–2026</p>
+          <p class="case-section-subtitle">interactive web applications and enterprise platforms I designed &amp; developed</p>
         </div>
 
         <!-- Filter Tabs -->
         <div class="filter-bar" id="categoryFilters" role="tablist" aria-label="Project categories">
-          <button class="filter-btn active" data-filter="featured" role="tab" aria-selected="true">★ featured projects (4)</button>
-          <button class="filter-btn" data-filter="all" role="tab" aria-selected="false">all projects (7)</button>
-          <button class="filter-btn" data-filter="rules" role="tab" aria-selected="false">rule engine &amp; logic</button>
-          <button class="filter-btn" data-filter="operations" role="tab" aria-selected="false">incident response</button>
-          <button class="filter-btn" data-filter="handoff" role="tab" aria-selected="false">dev handoff &amp; ui flows</button>
-          <button class="filter-btn" data-filter="analytics" role="tab" aria-selected="false">data &amp; dashboards</button>
-          <button class="filter-btn" data-filter="threat" role="tab" aria-selected="false">threat intel</button>
-          <button class="filter-btn" data-filter="branding" role="tab" aria-selected="false">brand &amp; logo design</button>
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">★ all projects (2)</button>
+          <button class="filter-btn" data-filter="enterprise" role="tab" aria-selected="false">enterprise saas &amp; hr</button>
+          <button class="filter-btn" data-filter="creator" role="tab" aria-selected="false">creator economy &amp; events</button>
         </div>
 
         <!-- Projects Grid / Cards List -->
@@ -480,6 +475,53 @@
       </div>
     </section>
   </main>
+
+  <!-- INTERACTIVE LIVE PREVIEW MODAL -->
+  <div class="modal-overlay preview-modal-overlay" id="interactivePreviewModal" role="dialog" aria-modal="true" aria-labelledby="previewModalTitle" tabindex="-1">
+    <div class="preview-modal-container">
+      <!-- Browser Mockup Window Header -->
+      <div class="preview-window-header">
+        <div class="preview-window-controls">
+          <button class="preview-dot dot-close" id="previewModalClose" aria-label="Close preview window"></button>
+          <span class="preview-dot dot-min"></span>
+          <span class="preview-dot dot-max"></span>
+        </div>
+        
+        <div class="preview-url-bar">
+          <span class="preview-url-lock">🔒</span>
+          <span class="preview-url-text" id="previewUrlDisplay">https://...</span>
+          <button class="preview-reload-btn" id="previewReloadBtn" title="Reload Sandbox State" aria-label="Reload Sandbox">↻</button>
+        </div>
+
+        <div class="preview-viewport-actions">
+          <div class="viewport-toggle-group">
+            <button class="viewport-btn active" data-viewport="desktop" title="Desktop View (100%)">💻 Desktop</button>
+            <button class="viewport-btn" data-viewport="tablet" title="Tablet View (768px)">📱 Tablet</button>
+            <button class="viewport-btn" data-viewport="mobile" title="Mobile View (375px)">📱 Mobile</button>
+          </div>
+          <a href="#" target="_blank" rel="noopener noreferrer" id="previewExternalLink" class="preview-external-btn" title="Open in new window">
+            <span>Launch App ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Sandbox Notice Banner -->
+      <div class="preview-sandbox-banner">
+        <span class="sandbox-pill">🎮 Sandbox Demo Mode</span>
+        <span class="sandbox-desc">
+          คุณสามารถทดลองใช้งาน กดเล่นฟีเจอร์ สร้างข้อมูล และสลับสิทธิ์ได้อิสระ ข้อมูลจะทำงานใน Session Preview โดยไม่กระทบฐานข้อมูลหลัก (เฉพาะเมื่อล็อกอินด้วยอีเมลผู้ดูแลถึงจะบันทึกข้อมูลจริง)
+        </span>
+      </div>
+
+      <!-- Embedded Iframe Wrapper -->
+      <div class="preview-iframe-wrapper viewport-desktop" id="previewIframeWrapper">
+        <div class="preview-iframe-loading" id="previewIframeLoading">
+          <div class="loading-spinner">กำลังโหลด Interactive App Preview...</div>
+        </div>
+        <iframe id="previewIframe" src="" title="Live Project Preview" allow="clipboard-read; clipboard-write; geolocation"></iframe>
+      </div>
+    </div>
+  </div>
 
   <!-- PROJECT DETAILS MODAL -->
   <div class="modal-overlay" id="caseStudyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
