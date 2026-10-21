@@ -149,6 +149,7 @@ async function loadPortfolioData() {
     const featuredStudies = allCaseStudies.filter(s => s.featured);
     renderCaseStudies(featuredStudies.length > 0 ? featuredStudies : allCaseStudies);
     initFilterTabs();
+    initProjectsSearch();
   } catch (err) {
     console.error("Error loading case studies:", err);
     const container = document.getElementById('caseStudiesContainer');
@@ -267,8 +268,13 @@ function renderCaseStudies(studies) {
   const container = document.getElementById('caseStudiesContainer');
   if (!container) return;
 
+  const countMeta = document.getElementById('projectsCountMeta');
+  if (countMeta) {
+    countMeta.textContent = `showing ${studies ? studies.length : 0} of ${allCaseStudies.length} projects`;
+  }
+
   if (!studies || studies.length === 0) {
-    container.innerHTML = `<div class="loading-spinner">No projects found for this category.</div>`;
+    container.innerHTML = `<div class="loading-spinner">No projects found matching your search.</div>`;
     return;
   }
 
@@ -363,15 +369,42 @@ function initFilterTabs() {
       
       const filter = btn.getAttribute('data-filter');
       currentFilter = filter;
-
-      if (filter === 'all' || filter === 'featured') {
-        renderCaseStudies(allCaseStudies);
-      } else if (filter === 'enterprise') {
-        renderCaseStudies(allCaseStudies.filter(s => s.filterCategory === 'enterprise' || s.id.includes('leave') || s.id.includes('leaya') || (s.category && s.category.toLowerCase().includes('enterprise'))));
-      } else if (filter === 'creator') {
-        renderCaseStudies(allCaseStudies.filter(s => s.filterCategory === 'creator' || s.id.includes('ami') || (s.category && s.category.toLowerCase().includes('creator'))));
-      }
+      applyCurrentFilter();
     });
+  });
+}
+
+function applyCurrentFilter() {
+  const searchInput = document.getElementById('projectSearchInput');
+  const q = searchInput ? (searchInput.value || '').toLowerCase().trim() : '';
+
+  let pool = allCaseStudies;
+  if (currentFilter === 'enterprise') {
+    pool = allCaseStudies.filter(s => s.filterCategory === 'enterprise' || s.id.includes('leave') || s.id.includes('leaya') || (s.category && s.category.toLowerCase().includes('enterprise')));
+  } else if (currentFilter === 'creator') {
+    pool = allCaseStudies.filter(s => s.filterCategory === 'creator' || s.id.includes('ami') || (s.category && s.category.toLowerCase().includes('creator')));
+  }
+
+  if (q) {
+    pool = pool.filter(s => {
+      const matchTitle = (s.displayTitle || s.title || '').toLowerCase().includes(q);
+      const matchCat = (s.category || '').toLowerCase().includes(q);
+      const matchSummary = (s.summary || '').toLowerCase().includes(q);
+      const matchTags = (s.tags || []).some(t => t.toLowerCase().includes(q));
+      return matchTitle || matchCat || matchSummary || matchTags;
+    });
+  }
+
+  renderCaseStudies(pool);
+}
+
+// Real-time Search Box for /projects page
+function initProjectsSearch() {
+  const searchInput = document.getElementById('projectSearchInput');
+  if (!searchInput) return;
+
+  searchInput.addEventListener('input', () => {
+    applyCurrentFilter();
   });
 }
 

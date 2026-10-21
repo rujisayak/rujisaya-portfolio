@@ -994,6 +994,136 @@ button {
   background: #FAF7F2;
 }
 
+/* View All Projects / Navigation CTAs */
+.view-all-projects-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.75rem;
+}
+
+.btn-view-all-projects {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #231815;
+  color: #FFFFFF;
+  padding: 13px 28px;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(35, 24, 21, 0.16);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #231815;
+}
+
+.btn-view-all-projects:hover {
+  background: #3B2E2A;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(35, 24, 21, 0.24);
+}
+
+.btn-back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #FFFFFF;
+  color: #231815;
+  padding: 13px 28px;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid #E5DEC9;
+  box-shadow: 0 4px 16px rgba(46, 31, 26, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-back-home:hover {
+  background: #FAF7F2;
+  border-color: #231815;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(46, 31, 26, 0.1);
+}
+
+/* Dedicated Projects Archive Page */
+.projects-page-main {
+  padding-top: 110px;
+  padding-bottom: 6rem;
+  min-height: 85vh;
+}
+
+.projects-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.projects-breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.projects-breadcrumb a:hover {
+  color: var(--text-main);
+  text-decoration: underline;
+}
+
+.projects-search-bar-wrap {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.project-search-input {
+  width: 100%;
+  padding: 14px 20px 14px 46px;
+  background: #FFFFFF;
+  border: 1px solid #E5DEC9;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  box-shadow: 0 4px 16px rgba(46, 31, 26, 0.04);
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.project-search-input:focus {
+  border-color: #3F88CC;
+  box-shadow: 0 8px 24px rgba(63, 136, 204, 0.18);
+  background: #FFFFFF;
+}
+
+.project-search-input::placeholder {
+  color: var(--text-dim);
+}
+
+.search-input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.archive-count-meta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+}
+
 /* Legacy Bento Status Pill Classes */
 .bento-status-pill {
   display: inline-flex;
