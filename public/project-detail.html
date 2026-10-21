@@ -326,68 +326,72 @@
       <div class="project-info-strip" id="projectInfoStrip">
         <div class="info-strip-card">
           <span class="info-strip-label"><span class="info-strip-dot"></span> Role</span>
-          <span class="info-strip-val" id="infoStripRole">End-to-End Product Designer &amp; Frontend</span>
+          <span class="info-strip-val" id="infoStripRole">UX/UI Designer &amp; Full-Stack Developer</span>
         </div>
         <div class="info-strip-card">
           <span class="info-strip-label"><span class="info-strip-dot"></span> Target Users</span>
-          <span class="info-strip-val" id="infoStripUsers">HR, People Operations &amp; Hybrid Teams</span>
+          <span class="info-strip-val" id="infoStripUsers">HR, Managers &amp; Hybrid Teams</span>
         </div>
         <div class="info-strip-card">
           <span class="info-strip-label"><span class="info-strip-dot"></span> Key Solution</span>
-          <span class="info-strip-val" id="infoStripSolution">Pro-rata Vacation Engine &amp; Attendance Matrix</span>
+          <span class="info-strip-val" id="infoStripSolution">Pro-rata Vacation Engine &amp; Weekly Attendance Matrix</span>
         </div>
       </div>
 
-      <!-- Section E: 2-Column Visual Showcase Grid (UI8 / Keraton Studio Aesthetic) -->
+      <!-- Section E: 2-Column Visual Showcase Grid (Keraton Studio / UI8 Aesthetic) -->
       <div class="visual-showcase-grid" id="visualShowcaseGrid">
-        <!-- Card 1: Pattern A (Layered Browser Composition) -->
-        <div class="showcase-card card-theme-leaya-1" id="showcaseCard1">
-          <div class="showcase-card-header">
-            <span class="showcase-tag" id="sc1Tag">Overview &amp; Dashboard</span>
-            <span class="showcase-screen-name" id="sc1ScreenName">Interactive Web Portal</span>
-          </div>
+        <!-- Card 1: Main Dashboard / Landing View + Secondary View (Layered Browser) -->
+        <div class="showcase-card card-theme-leaya" id="showcaseCard1">
           <div class="showcase-stage stage-layered">
-            <div class="browser-layer bg-layer">
-              <div class="browser-bar">
-                <div class="browser-dots">
-                  <span class="b-dot red"></span>
-                  <span class="b-dot yellow"></span>
-                  <span class="b-dot green"></span>
+            <!-- Background Layer (Right Side) -->
+            <div class="browser-window bg-window">
+              <div class="browser-header">
+                <div class="browser-traffic-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
                 </div>
-                <div class="browser-url-pill" id="sc1BgUrl">leave-wfh-management.vercel.app/calendar</div>
+                <div class="browser-url-bar">
+                  <span class="url-text" id="sc1BgUrl">leave-wfh-management.vercel.app/matrix</span>
+                </div>
               </div>
               <div class="browser-screen">
-                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Secondary Screen View" id="sc1BgImg" loading="lazy">
+                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Secondary View" id="sc1BgImg" loading="lazy">
               </div>
             </div>
-            <div class="browser-layer fg-layer">
-              <div class="browser-bar">
-                <div class="browser-dots">
-                  <span class="b-dot red"></span>
-                  <span class="b-dot yellow"></span>
-                  <span class="b-dot green"></span>
+            <!-- Foreground Window (Main Screen ~68% on Left) -->
+            <div class="browser-window fg-window">
+              <div class="browser-header">
+                <div class="browser-traffic-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
                 </div>
-                <div class="browser-url-pill" id="sc1FgUrl">leave-wfh-management.vercel.app/dashboard</div>
+                <div class="browser-nav-chevrons">
+                  <span class="chevron-btn">‹</span>
+                  <span class="chevron-btn">›</span>
+                </div>
+                <div class="browser-url-bar">
+                  <span class="url-lock">🔒</span>
+                  <span class="url-text" id="sc1FgUrl">leave-wfh-management.vercel.app/dashboard</span>
+                </div>
               </div>
               <div class="browser-screen">
-                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Primary Screen View" id="sc1FgImg" loading="lazy">
+                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Main Dashboard View" id="sc1FgImg" loading="lazy">
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Card 2: Pattern B (3D Angled Device Closeup) -->
-        <div class="showcase-card card-theme-leaya-2 dark-header" id="showcaseCard2">
-          <div class="showcase-card-header">
-            <span class="showcase-tag" id="sc2Tag">Hero Experience</span>
-            <span class="showcase-screen-name" id="sc2ScreenName">High-Density Dashboard Display</span>
-          </div>
+        <!-- Card 2: 3D Angled Laptop Closeup (Hero Experience) -->
+        <div class="showcase-card card-theme-leaya" id="showcaseCard2">
           <div class="showcase-stage stage-device">
+            <div class="laptop-pedestal"></div>
             <div class="device-laptop-stage">
               <div class="device-laptop-lid">
                 <div class="device-laptop-camera"></div>
                 <div class="device-laptop-display">
-                  <img src="/assets/portfolio/leaya_screenshot_full.png" alt="3D Laptop Device Mockup" id="sc2DisplayImg" loading="lazy">
+                  <img src="/assets/portfolio/leaya_screenshot_full.png" alt="3D Laptop Mockup" id="sc2DisplayImg" loading="lazy">
                 </div>
               </div>
               <div class="device-laptop-deck">
@@ -397,120 +401,137 @@
           </div>
         </div>
 
-        <!-- Card 3: Pattern A (Layered Browser Composition) -->
-        <div class="showcase-card card-theme-leaya-3" id="showcaseCard3">
-          <div class="showcase-card-header">
-            <span class="showcase-tag" id="sc3Tag">Core Workflow 01</span>
-            <span class="showcase-screen-name" id="sc3ScreenName">Weekly Attendance &amp; Headcount Matrix</span>
-          </div>
+        <!-- Card 3: Core Workflow Page 1 (Calendar / Booth Planner View) (Layered Browser) -->
+        <div class="showcase-card card-theme-leaya" id="showcaseCard3">
           <div class="showcase-stage stage-layered">
-            <div class="browser-layer bg-layer">
-              <div class="browser-bar">
-                <div class="browser-dots">
-                  <span class="b-dot red"></span>
-                  <span class="b-dot yellow"></span>
-                  <span class="b-dot green"></span>
+            <!-- Background Layer (Right Side) -->
+            <div class="browser-window bg-window">
+              <div class="browser-header">
+                <div class="browser-traffic-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
                 </div>
-                <div class="browser-url-pill" id="sc3BgUrl">leave-wfh-management.vercel.app/team</div>
+                <div class="browser-url-bar">
+                  <span class="url-text" id="sc3BgUrl">leave-wfh-management.vercel.app/team</span>
+                </div>
               </div>
               <div class="browser-screen">
-                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Secondary Screen View" id="sc3BgImg" loading="lazy">
+                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Secondary View" id="sc3BgImg" loading="lazy">
               </div>
             </div>
-            <div class="browser-layer fg-layer">
-              <div class="browser-bar">
-                <div class="browser-dots">
-                  <span class="b-dot red"></span>
-                  <span class="b-dot yellow"></span>
-                  <span class="b-dot green"></span>
+            <!-- Foreground Window (Main Screen) -->
+            <div class="browser-window fg-window">
+              <div class="browser-header">
+                <div class="browser-traffic-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
                 </div>
-                <div class="browser-url-pill" id="sc3FgUrl">leave-wfh-management.vercel.app/matrix</div>
+                <div class="browser-nav-chevrons">
+                  <span class="chevron-btn">‹</span>
+                  <span class="chevron-btn">›</span>
+                </div>
+                <div class="browser-url-bar">
+                  <span class="url-lock">🔒</span>
+                  <span class="url-text" id="sc3FgUrl">leave-wfh-management.vercel.app/calendar</span>
+                </div>
               </div>
               <div class="browser-screen">
-                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Primary Screen View" id="sc3FgImg" loading="lazy">
+                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Calendar Workflow" id="sc3FgImg" loading="lazy">
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Card 4: Pattern A (Layered Browser Composition) -->
-        <div class="showcase-card card-theme-leaya-4" id="showcaseCard4">
-          <div class="showcase-card-header">
-            <span class="showcase-tag" id="sc4Tag">Core Workflow 02</span>
-            <span class="showcase-screen-name" id="sc4ScreenName">Team Approvals &amp; Conflict Detection</span>
-          </div>
+        <!-- Card 4: Core Workflow Page 2 (Applications & Conflict Detection View) (Layered Browser) -->
+        <div class="showcase-card card-theme-leaya" id="showcaseCard4">
           <div class="showcase-stage stage-layered">
-            <div class="browser-layer bg-layer">
-              <div class="browser-bar">
-                <div class="browser-dots">
-                  <span class="b-dot red"></span>
-                  <span class="b-dot yellow"></span>
-                  <span class="b-dot green"></span>
+            <!-- Background Layer (Right Side) -->
+            <div class="browser-window bg-window">
+              <div class="browser-header">
+                <div class="browser-traffic-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
                 </div>
-                <div class="browser-url-pill" id="sc4BgUrl">leave-wfh-management.vercel.app/requests</div>
+                <div class="browser-url-bar">
+                  <span class="url-text" id="sc4BgUrl">leave-wfh-management.vercel.app/requests</span>
+                </div>
               </div>
               <div class="browser-screen">
-                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Secondary Screen View" id="sc4BgImg" loading="lazy">
+                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Secondary View" id="sc4BgImg" loading="lazy">
               </div>
             </div>
-            <div class="browser-layer fg-layer">
-              <div class="browser-bar">
-                <div class="browser-dots">
-                  <span class="b-dot red"></span>
-                  <span class="b-dot yellow"></span>
-                  <span class="b-dot green"></span>
+            <!-- Foreground Window (Main Screen) -->
+            <div class="browser-window fg-window">
+              <div class="browser-header">
+                <div class="browser-traffic-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
                 </div>
-                <div class="browser-url-pill" id="sc4FgUrl">leave-wfh-management.vercel.app/approvals</div>
+                <div class="browser-nav-chevrons">
+                  <span class="chevron-btn">‹</span>
+                  <span class="chevron-btn">›</span>
+                </div>
+                <div class="browser-url-bar">
+                  <span class="url-lock">🔒</span>
+                  <span class="url-text" id="sc4FgUrl">leave-wfh-management.vercel.app/approvals</span>
+                </div>
               </div>
               <div class="browser-screen">
-                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Primary Screen View" id="sc4FgImg" loading="lazy">
+                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Approvals Workflow" id="sc4FgImg" loading="lazy">
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Card 5: Pattern A (Layered Browser Composition) -->
-        <div class="showcase-card card-theme-leaya-5" id="showcaseCard5">
-          <div class="showcase-card-header">
-            <span class="showcase-tag" id="sc5Tag">Analytics &amp; System Rules</span>
-            <span class="showcase-screen-name" id="sc5ScreenName">Pro-rata Vacation Engine &amp; Quotas</span>
-          </div>
+        <!-- Card 5: Analytics / Budget Ledger or Settings View (Layered Browser) -->
+        <div class="showcase-card card-theme-leaya" id="showcaseCard5">
           <div class="showcase-stage stage-layered">
-            <div class="browser-layer bg-layer">
-              <div class="browser-bar">
-                <div class="browser-dots">
-                  <span class="b-dot red"></span>
-                  <span class="b-dot yellow"></span>
-                  <span class="b-dot green"></span>
+            <!-- Background Layer (Right Side) -->
+            <div class="browser-window bg-window">
+              <div class="browser-header">
+                <div class="browser-traffic-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
                 </div>
-                <div class="browser-url-pill" id="sc5BgUrl">leave-wfh-management.vercel.app/analytics</div>
+                <div class="browser-url-bar">
+                  <span class="url-text" id="sc5BgUrl">leave-wfh-management.vercel.app/analytics</span>
+                </div>
               </div>
               <div class="browser-screen">
-                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Secondary Screen View" id="sc5BgImg" loading="lazy">
+                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Secondary View" id="sc5BgImg" loading="lazy">
               </div>
             </div>
-            <div class="browser-layer fg-layer">
-              <div class="browser-bar">
-                <div class="browser-dots">
-                  <span class="b-dot red"></span>
-                  <span class="b-dot yellow"></span>
-                  <span class="b-dot green"></span>
+            <!-- Foreground Window (Main Screen) -->
+            <div class="browser-window fg-window">
+              <div class="browser-header">
+                <div class="browser-traffic-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
                 </div>
-                <div class="browser-url-pill" id="sc5FgUrl">leave-wfh-management.vercel.app/quotas</div>
+                <div class="browser-nav-chevrons">
+                  <span class="chevron-btn">‹</span>
+                  <span class="chevron-btn">›</span>
+                </div>
+                <div class="browser-url-bar">
+                  <span class="url-lock">🔒</span>
+                  <span class="url-text" id="sc5FgUrl">leave-wfh-management.vercel.app/quotas</span>
+                </div>
               </div>
               <div class="browser-screen">
-                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Primary Screen View" id="sc5FgImg" loading="lazy">
+                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Analytics and Engine View" id="sc5FgImg" loading="lazy">
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Card 6: Pattern C (Tilted Multi-Page Masonry / Collage) -->
-        <div class="showcase-card card-theme-leaya-6 dark-header" id="showcaseCard6">
-          <div class="showcase-card-header">
-            <span class="showcase-tag" id="sc6Tag">Design System</span>
-            <span class="showcase-screen-name" id="sc6ScreenName">Complete Responsive UI Ecosystem</span>
-          </div>
+        <!-- Card 6: Tilted Multi-Page Masonry / Collage (Full Ecosystem) -->
+        <div class="showcase-card card-theme-leaya" id="showcaseCard6">
           <div class="showcase-stage stage-collage">
             <div class="collage-tilted-grid" id="sc6CollageGrid">
               <div class="collage-col col-1">

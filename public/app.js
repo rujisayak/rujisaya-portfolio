@@ -1084,36 +1084,36 @@ function hydrateProjectDetailView(study) {
   }
 
   // Update 3-Column Info Strip
+  const isAmi = (study.id === 'ami-booth-planner' || (study.slug && study.slug.includes('ami')));
+
   const infoRole = document.getElementById('infoStripRole');
   if (infoRole) {
-    infoRole.textContent = study.role || "End-to-End Product Designer & Front-End";
+    infoRole.textContent = "UX/UI Designer & Full-Stack Developer";
   }
   const infoUsers = document.getElementById('infoStripUsers');
   if (infoUsers) {
-    infoUsers.textContent = study.targetUsers ? (study.targetUsers.length > 55 ? study.targetUsers.substring(0, 52) + '...' : study.targetUsers) : "HR, People Operations & Hybrid Teams";
+    infoUsers.textContent = isAmi 
+      ? "Illustrators, Comic Artists & Craft Brands" 
+      : "HR, Managers & Hybrid Teams";
   }
   const infoSolution = document.getElementById('infoStripSolution');
   if (infoSolution) {
-    infoSolution.textContent = study.keySolution || (study.id === 'ami-booth-planner' ? "Date Conflict Detection & Event Budget Ledger" : "Pro-rata Vacation Engine & Attendance Matrix");
+    infoSolution.textContent = isAmi 
+      ? "Smart Date Conflict & Partial Acceptance Engine" 
+      : "Pro-rata Vacation Engine & Weekly Attendance Matrix";
   }
 
-  // Visual-First Marketplace Showcase Grid (UI8 / Keraton Studio Aesthetic)
-  const isAmi = (study.id === 'ami-booth-planner' || (study.slug && study.slug.includes('ami')));
-  const themePrefix = isAmi ? 'card-theme-ami-' : 'card-theme-leaya-';
-
-  // Apply theme classes to showcase cards 1 to 6
+  // Visual-First Marketplace Showcase Grid (Keraton Studio / UI8 Aesthetic)
+  // Apply cohesive project signature accent background color across all 6 cards
+  const themeClass = isAmi ? 'card-theme-ami' : 'card-theme-leaya';
   for (let i = 1; i <= 6; i++) {
     const cardEl = document.getElementById(`showcaseCard${i}`);
     if (cardEl) {
+      cardEl.classList.remove('card-theme-leaya', 'card-theme-ami');
       for (let t = 1; t <= 6; t++) {
         cardEl.classList.remove(`card-theme-leaya-${t}`, `card-theme-ami-${t}`);
       }
-      cardEl.classList.add(`${themePrefix}${i}`);
-      if (i === 2 || i === 6) {
-        cardEl.classList.add('dark-header');
-      } else {
-        cardEl.classList.remove('dark-header');
-      }
+      cardEl.classList.add(themeClass);
     }
   }
 
@@ -1122,46 +1122,34 @@ function hydrateProjectDetailView(study) {
     const amiFull = '/assets/portfolio/ami_booth_screenshot_full.png';
     const amiCrop = '/assets/portfolio/ami_booth_screenshot.png';
 
-    // Card 1
-    setElementText('sc1Tag', 'Overview & Calendar');
-    setElementText('sc1ScreenName', 'Event Schedule & Booth Tracker');
+    // Card 1: Main Dashboard / Landing View + Secondary View
     setElementSrc('sc1FgImg', amiCal);
     setElementText('sc1FgUrl', 'ami-booth-planner.vercel.app/calendar');
     setElementSrc('sc1BgImg', amiFull);
     setElementText('sc1BgUrl', 'ami-booth-planner.vercel.app/events');
 
-    // Card 2 (3D Laptop)
-    setElementText('sc2Tag', 'Hero Experience');
-    setElementText('sc2ScreenName', 'Creator Event Hub Display');
+    // Card 2: 3D Angled Laptop Closeup
     setElementSrc('sc2DisplayImg', amiCal);
 
-    // Card 3
-    setElementText('sc3Tag', 'Core Workflow 01');
-    setElementText('sc3ScreenName', 'Conflict Alert & Application Management');
-    setElementSrc('sc3FgImg', amiFull);
-    setElementText('sc3FgUrl', 'ami-booth-planner.vercel.app/applications');
+    // Card 3: Core Workflow Page 1 (Calendar / Booth Planner View)
+    setElementSrc('sc3FgImg', amiCal);
+    setElementText('sc3FgUrl', 'ami-booth-planner.vercel.app/planner');
     setElementSrc('sc3BgImg', amiCrop);
-    setElementText('sc3BgUrl', 'ami-booth-planner.vercel.app/conflicts');
+    setElementText('sc3BgUrl', 'ami-booth-planner.vercel.app/timeline');
 
-    // Card 4
-    setElementText('sc4Tag', 'Core Workflow 02');
-    setElementText('sc4ScreenName', 'Partial Day Acceptance & Pass Tracker');
-    setElementSrc('sc4FgImg', amiCrop);
-    setElementText('sc4FgUrl', 'ami-booth-planner.vercel.app/passes');
-    setElementSrc('sc4BgImg', amiCal);
-    setElementText('sc4BgUrl', 'ami-booth-planner.vercel.app/booths');
+    // Card 4: Core Workflow Page 2 (Applications & Conflict Detection View)
+    setElementSrc('sc4FgImg', amiFull);
+    setElementText('sc4FgUrl', 'ami-booth-planner.vercel.app/applications');
+    setElementSrc('sc4BgImg', amiCrop);
+    setElementText('sc4BgUrl', 'ami-booth-planner.vercel.app/conflicts');
 
-    // Card 5
-    setElementText('sc5Tag', 'Budget & Financials');
-    setElementText('sc5ScreenName', 'Event Cost Breakdown & Revenue Ledger');
-    setElementSrc('sc5FgImg', amiFull);
+    // Card 5: Analytics / Budget Ledger or Settings View
+    setElementSrc('sc5FgImg', amiCrop);
     setElementText('sc5FgUrl', 'ami-booth-planner.vercel.app/budget');
-    setElementSrc('sc5BgImg', amiCrop);
+    setElementSrc('sc5BgImg', amiFull);
     setElementText('sc5BgUrl', 'ami-booth-planner.vercel.app/summary');
 
-    // Card 6 (Collage)
-    setElementText('sc6Tag', 'Design System');
-    setElementText('sc6ScreenName', 'Pastel Pink Creator UI Suite');
+    // Card 6: Tilted Multi-Page Masonry / Collage (Full Ecosystem)
     setElementSrc('sc6Img1', amiCal);
     setElementSrc('sc6Img2', amiFull);
     setElementSrc('sc6Img3', amiCrop);
@@ -1173,46 +1161,34 @@ function hydrateProjectDetailView(study) {
     const leayaFull = '/assets/portfolio/leaya_screenshot_full.png';
     const leaveWfh = '/assets/portfolio/leave_wfh_screenshot.png';
 
-    // Card 1
-    setElementText('sc1Tag', 'Overview & Dashboard');
-    setElementText('sc1ScreenName', 'Interactive Web Portal');
+    // Card 1: Main Dashboard / Landing View + Secondary View
     setElementSrc('sc1FgImg', leayaFull);
     setElementText('sc1FgUrl', 'leave-wfh-management.vercel.app/dashboard');
     setElementSrc('sc1BgImg', leaveWfh);
-    setElementText('sc1BgUrl', 'leave-wfh-management.vercel.app/calendar');
+    setElementText('sc1BgUrl', 'leave-wfh-management.vercel.app/matrix');
 
-    // Card 2 (3D Laptop)
-    setElementText('sc2Tag', 'Hero Experience');
-    setElementText('sc2ScreenName', 'High-Density Dashboard Display');
+    // Card 2: 3D Angled Laptop Closeup
     setElementSrc('sc2DisplayImg', leayaFull);
 
-    // Card 3
-    setElementText('sc3Tag', 'Core Workflow 01');
-    setElementText('sc3ScreenName', 'Weekly Attendance & Headcount Matrix');
+    // Card 3: Core Workflow Page 1 (Leave Schedule & Calendar)
     setElementSrc('sc3FgImg', leaveWfh);
-    setElementText('sc3FgUrl', 'leave-wfh-management.vercel.app/matrix');
+    setElementText('sc3FgUrl', 'leave-wfh-management.vercel.app/calendar');
     setElementSrc('sc3BgImg', leayaFull);
-    setElementText('sc3BgUrl', 'leave-wfh-management.vercel.app/team');
+    setElementText('sc3BgUrl', 'leave-wfh-management.vercel.app/schedule');
 
-    // Card 4
-    setElementText('sc4Tag', 'Core Workflow 02');
-    setElementText('sc4ScreenName', 'Team Approvals & Conflict Detection');
+    // Card 4: Core Workflow Page 2 (Applications & Approvals Queue)
     setElementSrc('sc4FgImg', leayaFull);
     setElementText('sc4FgUrl', 'leave-wfh-management.vercel.app/approvals');
     setElementSrc('sc4BgImg', leaveWfh);
     setElementText('sc4BgUrl', 'leave-wfh-management.vercel.app/requests');
 
-    // Card 5
-    setElementText('sc5Tag', 'Analytics & System Rules');
-    setElementText('sc5ScreenName', 'Pro-rata Vacation Engine & Quotas');
+    // Card 5: Analytics & Pro-rata Quotas Engine
     setElementSrc('sc5FgImg', leaveWfh);
     setElementText('sc5FgUrl', 'leave-wfh-management.vercel.app/quotas');
     setElementSrc('sc5BgImg', leayaFull);
     setElementText('sc5BgUrl', 'leave-wfh-management.vercel.app/analytics');
 
-    // Card 6 (Collage)
-    setElementText('sc6Tag', 'Design System');
-    setElementText('sc6ScreenName', 'Complete Responsive UI Ecosystem');
+    // Card 6: Tilted Multi-Page Masonry / Collage (Full Ecosystem)
     setElementSrc('sc6Img1', leayaFull);
     setElementSrc('sc6Img2', leaveWfh);
     setElementSrc('sc6Img3', leaveWfh);
