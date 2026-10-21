@@ -1,7 +1,362 @@
 // Frontend JavaScript for Rujisaya Kuekool Portfolio
 // Dynamic Data Integration from MongoDB Atlas API
 
-let allCaseStudies = [];
+let allCaseStudies = [...FALLBACK_CASE_STUDIES];
+
+// Resilient Embedded Data Fallback (Ensures projects ALWAYS render immediately)
+const FALLBACK_CASE_STUDIES = [
+  {
+    "id": "leave-wfh-management",
+    "projectNum": 1,
+    "displayTitle": "Leaya 🐾",
+    "fullTitle": "Leaya - All-in-One Employee Management Platform",
+    "shortSubtitle": "Empowering enterprise teams with interactive HR SaaS solutions.",
+    "category": "enterprise saas & hr tech",
+    "filterCategory": "enterprise",
+    "badge": "live interactive",
+    "badgeType": "live",
+    "featured": true,
+    "date": "Jan 2026",
+    "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
+    "image": "/assets/portfolio/leaya_screenshot_full.png",
+    "liveUrl": "https://leave-wfh-management.vercel.app/",
+    "githubUrl": "https://github.com/rujisayak",
+    "tags": [
+      "Enterprise SaaS",
+      "HR Operations",
+      "RBAC Simulation",
+      "TypeScript",
+      "Tailwind CSS",
+      "React 18"
+    ],
+    "previewCards": [
+      {
+        "title": "Interactive Dashboard",
+        "date": "Jan 2026",
+        "image": "/assets/portfolio/leaya_screenshot_full.png",
+        "type": "laptop"
+      },
+      {
+        "title": "Attendance & RBAC Matrix",
+        "date": "Oct 2025",
+        "image": "/assets/portfolio/leave_wfh_screenshot.png",
+        "type": "card"
+      }
+    ],
+    "techStack": [
+      {
+        "name": "React 18",
+        "type": "react"
+      },
+      {
+        "name": "Figma",
+        "type": "figma"
+      },
+      {
+        "name": "Tailwind CSS",
+        "type": "tailwind"
+      },
+      {
+        "name": "TypeScript",
+        "type": "typescript"
+      }
+    ],
+    "pillars": [
+      {
+        "icon": "dashboard",
+        "label": "Interactive Dashboard"
+      },
+      {
+        "icon": "users",
+        "label": "Seamless HR Flow"
+      },
+      {
+        "icon": "analytics",
+        "label": "Team Analytics"
+      },
+      {
+        "icon": "workflows",
+        "label": "Automated Workflows"
+      }
+    ],
+    "highlights": [
+      {
+        "icon": "link",
+        "label": "100% Custom Components"
+      },
+      {
+        "icon": "analytics",
+        "label": "Interactive Analytics"
+      },
+      {
+        "icon": "database",
+        "label": "Complex Data Handling"
+      },
+      {
+        "icon": "uiux",
+        "label": "Seamless UI/UX"
+      },
+      {
+        "icon": "security",
+        "label": "Secure Data Flow"
+      },
+      {
+        "icon": "templates",
+        "label": "30+ Screen Templates"
+      }
+    ],
+    "styleGuide": {
+      "headingFont": "Leaya Bold",
+      "bodyFont": "Inter",
+      "palette": [
+        {
+          "name": "Warm Cream",
+          "hex": "#FAF7F2"
+        },
+        {
+          "name": "Dark Espresso",
+          "hex": "#231815"
+        },
+        {
+          "name": "Emerald Green",
+          "hex": "#10B981"
+        },
+        {
+          "name": "Accent Blue",
+          "hex": "#3B82F6"
+        },
+        {
+          "name": "Muted Slate",
+          "hex": "#64748B"
+        }
+      ]
+    },
+    "featureZoom": {
+      "title": "Automated Pro-rata Thai Labor Vacation Engine",
+      "description": "คำนวณโควตาวันลาพักร้อน Year 0 และ Year 1+ อัตโนมัติตามวันเริ่มงานและวันผ่านทดลองงาน พร้อมจำลองสิทธิ์ 3 บทบาท (Employee, Manager, HR Admin)",
+      "tags": [
+        {
+          "label": "Role",
+          "value": "End-to-End Product Designer"
+        },
+        {
+          "label": "Target Users",
+          "value": "HR, Managers & Hybrid Teams"
+        },
+        {
+          "label": "Key Solution",
+          "value": "Pro-rata Vacation & Weekly Matrix"
+        }
+      ],
+      "image": "/assets/portfolio/leaya_screenshot_full.png"
+    },
+    "multiScreens": [
+      {
+        "title": "Dashboard Overview",
+        "image": "/assets/portfolio/leaya_screenshot_full.png",
+        "desc": "Real-time leave balances & attendance status"
+      },
+      {
+        "title": "Team Attendance Matrix",
+        "image": "/assets/portfolio/leave_wfh_screenshot.png",
+        "desc": "Weekly in-office vs WFH headcount tracker"
+      }
+    ],
+    "role": "End-to-End Product Designer & Front-End Architecture",
+    "targetUsers": "พนักงานทั่วไป (ยื่นใบลา/ขอ WFH), หัวหน้าทีม/ผู้จัดการ (คิวอนุมัติ & Team Matrix), ฝ่ายบุคคล/HR (ทะเบียนพนักงาน & คำนวณโควตา)",
+    "duration": "Enterprise Project (2025–2026)",
+    "designGoal": "Design Goal: ปรับเปลี่ยนกระบวนการลางานและขอสลับวัน WFH ที่ซับซ้อนให้กลายเป็นระบบ 3-Role RBAC Portal ที่เข้าใจง่าย พร้อมคำนวณโควตาพักร้อน Pro-rate ตามกฎหมายแรงงานไทยแบบเรียลไทม์",
+    "problem": "การจัดการวันลาและสลับวัน WFH ในองค์กรแบบไฮบริดมักติดปัญหาความคลุมเครือของสูตรคำนวณสิทธิ์พักร้อนตามวันเริ่มงานและวันผ่านโปร รวมถึงความเสี่ยงที่ทีมจะขาดคนในวันจันทร์หรือศุกร์เนื่องจากไม่มีตารางสรุป Headcount เข้าออฟฟิศจริง",
+    "responsibilities": "ออกแบบสถาปัตยกรรมข้อมูล (IA), พัฒนาระบบ User Roles (Employee / Manager / HR Super Admin), ออกแบบ Weekly Attendance Matrix และพัฒนาระบบคำนวณสิทธิ์พักร้อนแบบ Pro-rata",
+    "uxApproach": "ออกแบบให้มี \"RBAC Simulation Bar\" ด้านบน เพื่อให้ผู้มีส่วนได้ส่วนเสียและผู้ตรวจงานสามารถสลับทดลองสิทธิ์ได้ทันที พร้อม Live Vacation Calculator Preview ในฟอร์มเพิ่มพนักงานใหม่",
+    "keyDecisions": "1) RBAC Simulation Switcher: ให้ทดสอบระบบได้ทั้ง 3 มุมมองโดยไม่ต้องล็อกอินหลายบัญชี\n2) Weekly Hybrid Attendance Matrix: สรุปยอดคนเข้าออฟฟิศจริงแต่ละวัน (Daily Headcount) เพื่อป้องกันคนไม่พอ\n3) Thai Labor Law Formula Engine: คำนวณวันลา Year 0 อัตโนมัติ (เช่น ผ่านโปรหลัง 1 ก.ย. ได้สิทธิ์ทันที)",
+    "devCollaboration": "พัฒนาด้วย React 18, TypeScript, Tailwind CSS และ Lucide Icons โดยกำหนด Strict TypeScript Interfaces สำหรับสถานะคำขอ (Status Enums) และสูตรการคำนวณเพื่อรองรับการต่อยอดเป็นโปรดักชัน",
+    "outcomeLearnings": "สร้างประสบการณ์ใช้งานที่ชัดเจน ลดความผิดพลาดในการคำนวณวันลาของฝ่ายบุคคล และช่วยให้หัวหน้างานตัดสินใจอนุมัติได้อย่างรวดเร็วผ่านข้อมูลที่โปร่งใส",
+    "keyFeatures": [
+      "ระบบจำลองสิทธิ์ 3 ระดับ (Employee, Manager, HR Admin) สลับมุมมองได้ทันที",
+      "ตารางเมทริกซ์ทีมประจำสัปดาห์ (Team Weekly Attendance Matrix) พร้อมสรุปยอด Headcount รายวัน",
+      "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
+      "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
+      "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
+    ]
+  },
+  {
+    "id": "ami-booth-planner",
+    "projectNum": 2,
+    "displayTitle": "Ami Booth Planner 🎨",
+    "fullTitle": "Ami Booth Planner - All-in-One Creator Event Platform",
+    "shortSubtitle": "Empowering indie creators & illustrators to organize events, detect date conflicts, and manage booth budgets seamlessly.",
+    "category": "creator economy & events",
+    "filterCategory": "creator",
+    "badge": "live interactive",
+    "badgeType": "live",
+    "featured": true,
+    "date": "Jan 2026",
+    "summary": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
+    "image": "/assets/portfolio/ami_booth_calendar.png",
+    "liveUrl": "https://ami-booth-planner.vercel.app/",
+    "githubUrl": "https://github.com/rujisayak",
+    "tags": [
+      "Creator Economy",
+      "Event Operations",
+      "Material UI v6",
+      "React 18",
+      "MongoDB Atlas",
+      "Date Conflict"
+    ],
+    "previewCards": [
+      {
+        "title": "Event Schedule & Calendar",
+        "date": "Jan 2026",
+        "image": "/assets/portfolio/ami_booth_calendar.png",
+        "type": "laptop"
+      },
+      {
+        "title": "Date Conflict & Budget Ledger",
+        "date": "Oct 2025",
+        "image": "/assets/portfolio/ami_booth_screenshot_full.png",
+        "type": "card"
+      }
+    ],
+    "techStack": [
+      {
+        "name": "React 18",
+        "type": "react"
+      },
+      {
+        "name": "Figma",
+        "type": "figma"
+      },
+      {
+        "name": "Material UI v6",
+        "type": "mui"
+      },
+      {
+        "name": "MongoDB Atlas",
+        "type": "mongodb"
+      }
+    ],
+    "pillars": [
+      {
+        "icon": "dashboard",
+        "label": "Calendar Conflict Detection"
+      },
+      {
+        "icon": "users",
+        "label": "Partial Acceptance Flow"
+      },
+      {
+        "icon": "analytics",
+        "label": "Budget Separation"
+      },
+      {
+        "icon": "workflows",
+        "label": "Cloud & Demo Sync"
+      }
+    ],
+    "highlights": [
+      {
+        "icon": "link",
+        "label": "100% Custom Components"
+      },
+      {
+        "icon": "analytics",
+        "label": "Smart Conflict Alerts"
+      },
+      {
+        "icon": "database",
+        "label": "Partial Day Acceptance"
+      },
+      {
+        "icon": "uiux",
+        "label": "Pastel Pink Design System"
+      },
+      {
+        "icon": "security",
+        "label": "Secure Cloud & Sandbox"
+      },
+      {
+        "icon": "templates",
+        "label": "20+ Creator Workflows"
+      }
+    ],
+    "styleGuide": {
+      "headingFont": "Ami Display",
+      "bodyFont": "Inter",
+      "palette": [
+        {
+          "name": "Blush White",
+          "hex": "#FFF0F5"
+        },
+        {
+          "name": "Dark Espresso",
+          "hex": "#231815"
+        },
+        {
+          "name": "Pastel Rose",
+          "hex": "#FF6B8B"
+        },
+        {
+          "name": "Lilac Purple",
+          "hex": "#8B5CF6"
+        },
+        {
+          "name": "Golden Honey",
+          "hex": "#F59E0B"
+        }
+      ]
+    },
+    "featureZoom": {
+      "title": "Smart Date Conflict & Partial Acceptance Engine",
+      "description": "ระบบตรวจจับวันสมัคร วันประกาศผล และวันจัดบูธที่ชนกันแบบเรียลไทม์ พร้อมรองรับงานหลายวันที่ได้รับการคัดเลือกเพียงบางวัน โดยคำนวณงบประมาณแยกตามวันที่ยืนยันจริง",
+      "tags": [
+        {
+          "label": "Role",
+          "value": "UX/UI Designer & Full-Stack Developer"
+        },
+        {
+          "label": "Target Users",
+          "value": "Illustrators, Comic Artists & Craft Brands"
+        },
+        {
+          "label": "Key Solution",
+          "value": "Conflict Detection & Budget Ledger"
+        }
+      ],
+      "image": "/assets/portfolio/ami_booth_calendar.png"
+    },
+    "multiScreens": [
+      {
+        "title": "Month Grid Calendar",
+        "image": "/assets/portfolio/ami_booth_calendar.png",
+        "desc": "Visual monthly schedule with status badges"
+      },
+      {
+        "title": "Applications & Conflict View",
+        "image": "/assets/portfolio/ami_booth_screenshot_full.png",
+        "desc": "Timeline list with overlapping date alerts and budget recalculation"
+      }
+    ],
+    "role": "UX/UI Designer & Full-Stack Developer",
+    "targetUsers": "นักวาดภาพประกอบ (Illustrators), นักเขียนการ์ตูน, ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",
+    "duration": "Creator SaaS Project (2025–2026)",
+    "designGoal": "Design Goal: เปลี่ยนการจดตารางบูธในกระดาษและ Excel ที่กระจัดกระจาย ให้กลายเป็นระบบ Dashboard ธีม Pastel Pink ที่มีระบบเตือนรอบเวลาชนกันและคำนวณค่าบูธแยกรายวันได้อย่างแม่นยำ",
+    "problem": "ครีเอเตอร์ต้องสมัครงานอีเวนต์หลายสิบงานต่อปี ซึ่งมีทั้งวันเปิดรับสมัคร วันประกาศผล และวันจัดงานที่คาบเกี่ยวกันบ่อยครั้ง โดยเฉพาะงานหลายวันที่อาจได้รับการคัดเลือกเพียง 1 วัน (Partial Acceptance) ทำให้คำนวณค่าใช้จ่ายและวางแผนวันไปออกบูธผิดพลาด",
+    "responsibilities": "ทำ User Research กับกลุ่มครีเอเตอร์, ออกแบบ Design System ธีมสี Pastel Pink โดยอ้างอิง Component Patterns จาก Devias Kit Pro, ออกแบบระบบ Smart Date Conflict Algorithm และพัฒนาฟูลสแต็กเชื่อมต่อ MongoDB Atlas",
+    "uxApproach": "ออกแบบมุมมองปฏิทิน 2 รูปแบบ (Month Grid & Agenda) แยกสีชัดเจนระหว่างวันสมัคร วันประกาศผล และวันจัดบูธจริง พร้อมแถบแจ้งเตือนเมื่อมีงานชนกัน (Date Conflict Detection)",
+    "keyDecisions": "1) Partial Acceptance Support: รองรับผลการสมัครแยกรายวัน โดยระบบจะนับเฉพาะวันที่ได้บูธเข้าปฏิทินจริงและคำนวณค่าบูธตามวันที่ได้รับคัดเลือกเท่านั้น\n2) Budget Separation: แยกค่าบูธค้างชำระ ยอดที่ชำระแล้ว และค่าใช้จ่ายที่อาจเกิดขึ้นจากใบสมัครที่รอผลออกจากกัน ไม่นับซ้ำซ้อน\n3) Preview Demo vs Cloud Auth: ผู้เยี่ยมชมสามารถทดลองสร้างงานในโหมด Demo Sandbox ได้อย่างปลอดภัย โดยระบบจะซิงค์และบันทึกลง MongoDB Atlas เฉพาะเมื่อล็อกอินด้วยอีเมลผู้ดูแล",
+    "devCollaboration": "พัฒนาด้วย React 18, Material UI (MUI v6), Emotion, Node.js REST API และ MongoDB Atlas พร้อมระบบ Offline Fallback ด้วย LocalStorage",
+    "outcomeLearnings": "ช่วยให้ครีเอเตอร์วางแผนตารางออกบูธล่วงหน้าได้โดยไม่พลาดวันสำคัญ ประหยัดเวลาจัดการใบสมัครได้กว่า 70% และป้องกันปัญหาการจองบูธซ้อนในวันเดียวกัน",
+    "keyFeatures": [
+      "ระบบตรวจจับรอบเวลาจัดบูธชนกัน (Smart Date Conflict Detection)",
+      "ปฏิทินตารางงานแบบ Month Grid และ Agenda แยกสีตามช่วงเวลาสำคัญ",
+      "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
+      "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
+      "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
+    ]
+  }
+];
+
 let allActivities = [];
 let currentFilter = 'featured';
 let currentActFilter = 'all';
@@ -138,24 +493,29 @@ function initCursorRoaming() {
   }
 }
 
-// Fetch Profile & Case Studies from API
+// Fetch Profile & Case Studies from API with bulletproof instant render
 async function loadPortfolioData() {
+  // Always render immediately from initial/fallback data first so the page is NEVER empty!
+  if (!allCaseStudies || allCaseStudies.length === 0) {
+    allCaseStudies = [...FALLBACK_CASE_STUDIES];
+  }
+  const featuredStudies = allCaseStudies.filter(s => s.featured);
+  renderCaseStudies(featuredStudies.length > 0 ? featuredStudies : allCaseStudies);
+  initFilterTabs();
+  initProjectsSearch();
+
   try {
     const res = await fetch('/api/case-studies');
-    if (!res.ok) throw new Error('Failed to load case studies');
-    allCaseStudies = await res.json();
-    
-    // By default, display the prioritized featured case studies
-    const featuredStudies = allCaseStudies.filter(s => s.featured);
-    renderCaseStudies(featuredStudies.length > 0 ? featuredStudies : allCaseStudies);
-    initFilterTabs();
-    initProjectsSearch();
-  } catch (err) {
-    console.error("Error loading case studies:", err);
-    const container = document.getElementById('caseStudiesContainer');
-    if (container) {
-      container.innerHTML = `<div class="loading-spinner">Could not load projects. Please refresh.</div>`;
+    if (res.ok) {
+      const liveData = await res.json();
+      if (Array.isArray(liveData) && liveData.length > 0) {
+        allCaseStudies = liveData;
+        const updatedFeatured = allCaseStudies.filter(s => s.featured);
+        renderCaseStudies(updatedFeatured.length > 0 ? updatedFeatured : allCaseStudies);
+      }
     }
+  } catch (err) {
+    console.warn("Could not fetch remote case studies, using embedded data:", err);
   }
 }
 
@@ -263,7 +623,7 @@ function getHighlightSvg(icon) {
   </svg>`;
 }
 
-// Render Projects Showcase Cards (View 1: UI8-Inspired Card Grid Layout)
+// Render Projects Showcase Cards (View 1: Bento Grid Product Showcase Directory matching Image 2)
 function renderCaseStudies(studies) {
   const container = document.getElementById('caseStudiesContainer');
   if (!container) return;
@@ -274,80 +634,88 @@ function renderCaseStudies(studies) {
   }
 
   if (!studies || studies.length === 0) {
-    container.innerHTML = `<div class="loading-spinner">No projects found matching your search.</div>`;
+    container.innerHTML = `<div class="loading-spinner">No projects found for this category.</div>`;
     return;
   }
 
   container.innerHTML = studies.map((study, idx) => {
     const projNum = study.projectNum || (idx + 1);
     const displayTitle = study.displayTitle || study.title;
-    const categoryText = study.category || (study.filterCategory === 'creator' ? 'creator economy & events' : 'enterprise saas & hr tech');
+    const categoryText = study.category || (study.id === 'ami-booth-planner' ? 'creator economy & events' : 'enterprise saas & hr tech');
     const badgeText = study.badge || 'live interactive';
     const isLive = (study.badgeType === 'live') || badgeText.toLowerCase().includes('live');
-    const dateText = study.date || 'Jan 2026';
-    const tagsList = study.tags || [];
-    const tagsHtml = tagsList.slice(0, 4).map(tag => `<span class="gallery-tag-pill">${escapeHtml(tag)}</span>`).join('');
+
+    const preview1 = (study.previewCards && study.previewCards[0]) ? study.previewCards[0] : {
+      title: "Interactive Dashboard",
+      date: study.date || "Jan 2026",
+      image: study.image
+    };
+
+    const preview2 = (study.previewCards && study.previewCards[1]) ? study.previewCards[1] : {
+      title: "System Matrix",
+      date: "Oct 2025",
+      image: (study.multiScreens && study.multiScreens[1] ? study.multiScreens[1].image : study.image)
+    };
 
     return `
-      <article class="gallery-project-card" data-id="${study.id}">
-        <!-- Top Visual Thumbnail Mockup Frame -->
-        <div class="gallery-card-thumb-wrap" onclick="openProjectDetail('${study.id}')" role="button" tabindex="0" aria-label="Open ${escapeHtml(displayTitle)} detail showcase" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('${study.id}');}">
-          <div class="gallery-thumb-inner">
-            <img src="${study.image}" alt="${escapeHtml(displayTitle)} Preview" class="gallery-thumb-img" loading="lazy">
-            <div class="gallery-thumb-overlay"></div>
-          </div>
-          <!-- Badges floating on top of thumbnail -->
-          <div class="gallery-thumb-top-badges">
+      <article class="bento-project-card" data-id="${study.id}" onclick="openProjectDetail('${study.id}')" role="button" tabindex="0" aria-label="Open ${escapeHtml(study.fullTitle || study.title)} Bento Showcase" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('${study.id}');}">
+        <!-- Top Meta Row -->
+        <div class="bento-card-top-bar">
+          <div class="bento-meta-left">
+            <span class="bento-proj-index">project ${projNum}</span>
             <span class="bento-status-pill ${isLive ? 'status-pill-live' : 'status-pill-case'}">
               <span class="status-dot ${isLive ? 'green' : 'purple'}"></span>
               <span>${escapeHtml(badgeText)}</span>
             </span>
-            <span class="gallery-date-pill">${escapeHtml(dateText)}</span>
           </div>
-          <!-- Hover Quick Action -->
-          <div class="gallery-thumb-hover-action">
-            <button type="button" class="gallery-quick-live-btn" onclick="event.stopPropagation(); openInteractivePreview('${study.id}');" title="Launch Live Interactive Preview">
-              <span>▶ Quick Live Sandbox</span>
-            </button>
+          <div class="bento-meta-right">
+            <span class="bento-category-tag">${escapeHtml(categoryText.toLowerCase())}</span>
           </div>
         </div>
 
-        <!-- Bottom Card Content Area -->
-        <div class="gallery-card-body">
-          <!-- Meta Row -->
-          <div class="gallery-card-meta-row">
-            <span class="gallery-proj-num">project ${projNum}</span>
-            <span class="gallery-cat-pill">${escapeHtml(categoryText.toLowerCase())}</span>
+        <!-- Project Title Row -->
+        <div class="bento-card-title-row">
+          <h3 class="bento-card-title">${escapeHtml(displayTitle)}</h3>
+          <span class="bento-open-hint">
+            <span>view showcase</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </span>
+        </div>
+
+        <!-- Inner Mockup Preview Boxes (2-Column Grid inside the card) -->
+        <div class="bento-preview-grid">
+          <!-- Box 1: Primary Dashboard Laptop Mockup -->
+          <div class="bento-preview-box">
+            <div class="mockup-laptop-wrap">
+              <div class="mockup-laptop-lid">
+                <div class="mockup-laptop-camera"></div>
+                <div class="mockup-laptop-screen">
+                  <img src="${preview1.image}" alt="${escapeHtml(displayTitle)} Preview 1" loading="lazy">
+                </div>
+              </div>
+              <div class="mockup-laptop-deck">
+                <div class="mockup-laptop-notch"></div>
+              </div>
+            </div>
+            <div class="preview-date-badge">${escapeHtml(preview1.date || 'Jan 2026')}</div>
           </div>
 
-          <!-- Title Row -->
-          <div class="gallery-card-title-row" onclick="openProjectDetail('${study.id}')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProjectDetail('${study.id}');}">
-            <h3 class="gallery-card-title">${escapeHtml(displayTitle)}</h3>
-            <span class="gallery-title-arrow" aria-hidden="true">↗</span>
-          </div>
-
-          <!-- Short Summary Description -->
-          <p class="gallery-card-desc">${escapeHtml(study.summary)}</p>
-
-          <!-- Feature / Tech Tag Pills -->
-          <div class="gallery-card-tags">
-            ${tagsHtml}
-          </div>
-
-          <!-- Bottom Actions Row -->
-          <div class="gallery-card-actions">
-            <button type="button" class="gallery-action-btn btn-live-demo" onclick="openInteractivePreview('${study.id}')" title="Test interactive web application inside sandbox modal">
-              <span class="btn-play-icon">▶</span>
-              <span>Live Demo</span>
-            </button>
-            <button type="button" class="gallery-action-btn btn-showcase" onclick="openProjectDetail('${study.id}')" title="Explore full Bento Grid UX Case Study">
-              <span>Bento Showcase</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
-            </button>
-            <a href="${escapeHtml(study.liveUrl || '#')}" target="_blank" rel="noopener noreferrer" class="gallery-action-btn btn-launch" title="Open live production app in new tab">
-              <span>Launch</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
+          <!-- Box 2: Secondary Perspective Card Mockup -->
+          <div class="bento-preview-box">
+            <div class="mockup-card-wrap">
+              <div class="mockup-floating-window">
+                <div class="mockup-window-header">
+                  <span class="w-dot red"></span>
+                  <span class="w-dot yellow"></span>
+                  <span class="w-dot green"></span>
+                  <span class="mockup-window-title">${escapeHtml(preview2.title || 'Interactive Screen')}</span>
+                </div>
+                <div class="mockup-window-body">
+                  <img src="${preview2.image}" alt="${escapeHtml(displayTitle)} Preview 2" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <div class="preview-date-badge">${escapeHtml(preview2.date || 'Oct 2025')}</div>
           </div>
         </div>
       </article>

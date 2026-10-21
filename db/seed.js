@@ -88,16 +88,16 @@ const caseStudiesData = [
   {
     "id": "leave-wfh-management",
     "projectNum": 1,
-    "displayTitle": "ระบบลางานและขอสลับวัน WFH (Leave & WFH Swap System)",
-    "fullTitle": "ระบบลางานและขอสลับวัน WFH (Leave & WFH Swap System)",
-    "shortSubtitle": "Empowering enterprise teams with intuitive leave management, balance deductions, and WFH scheduling.",
+    "displayTitle": "Leaya 🐾",
+    "fullTitle": "Leaya - All-in-One Employee Management Platform",
+    "shortSubtitle": "Empowering enterprise teams with interactive HR SaaS solutions.",
     "category": "enterprise saas & hr tech",
     "filterCategory": "enterprise",
     "badge": "live interactive",
     "badgeType": "live",
     "featured": true,
     "date": "Jan 2026",
-    "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) ให้พนักงานยื่นคำขอและตรวจสอบโควตาวันลาคงเหลือได้แบบเรียลไทม์ พร้อมสูตรคำนวณพักร้อน Pro-rate ตามกฎหมายแรงงานไทย",
+    "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
     "image": "/assets/portfolio/leaya_screenshot_full.png",
     "liveUrl": "https://leave-wfh-management.vercel.app/",
     "githubUrl": "https://github.com/rujisayak",
@@ -105,20 +105,20 @@ const caseStudiesData = [
       "Enterprise SaaS",
       "HR Operations",
       "RBAC Simulation",
-      "React 18",
+      "TypeScript",
       "Tailwind CSS",
-      "TypeScript"
+      "React 18"
     ],
     "previewCards": [
       {
-        "title": "Employee Dashboard & Balances",
+        "title": "Interactive Dashboard",
         "date": "Jan 2026",
         "image": "/assets/portfolio/leaya_screenshot_full.png",
         "type": "laptop"
       },
       {
-        "title": "Team Attendance Matrix & Engine",
-        "date": "Jan 2026",
+        "title": "Attendance & RBAC Matrix",
+        "date": "Oct 2025",
         "image": "/assets/portfolio/leave_wfh_screenshot.png",
         "type": "card"
       }
@@ -152,7 +152,7 @@ const caseStudiesData = [
       },
       {
         "icon": "analytics",
-        "label": "Live Quota Balances"
+        "label": "Team Analytics"
       },
       {
         "icon": "workflows",
@@ -182,7 +182,7 @@ const caseStudiesData = [
       },
       {
         "icon": "templates",
-        "label": "Responsive SaaS Design"
+        "label": "30+ Screen Templates"
       }
     ],
     "styleGuide": {
@@ -212,8 +212,8 @@ const caseStudiesData = [
       ]
     },
     "featureZoom": {
-      "title": "Role-Based Access Control (RBAC) & Real-time Quota Deduction",
-      "description": "ระบบจำลองสิทธิ์ 3 บทบาท (Employee, Manager, HR Admin) พร้อมการหักลบยอดวันลาพักร้อน ลากิจ และลาป่วยแบบเรียลไทม์ และตารางสรุป Headcount ประจำสัปดาห์",
+      "title": "Automated Pro-rata Thai Labor Vacation Engine",
+      "description": "คำนวณโควตาวันลาพักร้อน Year 0 และ Year 1+ อัตโนมัติตามวันเริ่มงานและวันผ่านทดลองงาน พร้อมจำลองสิทธิ์ 3 บทบาท (Employee, Manager, HR Admin)",
       "tags": [
         {
           "label": "Role",
@@ -221,51 +221,51 @@ const caseStudiesData = [
         },
         {
           "label": "Target Users",
-          "value": "Enterprise Employees & HR"
+          "value": "HR, Managers & Hybrid Teams"
         },
         {
           "label": "Key Solution",
-          "value": "Live Quota Balances & WFH Swaps"
+          "value": "Pro-rata Vacation & Weekly Matrix"
         }
       ],
       "image": "/assets/portfolio/leaya_screenshot_full.png"
     },
     "multiScreens": [
       {
-        "title": "Employee Dashboard & Leave Cards",
+        "title": "Dashboard Overview",
         "image": "/assets/portfolio/leaya_screenshot_full.png",
-        "desc": "Real-time vacation balance cards, WFH swap status, and submission logs"
+        "desc": "Real-time leave balances & attendance status"
       },
       {
-        "title": "Team Attendance Matrix & Calculator",
+        "title": "Team Attendance Matrix",
         "image": "/assets/portfolio/leave_wfh_screenshot.png",
-        "desc": "Weekly in-office vs WFH headcount tracker and Thai labor vacation engine"
+        "desc": "Weekly in-office vs WFH headcount tracker"
       }
     ],
     "role": "End-to-End Product Designer & Front-End Architecture",
     "targetUsers": "พนักงานทั่วไป (ยื่นใบลา/ขอ WFH), หัวหน้าทีม/ผู้จัดการ (คิวอนุมัติ & Team Matrix), ฝ่ายบุคคล/HR (ทะเบียนพนักงาน & คำนวณโควตา)",
-    "duration": "Enterprise SaaS Project (2025–2026)",
-    "designGoal": "สร้างระบบบริหารจัดการวันลาและสลับวัน WFH ที่ใช้งานง่าย ลดความผิดพลาดของฝ่ายบุคคล และแสดงผลแบบโปร่งใส",
-    "problem": "การยื่นคำขอลางานและสลับวัน WFH ในองค์กรแบบไฮบริดมักสับสน ไม่มีจุดสรุปยอดคงเหลือแบบเรียลไทม์ ทำให้หัวหน้างานตัดสินใจยาก",
-    "responsibilities": "ออกแบบ UX Flow การยื่นและอนุมัติคำขอ, วางระบบ Design System ด้วย Tailwind CSS, ออกแบบสถานะคำขอ (Pending, Approved, Rejected)",
-    "uxApproach": "ออกแบบให้เห็นโควตาวันลาและสถานะคำขอตั้งแต่หน้าแรก พร้อมฟอร์มยื่นคำขอที่ตรวจสอบเงื่อนไขล่วงหน้าเพื่อลดข้อผิดพลาด",
-    "keyDecisions": "1) Instant Balance Cards: แสดงยอดวันลาคงเหลือและวัน WFH สัปดาห์นี้อย่างชัดเจน\n2) RBAC Simulation Switcher: ให้ผู้ตรวจงานทดสอบสิทธิ์ 3 บทบาทได้ทันที\n3) Interactive Preview Sandbox: ให้ทดลองสร้างและอนุมัติคำขอได้ในเบราว์เซอร์",
-    "devCollaboration": "ทำงานร่วมกับสถาปัตยกรรม React 18 และ TypeScript กำหนดโครงสร้างข้อมูลให้สอดคล้องกับ API และจัดการ Error State ครบถ้วน",
-    "outcomeLearnings": "ช่วยลดเวลาการยื่นคำขอและตรวจสอบวันลาของพนักงานลงได้อย่างมีนัยสำคัญ พร้อม UI ที่สะอาดตาและเข้าใจง่าย",
+    "duration": "Enterprise Project (2025–2026)",
+    "designGoal": "Design Goal: ปรับเปลี่ยนกระบวนการลางานและขอสลับวัน WFH ที่ซับซ้อนให้กลายเป็นระบบ 3-Role RBAC Portal ที่เข้าใจง่าย พร้อมคำนวณโควตาพักร้อน Pro-rate ตามกฎหมายแรงงานไทยแบบเรียลไทม์",
+    "problem": "การจัดการวันลาและสลับวัน WFH ในองค์กรแบบไฮบริดมักติดปัญหาความคลุมเครือของสูตรคำนวณสิทธิ์พักร้อนตามวันเริ่มงานและวันผ่านโปร รวมถึงความเสี่ยงที่ทีมจะขาดคนในวันจันทร์หรือศุกร์เนื่องจากไม่มีตารางสรุป Headcount เข้าออฟฟิศจริง",
+    "responsibilities": "ออกแบบสถาปัตยกรรมข้อมูล (IA), พัฒนาระบบ User Roles (Employee / Manager / HR Super Admin), ออกแบบ Weekly Attendance Matrix และพัฒนาระบบคำนวณสิทธิ์พักร้อนแบบ Pro-rata",
+    "uxApproach": "ออกแบบให้มี \"RBAC Simulation Bar\" ด้านบน เพื่อให้ผู้มีส่วนได้ส่วนเสียและผู้ตรวจงานสามารถสลับทดลองสิทธิ์ได้ทันที พร้อม Live Vacation Calculator Preview ในฟอร์มเพิ่มพนักงานใหม่",
+    "keyDecisions": "1) RBAC Simulation Switcher: ให้ทดสอบระบบได้ทั้ง 3 มุมมองโดยไม่ต้องล็อกอินหลายบัญชี\n2) Weekly Hybrid Attendance Matrix: สรุปยอดคนเข้าออฟฟิศจริงแต่ละวัน (Daily Headcount) เพื่อป้องกันคนไม่พอ\n3) Thai Labor Law Formula Engine: คำนวณวันลา Year 0 อัตโนมัติ (เช่น ผ่านโปรหลัง 1 ก.ย. ได้สิทธิ์ทันที)",
+    "devCollaboration": "พัฒนาด้วย React 18, TypeScript, Tailwind CSS และ Lucide Icons โดยกำหนด Strict TypeScript Interfaces สำหรับสถานะคำขอ (Status Enums) และสูตรการคำนวณเพื่อรองรับการต่อยอดเป็นโปรดักชัน",
+    "outcomeLearnings": "สร้างประสบการณ์ใช้งานที่ชัดเจน ลดความผิดพลาดในการคำนวณวันลาของฝ่ายบุคคล และช่วยให้หัวหน้างานตัดสินใจอนุมัติได้อย่างรวดเร็วผ่านข้อมูลที่โปร่งใส",
     "keyFeatures": [
-      "ระบบคำนวณวันลาคงเหลือแบบเรียลไทม์",
-      "สลับมุมมองทดสอบสิทธิ์ 3 บทบาท (Employee / Manager / HR)",
-      "ระบบขอสลับวัน WFH พร้อมจับคู่วันเข้าออฟฟิศชดเชย",
-      "ตารางเมทริกซ์ทีมประจำสัปดาห์ (Weekly Attendance Matrix)",
-      "สูตรคำนวณวันลาพักร้อนแบบ Pro-rate ตามกฎหมายแรงงานไทย"
+      "ระบบจำลองสิทธิ์ 3 ระดับ (Employee, Manager, HR Admin) สลับมุมมองได้ทันที",
+      "ตารางเมทริกซ์ทีมประจำสัปดาห์ (Team Weekly Attendance Matrix) พร้อมสรุปยอด Headcount รายวัน",
+      "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
+      "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
+      "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
     ]
   },
   {
     "id": "ami-booth-planner",
     "projectNum": 2,
-    "displayTitle": "Ami's Booth Planner - ระบบจัดการบูธและอีเวนต์สำหรับครีเอเตอร์",
-    "fullTitle": "Ami's Booth Planner - ระบบจัดการบูธและอีเวนต์สำหรับครีเอเตอร์",
-    "shortSubtitle": "Visual creator schedule engine, real-time date conflict detection, and booth budget ledger.",
+    "displayTitle": "Ami Booth Planner 🎨",
+    "fullTitle": "Ami Booth Planner - All-in-One Creator Event Platform",
+    "shortSubtitle": "Empowering indie creators & illustrators to organize events, detect date conflicts, and manage booth budgets seamlessly.",
     "category": "creator economy & events",
     "filterCategory": "creator",
     "badge": "live interactive",
@@ -279,11 +279,10 @@ const caseStudiesData = [
     "tags": [
       "Creator Economy",
       "Event Operations",
-      "Conflict Detection",
-      "Partial Acceptance",
       "Material UI v6",
       "React 18",
-      "MongoDB Atlas"
+      "MongoDB Atlas",
+      "Date Conflict"
     ],
     "previewCards": [
       {
@@ -293,8 +292,8 @@ const caseStudiesData = [
         "type": "laptop"
       },
       {
-        "title": "Applications & Budget Ledger",
-        "date": "Jan 2026",
+        "title": "Date Conflict & Budget Ledger",
+        "date": "Oct 2025",
         "image": "/assets/portfolio/ami_booth_screenshot_full.png",
         "type": "card"
       }
@@ -324,7 +323,7 @@ const caseStudiesData = [
       },
       {
         "icon": "users",
-        "label": "Partial Day Acceptance"
+        "label": "Partial Acceptance Flow"
       },
       {
         "icon": "analytics",
@@ -346,19 +345,19 @@ const caseStudiesData = [
       },
       {
         "icon": "database",
-        "label": "Pastel Pink Design System"
+        "label": "Partial Day Acceptance"
       },
       {
         "icon": "uiux",
-        "label": "Partial Acceptance Support"
+        "label": "Pastel Pink Design System"
       },
       {
         "icon": "security",
-        "label": "Secure Cloud Sync"
+        "label": "Secure Cloud & Sandbox"
       },
       {
         "icon": "templates",
-        "label": "Demo Sandbox Mode"
+        "label": "20+ Creator Workflows"
       }
     ],
     "styleGuide": {
@@ -397,43 +396,43 @@ const caseStudiesData = [
         },
         {
           "label": "Target Users",
-          "value": "Illustrators, Comic Artists & Creators"
+          "value": "Illustrators, Comic Artists & Craft Brands"
         },
         {
           "label": "Key Solution",
           "value": "Conflict Detection & Budget Ledger"
         }
       ],
-      "image": "/assets/portfolio/ami_booth_screenshot_full.png"
+      "image": "/assets/portfolio/ami_booth_calendar.png"
     },
     "multiScreens": [
       {
         "title": "Month Grid Calendar",
         "image": "/assets/portfolio/ami_booth_calendar.png",
-        "desc": "Visual monthly schedule with status badges and conflict alerts"
+        "desc": "Visual monthly schedule with status badges"
       },
       {
-        "title": "Applications & Budget Ledger",
+        "title": "Applications & Conflict View",
         "image": "/assets/portfolio/ami_booth_screenshot_full.png",
-        "desc": "Filterable table of all submitted events and fee recalibration"
+        "desc": "Timeline list with overlapping date alerts and budget recalculation"
       }
     ],
     "role": "UX/UI Designer & Full-Stack Developer",
-    "targetUsers": "นักวาดภาพประกอบ (Illustrators), ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",
+    "targetUsers": "นักวาดภาพประกอบ (Illustrators), นักเขียนการ์ตูน, ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",
     "duration": "Creator SaaS Project (2025–2026)",
-    "designGoal": "สร้างระบบปฏิทินและบัญชีค่าบูธที่ตอบโจทย์ชีวิตครีเอเตอร์ เตือนวันที่งานชนกัน และคำนวณงบประมาณได้แม่นยำ",
-    "problem": "ครีเอเตอร์ต้องสมัครงานอีเวนต์หลายสิบงานต่อปี ซึ่งมีทั้งวันเปิดรับสมัคร วันประกาศผล และวันจัดงานที่คาบเกี่ยวกันบ่อยครั้ง และมักมีงานที่ได้บูธเพียงบางวัน ทำให้คำนวณค่าใช้จ่ายผิดพลาด",
-    "responsibilities": "ทำ User Research กับกลุ่มนักวาด, ออกแบบ Design System ธีมสี Pastel Pink, ออกแบบระบบ Smart Date Conflict Algorithm และพัฒนาฟูลสแต็กเชื่อมต่อ MongoDB Atlas",
-    "uxApproach": "ออกแบบมุมมองปฏิทิน Month Grid และ Agenda Timeline แยกสีชัดเจนระหว่างวันสมัคร วันประกาศผล และวันจัดบูธจริง พร้อมแถบแจ้งเตือน Conflict และระบบยืนยันผลแบบแยกวัน",
-    "keyDecisions": "1) Smart Date Conflict Detection: แจ้งเตือนทันทีเมื่อมีวันจัดบูธชนกันในตารางงาน\n2) Partial Acceptance Support: นับเฉพาะวันที่ได้บูธเข้าตารางจริงและคำนวณค่าบูธตามสัดส่วน\n3) Budget Separation: แยกค่าบูธจ่ายแล้ว ค้างจ่าย และรอผลอย่างโปร่งใส",
-    "devCollaboration": "พัฒนาด้วย React 18, Material UI v6, Node.js REST API และ MongoDB Atlas พร้อมระบบ Offline Fallback ด้วย LocalStorage",
-    "outcomeLearnings": "ช่วยให้ครีเอเตอร์เห็นภาพรวมตารางงานตลอดทั้งปี ไม่พลาดวันสำคัญ และควบคุมงบประมาณค่าบูธได้อย่างแม่นยำ",
+    "designGoal": "Design Goal: เปลี่ยนการจดตารางบูธในกระดาษและ Excel ที่กระจัดกระจาย ให้กลายเป็นระบบ Dashboard ธีม Pastel Pink ที่มีระบบเตือนรอบเวลาชนกันและคำนวณค่าบูธแยกรายวันได้อย่างแม่นยำ",
+    "problem": "ครีเอเตอร์ต้องสมัครงานอีเวนต์หลายสิบงานต่อปี ซึ่งมีทั้งวันเปิดรับสมัคร วันประกาศผล และวันจัดงานที่คาบเกี่ยวกันบ่อยครั้ง โดยเฉพาะงานหลายวันที่อาจได้รับการคัดเลือกเพียง 1 วัน (Partial Acceptance) ทำให้คำนวณค่าใช้จ่ายและวางแผนวันไปออกบูธผิดพลาด",
+    "responsibilities": "ทำ User Research กับกลุ่มครีเอเตอร์, ออกแบบ Design System ธีมสี Pastel Pink โดยอ้างอิง Component Patterns จาก Devias Kit Pro, ออกแบบระบบ Smart Date Conflict Algorithm และพัฒนาฟูลสแต็กเชื่อมต่อ MongoDB Atlas",
+    "uxApproach": "ออกแบบมุมมองปฏิทิน 2 รูปแบบ (Month Grid & Agenda) แยกสีชัดเจนระหว่างวันสมัคร วันประกาศผล และวันจัดบูธจริง พร้อมแถบแจ้งเตือนเมื่อมีงานชนกัน (Date Conflict Detection)",
+    "keyDecisions": "1) Partial Acceptance Support: รองรับผลการสมัครแยกรายวัน โดยระบบจะนับเฉพาะวันที่ได้บูธเข้าปฏิทินจริงและคำนวณค่าบูธตามวันที่ได้รับคัดเลือกเท่านั้น\n2) Budget Separation: แยกค่าบูธค้างชำระ ยอดที่ชำระแล้ว และค่าใช้จ่ายที่อาจเกิดขึ้นจากใบสมัครที่รอผลออกจากกัน ไม่นับซ้ำซ้อน\n3) Preview Demo vs Cloud Auth: ผู้เยี่ยมชมสามารถทดลองสร้างงานในโหมด Demo Sandbox ได้อย่างปลอดภัย โดยระบบจะซิงค์และบันทึกลง MongoDB Atlas เฉพาะเมื่อล็อกอินด้วยอีเมลผู้ดูแล",
+    "devCollaboration": "พัฒนาด้วย React 18, Material UI (MUI v6), Emotion, Node.js REST API และ MongoDB Atlas พร้อมระบบ Offline Fallback ด้วย LocalStorage",
+    "outcomeLearnings": "ช่วยให้ครีเอเตอร์วางแผนตารางออกบูธล่วงหน้าได้โดยไม่พลาดวันสำคัญ ประหยัดเวลาจัดการใบสมัครได้กว่า 70% และป้องกันปัญหาการจองบูธซ้อนในวันเดียวกัน",
     "keyFeatures": [
       "ระบบตรวจจับรอบเวลาจัดบูธชนกัน (Smart Date Conflict Detection)",
-      "ปฏิทินตารางงานแบบ Month Grid และ Agenda Timeline",
+      "ปฏิทินตารางงานแบบ Month Grid และ Agenda แยกสีตามช่วงเวลาสำคัญ",
       "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
-      "ระบบบริหารงบประมาณ (Budget Ledger) แยกยอดจ่ายแล้วและยอดค้างชำระ",
-      "โหมด Demo Sandbox สำหรับผู้เยี่ยมชม และ Cloud Sync สำหรับสมาชิก"
+      "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
+      "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
     ]
   }
 ];

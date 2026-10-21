@@ -122,8 +122,8 @@ const handleGetSingleProject = async (req, res) => {
 
 router.get('/case-studies', handleGetProjects);
 router.get('/case-studies/:id', handleGetSingleProject);
-router.get('/api/projects', handleGetProjects);
-router.get('/api/projects/:id', handleGetSingleProject);
+router.get('/projects', handleGetProjects);
+router.get('/projects/:id', handleGetSingleProject);
 
 // Activities endpoint with auto-sync
 router.get('/activities', async (req, res) => {
