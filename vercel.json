@@ -11,7 +11,7 @@
       "destination": "/public/projects.html"
     },
     {
-      "source": "/projects/:slug",
+      "source": "/projects/(.+)",
       "destination": "/public/project-detail.html"
     },
     {
