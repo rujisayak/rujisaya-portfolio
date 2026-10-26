@@ -1666,11 +1666,6 @@ function hydrateProjectDetailView(study) {
     bottomLive.target = '_blank';
     bottomLive.rel = 'noopener noreferrer';
   }
-  const bottomSandbox = document.getElementById('detailBottomSandbox');
-  if (bottomSandbox) {
-    bottomSandbox.setAttribute('onclick', `openInteractivePreview('${study.id}')`);
-  }
-
   // Next Project Section Navigation
   const currentIdx = allCaseStudies.findIndex(s => s.id === study.id || (s.slug && s.slug === study.slug));
   const nextIdx = currentIdx >= 0 ? (currentIdx + 1) % allCaseStudies.length : 0;

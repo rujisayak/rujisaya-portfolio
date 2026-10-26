@@ -571,9 +571,6 @@
         <a href="https://leave-wfh-management.vercel.app/?demo=true" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="detailBottomLive">
           <span>Open Live Production App ↗</span>
         </a>
-        <button class="btn btn-secondary" onclick="openInteractivePreview('leave-wfh-management')" id="detailBottomSandbox">
-          <span>🎮 Launch Interactive Sandbox</span>
-        </button>
         <a href="/projects" class="btn btn-secondary">
           <span>← Back to All Projects</span>
         </a>
@@ -610,52 +607,6 @@
       </div>
     </section>
   </main>
-
-  <!-- INTERACTIVE LIVE PREVIEW MODAL (Available on-demand) -->
-  <div class="interactive-preview-modal" id="interactivePreviewModal" role="dialog" aria-modal="true" aria-labelledby="previewModalTitle">
-    <div class="preview-modal-dialog">
-      <div class="preview-modal-header">
-        <div class="preview-window-controls">
-          <button class="win-btn close" id="previewModalClose" aria-label="Close Preview" title="Close Preview"></button>
-          <span class="win-btn min"></span>
-          <span class="win-btn max"></span>
-        </div>
-        
-        <div class="preview-url-bar">
-          <span class="preview-url-lock">🔒</span>
-          <span class="preview-url-text" id="previewUrlDisplay">https://...</span>
-          <button class="preview-reload-btn" id="previewReloadBtn" title="Reload Sandbox State" aria-label="Reload Sandbox">↻</button>
-        </div>
-
-        <div class="preview-viewport-actions">
-          <div class="viewport-toggle-group">
-            <button class="viewport-btn active" data-viewport="desktop" title="Desktop View (100%)">💻 Desktop</button>
-            <button class="viewport-btn" data-viewport="tablet" title="Tablet View (768px)">📱 Tablet</button>
-            <button class="viewport-btn" data-viewport="mobile" title="Mobile View (375px)">📱 Mobile</button>
-          </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" id="previewExternalLink" class="preview-external-btn" title="Open in new window">
-            <span>Launch App ↗</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Sandbox Notice Banner -->
-      <div class="preview-sandbox-banner">
-        <span class="sandbox-pill">🎮 Sandbox Demo Mode</span>
-        <span class="sandbox-desc">
-          คุณสามารถทดลองใช้งาน กดเล่นฟีเจอร์ สร้างข้อมูล และสลับสิทธิ์ได้อิสระ ข้อมูลจะทำงานใน Session Preview โดยไม่กระทบฐานข้อมูลหลัก
-        </span>
-      </div>
-
-      <!-- Embedded Iframe Wrapper -->
-      <div class="preview-iframe-wrapper viewport-desktop" id="previewIframeWrapper">
-        <div class="preview-iframe-loading" id="previewIframeLoading">
-          <div class="loading-spinner">กำลังโหลด Interactive App Preview...</div>
-        </div>
-        <iframe id="previewIframe" src="" title="Live Project Preview" allow="clipboard-read; clipboard-write; geolocation"></iframe>
-      </div>
-    </div>
-  </div>
 
   <!-- Toast Notification -->
   <div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard!</div>
