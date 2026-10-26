@@ -1506,7 +1506,22 @@ function hydrateProjectDetailView(study) {
   }
   const mobileMockup = document.getElementById('detailMobileMockup');
   if (mobileMockup) {
-    mobileMockup.src = multiScreens[1] ? multiScreens[1].image : study.image;
+    const isAmi = (study.id && study.id.includes('ami')) || (study.slug && study.slug.includes('ami'));
+    const isLeaya = (study.id && (study.id.includes('leave') || study.id.includes('leaya'))) || (study.slug && (study.slug.includes('leave') || study.slug.includes('leaya')));
+
+    let mobileSrc = study.mobileImage || study.mobileScreen || study.mobilePreview;
+    if (!mobileSrc) {
+      if (isAmi) {
+        mobileSrc = '/assets/portfolio/ami_screen_mobile.png';
+      } else if (isLeaya) {
+        mobileSrc = '/assets/portfolio/leaya_screen_mobile.png';
+      }
+    }
+    if (!mobileSrc) {
+      mobileSrc = study.image;
+    }
+
+    mobileMockup.src = mobileSrc;
     mobileMockup.alt = `${fullTitle} Mobile Experience`;
   }
 

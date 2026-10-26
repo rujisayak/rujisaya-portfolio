@@ -263,7 +263,9 @@
         "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
         "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
         "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
-      ]
+      ],
+      "mobileImage": "/assets/portfolio/leaya_screen_mobile.png",
+      "mobileScreen": "/assets/portfolio/leaya_screen_mobile.png"
     },
     {
       "id": "ami-booth-planner",
@@ -448,7 +450,9 @@
         "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
         "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
         "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
-      ]
+      ],
+      "mobileImage": "/assets/portfolio/ami_screen_mobile.png",
+      "mobileScreen": "/assets/portfolio/ami_screen_mobile.png"
     }
   ],
   "activities": [

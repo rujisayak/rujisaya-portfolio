@@ -99,6 +99,8 @@ const caseStudiesData = [
     "date": "Jan 2026",
     "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
     "image": "/assets/portfolio/leaya_screenshot_full.png",
+    "mobileImage": "/assets/portfolio/leaya_screen_mobile.png",
+    "mobileScreen": "/assets/portfolio/leaya_screen_mobile.png",
     "liveUrl": "https://leave-wfh-management.vercel.app/",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
@@ -274,6 +276,8 @@ const caseStudiesData = [
     "date": "Jan 2026",
     "summary": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
     "image": "/assets/portfolio/ami_booth_calendar.png",
+    "mobileImage": "/assets/portfolio/ami_screen_mobile.png",
+    "mobileScreen": "/assets/portfolio/ami_screen_mobile.png",
     "liveUrl": "https://ami-booth-planner.vercel.app/",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
