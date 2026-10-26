@@ -227,14 +227,24 @@
       },
       "multiScreens": [
         {
-          "title": "Dashboard Overview",
-          "image": "/assets/portfolio/leaya_screenshot_full.png",
-          "desc": "Real-time leave balances & attendance status"
+          "title": "Employee & Team Dashboard",
+          "image": "/assets/portfolio/leaya_screen_dashboard.png",
+          "desc": "Real-time leave balance, WFH quotas and monthly office tracking"
         },
         {
           "title": "Team Attendance Matrix",
-          "image": "/assets/portfolio/leave_wfh_screenshot.png",
-          "desc": "Weekly in-office vs WFH headcount tracker"
+          "image": "/assets/portfolio/leaya_screen_matrix.png",
+          "desc": "Weekly in-office vs remote team schedule and headcount planning"
+        },
+        {
+          "title": "Vacation Calculation Engine",
+          "image": "/assets/portfolio/leaya_screen_rules.png",
+          "desc": "Thai labor law pro-rata calculation rules and policy compliance"
+        },
+        {
+          "title": "HR Master Data & Directory",
+          "image": "/assets/portfolio/leaya_screen_masterdata.png",
+          "desc": "Enterprise employee directory, role permissions and organizational units"
         }
       ],
       "role": "End-to-End Product Designer & Front-End Architecture",
@@ -402,14 +412,24 @@
       },
       "multiScreens": [
         {
-          "title": "Month Grid Calendar",
-          "image": "/assets/portfolio/ami_booth_calendar.png",
-          "desc": "Visual monthly schedule with status badges"
+          "title": "Overview Dashboard",
+          "image": "/assets/portfolio/ami_screen_dashboard.png",
+          "desc": "Visual event dashboard with status badges and quick actions"
         },
         {
-          "title": "Applications & Conflict View",
-          "image": "/assets/portfolio/ami_booth_screenshot_full.png",
-          "desc": "Timeline list with overlapping date alerts and budget recalculation"
+          "title": "Month Grid Calendar & Conflict Alerts",
+          "image": "/assets/portfolio/ami_screen_calendar.png",
+          "desc": "Visual monthly schedule with real-time conflict badges"
+        },
+        {
+          "title": "Booth Applications & Partial Acceptance",
+          "image": "/assets/portfolio/ami_screen_applications.png",
+          "desc": "Application workflow with partial day acceptance tracking"
+        },
+        {
+          "title": "Event Budget & Fee Ledger",
+          "image": "/assets/portfolio/ami_screen_budget.png",
+          "desc": "Outstanding booth fees, payment tracking and revenue calculations"
         }
       ],
       "role": "UX/UI Designer & Full-Stack Developer",

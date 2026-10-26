@@ -4569,12 +4569,17 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   Card 3: Multi-Screen UI Grid (4-Screen Mosaic)
+   Card 3: Multi-Screen UI Grid (4 Distinct Menus & Views)
    -------------------------------------------------------------------------- */
 .card3-header {
-  padding: 24px 28px 14px;
+  padding: 22px 24px 12px;
   position: relative;
   z-index: 2;
+  text-align: center;
+}
+
+.card3-header .card-pill-tags-row {
+  justify-content: center;
 }
 
 .card3-title {
@@ -4596,36 +4601,84 @@ button {
 }
 
 .mosaic-screen-card {
-  height: 150px;
+  height: 154px;
   border-radius: 10px;
   overflow: hidden;
-  background: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  background: #1C1917;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-.mosaic-screen-card img {
+.mosaic-screen-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.mosaic-screen-header {
+  background: #171210;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.mosaic-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+.mosaic-dot.red { background: #FF5F56; }
+.mosaic-dot.yellow { background: #FFBD2E; }
+.mosaic-dot.green { background: #27C93F; }
+
+.mosaic-screen-title {
+  margin-left: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.62rem;
+  color: #D6D3D1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mosaic-screen-viewport {
+  flex: 1;
+  overflow: hidden;
+  background: #000000;
+  position: relative;
+}
+
+.mosaic-screen-viewport img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
   display: block;
+  transition: transform 0.35s ease;
 }
 
-.mosaic-screen-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+.mosaic-screen-card:hover .mosaic-screen-viewport img {
+  transform: scale(1.04);
 }
 
 .card3-bottom-badge {
   position: absolute;
   bottom: 16px;
-  right: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(23, 18, 16, 0.94);
-  border: 1px solid rgba(16, 185, 129, 0.45);
+  border: 1px solid rgba(16, 185, 129, 0.5);
   border-radius: 9999px;
-  padding: 5px 14px;
+  padding: 6px 18px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -4633,10 +4686,11 @@ button {
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 700;
-  z-index: 4;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  white-space: nowrap;
 }
 
 .badge-pulse-dot {
@@ -4648,21 +4702,44 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   Card 4: 3D Laptop on Pedestal + Feature Checklist
+   Card 4: Project Summary & Tech Specs + Tilted Laptop Mockup
    -------------------------------------------------------------------------- */
 .card4-split-layout {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 0.9fr 1.1fr;
   height: 100%;
   position: relative;
   z-index: 2;
 }
 
 .card4-info-col {
-  padding: 34px 20px 28px 28px;
+  padding: 32px 18px 28px 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
+  z-index: 3;
+}
+
+.card4-brand-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.card4-brand-logo {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.card4-brand-name {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #A8A09A;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .card4-heading {
@@ -4670,99 +4747,84 @@ button {
   font-family: var(--font-display, sans-serif);
   font-size: 1.25rem;
   font-weight: 800;
-  line-height: 1.3;
-  margin-bottom: 4px;
+  line-height: 1.28;
+  margin-bottom: 12px;
   letter-spacing: -0.01em;
 }
 
-.card4-subheading {
-  color: #A8A09A;
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
+.card4-specs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
   margin-bottom: 16px;
 }
 
-.card4-checklist {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  margin-bottom: 18px;
-}
-
-.card4-check-item {
+.card4-spec-pill {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 9999px;
   padding: 5px 14px;
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 600;
-  color: #E5DEC9;
+  color: #FAF7F2;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   width: fit-content;
 }
 
-.check-mark {
+.spec-check-mark {
   color: #10B981;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
-.card4-brand-tag {
+.card4-tool-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
+  gap: 8px;
+  background: #FAF7F2;
+  color: #231815;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #FFA0B4;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.theme-glow-leaya .card4-brand-tag {
-  color: #4DA6FF;
+.tool-badge-icon {
+  font-size: 0.85rem;
 }
 
 .card4-device-col {
   position: relative;
   height: 100%;
-  perspective: 1200px;
+  perspective: 1300px;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
   overflow: hidden;
 }
 
-.pedestal-block {
+.device-laptop-frame.laptop-tilted-mounted {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 96%;
-  height: 56px;
-  background: #110D0C;
-  border-radius: 10px 0 0 0;
-  box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.55);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
-  z-index: 1;
-}
-
-.device-laptop-frame.laptop-pedestal-mounted {
-  position: absolute;
-  width: 130%;
-  right: -35px;
-  bottom: 22px;
-  transform: rotateY(-18deg) rotateX(12deg) scale(0.96);
-  filter: drop-shadow(0 25px 48px rgba(0, 0, 0, 0.7));
+  width: 132%;
+  right: -32px;
+  bottom: -15px;
+  transform: rotateY(-14deg) rotateX(10deg) rotate(-12deg);
+  filter: drop-shadow(0 25px 48px rgba(0, 0, 0, 0.8));
   z-index: 2;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.showcase-card:hover .device-laptop-frame.laptop-pedestal-mounted {
-  transform: rotateY(-12deg) rotateX(8deg) scale(1.02);
+.showcase-card:hover .device-laptop-frame.laptop-tilted-mounted {
+  transform: rotateY(-8deg) rotateX(6deg) rotate(-8deg) scale(1.03);
 }
 
 /* --------------------------------------------------------------------------

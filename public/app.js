@@ -151,14 +151,24 @@ const FALLBACK_CASE_STUDIES = [
     },
     "multiScreens": [
       {
-        "title": "Dashboard Overview",
-        "image": "/assets/portfolio/leaya_screenshot_full.png",
-        "desc": "Real-time leave balances & attendance status"
+        "title": "Employee & Team Dashboard",
+        "image": "/assets/portfolio/leaya_screen_dashboard.png",
+        "desc": "Real-time leave balance, WFH quotas and monthly office tracking"
       },
       {
         "title": "Team Attendance Matrix",
-        "image": "/assets/portfolio/leave_wfh_screenshot.png",
-        "desc": "Weekly in-office vs WFH headcount tracker"
+        "image": "/assets/portfolio/leaya_screen_matrix.png",
+        "desc": "Weekly in-office vs remote team schedule and headcount planning"
+      },
+      {
+        "title": "Vacation Calculation Engine",
+        "image": "/assets/portfolio/leaya_screen_rules.png",
+        "desc": "Thai labor law pro-rata calculation rules and policy compliance"
+      },
+      {
+        "title": "HR Master Data & Directory",
+        "image": "/assets/portfolio/leaya_screen_masterdata.png",
+        "desc": "Enterprise employee directory, role permissions and organizational units"
       }
     ],
     "role": "End-to-End Product Designer & Front-End Architecture",
@@ -1210,6 +1220,199 @@ function initProjectDetailPage() {
   }
 }
 
+// Universal Showcase Data Resolver (Enforces 4 Distinct Screen Views Across All Projects)
+function getProjectShowcaseData(study) {
+  if (!study) return null;
+
+  const isAmi = (study.id === 'ami-booth-planner' || (study.slug && study.slug.includes('ami')));
+  const isLeaya = (study.id === 'leave-wfh-management' || (study.slug && (study.slug.includes('leave') || study.slug.includes('leaya'))));
+
+  // 1. Accent Theme Glow
+  const themeGlow = isAmi ? 'theme-glow-ami' : (isLeaya ? 'theme-glow-leaya' : 'theme-glow-default');
+
+  // 2. Multi-Menu Screens (Strictly 4 Distinct Views)
+  let s0, s1, s2, s3;
+
+  if (isAmi) {
+    s0 = { title: "Dashboard Overview", image: "/assets/portfolio/ami_screen_dashboard.png", desc: "Overview & Quick Actions" };
+    s1 = { title: "Calendar Planner", image: "/assets/portfolio/ami_screen_calendar.png", desc: "Month Grid Schedule & Date Conflicts" };
+    s2 = { title: "Applications View", image: "/assets/portfolio/ami_screen_applications.png", desc: "Conflict Detection & Partial Acceptance" };
+    s3 = { title: "Budget & Fee Ledger", image: "/assets/portfolio/ami_screen_budget.png", desc: "Real-time Expense Breakdown & Liabilities" };
+  } else if (isLeaya) {
+    s0 = { title: "Employee Dashboard", image: "/assets/portfolio/leaya_screen_dashboard.png", desc: "Leave Balances & WFH Monthly Tracking" };
+    s1 = { title: "Team Attendance Matrix", image: "/assets/portfolio/leaya_screen_matrix.png", desc: "Weekly In-Office vs Remote Team Schedule" };
+    s2 = { title: "Vacation Engine", image: "/assets/portfolio/leaya_screen_rules.png", desc: "Thai Labor Law Pro-rata Calculation Rules" };
+    s3 = { title: "HR Master Data", image: "/assets/portfolio/leaya_screen_masterdata.png", desc: "Enterprise Org Directory & Employee Permissions" };
+  } else {
+    // Universal fallback for any custom or future project
+    const available = [];
+    if (study.screens && Array.isArray(study.screens)) {
+      study.screens.forEach(s => available.push(typeof s === 'string' ? { title: "View", image: s } : s));
+    }
+    if (study.multiScreens && Array.isArray(study.multiScreens)) {
+      study.multiScreens.forEach(m => available.push(m));
+    }
+    if (study.galleryImages && Array.isArray(study.galleryImages)) {
+      study.galleryImages.forEach(g => available.push({ title: "Screen", image: g }));
+    }
+    if (study.image) {
+      available.unshift({ title: "Overview", image: study.image });
+    }
+
+    // Ensure 4 distinct screens without repeating the first one 4 times
+    const pool = available.filter((v, i, a) => a.findIndex(t => t.image === v.image) === i);
+    s0 = pool[0] || { title: "Dashboard Overview", image: "/assets/portfolio/ami_screen_dashboard.png" };
+    s1 = pool[1] || { title: "Feature / List View", image: "/assets/portfolio/leaya_screen_matrix.png" };
+    s2 = pool[2] || { title: "Deep-Dive Module", image: "/assets/portfolio/ami_screen_applications.png" };
+    s3 = pool[3] || { title: "Analytics & Settings", image: "/assets/portfolio/leaya_screen_rules.png" };
+  }
+
+  // 3. Card 1 Config
+  const card1Title = isAmi
+    ? "Perfect Solution For Indie Creators & Event Planners"
+    : (isLeaya ? "Perfect Solution For Enterprise Teams & HR Operations" : `Perfect Solution For ${(study.targetUsers || 'Modern Teams').split(/[,&]/)[0].trim()}`);
+  
+  const card1Tags = isAmi
+    ? ["Calendar Grid", "Conflict Alerts", "Partial Acceptance", "Booth Budget", "& Many more..."]
+    : (isLeaya 
+        ? ["Pro-rata Engine", "RBAC Matrix", "Weekly Attendance", "Leave Ledger", "& Many more..."]
+        : (study.tags && study.tags.length ? [...study.tags.slice(0, 4), "& Many more..."] : ["Workflow UI", "Custom System", "Cloud Sync", "& Many more..."]));
+
+  // 4. Card 2 Config
+  const card2Watermark = isAmi 
+    ? "DATE CONFLICT" 
+    : (isLeaya ? "VACATION ENGINE" : (study.displayTitle || study.title || "SMART ENGINE").toUpperCase().slice(0, 16));
+
+  const card2Url = study.liveUrl 
+    ? study.liveUrl.replace('https://', '').replace(/\/$/, '') + (isAmi ? '/calendar' : '/vacation-engine')
+    : 'app.internal/features';
+
+  const card2WidgetTitle = isAmi ? "Conflict Detection" : (isLeaya ? "Attendance Matrix" : "Core Module");
+
+  // 5. Card 3 Config
+  let card3Tags = isAmi 
+    ? ["Illustrators", "Comic Creators", "Craft Brands", "Event Organizers"] 
+    : (isLeaya ? ["HR & People Ops", "Team Managers", "Hybrid Employees", "Enterprise Teams"] : []);
+
+  if (!card3Tags.length && study.targetUsers) {
+    card3Tags = study.targetUsers
+      .split(',')
+      .map(t => t.replace(/\(.*?\)/g, '').trim())
+      .filter(t => t.length > 0 && t.length < 28)
+      .slice(0, 4);
+  }
+  if (!card3Tags.length) {
+    card3Tags = ["Enterprise Teams", "Team Leads", "Product Managers", "Operations"];
+  }
+
+  // 6. Card 4 Config
+  const brandLogo = isAmi ? "🎨" : (isLeaya ? "🐾" : "⚡");
+  const brandName = isAmi ? "Ami Booth Planner" : (isLeaya ? "Leaya HR Portal" : (study.displayTitle || study.title || "Interactive App"));
+  const toolBadge = (study.techStack && study.techStack.length >= 2)
+    ? `${study.techStack[0].name} / ${study.techStack[1].name} • Full System`
+    : (isAmi ? "React / MUI • Full Event System" : "Next.js / React • Full HR System");
+
+  return {
+    themeGlow,
+    s0, s1, s2, s3,
+    card1: {
+      title: card1Title,
+      tags: card1Tags,
+      screenLeft: s1.image,
+      screenRight: s0.image
+    },
+    card2: {
+      watermark: card2Watermark,
+      coreScreen: s2.image,
+      url: card2Url,
+      widgetTitle: card2WidgetTitle,
+      widgetScreen: s1.image
+    },
+    card3: {
+      title: "This Platform Suitable For",
+      tags: card3Tags,
+      screen1: s0,
+      screen2: s1,
+      screen3: s2,
+      screen4: s3,
+      badgeText: "✔ Full Multi-Menu Workflow"
+    },
+    card4: {
+      brandLogo,
+      brandName,
+      heading: "Built for Scalability & Seamless UX",
+      specs: [
+        "Responsive UI",
+        "100% Custom System",
+        "Pixel Perfect",
+        "Interactive State"
+      ],
+      toolBadge,
+      laptopScreen: s0.image
+    }
+  };
+}
+
+function renderProjectShowcaseGrid(study) {
+  const data = getProjectShowcaseData(study);
+  if (!data) return;
+
+  const gridContainer = document.getElementById('visualShowcaseGrid');
+  if (gridContainer) {
+    gridContainer.classList.remove('theme-glow-ami', 'theme-glow-leaya');
+    gridContainer.classList.add(data.themeGlow);
+  }
+
+  // --- CARD 1 (Top-Left): Angled Laptop Split-Screen + Tags ---
+  setElementSrc('sc1Laptop1Img', data.card1.screenRight);
+  setElementSrc('sc1Laptop2Img', data.card1.screenLeft);
+  setElementText('sc1Title', data.card1.title);
+  const sc1TagsEl = document.getElementById('sc1Tags');
+  if (sc1TagsEl) {
+    sc1TagsEl.innerHTML = data.card1.tags.map(t => `<span class="dark-pill-tag">${escapeHtml(t)}</span>`).join('');
+  }
+
+  // --- CARD 2 (Top-Right): Watermark + Core Feature Deep-Dive Window ---
+  setElementText('sc2Watermark', data.card2.watermark);
+  setElementSrc('sc2BrowserImg', data.card2.coreScreen);
+  setElementText('sc2BrowserUrl', data.card2.url);
+  setElementText('sc2WidgetTitle', data.card2.widgetTitle);
+  setElementSrc('sc2WidgetImg', data.card2.widgetScreen);
+
+  // --- CARD 3 (Bottom-Left): 2x2 Multi-Menu Screen Grid (4 DISTINCT MENUS) ---
+  setElementText('sc3Title', data.card3.title);
+  const sc3TagsEl = document.getElementById('sc3Tags');
+  if (sc3TagsEl) {
+    sc3TagsEl.innerHTML = data.card3.tags.map(t => `<span class="dark-pill-tag">${escapeHtml(t)}</span>`).join('');
+  }
+  setElementSrc('sc3Screen1', data.card3.screen1.image);
+  setElementText('sc3ScreenTitle1', data.card3.screen1.title);
+
+  setElementSrc('sc3Screen2', data.card3.screen2.image);
+  setElementText('sc3ScreenTitle2', data.card3.screen2.title);
+
+  setElementSrc('sc3Screen3', data.card3.screen3.image);
+  setElementText('sc3ScreenTitle3', data.card3.screen3.title);
+
+  setElementSrc('sc3Screen4', data.card3.screen4.image);
+  setElementText('sc3ScreenTitle4', data.card3.screen4.title);
+
+  setElementText('sc3BadgeText', data.card3.badgeText);
+
+  // --- CARD 4 (Bottom-Right): Project Summary & Tech Specs + Tilted Laptop ---
+  setElementText('sc4BrandLogo', data.card4.brandLogo);
+  setElementText('sc4BrandName', data.card4.brandName);
+  setElementText('sc4Heading', data.card4.heading);
+
+  setElementText('sc4Spec1', data.card4.specs[0] || 'Responsive UI');
+  setElementText('sc4Spec2', data.card4.specs[1] || '100% Custom System');
+  setElementText('sc4Spec3', data.card4.specs[2] || 'Pixel Perfect');
+  setElementText('sc4Spec4', data.card4.specs[3] || 'Interactive State');
+
+  setElementText('sc4ToolText', data.card4.toolBadge);
+  setElementSrc('sc4LaptopImg', data.card4.laptopScreen);
+}
+
 function hydrateProjectDetailView(study) {
   if (!study) return;
 
@@ -1367,122 +1570,8 @@ function hydrateProjectDetailView(study) {
       : "Pro-rata Vacation Engine & Weekly Attendance Matrix";
   }
 
-  // 2-Column Dark Visual Showcase Grid (PlanIQ / UI8 4-Card Composition)
-  const gridContainer = document.getElementById('visualShowcaseGrid');
-  if (gridContainer) {
-    gridContainer.classList.remove('theme-glow-ami', 'theme-glow-leaya');
-    gridContainer.classList.add(isAmi ? 'theme-glow-ami' : 'theme-glow-leaya');
-  }
-
-  if (isAmi) {
-    const amiDash = '/assets/portfolio/ami_screen_dashboard.png';
-    const amiCal = '/assets/portfolio/ami_screen_calendar.png';
-    const amiApp = '/assets/portfolio/ami_screen_applications.png';
-    const amiBudget = '/assets/portfolio/ami_screen_budget.png';
-
-    // Card 1: 3D Dual Laptops in Perspective
-    setElementSrc('sc1Laptop1Img', amiDash);
-    setElementSrc('sc1Laptop2Img', amiCal);
-    setElementText('sc1Title', 'Perfect For Indie Creators & Event Planners');
-    const sc1TagsEl = document.getElementById('sc1Tags');
-    if (sc1TagsEl) {
-      sc1TagsEl.innerHTML = `
-        <span class="dark-pill-tag">Calendar</span>
-        <span class="dark-pill-tag">Conflict Alerts</span>
-        <span class="dark-pill-tag">Booth Budget</span>
-        <span class="dark-pill-tag">Multi-day Passes</span>
-        <span class="dark-pill-tag">&amp; Many more...</span>
-      `;
-    }
-
-    // Card 2: Feature Spotlight with Watermark Typography & Overlapping Browser
-    setElementText('sc2Watermark', 'DATE CONFLICT');
-    setElementSrc('sc2BrowserImg', amiCal);
-    setElementText('sc2BrowserUrl', 'ami-booth-planner.vercel.app/calendar');
-    setElementText('sc2WidgetTitle', 'Conflict Detection');
-    setElementSrc('sc2WidgetImg', amiApp);
-
-    // Card 3: Multi-Screen UI Grid (4-Screen Mosaic)
-    setElementText('sc3Title', 'This Platform Suitable For');
-    const sc3TagsEl = document.getElementById('sc3Tags');
-    if (sc3TagsEl) {
-      sc3TagsEl.innerHTML = `
-        <span class="dark-pill-tag">Illustrator</span>
-        <span class="dark-pill-tag">Comic Creator</span>
-        <span class="dark-pill-tag">Craft Brand</span>
-        <span class="dark-pill-tag">Event Organizer</span>
-      `;
-    }
-    setElementSrc('sc3Screen1', amiDash);
-    setElementSrc('sc3Screen2', amiCal);
-    setElementSrc('sc3Screen3', amiApp);
-    setElementSrc('sc3Screen4', amiBudget);
-    setElementText('sc3BadgeText', '20+ Creator Workflows');
-
-    // Card 4: 3D Laptop on Pedestal + Feature Checklist
-    setElementText('sc4Heading', 'Thank you for Exploring my project!');
-    setElementText('sc4Subheading', 'All-in-One Creator Event Management Platform');
-    setElementText('sc4Check1', 'Smart Date Conflict Detection');
-    setElementText('sc4Check2', 'Partial Day Acceptance Flow');
-    setElementText('sc4Check3', 'Real-time Budget & Fee Ledger');
-    setElementText('sc4Check4', 'MongoDB Atlas Cloud Sync');
-    setElementText('sc4BrandTagText', '100% Live Interactive Demo');
-    setElementSrc('sc4LaptopImg', amiDash);
-
-  } else {
-    // Leaya / Enterprise
-    const leayaFull = '/assets/portfolio/leaya_screenshot_full.png';
-    const leaveWfh = '/assets/portfolio/leave_wfh_screenshot.png';
-
-    // Card 1: 3D Dual Laptops in Perspective
-    setElementSrc('sc1Laptop1Img', leayaFull);
-    setElementSrc('sc1Laptop2Img', leaveWfh);
-    setElementText('sc1Title', 'Perfect For Enterprise Teams & HR Operations');
-    const sc1TagsEl = document.getElementById('sc1Tags');
-    if (sc1TagsEl) {
-      sc1TagsEl.innerHTML = `
-        <span class="dark-pill-tag">Pro-rata Engine</span>
-        <span class="dark-pill-tag">RBAC Simulation</span>
-        <span class="dark-pill-tag">Weekly Matrix</span>
-        <span class="dark-pill-tag">Leave Ledger</span>
-        <span class="dark-pill-tag">&amp; Many more...</span>
-      `;
-    }
-
-    // Card 2: Feature Spotlight with Watermark Typography & Overlapping Browser
-    setElementText('sc2Watermark', 'VACATION ENGINE');
-    setElementSrc('sc2BrowserImg', leayaFull);
-    setElementText('sc2BrowserUrl', 'leave-wfh-management.vercel.app/dashboard');
-    setElementText('sc2WidgetTitle', 'Attendance Matrix');
-    setElementSrc('sc2WidgetImg', leaveWfh);
-
-    // Card 3: Multi-Screen UI Grid (4-Screen Mosaic)
-    setElementText('sc3Title', 'This Platform Suitable For');
-    const sc3TagsEl = document.getElementById('sc3Tags');
-    if (sc3TagsEl) {
-      sc3TagsEl.innerHTML = `
-        <span class="dark-pill-tag">HR Admin</span>
-        <span class="dark-pill-tag">Team Manager</span>
-        <span class="dark-pill-tag">Hybrid Employee</span>
-        <span class="dark-pill-tag">People Ops</span>
-      `;
-    }
-    setElementSrc('sc3Screen1', leayaFull);
-    setElementSrc('sc3Screen2', leaveWfh);
-    setElementSrc('sc3Screen3', leaveWfh);
-    setElementSrc('sc3Screen4', leayaFull);
-    setElementText('sc3BadgeText', '30+ Enterprise Screens');
-
-    // Card 4: 3D Laptop on Pedestal + Feature Checklist
-    setElementText('sc4Heading', 'Thank you for Exploring my project!');
-    setElementText('sc4Subheading', 'Enterprise HR & WFH Management Portal');
-    setElementText('sc4Check1', 'Thai Labor Pro-rata Vacation Engine');
-    setElementText('sc4Check2', 'Role-Based Access Control (RBAC)');
-    setElementText('sc4Check3', 'Weekly Team Attendance Matrix');
-    setElementText('sc4Check4', 'Instant Approval Workflows');
-    setElementText('sc4BrandTagText', '100% Live Interactive Demo');
-    setElementSrc('sc4LaptopImg', leayaFull);
-  }
+  // Render 4-Card Bento Visual Showcase Grid (PlanIQ 2x2 Composition)
+  renderProjectShowcaseGrid(study);
 
   // Backward compatibility fallback for any legacy elements if present
   const zoomTitle = document.getElementById('detailZoomTitle');
