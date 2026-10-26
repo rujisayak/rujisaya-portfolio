@@ -18,7 +18,7 @@ const FALLBACK_CASE_STUDIES = [
     "date": "Jan 2026",
     "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
     "image": "/assets/portfolio/leaya_screenshot_full.png",
-    "liveUrl": "https://leave-wfh-management.vercel.app/",
+    "liveUrl": "https://leave-wfh-management.vercel.app/?demo=true",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
       "Enterprise SaaS",
@@ -204,7 +204,7 @@ const FALLBACK_CASE_STUDIES = [
     "date": "Jan 2026",
     "summary": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
     "image": "/assets/portfolio/ami_screen_dashboard.png",
-    "liveUrl": "https://ami-booth-planner.vercel.app/",
+    "liveUrl": "https://ami-booth-planner.vercel.app/?demo=true",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
       "Creator Economy",
@@ -1137,6 +1137,21 @@ function initInteractivePreview() {
   });
 }
 
+function ensureDemoParam(url) {
+  if (!url) return '';
+  try {
+    const base = window.location.origin && window.location.origin !== 'null' ? window.location.origin : 'http://localhost';
+    const u = new URL(url, base);
+    if (!u.searchParams.has('demo')) {
+      u.searchParams.set('demo', 'true');
+    }
+    return u.toString();
+  } catch (e) {
+    if (url.includes('?demo=true') || url.includes('&demo=true')) return url;
+    return url.includes('?') ? `${url}&demo=true` : `${url}?demo=true`;
+  }
+}
+
 function openInteractivePreview(projectId) {
   const project = allCaseStudies.find(p => p.id === projectId);
   if (!project || !project.liveUrl) return;
@@ -1148,8 +1163,10 @@ function openInteractivePreview(projectId) {
   const externalLink = document.getElementById('previewExternalLink');
   const wrapper = document.getElementById('previewIframeWrapper');
 
-  if (urlDisplay) urlDisplay.textContent = project.liveUrl;
-  if (externalLink) externalLink.href = project.liveUrl;
+  const liveDemoUrl = ensureDemoParam(project.liveUrl);
+
+  if (urlDisplay) urlDisplay.textContent = liveDemoUrl;
+  if (externalLink) externalLink.href = liveDemoUrl;
   
   if (wrapper) {
     wrapper.className = 'preview-iframe-wrapper viewport-desktop';
@@ -1161,7 +1178,7 @@ function openInteractivePreview(projectId) {
   if (loading) loading.style.display = 'flex';
 
   if (iframe) {
-    iframe.src = project.liveUrl;
+    iframe.src = liveDemoUrl;
   }
 
   if (modal) {
@@ -1283,8 +1300,12 @@ function getProjectShowcaseData(study) {
     ? "DATE CONFLICT" 
     : (isLeaya ? "VACATION ENGINE" : (study.displayTitle || study.title || "SMART ENGINE").toUpperCase().slice(0, 16));
 
-  const card2Url = study.liveUrl 
-    ? study.liveUrl.replace('https://', '').replace(/\/$/, '') + (isAmi ? '/calendar' : '/vacation-engine')
+  const cleanDomain = (study.liveUrl || '')
+    .replace(/^https?:\/\//, '')
+    .split('?')[0]
+    .replace(/\/$/, '');
+  const card2Url = cleanDomain 
+    ? cleanDomain + (isAmi ? '/calendar' : '/vacation-engine')
     : 'app.internal/features';
 
   const card2WidgetTitle = isAmi ? "Conflict Detection" : (isLeaya ? "Attendance Matrix" : "Core Module");
@@ -1482,19 +1503,9 @@ function hydrateProjectDetailView(study) {
   const subtitleEl = document.getElementById('detailHeaderSubtitle');
   if (subtitleEl) subtitleEl.textContent = shortSubtitle;
 
-  // Tech Stack Badges
-  const techBadgesEl = document.getElementById('detailTechBadges');
-  if (techBadgesEl) {
-    techBadgesEl.innerHTML = techStack.map(t => `
-      <div class="tech-icon-badge" title="${escapeHtml(t.name)}">
-        ${getTechSvg(t.type || t.name)}
-      </div>
-    `).join('');
-  }
-
   // CTA Links
   const ctaLive = document.getElementById('detailCtaLive');
-  if (ctaLive && study.liveUrl) ctaLive.href = study.liveUrl;
+  if (ctaLive && study.liveUrl) ctaLive.href = ensureDemoParam(study.liveUrl);
   const ctaGithub = document.getElementById('detailCtaGithub');
   if (ctaGithub && study.githubUrl) ctaGithub.href = study.githubUrl;
 
@@ -1600,7 +1611,7 @@ function hydrateProjectDetailView(study) {
   }
   const zoomAddress = document.getElementById('detailWindowAddress');
   if (zoomAddress && study.liveUrl) {
-    zoomAddress.textContent = study.liveUrl.replace('https://', '').replace(/\/$/, '');
+    zoomAddress.textContent = (study.liveUrl || '').replace(/^https?:\/\//, '').split('?')[0].replace(/\/$/, '');
   }
   const screensGrid = document.getElementById('detailScreensGrid');
   if (screensGrid && multiScreens) {
@@ -1635,7 +1646,7 @@ function hydrateProjectDetailView(study) {
 
   // Bottom Action Links
   const bottomLive = document.getElementById('detailBottomLive');
-  if (bottomLive && study.liveUrl) bottomLive.href = study.liveUrl;
+  if (bottomLive && study.liveUrl) bottomLive.href = ensureDemoParam(study.liveUrl);
   const bottomSandbox = document.getElementById('detailBottomSandbox');
   if (bottomSandbox) {
     bottomSandbox.setAttribute('onclick', `openInteractivePreview('${study.id}')`);

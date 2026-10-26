@@ -1278,63 +1278,55 @@ button {
 
 .bento-header-right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
-  flex-shrink: 0;
-}
-
-.bento-tech-badges-row {
-  display: flex;
-  gap: 0.625rem;
-}
-
-.tech-icon-badge {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: #FFFFFF;
-  border: 1px solid #E5DEC9;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(46, 31, 26, 0.04);
-  transition: transform 0.2s;
-}
-
-.tech-icon-badge:hover {
-  transform: translateY(-2px);
-  border-color: #D9CEBF;
+  flex-shrink: 0;
+  padding-top: 0.35rem; /* Optical baseline / vertical alignment with the display title */
 }
 
 .bento-cta-pills-row {
   display: flex;
+  align-items: center;
   gap: 0.75rem;
 }
 
 .bento-cta-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   background: #231815;
   color: #FFFFFF;
   font-weight: 700;
   font-size: 0.875rem;
-  padding: 9px 20px;
+  padding: 10px 22px;
   border-radius: 9999px;
   cursor: pointer;
   text-decoration: none;
   border: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(35, 24, 21, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(35, 24, 21, 0.18);
   font-family: var(--font-sans);
+  white-space: nowrap;
 }
 
 .bento-cta-pill:hover {
   background: #3B2A25;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(35, 24, 21, 0.28);
+  box-shadow: 0 6px 18px rgba(35, 24, 21, 0.26);
   color: #FFFFFF;
+}
+
+.bento-cta-pill.cta-github {
+  background: #FAF7F2;
+  color: #231815;
+  border: 1.5px solid #E5DEC9;
+  box-shadow: 0 2px 8px rgba(35, 24, 21, 0.05);
+}
+
+.bento-cta-pill.cta-github:hover {
+  background: #FFFFFF;
+  border-color: #D9CEBF;
+  color: #231815;
+  box-shadow: 0 6px 16px rgba(35, 24, 21, 0.1);
 }
 
 .pill-play-icon {
@@ -3694,6 +3686,7 @@ button {
   .bento-header-right {
     align-items: flex-start;
     width: 100%;
+    padding-top: 0;
   }
 
   .bento-hero-mockup-scene {
