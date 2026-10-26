@@ -19,6 +19,7 @@ const FALLBACK_CASE_STUDIES = [
     "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
     "image": "/assets/portfolio/leaya_screenshot_full.png",
     "liveUrl": "https://leave-wfh-management.vercel.app/?demo=true",
+    "demoUrl": "https://leave-wfh-management.vercel.app/?demo=true",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
       "Enterprise SaaS",
@@ -205,6 +206,7 @@ const FALLBACK_CASE_STUDIES = [
     "summary": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
     "image": "/assets/portfolio/ami_screen_dashboard.png",
     "liveUrl": "https://ami-booth-planner.vercel.app/?demo=true",
+    "demoUrl": "https://ami-booth-planner.vercel.app/?demo=true",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
       "Creator Economy",
@@ -1163,10 +1165,14 @@ function openInteractivePreview(projectId) {
   const externalLink = document.getElementById('previewExternalLink');
   const wrapper = document.getElementById('previewIframeWrapper');
 
-  const liveDemoUrl = ensureDemoParam(project.liveUrl);
+  const liveDemoUrl = ensureDemoParam(project.demoUrl || project.liveUrl);
 
   if (urlDisplay) urlDisplay.textContent = liveDemoUrl;
-  if (externalLink) externalLink.href = liveDemoUrl;
+  if (externalLink) {
+    externalLink.href = liveDemoUrl;
+    externalLink.target = '_blank';
+    externalLink.rel = 'noopener noreferrer';
+  }
   
   if (wrapper) {
     wrapper.className = 'preview-iframe-wrapper viewport-desktop';
@@ -1504,10 +1510,19 @@ function hydrateProjectDetailView(study) {
   if (subtitleEl) subtitleEl.textContent = shortSubtitle;
 
   // CTA Links
+  const targetLiveUrl = ensureDemoParam(study.demoUrl || study.liveUrl);
   const ctaLive = document.getElementById('detailCtaLive');
-  if (ctaLive && study.liveUrl) ctaLive.href = ensureDemoParam(study.liveUrl);
+  if (ctaLive && targetLiveUrl) {
+    ctaLive.href = targetLiveUrl;
+    ctaLive.target = '_blank';
+    ctaLive.rel = 'noopener noreferrer';
+  }
   const ctaGithub = document.getElementById('detailCtaGithub');
-  if (ctaGithub && study.githubUrl) ctaGithub.href = study.githubUrl;
+  if (ctaGithub && study.githubUrl) {
+    ctaGithub.href = study.githubUrl;
+    ctaGithub.target = '_blank';
+    ctaGithub.rel = 'noopener noreferrer';
+  }
 
   // Hero Mockup
   const heroMockup = document.getElementById('detailHeroMockup');
@@ -1646,7 +1661,11 @@ function hydrateProjectDetailView(study) {
 
   // Bottom Action Links
   const bottomLive = document.getElementById('detailBottomLive');
-  if (bottomLive && study.liveUrl) bottomLive.href = ensureDemoParam(study.liveUrl);
+  if (bottomLive && targetLiveUrl) {
+    bottomLive.href = targetLiveUrl;
+    bottomLive.target = '_blank';
+    bottomLive.rel = 'noopener noreferrer';
+  }
   const bottomSandbox = document.getElementById('detailBottomSandbox');
   if (bottomSandbox) {
     bottomSandbox.setAttribute('onclick', `openInteractivePreview('${study.id}')`);

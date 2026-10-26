@@ -102,6 +102,7 @@ const caseStudiesData = [
     "mobileImage": "/assets/portfolio/leaya_screen_mobile.png",
     "mobileScreen": "/assets/portfolio/leaya_screen_mobile.png",
     "liveUrl": "https://leave-wfh-management.vercel.app/?demo=true",
+    "demoUrl": "https://leave-wfh-management.vercel.app/?demo=true",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
       "Enterprise SaaS",
@@ -279,6 +280,7 @@ const caseStudiesData = [
     "mobileImage": "/assets/portfolio/ami_screen_mobile.png",
     "mobileScreen": "/assets/portfolio/ami_screen_mobile.png",
     "liveUrl": "https://ami-booth-planner.vercel.app/?demo=true",
+    "demoUrl": "https://ami-booth-planner.vercel.app/?demo=true",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
       "Creator Economy",
