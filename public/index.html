@@ -456,16 +456,28 @@
 
         <!-- Activity Filter Tabs -->
         <div class="filter-bar" id="activityFilters" role="tablist" aria-label="Activity categories">
-          <button class="filter-btn active" data-act-filter="all" role="tab" aria-selected="true">All Moments (17)</button>
+          <button class="filter-btn active" data-act-filter="all" role="tab" aria-selected="true">All Moments (16)</button>
           <button class="filter-btn" data-act-filter="concerts" role="tab" aria-selected="false">01 // Live Music</button>
           <button class="filter-btn" data-act-filter="creative" role="tab" aria-selected="false">02 // Art &amp; Design</button>
           <button class="filter-btn" data-act-filter="lifestyle" role="tab" aria-selected="false">03 // Lifestyle &amp; Cafes</button>
           <button class="filter-btn" data-act-filter="pets" role="tab" aria-selected="false">04 // Companions</button>
         </div>
 
-        <!-- Activity Cards Grid -->
-        <div class="activity-grid" id="activityContainer">
-          <div class="loading-spinner">Loading activity moments...</div>
+        <!-- Modern Tactile Corkboard / Scrapbook Canvas -->
+        <div class="corkboard-canvas" id="corkboardCanvas">
+          <div class="corkboard-header-strip">
+            <div class="corkboard-badge-pinned">
+              <span class="cork-pin-icon">📌</span>
+              <span class="cork-badge-text">STUDIO SCRAPBOOK // PINNED MEMORIES</span>
+            </div>
+            <div class="corkboard-drag-hint">
+              <span class="drag-hint-icon">✥</span>
+              <span class="drag-hint-text">Drag &amp; drop to rearrange</span>
+            </div>
+          </div>
+          <div class="corkboard-surface-grid" id="activityContainer">
+            <!-- Dynamically populated Polaroids & Photobooth Strips -->
+          </div>
         </div>
       </div>
     </section>

@@ -367,8 +367,262 @@ const FALLBACK_CASE_STUDIES = [
   }
 ];
 
+// Resilient Embedded Activities Data (Ensures Corkboard ALWAYS renders instantly with 0 failure)
+const FALLBACK_ACTIVITIES = [
+  // 01 // Live Music
+  {
+    id: "act-live-photobooth-strip",
+    order: 1,
+    type: "photobooth-strip",
+    category: "concerts",
+    categoryLabel: "01 // Live Music",
+    title: "Live Stadium Moments",
+    caption: "Electric atmosphere, sea of lightsticks & unforgettable concert memories.",
+    date: "'25 - '26 Tour",
+    accent: "washi-tape",
+    tapeColor: "tape-kraft",
+    rotation: -2,
+    images: [
+      "/images/activity/20250222_165920.jpg",
+      "/images/activity/20250222_214416.jpg",
+      "/images/activity/20260606_231053.jpg"
+    ],
+    image: "/images/activity/20250222_214416.jpg",
+    stripLabel: "LIVE STADIUM MOMENTS ● 2025-2026",
+    tag: "Photobooth Strip"
+  },
+  {
+    id: "act-live-photobooth-print",
+    order: 2,
+    type: "polaroid",
+    category: "concerts",
+    categoryLabel: "01 // Live Music",
+    title: "Concert Photobooth Memories",
+    caption: "Preserved photobooth strip with favorite stage companions 📸",
+    date: "Mar 2025",
+    image: "/images/activity/20250303_193800.jpg",
+    accent: "washi-tape",
+    tapeColor: "tape-mint",
+    rotation: 2.5,
+    tag: "Photobooth Print"
+  },
+  {
+    id: "act-live-merch-seats",
+    order: 3,
+    type: "polaroid",
+    category: "concerts",
+    categoryLabel: "01 // Live Music",
+    title: "Arena Seats & Official Merch",
+    caption: "Cheering slogans, lightsticks & ready for the stage lights 🎫",
+    date: "Mar 2025",
+    image: "/images/activity/20250309_214202.jpg",
+    accent: "red-pushpin",
+    rotation: -1.8,
+    tag: "Concert"
+  },
+  {
+    id: "act-live-tickets",
+    order: 4,
+    type: "polaroid",
+    category: "concerts",
+    categoryLabel: "01 // Live Music",
+    title: "Keepsake Tickets & Wristband",
+    caption: "Physical concert passes, wristbands & artist photocards collected 🎟️",
+    date: "Aug 2025",
+    image: "/images/activity/20250816_171251.jpg",
+    accent: "washi-tape",
+    tapeColor: "tape-gold",
+    rotation: 2.0,
+    tag: "Ticket Stub"
+  },
+
+  // 02 // Art & Design
+  {
+    id: "act-art-desk-setup",
+    order: 5,
+    type: "polaroid",
+    category: "creative",
+    categoryLabel: "02 // Art & Design",
+    title: "Miniature Workspace Art",
+    caption: "Creative workspace, miniature architecture & daily inspiration ✨",
+    date: "Oct 2024",
+    image: "/images/activity/12c8b489-167f-484f-b7aa-6974858e6e99.jpg",
+    accent: "washi-tape",
+    tapeColor: "tape-kraft",
+    rotation: 1.8,
+    tag: "Desk Setup"
+  },
+  {
+    id: "act-art-journal-stickers",
+    order: 6,
+    type: "polaroid",
+    category: "creative",
+    categoryLabel: "02 // Art & Design",
+    title: "Art Journal & Sticker Stash",
+    caption: "Curating colorful sticker sheets, typography & sketch notes 🎨",
+    date: "Dec 2024",
+    image: "/images/activity/20241218_091403.jpg",
+    accent: "washi-tape",
+    tapeColor: "tape-rose",
+    rotation: -2.8,
+    tag: "Art Journal"
+  },
+  {
+    id: "act-art-neon-exhibition",
+    order: 7,
+    type: "polaroid",
+    category: "creative",
+    categoryLabel: "02 // Art & Design",
+    title: "Immersive Neon Exhibition",
+    caption: "Spatial light installations, sensory gradients & modern visuals 💜",
+    date: "Mar 2025",
+    image: "/images/activity/20250304_231241.jpg",
+    accent: "date-stamp",
+    dateStamp: "'25 03 04",
+    pinType: "silver-pushpin",
+    rotation: 1.5,
+    tag: "Exhibition"
+  },
+  {
+    id: "act-art-collectibles",
+    order: 8,
+    type: "polaroid",
+    category: "creative",
+    categoryLabel: "02 // Art & Design",
+    title: "Character Toys & Collectibles",
+    caption: "Playful character figurines, blind boxes & stationery haul 🧸",
+    date: "Jun 2026",
+    image: "/images/activity/20260613_103655.jpg",
+    accent: "paperclip",
+    rotation: -2.2,
+    tag: "Collectibles"
+  },
+
+  // 03 // Lifestyle & Cafes
+  {
+    id: "act-life-mirror-fit",
+    order: 9,
+    type: "polaroid",
+    category: "lifestyle",
+    categoryLabel: "03 // Lifestyle & Cafes",
+    title: "Casual Fit Check",
+    caption: "Everyday casual style & city walk mood 🪞",
+    date: "Dec 2024",
+    image: "/images/activity/20241218_124441.jpg",
+    accent: "washi-tape",
+    tapeColor: "tape-kraft",
+    rotation: 2.6,
+    tag: "Fit Check"
+  },
+  {
+    id: "act-life-cafe-mirror",
+    order: 10,
+    type: "polaroid",
+    category: "lifestyle",
+    categoryLabel: "03 // Lifestyle & Cafes",
+    title: "Afternoon Cafe Hopping",
+    caption: "Finding calm neighborhood corners, warm espresso & friendly air ☕",
+    date: "Dec 2024",
+    image: "/images/activity/20241230_164035.jpg",
+    accent: "yellow-pushpin",
+    rotation: -1.8,
+    tag: "Cafe"
+  },
+  {
+    id: "act-life-peace-portrait",
+    order: 11,
+    type: "polaroid",
+    category: "lifestyle",
+    categoryLabel: "03 // Lifestyle & Cafes",
+    title: "Always High Spirits",
+    caption: "Always bringing positive energy, smiles & endless curiosity ✌️",
+    date: "Jan 2025",
+    image: "/images/activity/20250107_114103.jpg",
+    accent: "sticky-note",
+    rotation: 1.2,
+    tag: "Portrait"
+  },
+  {
+    id: "act-life-weekend-smile",
+    order: 12,
+    type: "polaroid",
+    category: "lifestyle",
+    categoryLabel: "03 // Lifestyle & Cafes",
+    title: "Weekend Warmth & Smiles",
+    caption: "Clear weekend sunshine & recharging creative design energy ✨",
+    date: "Feb 2025",
+    image: "/images/activity/20250201_120421.jpg",
+    accent: "washi-tape",
+    tapeColor: "tape-mint",
+    rotation: -2.4,
+    tag: "Lifestyle"
+  },
+  {
+    id: "act-life-japanese-table",
+    order: 13,
+    type: "polaroid",
+    category: "lifestyle",
+    categoryLabel: "03 // Lifestyle & Cafes",
+    title: "Delicious Warm Dinner Spread",
+    caption: "Hearty meal with good friends after a productive week 🍱",
+    date: "Feb 2025",
+    image: "/images/activity/20250221_194859.jpg",
+    accent: "date-stamp",
+    dateStamp: "'25 02 21",
+    pinType: "red-pushpin",
+    rotation: 2.2,
+    tag: "Food & Cafe"
+  },
+  {
+    id: "act-life-flower-bouquet",
+    order: 14,
+    type: "polaroid",
+    category: "lifestyle",
+    categoryLabel: "03 // Lifestyle & Cafes",
+    title: "Pastel Bloom Palette",
+    caption: "Fresh flower bouquet & natural color gradient inspiration 💐",
+    date: "Mar 2026",
+    image: "/images/activity/20260319_194927.jpg",
+    accent: "rose-washi-tape",
+    tapeColor: "tape-rose",
+    rotation: -1.6,
+    tag: "Color Inspo"
+  },
+
+  // 04 // Companions
+  {
+    id: "act-pet-festive-supervisor",
+    order: 15,
+    type: "polaroid",
+    category: "pets",
+    categoryLabel: "04 // Companions",
+    title: "Festive Supervisor 🐾",
+    caption: "Festive supervisor 🐾 Keeping watch over every design pixel.",
+    date: "Dec 2024",
+    image: "/images/activity/20241220_203058.jpg",
+    accent: "yellow-pushpin",
+    rotation: -2.6,
+    tag: "Cat Companion"
+  },
+  {
+    id: "act-pet-design-assistant",
+    order: 16,
+    type: "polaroid",
+    category: "pets",
+    categoryLabel: "04 // Companions",
+    title: "My Little Design Assistant 🐱",
+    caption: "My little design assistant 🐱 taking an essential power nap.",
+    date: "Jan 2025",
+    image: "/images/activity/1736163183500.jpg",
+    accent: "washi-tape",
+    tapeColor: "tape-mint",
+    rotation: 2.2,
+    tag: "Cat Companion"
+  }
+];
+
 let allCaseStudies = [...FALLBACK_CASE_STUDIES];
-let allActivities = [];
+let allActivities = [...FALLBACK_ACTIVITIES];
 let currentFilter = 'featured';
 let currentActFilter = 'all';
 let lastFocusedElement = null;
@@ -1325,22 +1579,31 @@ function closeCaseStudyModal() {
 }
 
 // ==========================================================================
-// Activities Section Logic
+// Activities Section Logic (Modern Tactile Corkboard / Scrapbook)
 // ==========================================================================
 
 async function loadActivitiesData() {
+  // Always render immediately from initial/fallback data first so the page is NEVER empty or erroring!
+  if (!allActivities || allActivities.length === 0) {
+    allActivities = [...FALLBACK_ACTIVITIES];
+  }
+  renderActivities(allActivities);
+  initActivityFilters();
+
   try {
     const res = await fetch('/api/activities');
-    if (!res.ok) throw new Error('Failed to load activities');
-    allActivities = await res.json();
-    renderActivities(allActivities);
-    initActivityFilters();
-  } catch (err) {
-    console.error("Error loading activities:", err);
-    const container = document.getElementById('activityContainer');
-    if (container) {
-      container.innerHTML = `<div class="loading-spinner">Could not load activities. Please refresh.</div>`;
+    if (res.ok) {
+      const liveData = await res.json();
+      if (Array.isArray(liveData) && liveData.length > 0) {
+        allActivities = liveData;
+        const currentFiltered = currentActFilter === 'all'
+          ? allActivities
+          : allActivities.filter(a => a.category === currentActFilter);
+        renderActivities(currentFiltered);
+      }
     }
+  } catch (err) {
+    console.warn("Using resilient embedded activities data:", err);
   }
 }
 
@@ -1354,27 +1617,198 @@ function renderActivities(activities) {
   }
 
   container.innerHTML = activities.map((act, idx) => {
-    const frameNum = String(idx + 1).padStart(2, '0');
+    const rot = act.rotation !== undefined ? act.rotation : ((idx % 2 === 0 ? 1 : -1) * (1.5 + (idx % 3)));
+    
+    // Check if photobooth strip
+    if (act.type === 'photobooth-strip' && Array.isArray(act.images)) {
+      return `
+        <article class="cork-card photobooth-strip-frame" 
+                 data-act-id="${act.id}" 
+                 data-rot="${rot}" 
+                 style="--item-rot: ${rot}deg;"
+                 role="button" 
+                 tabindex="0" 
+                 aria-label="View photobooth strip: ${escapeHtml(act.title)}">
+          
+          <!-- Top Washi Tape Accent -->
+          <div class="cork-washi-tape ${act.tapeColor || 'tape-kraft'}" style="--tape-rot: ${rot > 0 ? -2 : 2}deg;"></div>
+
+          <div class="photobooth-cells-column">
+            ${act.images.map((imgSrc, fIdx) => `
+              <div class="photobooth-cell" data-sub-img="${imgSrc}" title="Click to view full photo">
+                <img src="${imgSrc}" alt="${escapeHtml(act.title)} - Frame ${fIdx + 1}" loading="eager">
+                <div class="cork-img-overlay">
+                  <span class="cork-inspect-btn">Zoom ↗</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="photobooth-footer">
+            <div class="photobooth-title">${escapeHtml(act.stripLabel || 'LIVE STADIUM MOMENTS')}</div>
+            <div class="photobooth-caption">${escapeHtml(act.caption)}</div>
+          </div>
+        </article>
+      `;
+    }
+
+    // Classic Polaroid Frame
+    let accentHtml = '';
+    if (act.accent === 'washi-tape' || act.accent === 'rose-washi-tape') {
+      accentHtml = `<div class="cork-washi-tape ${act.tapeColor || 'tape-kraft'}" style="--tape-rot: ${rot > 0 ? -2.5 : 2}deg;"></div>`;
+    } else if (act.accent === 'red-pushpin') {
+      accentHtml = `<div class="cork-pushpin pin-red"></div>`;
+    } else if (act.accent === 'yellow-pushpin') {
+      accentHtml = `<div class="cork-pushpin pin-yellow"></div>`;
+    } else if (act.accent === 'silver-pushpin' || act.pinType === 'silver-pushpin') {
+      accentHtml = `<div class="cork-pushpin pin-silver"></div>`;
+    } else if (act.accent === 'paperclip') {
+      accentHtml = `<div class="cork-paperclip"></div>`;
+    } else if (act.accent === 'sticky-note') {
+      accentHtml = `<div class="cork-sticky-tab">★ note</div>`;
+    } else if (act.accent === 'date-stamp') {
+      const pin = act.pinType === 'silver-pushpin' ? 'pin-silver' : 'pin-red';
+      accentHtml = `<div class="cork-pushpin ${pin}"></div>`;
+    }
+
+    const dateStampHtml = act.dateStamp 
+      ? `<span class="film-date-stamp">${escapeHtml(act.dateStamp)}</span>` 
+      : '';
+
     return `
-      <article class="activity-card archival-polaroid" onclick="openActivityModal('${act.id}')" role="button" tabindex="0" aria-label="View photo: ${escapeHtml(act.title)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openActivityModal('${act.id}');}">
-        <div class="activity-img-frame">
-          <img src="${act.image}" alt="${escapeHtml(act.title)}" class="activity-img" loading="lazy">
-          <div class="activity-overlay">
-            <span class="activity-zoom-btn">Inspect Frame ↗</span>
+      <article class="cork-card polaroid-frame" 
+               data-act-id="${act.id}" 
+               data-rot="${rot}" 
+               style="--item-rot: ${rot}deg;"
+               role="button" 
+               tabindex="0" 
+               aria-label="View photo: ${escapeHtml(act.title)}">
+        
+        ${accentHtml}
+
+        <div class="polaroid-photo-box">
+          <img src="${act.image}" alt="${escapeHtml(act.title)}" class="polaroid-img" loading="eager">
+          ${dateStampHtml}
+          <div class="cork-img-overlay">
+            <span class="cork-inspect-btn">Inspect Frame ↗</span>
           </div>
         </div>
-        <div class="activity-card-body">
-          <div class="activity-meta-row">
-            <span class="activity-frame-num">FRAME // ${frameNum}</span>
-            <span class="activity-tag-pill">${escapeHtml(act.tag || act.categoryLabel || 'Moment')}</span>
-            <span class="activity-date">${escapeHtml(act.date || '')}</span>
+
+        <div class="polaroid-chin">
+          <p class="polaroid-caption">${escapeHtml(act.caption || act.title)}</p>
+          <div class="polaroid-meta-row">
+            <span class="polaroid-tag-badge">${escapeHtml(act.tag || act.categoryLabel || 'Moment')}</span>
+            <span class="polaroid-date-text">${escapeHtml(act.date || '')}</span>
           </div>
-          <h3 class="activity-title">${escapeHtml(act.title)}</h3>
-          <p class="activity-caption">${escapeHtml(act.caption)}</p>
         </div>
       </article>
     `;
   }).join('');
+
+  // Re-bind tactile dragging interactions
+  initCorkboardInteractions();
+}
+
+// Buttery Smooth Tactile Dragging & Drop Interaction
+function initCorkboardInteractions() {
+  const cards = document.querySelectorAll('.cork-card');
+  const board = document.getElementById('corkboardCanvas');
+  if (!board) return;
+
+  cards.forEach(card => {
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let initialX = 0;
+    let initialY = 0;
+    let moved = false;
+
+    // Handle clicking on individual photobooth sub-cells
+    const subCells = card.querySelectorAll('.photobooth-cell');
+    subCells.forEach(cell => {
+      cell.addEventListener('click', (e) => {
+        if (moved) return;
+        e.stopPropagation();
+        const imgSrc = cell.getAttribute('data-sub-img');
+        const actId = card.getAttribute('data-act-id');
+        openActivityModal(actId, imgSrc);
+      });
+    });
+
+    const onPointerMove = (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) {
+        moved = true;
+        card.classList.add('is-dragging');
+        const newX = initialX + dx;
+        const newY = initialY + dy;
+        card.style.transform = `translate(${newX}px, ${newY}px) scale(1.05) rotate(0deg)`;
+      }
+    };
+
+    const onPointerUp = (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup', onPointerUp);
+      window.removeEventListener('pointercancel', onPointerUp);
+      window.removeEventListener('mousemove', onPointerMove);
+      window.removeEventListener('mouseup', onPointerUp);
+
+      setTimeout(() => {
+        card.classList.remove('is-dragging');
+      }, 50);
+
+      if (!moved) {
+        // Normal click -> open modal
+        const actId = card.getAttribute('data-act-id');
+        if (actId) openActivityModal(actId);
+      } else {
+        // Keep offset and restore tilt
+        const rot = card.getAttribute('data-rot') || 0;
+        const currentTransform = card.style.transform;
+        const match = currentTransform.match(/translate\(([-0-9.]+)px,\s*([-0-9.]+)px\)/);
+        if (match) {
+          card.style.transform = `translate(${match[1]}px, ${match[2]}px) rotate(${rot}deg)`;
+        }
+      }
+    };
+
+    const onStart = (e) => {
+      if (e.target.closest('button, a')) return;
+
+      isDragging = true;
+      moved = false;
+      startX = e.clientX;
+      startY = e.clientY;
+
+      const currentTransform = card.style.transform || '';
+      const match = currentTransform.match(/translate\(([-0-9.]+)px,\s*([-0-9.]+)px\)/);
+      initialX = match ? parseFloat(match[1]) : 0;
+      initialY = match ? parseFloat(match[2]) : 0;
+
+      window.addEventListener('pointermove', onPointerMove);
+      window.addEventListener('pointerup', onPointerUp);
+      window.addEventListener('pointercancel', onPointerUp);
+      window.addEventListener('mousemove', onPointerMove);
+      window.addEventListener('mouseup', onPointerUp);
+    };
+
+    card.addEventListener('pointerdown', onStart);
+    card.addEventListener('mousedown', onStart);
+
+    // Keyboard Accessibility
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const actId = card.getAttribute('data-act-id');
+        if (actId) openActivityModal(actId);
+      }
+    });
+  });
 }
 
 function initActivityFilters() {
@@ -1400,7 +1834,7 @@ function initActivityFilters() {
   });
 }
 
-function openActivityModal(actId) {
+function openActivityModal(actId, customImage) {
   const act = allActivities.find(a => a.id === actId);
   if (!act) return;
 
@@ -1408,10 +1842,11 @@ function openActivityModal(actId) {
 
   const modal = document.getElementById('activityModal');
   const modalBody = document.getElementById('actModalBody');
+  const displayImg = customImage || act.image || (Array.isArray(act.images) ? act.images[0] : '');
 
   modalBody.innerHTML = `
     <div class="act-modal-img-wrap">
-      <img src="${act.image}" alt="${escapeHtml(act.title)}" class="act-modal-img">
+      <img src="${displayImg}" alt="${escapeHtml(act.title)}" class="act-modal-img">
     </div>
     <div class="act-modal-info">
       <div class="activity-meta-row">

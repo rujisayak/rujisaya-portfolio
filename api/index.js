@@ -1,7 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { MongoClient } = require('mongodb');
+let MongoClient = null;
+try {
+  MongoClient = require('mongodb').MongoClient;
+} catch (e) {
+  console.warn("MongoDB module load skipped (running in resilient static fallback mode):", e.message);
+}
 const path = require('path');
 
 const app = express();
@@ -15,6 +20,7 @@ let cachedClient = null;
 let cachedDb = null;
 
 async function getDB() {
+  if (!MongoClient) return null;
   if (cachedDb) return cachedDb;
   if (!MONGODB_URI) return null;
   try {
@@ -35,9 +41,10 @@ async function getDB() {
 
 function getFallbackData() {
   try {
+    delete require.cache[require.resolve('../db/seedFallback.json')];
     return require('../db/seedFallback.json');
   } catch {
-    return { profile: {}, caseStudies: [] };
+    return { profile: {}, caseStudies: [], activities: [] };
   }
 }
 
