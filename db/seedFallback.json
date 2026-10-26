@@ -451,7 +451,19 @@
       ],
       "image": "/images/activity/20250222_214416.jpg",
       "stripLabel": "LIVE STADIUM MOMENTS ● 2025-2026",
-      "tag": "Photobooth Strip"
+      "tag": "Photobooth Strip",
+      "posAll": {
+        "top": "9%",
+        "left": "3%",
+        "rotate": -2.5,
+        "zIndex": 4
+      },
+      "posFiltered": {
+        "top": "16%",
+        "left": "18%",
+        "rotate": -2.5,
+        "zIndex": 5
+      }
     },
     {
       "id": "act-live-photobooth-print",
@@ -466,7 +478,19 @@
       "accent": "washi-tape",
       "tapeColor": "tape-mint",
       "rotation": 2.5,
-      "tag": "Photobooth Print"
+      "tag": "Photobooth Print",
+      "posAll": {
+        "top": "12%",
+        "left": "16%",
+        "rotate": 4.5,
+        "zIndex": 6
+      },
+      "posFiltered": {
+        "top": "14%",
+        "left": "38%",
+        "rotate": 4,
+        "zIndex": 6
+      }
     },
     {
       "id": "act-live-merch-seats",
@@ -480,7 +504,19 @@
       "image": "/images/activity/20250309_214202.jpg",
       "accent": "red-pushpin",
       "rotation": -1.8,
-      "tag": "Concert"
+      "tag": "Concert",
+      "posAll": {
+        "top": "60%",
+        "left": "2%",
+        "rotate": -4,
+        "zIndex": 8
+      },
+      "posFiltered": {
+        "top": "22%",
+        "left": "58%",
+        "rotate": -3.5,
+        "zIndex": 7
+      }
     },
     {
       "id": "act-live-tickets",
@@ -495,7 +531,19 @@
       "accent": "washi-tape",
       "tapeColor": "tape-gold",
       "rotation": 2,
-      "tag": "Ticket Stub"
+      "tag": "Ticket Stub",
+      "posAll": {
+        "top": "46%",
+        "left": "12%",
+        "rotate": 5.5,
+        "zIndex": 7
+      },
+      "posFiltered": {
+        "top": "50%",
+        "left": "42%",
+        "rotate": 3,
+        "zIndex": 8
+      }
     },
     {
       "id": "act-art-desk-setup",
@@ -510,7 +558,19 @@
       "accent": "washi-tape",
       "tapeColor": "tape-kraft",
       "rotation": 1.8,
-      "tag": "Desk Setup"
+      "tag": "Desk Setup",
+      "posAll": {
+        "top": "65%",
+        "left": "20%",
+        "rotate": -2,
+        "zIndex": 10
+      },
+      "posFiltered": {
+        "top": "48%",
+        "left": "30%",
+        "rotate": 2.5,
+        "zIndex": 7
+      }
     },
     {
       "id": "act-art-journal-stickers",
@@ -525,7 +585,19 @@
       "accent": "washi-tape",
       "tapeColor": "tape-rose",
       "rotation": -2.8,
-      "tag": "Art Journal"
+      "tag": "Art Journal",
+      "posAll": {
+        "top": "9%",
+        "left": "28%",
+        "rotate": -3.5,
+        "zIndex": 5
+      },
+      "posFiltered": {
+        "top": "16%",
+        "left": "28%",
+        "rotate": -3.5,
+        "zIndex": 5
+      }
     },
     {
       "id": "act-art-neon-exhibition",
@@ -541,7 +613,19 @@
       "dateStamp": "'25 03 04",
       "pinType": "silver-pushpin",
       "rotation": 1.5,
-      "tag": "Exhibition"
+      "tag": "Exhibition",
+      "posAll": {
+        "top": "38%",
+        "left": "24%",
+        "rotate": 3.5,
+        "zIndex": 9
+      },
+      "posFiltered": {
+        "top": "14%",
+        "left": "52%",
+        "rotate": 3.5,
+        "zIndex": 6
+      }
     },
     {
       "id": "act-art-collectibles",
@@ -555,7 +639,19 @@
       "image": "/images/activity/20260613_103655.jpg",
       "accent": "paperclip",
       "rotation": -2.2,
-      "tag": "Collectibles"
+      "tag": "Collectibles",
+      "posAll": {
+        "top": "52%",
+        "left": "34%",
+        "rotate": -4.5,
+        "zIndex": 6
+      },
+      "posFiltered": {
+        "top": "46%",
+        "left": "50%",
+        "rotate": -4,
+        "zIndex": 8
+      }
     },
     {
       "id": "act-life-mirror-fit",
@@ -570,7 +666,19 @@
       "accent": "washi-tape",
       "tapeColor": "tape-kraft",
       "rotation": 2.6,
-      "tag": "Fit Check"
+      "tag": "Fit Check",
+      "posAll": {
+        "top": "10%",
+        "left": "42%",
+        "rotate": 3,
+        "zIndex": 4
+      },
+      "posFiltered": {
+        "top": "14%",
+        "left": "20%",
+        "rotate": 3,
+        "zIndex": 5
+      }
     },
     {
       "id": "act-life-cafe-mirror",
@@ -584,7 +692,19 @@
       "image": "/images/activity/20241230_164035.jpg",
       "accent": "yellow-pushpin",
       "rotation": -1.8,
-      "tag": "Cafe"
+      "tag": "Cafe",
+      "posAll": {
+        "top": "36%",
+        "left": "46%",
+        "rotate": -3,
+        "zIndex": 8
+      },
+      "posFiltered": {
+        "top": "48%",
+        "left": "24%",
+        "rotate": -2.5,
+        "zIndex": 8
+      }
     },
     {
       "id": "act-life-peace-portrait",
@@ -598,7 +718,19 @@
       "image": "/images/activity/20250107_114103.jpg",
       "accent": "sticky-note",
       "rotation": 1.2,
-      "tag": "Portrait"
+      "tag": "Portrait",
+      "posAll": {
+        "top": "34%",
+        "left": "58%",
+        "rotate": 5,
+        "zIndex": 5
+      },
+      "posFiltered": {
+        "top": "14%",
+        "left": "62%",
+        "rotate": 4,
+        "zIndex": 7
+      }
     },
     {
       "id": "act-life-weekend-smile",
@@ -613,7 +745,19 @@
       "accent": "washi-tape",
       "tapeColor": "tape-mint",
       "rotation": -2.4,
-      "tag": "Lifestyle"
+      "tag": "Lifestyle",
+      "posAll": {
+        "top": "8%",
+        "left": "55%",
+        "rotate": -4,
+        "zIndex": 3
+      },
+      "posFiltered": {
+        "top": "12%",
+        "left": "42%",
+        "rotate": -3.5,
+        "zIndex": 6
+      }
     },
     {
       "id": "act-life-japanese-table",
@@ -629,7 +773,19 @@
       "dateStamp": "'25 02 21",
       "pinType": "red-pushpin",
       "rotation": 2.2,
-      "tag": "Food & Cafe"
+      "tag": "Food & Cafe",
+      "posAll": {
+        "top": "62%",
+        "left": "44%",
+        "rotate": 4.5,
+        "zIndex": 7
+      },
+      "posFiltered": {
+        "top": "46%",
+        "left": "44%",
+        "rotate": 3.5,
+        "zIndex": 9
+      }
     },
     {
       "id": "act-life-flower-bouquet",
@@ -644,7 +800,19 @@
       "accent": "rose-washi-tape",
       "tapeColor": "tape-rose",
       "rotation": -1.6,
-      "tag": "Color Inspo"
+      "tag": "Color Inspo",
+      "posAll": {
+        "top": "62%",
+        "left": "56%",
+        "rotate": -3,
+        "zIndex": 9
+      },
+      "posFiltered": {
+        "top": "48%",
+        "left": "60%",
+        "rotate": -3,
+        "zIndex": 10
+      }
     },
     {
       "id": "act-pet-festive-supervisor",
@@ -658,7 +826,19 @@
       "image": "/images/activity/20241220_203058.jpg",
       "accent": "yellow-pushpin",
       "rotation": -2.6,
-      "tag": "Cat Companion"
+      "tag": "Cat Companion",
+      "posAll": {
+        "top": "12%",
+        "left": "70%",
+        "rotate": 5.5,
+        "zIndex": 4
+      },
+      "posFiltered": {
+        "top": "28%",
+        "left": "32%",
+        "rotate": -3.5,
+        "zIndex": 5
+      }
     },
     {
       "id": "act-pet-design-assistant",
@@ -673,7 +853,19 @@
       "accent": "washi-tape",
       "tapeColor": "tape-mint",
       "rotation": 2.2,
-      "tag": "Cat Companion"
+      "tag": "Cat Companion",
+      "posAll": {
+        "top": "48%",
+        "left": "72%",
+        "rotate": -3.5,
+        "zIndex": 8
+      },
+      "posFiltered": {
+        "top": "26%",
+        "left": "52%",
+        "rotate": 4,
+        "zIndex": 6
+      }
     }
   ]
 }

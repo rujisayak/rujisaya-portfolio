@@ -1579,8 +1579,93 @@ function closeCaseStudyModal() {
 }
 
 // ==========================================================================
-// Activities Section Logic (Modern Tactile Corkboard / Scrapbook)
+// Activities Section Logic (Modern Tactile Corkboard / Freeform Collage)
 // ==========================================================================
+
+// Organic Absolute Positions for All 16 Moments (1140px × 760px canvas)
+const CORK_POSITIONS = {
+  // 01 // Live Music
+  'act-live-photobooth-strip': {
+    all: { top: '9%', left: '3%', rotate: -2.5, zIndex: 4 },
+    filtered: { top: '16%', left: '18%', rotate: -2.5, zIndex: 5 }
+  },
+  'act-live-photobooth-print': {
+    all: { top: '12%', left: '16%', rotate: 4.5, zIndex: 6 },
+    filtered: { top: '14%', left: '38%', rotate: 4.0, zIndex: 6 }
+  },
+  'act-live-merch-seats': {
+    all: { top: '60%', left: '2%', rotate: -4.0, zIndex: 8 },
+    filtered: { top: '22%', left: '58%', rotate: -3.5, zIndex: 7 }
+  },
+  'act-live-tickets': {
+    all: { top: '46%', left: '12%', rotate: 5.5, zIndex: 7 },
+    filtered: { top: '50%', left: '42%', rotate: 3.0, zIndex: 8 }
+  },
+
+  // 02 // Art & Design
+  'act-art-journal-stickers': {
+    all: { top: '9%', left: '28%', rotate: -3.5, zIndex: 5 },
+    filtered: { top: '16%', left: '28%', rotate: -3.5, zIndex: 5 }
+  },
+  'act-art-neon-exhibition': {
+    all: { top: '38%', left: '24%', rotate: 3.5, zIndex: 9 },
+    filtered: { top: '14%', left: '52%', rotate: 3.5, zIndex: 6 }
+  },
+  'act-art-desk-setup': {
+    all: { top: '65%', left: '20%', rotate: -2.0, zIndex: 10 },
+    filtered: { top: '48%', left: '30%', rotate: 2.5, zIndex: 7 }
+  },
+  'act-art-collectibles': {
+    all: { top: '52%', left: '34%', rotate: -4.5, zIndex: 6 },
+    filtered: { top: '46%', left: '50%', rotate: -4.0, zIndex: 8 }
+  },
+
+  // 03 // Lifestyle & Cafes
+  'act-life-mirror-fit': {
+    all: { top: '10%', left: '42%', rotate: 3.0, zIndex: 4 },
+    filtered: { top: '14%', left: '20%', rotate: 3.0, zIndex: 5 }
+  },
+  'act-life-weekend-smile': {
+    all: { top: '8%', left: '55%', rotate: -4.0, zIndex: 3 },
+    filtered: { top: '12%', left: '42%', rotate: -3.5, zIndex: 6 }
+  },
+  'act-life-peace-portrait': {
+    all: { top: '34%', left: '58%', rotate: 5.0, zIndex: 5 },
+    filtered: { top: '14%', left: '62%', rotate: 4.0, zIndex: 7 }
+  },
+  'act-life-cafe-mirror': {
+    all: { top: '36%', left: '46%', rotate: -3.0, zIndex: 8 },
+    filtered: { top: '48%', left: '24%', rotate: -2.5, zIndex: 8 }
+  },
+  'act-life-japanese-table': {
+    all: { top: '62%', left: '44%', rotate: 4.5, zIndex: 7 },
+    filtered: { top: '46%', left: '44%', rotate: 3.5, zIndex: 9 }
+  },
+  'act-life-flower-bouquet': {
+    all: { top: '62%', left: '56%', rotate: -3.0, zIndex: 9 },
+    filtered: { top: '48%', left: '60%', rotate: -3.0, zIndex: 10 }
+  },
+
+  // 04 // Companions
+  'act-pet-festive-supervisor': {
+    all: { top: '12%', left: '70%', rotate: 5.5, zIndex: 4 },
+    filtered: { top: '28%', left: '32%', rotate: -3.5, zIndex: 5 }
+  },
+  'act-pet-design-assistant': {
+    all: { top: '48%', left: '72%', rotate: -3.5, zIndex: 8 },
+    filtered: { top: '26%', left: '52%', rotate: 4.0, zIndex: 6 }
+  }
+};
+
+let highestCorkZIndex = 30;
+
+function getActPosition(act, isFiltered) {
+  const defaults = CORK_POSITIONS[act.id] || {
+    all: { top: '20%', left: '20%', rotate: 0, zIndex: 5 },
+    filtered: { top: '25%', left: '35%', rotate: 0, zIndex: 5 }
+  };
+  return isFiltered ? (act.posFiltered || defaults.filtered) : (act.posAll || defaults.all);
+}
 
 async function loadActivitiesData() {
   // Always render immediately from initial/fallback data first so the page is NEVER empty or erroring!
@@ -1596,10 +1681,8 @@ async function loadActivitiesData() {
       const liveData = await res.json();
       if (Array.isArray(liveData) && liveData.length > 0) {
         allActivities = liveData;
-        const currentFiltered = currentActFilter === 'all'
-          ? allActivities
-          : allActivities.filter(a => a.category === currentActFilter);
-        renderActivities(currentFiltered);
+        renderActivities(allActivities);
+        applyActivityFilter(currentActFilter);
       }
     }
   } catch (err) {
@@ -1611,21 +1694,27 @@ function renderActivities(activities) {
   const container = document.getElementById('activityContainer');
   if (!container) return;
 
-  if (!activities || activities.length === 0) {
-    container.innerHTML = `<div class="loading-spinner">No moments found for this category.</div>`;
+  const itemsToRender = allActivities && allActivities.length > 0 ? allActivities : activities;
+  if (!itemsToRender || itemsToRender.length === 0) {
+    container.innerHTML = `<div class="loading-spinner">No moments found.</div>`;
     return;
   }
 
-  container.innerHTML = activities.map((act, idx) => {
-    const rot = act.rotation !== undefined ? act.rotation : ((idx % 2 === 0 ? 1 : -1) * (1.5 + (idx % 3)));
-    
+  container.innerHTML = itemsToRender.map((act) => {
+    const isMatching = currentActFilter === 'all' || act.category === currentActFilter;
+    const pos = getActPosition(act, currentActFilter !== 'all');
+    const rot = pos.rotate !== undefined ? pos.rotate : (act.rotation || 0);
+    const hoverRot = Math.abs(rot) > 2 ? (rot * 0.35) : 0;
+    const hiddenClass = isMatching ? '' : 'is-hidden';
+
     // Check if photobooth strip
     if (act.type === 'photobooth-strip' && Array.isArray(act.images)) {
       return `
-        <article class="cork-card photobooth-strip-frame" 
+        <article class="cork-card photobooth-strip-frame ${hiddenClass}" 
                  data-act-id="${act.id}" 
+                 data-act-cat="${act.category}"
                  data-rot="${rot}" 
-                 style="--item-rot: ${rot}deg;"
+                 style="top: ${pos.top}; left: ${pos.left}; z-index: ${pos.zIndex}; --item-rot: ${rot}deg; --hover-rot: ${hoverRot}deg; transform: rotate(${rot}deg);"
                  role="button" 
                  tabindex="0" 
                  aria-label="View photobooth strip: ${escapeHtml(act.title)}">
@@ -1676,10 +1765,11 @@ function renderActivities(activities) {
       : '';
 
     return `
-      <article class="cork-card polaroid-frame" 
+      <article class="cork-card polaroid-frame ${hiddenClass}" 
                data-act-id="${act.id}" 
+               data-act-cat="${act.category}"
                data-rot="${rot}" 
-               style="--item-rot: ${rot}deg;"
+               style="top: ${pos.top}; left: ${pos.left}; z-index: ${pos.zIndex}; --item-rot: ${rot}deg; --hover-rot: ${hoverRot}deg; transform: rotate(${rot}deg);"
                role="button" 
                tabindex="0" 
                aria-label="View photo: ${escapeHtml(act.title)}">
@@ -1709,18 +1799,56 @@ function renderActivities(activities) {
   initCorkboardInteractions();
 }
 
+function applyActivityFilter(filter) {
+  const cards = document.querySelectorAll('.cork-card');
+  const isFiltered = filter !== 'all';
+
+  cards.forEach(card => {
+    const actId = card.getAttribute('data-act-id');
+    const cat = card.getAttribute('data-act-cat');
+    const act = allActivities.find(a => a.id === actId);
+    if (!act) return;
+
+    const isMatch = (filter === 'all' || cat === filter);
+    if (isMatch) {
+      card.classList.remove('is-hidden');
+      const pos = getActPosition(act, isFiltered);
+      const rot = pos.rotate !== undefined ? pos.rotate : (act.rotation || 0);
+      const hoverRot = Math.abs(rot) > 2 ? (rot * 0.35) : 0;
+
+      card.setAttribute('data-rot', rot);
+      card.style.top = pos.top;
+      card.style.left = pos.left;
+      card.style.zIndex = pos.zIndex;
+      card.style.setProperty('--item-rot', `${rot}deg`);
+      card.style.setProperty('--hover-rot', `${hoverRot}deg`);
+      card.style.transform = `rotate(${rot}deg)`;
+    } else {
+      card.classList.add('is-hidden');
+    }
+  });
+}
+
 // Buttery Smooth Tactile Dragging & Drop Interaction
 function initCorkboardInteractions() {
   const cards = document.querySelectorAll('.cork-card');
   const board = document.getElementById('corkboardCanvas');
-  if (!board) return;
+  const container = document.getElementById('activityContainer');
+  if (!board || !container) return;
 
   cards.forEach(card => {
+    // Elevate on mouseenter
+    card.addEventListener('mouseenter', () => {
+      if (!card.classList.contains('is-dragging')) {
+        card.style.zIndex = ++highestCorkZIndex;
+      }
+    });
+
     let isDragging = false;
     let startX = 0;
     let startY = 0;
-    let initialX = 0;
-    let initialY = 0;
+    let startLeftPx = 0;
+    let startTopPx = 0;
     let moved = false;
 
     // Handle clicking on individual photobooth sub-cells
@@ -1740,12 +1868,12 @@ function initCorkboardInteractions() {
       const dx = e.clientX - startX;
       const dy = e.clientY - startY;
 
-      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) {
+      if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
         moved = true;
         card.classList.add('is-dragging');
-        const newX = initialX + dx;
-        const newY = initialY + dy;
-        card.style.transform = `translate(${newX}px, ${newY}px) scale(1.05) rotate(0deg)`;
+        card.style.left = `${startLeftPx + dx}px`;
+        card.style.top = `${startTopPx + dy}px`;
+        card.style.transform = `scale(1.06) rotate(0deg)`;
       }
     };
 
@@ -1762,33 +1890,33 @@ function initCorkboardInteractions() {
         card.classList.remove('is-dragging');
       }, 50);
 
+      const rot = card.getAttribute('data-rot') || 0;
+      card.style.transform = `rotate(${rot}deg)`;
+
       if (!moved) {
         // Normal click -> open modal
         const actId = card.getAttribute('data-act-id');
         if (actId) openActivityModal(actId);
-      } else {
-        // Keep offset and restore tilt
-        const rot = card.getAttribute('data-rot') || 0;
-        const currentTransform = card.style.transform;
-        const match = currentTransform.match(/translate\(([-0-9.]+)px,\s*([-0-9.]+)px\)/);
-        if (match) {
-          card.style.transform = `translate(${match[1]}px, ${match[2]}px) rotate(${rot}deg)`;
-        }
       }
     };
 
     const onStart = (e) => {
       if (e.target.closest('button, a')) return;
+      if (e.button !== undefined && e.button !== 0) return; // Only main left click
 
       isDragging = true;
       moved = false;
       startX = e.clientX;
       startY = e.clientY;
 
-      const currentTransform = card.style.transform || '';
-      const match = currentTransform.match(/translate\(([-0-9.]+)px,\s*([-0-9.]+)px\)/);
-      initialX = match ? parseFloat(match[1]) : 0;
-      initialY = match ? parseFloat(match[2]) : 0;
+      // Bring to top
+      card.style.zIndex = ++highestCorkZIndex;
+
+      // Calculate initial position relative to container
+      const cardRect = card.getBoundingClientRect();
+      const contRect = container.getBoundingClientRect();
+      startLeftPx = cardRect.left - contRect.left + container.scrollLeft;
+      startTopPx = cardRect.top - contRect.top + container.scrollTop;
 
       window.addEventListener('pointermove', onPointerMove);
       window.addEventListener('pointerup', onPointerUp);
@@ -1824,12 +1952,7 @@ function initActivityFilters() {
 
       const filter = btn.getAttribute('data-act-filter');
       currentActFilter = filter;
-
-      if (filter === 'all') {
-        renderActivities(allActivities);
-      } else {
-        renderActivities(allActivities.filter(a => a.category === filter));
-      }
+      applyActivityFilter(filter);
     });
   });
 }
