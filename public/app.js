@@ -1113,18 +1113,11 @@ function hydrateProjectDetailView(study) {
       : "Pro-rata Vacation Engine & Weekly Attendance Matrix";
   }
 
-  // Visual-First Marketplace Showcase Grid (Keraton Studio / UI8 Aesthetic)
-  // Apply cohesive project signature accent background color across all 6 cards
-  const themeClass = isAmi ? 'card-theme-ami' : 'card-theme-leaya';
-  for (let i = 1; i <= 6; i++) {
-    const cardEl = document.getElementById(`showcaseCard${i}`);
-    if (cardEl) {
-      cardEl.classList.remove('card-theme-leaya', 'card-theme-ami');
-      for (let t = 1; t <= 6; t++) {
-        cardEl.classList.remove(`card-theme-leaya-${t}`, `card-theme-ami-${t}`);
-      }
-      cardEl.classList.add(themeClass);
-    }
+  // 2-Column Dark Visual Showcase Grid (PlanIQ / UI8 4-Card Composition)
+  const gridContainer = document.getElementById('visualShowcaseGrid');
+  if (gridContainer) {
+    gridContainer.classList.remove('theme-glow-ami', 'theme-glow-leaya');
+    gridContainer.classList.add(isAmi ? 'theme-glow-ami' : 'theme-glow-leaya');
   }
 
   if (isAmi) {
@@ -1132,81 +1125,109 @@ function hydrateProjectDetailView(study) {
     const amiCal = '/assets/portfolio/ami_screen_calendar.png';
     const amiApp = '/assets/portfolio/ami_screen_applications.png';
     const amiBudget = '/assets/portfolio/ami_screen_budget.png';
-    const amiAuth = '/assets/portfolio/ami_screen_auth.png';
 
-    // Card 1: Main Dashboard / Landing View + Secondary View (Auth layer used only once in background)
-    setElementSrc('sc1FgImg', amiDash);
-    setElementText('sc1FgUrl', 'ami-booth-planner.vercel.app/dashboard');
-    setElementSrc('sc1BgImg', amiAuth);
-    setElementText('sc1BgUrl', 'ami-booth-planner.vercel.app/login');
+    // Card 1: 3D Dual Laptops in Perspective
+    setElementSrc('sc1Laptop1Img', amiDash);
+    setElementSrc('sc1Laptop2Img', amiCal);
+    setElementText('sc1Title', 'Perfect For Indie Creators & Event Planners');
+    const sc1TagsEl = document.getElementById('sc1Tags');
+    if (sc1TagsEl) {
+      sc1TagsEl.innerHTML = `
+        <span class="dark-pill-tag">Calendar</span>
+        <span class="dark-pill-tag">Conflict Alerts</span>
+        <span class="dark-pill-tag">Booth Budget</span>
+        <span class="dark-pill-tag">Multi-day Passes</span>
+        <span class="dark-pill-tag">&amp; Many more...</span>
+      `;
+    }
 
-    // Card 2: 3D Angled Laptop Closeup (Hero Month Grid Calendar & Conflict Alerts)
-    setElementSrc('sc2DisplayImg', amiCal);
+    // Card 2: Feature Spotlight with Watermark Typography & Overlapping Browser
+    setElementText('sc2Watermark', 'DATE CONFLICT');
+    setElementSrc('sc2BrowserImg', amiCal);
+    setElementText('sc2BrowserUrl', 'ami-booth-planner.vercel.app/calendar');
+    setElementText('sc2WidgetTitle', 'Conflict Detection');
+    setElementSrc('sc2WidgetImg', amiApp);
 
-    // Card 3: Core Workflow Page 1 (Month Grid Calendar & Conflict Detection View)
-    setElementSrc('sc3FgImg', amiCal);
-    setElementText('sc3FgUrl', 'ami-booth-planner.vercel.app/calendar');
-    setElementSrc('sc3BgImg', amiDash);
-    setElementText('sc3BgUrl', 'ami-booth-planner.vercel.app/overview');
+    // Card 3: Multi-Screen UI Grid (4-Screen Mosaic)
+    setElementText('sc3Title', 'This Platform Suitable For');
+    const sc3TagsEl = document.getElementById('sc3Tags');
+    if (sc3TagsEl) {
+      sc3TagsEl.innerHTML = `
+        <span class="dark-pill-tag">Illustrator</span>
+        <span class="dark-pill-tag">Comic Creator</span>
+        <span class="dark-pill-tag">Craft Brand</span>
+        <span class="dark-pill-tag">Event Organizer</span>
+      `;
+    }
+    setElementSrc('sc3Screen1', amiDash);
+    setElementSrc('sc3Screen2', amiCal);
+    setElementSrc('sc3Screen3', amiApp);
+    setElementSrc('sc3Screen4', amiBudget);
+    setElementText('sc3BadgeText', '20+ Creator Workflows');
 
-    // Card 4: Core Workflow Page 2 (Booth Applications & Partial Acceptance Workflow)
-    setElementSrc('sc4FgImg', amiApp);
-    setElementText('sc4FgUrl', 'ami-booth-planner.vercel.app/applications');
-    setElementSrc('sc4BgImg', amiCal);
-    setElementText('sc4BgUrl', 'ami-booth-planner.vercel.app/conflicts');
+    // Card 4: 3D Laptop on Pedestal + Feature Checklist
+    setElementText('sc4Heading', 'Thank you for Exploring my project!');
+    setElementText('sc4Subheading', 'All-in-One Creator Event Management Platform');
+    setElementText('sc4Check1', 'Smart Date Conflict Detection');
+    setElementText('sc4Check2', 'Partial Day Acceptance Flow');
+    setElementText('sc4Check3', 'Real-time Budget & Fee Ledger');
+    setElementText('sc4Check4', 'MongoDB Atlas Cloud Sync');
+    setElementText('sc4BrandTagText', '100% Live Interactive Demo');
+    setElementSrc('sc4LaptopImg', amiDash);
 
-    // Card 5: Analytics & Budget Ledger View (Financial Summary & Outstanding Fees)
-    setElementSrc('sc5FgImg', amiBudget);
-    setElementText('sc5FgUrl', 'ami-booth-planner.vercel.app/budget');
-    setElementSrc('sc5BgImg', amiApp);
-    setElementText('sc5BgUrl', 'ami-booth-planner.vercel.app/expenses');
-
-    // Card 6: Tilted Multi-Page Masonry / Collage (Full Multi-screen Ecosystem)
-    setElementSrc('sc6Img1', amiDash);
-    setElementSrc('sc6Img2', amiCal);
-    setElementSrc('sc6Img3', amiApp);
-    setElementSrc('sc6Img4', amiBudget);
-    setElementSrc('sc6Img5', amiAuth);
-    setElementSrc('sc6Img6', amiCal);
   } else {
     // Leaya / Enterprise
     const leayaFull = '/assets/portfolio/leaya_screenshot_full.png';
     const leaveWfh = '/assets/portfolio/leave_wfh_screenshot.png';
 
-    // Card 1: Main Dashboard / Landing View + Secondary View
-    setElementSrc('sc1FgImg', leayaFull);
-    setElementText('sc1FgUrl', 'leave-wfh-management.vercel.app/dashboard');
-    setElementSrc('sc1BgImg', leaveWfh);
-    setElementText('sc1BgUrl', 'leave-wfh-management.vercel.app/matrix');
+    // Card 1: 3D Dual Laptops in Perspective
+    setElementSrc('sc1Laptop1Img', leayaFull);
+    setElementSrc('sc1Laptop2Img', leaveWfh);
+    setElementText('sc1Title', 'Perfect For Enterprise Teams & HR Operations');
+    const sc1TagsEl = document.getElementById('sc1Tags');
+    if (sc1TagsEl) {
+      sc1TagsEl.innerHTML = `
+        <span class="dark-pill-tag">Pro-rata Engine</span>
+        <span class="dark-pill-tag">RBAC Simulation</span>
+        <span class="dark-pill-tag">Weekly Matrix</span>
+        <span class="dark-pill-tag">Leave Ledger</span>
+        <span class="dark-pill-tag">&amp; Many more...</span>
+      `;
+    }
 
-    // Card 2: 3D Angled Laptop Closeup
-    setElementSrc('sc2DisplayImg', leayaFull);
+    // Card 2: Feature Spotlight with Watermark Typography & Overlapping Browser
+    setElementText('sc2Watermark', 'VACATION ENGINE');
+    setElementSrc('sc2BrowserImg', leayaFull);
+    setElementText('sc2BrowserUrl', 'leave-wfh-management.vercel.app/dashboard');
+    setElementText('sc2WidgetTitle', 'Attendance Matrix');
+    setElementSrc('sc2WidgetImg', leaveWfh);
 
-    // Card 3: Core Workflow Page 1 (Leave Schedule & Calendar)
-    setElementSrc('sc3FgImg', leaveWfh);
-    setElementText('sc3FgUrl', 'leave-wfh-management.vercel.app/calendar');
-    setElementSrc('sc3BgImg', leayaFull);
-    setElementText('sc3BgUrl', 'leave-wfh-management.vercel.app/schedule');
+    // Card 3: Multi-Screen UI Grid (4-Screen Mosaic)
+    setElementText('sc3Title', 'This Platform Suitable For');
+    const sc3TagsEl = document.getElementById('sc3Tags');
+    if (sc3TagsEl) {
+      sc3TagsEl.innerHTML = `
+        <span class="dark-pill-tag">HR Admin</span>
+        <span class="dark-pill-tag">Team Manager</span>
+        <span class="dark-pill-tag">Hybrid Employee</span>
+        <span class="dark-pill-tag">People Ops</span>
+      `;
+    }
+    setElementSrc('sc3Screen1', leayaFull);
+    setElementSrc('sc3Screen2', leaveWfh);
+    setElementSrc('sc3Screen3', leaveWfh);
+    setElementSrc('sc3Screen4', leayaFull);
+    setElementText('sc3BadgeText', '30+ Enterprise Screens');
 
-    // Card 4: Core Workflow Page 2 (Applications & Approvals Queue)
-    setElementSrc('sc4FgImg', leayaFull);
-    setElementText('sc4FgUrl', 'leave-wfh-management.vercel.app/approvals');
-    setElementSrc('sc4BgImg', leaveWfh);
-    setElementText('sc4BgUrl', 'leave-wfh-management.vercel.app/requests');
-
-    // Card 5: Analytics & Pro-rata Quotas Engine
-    setElementSrc('sc5FgImg', leaveWfh);
-    setElementText('sc5FgUrl', 'leave-wfh-management.vercel.app/quotas');
-    setElementSrc('sc5BgImg', leayaFull);
-    setElementText('sc5BgUrl', 'leave-wfh-management.vercel.app/analytics');
-
-    // Card 6: Tilted Multi-Page Masonry / Collage (Full Ecosystem)
-    setElementSrc('sc6Img1', leayaFull);
-    setElementSrc('sc6Img2', leaveWfh);
-    setElementSrc('sc6Img3', leaveWfh);
-    setElementSrc('sc6Img4', leayaFull);
-    setElementSrc('sc6Img5', leayaFull);
-    setElementSrc('sc6Img6', leaveWfh);
+    // Card 4: 3D Laptop on Pedestal + Feature Checklist
+    setElementText('sc4Heading', 'Thank you for Exploring my project!');
+    setElementText('sc4Subheading', 'Enterprise HR & WFH Management Portal');
+    setElementText('sc4Check1', 'Thai Labor Pro-rata Vacation Engine');
+    setElementText('sc4Check2', 'Role-Based Access Control (RBAC)');
+    setElementText('sc4Check3', 'Weekly Team Attendance Matrix');
+    setElementText('sc4Check4', 'Instant Approval Workflows');
+    setElementText('sc4BrandTagText', '100% Live Interactive Demo');
+    setElementSrc('sc4LaptopImg', leayaFull);
   }
 
   // Backward compatibility fallback for any legacy elements if present
@@ -1577,5 +1598,8 @@ function setElementText(id, text) {
 
 function setElementSrc(id, src) {
   const el = document.getElementById(id);
-  if (el) el.src = src;
+  if (el) {
+    el.loading = 'eager';
+    el.src = src;
+  }
 }

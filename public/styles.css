@@ -3900,247 +3900,142 @@ button {
   line-height: 1.45;
 }
 
-/* 2-Column Visual Showcase Grid (Keraton Studio / UI8 Aesthetic) */
-.visual-showcase-grid {
+/* ==========================================================================
+   2-Column Dark Visual Showcase Grid (PlanIQ / UI8 4-Card Composition)
+   ========================================================================== */
+.visual-showcase-grid.dark-showcase-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
-.showcase-card {
+.showcase-card.card-dark-theme {
   position: relative;
+  background: #171210;
+  border: 1px solid rgba(229, 222, 201, 0.12);
   border-radius: 24px;
   overflow: hidden;
-  height: 480px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 16px 40px rgba(35, 24, 21, 0.08);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  height: 490px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
   user-select: none;
 }
 
-.showcase-card:hover {
+.showcase-card.card-dark-theme:hover {
   transform: translateY(-6px);
-  box-shadow: 0 28px 60px rgba(35, 24, 21, 0.14);
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.65);
+  border-color: rgba(229, 222, 201, 0.25);
 }
 
-/* Cohesive Project Signature Accent Backgrounds (like Keraton's Olive Green!) */
-.card-theme-leaya,
-.card-theme-leaya-1,
-.card-theme-leaya-2,
-.card-theme-leaya-3,
-.card-theme-leaya-4,
-.card-theme-leaya-5,
-.card-theme-leaya-6 {
-  background: #9BB2C7;
+/* Ambient Backdrop Glows Matching Project CI */
+.card-ambient-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.card-theme-ami,
-.card-theme-ami-1,
-.card-theme-ami-2,
-.card-theme-ami-3,
-.card-theme-ami-4,
-.card-theme-ami-5,
-.card-theme-ami-6 {
-  background: #DCA89F;
+.theme-glow-ami .card-ambient-glow {
+  background: radial-gradient(circle at 85% 15%, rgba(255, 107, 139, 0.18) 0%, transparent 60%),
+              radial-gradient(circle at 15% 85%, rgba(255, 160, 180, 0.08) 0%, transparent 50%);
 }
 
-/* Stage Area (Filling 100% of card, zero dead space) */
-.showcase-stage {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+.theme-glow-leaya .card-ambient-glow {
+  background: radial-gradient(circle at 85% 15%, rgba(77, 166, 255, 0.18) 0%, transparent 60%),
+              radial-gradient(circle at 15% 85%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+}
+
+/* Common Dark Pill Badges */
+.card-pill-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.dark-pill-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #E5DEC9;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 /* --------------------------------------------------------------------------
-   Card Pattern A: Overlapping Browser Composition (Cards 1, 3, 4, 5)
+   Card 1: 3D Dual Laptops / Hero Devices in Perspective
    -------------------------------------------------------------------------- */
-.stage-layered {
+.card1-devices-stage {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 380px;
+  perspective: 1300px;
+  overflow: hidden;
+  z-index: 2;
 }
 
-.browser-window {
+.device-laptop-frame {
   position: absolute;
-  background: #FFFFFF;
-  border-radius: 14px 14px 0 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: none;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+  background: transparent;
   will-change: transform;
 }
 
-/* Background / Secondary Layer (Right Side ~38%, bleeding off right/bottom) */
-.browser-window.bg-window {
-  left: calc(32px + 62%);
-  right: -24px;
-  top: 32px;
-  bottom: 0;
-  z-index: 1;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
-  border-radius: 14px 0 0 0;
-  opacity: 0.96;
+/* Background Secondary Laptop */
+.device-laptop-frame.laptop-bg {
+  right: 14px;
+  top: 18px;
+  width: 66%;
+  transform: rotateY(-12deg) rotateX(10deg) scale(0.92);
+  z-index: 2;
+  opacity: 0.88;
+  filter: drop-shadow(0 20px 36px rgba(0, 0, 0, 0.65));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
 }
 
-.showcase-card:hover .browser-window.bg-window {
-  transform: translateX(8px) translateY(-4px);
+.showcase-card:hover .device-laptop-frame.laptop-bg {
+  transform: rotateY(-8deg) rotateX(7deg) scale(0.96) translateX(8px);
   opacity: 1;
 }
 
-/* Foreground Window (Main Screen ~68% on Left, bleeding cleanly off bottom) */
-.browser-window.fg-window {
-  left: 32px;
-  top: 32px;
-  width: 68%;
-  bottom: 0;
+/* Foreground Primary Laptop */
+.device-laptop-frame.laptop-fg {
+  left: 20px;
+  top: 48px;
+  width: 76%;
+  transform: rotateY(-18deg) rotateX(14deg);
   z-index: 3;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.22), 0 4px 14px rgba(0, 0, 0, 0.08);
+  filter: drop-shadow(0 28px 56px rgba(0, 0, 0, 0.75));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.showcase-card:hover .browser-window.fg-window {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 34px 70px rgba(0, 0, 0, 0.28);
-}
-
-/* Browser Chrome Header Bar */
-.browser-header {
-  height: 36px;
-  background: #FFFFFF;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  padding: 0 14px;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.browser-traffic-dots {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.browser-traffic-dots .dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.dot-red { background: #FF5F56; }
-.dot-yellow { background: #FFBD2E; }
-.dot-green { background: #27C93F; }
-
-.browser-nav-chevrons {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #94A3B8;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1;
-  user-select: none;
-  margin-left: 2px;
-}
-
-.browser-url-bar {
-  background: #F1F5F9;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 9999px;
-  padding: 3px 12px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.6875rem;
-  font-family: var(--font-mono, monospace);
-  color: #475569;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 240px;
-}
-
-.browser-url-bar .url-lock {
-  font-size: 0.65rem;
-  opacity: 0.7;
-}
-
-.browser-screen {
-  flex: 1;
-  width: 100%;
-  height: calc(100% - 36px);
-  overflow: hidden;
-  background: #F8FAFC;
-}
-
-.browser-screen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top left;
-  display: block;
-}
-
-/* --------------------------------------------------------------------------
-   Card Pattern B: 3D Angled Device Closeup (Card 2)
-   -------------------------------------------------------------------------- */
-.stage-device {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  perspective: 1200px;
-}
-
-.laptop-pedestal {
-  position: absolute;
-  bottom: 0;
-  left: 6%;
-  width: 88%;
-  height: 52px;
-  background: #181E26;
-  border-radius: 8px 8px 0 0;
-  box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-.device-laptop-stage {
-  position: absolute;
-  width: 110%;
-  left: 0;
-  bottom: 12px;
-  z-index: 2;
-  transform: rotateY(-16deg) rotateX(12deg) scale(1.04);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: drop-shadow(0 28px 56px rgba(0, 0, 0, 0.5));
-}
-
-.showcase-card:hover .device-laptop-stage {
-  transform: rotateY(-11deg) rotateX(8deg) scale(1.08);
+.showcase-card:hover .device-laptop-frame.laptop-fg {
+  transform: rotateY(-12deg) rotateX(9deg) translateY(-8px) scale(1.02);
 }
 
 .device-laptop-lid {
-  background: #0D1117;
-  border-radius: 18px 18px 0 0;
-  padding: 10px 10px 0 10px;
-  border: 3px solid #334155;
+  background: #0E1217;
+  border-radius: 16px 16px 0 0;
+  padding: 8px 8px 0 8px;
+  border: 2px solid #2A3441;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .device-laptop-camera {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   background: #1E293B;
   border-radius: 50%;
-  margin: 0 auto 6px auto;
+  margin: 0 auto 5px auto;
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
 }
 
@@ -4148,7 +4043,7 @@ button {
   width: 100%;
   aspect-ratio: 16/10;
   overflow: hidden;
-  border-radius: 8px 8px 0 0;
+  border-radius: 6px 6px 0 0;
   background: #FFFFFF;
 }
 
@@ -4161,72 +4056,141 @@ button {
 }
 
 .device-laptop-deck {
-  height: 16px;
-  background: linear-gradient(180deg, #94A3B8 0%, #475569 100%);
-  border-radius: 0 0 18px 18px;
-  margin: 0 -14px;
+  height: 15px;
+  background: linear-gradient(180deg, #94A3B8 0%, #334155 100%);
+  border-radius: 0 0 16px 16px;
+  margin: 0 -12px;
   position: relative;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7);
 }
 
 .device-laptop-notch {
-  width: 80px;
-  height: 5px;
+  width: 70px;
+  height: 4px;
   background: #1E293B;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 4px 4px;
   margin: 0 auto;
 }
 
+/* Card 1 Bottom Overlay Banner */
+.card1-bottom-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 28px 22px;
+  background: linear-gradient(180deg, transparent 0%, rgba(23, 18, 16, 0.94) 35%, #171210 100%);
+  z-index: 4;
+}
+
+.card1-title {
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
 /* --------------------------------------------------------------------------
-   Card Pattern C: Tilted Multi-Page Masonry / Collage (Card 6)
+   Card 2: Feature Spotlight with Watermark Typography & Overlapping Browser
    -------------------------------------------------------------------------- */
-.stage-collage {
+.card2-watermark-title {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.12);
+  text-transform: uppercase;
+  user-select: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card2-stage {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  z-index: 2;
 }
 
-.collage-tilted-grid {
+.card2-browser-window {
   position: absolute;
-  top: -70px;
-  left: -60px;
-  right: -60px;
-  bottom: -70px;
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
-  transform: rotate(-12deg) scale(1.08);
-  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.showcase-card:hover .collage-tilted-grid {
-  transform: rotate(-9deg) scale(1.12);
-}
-
-.collage-col {
+  top: 60px;
+  right: 24px;
+  width: 76%;
+  bottom: 0;
+  background: #FFFFFF;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  flex: 1;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+  z-index: 2;
 }
 
-.collage-col.col-1 { margin-top: -35px; }
-.collage-col.col-2 { margin-top: 30px; }
-.collage-col.col-3 { margin-top: -20px; }
+.showcase-card:hover .card2-browser-window {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 34px 70px rgba(0, 0, 0, 0.7);
+}
 
-.collage-screen-frame {
+.card2-floating-widget {
+  position: absolute;
+  left: 24px;
+  top: 110px;
+  width: 180px;
+  background: #231815;
   border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 4;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-card:hover .card2-floating-widget {
+  transform: translateY(-6px) scale(1.04);
+}
+
+.widget-mini-bar {
+  background: #171210;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget-mini-bar .mini-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FF5F56;
+}
+
+.widget-title-text {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #E5DEC9;
+  letter-spacing: -0.01em;
+}
+
+.widget-mini-viewport {
+  height: 125px;
   overflow: hidden;
   background: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
-  flex-shrink: 0;
-  height: 200px;
 }
 
-.collage-screen-frame img {
+.widget-mini-viewport img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -4234,28 +4198,250 @@ button {
   display: block;
 }
 
-/* Responsive adjustments */
+/* --------------------------------------------------------------------------
+   Card 3: Multi-Screen UI Grid (4-Screen Mosaic)
+   -------------------------------------------------------------------------- */
+.card3-header {
+  padding: 24px 28px 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.card3-title {
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.card3-mosaic-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.mosaic-screen-card {
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mosaic-screen-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.mosaic-screen-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+}
+
+.card3-bottom-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  background: rgba(23, 18, 16, 0.94);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  border-radius: 9999px;
+  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  z-index: 4;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.badge-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+}
+
+/* --------------------------------------------------------------------------
+   Card 4: 3D Laptop on Pedestal + Feature Checklist
+   -------------------------------------------------------------------------- */
+.card4-split-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.card4-info-col {
+  padding: 34px 20px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card4-heading {
+  color: #FFFFFF;
+  font-family: var(--font-display, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.card4-subheading {
+  color: #A8A09A;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  margin-bottom: 16px;
+}
+
+.card4-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.card4-check-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 5px 14px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #E5DEC9;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: fit-content;
+}
+
+.check-mark {
+  color: #10B981;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.card4-brand-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FFA0B4;
+}
+
+.theme-glow-leaya .card4-brand-tag {
+  color: #4DA6FF;
+}
+
+.card4-device-col {
+  position: relative;
+  height: 100%;
+  perspective: 1200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pedestal-block {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 96%;
+  height: 56px;
+  background: #110D0C;
+  border-radius: 10px 0 0 0;
+  box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1;
+}
+
+.device-laptop-frame.laptop-pedestal-mounted {
+  position: absolute;
+  width: 130%;
+  right: -35px;
+  bottom: 22px;
+  transform: rotateY(-18deg) rotateX(12deg) scale(0.96);
+  filter: drop-shadow(0 25px 48px rgba(0, 0, 0, 0.7));
+  z-index: 2;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-card:hover .device-laptop-frame.laptop-pedestal-mounted {
+  transform: rotateY(-12deg) rotateX(8deg) scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments
+   -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
   .project-info-strip {
     grid-template-columns: 1fr;
     gap: 0.875rem;
   }
-  .visual-showcase-grid {
+  .visual-showcase-grid.dark-showcase-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .showcase-card {
-    height: 390px;
+  .showcase-card.card-dark-theme {
+    height: auto;
+    min-height: 440px;
   }
-  .browser-window.fg-window {
-    width: 76%;
-    left: 20px;
-    top: 20px;
+  .card1-devices-stage {
+    height: 320px;
   }
-  .browser-window.bg-window {
-    left: calc(20px + 68%);
-    top: 20px;
+  .card2-browser-window {
+    width: 82%;
+    right: 16px;
+  }
+  .card2-floating-widget {
+    left: 16px;
+    width: 150px;
+  }
+  .card3-mosaic-container {
+    padding: 0 16px;
+  }
+  .mosaic-screen-card {
+    height: 125px;
+  }
+  .card4-split-layout {
+    grid-template-columns: 1fr;
+  }
+  .card4-info-col {
+    padding: 24px 20px;
+  }
+  .card4-device-col {
+    height: 280px;
+  }
+  .device-laptop-frame.laptop-pedestal-mounted {
+    width: 100%;
+    right: 0;
   }
 }
+
 
 

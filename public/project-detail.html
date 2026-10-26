@@ -338,60 +338,31 @@
         </div>
       </div>
 
-      <!-- Section E: 2-Column Visual Showcase Grid (Keraton Studio / UI8 Aesthetic) -->
-      <div class="visual-showcase-grid" id="visualShowcaseGrid">
-        <!-- Card 1: Main Dashboard / Landing View + Secondary View (Layered Browser) -->
-        <div class="showcase-card card-theme-leaya" id="showcaseCard1">
-          <div class="showcase-stage stage-layered">
-            <!-- Background Layer (Right Side) -->
-            <div class="browser-window bg-window">
-              <div class="browser-header">
-                <div class="browser-traffic-dots">
-                  <span class="dot dot-red"></span>
-                  <span class="dot dot-yellow"></span>
-                  <span class="dot dot-green"></span>
-                </div>
-                <div class="browser-url-bar">
-                  <span class="url-text" id="sc1BgUrl">leave-wfh-management.vercel.app/matrix</span>
-                </div>
-              </div>
-              <div class="browser-screen">
-                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Secondary View" id="sc1BgImg" loading="lazy">
-              </div>
-            </div>
-            <!-- Foreground Window (Main Screen ~68% on Left) -->
-            <div class="browser-window fg-window">
-              <div class="browser-header">
-                <div class="browser-traffic-dots">
-                  <span class="dot dot-red"></span>
-                  <span class="dot dot-yellow"></span>
-                  <span class="dot dot-green"></span>
-                </div>
-                <div class="browser-nav-chevrons">
-                  <span class="chevron-btn">‹</span>
-                  <span class="chevron-btn">›</span>
-                </div>
-                <div class="browser-url-bar">
-                  <span class="url-lock">🔒</span>
-                  <span class="url-text" id="sc1FgUrl">leave-wfh-management.vercel.app/dashboard</span>
-                </div>
-              </div>
-              <div class="browser-screen">
-                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Main Dashboard View" id="sc1FgImg" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2: 3D Angled Laptop Closeup (Hero Experience) -->
-        <div class="showcase-card card-theme-leaya" id="showcaseCard2">
-          <div class="showcase-stage stage-device">
-            <div class="laptop-pedestal"></div>
-            <div class="device-laptop-stage">
+      <!-- Section E: 2-Column Dark Visual Showcase Grid (PlanIQ / UI8 4-Card Composition) -->
+      <div class="visual-showcase-grid dark-showcase-grid" id="visualShowcaseGrid">
+        
+        <!-- Card 1: 3D Dual Laptops / Hero Devices in Perspective -->
+        <div class="showcase-card card-dark-theme card-dark-card1" id="showcaseCard1">
+          <div class="card-ambient-glow" id="sc1Glow"></div>
+          
+          <div class="card1-devices-stage">
+            <!-- Background Secondary Laptop -->
+            <div class="device-laptop-frame laptop-bg">
               <div class="device-laptop-lid">
                 <div class="device-laptop-camera"></div>
                 <div class="device-laptop-display">
-                  <img src="/assets/portfolio/leaya_screenshot_full.png" alt="3D Laptop Mockup" id="sc2DisplayImg" loading="lazy">
+                  <img src="/assets/portfolio/ami_screen_calendar.png" alt="Secondary View" id="sc1Laptop2Img" loading="eager">
+                </div>
+              </div>
+              <div class="device-laptop-deck"></div>
+            </div>
+
+            <!-- Foreground Primary Laptop -->
+            <div class="device-laptop-frame laptop-fg">
+              <div class="device-laptop-lid">
+                <div class="device-laptop-camera"></div>
+                <div class="device-laptop-display">
+                  <img src="/assets/portfolio/ami_screen_dashboard.png" alt="Main Dashboard View" id="sc1Laptop1Img" loading="eager">
                 </div>
               </div>
               <div class="device-laptop-deck">
@@ -399,156 +370,150 @@
               </div>
             </div>
           </div>
+
+          <!-- Bottom Text Overlay & Tags -->
+          <div class="card1-bottom-overlay">
+            <h3 class="card1-title" id="sc1Title">Perfect For Indie Creators &amp; Event Planners</h3>
+            <div class="card-pill-tags-row" id="sc1Tags">
+              <span class="dark-pill-tag">Calendar</span>
+              <span class="dark-pill-tag">Conflict Alerts</span>
+              <span class="dark-pill-tag">Booth Budget</span>
+              <span class="dark-pill-tag">&amp; Many more...</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Card 3: Core Workflow Page 1 (Calendar / Booth Planner View) (Layered Browser) -->
-        <div class="showcase-card card-theme-leaya" id="showcaseCard3">
-          <div class="showcase-stage stage-layered">
-            <!-- Background Layer (Right Side) -->
-            <div class="browser-window bg-window">
-              <div class="browser-header">
-                <div class="browser-traffic-dots">
-                  <span class="dot dot-red"></span>
-                  <span class="dot dot-yellow"></span>
-                  <span class="dot dot-green"></span>
-                </div>
-                <div class="browser-url-bar">
-                  <span class="url-text" id="sc3BgUrl">leave-wfh-management.vercel.app/team</span>
-                </div>
+        <!-- Card 2: Feature Spotlight with Watermark Typography & Overlapping Browser -->
+        <div class="showcase-card card-dark-theme card-dark-card2" id="showcaseCard2">
+          <div class="card-ambient-glow" id="sc2Glow"></div>
+          
+          <!-- Giant Background Watermark -->
+          <div class="card2-watermark-title" id="sc2Watermark">DATE CONFLICT</div>
+
+          <div class="card2-stage">
+            <!-- Secondary Floating Widget on Left -->
+            <div class="card2-floating-widget" id="sc2WidgetWrap">
+              <div class="widget-mini-bar">
+                <span class="mini-dot"></span>
+                <span class="widget-title-text" id="sc2WidgetTitle">Conflict Detection</span>
               </div>
-              <div class="browser-screen">
-                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Secondary View" id="sc3BgImg" loading="lazy">
+              <div class="widget-mini-viewport">
+                <img src="/assets/portfolio/ami_screen_applications.png" alt="Conflict Widget" id="sc2WidgetImg" loading="eager">
               </div>
             </div>
-            <!-- Foreground Window (Main Screen) -->
-            <div class="browser-window fg-window">
+
+            <!-- Large Foreground macOS Browser Window -->
+            <div class="card2-browser-window">
               <div class="browser-header">
                 <div class="browser-traffic-dots">
                   <span class="dot dot-red"></span>
                   <span class="dot dot-yellow"></span>
                   <span class="dot dot-green"></span>
-                </div>
-                <div class="browser-nav-chevrons">
-                  <span class="chevron-btn">‹</span>
-                  <span class="chevron-btn">›</span>
                 </div>
                 <div class="browser-url-bar">
                   <span class="url-lock">🔒</span>
-                  <span class="url-text" id="sc3FgUrl">leave-wfh-management.vercel.app/calendar</span>
+                  <span class="url-text" id="sc2BrowserUrl">ami-booth-planner.vercel.app/calendar</span>
                 </div>
               </div>
               <div class="browser-screen">
-                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Calendar Workflow" id="sc3FgImg" loading="lazy">
+                <img src="/assets/portfolio/ami_screen_calendar.png" alt="Core Feature View" id="sc2BrowserImg" loading="eager">
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Card 4: Core Workflow Page 2 (Applications & Conflict Detection View) (Layered Browser) -->
-        <div class="showcase-card card-theme-leaya" id="showcaseCard4">
-          <div class="showcase-stage stage-layered">
-            <!-- Background Layer (Right Side) -->
-            <div class="browser-window bg-window">
-              <div class="browser-header">
-                <div class="browser-traffic-dots">
-                  <span class="dot dot-red"></span>
-                  <span class="dot dot-yellow"></span>
-                  <span class="dot dot-green"></span>
+        <!-- Card 3: Multi-Screen UI Grid (4-Screen Mosaic) -->
+        <div class="showcase-card card-dark-theme card-dark-card3" id="showcaseCard3">
+          <div class="card-ambient-glow" id="sc3Glow"></div>
+          
+          <!-- Top Header -->
+          <div class="card3-header">
+            <h3 class="card3-title" id="sc3Title">This Platform Suitable For</h3>
+            <div class="card-pill-tags-row" id="sc3Tags">
+              <span class="dark-pill-tag">Illustrator</span>
+              <span class="dark-pill-tag">Comic Creator</span>
+              <span class="dark-pill-tag">Craft Brand</span>
+              <span class="dark-pill-tag">&amp; Many more...</span>
+            </div>
+          </div>
+
+          <!-- 2x2 Mosaic Screens -->
+          <div class="card3-mosaic-container">
+            <div class="mosaic-screen-card">
+              <img src="/assets/portfolio/ami_screen_dashboard.png" alt="Dashboard" id="sc3Screen1" loading="eager">
+            </div>
+            <div class="mosaic-screen-card">
+              <img src="/assets/portfolio/ami_screen_calendar.png" alt="Calendar" id="sc3Screen2" loading="eager">
+            </div>
+            <div class="mosaic-screen-card">
+              <img src="/assets/portfolio/ami_screen_applications.png" alt="Applications" id="sc3Screen3" loading="eager">
+            </div>
+            <div class="mosaic-screen-card">
+              <img src="/assets/portfolio/ami_screen_budget.png" alt="Budget" id="sc3Screen4" loading="eager">
+            </div>
+          </div>
+
+          <!-- Floating Badge Bottom Right -->
+          <div class="card3-bottom-badge" id="sc3Badge">
+            <span class="badge-pulse-dot"></span>
+            <span class="badge-text" id="sc3BadgeText">20+ Creator Workflows</span>
+          </div>
+        </div>
+
+        <!-- Card 4: 3D Laptop on Pedestal + Feature Checklist -->
+        <div class="showcase-card card-dark-theme card-dark-card4" id="showcaseCard4">
+          <div class="card-ambient-glow" id="sc4Glow"></div>
+          
+          <div class="card4-split-layout">
+            <!-- Left Side: Checklist & Details -->
+            <div class="card4-info-col">
+              <h3 class="card4-heading" id="sc4Heading">Thank you for Exploring my project!</h3>
+              <p class="card4-subheading" id="sc4Subheading">Full-Stack Event Management Platform</p>
+
+              <div class="card4-checklist" id="sc4Checklist">
+                <div class="card4-check-item">
+                  <span class="check-mark">✓</span>
+                  <span class="check-text" id="sc4Check1">Smart Date Conflict Detection</span>
                 </div>
-                <div class="browser-url-bar">
-                  <span class="url-text" id="sc4BgUrl">leave-wfh-management.vercel.app/requests</span>
+                <div class="card4-check-item">
+                  <span class="check-mark">✓</span>
+                  <span class="check-text" id="sc4Check2">Partial Day Acceptance Flow</span>
+                </div>
+                <div class="card4-check-item">
+                  <span class="check-mark">✓</span>
+                  <span class="check-text" id="sc4Check3">Real-time Budget &amp; Fee Ledger</span>
+                </div>
+                <div class="card4-check-item">
+                  <span class="check-mark">✓</span>
+                  <span class="check-text" id="sc4Check4">MongoDB Atlas Cloud Sync</span>
                 </div>
               </div>
-              <div class="browser-screen">
-                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Secondary View" id="sc4BgImg" loading="lazy">
+
+              <!-- Tech & Live Badge -->
+              <div class="card4-brand-tag" id="sc4BrandTag">
+                <span class="brand-tag-icon">⚡</span>
+                <span class="brand-tag-text" id="sc4BrandTagText">100% Live Interactive Demo</span>
               </div>
             </div>
-            <!-- Foreground Window (Main Screen) -->
-            <div class="browser-window fg-window">
-              <div class="browser-header">
-                <div class="browser-traffic-dots">
-                  <span class="dot dot-red"></span>
-                  <span class="dot dot-yellow"></span>
-                  <span class="dot dot-green"></span>
+
+            <!-- Right Side: 3D Laptop on Stone Pedestal -->
+            <div class="card4-device-col">
+              <div class="pedestal-block"></div>
+              <div class="device-laptop-frame laptop-pedestal-mounted">
+                <div class="device-laptop-lid">
+                  <div class="device-laptop-camera"></div>
+                  <div class="device-laptop-display">
+                    <img src="/assets/portfolio/ami_screen_dashboard.png" alt="Hero Interface" id="sc4LaptopImg" loading="eager">
+                  </div>
                 </div>
-                <div class="browser-nav-chevrons">
-                  <span class="chevron-btn">‹</span>
-                  <span class="chevron-btn">›</span>
+                <div class="device-laptop-deck">
+                  <div class="device-laptop-notch"></div>
                 </div>
-                <div class="browser-url-bar">
-                  <span class="url-lock">🔒</span>
-                  <span class="url-text" id="sc4FgUrl">leave-wfh-management.vercel.app/approvals</span>
-                </div>
-              </div>
-              <div class="browser-screen">
-                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Approvals Workflow" id="sc4FgImg" loading="lazy">
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Card 5: Analytics / Budget Ledger or Settings View (Layered Browser) -->
-        <div class="showcase-card card-theme-leaya" id="showcaseCard5">
-          <div class="showcase-stage stage-layered">
-            <!-- Background Layer (Right Side) -->
-            <div class="browser-window bg-window">
-              <div class="browser-header">
-                <div class="browser-traffic-dots">
-                  <span class="dot dot-red"></span>
-                  <span class="dot dot-yellow"></span>
-                  <span class="dot dot-green"></span>
-                </div>
-                <div class="browser-url-bar">
-                  <span class="url-text" id="sc5BgUrl">leave-wfh-management.vercel.app/analytics</span>
-                </div>
-              </div>
-              <div class="browser-screen">
-                <img src="/assets/portfolio/leaya_screenshot_full.png" alt="Secondary View" id="sc5BgImg" loading="lazy">
-              </div>
-            </div>
-            <!-- Foreground Window (Main Screen) -->
-            <div class="browser-window fg-window">
-              <div class="browser-header">
-                <div class="browser-traffic-dots">
-                  <span class="dot dot-red"></span>
-                  <span class="dot dot-yellow"></span>
-                  <span class="dot dot-green"></span>
-                </div>
-                <div class="browser-nav-chevrons">
-                  <span class="chevron-btn">‹</span>
-                  <span class="chevron-btn">›</span>
-                </div>
-                <div class="browser-url-bar">
-                  <span class="url-lock">🔒</span>
-                  <span class="url-text" id="sc5FgUrl">leave-wfh-management.vercel.app/quotas</span>
-                </div>
-              </div>
-              <div class="browser-screen">
-                <img src="/assets/portfolio/leave_wfh_screenshot.png" alt="Analytics and Engine View" id="sc5FgImg" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6: Tilted Multi-Page Masonry / Collage (Full Ecosystem) -->
-        <div class="showcase-card card-theme-leaya" id="showcaseCard6">
-          <div class="showcase-stage stage-collage">
-            <div class="collage-tilted-grid" id="sc6CollageGrid">
-              <div class="collage-col col-1">
-                <div class="collage-screen-frame"><img src="/assets/portfolio/leaya_screenshot_full.png" alt="UI Screen 1" id="sc6Img1" loading="lazy"></div>
-                <div class="collage-screen-frame"><img src="/assets/portfolio/leave_wfh_screenshot.png" alt="UI Screen 2" id="sc6Img2" loading="lazy"></div>
-              </div>
-              <div class="collage-col col-2">
-                <div class="collage-screen-frame"><img src="/assets/portfolio/leave_wfh_screenshot.png" alt="UI Screen 3" id="sc6Img3" loading="lazy"></div>
-                <div class="collage-screen-frame"><img src="/assets/portfolio/leaya_screenshot_full.png" alt="UI Screen 4" id="sc6Img4" loading="lazy"></div>
-              </div>
-              <div class="collage-col col-3">
-                <div class="collage-screen-frame"><img src="/assets/portfolio/leaya_screenshot_full.png" alt="UI Screen 5" id="sc6Img5" loading="lazy"></div>
-                <div class="collage-screen-frame"><img src="/assets/portfolio/leave_wfh_screenshot.png" alt="UI Screen 6" id="sc6Img6" loading="lazy"></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Deep UX Research & Engineering Synergy Accordion -->
