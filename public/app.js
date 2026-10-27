@@ -1107,7 +1107,8 @@ async function syncCMSContent() {
             document.querySelector('meta[name="description"]')?.setAttribute('content', metaDesc);
           }
           if (content.favicon) {
-            document.querySelector('link[rel="icon"]')?.setAttribute('href', content.favicon);
+            const favUrl = content.favicon === '/assets/avatar_square.png' ? '/assets/favicon.svg' : content.favicon;
+            document.querySelector('link[rel="icon"]')?.setAttribute('href', favUrl);
           }
         } else if (sec === 'hero') {
           if (content.cursiveScript) {

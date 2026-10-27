@@ -116,6 +116,14 @@ async function ensureCMSContentSeeded(db) {
       }
       console.log("Auto-seeded cms_content sections into MongoDB successfully.");
     }
+
+    // Also update favicon if still set to avatar photo in MongoDB
+    try {
+      await db.collection('cms_content').updateOne(
+        { _id: 'siteSettings', 'published.favicon': '/assets/avatar_square.png' },
+        { $set: { 'published.favicon': '/assets/favicon.svg', 'draft.favicon': '/assets/favicon.svg' } }
+      );
+    } catch (_) {}
   } catch (err) {
     console.warn("Auto-seed error:", err.message);
   }
