@@ -70,17 +70,22 @@
         <span class="logo-mark">R</span>
         <div class="brand-text">
           <span class="brand-name">Rujisaya Kuekool</span>
-          <span class="brand-role">UX/UI Designer</span>
+          <span class="brand-role" data-i18n="brand.role">UX/UI Designer</span>
         </div>
       </a>
 
       <nav class="desktop-nav">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link active">Projects</a>
-        <a href="/#about" class="nav-link">About Me</a>
-        <a href="/#resume" class="nav-link">Resume</a>
-        <a href="/#activity" class="nav-link">Activities</a>
-        <a href="/#contact" class="nav-link contact-pill">Let's Connect</a>
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/projects" class="nav-link active" data-i18n="nav.projects">Projects</a>
+        <a href="/#about" class="nav-link" data-i18n="nav.about">About Me</a>
+        <a href="/#resume" class="nav-link" data-i18n="nav.resume">Resume</a>
+        <a href="/#activity" class="nav-link" data-i18n="nav.activities">Activities</a>
+        <a href="/#contact" class="nav-link contact-pill" data-i18n="nav.contact">Let's Connect</a>
+        <div class="lang-toggle-group" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-label="สลับเป็นภาษาไทย">TH</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
       </nav>
 
       <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
@@ -92,12 +97,20 @@
 
     <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
-      <a href="/" class="mobile-nav-link">Home</a>
-      <a href="/projects" class="mobile-nav-link">Projects</a>
-      <a href="/#about" class="mobile-nav-link">About Me</a>
-      <a href="/#resume" class="mobile-nav-link">Resume</a>
-      <a href="/#activity" class="mobile-nav-link">Activities</a>
-      <a href="/#contact" class="mobile-nav-link mobile-cta">Let's Connect</a>
+      <a href="/" class="mobile-nav-link" data-i18n="nav.home">Home</a>
+      <a href="/projects" class="mobile-nav-link" data-i18n="nav.projects">Projects</a>
+      <a href="/#about" class="mobile-nav-link" data-i18n="nav.about">About Me</a>
+      <a href="/#resume" class="mobile-nav-link" data-i18n="nav.resume">Resume</a>
+      <a href="/#activity" class="mobile-nav-link" data-i18n="nav.activities">Activities</a>
+      <a href="/#contact" class="mobile-nav-link mobile-cta" data-i18n="nav.contact">Let's Connect</a>
+      <div class="mobile-lang-row">
+        <span class="mobile-lang-label" data-i18n="nav.language">Language:</span>
+        <div class="lang-toggle-group" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-label="สลับเป็นภาษาไทย">TH</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -106,9 +119,9 @@
       
       <!-- Breadcrumb -->
       <div class="projects-breadcrumb">
-        <a href="/">Home</a>
+        <a href="/" data-i18n="nav.home">Home</a>
         <span>/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Projects</span>
+        <span style="color: var(--text-main); font-weight: 600;" data-i18n="nav.projects">Projects</span>
       </div>
 
       <!-- Hero Header for Projects Archive -->
@@ -118,10 +131,10 @@
             <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
             <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
           </svg>
-          <span class="desktop-item-label">all projects</span>
+          <span class="desktop-item-label" data-i18n="projects.allProjectsFolderLabel">all projects</span>
         </div>
-        <h1 class="chunky-display-title">all projects</h1>
-        <p class="case-section-subtitle">archive of interactive web applications, SaaS platforms, and digital product designs</p>
+        <h1 class="chunky-display-title" data-i18n="projects.allProjectsTitle">all projects</h1>
+        <p class="case-section-subtitle" data-i18n="projects.allSubtitle">archive of interactive web applications, SaaS platforms, and digital product designs</p>
       </div>
 
       <!-- Real-time Search Input -->
@@ -130,14 +143,14 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="text" id="projectSearchInput" placeholder="ค้นหาโปรเจกต์ (Search by name, category, or keyword)..." class="project-search-input" aria-label="Search projects">
+        <input type="text" id="projectSearchInput" placeholder="Search by name, category, or keyword..." data-i18n-placeholder="projects.searchPlaceholder" class="project-search-input" aria-label="Search projects">
       </div>
 
       <!-- Filter Tabs -->
       <div class="filter-bar" id="categoryFilters" role="tablist" aria-label="Project categories">
-        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">★ all projects (2)</button>
-        <button class="filter-btn" data-filter="enterprise" role="tab" aria-selected="false">enterprise saas &amp; hr (1)</button>
-        <button class="filter-btn" data-filter="creator" role="tab" aria-selected="false">creator economy &amp; events (1)</button>
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" data-i18n="projects.filterAll">★ all projects</button>
+        <button class="filter-btn" data-filter="enterprise" role="tab" aria-selected="false" data-i18n="projects.filterEnterprise">enterprise saas &amp; hr</button>
+        <button class="filter-btn" data-filter="creator" role="tab" aria-selected="false" data-i18n="projects.filterCreator">creator economy &amp; events</button>
       </div>
 
       <!-- Counter Meta -->
@@ -192,7 +205,7 @@
       <div class="view-all-projects-wrap" style="margin-top: 4rem;">
         <a href="/" class="btn-back-home">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          <span>กลับหน้าหลัก (Back to Home)</span>
+          <span data-i18n="projects.backToHome">← Back to Home</span>
         </a>
       </div>
 
@@ -253,7 +266,7 @@
     <div class="container footer-container">
       <div class="footer-left">
         <span class="footer-copyright">© 2026 Rujisaya Kuekool</span>
-        <span class="footer-subtext">Product & UX/UI Designer • Enterprise & Cybersecurity Focus</span>
+        <span class="footer-subtext" data-i18n="footer.subtext">Product & UX/UI Designer • Enterprise & Cybersecurity Focus</span>
       </div>
 
       <div class="footer-right">

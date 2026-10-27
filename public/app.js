@@ -5,7 +5,6 @@
 const FALLBACK_CASE_STUDIES = [
   {
     "id": "leave-wfh-management",
-    "slug": "leave-wfh-management",
     "projectNum": 1,
     "displayTitle": "Leaya 🐾",
     "fullTitle": "Leaya - All-in-One Employee Management Platform",
@@ -19,7 +18,6 @@ const FALLBACK_CASE_STUDIES = [
     "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
     "image": "/assets/portfolio/leaya_screenshot_full.png",
     "liveUrl": "https://leave-wfh-management.vercel.app/?demo=true",
-    "demoUrl": "https://leave-wfh-management.vercel.app/?demo=true",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
       "Enterprise SaaS",
@@ -188,11 +186,53 @@ const FALLBACK_CASE_STUDIES = [
       "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
       "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
       "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
+    ],
+    "mobileImage": "/assets/portfolio/leaya_screen_mobile.png",
+    "mobileScreen": "/assets/portfolio/leaya_screen_mobile.png",
+    "demoUrl": "https://leave-wfh-management.vercel.app/?demo=true",
+    "displayTitle_en": "Leaya 🐾",
+    "displayTitle_th": "Leaya 🐾",
+    "fullTitle_en": "Leaya - All-in-One Employee Management Platform",
+    "fullTitle_th": "Leaya - ระบบบริหารจัดการวันลาและสลับวัน WFH ครบวงจร",
+    "shortSubtitle_en": "Empowering enterprise teams with interactive HR SaaS solutions.",
+    "shortSubtitle_th": "ยกระดับการทำงานขององค์กรด้วยโซลูชัน HR SaaS ที่ใช้งานง่ายและมีประสิทธิภาพ",
+    "category_en": "enterprise saas & hr tech",
+    "category_th": "ระบบ Enterprise SaaS & HR",
+    "summary_th": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
+    "summary_en": "Modern SaaS employee leave and WFH swap management dashboard supporting Thai labor regulations, designed with Role-Based Access Control (RBAC) and automated pro-rata vacation calculation engines.",
+    "targetUsers_th": "พนักงานทั่วไป (ยื่นใบลา/ขอ WFH), หัวหน้าทีม/ผู้จัดการ (คิวอนุมัติ & Team Matrix), ฝ่ายบุคคล/HR (ทะเบียนพนักงาน & คำนวณโควตา)",
+    "targetUsers_en": "Employees (submit leave/swap requests), Team Managers (approval queue & attendance matrix), HR Admins (employee directory & vacation quota calculation)",
+    "designGoal_th": "Design Goal: ปรับเปลี่ยนกระบวนการลางานและขอสลับวัน WFH ที่ซับซ้อนให้กลายเป็นระบบ 3-Role RBAC Portal ที่เข้าใจง่าย พร้อมคำนวณโควตาพักร้อน Pro-rate ตามกฎหมายแรงงานไทยแบบเรียลไทม์",
+    "designGoal_en": "Design Goal: Transform cumbersome manual leave and WFH swap workflows into an intuitive 3-role RBAC portal with real-time Thai labor law pro-rata vacation calculations.",
+    "problem_th": "การจัดการวันลาและสลับวัน WFH ในองค์กรแบบไฮบริดมักติดปัญหาความคลุมเครือของสูตรคำนวณสิทธิ์พักร้อนตามวันเริ่มงานและวันผ่านโปร รวมถึงความเสี่ยงที่ทีมจะขาดคนในวันจันทร์หรือศุกร์เนื่องจากไม่มีตารางสรุป Headcount เข้าออฟฟิศจริง",
+    "problem_en": "Managing leave and WFH swaps in hybrid organizations frequently suffers from ambiguous pro-rata formulas based on start dates/probation, coupled with headcount shortage risks on peak days (Mondays/Fridays) due to missing real-time office attendance visibility.",
+    "responsibilities_th": "ออกแบบสถาปัตยกรรมข้อมูล (IA), พัฒนาระบบ User Roles (Employee / Manager / HR Super Admin), ออกแบบ Weekly Attendance Matrix และพัฒนาระบบคำนวณสิทธิ์พักร้อนแบบ Pro-rata",
+    "responsibilities_en": "Designed Information Architecture (IA), developed Role-Based Access Control simulations (Employee / Manager / HR Super Admin), created the Weekly Attendance Matrix, and built the Thai labor law pro-rata calculation engine.",
+    "uxApproach_th": "ออกแบบให้มี \"RBAC Simulation Bar\" ด้านบน เพื่อให้ผู้มีส่วนได้ส่วนเสียและผู้ตรวจงานสามารถสลับทดลองสิทธิ์ได้ทันที พร้อม Live Vacation Calculator Preview ในฟอร์มเพิ่มพนักงานใหม่",
+    "uxApproach_en": "Integrated an interactive RBAC Simulation Bar at the top to let stakeholders switch permissions instantly, paired with a live vacation calculation preview inside the employee creation modal.",
+    "keyDecisions_th": "1) RBAC Simulation Switcher: ให้ทดสอบระบบได้ทั้ง 3 มุมมองโดยไม่ต้องล็อกอินหลายบัญชี\n2) Weekly Hybrid Attendance Matrix: สรุปยอดคนเข้าออฟฟิศจริงแต่ละวัน (Daily Headcount) เพื่อป้องกันคนไม่พอ\n3) Thai Labor Law Formula Engine: คำนวณวันลา Year 0 อัตโนมัติ (เช่น ผ่านโปรหลัง 1 ก.ย. ได้สิทธิ์ทันที)",
+    "keyDecisions_en": "1) RBAC Simulation Switcher: Instant testing across 3 roles without relogging.\n2) Weekly Hybrid Attendance Matrix: Daily office headcount summary preventing understaffing.\n3) Thai Labor Law Formula Engine: Automated Year 0 leave quotas based on probation dates.",
+    "devCollaboration_th": "พัฒนาด้วย React 18, TypeScript, Tailwind CSS และ Lucide Icons โดยกำหนด Strict TypeScript Interfaces สำหรับสถานะคำขอ (Status Enums) และสูตรการคำนวณเพื่อรองรับการต่อยอดเป็นโปรดักชัน",
+    "devCollaboration_en": "Engineered with React 18, TypeScript, Tailwind CSS, and Lucide Icons with strict TypeScript interfaces for request status enums and formula engines for rapid production integration.",
+    "outcomeLearnings_th": "สร้างประสบการณ์ใช้งานที่ชัดเจน ลดความผิดพลาดในการคำนวณวันลาของฝ่ายบุคคล และช่วยให้หัวหน้างานตัดสินใจอนุมัติได้อย่างรวดเร็วผ่านข้อมูลที่โปร่งใส",
+    "outcomeLearnings_en": "Delivered a frictionless user experience that eliminated manual HR vacation calculation errors and accelerated manager approval workflows through transparent data visualization.",
+    "keyFeatures_th": [
+      "ระบบจำลองสิทธิ์ 3 ระดับ (Employee, Manager, HR Admin) สลับมุมมองได้ทันที",
+      "ตารางเมทริกซ์ทีมประจำสัปดาห์ (Team Weekly Attendance Matrix) พร้อมสรุปยอด Headcount รายวัน",
+      "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
+      "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
+      "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
+    ],
+    "keyFeatures_en": [
+      "3-Level RBAC simulation (Employee, Manager, HR Admin) with instant view switching",
+      "Team Weekly Attendance Matrix with real-time daily headcount tracking",
+      "Automated pro-rata vacation calculation engine compliant with Thai labor regulations",
+      "WFH day swapping paired with mandatory office compensation day & sick leave requests",
+      "Interactive Preview Sandbox: Test leave creation and role permissions safely in session"
     ]
   },
   {
     "id": "ami-booth-planner",
-    "slug": "ami-booth-planner",
     "projectNum": 2,
     "displayTitle": "Ami Booth Planner 🎨",
     "fullTitle": "Ami Booth Planner - All-in-One Creator Event Platform",
@@ -204,9 +244,8 @@ const FALLBACK_CASE_STUDIES = [
     "featured": true,
     "date": "Jan 2026",
     "summary": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
-    "image": "/assets/portfolio/ami_screen_dashboard.png",
+    "image": "/assets/portfolio/ami_booth_calendar.png",
     "liveUrl": "https://ami-booth-planner.vercel.app/?demo=true",
-    "demoUrl": "https://ami-booth-planner.vercel.app/?demo=true",
     "githubUrl": "https://github.com/rujisayak",
     "tags": [
       "Creator Economy",
@@ -218,15 +257,15 @@ const FALLBACK_CASE_STUDIES = [
     ],
     "previewCards": [
       {
-        "title": "Month Grid Calendar & Conflict Detection",
+        "title": "Event Schedule & Calendar",
         "date": "Jan 2026",
-        "image": "/assets/portfolio/ami_screen_calendar.png",
+        "image": "/assets/portfolio/ami_booth_calendar.png",
         "type": "laptop"
       },
       {
-        "title": "Booth Applications & Partial Acceptance",
+        "title": "Date Conflict & Budget Ledger",
         "date": "Oct 2025",
-        "image": "/assets/portfolio/ami_screen_applications.png",
+        "image": "/assets/portfolio/ami_booth_screenshot_full.png",
         "type": "card"
       }
     ],
@@ -335,9 +374,14 @@ const FALLBACK_CASE_STUDIES = [
           "value": "Conflict Detection & Budget Ledger"
         }
       ],
-      "image": "/assets/portfolio/ami_screen_calendar.png"
+      "image": "/assets/portfolio/ami_booth_calendar.png"
     },
     "multiScreens": [
+      {
+        "title": "Overview Dashboard",
+        "image": "/assets/portfolio/ami_screen_dashboard.png",
+        "desc": "Visual event dashboard with status badges and quick actions"
+      },
       {
         "title": "Month Grid Calendar & Conflict Alerts",
         "image": "/assets/portfolio/ami_screen_calendar.png",
@@ -352,11 +396,6 @@ const FALLBACK_CASE_STUDIES = [
         "title": "Event Budget & Fee Ledger",
         "image": "/assets/portfolio/ami_screen_budget.png",
         "desc": "Outstanding booth fees, payment tracking and revenue calculations"
-      },
-      {
-        "title": "Operations Dashboard",
-        "image": "/assets/portfolio/ami_screen_dashboard.png",
-        "desc": "Central summary of confirmed events and upcoming deadlines"
       }
     ],
     "role": "UX/UI Designer & Full-Stack Developer",
@@ -375,261 +414,553 @@ const FALLBACK_CASE_STUDIES = [
       "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
       "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
       "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
+    ],
+    "mobileImage": "/assets/portfolio/ami_screen_mobile.png",
+    "mobileScreen": "/assets/portfolio/ami_screen_mobile.png",
+    "demoUrl": "https://ami-booth-planner.vercel.app/?demo=true",
+    "displayTitle_en": "Ami Booth Planner 🎨",
+    "displayTitle_th": "Ami Booth Planner 🎨",
+    "fullTitle_en": "Ami Booth Planner - All-in-One Creator Event Platform",
+    "fullTitle_th": "Ami Booth Planner - เว็บแอปจัดการอีเวนต์และออกบูธสำหรับครีเอเตอร์",
+    "shortSubtitle_en": "Empowering indie creators & illustrators to organize events, detect date conflicts, and manage booth budgets seamlessly.",
+    "shortSubtitle_th": "ช่วยเหลือนักวาดและครีเอเตอร์อิสระในการจัดตารางออกบูธ ตรวจจับวันชน และบริหารงบประมาณอย่างเป็นระบบ",
+    "category_en": "creator economy & events",
+    "category_th": "ครีเอเตอร์ & การจัดการอีเวนต์",
+    "summary_th": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
+    "summary_en": "Web application for comic artists, illustrators, sticker creators, and craft brands to manage every step of event exhibitions — from event discovery and application tracking to smart conflict alerts and real-time ledger management.",
+    "targetUsers_th": "นักวาดภาพประกอบ (Illustrators), นักเขียนการ์ตูน, ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",
+    "targetUsers_en": "Illustrators, Comic Artists, Sticker Creators, and Indie Craft Brands",
+    "designGoal_th": "Design Goal: เปลี่ยนการจดตารางบูธในกระดาษและ Excel ที่กระจัดกระจาย ให้กลายเป็นระบบ Dashboard ธีม Pastel Pink ที่มีระบบเตือนรอบเวลาชนกันและคำนวณค่าบูธแยกรายวันได้อย่างแม่นยำ",
+    "designGoal_en": "Design Goal: Transform scattered booth schedules from paper and spreadsheets into an intuitive Pastel Pink dashboard with smart date conflict detection and day-by-day fee calculations.",
+    "problem_th": "ครีเอเตอร์ต้องสมัครงานอีเวนต์หลายสิบงานต่อปี ซึ่งมีทั้งวันเปิดรับสมัคร วันประกาศผล และวันจัดงานที่คาบเกี่ยวกันบ่อยครั้ง โดยเฉพาะงานหลายวันที่อาจได้รับการคัดเลือกเพียง 1 วัน (Partial Acceptance) ทำให้คำนวณค่าใช้จ่ายและวางแผนวันไปออกบูธผิดพลาด",
+    "problem_en": "Independent artists often apply to multiple concurrent conventions across different organizers with overlapping dates, resulting in double bookings, forfeited non-refundable deposit fees, and scattered budget spreadsheets.",
+    "responsibilities_th": "ทำ User Research กับกลุ่มครีเอเตอร์, ออกแบบ Design System ธีมสี Pastel Pink โดยอ้างอิง Component Patterns จาก Devias Kit Pro, ออกแบบระบบ Smart Date Conflict Algorithm และพัฒนาฟูลสแต็กเชื่อมต่อ MongoDB Atlas",
+    "responsibilities_en": "Conducted user research with creators, designed Pastel Pink design system with Devias Kit Pro patterns, designed smart date conflict algorithm, and developed full-stack app with MongoDB Atlas.",
+    "uxApproach_th": "ออกแบบมุมมองปฏิทิน 2 รูปแบบ (Month Grid & Agenda) แยกสีชัดเจนระหว่างวันสมัคร วันประกาศผล และวันจัดบูธจริง พร้อมแถบแจ้งเตือนเมื่อมีงานชนกัน (Date Conflict Detection)",
+    "uxApproach_en": "Crafted Month Grid and Agenda calendar views with color-coded phases (application, result, booth dates) paired with active alert banners for overlapping dates.",
+    "keyDecisions_th": "1) Partial Acceptance Support: รองรับผลการสมัครแยกรายวัน โดยระบบจะนับเฉพาะวันที่ได้บูธเข้าปฏิทินจริงและคำนวณค่าบูธตามวันที่ได้รับคัดเลือกเท่านั้น\n2) Budget Separation: แยกค่าบูธค้างชำระ ยอดที่ชำระแล้ว และค่าใช้จ่ายที่อาจเกิดขึ้นจากใบสมัครที่รอผลออกจากกัน ไม่นับซ้ำซ้อน\n3) Preview Demo vs Cloud Auth: ผู้เยี่ยมชมสามารถทดลองสร้างงานในโหมด Demo Sandbox ได้อย่างปลอดภัย โดยระบบจะซิงค์และบันทึกลง MongoDB Atlas เฉพาะเมื่อล็อกอินด้วยอีเมลผู้ดูแล",
+    "keyDecisions_en": "1) Partial Acceptance Support: Independent tracking for multi-day events where only specific days are accepted.\n2) Budget Separation: Clear separation between projected application fees and confirmed operational booth expenses.\n3) Preview Demo vs Cloud Auth: Guests can explore the full sandbox safely without database mutations.",
+    "devCollaboration_th": "พัฒนาด้วย React 18, Material UI (MUI v6), Emotion, Node.js REST API และ MongoDB Atlas พร้อมระบบ Offline Fallback ด้วย LocalStorage",
+    "devCollaboration_en": "Built with React 18, Material UI (MUI v6), Emotion, Node.js REST API, and MongoDB Atlas with offline LocalStorage fallback.",
+    "outcomeLearnings_th": "ช่วยให้ครีเอเตอร์วางแผนตารางออกบูธล่วงหน้าได้โดยไม่พลาดวันสำคัญ ประหยัดเวลาจัดการใบสมัครได้กว่า 70% และป้องกันปัญหาการจองบูธซ้อนในวันเดียวกัน",
+    "outcomeLearnings_en": "Creators reduced scheduling conflicts to zero, saved over 70% of application planning time, and eliminated double-booking mistakes.",
+    "keyFeatures_th": [
+      "ระบบตรวจจับรอบเวลาจัดบูธชนกัน (Smart Date Conflict Detection)",
+      "ปฏิทินตารางงานแบบ Month Grid และ Agenda แยกสีตามช่วงเวลาสำคัญ",
+      "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
+      "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
+      "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
+    ],
+    "keyFeatures_en": [
+      "Smart Date Conflict Detection engine for overlapping convention dates",
+      "Visual Month Grid and Agenda calendar color-coded by milestone phases",
+      "Partial day acceptance handling with automated pro-rated booth cost calculation",
+      "Comprehensive budget ledger separating confirmed debts from pending applications",
+      "Sandbox demo mode for visitors with verified cloud sync for administrators"
     ]
   }
 ];
 
 // Resilient Embedded Activities Data (Ensures Corkboard ALWAYS renders instantly with 0 failure)
 const FALLBACK_ACTIVITIES = [
-  // 01 // Live Music
   {
-    id: "act-live-photobooth-strip",
-    order: 1,
-    type: "photobooth-strip",
-    category: "concerts",
-    categoryLabel: "01 // Live Music",
-    title: "Live Stadium Moments",
-    caption: "Electric atmosphere, sea of lightsticks & unforgettable concert memories.",
-    date: "'25 - '26 Tour",
-    accent: "washi-tape",
-    tapeColor: "tape-kraft",
-    rotation: -2,
-    images: [
+    "id": "act-live-photobooth-strip",
+    "order": 1,
+    "type": "photobooth-strip",
+    "category": "concerts",
+    "categoryLabel": "01 // Live Music",
+    "title": "Live Stadium Moments",
+    "caption": "Electric atmosphere, sea of lightsticks & unforgettable concert memories.",
+    "date": "'25 - '26 Tour",
+    "accent": "washi-tape",
+    "tapeColor": "tape-kraft",
+    "rotation": -2,
+    "images": [
       "/images/activity/20250222_165920.jpg",
       "/images/activity/20250222_214416.jpg",
       "/images/activity/20260606_231053.jpg"
     ],
-    image: "/images/activity/20250222_214416.jpg",
-    stripLabel: "LIVE STADIUM MOMENTS ● 2025-2026",
-    tag: "Photobooth Strip"
+    "image": "/images/activity/20250222_214416.jpg",
+    "stripLabel": "LIVE STADIUM MOMENTS ● 2025-2026",
+    "tag": "Photobooth Strip",
+    "posAll": {
+      "top": "9%",
+      "left": "3%",
+      "rotate": -2.5,
+      "zIndex": 4
+    },
+    "posFiltered": {
+      "top": "16%",
+      "left": "18%",
+      "rotate": -2.5,
+      "zIndex": 5
+    },
+    "title_th": "ช่วงเวลาคอนเสิร์ตสดในสเตเดียม",
+    "caption_th": "บรรยากาศเปี่ยมพลัง ทะเลแท่งไฟ และความทรงจำคอนเสิร์ตที่ไม่เคยลืม",
+    "title_en": "Live Stadium Moments",
+    "caption_en": "Electric atmosphere, sea of lightsticks & unforgettable concert memories."
   },
   {
-    id: "act-live-photobooth-print",
-    order: 2,
-    type: "polaroid",
-    category: "concerts",
-    categoryLabel: "01 // Live Music",
-    title: "Concert Photobooth Memories",
-    caption: "Preserved photobooth strip with favorite stage companions 📸",
-    date: "Mar 2025",
-    image: "/images/activity/20250303_193800.jpg",
-    accent: "washi-tape",
-    tapeColor: "tape-mint",
-    rotation: 2.5,
-    tag: "Photobooth Print"
+    "id": "act-live-photobooth-print",
+    "order": 2,
+    "type": "polaroid",
+    "category": "concerts",
+    "categoryLabel": "01 // Live Music",
+    "title": "Concert Photobooth Memories",
+    "caption": "Preserved photobooth strip with favorite stage companions 📸",
+    "date": "Mar 2025",
+    "image": "/images/activity/20250303_193800.jpg",
+    "accent": "washi-tape",
+    "tapeColor": "tape-mint",
+    "rotation": 2.5,
+    "tag": "Photobooth Print",
+    "posAll": {
+      "top": "12%",
+      "left": "16%",
+      "rotate": 4.5,
+      "zIndex": 6
+    },
+    "posFiltered": {
+      "top": "14%",
+      "left": "38%",
+      "rotate": 4,
+      "zIndex": 6
+    },
+    "title_th": "ความทรงจำโฟโต้บูธคอนเสิร์ต",
+    "caption_th": "ภาพถ่ายสตริปโฟโต้บูธพร้อมเพื่อนร่วมเชียร์บนสเตจคนโปรด 📸",
+    "title_en": "Concert Photobooth Memories",
+    "caption_en": "Preserved photobooth strip with favorite stage companions 📸"
   },
   {
-    id: "act-live-merch-seats",
-    order: 3,
-    type: "polaroid",
-    category: "concerts",
-    categoryLabel: "01 // Live Music",
-    title: "Arena Seats & Official Merch",
-    caption: "Cheering slogans, lightsticks & ready for the stage lights 🎫",
-    date: "Mar 2025",
-    image: "/images/activity/20250309_214202.jpg",
-    accent: "red-pushpin",
-    rotation: -1.8,
-    tag: "Concert"
+    "id": "act-live-merch-seats",
+    "order": 3,
+    "type": "polaroid",
+    "category": "concerts",
+    "categoryLabel": "01 // Live Music",
+    "title": "Arena Seats & Official Merch",
+    "caption": "Cheering slogans, lightsticks & ready for the stage lights 🎫",
+    "date": "Mar 2025",
+    "image": "/images/activity/20250309_214202.jpg",
+    "accent": "red-pushpin",
+    "rotation": -1.8,
+    "tag": "Concert",
+    "posAll": {
+      "top": "60%",
+      "left": "2%",
+      "rotate": -4,
+      "zIndex": 8
+    },
+    "posFiltered": {
+      "top": "22%",
+      "left": "58%",
+      "rotate": -3.5,
+      "zIndex": 7
+    },
+    "title_th": "ที่นั่งอารีน่า & สินค้าออฟฟิเชียล",
+    "caption_th": "สโลแกนเชียร์ แท่งไฟ และความพร้อมสู่แสงสปอตไลต์บนเวที 🎫",
+    "title_en": "Arena Seats & Official Merch",
+    "caption_en": "Cheering slogans, lightsticks & ready for the stage lights 🎫"
   },
   {
-    id: "act-live-tickets",
-    order: 4,
-    type: "polaroid",
-    category: "concerts",
-    categoryLabel: "01 // Live Music",
-    title: "Keepsake Tickets & Wristband",
-    caption: "Physical concert passes, wristbands & artist photocards collected 🎟️",
-    date: "Aug 2025",
-    image: "/images/activity/20250816_171251.jpg",
-    accent: "washi-tape",
-    tapeColor: "tape-gold",
-    rotation: 2.0,
-    tag: "Ticket Stub"
-  },
-
-  // 02 // Art & Design
-  {
-    id: "act-art-desk-setup",
-    order: 5,
-    type: "polaroid",
-    category: "creative",
-    categoryLabel: "02 // Art & Design",
-    title: "Miniature Workspace Art",
-    caption: "Creative workspace, miniature architecture & daily inspiration ✨",
-    date: "Oct 2024",
-    image: "/images/activity/12c8b489-167f-484f-b7aa-6974858e6e99.jpg",
-    accent: "washi-tape",
-    tapeColor: "tape-kraft",
-    rotation: 1.8,
-    tag: "Desk Setup"
-  },
-  {
-    id: "act-art-journal-stickers",
-    order: 6,
-    type: "polaroid",
-    category: "creative",
-    categoryLabel: "02 // Art & Design",
-    title: "Art Journal & Sticker Stash",
-    caption: "Curating colorful sticker sheets, typography & sketch notes 🎨",
-    date: "Dec 2024",
-    image: "/images/activity/20241218_091403.jpg",
-    accent: "washi-tape",
-    tapeColor: "tape-rose",
-    rotation: -2.8,
-    tag: "Art Journal"
+    "id": "act-live-tickets",
+    "order": 4,
+    "type": "polaroid",
+    "category": "concerts",
+    "categoryLabel": "01 // Live Music",
+    "title": "Keepsake Tickets & Wristband",
+    "caption": "Physical concert passes, wristbands & artist photocards collected 🎟️",
+    "date": "Aug 2025",
+    "image": "/images/activity/20250816_171251.jpg",
+    "accent": "washi-tape",
+    "tapeColor": "tape-gold",
+    "rotation": 2,
+    "tag": "Ticket Stub",
+    "posAll": {
+      "top": "46%",
+      "left": "12%",
+      "rotate": 5.5,
+      "zIndex": 7
+    },
+    "posFiltered": {
+      "top": "50%",
+      "left": "42%",
+      "rotate": 3,
+      "zIndex": 8
+    },
+    "title_th": "บัตรคอนเสิร์ต & สายรัดข้อมือของสะสม",
+    "caption_th": "บัตรกระดาษของแท้ สายรัดข้อมือ และโฟโต้การ์ดศิลปินที่สะสมไว้ 🎟️",
+    "title_en": "Keepsake Tickets & Wristband",
+    "caption_en": "Physical concert passes, wristbands & artist photocards collected 🎟️"
   },
   {
-    id: "act-art-neon-exhibition",
-    order: 7,
-    type: "polaroid",
-    category: "creative",
-    categoryLabel: "02 // Art & Design",
-    title: "Immersive Neon Exhibition",
-    caption: "Spatial light installations, sensory gradients & modern visuals 💜",
-    date: "Mar 2025",
-    image: "/images/activity/20250304_231241.jpg",
-    accent: "date-stamp",
-    dateStamp: "'25 03 04",
-    pinType: "silver-pushpin",
-    rotation: 1.5,
-    tag: "Exhibition"
+    "id": "act-art-desk-setup",
+    "order": 5,
+    "type": "polaroid",
+    "category": "creative",
+    "categoryLabel": "02 // Art & Design",
+    "title": "Miniature Workspace Art",
+    "caption": "Creative workspace, miniature architecture & daily inspiration ✨",
+    "date": "Oct 2024",
+    "image": "/images/activity/12c8b489-167f-484f-b7aa-6974858e6e99.jpg",
+    "accent": "washi-tape",
+    "tapeColor": "tape-kraft",
+    "rotation": 1.8,
+    "tag": "Desk Setup",
+    "posAll": {
+      "top": "65%",
+      "left": "20%",
+      "rotate": -2,
+      "zIndex": 10
+    },
+    "posFiltered": {
+      "top": "48%",
+      "left": "30%",
+      "rotate": 2.5,
+      "zIndex": 7
+    },
+    "title_th": "ศิลปะโต๊ะทำงานมุมจำลอง",
+    "caption_th": "พื้นที่สร้างสรรค์ สถาปัตยกรรมจิ๋ว และแรงบันดาลใจในทุกวัน ✨",
+    "title_en": "Miniature Workspace Art",
+    "caption_en": "Creative workspace, miniature architecture & daily inspiration ✨"
   },
   {
-    id: "act-art-collectibles",
-    order: 8,
-    type: "polaroid",
-    category: "creative",
-    categoryLabel: "02 // Art & Design",
-    title: "Character Toys & Collectibles",
-    caption: "Playful character figurines, blind boxes & stationery haul 🧸",
-    date: "Jun 2026",
-    image: "/images/activity/20260613_103655.jpg",
-    accent: "paperclip",
-    rotation: -2.2,
-    tag: "Collectibles"
-  },
-
-  // 03 // Lifestyle & Cafes
-  {
-    id: "act-life-mirror-fit",
-    order: 9,
-    type: "polaroid",
-    category: "lifestyle",
-    categoryLabel: "03 // Lifestyle & Cafes",
-    title: "Casual Fit Check",
-    caption: "Everyday casual style & city walk mood 🪞",
-    date: "Dec 2024",
-    image: "/images/activity/20241218_124441.jpg",
-    accent: "washi-tape",
-    tapeColor: "tape-kraft",
-    rotation: 2.6,
-    tag: "Fit Check"
-  },
-  {
-    id: "act-life-cafe-mirror",
-    order: 10,
-    type: "polaroid",
-    category: "lifestyle",
-    categoryLabel: "03 // Lifestyle & Cafes",
-    title: "Afternoon Cafe Hopping",
-    caption: "Finding calm neighborhood corners, warm espresso & friendly air ☕",
-    date: "Dec 2024",
-    image: "/images/activity/20241230_164035.jpg",
-    accent: "yellow-pushpin",
-    rotation: -1.8,
-    tag: "Cafe"
+    "id": "act-art-journal-stickers",
+    "order": 6,
+    "type": "polaroid",
+    "category": "creative",
+    "categoryLabel": "02 // Art & Design",
+    "title": "Art Journal & Sticker Stash",
+    "caption": "Curating colorful sticker sheets, typography & sketch notes 🎨",
+    "date": "Dec 2024",
+    "image": "/images/activity/20241218_091403.jpg",
+    "accent": "washi-tape",
+    "tapeColor": "tape-rose",
+    "rotation": -2.8,
+    "tag": "Art Journal",
+    "posAll": {
+      "top": "9%",
+      "left": "28%",
+      "rotate": -3.5,
+      "zIndex": 5
+    },
+    "posFiltered": {
+      "top": "16%",
+      "left": "28%",
+      "rotate": -3.5,
+      "zIndex": 5
+    },
+    "title_th": "สมุดบันทึกศิลปะ & คอลเลกชันสติกเกอร์",
+    "caption_th": "สะสมแผ่นสติกเกอร์สีสัน งานไทโปกราฟี และภาพสเก็ตช์ไอเดีย 🎨",
+    "title_en": "Art Journal & Sticker Stash",
+    "caption_en": "Curating colorful sticker sheets, typography & sketch notes 🎨"
   },
   {
-    id: "act-life-peace-portrait",
-    order: 11,
-    type: "polaroid",
-    category: "lifestyle",
-    categoryLabel: "03 // Lifestyle & Cafes",
-    title: "Always High Spirits",
-    caption: "Always bringing positive energy, smiles & endless curiosity ✌️",
-    date: "Jan 2025",
-    image: "/images/activity/20250107_114103.jpg",
-    accent: "sticky-note",
-    rotation: 1.2,
-    tag: "Portrait"
+    "id": "act-art-neon-exhibition",
+    "order": 7,
+    "type": "polaroid",
+    "category": "creative",
+    "categoryLabel": "02 // Art & Design",
+    "title": "Immersive Neon Exhibition",
+    "caption": "Spatial light installations, sensory gradients & modern visuals 💜",
+    "date": "Mar 2025",
+    "image": "/images/activity/20250304_231241.jpg",
+    "accent": "date-stamp",
+    "dateStamp": "'25 03 04",
+    "pinType": "silver-pushpin",
+    "rotation": 1.5,
+    "tag": "Exhibition",
+    "posAll": {
+      "top": "38%",
+      "left": "24%",
+      "rotate": 3.5,
+      "zIndex": 9
+    },
+    "posFiltered": {
+      "top": "14%",
+      "left": "52%",
+      "rotate": 3.5,
+      "zIndex": 6
+    },
+    "title_th": "นิทรรศการแสงนีออนเสมือนจริง",
+    "caption_th": "งานจัดแสดงแสงไฟ กราเดียนต์ความรู้สึก และมุมมองภาพสมัยใหม่ 💜",
+    "title_en": "Immersive Neon Exhibition",
+    "caption_en": "Spatial light installations, sensory gradients & modern visuals 💜"
   },
   {
-    id: "act-life-weekend-smile",
-    order: 12,
-    type: "polaroid",
-    category: "lifestyle",
-    categoryLabel: "03 // Lifestyle & Cafes",
-    title: "Weekend Warmth & Smiles",
-    caption: "Clear weekend sunshine & recharging creative design energy ✨",
-    date: "Feb 2025",
-    image: "/images/activity/20250201_120421.jpg",
-    accent: "washi-tape",
-    tapeColor: "tape-mint",
-    rotation: -2.4,
-    tag: "Lifestyle"
+    "id": "act-art-collectibles",
+    "order": 8,
+    "type": "polaroid",
+    "category": "creative",
+    "categoryLabel": "02 // Art & Design",
+    "title": "Character Toys & Collectibles",
+    "caption": "Playful character figurines, blind boxes & stationery haul 🧸",
+    "date": "Jun 2026",
+    "image": "/images/activity/20260613_103655.jpg",
+    "accent": "paperclip",
+    "rotation": -2.2,
+    "tag": "Collectibles",
+    "posAll": {
+      "top": "52%",
+      "left": "34%",
+      "rotate": -4.5,
+      "zIndex": 6
+    },
+    "posFiltered": {
+      "top": "46%",
+      "left": "50%",
+      "rotate": -4,
+      "zIndex": 8
+    },
+    "title_th": "ของเล่นคาแรกเตอร์ & ฟิกเกอร์สะสม",
+    "caption_th": "ฟิกเกอร์คาแรกเตอร์สดใส กล่องสุ่ม และเครื่องเขียนน่ารัก 🧸",
+    "title_en": "Character Toys & Collectibles",
+    "caption_en": "Playful character figurines, blind boxes & stationery haul 🧸"
   },
   {
-    id: "act-life-japanese-table",
-    order: 13,
-    type: "polaroid",
-    category: "lifestyle",
-    categoryLabel: "03 // Lifestyle & Cafes",
-    title: "Delicious Warm Dinner Spread",
-    caption: "Hearty meal with good friends after a productive week 🍱",
-    date: "Feb 2025",
-    image: "/images/activity/20250221_194859.jpg",
-    accent: "date-stamp",
-    dateStamp: "'25 02 21",
-    pinType: "red-pushpin",
-    rotation: 2.2,
-    tag: "Food & Cafe"
+    "id": "act-life-mirror-fit",
+    "order": 9,
+    "type": "polaroid",
+    "category": "lifestyle",
+    "categoryLabel": "03 // Lifestyle & Cafes",
+    "title": "Casual Fit Check",
+    "caption": "Everyday casual style & city walk mood 🪞",
+    "date": "Dec 2024",
+    "image": "/images/activity/20241218_124441.jpg",
+    "accent": "washi-tape",
+    "tapeColor": "tape-kraft",
+    "rotation": 2.6,
+    "tag": "Fit Check",
+    "posAll": {
+      "top": "10%",
+      "left": "42%",
+      "rotate": 3,
+      "zIndex": 4
+    },
+    "posFiltered": {
+      "top": "14%",
+      "left": "20%",
+      "rotate": 3,
+      "zIndex": 5
+    },
+    "title_th": "เช็กความพร้อมลุคลำลอง",
+    "caption_th": "สไตล์สบายๆ ในวันปกติและบรรยากาศเดินเล่นในเมือง 🪞",
+    "title_en": "Casual Fit Check",
+    "caption_en": "Everyday casual style & city walk mood 🪞"
   },
   {
-    id: "act-life-flower-bouquet",
-    order: 14,
-    type: "polaroid",
-    category: "lifestyle",
-    categoryLabel: "03 // Lifestyle & Cafes",
-    title: "Pastel Bloom Palette",
-    caption: "Fresh flower bouquet & natural color gradient inspiration 💐",
-    date: "Mar 2026",
-    image: "/images/activity/20260319_194927.jpg",
-    accent: "rose-washi-tape",
-    tapeColor: "tape-rose",
-    rotation: -1.6,
-    tag: "Color Inspo"
+    "id": "act-life-cafe-mirror",
+    "order": 10,
+    "type": "polaroid",
+    "category": "lifestyle",
+    "categoryLabel": "03 // Lifestyle & Cafes",
+    "title": "Afternoon Cafe Hopping",
+    "caption": "Finding calm neighborhood corners, warm espresso & friendly air ☕",
+    "date": "Dec 2024",
+    "image": "/images/activity/20241230_164035.jpg",
+    "accent": "yellow-pushpin",
+    "rotation": -1.8,
+    "tag": "Cafe",
+    "posAll": {
+      "top": "36%",
+      "left": "46%",
+      "rotate": -3,
+      "zIndex": 8
+    },
+    "posFiltered": {
+      "top": "48%",
+      "left": "24%",
+      "rotate": -2.5,
+      "zIndex": 8
+    },
+    "title_th": "ฮอปปิ้งคาเฟ่ยามบ่าย",
+    "caption_th": "หามุมสงบในย่านโปรด กาแฟเอสเปรสโซ่อุ่นๆ และบรรยากาศเป็นมิตร ☕",
+    "title_en": "Afternoon Cafe Hopping",
+    "caption_en": "Finding calm neighborhood corners, warm espresso & friendly air ☕"
   },
-
-  // 04 // Companions
   {
-    id: "act-pet-festive-supervisor",
-    order: 15,
-    type: "polaroid",
-    category: "pets",
-    categoryLabel: "04 // Companions",
-    title: "Festive Supervisor 🐾",
-    caption: "Festive supervisor 🐾 Keeping watch over every design pixel.",
-    date: "Dec 2024",
-    image: "/images/activity/20241220_203058.jpg",
-    accent: "yellow-pushpin",
-    rotation: -2.6,
-    tag: "Cat Companion"
+    "id": "act-life-peace-portrait",
+    "order": 11,
+    "type": "polaroid",
+    "category": "lifestyle",
+    "categoryLabel": "03 // Lifestyle & Cafes",
+    "title": "Always High Spirits",
+    "caption": "Always bringing positive energy, smiles & endless curiosity ✌️",
+    "date": "Jan 2025",
+    "image": "/images/activity/20250107_114103.jpg",
+    "accent": "sticky-note",
+    "rotation": 1.2,
+    "tag": "Portrait",
+    "posAll": {
+      "top": "34%",
+      "left": "58%",
+      "rotate": 5,
+      "zIndex": 5
+    },
+    "posFiltered": {
+      "top": "14%",
+      "left": "62%",
+      "rotate": 4,
+      "zIndex": 7
+    },
+    "title_th": "พลังบวกและรอยยิ้มเสมอ",
+    "caption_th": "ส่งต่อพลังงานด้านบวก รอยยิ้ม และความกระตือรือร้นที่ไม่สิ้นสุด ✌️",
+    "title_en": "Always High Spirits",
+    "caption_en": "Always bringing positive energy, smiles & endless curiosity ✌️"
   },
   {
-    id: "act-pet-design-assistant",
-    order: 16,
-    type: "polaroid",
-    category: "pets",
-    categoryLabel: "04 // Companions",
-    title: "My Little Design Assistant 🐱",
-    caption: "My little design assistant 🐱 taking an essential power nap.",
-    date: "Jan 2025",
-    image: "/images/activity/1736163183500.jpg",
-    accent: "washi-tape",
-    tapeColor: "tape-mint",
-    rotation: 2.2,
-    tag: "Cat Companion"
+    "id": "act-life-weekend-smile",
+    "order": 12,
+    "type": "polaroid",
+    "category": "lifestyle",
+    "categoryLabel": "03 // Lifestyle & Cafes",
+    "title": "Weekend Warmth & Smiles",
+    "caption": "Clear weekend sunshine & recharging creative design energy ✨",
+    "date": "Feb 2025",
+    "image": "/images/activity/20250201_120421.jpg",
+    "accent": "washi-tape",
+    "tapeColor": "tape-mint",
+    "rotation": -2.4,
+    "tag": "Lifestyle",
+    "posAll": {
+      "top": "8%",
+      "left": "55%",
+      "rotate": -4,
+      "zIndex": 3
+    },
+    "posFiltered": {
+      "top": "12%",
+      "left": "42%",
+      "rotate": -3.5,
+      "zIndex": 6
+    },
+    "title_th": "ความอบอุ่นและรอยยิ้มวันหยุด",
+    "caption_th": "แสงแดดสดใสในวันหยุดสุดสัปดาห์ เติมพลังให้งานออกแบบ ✨",
+    "title_en": "Weekend Warmth & Smiles",
+    "caption_en": "Clear weekend sunshine & recharging creative design energy ✨"
+  },
+  {
+    "id": "act-life-japanese-table",
+    "order": 13,
+    "type": "polaroid",
+    "category": "lifestyle",
+    "categoryLabel": "03 // Lifestyle & Cafes",
+    "title": "Delicious Warm Dinner Spread",
+    "caption": "Hearty meal with good friends after a productive week 🍱",
+    "date": "Feb 2025",
+    "image": "/images/activity/20250221_194859.jpg",
+    "accent": "date-stamp",
+    "dateStamp": "'25 02 21",
+    "pinType": "red-pushpin",
+    "rotation": 2.2,
+    "tag": "Food & Cafe",
+    "posAll": {
+      "top": "62%",
+      "left": "44%",
+      "rotate": 4.5,
+      "zIndex": 7
+    },
+    "posFiltered": {
+      "top": "46%",
+      "left": "44%",
+      "rotate": 3.5,
+      "zIndex": 9
+    },
+    "title_th": "มื้อเย็นแสนอบอุ่นและอร่อย",
+    "caption_th": "มื้ออาหารแสนอร่อยร่วมกับเพื่อนสนิทหลังสัปดาห์ทำงานที่เต็มที่ 🍱",
+    "title_en": "Delicious Warm Dinner Spread",
+    "caption_en": "Hearty meal with good friends after a productive week 🍱"
+  },
+  {
+    "id": "act-life-flower-bouquet",
+    "order": 14,
+    "type": "polaroid",
+    "category": "lifestyle",
+    "categoryLabel": "03 // Lifestyle & Cafes",
+    "title": "Pastel Bloom Palette",
+    "caption": "Fresh flower bouquet & natural color gradient inspiration 💐",
+    "date": "Mar 2026",
+    "image": "/images/activity/20260319_194927.jpg",
+    "accent": "rose-washi-tape",
+    "tapeColor": "tape-rose",
+    "rotation": -1.6,
+    "tag": "Color Inspo",
+    "posAll": {
+      "top": "62%",
+      "left": "56%",
+      "rotate": -3,
+      "zIndex": 9
+    },
+    "posFiltered": {
+      "top": "48%",
+      "left": "60%",
+      "rotate": -3,
+      "zIndex": 10
+    },
+    "title_th": "พาเลทสีพาสเทลดอกไม้สด",
+    "caption_th": "ช่อดอกไม้สดและแรงบันดาลใจเฉดสีกราเดียนต์จากธรรมชาติ 💐",
+    "title_en": "Pastel Bloom Palette",
+    "caption_en": "Fresh flower bouquet & natural color gradient inspiration 💐"
+  },
+  {
+    "id": "act-pet-festive-supervisor",
+    "order": 15,
+    "type": "polaroid",
+    "category": "pets",
+    "categoryLabel": "04 // Companions",
+    "title": "Festive Supervisor 🐾",
+    "caption": "Festive supervisor 🐾 Keeping watch over every design pixel.",
+    "date": "Dec 2024",
+    "image": "/images/activity/20241220_203058.jpg",
+    "accent": "yellow-pushpin",
+    "rotation": -2.6,
+    "tag": "Cat Companion",
+    "posAll": {
+      "top": "12%",
+      "left": "70%",
+      "rotate": 5.5,
+      "zIndex": 4
+    },
+    "posFiltered": {
+      "top": "28%",
+      "left": "32%",
+      "rotate": -3.5,
+      "zIndex": 5
+    },
+    "title_th": "หัวหน้างานตัวจริงช่วงเทศกาล 🐾",
+    "caption_th": "หัวหน้างานขนฟู 🐾 คอยจับตาดูทุกพิกเซลของงานออกแบบอย่างใกล้ชิด",
+    "title_en": "Festive Supervisor 🐾",
+    "caption_en": "Festive supervisor 🐾 Keeping watch over every design pixel."
+  },
+  {
+    "id": "act-pet-design-assistant",
+    "order": 16,
+    "type": "polaroid",
+    "category": "pets",
+    "categoryLabel": "04 // Companions",
+    "title": "My Little Design Assistant 🐱",
+    "caption": "My little design assistant 🐱 taking an essential power nap.",
+    "date": "Jan 2025",
+    "image": "/images/activity/1736163183500.jpg",
+    "accent": "washi-tape",
+    "tapeColor": "tape-mint",
+    "rotation": 2.2,
+    "tag": "Cat Companion",
+    "posAll": {
+      "top": "48%",
+      "left": "72%",
+      "rotate": -3.5,
+      "zIndex": 8
+    },
+    "posFiltered": {
+      "top": "26%",
+      "left": "52%",
+      "rotate": 4,
+      "zIndex": 6
+    },
+    "title_th": "ผู้ช่วยดีไซเนอร์ตัวน้อย 🐱",
+    "caption_th": "ผู้ช่วยดีไซเนอร์ตัวจิ๋ว 🐱 กำลังพักสายตาและนอนชาร์จพลังคนเก่ง",
+    "title_en": "My Little Design Assistant 🐱",
+    "caption_en": "My little design assistant 🐱 taking an essential power nap."
   }
 ];
 
@@ -638,6 +969,501 @@ let allActivities = [...FALLBACK_ACTIVITIES];
 let currentFilter = 'featured';
 let currentActFilter = 'all';
 let lastFocusedElement = null;
+let currentProjectDetailStudy = null;
+
+// ==========================================================================
+// Centralized Bilingual Translation System (EN / TH)
+// ==========================================================================
+const TRANSLATIONS = {
+  en: {
+    brand: {
+      role: "UX/UI Designer"
+    },
+    nav: {
+      home: "Home",
+      projects: "Projects",
+      about: "About Me",
+      resume: "Resume",
+      activities: "Activities",
+      contact: "Let's Connect",
+      language: "Language:"
+    },
+    hero: {
+      miniUx: "enterprise ux",
+      miniPortfolio: "portfolio",
+      miniHandoff: "developer handoff",
+      chunkyTitle: "portfolio",
+      byToey: "by Toeyruji",
+      folderProjects: "projects",
+      folderAbout: "about me",
+      folderResume: "resume",
+      folderActivities: "activities",
+      folderContact: "contact",
+      bioLead: "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+      stat1: "⚡️ 2+ Years CyberSec UX",
+      stat2: "🎓 3.73 First Class Honors (IT)",
+      stat3: "🤝 End-to-End: UX Flows to Dev Handoff",
+      exploreProjects: "explore projects",
+      downloadResume: "download resume (pdf)"
+    },
+    projects: {
+      folderLabel: "projects",
+      allProjectsFolderLabel: "all projects",
+      title: "projects",
+      allProjectsTitle: "all projects",
+      subtitle: "interactive web applications and enterprise platforms I designed & developed",
+      allSubtitle: "archive of interactive web applications, SaaS platforms, and digital product designs",
+      searchPlaceholder: "Search by name, category, or keyword...",
+      filterAll: "★ all projects",
+      filterEnterprise: "enterprise saas & hr",
+      filterCreator: "creator economy & events",
+      showingProjects: "showing {count} of {total} projects",
+      showingCount: "showing {count} projects",
+      noResults: "No projects found matching your search.",
+      viewProject: "View Project →",
+      showAll: "Show All Projects",
+      backToHome: "← Back to Home",
+      statusLive: "live",
+      statusLiveInteractive: "live interactive"
+    },
+    about: {
+      badge: "about me",
+      greeting: "Hi, I'm Toey!",
+      mainParagraph: "I design web interfaces for desktop and complex systems. In my work, I combine Adaptive and Responsive design techniques. I place a strong emphasis on usability and overall user experience.",
+      specHeading: "What I specialize in:",
+      spec1Title: "Enterprise & Cybersecurity UX",
+      spec1Desc: " — creating complex software workflows (detection rule logic builders, threat portals, and SIEM monitoring dashboards).",
+      spec2Title: "Design Systems & Developer Handoff",
+      spec2Desc: " — component tokens, detailed UI flow blueprints, validation & error state design, and API parameter alignment in Figma.",
+      spec3Title: "Usability Evaluation & QA",
+      spec3Desc: " — internal prototype testing, heuristic usability reviews, and beta feedback loops with backend engineers.",
+      colExperience: "Experience",
+      colSkills: "Skills",
+      colContacts: "Contacts",
+      expRole1: "UX/UI Designer, Security Pitch Co., Ltd.",
+      expPeriod1: "2023 — Present",
+      expRole2: "UX/UI Intern, Security Pitch Co., Ltd.",
+      expPeriod2: "2023 (Jan — Apr)",
+      expEdu: "B.Sc. Information Technology (GPA 3.73, First Class Honors)",
+      expEduPeriod: "2019 — 2023",
+      skill1: "Product & System Design",
+      skill2: "Design Systems & Component Tokens",
+      skill3: "Backend UI Flow Documentation",
+      skill4: "Heuristic Usability Review & QA",
+      skill5: "Figma, Adobe XD, Photoshop, Illustrator",
+      contactLine: "LINE: baitoeyrujisaya",
+      contactLocation: "Bangkok, Thailand"
+    },
+    resume: {
+      pretitle: "CREDENTIALS",
+      title: "Resume & Portfolio Deck",
+      desc: "View the complete summary of my professional experience, education, skills, and design portfolio. Available for immediate download in PDF format.",
+      btnResume: "Download Resume (PDF)",
+      btnPortfolio: "Full Portfolio Deck (12 Pages)",
+      check1: "2+ Years Cybersecurity Dashboard Experience",
+      check2: "First Class Honors in IT (Suan Dusit University)",
+      check3: "Proven Developer Handoff & UI Flow Documentation",
+      overlay: "Click to Open PDF ↗"
+    },
+    activities: {
+      pretitle: "BEYOND THE CANVAS // LIFE & INSPIRATION",
+      title: "Activities & Life Moments",
+      subtitle: "A visual contact sheet outside the screen — live stadium concerts, spatial art exhibitions, cafe explorations, cute companions, and creative sparks that fuel my work.",
+      tabAll: "All Moments",
+      tabConcerts: "01 // Live Music",
+      tabCreative: "02 // Art & Design",
+      tabLifestyle: "03 // Lifestyle & Cafes",
+      tabPets: "04 // Companions",
+      scrapbookBanner: "STUDIO SCRAPBOOK // PINNED MEMORIES",
+      dragHint: "Drag & drop to rearrange",
+      zoom: "Zoom ↗",
+      note: "★ note"
+    },
+    contact: {
+      pretitle: "DIRECT INQUIRIES // GET IN TOUCH",
+      title: "Let's Connect",
+      subtitle: "I am always open to discussing enterprise UX/UI roles, complex software challenges, and creative collaborations.",
+      labelEmail: "Email Address",
+      labelPhone: "Phone",
+      labelLine: "LINE ID",
+      labelLocation: "Location",
+      locationVal: "Bangkok, Thailand (On-site / Remote / Hybrid)",
+      formTitle: "Send a Direct Message",
+      formDesc: "Messages submitted here are saved directly into the MongoDB Atlas database.",
+      fieldName: "Your Name *",
+      fieldEmail: "Your Email *",
+      fieldSubject: "Subject",
+      fieldMessage: "Message *",
+      placeholderName: "e.g. Sarah Jenkins",
+      placeholderEmail: "e.g. sarah@company.com",
+      placeholderSubject: "e.g. UX/UI Designer Position / Project Collaboration",
+      placeholderMessage: "Hello Toey, we are interested in your cybersecurity UX experience...",
+      btnSend: "Send Message",
+      btnSending: "Sending...",
+      successMsg: "Thank you! Your message has been sent successfully.",
+      errorMsg: "Could not send message. Please try again or contact me directly via email."
+    },
+    detail: {
+      backProjects: "← Back to All Projects",
+      projectPrefix: "project",
+      liveDemo: "Live Demo",
+      github: "GitHub",
+      highlightsTitle: "Project Highlights",
+      styleGuideTitle: "Style Guide",
+      typoColorTitle: "Typography & Color System",
+      paletteCount: "{count} Palette Swatches",
+      roleLabel: "Role",
+      usersLabel: "Target Users",
+      solutionLabel: "Key Solution",
+      suitableForTitle: "This Platform Suitable For",
+      multiMenuBadge: "✔ Full Multi-Menu Workflow",
+      summaryHeading: "Built for Scalability & Seamless UX",
+      specResponsive: "Responsive UI",
+      specCustom: "100% Custom System",
+      specPixel: "Pixel Perfect",
+      specInteractive: "Interactive State",
+      narrativeTitle: "Deep UX Research & Developer Handoff Narrative",
+      readStory: "Read Case Study Story ↓",
+      hideStory: "Hide Case Study Story ↑",
+      secProblem: "01 // Problem & Operational Challenges",
+      secResp: "02 // Personal Scope & Responsibilities",
+      secDecisions: "03 // Key UX Decisions & Trade-offs",
+      secDev: "04 // Developer Collaboration & State Specifications",
+      secOutcome: "05 // Qualitative Outcomes & Impact",
+      engineeringSynergy: "Engineering Synergy:",
+      btnOpenApp: "Open Live Production App ↗",
+      nextProjectBadge: "Next Project",
+      viewNextProject: "View Next Project",
+      backDirectory: "Back to All Projects Directory"
+    },
+    footer: {
+      subtext: "Product & UX/UI Designer • Enterprise & Cybersecurity Focus",
+      backToTop: "Back to top ↑",
+      copyToast: "Copied to clipboard!",
+      copyBtn: "Copy",
+      copiedBtn: "Copied!"
+    }
+  },
+  th: {
+    brand: {
+      role: "UX/UI Designer"
+    },
+    nav: {
+      home: "หน้าแรก",
+      projects: "ผลงาน",
+      about: "เกี่ยวกับฉัน",
+      resume: "เรซูเม่",
+      activities: "กิจกรรม & ไลฟ์สไตล์",
+      contact: "ติดต่อ",
+      language: "ภาษา:"
+    },
+    hero: {
+      miniUx: "ออกแบบระบบ enterprise",
+      miniPortfolio: "พอร์ตโฟลิโอ",
+      miniHandoff: "ส่งมอบงานนักพัฒนา",
+      chunkyTitle: "portfolio",
+      byToey: "โดย เตยรุจิ",
+      folderProjects: "ผลงาน",
+      folderAbout: "เกี่ยวกับฉัน",
+      folderResume: "เรซูเม่",
+      folderActivities: "กิจกรรม",
+      folderContact: "ติดต่อ",
+      bioLead: "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ",
+      stat1: "⚡️ ประสบการณ์ CyberSec UX 2+ ปี",
+      stat2: "🎓 เกียรตินิยมอันดับ 1 IT (3.73)",
+      stat3: "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff",
+      exploreProjects: "สำรวจผลงาน",
+      downloadResume: "ดาวน์โหลดเรซูเม่ (PDF)"
+    },
+    projects: {
+      folderLabel: "ผลงานเด่น",
+      allProjectsFolderLabel: "ผลงานทั้งหมด",
+      title: "projects",
+      allProjectsTitle: "all projects",
+      subtitle: "เว็บแอปพลิเคชันและแพลตฟอร์มระดับองค์กรที่ฉันออกแบบและร่วมพัฒนา",
+      allSubtitle: "คลังผลงานเว็บแอปพลิเคชัน แพลตฟอร์ม SaaS และการออกแบบผลิตภัณฑ์ดิจิทัล",
+      searchPlaceholder: "ค้นหาตามชื่อ, หมวดหมู่, หรือคำสำคัญ...",
+      filterAll: "★ ผลงานทั้งหมด",
+      filterEnterprise: "enterprise saas & hr",
+      filterCreator: "creator economy & events",
+      showingProjects: "กำลังแสดง {count} จากทั้งหมด {total} โปรเจกต์",
+      showingCount: "กำลังแสดง {count} โปรเจกต์",
+      noResults: "ไม่พบโปรเจกต์ที่ตรงกับคำค้นหาของคุณ",
+      viewProject: "ดูรายละเอียดโปรเจกต์ →",
+      showAll: "ดูผลงานทั้งหมด",
+      backToHome: "← กลับหน้าหลัก",
+      statusLive: "ใช้งานได้จริง",
+      statusLiveInteractive: "ระบบจำลองอินเทอร์แอคทีฟ"
+    },
+    about: {
+      badge: "เกี่ยวกับฉัน",
+      greeting: "สวัสดีค่ะ เตยเองนะคะ!",
+      mainParagraph: "ฉันออกแบบอินเทอร์เฟซสำหรับเดสก์ท็อปและระบบงานที่มีความซับซ้อน โดยผสานเทคนิคการออกแบบทั้ง Adaptive และ Responsive เข้าด้วยกัน ให้ความสำคัญสูงสุดกับความง่ายในการใช้งานและประสบการณ์ที่ดีของผู้ใช้",
+      specHeading: "ความเชี่ยวชาญพิเศษของฉัน:",
+      spec1Title: "Enterprise & Cybersecurity UX",
+      spec1Desc: " — ออกแบบเวิร์กโฟลว์ซอฟต์แวร์ระดับองค์กร (ระบบสร้าง Detection Rule, พอร์ทัลจัดการภัยคุกคาม และแดชบอร์ดมอนิเตอร์ SIEM)",
+      spec2Title: "Design Systems & Developer Handoff",
+      spec2Desc: " — วางระบบ Component Tokens, แผนผัง UI Flow อย่างละเอียด, ออกแบบ Error State และประสานค่าพารามิเตอร์ API ใน Figma",
+      spec3Title: "Usability Evaluation & QA",
+      spec3Desc: " — ทดสอบ Prototype ภายใน, ตรวจสอบความยากง่ายตามหลัก Heuristic และรวบรวมข้อเสนอแนะช่วง Beta ร่วมกับนักพัฒนา",
+      colExperience: "ประสบการณ์",
+      colSkills: "ทักษะความสามารถ",
+      colContacts: "ช่องทางติดต่อ",
+      expRole1: "UX/UI Designer, บริษัท ซีเคียวริตี้ พิทช์ จำกัด",
+      expPeriod1: "2023 — ปัจจุบัน",
+      expRole2: "นักศึกษาฝึกงาน UX/UI, บริษัท ซีเคียวริตี้ พิทช์ จำกัด",
+      expPeriod2: "2023 (ม.ค. — เม.ย.)",
+      expEdu: "วท.บ. เทคโนโลยีสารสนเทศ (เกียรตินิยมอันดับ 1, GPA 3.73)",
+      expEduPeriod: "2019 — 2023",
+      skill1: "การออกแบบผลิตภัณฑ์ & สถาปัตยกรรมระบบ",
+      skill2: "Design Systems & Component Tokens",
+      skill3: "เอกสารผังการทำงานสำหรับทีม Backend",
+      skill4: "ตรวจสอบการใช้งาน Heuristic & QA",
+      skill5: "Figma, Adobe XD, Photoshop, Illustrator",
+      contactLine: "LINE: baitoeyrujisaya",
+      contactLocation: "กรุงเทพมหานคร, ประเทศไทย"
+    },
+    resume: {
+      pretitle: "ประวัติและข้อมูลวิชาชีพ",
+      title: "เอกสารเรซูเม่ & พอร์ตโฟลิโอฉบับเต็ม",
+      desc: "ดูสรุปประสบการณ์การทำงาน การศึกษา ทักษะ และผลงานออกแบบฉบับเต็ม พร้อมดาวน์โหลดในรูปแบบไฟล์ PDF ได้ทันที",
+      btnResume: "ดาวน์โหลดเรซูเม่ (PDF)",
+      btnPortfolio: "พอร์ตโฟลิโอฉบับเต็ม (12 หน้า)",
+      check1: "ประสบการณ์ออกแบบแดชบอร์ด Cybersecurity 2+ ปี",
+      check2: "เกียรตินิยมอันดับ 1 สาขา IT (มหาวิทยาลัยสวนดุสิต)",
+      check3: "ความเชี่ยวชาญการทำเอกสารส่งมอบงาน (Developer Handoff) และ UI Flow",
+      overlay: "คลิกเพื่อเปิดดูไฟล์ PDF ↗"
+    },
+    activities: {
+      pretitle: "นอกเหนือจากหน้าจอ // การใช้ชีวิต & แรงบันดาลใจ",
+      title: "กิจกรรม & บันทึกเรื่องราวชีวิต",
+      subtitle: "ภาพบันทึกความทรงจำนอกหน้าจอ — คอนเสิร์ตสดในสเตเดียม, นิทรรศการศิลปะ, การไปคาเฟ่, สัตว์เลี้ยงตัวโปรด และประกายความคิดสร้างสรรค์ที่เติมพลังให้งานออกแบบ",
+      tabAll: "ช่วงเวลาทั้งหมด",
+      tabConcerts: "01 // คอนเสิร์ต & ดนตรีสด",
+      tabCreative: "02 // ศิลปะ & ดีไซน์",
+      tabLifestyle: "03 // ไลฟ์สไตล์ & คาเฟ่",
+      tabPets: "04 // เพื่อนตัวน้อย",
+      scrapbookBanner: "📌 บอร์ดบันทึกภาพถ่าย // ความทรงจำที่ปักหมุดไว้",
+      dragHint: "✥ ลากและวางเพื่อจัดเรียงรูปภาพ",
+      zoom: "ซูม ↗",
+      note: "★ โน้ต"
+    },
+    contact: {
+      pretitle: "ติดต่อโดยตรง // สอบถามข้อมูล",
+      title: "มาร่วมงานกัน",
+      subtitle: "ยินดีเปิดรับโอกาสการร่วมงานตำแหน่ง Enterprise UX/UI ความท้าทายในระบบซอฟต์แวร์ และโปรเจกต์สร้างสรรค์เสมอค่ะ",
+      labelEmail: "อีเมล",
+      labelPhone: "เบอร์โทรศัพท์",
+      labelLine: "LINE ID",
+      labelLocation: "สถานที่ทำงาน",
+      locationVal: "กรุงเทพมหานคร, ประเทศไทย (On-site / Remote / Hybrid)",
+      formTitle: "ส่งข้อความถึงฉันโดยตรง",
+      formDesc: "ข้อความที่ส่งจะถูกบันทึกเข้าสู่ฐานข้อมูล MongoDB Atlas โดยตรง",
+      fieldName: "ชื่อของคุณ *",
+      fieldEmail: "อีเมลของคุณ *",
+      fieldSubject: "หัวข้อ",
+      fieldMessage: "ข้อความ *",
+      placeholderName: "เช่น วรัญญา สุขใจ",
+      placeholderEmail: "เช่น waranya@company.com",
+      placeholderSubject: "เช่น สนใจร่วมงานตำแหน่ง UX/UI Designer / โปรเจกต์ความร่วมมือ",
+      placeholderMessage: "สวัสดีค่ะคุณเตย สนใจพูดคุยเกี่ยวกับประสบการณ์ Enterprise UX...",
+      btnSend: "ส่งข้อความ",
+      btnSending: "กำลังส่ง...",
+      successMsg: "ขอบคุณค่ะ! ข้อความของคุณถูกส่งเรียบร้อยแล้ว",
+      errorMsg: "ไม่สามารถส่งข้อความได้ กรุณาลองใหม่อีกครั้ง หรือติดต่อทางอีเมลโดยตรง"
+    },
+    detail: {
+      backProjects: "← กลับไปหน้ารวมผลงาน",
+      projectPrefix: "โปรเจกต์ที่",
+      liveDemo: "ดูระบบจริง (Live Demo)",
+      github: "GitHub",
+      highlightsTitle: "จุดเด่นของระบบ",
+      styleGuideTitle: "คู่มือสไตล์และการออกแบบ",
+      typoColorTitle: "ระบบตัวอักษรและชุดสี",
+      paletteCount: "{count} พาเลทสี",
+      roleLabel: "บทบาท",
+      usersLabel: "ผู้ใช้งานเป้าหมาย",
+      solutionLabel: "โซลูชันสำคัญ",
+      suitableForTitle: "แพลตฟอร์มนี้เหมาะสำหรับ",
+      multiMenuBadge: "✔ เวิร์กโฟลว์ครบทุกเมนูและระบบงาน",
+      summaryHeading: "ออกแบบเพื่อรองรับการขยายตัว & มอบ UX ที่ลื่นไหล",
+      specResponsive: "หน้าจอ Responsive",
+      specCustom: "ระบบปรับแต่งได้ 100%",
+      specPixel: "ละเอียดระดับพิกเซล",
+      specInteractive: "จำลองสถานะสมบูรณ์",
+      narrativeTitle: "เจาะลึกกระบวนการวิจัย UX & การส่งมอบงานให้นักพัฒนา",
+      readStory: "อ่านเรื่องราวการออกแบบ ↓",
+      hideStory: "ซ่อนเรื่องราว ↑",
+      secProblem: "01 // ปัญหาและความท้าทายในการดำเนินงาน",
+      secResp: "02 // ขอบเขตหน้าที่และความรับผิดชอบส่วนตัว",
+      secDecisions: "03 // การตัดสินใจเชิง UX และข้อแลกเปลี่ยนสำคัญ",
+      secDev: "04 // การทำงานร่วมกับนักพัฒนา & การระบุสถานะระบบ",
+      secOutcome: "05 // ผลลัพธ์เชิงคุณภาพและผลกระทบของระบบ",
+      engineeringSynergy: "การทำงานร่วมกับทีมวิศวกรรม:",
+      btnOpenApp: "เปิดใช้งานเว็บแอปจริง ↗",
+      nextProjectBadge: "โปรเจกต์ถัดไป",
+      viewNextProject: "ดูโปรเจกต์ถัดไป",
+      backDirectory: "กลับไปยังคลังผลงานทั้งหมด"
+    },
+    footer: {
+      subtext: "นักออกแบบ Product & UX/UI • ผู้เชี่ยวชาญ Enterprise & Cybersecurity",
+      backToTop: "กลับขึ้นด้านบน ↑",
+      copyToast: "คัดลอกลงคลิปบอร์ดแล้ว!",
+      copyBtn: "คัดลอก",
+      copiedBtn: "คัดลอกแล้ว!"
+    }
+  }
+};
+
+let currentLang = 'en';
+
+function getField(obj, fieldName) {
+  if (!obj) return '';
+  if (currentLang === 'th') {
+    return obj[fieldName + '_th'] || obj[fieldName] || '';
+  }
+  return obj[fieldName + '_en'] || obj[fieldName] || '';
+}
+
+function t(key, params) {
+  const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+  const parts = key.split('.');
+  let val = dict;
+  for (const part of parts) {
+    if (val && typeof val === 'object' && part in val) {
+      val = val[part];
+    } else {
+      val = TRANSLATIONS.en;
+      for (const p of parts) {
+        if (val && typeof val === 'object' && p in val) {
+          val = val[p];
+        } else {
+          return key;
+        }
+      }
+      break;
+    }
+  }
+  if (typeof val === 'string' && params) {
+    return val.replace(/\{(\w+)\}/g, (_, k) => params[k] !== undefined ? params[k] : `{${k}}`);
+  }
+  return typeof val === 'string' ? val : key;
+}
+
+function getInitialLanguage() {
+  try {
+    const saved = localStorage.getItem('preferred_lang');
+    if (saved === 'th' || saved === 'en') {
+      return saved;
+    }
+  } catch (e) {
+    console.warn('localStorage inaccessible, falling back to English default:', e);
+  }
+  return 'en';
+}
+
+function setLanguage(lang) {
+  if (lang !== 'en' && lang !== 'th') lang = 'en';
+  currentLang = lang;
+  
+  try {
+    localStorage.setItem('preferred_lang', lang);
+  } catch (e) {
+    // safe fallback
+  }
+  
+  document.documentElement.lang = lang;
+  
+  // Update toggle buttons active state
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const btnLang = btn.getAttribute('data-lang');
+    const isActive = btnLang === lang;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+  
+  // Apply data-i18n to DOM elements
+  applyTranslations();
+  
+  // Update dynamic case studies
+  if (typeof allCaseStudies !== 'undefined' && allCaseStudies.length > 0) {
+    const isHomePage = !document.body.classList.contains('page-projects-archive') && !document.getElementById('projectSearchInput');
+    if (isHomePage) {
+      const featured = allCaseStudies.filter(s => s.featured);
+      renderCaseStudies(featured.length > 0 ? featured : allCaseStudies);
+    } else {
+      if (typeof applyCurrentFilter === 'function') {
+        applyCurrentFilter();
+      }
+    }
+  }
+  
+  // Update project detail page if present
+  if (currentProjectDetailStudy && typeof hydrateProjectDetailView === 'function') {
+    hydrateProjectDetailView(currentProjectDetailStudy);
+  }
+  
+  // Update activities corkboard if present
+  if (typeof allActivities !== 'undefined' && allActivities.length > 0 && typeof renderActivities === 'function') {
+    renderActivities(allActivities);
+  }
+}
+
+function applyTranslations() {
+  // Elements with data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const translated = t(key);
+    if (translated.includes('<') || translated.includes('&')) {
+      el.innerHTML = translated;
+    } else {
+      el.textContent = translated;
+    }
+  });
+
+  // Placeholder
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    el.placeholder = t(key);
+  });
+
+  // Aria label
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label');
+    el.setAttribute('aria-label', t(key));
+  });
+
+  // Title attribute
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    el.setAttribute('title', t(key));
+  });
+
+  // Update projects count meta on projects archive page if present
+  const countMeta = document.getElementById('projectsCountMeta');
+  if (countMeta && typeof allCaseStudies !== 'undefined') {
+    countMeta.textContent = t('projects.showingCount', { count: allCaseStudies.length });
+  }
+
+  // Update accordion toggle text if present
+  const detailsEl = document.querySelector('.bento-ux-deepdive-details');
+  const toggleBtn = document.getElementById('uxAccordionToggleBtn') || document.querySelector('.summary-toggle-btn');
+  if (detailsEl && toggleBtn) {
+    toggleBtn.textContent = detailsEl.open ? t('detail.hideStory') : t('detail.readStory');
+  }
+}
+
+function initLanguageToggleEvents() {
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-btn');
+    if (!btn) return;
+    const targetLang = btn.getAttribute('data-lang');
+    if (targetLang && (targetLang === 'en' || targetLang === 'th')) {
+      setLanguage(targetLang);
+    }
+  });
+}
+
 
 // Global Progress & Refresh Toast Helpers
 function setTopProgress(pct) {
@@ -676,6 +1502,8 @@ function hideRefreshStatus(doneText) {
 
 document.addEventListener('DOMContentLoaded', () => {
   setTopProgress(65);
+  initLanguageToggleEvents();
+  setLanguage(getInitialLanguage());
   initNavigation();
   initCopyables();
   initContactForm();
@@ -978,11 +1806,11 @@ function renderCaseStudies(studies) {
 
   const countMeta = document.getElementById('projectsCountMeta');
   if (countMeta) {
-    countMeta.textContent = `showing ${studies ? studies.length : 0} of ${allCaseStudies.length} projects`;
+    countMeta.textContent = t('projects.showingProjects', { count: studies ? studies.length : 0, total: allCaseStudies.length });
   }
 
   if (!studies || studies.length === 0) {
-    container.innerHTML = `<div class="loading-spinner">No projects found matching your search.</div>`;
+    container.innerHTML = `<div class="loading-spinner">${escapeHtml(t('projects.noResults'))}</div>`;
     return;
   }
 
@@ -990,16 +1818,17 @@ function renderCaseStudies(studies) {
   const displayList = isHomePage ? studies.slice(0, 4) : studies;
 
   container.innerHTML = displayList.map(study => {
-    const displayTitle = study.displayTitle || study.title;
-    const categoryText = study.category || (study.id === 'ami-booth-planner' ? 'creator economy & events' : 'enterprise saas & hr tech');
-    const badgeText = study.badge || 'live';
-    const isLive = (study.badgeType === 'live') || badgeText.toLowerCase().includes('live');
+    const displayTitle = getField(study, 'displayTitle') || study.displayTitle || study.title;
+    const rawCategory = getField(study, 'category') || study.category || (study.id === 'ami-booth-planner' ? (currentLang === 'th' ? 'ครีเอเตอร์ & การจัดการอีเวนต์' : 'creator economy & events') : (currentLang === 'th' ? 'ระบบ Enterprise SaaS & HR' : 'enterprise saas & hr tech'));
+    const isLive = (study.badgeType === 'live') || (study.badge && study.badge.toLowerCase().includes('live'));
+    const badgeText = isLive ? (study.badge && study.badge.toLowerCase().includes('interactive') ? t('projects.statusLiveInteractive') : t('projects.statusLive')) : (study.badge || 'live');
     const dateText = study.date || 'Jan 2026';
     const slug = study.slug || study.id;
     const coverImage = study.image || (study.previewCards && study.previewCards[0] ? study.previewCards[0].image : '/assets/portfolio/leaya_screenshot_full.png');
+    const viewArrow = t('projects.viewProject');
 
     return `
-      <a href="/projects/${encodeURIComponent(slug)}" class="compact-project-card" data-category="${study.filterCategory || 'all'}" aria-label="View ${escapeHtml(study.fullTitle || study.title)}">
+      <a href="/projects/${encodeURIComponent(slug)}" class="compact-project-card" data-category="${study.filterCategory || 'all'}" aria-label="View ${escapeHtml(getField(study, 'fullTitle') || study.fullTitle || study.title)}">
         <div class="compact-card-thumb">
           <img src="${coverImage}" alt="${escapeHtml(displayTitle)} Preview" loading="lazy" class="compact-thumb-img">
           <span class="compact-date-badge">${escapeHtml(dateText)}</span>
@@ -1013,8 +1842,8 @@ function renderCaseStudies(studies) {
             </span>
           </div>
           <div class="compact-footer-row-sub">
-            <span class="compact-category-tag">${escapeHtml(categoryText.toLowerCase())}</span>
-            <span class="compact-view-arrow">View Project →</span>
+            <span class="compact-category-tag">${escapeHtml(rawCategory.toLowerCase())}</span>
+            <span class="compact-view-arrow">${escapeHtml(viewArrow)}</span>
           </div>
         </div>
       </a>
@@ -1054,9 +1883,14 @@ function applyCurrentFilter() {
 
   if (q) {
     pool = pool.filter(s => {
-      const matchTitle = (s.displayTitle || s.title || '').toLowerCase().includes(q);
-      const matchCat = (s.category || '').toLowerCase().includes(q);
-      const matchSummary = (s.summary || '').toLowerCase().includes(q);
+      const matchTitle = (getField(s, 'displayTitle') || s.title || '').toLowerCase().includes(q) ||
+        (s.displayTitle_en || '').toLowerCase().includes(q) ||
+        (s.displayTitle_th || '').toLowerCase().includes(q);
+      const matchCat = (getField(s, 'category') || '').toLowerCase().includes(q) ||
+        (s.category || '').toLowerCase().includes(q);
+      const matchSummary = (getField(s, 'summary') || '').toLowerCase().includes(q) ||
+        (s.summary_en || '').toLowerCase().includes(q) ||
+        (s.summary_th || '').toLowerCase().includes(q);
       const matchTags = (s.tags || []).some(t => t.toLowerCase().includes(q));
       return matchTitle || matchCat || matchSummary || matchTags;
     });
@@ -1239,6 +2073,7 @@ function initProjectDetailPage() {
 
   const study = findProjectBySlug(slug) || allCaseStudies[0];
   if (study) {
+    currentProjectDetailStudy = study;
     hydrateProjectDetailView(study);
   }
 }
@@ -1257,15 +2092,15 @@ function getProjectShowcaseData(study) {
   let s0, s1, s2, s3;
 
   if (isAmi) {
-    s0 = { title: "Dashboard Overview", image: "/assets/portfolio/ami_screen_dashboard.png", desc: "Overview & Quick Actions" };
-    s1 = { title: "Calendar Planner", image: "/assets/portfolio/ami_screen_calendar.png", desc: "Month Grid Schedule & Date Conflicts" };
-    s2 = { title: "Applications View", image: "/assets/portfolio/ami_screen_applications.png", desc: "Conflict Detection & Partial Acceptance" };
-    s3 = { title: "Budget & Fee Ledger", image: "/assets/portfolio/ami_screen_budget.png", desc: "Real-time Expense Breakdown & Liabilities" };
+    s0 = { title: currentLang === 'th' ? "แดชบอร์ดภาพรวม" : "Dashboard Overview", image: "/assets/portfolio/ami_screen_dashboard.png", desc: "Overview & Quick Actions" };
+    s1 = { title: currentLang === 'th' ? "ปฏิทินวางแผนอีเวนต์" : "Calendar Planner", image: "/assets/portfolio/ami_screen_calendar.png", desc: "Month Grid Schedule & Date Conflicts" };
+    s2 = { title: currentLang === 'th' ? "ระบบติดตามการสมัคร" : "Applications View", image: "/assets/portfolio/ami_screen_applications.png", desc: "Conflict Detection & Partial Acceptance" };
+    s3 = { title: currentLang === 'th' ? "บัญชีค่าบูธ & งบประมาณ" : "Budget & Fee Ledger", image: "/assets/portfolio/ami_screen_budget.png", desc: "Real-time Expense Breakdown & Liabilities" };
   } else if (isLeaya) {
-    s0 = { title: "Employee Dashboard", image: "/assets/portfolio/leaya_screen_dashboard.png", desc: "Leave Balances & WFH Monthly Tracking" };
-    s1 = { title: "Team Attendance Matrix", image: "/assets/portfolio/leaya_screen_matrix.png", desc: "Weekly In-Office vs Remote Team Schedule" };
-    s2 = { title: "Vacation Engine", image: "/assets/portfolio/leaya_screen_rules.png", desc: "Thai Labor Law Pro-rata Calculation Rules" };
-    s3 = { title: "HR Master Data", image: "/assets/portfolio/leaya_screen_masterdata.png", desc: "Enterprise Org Directory & Employee Permissions" };
+    s0 = { title: currentLang === 'th' ? "แดชบอร์ดพนักงาน" : "Employee Dashboard", image: "/assets/portfolio/leaya_screen_dashboard.png", desc: "Leave Balances & WFH Monthly Tracking" };
+    s1 = { title: currentLang === 'th' ? "เมทริกซ์การเข้างานของทีม" : "Team Attendance Matrix", image: "/assets/portfolio/leaya_screen_matrix.png", desc: "Weekly In-Office vs Remote Team Schedule" };
+    s2 = { title: currentLang === 'th' ? "ระบบคำนวณวันลา Pro-rata" : "Vacation Engine", image: "/assets/portfolio/leaya_screen_rules.png", desc: "Thai Labor Law Pro-rata Calculation Rules" };
+    s3 = { title: currentLang === 'th' ? "ทะเบียนข้อมูลฝ่ายบุคคล" : "HR Master Data", image: "/assets/portfolio/leaya_screen_masterdata.png", desc: "Enterprise Org Directory & Employee Permissions" };
   } else {
     // Universal fallback for any custom or future project
     const available = [];
@@ -1284,27 +2119,27 @@ function getProjectShowcaseData(study) {
 
     // Ensure 4 distinct screens without repeating the first one 4 times
     const pool = available.filter((v, i, a) => a.findIndex(t => t.image === v.image) === i);
-    s0 = pool[0] || { title: "Dashboard Overview", image: "/assets/portfolio/ami_screen_dashboard.png" };
-    s1 = pool[1] || { title: "Feature / List View", image: "/assets/portfolio/leaya_screen_matrix.png" };
-    s2 = pool[2] || { title: "Deep-Dive Module", image: "/assets/portfolio/ami_screen_applications.png" };
-    s3 = pool[3] || { title: "Analytics & Settings", image: "/assets/portfolio/leaya_screen_rules.png" };
+    s0 = pool[0] || { title: currentLang === 'th' ? "แดชบอร์ดภาพรวม" : "Dashboard Overview", image: "/assets/portfolio/ami_screen_dashboard.png" };
+    s1 = pool[1] || { title: currentLang === 'th' ? "หน้ารายการ / ฟีเจอร์" : "Feature / List View", image: "/assets/portfolio/leaya_screen_matrix.png" };
+    s2 = pool[2] || { title: currentLang === 'th' ? "โมดูลเจาะลึก" : "Deep-Dive Module", image: "/assets/portfolio/ami_screen_applications.png" };
+    s3 = pool[3] || { title: currentLang === 'th' ? "วิเคราะห์ & ตั้งค่า" : "Analytics & Settings", image: "/assets/portfolio/leaya_screen_rules.png" };
   }
 
   // 3. Card 1 Config
   const card1Title = isAmi
-    ? "Perfect Solution For Indie Creators & Event Planners"
-    : (isLeaya ? "Perfect Solution For Enterprise Teams & HR Operations" : `Perfect Solution For ${(study.targetUsers || 'Modern Teams').split(/[,&]/)[0].trim()}`);
+    ? (currentLang === 'th' ? "เหมาะเป็นพิเศษสำหรับนักวาดและคนจัดอีเวนต์" : "Perfect Solution For Indie Creators & Event Planners")
+    : (isLeaya ? (currentLang === 'th' ? "เหมาะเป็นพิเศษสำหรับทีมองค์กรและฝ่ายบุคคล" : "Perfect Solution For Enterprise Teams & HR Operations") : (currentLang === 'th' ? `เหมาะเป็นพิเศษสำหรับ ${(getField(study, 'targetUsers') || 'ทีมสมัยใหม่').split(/[,&]/)[0].trim()}` : `Perfect Solution For ${(getField(study, 'targetUsers') || 'Modern Teams').split(/[,&]/)[0].trim()}`));
   
   const card1Tags = isAmi
-    ? ["Calendar Grid", "Conflict Alerts", "Partial Acceptance", "Booth Budget", "& Many more..."]
+    ? (currentLang === 'th' ? ["ตารางปฏิทิน", "ตรวจจับวันชน", "รับผลแบบแยกวัน", "งบประมาณค่าบูธ", "& อื่นๆ อีกมากมาย..."] : ["Calendar Grid", "Conflict Alerts", "Partial Acceptance", "Booth Budget", "& Many more..."])
     : (isLeaya 
-        ? ["Pro-rata Engine", "RBAC Matrix", "Weekly Attendance", "Leave Ledger", "& Many more..."]
-        : (study.tags && study.tags.length ? [...study.tags.slice(0, 4), "& Many more..."] : ["Workflow UI", "Custom System", "Cloud Sync", "& Many more..."]));
+        ? (currentLang === 'th' ? ["สูตร Pro-rata", "RBAC Matrix", "ยอดเข้าออฟฟิศ", "ประวัติการลา", "& อื่นๆ อีกมากมาย..."] : ["Pro-rata Engine", "RBAC Matrix", "Weekly Attendance", "Leave Ledger", "& Many more..."])
+        : (study.tags && study.tags.length ? [...study.tags.slice(0, 4), (currentLang === 'th' ? "& อื่นๆ อีกมากมาย..." : "& Many more...")] : (currentLang === 'th' ? ["ผังเวิร์กโฟลว์", "ระบบปรับแต่งได้", "ซิงค์คลาวด์", "& อื่นๆ อีกมากมาย..."] : ["Workflow UI", "Custom System", "Cloud Sync", "& Many more..."])));
 
   // 4. Card 2 Config
   const card2Watermark = isAmi 
-    ? "DATE CONFLICT" 
-    : (isLeaya ? "VACATION ENGINE" : (study.displayTitle || study.title || "SMART ENGINE").toUpperCase().slice(0, 16));
+    ? (currentLang === 'th' ? "ตรวจจับวันชน" : "DATE CONFLICT") 
+    : (isLeaya ? (currentLang === 'th' ? "ระบบคำนวณวันลา" : "VACATION ENGINE") : (getField(study, 'displayTitle') || study.title || "SMART ENGINE").toUpperCase().slice(0, 16));
 
   const cleanDomain = (study.liveUrl || '')
     .replace(/^https?:\/\//, '')
@@ -1314,30 +2149,31 @@ function getProjectShowcaseData(study) {
     ? cleanDomain + (isAmi ? '/calendar' : '/vacation-engine')
     : 'app.internal/features';
 
-  const card2WidgetTitle = isAmi ? "Conflict Detection" : (isLeaya ? "Attendance Matrix" : "Core Module");
+  const card2WidgetTitle = isAmi ? (currentLang === 'th' ? "ตรวจจับวันชน" : "Conflict Detection") : (isLeaya ? (currentLang === 'th' ? "เมทริกซ์การเข้างาน" : "Attendance Matrix") : (currentLang === 'th' ? "โมดูลหลัก" : "Core Module"));
 
   // 5. Card 3 Config
   let card3Tags = isAmi 
-    ? ["Illustrators", "Comic Creators", "Craft Brands", "Event Organizers"] 
-    : (isLeaya ? ["HR & People Ops", "Team Managers", "Hybrid Employees", "Enterprise Teams"] : []);
+    ? (currentLang === 'th' ? ["นักวาดภาพประกอบ", "นักเขียนการ์ตูน", "แบรนด์คราฟต์", "ผู้จัดงานอีเวนต์"] : ["Illustrators", "Comic Creators", "Craft Brands", "Event Organizers"]) 
+    : (isLeaya ? (currentLang === 'th' ? ["ฝ่ายบุคคล & HR", "หัวหน้าทีม", "พนักงานไฮบริด", "ทีมองค์กร"] : ["HR & People Ops", "Team Managers", "Hybrid Employees", "Enterprise Teams"]) : []);
 
   if (!card3Tags.length && study.targetUsers) {
-    card3Tags = study.targetUsers
+    const rawTarget = getField(study, 'targetUsers');
+    card3Tags = rawTarget
       .split(',')
       .map(t => t.replace(/\(.*?\)/g, '').trim())
       .filter(t => t.length > 0 && t.length < 28)
       .slice(0, 4);
   }
   if (!card3Tags.length) {
-    card3Tags = ["Enterprise Teams", "Team Leads", "Product Managers", "Operations"];
+    card3Tags = currentLang === 'th' ? ["ทีมองค์กร", "หัวหน้าทีม", "ผู้จัดการผลิตภัณฑ์", "ฝ่ายปฏิบัติการ"] : ["Enterprise Teams", "Team Leads", "Product Managers", "Operations"];
   }
 
   // 6. Card 4 Config
   const brandLogo = isAmi ? "🎨" : (isLeaya ? "🐾" : "⚡");
-  const brandName = isAmi ? "Ami Booth Planner" : (isLeaya ? "Leaya HR Portal" : (study.displayTitle || study.title || "Interactive App"));
+  const brandName = isAmi ? "Ami Booth Planner" : (isLeaya ? "Leaya HR Portal" : (getField(study, 'displayTitle') || study.title || "Interactive App"));
   const toolBadge = (study.techStack && study.techStack.length >= 2)
-    ? `${study.techStack[0].name} / ${study.techStack[1].name} • Full System`
-    : (isAmi ? "React / MUI • Full Event System" : "Next.js / React • Full HR System");
+    ? `${study.techStack[0].name} / ${study.techStack[1].name} • ${currentLang === 'th' ? "ระบบงานครบวงจร" : "Full System"}`
+    : (isAmi ? (currentLang === 'th' ? "React / MUI • ระบบงานอีเวนต์ครบวงจร" : "React / MUI • Full Event System") : (currentLang === 'th' ? "Next.js / React • ระบบงาน HR ครบวงจร" : "Next.js / React • Full HR System"));
 
   return {
     themeGlow,
@@ -1356,19 +2192,24 @@ function getProjectShowcaseData(study) {
       widgetScreen: s1.image
     },
     card3: {
-      title: "This Platform Suitable For",
+      title: t('detail.suitableForTitle'),
       tags: card3Tags,
       screen1: s0,
       screen2: s1,
       screen3: s2,
       screen4: s3,
-      badgeText: "✔ Full Multi-Menu Workflow"
+      badgeText: t('detail.multiMenuBadge')
     },
     card4: {
       brandLogo,
       brandName,
-      heading: "Built for Scalability & Seamless UX",
-      specs: [
+      heading: t('detail.summaryHeading'),
+      specs: currentLang === 'th' ? [
+        "หน้าจอ Responsive",
+        "ระบบปรับแต่งได้ 100%",
+        "ละเอียดระดับพิกเซล",
+        "จำลองสถานะสมบูรณ์"
+      ] : [
         "Responsive UI",
         "100% Custom System",
         "Pixel Perfect",
@@ -1442,9 +2283,10 @@ function renderProjectShowcaseGrid(study) {
 
 function hydrateProjectDetailView(study) {
   if (!study) return;
+  currentProjectDetailStudy = study;
 
-  const fullTitle = study.fullTitle || study.title;
-  const shortSubtitle = study.shortSubtitle || study.summary;
+  const fullTitle = getField(study, 'fullTitle') || study.fullTitle || study.title;
+  const shortSubtitle = getField(study, 'shortSubtitle') || study.shortSubtitle || getField(study, 'summary') || study.summary;
   const techStack = study.techStack || [
     { name: "React 18", type: "react" },
     { name: "Figma", type: "figma" },
@@ -1499,9 +2341,9 @@ function hydrateProjectDetailView(study) {
   // Update Page Title & Breadcrumb
   document.title = `${fullTitle} — Rujisaya Kuekool | UX/UI Designer`;
   const crumbIndex = document.getElementById('crumbIndex');
-  if (crumbIndex) crumbIndex.textContent = `project ${study.projectNum || 1}`;
+  if (crumbIndex) crumbIndex.textContent = `${t('detail.projectPrefix')} ${study.projectNum || 1}`;
   const crumbCat = document.getElementById('crumbCat');
-  if (crumbCat) crumbCat.textContent = (study.category || 'enterprise saas & hr tech').toLowerCase();
+  if (crumbCat) crumbCat.textContent = (getField(study, 'category') || study.category || 'enterprise saas & hr tech').toLowerCase();
 
   // Header Title & Subtitle
   const titleEl = document.getElementById('detailHeaderTitle');
@@ -1596,19 +2438,19 @@ function hydrateProjectDetailView(study) {
 
   const infoRole = document.getElementById('infoStripRole');
   if (infoRole) {
-    infoRole.textContent = "UX/UI Designer & Full-Stack Developer";
+    infoRole.textContent = currentLang === 'th' ? "นักออกแบบ UX/UI & นักพัฒนา Full-Stack" : "UX/UI Designer & Full-Stack Developer";
   }
   const infoUsers = document.getElementById('infoStripUsers');
   if (infoUsers) {
     infoUsers.textContent = isAmi 
-      ? "Illustrators, Comic Artists & Craft Brands" 
-      : "HR, Managers & Hybrid Teams";
+      ? (currentLang === 'th' ? "นักวาดภาพประกอบ, นักเขียนการ์ตูน & แบรนด์คราฟต์" : "Illustrators, Comic Artists & Craft Brands") 
+      : (currentLang === 'th' ? "ฝ่ายบุคคล, ผู้จัดการ & ทีมทำงานไฮบริด" : "HR, Managers & Hybrid Teams");
   }
   const infoSolution = document.getElementById('infoStripSolution');
   if (infoSolution) {
     infoSolution.textContent = isAmi 
-      ? "Smart Date Conflict & Partial Acceptance Engine" 
-      : "Pro-rata Vacation Engine & Weekly Attendance Matrix";
+      ? (currentLang === 'th' ? "ระบบตรวจจับวันชน & จัดการงบประมาณรายวัน" : "Smart Date Conflict & Partial Acceptance Engine") 
+      : (currentLang === 'th' ? "ระบบคำนวณวันลา Pro-rata & เมทริกซ์การเข้างาน" : "Pro-rata Vacation Engine & Weekly Attendance Matrix");
   }
 
   // Render 4-Card Bento Visual Showcase Grid (PlanIQ 2x2 Composition)
@@ -1645,18 +2487,32 @@ function hydrateProjectDetailView(study) {
 
   // UX Narrative
   const probEl = document.getElementById('detailProblemText');
-  if (probEl) probEl.textContent = study.problem || study.summary;
+  if (probEl) probEl.textContent = getField(study, 'problem') || getField(study, 'summary');
   const respEl = document.getElementById('detailRespText');
-  if (respEl) respEl.textContent = study.responsibilities || '';
+  if (respEl) respEl.textContent = getField(study, 'responsibilities') || '';
   const devEl = document.getElementById('detailDevText');
-  if (devEl) devEl.innerHTML = `<strong>Engineering Synergy:</strong> ${escapeHtml(study.devCollaboration || '')}`;
+  if (devEl) devEl.innerHTML = `<strong>${t('detail.engineeringSynergy')}</strong> ${escapeHtml(getField(study, 'devCollaboration') || '')}`;
   const outcomeEl = document.getElementById('detailOutcomeText');
-  if (outcomeEl) outcomeEl.textContent = study.outcomeLearnings || '';
+  if (outcomeEl) outcomeEl.textContent = getField(study, 'outcomeLearnings') || '';
   const decisionsList = document.getElementById('detailDecisionsList');
-  if (decisionsList && study.keyDecisions) {
-    decisionsList.innerHTML = study.keyDecisions.split('\n').filter(Boolean).map(dec => `
+  const decisionsText = getField(study, 'keyDecisions');
+  if (decisionsList && decisionsText) {
+    decisionsList.innerHTML = decisionsText.split('\n').filter(Boolean).map(dec => `
       <li class="bento-decision-item">${escapeHtml(dec)}</li>
     `).join('');
+  }
+
+  // Hook details accordion toggle
+  const detailsEl = document.querySelector('.bento-ux-deepdive-details');
+  const toggleBtn = document.getElementById('uxAccordionToggleBtn') || document.querySelector('.summary-toggle-btn');
+  if (detailsEl && toggleBtn) {
+    if (!detailsEl.__toggleBound) {
+      detailsEl.__toggleBound = true;
+      detailsEl.addEventListener('toggle', () => {
+        toggleBtn.textContent = detailsEl.open ? t('detail.hideStory') : t('detail.readStory');
+      });
+    }
+    toggleBtn.textContent = detailsEl.open ? t('detail.hideStory') : t('detail.readStory');
   }
 
   // Bottom Action Links
@@ -1679,11 +2535,11 @@ function hydrateProjectDetailView(study) {
       nextImg.alt = nextStudy.displayTitle || nextStudy.title;
     }
     const nextCat = document.getElementById('nextProjectCat');
-    if (nextCat) nextCat.textContent = (nextStudy.category || 'creator economy & events').toLowerCase();
+    if (nextCat) nextCat.textContent = (getField(nextStudy, 'category') || nextStudy.category || 'creator economy & events').toLowerCase();
     const nextTitle = document.getElementById('nextProjectTitle');
-    if (nextTitle) nextTitle.textContent = nextStudy.displayTitle || nextStudy.title;
+    if (nextTitle) nextTitle.textContent = getField(nextStudy, 'displayTitle') || nextStudy.displayTitle || nextStudy.title;
     const nextDesc = document.getElementById('nextProjectDesc');
-    if (nextDesc) nextDesc.textContent = nextStudy.summary || nextStudy.shortSubtitle || '';
+    if (nextDesc) nextDesc.textContent = getField(nextStudy, 'summary') || getField(nextStudy, 'shortSubtitle') || '';
   }
 }
 
@@ -1856,15 +2712,15 @@ function renderActivities(activities) {
               <div class="photobooth-cell" data-sub-img="${imgSrc}" title="Click to view full photo">
                 <img src="${imgSrc}" alt="${escapeHtml(act.title)} - Frame ${fIdx + 1}" loading="eager">
                 <div class="cork-img-overlay">
-                  <span class="cork-inspect-btn">Zoom ↗</span>
+                  <span class="cork-inspect-btn">${escapeHtml(t('activities.zoom'))}</span>
                 </div>
               </div>
             `).join('')}
           </div>
 
           <div class="photobooth-footer">
-            <div class="photobooth-title">${escapeHtml(act.stripLabel || 'LIVE STADIUM MOMENTS')}</div>
-            <div class="photobooth-caption">${escapeHtml(act.caption)}</div>
+            <div class="photobooth-title">${escapeHtml(currentLang === 'th' ? "ช่วงเวลาแห่งความทรงจำ ● 2025-2026" : (act.stripLabel || 'LIVE STADIUM MOMENTS'))}</div>
+            <div class="photobooth-caption">${escapeHtml(getField(act, 'caption') || act.caption)}</div>
           </div>
         </article>
       `;
@@ -1883,7 +2739,7 @@ function renderActivities(activities) {
     } else if (act.accent === 'paperclip') {
       accentHtml = `<div class="cork-paperclip"></div>`;
     } else if (act.accent === 'sticky-note') {
-      accentHtml = `<div class="cork-sticky-tab">★ note</div>`;
+      accentHtml = `<div class="cork-sticky-tab">${escapeHtml(t('activities.note'))}</div>`;
     } else if (act.accent === 'date-stamp') {
       const pin = act.pinType === 'silver-pushpin' ? 'pin-silver' : 'pin-red';
       accentHtml = `<div class="cork-pushpin ${pin}"></div>`;
@@ -1909,14 +2765,14 @@ function renderActivities(activities) {
           <img src="${act.image}" alt="${escapeHtml(act.title)}" class="polaroid-img" loading="eager">
           ${dateStampHtml}
           <div class="cork-img-overlay">
-            <span class="cork-inspect-btn">Inspect Frame ↗</span>
+            <span class="cork-inspect-btn">${escapeHtml(t('activities.zoom'))}</span>
           </div>
         </div>
 
         <div class="polaroid-chin">
-          <p class="polaroid-caption">${escapeHtml(act.caption || act.title)}</p>
+          <p class="polaroid-caption">${escapeHtml(getField(act, 'caption') || getField(act, 'title'))}</p>
           <div class="polaroid-meta-row">
-            <span class="polaroid-tag-badge">${escapeHtml(act.tag || act.categoryLabel || 'Moment')}</span>
+            <span class="polaroid-tag-badge">${escapeHtml(getField(act, 'tag') || act.categoryLabel || 'Moment')}</span>
             <span class="polaroid-date-text">${escapeHtml(act.date || '')}</span>
           </div>
         </div>
@@ -2105,8 +2961,8 @@ function openActivityModal(actId, customImage) {
         <span class="activity-tag-pill">${escapeHtml(act.tag || act.categoryLabel || 'Moment')}</span>
         <span class="activity-date">${escapeHtml(act.date || '')}</span>
       </div>
-      <h2 class="act-modal-title" id="actModalTitle">${escapeHtml(act.title)}</h2>
-      <p class="act-modal-caption">${escapeHtml(act.caption)}</p>
+      <h2 class="act-modal-title" id="actModalTitle">${escapeHtml(getField(act, 'title'))}</h2>
+      <p class="act-modal-caption">${escapeHtml(getField(act, 'caption'))}</p>
     </div>
   `;
 
@@ -2187,7 +3043,7 @@ function initCopyables() {
       const textToCopy = card.getAttribute('data-copy');
       if (textToCopy) {
         navigator.clipboard.writeText(textToCopy).then(() => {
-          showToast(`Copied "${textToCopy}" to clipboard!`);
+          showToast(currentLang === 'th' ? `คัดลอก "${textToCopy}" ลงคลิปบอร์ดแล้ว!` : `Copied "${textToCopy}" to clipboard!`);
         }).catch(() => {
           showToast(`Selected: ${textToCopy}`);
         });
@@ -2237,7 +3093,7 @@ function initContactForm() {
     };
 
     submitBtn.disabled = true;
-    submitBtn.querySelector('span').textContent = 'Sending...';
+    submitBtn.querySelector('span').textContent = t('contact.btnSending');
 
     try {
       const res = await fetch('/api/contact', {
@@ -2249,7 +3105,7 @@ function initContactForm() {
       const data = await res.json();
 
       if (res.ok) {
-        alertBox.textContent = `✓ ${data.message || 'Message sent and stored in database successfully!'}`;
+        alertBox.textContent = `✓ ${t('contact.successMsg')}`;
         alertBox.className = 'form-alert success';
         form.reset();
       } else {
@@ -2258,11 +3114,11 @@ function initContactForm() {
       }
     } catch (err) {
       console.error("Submission error:", err);
-      alertBox.textContent = '⚠ Network error. Please try again.';
+      alertBox.textContent = `⚠ ${t('contact.errorMsg')}`;
       alertBox.className = 'form-alert error';
     } finally {
       submitBtn.disabled = false;
-      submitBtn.querySelector('span').textContent = 'Send Message';
+      submitBtn.querySelector('span').textContent = t('contact.btnSend');
     }
   });
 }

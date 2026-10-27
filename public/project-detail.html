@@ -70,17 +70,22 @@
         <span class="logo-mark">R</span>
         <div class="brand-text">
           <span class="brand-name">Rujisaya Kuekool</span>
-          <span class="brand-role">UX/UI Designer</span>
+          <span class="brand-role" data-i18n="brand.role">UX/UI Designer</span>
         </div>
       </a>
 
       <nav class="desktop-nav">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/projects" class="nav-link active">Projects</a>
-        <a href="/#about" class="nav-link">About Me</a>
-        <a href="/#resume" class="nav-link">Resume</a>
-        <a href="/#activity" class="nav-link">Activities</a>
-        <a href="/#contact" class="nav-link contact-pill">Let's Connect</a>
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/projects" class="nav-link active" data-i18n="nav.projects">Projects</a>
+        <a href="/#about" class="nav-link" data-i18n="nav.about">About Me</a>
+        <a href="/#resume" class="nav-link" data-i18n="nav.resume">Resume</a>
+        <a href="/#activity" class="nav-link" data-i18n="nav.activities">Activities</a>
+        <a href="/#contact" class="nav-link contact-pill" data-i18n="nav.contact">Let's Connect</a>
+        <div class="lang-toggle-group" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-label="สลับเป็นภาษาไทย">TH</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
       </nav>
 
       <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
@@ -92,12 +97,20 @@
 
     <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
-      <a href="/" class="mobile-nav-link">Home</a>
-      <a href="/projects" class="mobile-nav-link">Projects</a>
-      <a href="/#about" class="mobile-nav-link">About Me</a>
-      <a href="/#resume" class="mobile-nav-link">Resume</a>
-      <a href="/#activity" class="mobile-nav-link">Activities</a>
-      <a href="/#contact" class="mobile-nav-link mobile-cta">Let's Connect</a>
+      <a href="/" class="mobile-nav-link" data-i18n="nav.home">Home</a>
+      <a href="/projects" class="mobile-nav-link" data-i18n="nav.projects">Projects</a>
+      <a href="/#about" class="mobile-nav-link" data-i18n="nav.about">About Me</a>
+      <a href="/#resume" class="mobile-nav-link" data-i18n="nav.resume">Resume</a>
+      <a href="/#activity" class="mobile-nav-link" data-i18n="nav.activities">Activities</a>
+      <a href="/#contact" class="mobile-nav-link mobile-cta" data-i18n="nav.contact">Let's Connect</a>
+      <div class="mobile-lang-row">
+        <span class="mobile-lang-label" data-i18n="nav.language">Language:</span>
+        <div class="lang-toggle-group" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-label="สลับเป็นภาษาไทย">TH</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -106,7 +119,7 @@
     <div class="container detail-nav-container">
       <a href="/projects" class="detail-back-pill">
         <span class="back-arrow">←</span>
-        <span>Back to All Projects</span>
+        <span data-i18n="detail.backProjects">Back to All Projects</span>
       </a>
       <div class="detail-meta-crumb" id="detailMetaCrumb">
         <span class="crumb-index" id="crumbIndex">project 1</span>
@@ -132,11 +145,11 @@
           <div class="bento-cta-pills-row">
             <a href="https://leave-wfh-management.vercel.app/?demo=true" target="_blank" rel="noopener noreferrer" class="bento-cta-pill cta-live" id="detailCtaLive" aria-label="Open Live Production App">
               <span class="pill-play-icon">▶</span>
-              <span>Live Demo</span>
+              <span data-i18n="detail.liveDemo">Live Demo</span>
             </a>
             <a href="https://github.com/rujisayak" target="_blank" rel="noopener noreferrer" class="bento-cta-pill cta-github" id="detailCtaGithub" aria-label="View on GitHub">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>GitHub</span>
+              <span data-i18n="detail.github">GitHub</span>
             </a>
           </div>
         </div>
@@ -210,7 +223,7 @@
 
         <!-- Right Card (40% width) - Project Highlights (6-Box Dark Bento) -->
         <div class="bento-card bento-card-highlights">
-          <h3 class="bento-card-title-center">Project Highlights</h3>
+          <h3 class="bento-card-title-center" data-i18n="detail.highlightsTitle">Project Highlights</h3>
           <div class="bento-dark-grid" id="detailHighlightsGrid">
             <div class="dark-bento-box">
               <div class="dark-box-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
@@ -244,7 +257,7 @@
       <div class="bento-row bento-row-styleguide">
         <div class="bento-card bento-card-styleguide">
           <div class="styleguide-left">
-            <span class="bento-sublabel">Style Guide</span>
+            <span class="bento-sublabel" data-i18n="detail.styleGuideTitle">Style Guide</span>
             <h2 class="styleguide-font-hero" id="detailHeadingFont">Leaya Bold</h2>
             <div class="styleguide-font-body-specimen">
               <span class="body-font-tag" id="detailBodyFont">Inter</span>
@@ -254,7 +267,7 @@
 
           <div class="styleguide-right">
             <div class="styleguide-palette-meta">
-              <span class="bento-sublabel">Typography &amp; Color System</span>
+              <span class="bento-sublabel" data-i18n="detail.typoColorTitle">Typography &amp; Color System</span>
               <span class="palette-count-tag" id="detailPaletteCount">5 Palette Swatches</span>
             </div>
             <div class="bento-color-swatches-row" id="detailSwatchesRow">
@@ -291,15 +304,15 @@
       <!-- Section D: Horizontal Info Strip (3 Columns) -->
       <div class="project-info-strip" id="projectInfoStrip">
         <div class="info-strip-card">
-          <span class="info-strip-label"><span class="info-strip-dot"></span> Role</span>
+          <span class="info-strip-label"><span class="info-strip-dot"></span> <span data-i18n="detail.roleLabel">Role</span></span>
           <span class="info-strip-val" id="infoStripRole">UX/UI Designer &amp; Full-Stack Developer</span>
         </div>
         <div class="info-strip-card">
-          <span class="info-strip-label"><span class="info-strip-dot"></span> Target Users</span>
+          <span class="info-strip-label"><span class="info-strip-dot"></span> <span data-i18n="detail.usersLabel">Target Users</span></span>
           <span class="info-strip-val" id="infoStripUsers">HR, Managers &amp; Hybrid Teams</span>
         </div>
         <div class="info-strip-card">
-          <span class="info-strip-label"><span class="info-strip-dot"></span> Key Solution</span>
+          <span class="info-strip-label"><span class="info-strip-dot"></span> <span data-i18n="detail.solutionLabel">Key Solution</span></span>
           <span class="info-strip-val" id="infoStripSolution">Pro-rata Vacation Engine &amp; Weekly Attendance Matrix</span>
         </div>
       </div>
@@ -522,27 +535,27 @@
         <summary class="bento-ux-summary">
           <span class="summary-left">
             <span class="summary-icon">📖</span>
-            <span class="summary-title">Deep UX Research &amp; Developer Handoff Narrative</span>
+            <span class="summary-title" data-i18n="detail.narrativeTitle">Deep UX Research &amp; Developer Handoff Narrative</span>
           </span>
-          <span class="summary-toggle-btn">Read Case Study Story ↓</span>
+          <span class="summary-toggle-btn" id="uxAccordionToggleBtn" data-i18n="detail.readStory">Read Case Study Story ↓</span>
         </summary>
 
         <div class="bento-ux-content">
           <!-- Problem -->
           <div class="ux-narrative-block">
-            <h4 class="ux-narrative-heading">01 // Problem &amp; Operational Challenges</h4>
+            <h4 class="ux-narrative-heading" data-i18n="detail.secProblem">01 // Problem &amp; Operational Challenges</h4>
             <p class="ux-narrative-text" id="detailProblemText">การจัดการวันลาและสลับวัน WFH ในองค์กรแบบไฮบริดมักติดปัญหาความคลุมเครือของสูตรคำนวณสิทธิ์พักร้อนตามวันเริ่มงานและวันผ่านโปร รวมถึงความเสี่ยงที่ทีมจะขาดคนในวันจันทร์หรือศุกร์เนื่องจากไม่มีตารางสรุป Headcount เข้าออฟฟิศจริง</p>
           </div>
 
           <!-- Responsibilities -->
           <div class="ux-narrative-block" id="detailRespBlock">
-            <h4 class="ux-narrative-heading">02 // Personal Scope &amp; Responsibilities</h4>
+            <h4 class="ux-narrative-heading" data-i18n="detail.secResp">02 // Personal Scope &amp; Responsibilities</h4>
             <div class="ux-narrative-callout" id="detailRespText">ออกแบบสถาปัตยกรรมข้อมูล (IA), พัฒนาระบบ User Roles (Employee / Manager / HR Super Admin), ออกแบบ Weekly Attendance Matrix และพัฒนาระบบคำนวณสิทธิ์พักร้อนแบบ Pro-rata</div>
           </div>
 
           <!-- Key Decisions -->
           <div class="ux-narrative-block" id="detailDecisionsBlock">
-            <h4 class="ux-narrative-heading">03 // Key UX Decisions &amp; Trade-offs</h4>
+            <h4 class="ux-narrative-heading" data-i18n="detail.secDecisions">03 // Key UX Decisions &amp; Trade-offs</h4>
             <ul class="ux-decisions-list" id="detailDecisionsList">
               <li class="bento-decision-item">1) RBAC Simulation Switcher: ให้ทดสอบระบบได้ทั้ง 3 มุมมองโดยไม่ต้องล็อกอินหลายบัญชี</li>
               <li class="bento-decision-item">2) Weekly Hybrid Attendance Matrix: สรุปยอดคนเข้าออฟฟิศจริงแต่ละวัน (Daily Headcount) เพื่อป้องกันคนไม่พอ</li>
@@ -552,7 +565,7 @@
 
           <!-- Dev Collaboration -->
           <div class="ux-narrative-block" id="detailDevBlock">
-            <h4 class="ux-narrative-heading">04 // Developer Collaboration &amp; State Specifications</h4>
+            <h4 class="ux-narrative-heading" data-i18n="detail.secDev">04 // Developer Collaboration &amp; State Specifications</h4>
             <div class="ux-narrative-callout dev-callout" id="detailDevText">
               <strong>Engineering Synergy:</strong> พัฒนาด้วย React 18, TypeScript, Tailwind CSS และ Lucide Icons โดยกำหนด Strict TypeScript Interfaces สำหรับสถานะคำขอ (Status Enums) และสูตรการคำนวณเพื่อรองรับการต่อยอดเป็นโปรดักชัน
             </div>
@@ -560,7 +573,7 @@
 
           <!-- Outcome -->
           <div class="ux-narrative-block" id="detailOutcomeBlock">
-            <h4 class="ux-narrative-heading">05 // Qualitative Outcomes &amp; Impact</h4>
+            <h4 class="ux-narrative-heading" data-i18n="detail.secOutcome">05 // Qualitative Outcomes &amp; Impact</h4>
             <p class="ux-narrative-text" id="detailOutcomeText">สร้างประสบการณ์ใช้งานที่ชัดเจน ลดความผิดพลาดในการคำนวณวันลาของฝ่ายบุคคล และช่วยให้หัวหน้างานตัดสินใจอนุมัติได้อย่างรวดเร็วผ่านข้อมูลที่โปร่งใส</p>
           </div>
         </div>
@@ -569,10 +582,10 @@
       <!-- Bottom Action Bar -->
       <div class="bento-bottom-actions">
         <a href="https://leave-wfh-management.vercel.app/?demo=true" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="detailBottomLive">
-          <span>Open Live Production App ↗</span>
+          <span data-i18n="detail.btnOpenApp">Open Live Production App ↗</span>
         </a>
         <a href="/projects" class="btn btn-secondary">
-          <span>← Back to All Projects</span>
+          <span data-i18n="detail.backProjects">← Back to All Projects</span>
         </a>
       </div>
     </div>
@@ -580,7 +593,7 @@
     <!-- Bottom Page Footer Navigation: Next Project Section -->
     <section class="next-project-section" id="nextProjectSection">
       <div class="next-project-card-wrap">
-        <span class="next-project-badge">Next Project</span>
+        <span class="next-project-badge" data-i18n="detail.nextProjectBadge">Next Project</span>
         <a href="/projects/ami-booth-planner" class="next-project-card" id="nextProjectLink">
           <div class="next-project-thumb">
             <img src="/assets/portfolio/ami_booth_calendar.png" alt="Ami Booth Planner 🎨" id="nextProjectImg" loading="lazy">
@@ -592,7 +605,7 @@
           </div>
           <div class="next-project-action">
             <span class="next-btn-pill">
-              <span>View Next Project</span>
+              <span data-i18n="detail.viewNextProject">View Next Project</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
@@ -602,7 +615,7 @@
       <div class="back-directory-center">
         <a href="/projects" class="btn-back-directory">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          <span>Back to All Projects Directory</span>
+          <span data-i18n="detail.backDirectory">Back to All Projects Directory</span>
         </a>
       </div>
     </section>
@@ -616,7 +629,7 @@
     <div class="container footer-container">
       <div class="footer-left">
         <span class="footer-copyright">© 2026 Rujisaya Kuekool</span>
-        <span class="footer-subtext">Product &amp; UX/UI Designer • Enterprise &amp; Cybersecurity Focus</span>
+        <span class="footer-subtext" data-i18n="footer.subtext">Product &amp; UX/UI Designer • Enterprise &amp; Cybersecurity Focus</span>
       </div>
 
       <div class="footer-right">

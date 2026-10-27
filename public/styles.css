@@ -251,6 +251,82 @@ button {
   box-shadow: 0 6px 18px rgba(46, 31, 26, 0.3);
 }
 
+/* ==========================================================================
+   Language Switcher (TH / EN)
+   ========================================================================== */
+.lang-toggle-group {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(35, 24, 21, 0.05);
+  border: 1px solid var(--border-medium, rgba(35, 24, 21, 0.14));
+  border-radius: var(--radius-full, 9999px);
+  padding: 3px 5px;
+  gap: 2px;
+  user-select: none;
+  transition: all 0.2s ease;
+  margin-left: -0.25rem;
+}
+
+.lang-toggle-group:hover {
+  background: rgba(35, 24, 21, 0.08);
+  border-color: rgba(35, 24, 21, 0.25);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted, #8C827A);
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: var(--radius-full, 9999px);
+  line-height: 1.15;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.lang-btn:hover {
+  color: var(--text-main, #231815);
+}
+
+.lang-btn.active {
+  background: var(--text-main, #231815);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(35, 24, 21, 0.2);
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--text-main, #231815);
+  outline-offset: 1px;
+}
+
+.lang-divider {
+  font-size: 0.6875rem;
+  color: var(--border-medium, #C2B8AA);
+  pointer-events: none;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+/* Mobile Drawer Language Row */
+.mobile-lang-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0 0.25rem;
+  border-top: 1px dashed var(--border-medium, rgba(35, 24, 21, 0.15));
+  margin-top: 0.5rem;
+}
+
+.mobile-lang-label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-muted, #8C827A);
+}
+
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;

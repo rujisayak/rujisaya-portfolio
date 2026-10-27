@@ -71,17 +71,22 @@
         <span class="logo-mark">R</span>
         <div class="brand-text">
           <span class="brand-name">Rujisaya Kuekool</span>
-          <span class="brand-role">UX/UI Designer</span>
+          <span class="brand-role" data-i18n="brand.role">UX/UI Designer</span>
         </div>
       </a>
 
       <nav class="desktop-nav">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="/projects" class="nav-link">Projects</a>
-        <a href="#about" class="nav-link">About Me</a>
-        <a href="#resume" class="nav-link">Resume</a>
-        <a href="#activity" class="nav-link">Activities</a>
-        <a href="#contact" class="nav-link contact-pill">Let's Connect</a>
+        <a href="#home" class="nav-link active" data-i18n="nav.home">Home</a>
+        <a href="/projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+        <a href="#about" class="nav-link" data-i18n="nav.about">About Me</a>
+        <a href="#resume" class="nav-link" data-i18n="nav.resume">Resume</a>
+        <a href="#activity" class="nav-link" data-i18n="nav.activities">Activities</a>
+        <a href="#contact" class="nav-link contact-pill" data-i18n="nav.contact">Let's Connect</a>
+        <div class="lang-toggle-group" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-label="สลับเป็นภาษาไทย">TH</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
       </nav>
 
       <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
@@ -93,12 +98,20 @@
 
     <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
-      <a href="#home" class="mobile-nav-link">Home</a>
-      <a href="/projects" class="mobile-nav-link">Projects</a>
-      <a href="#about" class="mobile-nav-link">About Me</a>
-      <a href="#resume" class="mobile-nav-link">Resume</a>
-      <a href="#activity" class="mobile-nav-link">Activities</a>
-      <a href="#contact" class="mobile-nav-link mobile-cta">Let's Connect</a>
+      <a href="#home" class="mobile-nav-link" data-i18n="nav.home">Home</a>
+      <a href="/projects" class="mobile-nav-link" data-i18n="nav.projects">Projects</a>
+      <a href="#about" class="mobile-nav-link" data-i18n="nav.about">About Me</a>
+      <a href="#resume" class="mobile-nav-link" data-i18n="nav.resume">Resume</a>
+      <a href="#activity" class="mobile-nav-link" data-i18n="nav.activities">Activities</a>
+      <a href="#contact" class="mobile-nav-link mobile-cta" data-i18n="nav.contact">Let's Connect</a>
+      <div class="mobile-lang-row">
+        <span class="mobile-lang-label" data-i18n="nav.language">Language:</span>
+        <div class="lang-toggle-group" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="th" aria-label="สลับเป็นภาษาไทย">TH</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -111,9 +124,9 @@
         <div class="desktop-canvas">
           <!-- Top mini header inside canvas -->
           <div class="desktop-top-bar">
-            <span class="desktop-mini-link">enterprise ux</span>
-            <span class="desktop-mini-link desktop-center-link">portfolio</span>
-            <span class="desktop-mini-link">developer handoff</span>
+            <span class="desktop-mini-link" data-i18n="hero.miniUx">enterprise ux</span>
+            <span class="desktop-mini-link desktop-center-link" data-i18n="hero.miniPortfolio">portfolio</span>
+            <span class="desktop-mini-link" data-i18n="hero.miniHandoff">developer handoff</span>
           </div>
 
           <!-- Main Desktop Centerpiece -->
@@ -121,9 +134,9 @@
             <!-- Cursive Script Accent -->
             <div class="hero-cursive-script">UX UI</div>
             <!-- Giant Chunky Title -->
-            <h1 class="hero-chunky-title">portfolio</h1>
+            <h1 class="hero-chunky-title" data-i18n="hero.chunkyTitle">portfolio</h1>
             <!-- Year / Signature Label -->
-            <div class="hero-year-label">by Toeyruji</div>
+            <div class="hero-year-label" data-i18n="hero.byToey">by Toeyruji</div>
 
             <!-- Center Blue Folder (Interactive) -->
             <div class="center-folder-showcase desktop-anim-target" data-name="portfolio" onclick="document.getElementById('projects')?.scrollIntoView({behavior:'smooth'})" role="button" tabindex="0" aria-label="Explore Projects">
@@ -151,7 +164,7 @@
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
               </svg>
-              <span class="desktop-item-label">projects</span>
+              <span class="desktop-item-label" data-i18n="hero.folderProjects">projects</span>
             </a>
 
             <!-- Desktop Menu Folder 2: About Me -->
@@ -160,7 +173,7 @@
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
               </svg>
-              <span class="desktop-item-label">about me</span>
+              <span class="desktop-item-label" data-i18n="hero.folderAbout">about me</span>
             </a>
 
             <!-- Desktop Menu Folder 3: Resume -->
@@ -169,7 +182,7 @@
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
               </svg>
-              <span class="desktop-item-label">resume</span>
+              <span class="desktop-item-label" data-i18n="hero.folderResume">resume</span>
             </a>
 
             <!-- Desktop Menu Folder 4: Activities -->
@@ -178,7 +191,7 @@
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
               </svg>
-              <span class="desktop-item-label">activities</span>
+              <span class="desktop-item-label" data-i18n="hero.folderActivities">activities</span>
             </a>
 
             <!-- Desktop Menu Folder 5: Let's Connect (Contact) -->
@@ -187,7 +200,7 @@
                 <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
                 <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
               </svg>
-              <span class="desktop-item-label">contact</span>
+              <span class="desktop-item-label" data-i18n="hero.folderContact">contact</span>
             </a>
 
             <!-- Animated Retro Mac Cursor (Glides across folders) -->
@@ -201,21 +214,21 @@
 
         <!-- Designer Positioning Statement Banner -->
         <div class="hero-positioning-banner">
-          <p class="hero-bio-lead">
+          <p class="hero-bio-lead" data-i18n="hero.bioLead">
             Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.
           </p>
           <div class="hero-stats-row">
-            <div class="stat-pill">⚡️ 2+ Years CyberSec UX</div>
-            <div class="stat-pill">🎓 3.73 First Class Honors (IT)</div>
-            <div class="stat-pill">🤝 End-to-End: UX Flows to Dev Handoff</div>
+            <div class="stat-pill" data-i18n="hero.stat1">⚡️ 2+ Years CyberSec UX</div>
+            <div class="stat-pill" data-i18n="hero.stat2">🎓 3.73 First Class Honors (IT)</div>
+            <div class="stat-pill" data-i18n="hero.stat3">🤝 End-to-End: UX Flows to Dev Handoff</div>
           </div>
           <div class="hero-cta-btns">
             <a href="#projects" class="btn btn-primary">
-              <span>explore projects</span>
+              <span data-i18n="hero.exploreProjects">explore projects</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <a href="/Rujisaya Resume.pdf" target="_blank" class="btn btn-secondary">
-              <span>download resume (pdf)</span>
+              <span data-i18n="hero.downloadResume">download resume (pdf)</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
             </a>
           </div>
@@ -235,10 +248,10 @@
               <path d="M6 14C6 9.58 9.58 6 14 6H38C42 6 45 9 48 13L51 17H86C90.42 17 94 20.58 94 25V35H6V14Z" fill="#589ed9"/>
               <rect x="6" y="24" width="88" height="52" rx="8" fill="#6db4ef"/>
             </svg>
-            <span class="desktop-item-label">projects</span>
+            <span class="desktop-item-label" data-i18n="projects.folderLabel">projects</span>
           </div>
-          <h2 class="chunky-display-title">projects</h2>
-          <p class="case-section-subtitle">interactive web applications and enterprise platforms I designed &amp; developed</p>
+          <h2 class="chunky-display-title" data-i18n="projects.title">projects</h2>
+          <p class="case-section-subtitle" data-i18n="projects.subtitle">interactive web applications and enterprise platforms I designed &amp; developed</p>
         </div>
 
         <!-- Featured Projects 2x2 Grid (Top 4 Featured Preview) -->
@@ -289,7 +302,7 @@
         <!-- Prominent Show All Projects Button -->
         <div class="show-all-projects-wrap">
           <a href="/projects" class="btn-show-all-projects">
-            <span>Show All Projects</span>
+            <span data-i18n="projects.showAll">Show All Projects</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -301,7 +314,7 @@
       <div class="container">
         <!-- Sticker Badge Title -->
         <div class="sticker-badge-wrap">
-          <div class="sticker-badge-title">about me</div>
+          <div class="sticker-badge-title" data-i18n="about.badge">about me</div>
         </div>
 
         <div class="about-card-container">
@@ -318,25 +331,25 @@
 
             <!-- Right: Cursive Greeting & Specialization Narrative -->
             <div class="about-narrative-col">
-              <h2 class="about-cursive-greeting">Hi, I'm Toey!</h2>
-              <p class="about-main-p">
+              <h2 class="about-cursive-greeting" data-i18n="about.greeting">Hi, I'm Toey!</h2>
+              <p class="about-main-p" data-i18n="about.mainParagraph">
                 I design web interfaces for desktop and complex systems. In my work, I combine Adaptive and Responsive design techniques. I place a strong emphasis on usability and overall user experience.
               </p>
 
               <div class="about-specialties">
-                <h3 class="spec-heading">What I specialize in:</h3>
+                <h3 class="spec-heading" data-i18n="about.specHeading">What I specialize in:</h3>
                 <ul class="spec-list">
                   <li>
                     <span class="spec-sparkle">✦</span>
-                    <strong>Enterprise &amp; Cybersecurity UX</strong> — creating complex software workflows (detection rule logic builders, threat portals, and SIEM monitoring dashboards).
+                    <strong data-i18n="about.spec1Title">Enterprise &amp; Cybersecurity UX</strong><span data-i18n="about.spec1Desc"> — creating complex software workflows (detection rule logic builders, threat portals, and SIEM monitoring dashboards).</span>
                   </li>
                   <li>
                     <span class="spec-sparkle">✦</span>
-                    <strong>Design Systems &amp; Developer Handoff</strong> — component tokens, detailed UI flow blueprints, validation &amp; error state design, and API parameter alignment in Figma.
+                    <strong data-i18n="about.spec2Title">Design Systems &amp; Developer Handoff</strong><span data-i18n="about.spec2Desc"> — component tokens, detailed UI flow blueprints, validation &amp; error state design, and API parameter alignment in Figma.</span>
                   </li>
                   <li>
                     <span class="spec-sparkle">✦</span>
-                    <strong>Usability Evaluation &amp; QA</strong> — internal prototype testing, heuristic usability reviews, and beta feedback loops with backend engineers.
+                    <strong data-i18n="about.spec3Title">Usability Evaluation &amp; QA</strong><span data-i18n="about.spec3Desc"> — internal prototype testing, heuristic usability reviews, and beta feedback loops with backend engineers.</span>
                   </li>
                 </ul>
               </div>
@@ -347,34 +360,34 @@
           <div class="about-bottom-tri-row">
             <!-- Column 1: Experience -->
             <div class="about-col">
-              <h4 class="about-col-heading">Experience</h4>
+              <h4 class="about-col-heading" data-i18n="about.colExperience">Experience</h4>
               <div class="col-item">
-                <span class="col-period">2023 — Present</span>
-                <span class="col-role">UX/UI Designer, Security Pitch Co., Ltd.</span>
+                <span class="col-period" data-i18n="about.expPeriod1">2023 — Present</span>
+                <span class="col-role" data-i18n="about.expRole1">UX/UI Designer, Security Pitch Co., Ltd.</span>
               </div>
               <div class="col-item">
-                <span class="col-period">2023 (Jan — Apr)</span>
-                <span class="col-role">UX/UI Intern, Security Pitch Co., Ltd.</span>
+                <span class="col-period" data-i18n="about.expPeriod2">2023 (Jan — Apr)</span>
+                <span class="col-role" data-i18n="about.expRole2">UX/UI Intern, Security Pitch Co., Ltd.</span>
               </div>
               <div class="col-item">
-                <span class="col-period">2019 — 2023</span>
-                <span class="col-role">B.Sc. Information Technology (GPA 3.73, First Class Honors)</span>
+                <span class="col-period" data-i18n="about.expEduPeriod">2019 — 2023</span>
+                <span class="col-role" data-i18n="about.expEdu">B.Sc. Information Technology (GPA 3.73, First Class Honors)</span>
               </div>
             </div>
 
             <!-- Column 2: Skills -->
             <div class="about-col">
-              <h4 class="about-col-heading">Skills</h4>
-              <div class="col-item-text">Product &amp; System Design</div>
-              <div class="col-item-text">Design Systems &amp; Component Tokens</div>
-              <div class="col-item-text">Backend UI Flow Documentation</div>
-              <div class="col-item-text">Heuristic Usability Review &amp; QA</div>
-              <div class="col-item-text">Figma, Adobe XD, Photoshop, Illustrator</div>
+              <h4 class="about-col-heading" data-i18n="about.colSkills">Skills</h4>
+              <div class="col-item-text" data-i18n="about.skill1">Product &amp; System Design</div>
+              <div class="col-item-text" data-i18n="about.skill2">Design Systems &amp; Component Tokens</div>
+              <div class="col-item-text" data-i18n="about.skill3">Backend UI Flow Documentation</div>
+              <div class="col-item-text" data-i18n="about.skill4">Heuristic Usability Review &amp; QA</div>
+              <div class="col-item-text" data-i18n="about.skill5">Figma, Adobe XD, Photoshop, Illustrator</div>
             </div>
 
             <!-- Column 3: Contacts -->
             <div class="about-col">
-              <h4 class="about-col-heading">Contacts</h4>
+              <h4 class="about-col-heading" data-i18n="about.colContacts">Contacts</h4>
               <a href="mailto:rujisaya1002@gmail.com" class="col-contact-link">
                 <span>✉</span> rujisaya1002@gmail.com
               </a>
@@ -382,10 +395,10 @@
                 <span>☎</span> (+66) 85 472 2195
               </a>
               <div class="col-contact-link">
-                <span>💬</span> LINE: baitoeyrujisaya
+                <span>💬</span> <span data-i18n="about.contactLine">LINE: baitoeyrujisaya</span>
               </div>
               <div class="col-contact-link">
-                <span>📍</span> Bangkok, Thailand
+                <span>📍</span> <span data-i18n="about.contactLocation">Bangkok, Thailand</span>
               </div>
             </div>
           </div>
@@ -398,35 +411,35 @@
       <div class="container">
         <div class="resume-card">
           <div class="resume-info">
-            <div class="section-pretitle">CREDENTIALS</div>
-            <h2 class="section-title">Resume & Portfolio Deck</h2>
-            <p class="resume-text">
+            <div class="section-pretitle" data-i18n="resume.pretitle">CREDENTIALS</div>
+            <h2 class="section-title" data-i18n="resume.title">Resume & Portfolio Deck</h2>
+            <p class="resume-text" data-i18n="resume.desc">
               View the complete summary of my professional experience, education, skills, and design portfolio. Available for immediate download in PDF format.
             </p>
             
             <div class="resume-actions">
               <a href="/Rujisaya Resume.pdf" target="_blank" class="btn btn-primary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                Download Resume (PDF)
+                <span data-i18n="resume.btnResume">Download Resume (PDF)</span>
               </a>
               <a href="/PortfolioRujisaya.pdf" target="_blank" class="btn btn-secondary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                Full Portfolio Deck (12 Pages)
+                <span data-i18n="resume.btnPortfolio">Full Portfolio Deck (12 Pages)</span>
               </a>
             </div>
 
             <div class="resume-checklist">
               <div class="check-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>2+ Years Cybersecurity Dashboard Experience</span>
+                <span data-i18n="resume.check1">2+ Years Cybersecurity Dashboard Experience</span>
               </div>
               <div class="check-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>First Class Honors in IT (Suan Dusit University)</span>
+                <span data-i18n="resume.check2">First Class Honors in IT (Suan Dusit University)</span>
               </div>
               <div class="check-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Proven Developer Handoff & UI Flow Documentation</span>
+                <span data-i18n="resume.check3">Proven Developer Handoff & UI Flow Documentation</span>
               </div>
             </div>
           </div>
@@ -435,7 +448,7 @@
             <a href="/Rujisaya Resume.pdf" target="_blank" class="resume-preview-link">
               <img src="/assets/resume_preview.png" alt="Rujisaya Resume Preview" class="resume-preview-img">
               <div class="resume-hover-overlay">
-                <span>Click to Open PDF ↗</span>
+                <span data-i18n="resume.overlay">Click to Open PDF ↗</span>
               </div>
             </a>
           </div>
@@ -447,20 +460,20 @@
     <section id="activity" class="activity-section">
       <div class="container">
         <div class="section-header">
-          <div class="section-pretitle">BEYOND THE CANVAS // LIFE &amp; INSPIRATION</div>
-          <h2 class="section-title">Activities &amp; Life Moments</h2>
-          <p class="section-subtitle">
+          <div class="section-pretitle" data-i18n="activities.pretitle">BEYOND THE CANVAS // LIFE &amp; INSPIRATION</div>
+          <h2 class="section-title" data-i18n="activities.title">Activities &amp; Life Moments</h2>
+          <p class="section-subtitle" data-i18n="activities.subtitle">
             A visual contact sheet outside the screen — live stadium concerts, spatial art exhibitions, cafe explorations, cute companions, and creative sparks that fuel my work.
           </p>
         </div>
 
         <!-- Activity Filter Tabs -->
         <div class="filter-bar" id="activityFilters" role="tablist" aria-label="Activity categories">
-          <button class="filter-btn active" data-act-filter="all" role="tab" aria-selected="true">All Moments (16)</button>
-          <button class="filter-btn" data-act-filter="concerts" role="tab" aria-selected="false">01 // Live Music</button>
-          <button class="filter-btn" data-act-filter="creative" role="tab" aria-selected="false">02 // Art &amp; Design</button>
-          <button class="filter-btn" data-act-filter="lifestyle" role="tab" aria-selected="false">03 // Lifestyle &amp; Cafes</button>
-          <button class="filter-btn" data-act-filter="pets" role="tab" aria-selected="false">04 // Companions</button>
+          <button class="filter-btn active" data-act-filter="all" role="tab" aria-selected="true" data-i18n="activities.tabAll">All Moments (16)</button>
+          <button class="filter-btn" data-act-filter="concerts" role="tab" aria-selected="false" data-i18n="activities.tabConcerts">01 // Live Music</button>
+          <button class="filter-btn" data-act-filter="creative" role="tab" aria-selected="false" data-i18n="activities.tabCreative">02 // Art &amp; Design</button>
+          <button class="filter-btn" data-act-filter="lifestyle" role="tab" aria-selected="false" data-i18n="activities.tabLifestyle">03 // Lifestyle &amp; Cafes</button>
+          <button class="filter-btn" data-act-filter="pets" role="tab" aria-selected="false" data-i18n="activities.tabPets">04 // Companions</button>
         </div>
 
         <!-- Modern Tactile Corkboard / Scrapbook Canvas -->
@@ -468,11 +481,11 @@
           <div class="corkboard-header-strip">
             <div class="corkboard-badge-pinned">
               <span class="cork-pin-icon">📌</span>
-              <span class="cork-badge-text">STUDIO SCRAPBOOK // PINNED MEMORIES</span>
+              <span class="cork-badge-text" data-i18n="activities.scrapbookBanner">STUDIO SCRAPBOOK // PINNED MEMORIES</span>
             </div>
             <div class="corkboard-drag-hint">
               <span class="drag-hint-icon">✥</span>
-              <span class="drag-hint-text">Drag &amp; drop to rearrange</span>
+              <span class="drag-hint-text" data-i18n="activities.dragHint">Drag &amp; drop to rearrange</span>
             </div>
           </div>
           <div class="corkboard-surface-collage" id="activityContainer">
@@ -486,9 +499,9 @@
     <section id="contact" class="contact-section">
       <div class="container">
         <div class="contact-header">
-          <div class="section-pretitle">DIRECT INQUIRIES // GET IN TOUCH</div>
-          <h2 class="contact-headline">Let's Connect</h2>
-          <p class="contact-subheadline">
+          <div class="section-pretitle" data-i18n="contact.pretitle">DIRECT INQUIRIES // GET IN TOUCH</div>
+          <h2 class="contact-headline" data-i18n="contact.title">Let's Connect</h2>
+          <p class="contact-subheadline" data-i18n="contact.subtitle">
             I am always open to discussing enterprise UX/UI roles, complex software challenges, and creative collaborations.
           </p>
         </div>
@@ -501,10 +514,10 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM22 6l-10 7L2 6"/></svg>
               </div>
               <div class="channel-details">
-                <span class="channel-label">Email Address</span>
+                <span class="channel-label" data-i18n="contact.labelEmail">Email Address</span>
                 <span class="channel-value">rujisaya1002@gmail.com</span>
               </div>
-              <button class="copy-btn" title="Copy email">Copy</button>
+              <button class="copy-btn" title="Copy email" data-i18n="footer.copyBtn">Copy</button>
             </div>
 
             <div class="channel-card copyable" data-copy="0854722195">
@@ -512,10 +525,10 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
               </div>
               <div class="channel-details">
-                <span class="channel-label">Phone</span>
+                <span class="channel-label" data-i18n="contact.labelPhone">Phone</span>
                 <span class="channel-value">(+66) 85 472 2195</span>
               </div>
-              <button class="copy-btn" title="Copy phone">Copy</button>
+              <button class="copy-btn" title="Copy phone" data-i18n="footer.copyBtn">Copy</button>
             </div>
 
             <div class="channel-card copyable" data-copy="baitoeyrujisaya">
@@ -523,10 +536,10 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
               </div>
               <div class="channel-details">
-                <span class="channel-label">LINE ID</span>
+                <span class="channel-label" data-i18n="contact.labelLine">LINE ID</span>
                 <span class="channel-value">baitoeyrujisaya</span>
               </div>
-              <button class="copy-btn" title="Copy LINE ID">Copy</button>
+              <button class="copy-btn" title="Copy LINE ID" data-i18n="footer.copyBtn">Copy</button>
             </div>
 
             <div class="channel-card location-card">
@@ -534,8 +547,8 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0zM12 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
               </div>
               <div class="channel-details">
-                <span class="channel-label">Location</span>
-                <span class="channel-value">Bangkok, Thailand (On-site / Remote / Hybrid)</span>
+                <span class="channel-label" data-i18n="contact.labelLocation">Location</span>
+                <span class="channel-value" data-i18n="contact.locationVal">Bangkok, Thailand (On-site / Remote / Hybrid)</span>
               </div>
             </div>
           </div>
@@ -543,31 +556,31 @@
           <!-- MongoDB-connected Contact Form -->
           <div class="contact-form-wrapper">
             <form id="contactForm" class="contact-form">
-              <h3 class="form-title">Send a Direct Message</h3>
-              <p class="form-desc">Messages submitted here are saved directly into the MongoDB Atlas database.</p>
+              <h3 class="form-title" data-i18n="contact.formTitle">Send a Direct Message</h3>
+              <p class="form-desc" data-i18n="contact.formDesc">Messages submitted here are saved directly into the MongoDB Atlas database.</p>
 
               <div class="form-group">
-                <label for="name">Your Name *</label>
-                <input type="text" id="name" name="name" placeholder="e.g. Sarah Jenkins" required>
+                <label for="name" data-i18n="contact.fieldName">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Sarah Jenkins" data-i18n-placeholder="contact.placeholderName" required>
               </div>
 
               <div class="form-group">
-                <label for="email">Your Email *</label>
-                <input type="email" id="email" name="email" placeholder="e.g. sarah@company.com" required>
+                <label for="email" data-i18n="contact.fieldEmail">Your Email *</label>
+                <input type="email" id="email" name="email" placeholder="e.g. sarah@company.com" data-i18n-placeholder="contact.placeholderEmail" required>
               </div>
 
               <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="e.g. UX/UI Designer Position / Project Collaboration">
+                <label for="subject" data-i18n="contact.fieldSubject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="e.g. UX/UI Designer Position / Project Collaboration" data-i18n-placeholder="contact.placeholderSubject">
               </div>
 
               <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" rows="4" placeholder="Hello Toey, we are interested in your cybersecurity UX experience..." required></textarea>
+                <label for="message" data-i18n="contact.fieldMessage">Message *</label>
+                <textarea id="message" name="message" rows="4" placeholder="Hello Toey, we are interested in your cybersecurity UX experience..." data-i18n-placeholder="contact.placeholderMessage" required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
-                <span>Send Message</span>
+                <span data-i18n="contact.btnSend">Send Message</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
               </button>
 
@@ -644,11 +657,11 @@
     <div class="container footer-container">
       <div class="footer-left">
         <span class="footer-copyright">© 2026 Rujisaya Kuekool</span>
-        <span class="footer-subtext">Product & UX/UI Designer • Enterprise & Cybersecurity Focus</span>
+        <span class="footer-subtext" data-i18n="footer.subtext">Product & UX/UI Designer • Enterprise & Cybersecurity Focus</span>
       </div>
 
       <div class="footer-right">
-        <a href="#home" class="back-to-top">Back to top ↑</a>
+        <a href="#home" class="back-to-top" data-i18n="footer.backToTop">Back to top ↑</a>
       </div>
     </div>
   </footer>

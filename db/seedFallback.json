@@ -266,7 +266,47 @@
       ],
       "mobileImage": "/assets/portfolio/leaya_screen_mobile.png",
       "mobileScreen": "/assets/portfolio/leaya_screen_mobile.png",
-      "demoUrl": "https://leave-wfh-management.vercel.app/?demo=true"
+      "demoUrl": "https://leave-wfh-management.vercel.app/?demo=true",
+      "displayTitle_en": "Leaya 🐾",
+      "displayTitle_th": "Leaya 🐾",
+      "fullTitle_en": "Leaya - All-in-One Employee Management Platform",
+      "fullTitle_th": "Leaya - ระบบบริหารจัดการวันลาและสลับวัน WFH ครบวงจร",
+      "shortSubtitle_en": "Empowering enterprise teams with interactive HR SaaS solutions.",
+      "shortSubtitle_th": "ยกระดับการทำงานขององค์กรด้วยโซลูชัน HR SaaS ที่ใช้งานง่ายและมีประสิทธิภาพ",
+      "category_en": "enterprise saas & hr tech",
+      "category_th": "ระบบ Enterprise SaaS & HR",
+      "summary_th": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
+      "summary_en": "Modern SaaS employee leave and WFH swap management dashboard supporting Thai labor regulations, designed with Role-Based Access Control (RBAC) and automated pro-rata vacation calculation engines.",
+      "targetUsers_th": "พนักงานทั่วไป (ยื่นใบลา/ขอ WFH), หัวหน้าทีม/ผู้จัดการ (คิวอนุมัติ & Team Matrix), ฝ่ายบุคคล/HR (ทะเบียนพนักงาน & คำนวณโควตา)",
+      "targetUsers_en": "Employees (submit leave/swap requests), Team Managers (approval queue & attendance matrix), HR Admins (employee directory & vacation quota calculation)",
+      "designGoal_th": "Design Goal: ปรับเปลี่ยนกระบวนการลางานและขอสลับวัน WFH ที่ซับซ้อนให้กลายเป็นระบบ 3-Role RBAC Portal ที่เข้าใจง่าย พร้อมคำนวณโควตาพักร้อน Pro-rate ตามกฎหมายแรงงานไทยแบบเรียลไทม์",
+      "designGoal_en": "Design Goal: Transform cumbersome manual leave and WFH swap workflows into an intuitive 3-role RBAC portal with real-time Thai labor law pro-rata vacation calculations.",
+      "problem_th": "การจัดการวันลาและสลับวัน WFH ในองค์กรแบบไฮบริดมักติดปัญหาความคลุมเครือของสูตรคำนวณสิทธิ์พักร้อนตามวันเริ่มงานและวันผ่านโปร รวมถึงความเสี่ยงที่ทีมจะขาดคนในวันจันทร์หรือศุกร์เนื่องจากไม่มีตารางสรุป Headcount เข้าออฟฟิศจริง",
+      "problem_en": "Managing leave and WFH swaps in hybrid organizations frequently suffers from ambiguous pro-rata formulas based on start dates/probation, coupled with headcount shortage risks on peak days (Mondays/Fridays) due to missing real-time office attendance visibility.",
+      "responsibilities_th": "ออกแบบสถาปัตยกรรมข้อมูล (IA), พัฒนาระบบ User Roles (Employee / Manager / HR Super Admin), ออกแบบ Weekly Attendance Matrix และพัฒนาระบบคำนวณสิทธิ์พักร้อนแบบ Pro-rata",
+      "responsibilities_en": "Designed Information Architecture (IA), developed Role-Based Access Control simulations (Employee / Manager / HR Super Admin), created the Weekly Attendance Matrix, and built the Thai labor law pro-rata calculation engine.",
+      "uxApproach_th": "ออกแบบให้มี \"RBAC Simulation Bar\" ด้านบน เพื่อให้ผู้มีส่วนได้ส่วนเสียและผู้ตรวจงานสามารถสลับทดลองสิทธิ์ได้ทันที พร้อม Live Vacation Calculator Preview ในฟอร์มเพิ่มพนักงานใหม่",
+      "uxApproach_en": "Integrated an interactive RBAC Simulation Bar at the top to let stakeholders switch permissions instantly, paired with a live vacation calculation preview inside the employee creation modal.",
+      "keyDecisions_th": "1) RBAC Simulation Switcher: ให้ทดสอบระบบได้ทั้ง 3 มุมมองโดยไม่ต้องล็อกอินหลายบัญชี\n2) Weekly Hybrid Attendance Matrix: สรุปยอดคนเข้าออฟฟิศจริงแต่ละวัน (Daily Headcount) เพื่อป้องกันคนไม่พอ\n3) Thai Labor Law Formula Engine: คำนวณวันลา Year 0 อัตโนมัติ (เช่น ผ่านโปรหลัง 1 ก.ย. ได้สิทธิ์ทันที)",
+      "keyDecisions_en": "1) RBAC Simulation Switcher: Instant testing across 3 roles without relogging.\n2) Weekly Hybrid Attendance Matrix: Daily office headcount summary preventing understaffing.\n3) Thai Labor Law Formula Engine: Automated Year 0 leave quotas based on probation dates.",
+      "devCollaboration_th": "พัฒนาด้วย React 18, TypeScript, Tailwind CSS และ Lucide Icons โดยกำหนด Strict TypeScript Interfaces สำหรับสถานะคำขอ (Status Enums) และสูตรการคำนวณเพื่อรองรับการต่อยอดเป็นโปรดักชัน",
+      "devCollaboration_en": "Engineered with React 18, TypeScript, Tailwind CSS, and Lucide Icons with strict TypeScript interfaces for request status enums and formula engines for rapid production integration.",
+      "outcomeLearnings_th": "สร้างประสบการณ์ใช้งานที่ชัดเจน ลดความผิดพลาดในการคำนวณวันลาของฝ่ายบุคคล และช่วยให้หัวหน้างานตัดสินใจอนุมัติได้อย่างรวดเร็วผ่านข้อมูลที่โปร่งใส",
+      "outcomeLearnings_en": "Delivered a frictionless user experience that eliminated manual HR vacation calculation errors and accelerated manager approval workflows through transparent data visualization.",
+      "keyFeatures_th": [
+        "ระบบจำลองสิทธิ์ 3 ระดับ (Employee, Manager, HR Admin) สลับมุมมองได้ทันที",
+        "ตารางเมทริกซ์ทีมประจำสัปดาห์ (Team Weekly Attendance Matrix) พร้อมสรุปยอด Headcount รายวัน",
+        "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
+        "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
+        "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
+      ],
+      "keyFeatures_en": [
+        "3-Level RBAC simulation (Employee, Manager, HR Admin) with instant view switching",
+        "Team Weekly Attendance Matrix with real-time daily headcount tracking",
+        "Automated pro-rata vacation calculation engine compliant with Thai labor regulations",
+        "WFH day swapping paired with mandatory office compensation day & sick leave requests",
+        "Interactive Preview Sandbox: Test leave creation and role permissions safely in session"
+      ]
     },
     {
       "id": "ami-booth-planner",
@@ -454,7 +494,47 @@
       ],
       "mobileImage": "/assets/portfolio/ami_screen_mobile.png",
       "mobileScreen": "/assets/portfolio/ami_screen_mobile.png",
-      "demoUrl": "https://ami-booth-planner.vercel.app/?demo=true"
+      "demoUrl": "https://ami-booth-planner.vercel.app/?demo=true",
+      "displayTitle_en": "Ami Booth Planner 🎨",
+      "displayTitle_th": "Ami Booth Planner 🎨",
+      "fullTitle_en": "Ami Booth Planner - All-in-One Creator Event Platform",
+      "fullTitle_th": "Ami Booth Planner - เว็บแอปจัดการอีเวนต์และออกบูธสำหรับครีเอเตอร์",
+      "shortSubtitle_en": "Empowering indie creators & illustrators to organize events, detect date conflicts, and manage booth budgets seamlessly.",
+      "shortSubtitle_th": "ช่วยเหลือนักวาดและครีเอเตอร์อิสระในการจัดตารางออกบูธ ตรวจจับวันชน และบริหารงบประมาณอย่างเป็นระบบ",
+      "category_en": "creator economy & events",
+      "category_th": "ครีเอเตอร์ & การจัดการอีเวนต์",
+      "summary_th": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
+      "summary_en": "Web application for comic artists, illustrators, sticker creators, and craft brands to manage every step of event exhibitions — from event discovery and application tracking to smart conflict alerts and real-time ledger management.",
+      "targetUsers_th": "นักวาดภาพประกอบ (Illustrators), นักเขียนการ์ตูน, ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",
+      "targetUsers_en": "Illustrators, Comic Artists, Sticker Creators, and Indie Craft Brands",
+      "designGoal_th": "Design Goal: เปลี่ยนการจดตารางบูธในกระดาษและ Excel ที่กระจัดกระจาย ให้กลายเป็นระบบ Dashboard ธีม Pastel Pink ที่มีระบบเตือนรอบเวลาชนกันและคำนวณค่าบูธแยกรายวันได้อย่างแม่นยำ",
+      "designGoal_en": "Design Goal: Transform scattered booth schedules from paper and spreadsheets into an intuitive Pastel Pink dashboard with smart date conflict detection and day-by-day fee calculations.",
+      "problem_th": "ครีเอเตอร์ต้องสมัครงานอีเวนต์หลายสิบงานต่อปี ซึ่งมีทั้งวันเปิดรับสมัคร วันประกาศผล และวันจัดงานที่คาบเกี่ยวกันบ่อยครั้ง โดยเฉพาะงานหลายวันที่อาจได้รับการคัดเลือกเพียง 1 วัน (Partial Acceptance) ทำให้คำนวณค่าใช้จ่ายและวางแผนวันไปออกบูธผิดพลาด",
+      "problem_en": "Independent artists often apply to multiple concurrent conventions across different organizers with overlapping dates, resulting in double bookings, forfeited non-refundable deposit fees, and scattered budget spreadsheets.",
+      "responsibilities_th": "ทำ User Research กับกลุ่มครีเอเตอร์, ออกแบบ Design System ธีมสี Pastel Pink โดยอ้างอิง Component Patterns จาก Devias Kit Pro, ออกแบบระบบ Smart Date Conflict Algorithm และพัฒนาฟูลสแต็กเชื่อมต่อ MongoDB Atlas",
+      "responsibilities_en": "Conducted user research with creators, designed Pastel Pink design system with Devias Kit Pro patterns, designed smart date conflict algorithm, and developed full-stack app with MongoDB Atlas.",
+      "uxApproach_th": "ออกแบบมุมมองปฏิทิน 2 รูปแบบ (Month Grid & Agenda) แยกสีชัดเจนระหว่างวันสมัคร วันประกาศผล และวันจัดบูธจริง พร้อมแถบแจ้งเตือนเมื่อมีงานชนกัน (Date Conflict Detection)",
+      "uxApproach_en": "Crafted Month Grid and Agenda calendar views with color-coded phases (application, result, booth dates) paired with active alert banners for overlapping dates.",
+      "keyDecisions_th": "1) Partial Acceptance Support: รองรับผลการสมัครแยกรายวัน โดยระบบจะนับเฉพาะวันที่ได้บูธเข้าปฏิทินจริงและคำนวณค่าบูธตามวันที่ได้รับคัดเลือกเท่านั้น\n2) Budget Separation: แยกค่าบูธค้างชำระ ยอดที่ชำระแล้ว และค่าใช้จ่ายที่อาจเกิดขึ้นจากใบสมัครที่รอผลออกจากกัน ไม่นับซ้ำซ้อน\n3) Preview Demo vs Cloud Auth: ผู้เยี่ยมชมสามารถทดลองสร้างงานในโหมด Demo Sandbox ได้อย่างปลอดภัย โดยระบบจะซิงค์และบันทึกลง MongoDB Atlas เฉพาะเมื่อล็อกอินด้วยอีเมลผู้ดูแล",
+      "keyDecisions_en": "1) Partial Acceptance Support: Independent tracking for multi-day events where only specific days are accepted.\n2) Budget Separation: Clear separation between projected application fees and confirmed operational booth expenses.\n3) Preview Demo vs Cloud Auth: Guests can explore the full sandbox safely without database mutations.",
+      "devCollaboration_th": "พัฒนาด้วย React 18, Material UI (MUI v6), Emotion, Node.js REST API และ MongoDB Atlas พร้อมระบบ Offline Fallback ด้วย LocalStorage",
+      "devCollaboration_en": "Built with React 18, Material UI (MUI v6), Emotion, Node.js REST API, and MongoDB Atlas with offline LocalStorage fallback.",
+      "outcomeLearnings_th": "ช่วยให้ครีเอเตอร์วางแผนตารางออกบูธล่วงหน้าได้โดยไม่พลาดวันสำคัญ ประหยัดเวลาจัดการใบสมัครได้กว่า 70% และป้องกันปัญหาการจองบูธซ้อนในวันเดียวกัน",
+      "outcomeLearnings_en": "Creators reduced scheduling conflicts to zero, saved over 70% of application planning time, and eliminated double-booking mistakes.",
+      "keyFeatures_th": [
+        "ระบบตรวจจับรอบเวลาจัดบูธชนกัน (Smart Date Conflict Detection)",
+        "ปฏิทินตารางงานแบบ Month Grid และ Agenda แยกสีตามช่วงเวลาสำคัญ",
+        "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
+        "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
+        "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
+      ],
+      "keyFeatures_en": [
+        "Smart Date Conflict Detection engine for overlapping convention dates",
+        "Visual Month Grid and Agenda calendar color-coded by milestone phases",
+        "Partial day acceptance handling with automated pro-rated booth cost calculation",
+        "Comprehensive budget ledger separating confirmed debts from pending applications",
+        "Sandbox demo mode for visitors with verified cloud sync for administrators"
+      ]
     }
   ],
   "activities": [
@@ -489,7 +569,11 @@
         "left": "18%",
         "rotate": -2.5,
         "zIndex": 5
-      }
+      },
+      "title_th": "ช่วงเวลาคอนเสิร์ตสดในสเตเดียม",
+      "caption_th": "บรรยากาศเปี่ยมพลัง ทะเลแท่งไฟ และความทรงจำคอนเสิร์ตที่ไม่เคยลืม",
+      "title_en": "Live Stadium Moments",
+      "caption_en": "Electric atmosphere, sea of lightsticks & unforgettable concert memories."
     },
     {
       "id": "act-live-photobooth-print",
@@ -516,7 +600,11 @@
         "left": "38%",
         "rotate": 4,
         "zIndex": 6
-      }
+      },
+      "title_th": "ความทรงจำโฟโต้บูธคอนเสิร์ต",
+      "caption_th": "ภาพถ่ายสตริปโฟโต้บูธพร้อมเพื่อนร่วมเชียร์บนสเตจคนโปรด 📸",
+      "title_en": "Concert Photobooth Memories",
+      "caption_en": "Preserved photobooth strip with favorite stage companions 📸"
     },
     {
       "id": "act-live-merch-seats",
@@ -542,7 +630,11 @@
         "left": "58%",
         "rotate": -3.5,
         "zIndex": 7
-      }
+      },
+      "title_th": "ที่นั่งอารีน่า & สินค้าออฟฟิเชียล",
+      "caption_th": "สโลแกนเชียร์ แท่งไฟ และความพร้อมสู่แสงสปอตไลต์บนเวที 🎫",
+      "title_en": "Arena Seats & Official Merch",
+      "caption_en": "Cheering slogans, lightsticks & ready for the stage lights 🎫"
     },
     {
       "id": "act-live-tickets",
@@ -569,7 +661,11 @@
         "left": "42%",
         "rotate": 3,
         "zIndex": 8
-      }
+      },
+      "title_th": "บัตรคอนเสิร์ต & สายรัดข้อมือของสะสม",
+      "caption_th": "บัตรกระดาษของแท้ สายรัดข้อมือ และโฟโต้การ์ดศิลปินที่สะสมไว้ 🎟️",
+      "title_en": "Keepsake Tickets & Wristband",
+      "caption_en": "Physical concert passes, wristbands & artist photocards collected 🎟️"
     },
     {
       "id": "act-art-desk-setup",
@@ -596,7 +692,11 @@
         "left": "30%",
         "rotate": 2.5,
         "zIndex": 7
-      }
+      },
+      "title_th": "ศิลปะโต๊ะทำงานมุมจำลอง",
+      "caption_th": "พื้นที่สร้างสรรค์ สถาปัตยกรรมจิ๋ว และแรงบันดาลใจในทุกวัน ✨",
+      "title_en": "Miniature Workspace Art",
+      "caption_en": "Creative workspace, miniature architecture & daily inspiration ✨"
     },
     {
       "id": "act-art-journal-stickers",
@@ -623,7 +723,11 @@
         "left": "28%",
         "rotate": -3.5,
         "zIndex": 5
-      }
+      },
+      "title_th": "สมุดบันทึกศิลปะ & คอลเลกชันสติกเกอร์",
+      "caption_th": "สะสมแผ่นสติกเกอร์สีสัน งานไทโปกราฟี และภาพสเก็ตช์ไอเดีย 🎨",
+      "title_en": "Art Journal & Sticker Stash",
+      "caption_en": "Curating colorful sticker sheets, typography & sketch notes 🎨"
     },
     {
       "id": "act-art-neon-exhibition",
@@ -651,7 +755,11 @@
         "left": "52%",
         "rotate": 3.5,
         "zIndex": 6
-      }
+      },
+      "title_th": "นิทรรศการแสงนีออนเสมือนจริง",
+      "caption_th": "งานจัดแสดงแสงไฟ กราเดียนต์ความรู้สึก และมุมมองภาพสมัยใหม่ 💜",
+      "title_en": "Immersive Neon Exhibition",
+      "caption_en": "Spatial light installations, sensory gradients & modern visuals 💜"
     },
     {
       "id": "act-art-collectibles",
@@ -677,7 +785,11 @@
         "left": "50%",
         "rotate": -4,
         "zIndex": 8
-      }
+      },
+      "title_th": "ของเล่นคาแรกเตอร์ & ฟิกเกอร์สะสม",
+      "caption_th": "ฟิกเกอร์คาแรกเตอร์สดใส กล่องสุ่ม และเครื่องเขียนน่ารัก 🧸",
+      "title_en": "Character Toys & Collectibles",
+      "caption_en": "Playful character figurines, blind boxes & stationery haul 🧸"
     },
     {
       "id": "act-life-mirror-fit",
@@ -704,7 +816,11 @@
         "left": "20%",
         "rotate": 3,
         "zIndex": 5
-      }
+      },
+      "title_th": "เช็กความพร้อมลุคลำลอง",
+      "caption_th": "สไตล์สบายๆ ในวันปกติและบรรยากาศเดินเล่นในเมือง 🪞",
+      "title_en": "Casual Fit Check",
+      "caption_en": "Everyday casual style & city walk mood 🪞"
     },
     {
       "id": "act-life-cafe-mirror",
@@ -730,7 +846,11 @@
         "left": "24%",
         "rotate": -2.5,
         "zIndex": 8
-      }
+      },
+      "title_th": "ฮอปปิ้งคาเฟ่ยามบ่าย",
+      "caption_th": "หามุมสงบในย่านโปรด กาแฟเอสเปรสโซ่อุ่นๆ และบรรยากาศเป็นมิตร ☕",
+      "title_en": "Afternoon Cafe Hopping",
+      "caption_en": "Finding calm neighborhood corners, warm espresso & friendly air ☕"
     },
     {
       "id": "act-life-peace-portrait",
@@ -756,7 +876,11 @@
         "left": "62%",
         "rotate": 4,
         "zIndex": 7
-      }
+      },
+      "title_th": "พลังบวกและรอยยิ้มเสมอ",
+      "caption_th": "ส่งต่อพลังงานด้านบวก รอยยิ้ม และความกระตือรือร้นที่ไม่สิ้นสุด ✌️",
+      "title_en": "Always High Spirits",
+      "caption_en": "Always bringing positive energy, smiles & endless curiosity ✌️"
     },
     {
       "id": "act-life-weekend-smile",
@@ -783,7 +907,11 @@
         "left": "42%",
         "rotate": -3.5,
         "zIndex": 6
-      }
+      },
+      "title_th": "ความอบอุ่นและรอยยิ้มวันหยุด",
+      "caption_th": "แสงแดดสดใสในวันหยุดสุดสัปดาห์ เติมพลังให้งานออกแบบ ✨",
+      "title_en": "Weekend Warmth & Smiles",
+      "caption_en": "Clear weekend sunshine & recharging creative design energy ✨"
     },
     {
       "id": "act-life-japanese-table",
@@ -811,7 +939,11 @@
         "left": "44%",
         "rotate": 3.5,
         "zIndex": 9
-      }
+      },
+      "title_th": "มื้อเย็นแสนอบอุ่นและอร่อย",
+      "caption_th": "มื้ออาหารแสนอร่อยร่วมกับเพื่อนสนิทหลังสัปดาห์ทำงานที่เต็มที่ 🍱",
+      "title_en": "Delicious Warm Dinner Spread",
+      "caption_en": "Hearty meal with good friends after a productive week 🍱"
     },
     {
       "id": "act-life-flower-bouquet",
@@ -838,7 +970,11 @@
         "left": "60%",
         "rotate": -3,
         "zIndex": 10
-      }
+      },
+      "title_th": "พาเลทสีพาสเทลดอกไม้สด",
+      "caption_th": "ช่อดอกไม้สดและแรงบันดาลใจเฉดสีกราเดียนต์จากธรรมชาติ 💐",
+      "title_en": "Pastel Bloom Palette",
+      "caption_en": "Fresh flower bouquet & natural color gradient inspiration 💐"
     },
     {
       "id": "act-pet-festive-supervisor",
@@ -864,7 +1000,11 @@
         "left": "32%",
         "rotate": -3.5,
         "zIndex": 5
-      }
+      },
+      "title_th": "หัวหน้างานตัวจริงช่วงเทศกาล 🐾",
+      "caption_th": "หัวหน้างานขนฟู 🐾 คอยจับตาดูทุกพิกเซลของงานออกแบบอย่างใกล้ชิด",
+      "title_en": "Festive Supervisor 🐾",
+      "caption_en": "Festive supervisor 🐾 Keeping watch over every design pixel."
     },
     {
       "id": "act-pet-design-assistant",
@@ -891,7 +1031,11 @@
         "left": "52%",
         "rotate": 4,
         "zIndex": 6
-      }
+      },
+      "title_th": "ผู้ช่วยดีไซเนอร์ตัวน้อย 🐱",
+      "caption_th": "ผู้ช่วยดีไซเนอร์ตัวจิ๋ว 🐱 กำลังพักสายตาและนอนชาร์จพลังคนเก่ง",
+      "title_en": "My Little Design Assistant 🐱",
+      "caption_en": "My little design assistant 🐱 taking an essential power nap."
     }
   ]
 }
