@@ -562,14 +562,29 @@ document.getElementById('cmsBtnSaveDraft')?.addEventListener('click', async () =
 });
 
 document.getElementById('cmsBtnPublish')?.addEventListener('click', async () => {
-  if (['siteSettings', 'hero', 'about', 'resume', 'contact'].includes(activeTab)) {
-    await publishSection(activeTab);
-  } else if (activeTab === 'projects') {
-    await publishCurrentProject();
+  const btn = document.getElementById('cmsBtnPublish');
+  const origText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = 'Publishing...';
+  try {
+    if (['siteSettings', 'hero', 'about', 'resume', 'contact'].includes(activeTab)) {
+      const saved = await saveSectionDraft(activeTab, true);
+      if (saved) {
+        await publishSection(activeTab);
+      }
+    } else if (activeTab === 'projects') {
+      const saved = await saveCurrentProjectDraft(true);
+      if (saved) {
+        await publishCurrentProject();
+      }
+    }
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = origText;
   }
 });
 
-async function saveSectionDraft(section) {
+async function saveSectionDraft(section, silent = false) {
   let draftData = null;
   if (section === 'siteSettings') draftData = collectSiteSettings();
   else if (section === 'hero') draftData = collectHero();
@@ -577,7 +592,7 @@ async function saveSectionDraft(section) {
   else if (section === 'resume') draftData = collectResume();
   else if (section === 'contact') draftData = collectContact();
 
-  if (!draftData) return;
+  if (!draftData) return false;
 
   try {
     const res = await fetch(`/api/admin/content/${section}`, {
@@ -587,19 +602,23 @@ async function saveSectionDraft(section) {
     });
     const data = await res.json();
     if (res.ok && data.success) {
-      showToast(`Draft for ${tabTitles[section]} saved!`, 'success');
+      if (!silent) showToast(`Draft for ${tabTitles[section]} saved!`, 'success');
       setStatusBadge(true);
+      return true;
     } else {
       showToast(data.error || 'Failed to save draft', 'error');
+      return false;
     }
   } catch (err) {
     showToast(`Error: ${err.message}`, 'error');
+    return false;
   }
 }
 
 async function publishSection(section) {
-  const note = prompt(`Enter a release note for publishing ${tabTitles[section]}:`, `Update ${section} content`);
-  if (note === null) return; // User cancelled
+  const notePrompt = prompt(`Enter a release note for publishing ${tabTitles[section]}:`, `Update ${section} content`);
+  if (notePrompt === null) return; // User cancelled
+  const note = notePrompt.trim() || `Update ${section} content`;
 
   try {
     const res = await fetch(`/api/admin/content/${section}/publish`, {
@@ -609,8 +628,9 @@ async function publishSection(section) {
     });
     const data = await res.json();
     if (res.ok && data.success) {
-      showToast(`Successfully published ${tabTitles[section]} (v${data.version})!`, 'success');
+      showToast(`Successfully published ${tabTitles[section]} (v${data.version})! Changes are now live.`, 'success');
       setStatusBadge(false);
+      await loadSectionContent(section);
     } else {
       showToast(data.error || 'Failed to publish section', 'error');
     }
@@ -748,8 +768,8 @@ function collectProjectForm() {
   };
 }
 
-async function saveCurrentProjectDraft() {
-  if (!currentProject) return;
+async function saveCurrentProjectDraft(silent = false) {
+  if (!currentProject) return false;
   const draftData = collectProjectForm();
 
   try {
@@ -760,20 +780,24 @@ async function saveCurrentProjectDraft() {
     });
     const data = await res.json();
     if (res.ok && data.success) {
-      showToast(`Draft for project "${currentProject.id}" saved!`, 'success');
+      if (!silent) showToast(`Draft for project "${currentProject.id}" saved!`, 'success');
       currentProject.draft = draftData;
+      return true;
     } else {
       showToast(data.error || 'Failed to save project draft', 'error');
+      return false;
     }
   } catch (err) {
     showToast(`Error: ${err.message}`, 'error');
+    return false;
   }
 }
 
 async function publishCurrentProject() {
   if (!currentProject) return;
-  const note = prompt(`Enter release note for publishing "${currentProject.id}":`, `Publish ${currentProject.id}`);
-  if (note === null) return;
+  const notePrompt = prompt(`Enter release note for publishing "${currentProject.id}":`, `Publish ${currentProject.id}`);
+  if (notePrompt === null) return;
+  const note = notePrompt.trim() || `Publish ${currentProject.id}`;
 
   try {
     const res = await fetch(`/api/admin/projects/${currentProject.id}/publish`, {
@@ -783,7 +807,7 @@ async function publishCurrentProject() {
     });
     const data = await res.json();
     if (res.ok && data.success) {
-      showToast(`Project "${currentProject.id}" published successfully!`, 'success');
+      showToast(`Project "${currentProject.id}" published successfully! Changes are now live.`, 'success');
       await loadProjectsList();
     } else {
       showToast(data.error || 'Failed to publish project', 'error');
@@ -884,16 +908,46 @@ async function loadActivitiesList() {
 }
 
 document.getElementById('btnPublishActivities')?.addEventListener('click', async () => {
+  const btn = document.getElementById('btnPublishActivities');
+  const origText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Publishing...';
   try {
+    const cards = document.querySelectorAll('#activitiesListContainer .cms-bilingual-box');
+    const updatedActivities = [];
+    cards.forEach((card, idx) => {
+      const existing = allActivities[idx] || {};
+      updatedActivities.push({
+        ...existing,
+        id: existing.id || `act-${idx + 1}`,
+        title_en: card.querySelector('.act-title-en').value,
+        title_th: card.querySelector('.act-title-th').value,
+        date: card.querySelector('.act-date').value,
+        image: card.querySelector('.act-img').value,
+        description_en: card.querySelector('.act-desc-en').value,
+        description_th: card.querySelector('.act-desc-th').value
+      });
+    });
+
+    await fetch('/api/admin/activities', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedActivities)
+    });
+
     const res = await fetch('/api/admin/activities/publish', { method: 'POST' });
     const data = await res.json();
     if (res.ok && data.success) {
-      showToast('All 16 activities published successfully!', 'success');
+      showToast('All 16 activities published successfully! Changes are now live.', 'success');
+      await loadActivitiesList();
     } else {
       showToast(data.error || 'Failed to publish activities', 'error');
     }
   } catch (err) {
     showToast(`Error: ${err.message}`, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = origText;
   }
 });
 

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-27T04:16:57.731Z",
+  "lastUpdated": "2026-10-27T04:57:11.846Z",
   "siteSettings": {
     "published": {
       "siteTitle": {
@@ -142,7 +142,7 @@
         }
       ]
     },
-    "version": 9
+    "version": 10
   },
   "about": {
     "published": {
@@ -2431,6 +2431,69 @@
     }
   ],
   "revisions": [
+    {
+      "id": "rev_hero_1793077031847",
+      "section": "hero",
+      "version": 9,
+      "snapshot": {
+        "miniLinks": [
+          {
+            "en": "enterprise ux",
+            "th": "ออกแบบระบบ enterprise"
+          },
+          {
+            "en": "portfolio",
+            "th": "พอร์ตโฟลิโอ"
+          },
+          {
+            "en": "developer handoff",
+            "th": "ส่งมอบงานนักพัฒนา"
+          }
+        ],
+        "cursiveScript": "UX UI",
+        "chunkyTitle": "portfolio",
+        "yearLabel": {
+          "en": "by Toeyruji",
+          "th": "โดย เตยรุจิ"
+        },
+        "bioLead": {
+          "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+          "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+        },
+        "stats": [
+          {
+            "en": "⚡️ 2+ Years CyberSec UX",
+            "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+          },
+          {
+            "en": "🎓 3.73 First Class Honors (IT)",
+            "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+          },
+          {
+            "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+            "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+          }
+        ],
+        "ctaButtons": [
+          {
+            "en": "explore projects",
+            "th": "สำรวจผลงาน",
+            "url": "#projects",
+            "type": "primary"
+          },
+          {
+            "en": "download resume (pdf)",
+            "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+            "url": "/Rujisaya Resume.pdf",
+            "type": "secondary"
+          }
+        ]
+      },
+      "author": "toeyruji",
+      "note": "Verification test publish",
+      "publishedAt": "2026-10-27T04:57:11.846Z",
+      "_id": "6ae02f27617735cecd7c4bf8"
+    },
     {
       "id": "rev_hero_1793074616614",
       "section": "hero",

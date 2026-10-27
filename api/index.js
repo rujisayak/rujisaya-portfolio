@@ -88,6 +88,7 @@ router.get('/health', async (req, res) => {
 
 // Profile endpoint
 router.get('/profile', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   try {
     const db = await getDB();
     if (db) {
@@ -104,6 +105,7 @@ router.get('/profile', async (req, res) => {
 
 // Projects / Case studies list with auto-sync and draft isolation
 const handleGetProjects = async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   const isPreview = isRequestPreview(req);
   try {
     const fallback = getFallbackData();
@@ -155,6 +157,7 @@ const handleGetProjects = async (req, res) => {
 };
 
 const handleGetSingleProject = async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   const isPreview = isRequestPreview(req);
   try {
     const { id } = req.params;
@@ -213,6 +216,7 @@ router.get('/projects/:id', (req, res, next) => {
 
 // Activities endpoint with auto-sync and preview support
 router.get('/activities', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   const isPreview = isRequestPreview(req);
   try {
     const fallback = getFallbackData();

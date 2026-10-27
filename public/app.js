@@ -1531,16 +1531,28 @@ async function syncCMSContent() {
     const sections = ['siteSettings', 'hero', 'about', 'resume', 'contact'];
     await Promise.all(sections.map(async (sec) => {
       try {
-        const res = await fetch(`/api/content/${sec}${previewQuery}`);
+        const res = await fetch(`/api/content/${sec}${previewQuery}`, {
+          cache: 'no-store',
+          headers: { 'Cache-Control': 'no-cache' }
+        });
         if (!res.ok) return;
         const data = await res.json();
         const content = data.content;
         if (!content) return;
 
-        if (sec === 'hero') {
+        if (sec === 'siteSettings') {
+          const siteTitle = (currentLang === 'th' ? content.siteTitle?.th : content.siteTitle?.en) || content.siteTitle?.en;
+          if (siteTitle) document.title = siteTitle;
+          const metaDesc = (currentLang === 'th' ? content.metaDescription?.th : content.metaDescription?.en) || content.metaDescription?.en;
+          if (metaDesc) {
+            document.querySelector('meta[name="description"]')?.setAttribute('content', metaDesc);
+          }
+          if (content.favicon) {
+            document.querySelector('link[rel="icon"]')?.setAttribute('href', content.favicon);
+          }
+        } else if (sec === 'hero') {
           if (content.cursiveScript) {
-            TRANSLATIONS.en.hero.cursiveScript = content.cursiveScript;
-            TRANSLATIONS.th.hero.cursiveScript = content.cursiveScript;
+            document.querySelectorAll('.hero-cursive-script').forEach(el => el.textContent = content.cursiveScript);
           }
           if (content.chunkyTitle) {
             TRANSLATIONS.en.hero.chunkyTitle = content.chunkyTitle;
@@ -1562,13 +1574,70 @@ async function syncCMSContent() {
             if (content.stats[2]?.en) TRANSLATIONS.en.hero.stat3 = content.stats[2].en;
             if (content.stats[2]?.th) TRANSLATIONS.th.hero.stat3 = content.stats[2].th;
           }
+          if (Array.isArray(content.miniLinks)) {
+            if (content.miniLinks[0]?.en) TRANSLATIONS.en.hero.miniUx = content.miniLinks[0].en;
+            if (content.miniLinks[0]?.th) TRANSLATIONS.th.hero.miniUx = content.miniLinks[0].th;
+            if (content.miniLinks[1]?.en) TRANSLATIONS.en.hero.miniPortfolio = content.miniLinks[1].en;
+            if (content.miniLinks[1]?.th) TRANSLATIONS.th.hero.miniPortfolio = content.miniLinks[1].th;
+            if (content.miniLinks[2]?.en) TRANSLATIONS.en.hero.miniHandoff = content.miniLinks[2].en;
+            if (content.miniLinks[2]?.th) TRANSLATIONS.th.hero.miniHandoff = content.miniLinks[2].th;
+          }
         } else if (sec === 'about') {
-          if (content.greeting?.en) TRANSLATIONS.en.about.title = content.greeting.en;
-          if (content.greeting?.th) TRANSLATIONS.th.about.title = content.greeting.th;
-          if (content.bioParagraph?.en) TRANSLATIONS.en.about.bio1 = content.bioParagraph.en;
-          if (content.bioParagraph?.th) TRANSLATIONS.th.about.bio1 = content.bioParagraph.th;
+          if (content.greeting?.en) TRANSLATIONS.en.about.greeting = content.greeting.en;
+          if (content.greeting?.th) TRANSLATIONS.th.about.greeting = content.greeting.th;
+          if (content.bioParagraph?.en) TRANSLATIONS.en.about.mainParagraph = content.bioParagraph.en;
+          if (content.bioParagraph?.th) TRANSLATIONS.th.about.mainParagraph = content.bioParagraph.th;
+          if (Array.isArray(content.specialties)) {
+            if (content.specialties[0]) {
+              TRANSLATIONS.en.about.spec1Title = content.specialties[0].title?.en || TRANSLATIONS.en.about.spec1Title;
+              TRANSLATIONS.th.about.spec1Title = content.specialties[0].title?.th || TRANSLATIONS.th.about.spec1Title;
+              TRANSLATIONS.en.about.spec1Desc = content.specialties[0].desc?.en ? (" — " + content.specialties[0].desc.en) : TRANSLATIONS.en.about.spec1Desc;
+              TRANSLATIONS.th.about.spec1Desc = content.specialties[0].desc?.th ? (" — " + content.specialties[0].desc.th) : TRANSLATIONS.th.about.spec1Desc;
+            }
+            if (content.specialties[1]) {
+              TRANSLATIONS.en.about.spec2Title = content.specialties[1].title?.en || TRANSLATIONS.en.about.spec2Title;
+              TRANSLATIONS.th.about.spec2Title = content.specialties[1].title?.th || TRANSLATIONS.th.about.spec2Title;
+              TRANSLATIONS.en.about.spec2Desc = content.specialties[1].desc?.en ? (" — " + content.specialties[1].desc.en) : TRANSLATIONS.en.about.spec2Desc;
+              TRANSLATIONS.th.about.spec2Desc = content.specialties[1].desc?.th ? (" — " + content.specialties[1].desc.th) : TRANSLATIONS.th.about.spec2Desc;
+            }
+            if (content.specialties[2]) {
+              TRANSLATIONS.en.about.spec3Title = content.specialties[2].title?.en || TRANSLATIONS.en.about.spec3Title;
+              TRANSLATIONS.th.about.spec3Title = content.specialties[2].title?.th || TRANSLATIONS.th.about.spec3Title;
+              TRANSLATIONS.en.about.spec3Desc = content.specialties[2].desc?.en ? (" — " + content.specialties[2].desc.en) : TRANSLATIONS.en.about.spec3Desc;
+              TRANSLATIONS.th.about.spec3Desc = content.specialties[2].desc?.th ? (" — " + content.specialties[2].desc.th) : TRANSLATIONS.th.about.spec3Desc;
+            }
+          }
+          if (Array.isArray(content.experience)) {
+            if (content.experience[0]) {
+              TRANSLATIONS.en.about.expRole1 = content.experience[0].role?.en || TRANSLATIONS.en.about.expRole1;
+              TRANSLATIONS.th.about.expRole1 = content.experience[0].role?.th || TRANSLATIONS.th.about.expRole1;
+              TRANSLATIONS.en.about.expPeriod1 = content.experience[0].period?.en || TRANSLATIONS.en.about.expPeriod1;
+              TRANSLATIONS.th.about.expPeriod1 = content.experience[0].period?.th || TRANSLATIONS.th.about.expPeriod1;
+            }
+            if (content.experience[1]) {
+              TRANSLATIONS.en.about.expRole2 = content.experience[1].role?.en || TRANSLATIONS.en.about.expRole2;
+              TRANSLATIONS.th.about.expRole2 = content.experience[1].role?.th || TRANSLATIONS.th.about.expRole2;
+              TRANSLATIONS.en.about.expPeriod2 = content.experience[1].period?.en || TRANSLATIONS.en.about.expPeriod2;
+              TRANSLATIONS.th.about.expPeriod2 = content.experience[1].period?.th || TRANSLATIONS.th.about.expPeriod2;
+            }
+            if (content.experience[2]) {
+              TRANSLATIONS.en.about.expEdu = content.experience[2].role?.en || TRANSLATIONS.en.about.expEdu;
+              TRANSLATIONS.th.about.expEdu = content.experience[2].role?.th || TRANSLATIONS.th.about.expEdu;
+              TRANSLATIONS.en.about.expEduPeriod = content.experience[2].period?.en || TRANSLATIONS.en.about.expEduPeriod;
+              TRANSLATIONS.th.about.expEduPeriod = content.experience[2].period?.th || TRANSLATIONS.th.about.expEduPeriod;
+            }
+          }
+          if (Array.isArray(content.skills)) {
+            content.skills.forEach((sk, i) => {
+              const k = `skill${i + 1}`;
+              if (TRANSLATIONS.en.about[k] !== undefined) {
+                TRANSLATIONS.en.about[k] = sk.en || TRANSLATIONS.en.about[k];
+                TRANSLATIONS.th.about[k] = sk.th || TRANSLATIONS.th.about[k];
+              }
+            });
+          }
           if (content.avatar) {
-            document.querySelectorAll('img[src*="avatar_square.png"]').forEach(img => {
+            document.querySelectorAll('img[src*="avatar_square.png"], .about-portrait-img').forEach(img => {
               img.src = content.avatar;
             });
           }
@@ -1577,6 +1646,20 @@ async function syncCMSContent() {
           if (content.title?.th) TRANSLATIONS.th.resume.title = content.title.th;
           if (content.description?.en) TRANSLATIONS.en.resume.desc = content.description.en;
           if (content.description?.th) TRANSLATIONS.th.resume.desc = content.description.th;
+          if (Array.isArray(content.checklists)) {
+            if (content.checklists[0]) {
+              TRANSLATIONS.en.resume.check1 = content.checklists[0].en || TRANSLATIONS.en.resume.check1;
+              TRANSLATIONS.th.resume.check1 = content.checklists[0].th || TRANSLATIONS.th.resume.check1;
+            }
+            if (content.checklists[1]) {
+              TRANSLATIONS.en.resume.check2 = content.checklists[1].en || TRANSLATIONS.en.resume.check2;
+              TRANSLATIONS.th.resume.check2 = content.checklists[1].th || TRANSLATIONS.th.resume.check2;
+            }
+            if (content.checklists[2]) {
+              TRANSLATIONS.en.resume.check3 = content.checklists[2].en || TRANSLATIONS.en.resume.check3;
+              TRANSLATIONS.th.resume.check3 = content.checklists[2].th || TRANSLATIONS.th.resume.check3;
+            }
+          }
           if (content.resumePdfUrl) {
             document.querySelectorAll('a[href*="Resume.pdf"]').forEach(a => a.href = content.resumePdfUrl);
           }
@@ -1584,13 +1667,29 @@ async function syncCMSContent() {
             document.querySelectorAll('a[href*="PortfolioRujisaya.pdf"]').forEach(a => a.href = content.portfolioPdfUrl);
           }
         } else if (sec === 'contact') {
+          if (content.title?.en) TRANSLATIONS.en.contact.title = content.title.en;
+          if (content.title?.th) TRANSLATIONS.th.contact.title = content.title.th;
           if (content.subtitle?.en) TRANSLATIONS.en.contact.subtitle = content.subtitle.en;
           if (content.subtitle?.th) TRANSLATIONS.th.contact.subtitle = content.subtitle.th;
+          if (content.location?.en) TRANSLATIONS.en.contact.locationVal = content.location.en;
+          if (content.location?.th) TRANSLATIONS.th.contact.locationVal = content.location.th;
           if (content.email) {
             document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
               a.href = `mailto:${content.email}`;
               a.textContent = content.email;
             });
+            document.querySelectorAll('.contact-email-text').forEach(el => el.textContent = content.email);
+          }
+          if (content.phone) {
+            document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+              a.href = `tel:${content.phone.replace(/[^0-9+]/g, '')}`;
+              a.textContent = content.phone;
+            });
+          }
+          if (content.lineId) {
+            TRANSLATIONS.en.about.contactLine = `LINE: ${content.lineId}`;
+            TRANSLATIONS.th.about.contactLine = `LINE: ${content.lineId}`;
+            document.querySelectorAll('.contact-line-text').forEach(el => el.textContent = content.lineId);
           }
         }
       } catch (secErr) {
@@ -1783,13 +1882,31 @@ async function loadPortfolioData() {
     const urlParams = new URLSearchParams(window.location.search);
     const isPreview = urlParams.get('preview') === 'true' || urlParams.get('draft') === 'true';
     const previewQuery = isPreview ? '?preview=true' : '';
-    const res = await fetch(`/api/case-studies${previewQuery}`);
+    const res = await fetch(`/api/case-studies${previewQuery}`, {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache' }
+    });
     if (res.ok) {
       const liveData = await res.json();
       if (Array.isArray(liveData) && liveData.length > 0) {
         allCaseStudies = liveData;
         const updatedFeatured = allCaseStudies.filter(s => s.featured);
         renderCaseStudies(updatedFeatured.length > 0 ? updatedFeatured : allCaseStudies);
+
+        // Re-hydrate project detail page if on a project detail view
+        if (typeof hydrateProjectDetailView === 'function') {
+          const pathParts = window.location.pathname.split('/').filter(Boolean);
+          let detailSlug = pathParts[pathParts.length - 1];
+          const queryId = new URLSearchParams(window.location.search).get('id');
+          if (queryId) detailSlug = queryId;
+          if (detailSlug && detailSlug !== 'projects' && detailSlug !== 'project-detail.html') {
+            const fresh = findProjectBySlug(detailSlug);
+            if (fresh) {
+              currentProjectDetailStudy = fresh;
+              hydrateProjectDetailView(fresh);
+            }
+          }
+        }
       }
     }
   } catch (err) {
