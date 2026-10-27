@@ -993,8 +993,37 @@ function getVal(item, fallback = '') {
   return String(item);
 }
 
+const EN_STRINGS = {
+  'brand.role': 'UX/UI Designer',
+  'nav.home': 'Home',
+  'nav.projects': 'Projects',
+  'nav.about': 'About Me',
+  'nav.resume': 'Resume',
+  'nav.activities': 'Activities',
+  'nav.contact': "Let's Connect",
+  'projects.allProjectsFolderLabel': 'all projects',
+  'projects.allProjectsTitle': 'all projects',
+  'projects.allSubtitle': 'archive of interactive web applications, SaaS platforms, and digital product designs',
+  'projects.searchPlaceholder': 'Search by name, category, or keyword...',
+  'projects.filterAll': '★ all projects',
+  'projects.filterEnterprise': 'enterprise saas & hr',
+  'projects.filterCreator': 'creator economy & events',
+  'projects.showingProjects': 'showing {count} projects',
+  'projects.viewProject': 'View Project →',
+  'projects.backToHome': '← Back to Home',
+  'projects.statusLive': 'live',
+  'projects.statusLiveInteractive': 'live interactive',
+  'projects.noResults': 'No matching projects found'
+};
+
 function t(key, params) {
-  return key;
+  let str = EN_STRINGS[key] || key;
+  if (params && typeof params === 'object') {
+    Object.keys(params).forEach(k => {
+      str = str.replace(new RegExp(`\\{${k}\\}`, 'g'), params[k]);
+    });
+  }
+  return str;
 }
 
 // Global Progress & Refresh Toast Helpers
@@ -1401,7 +1430,15 @@ async function loadPortfolioData() {
     if (res.ok) {
       const liveData = await res.json();
       if (Array.isArray(liveData) && liveData.length > 0) {
-        allCaseStudies = liveData;
+        const cleanList = liveData.filter(s => ![
+          'data-analytics-dashboard-builder',
+          'cybersecurity-threat-intelligence',
+          'detection-rule-engine',
+          'case-management-system',
+          'ux-developer-handoff-case-studies',
+          'risk-management-dashboard'
+        ].includes(s.id));
+        allCaseStudies = cleanList.length > 0 ? cleanList : [...FALLBACK_CASE_STUDIES];
         const updatedFeatured = allCaseStudies.filter(s => s.featured);
         renderCaseStudies(updatedFeatured.length > 0 ? updatedFeatured : allCaseStudies);
 
@@ -1537,11 +1574,11 @@ function renderCaseStudies(studies) {
 
   const countMeta = document.getElementById('projectsCountMeta');
   if (countMeta) {
-    countMeta.textContent = t('projects.showingProjects', { count: studies ? studies.length : 0, total: allCaseStudies.length });
+    countMeta.textContent = `showing ${studies ? studies.length : 0} projects`;
   }
 
   if (!studies || studies.length === 0) {
-    container.innerHTML = `<div class="loading-spinner">${escapeHtml(t('projects.noResults'))}</div>`;
+    container.innerHTML = `<div class="loading-spinner">No matching projects found</div>`;
     return;
   }
 
@@ -1550,13 +1587,13 @@ function renderCaseStudies(studies) {
 
   container.innerHTML = displayList.map(study => {
     const displayTitle = getField(study, 'displayTitle') || study.displayTitle || study.title;
-    const rawCategory = getField(study, 'category') || study.category || (study.id === 'ami-booth-planner' ? (currentLang === 'th' ? 'ครีเอเตอร์ & การจัดการอีเวนต์' : 'creator economy & events') : (currentLang === 'th' ? 'ระบบ Enterprise SaaS & HR' : 'enterprise saas & hr tech'));
+    const rawCategory = getField(study, 'category') || study.category || (study.id === 'ami-booth-planner' ? 'creator economy & events' : 'enterprise saas & hr tech');
     const isLive = (study.badgeType === 'live') || (study.badge && study.badge.toLowerCase().includes('live'));
-    const badgeText = isLive ? (study.badge && study.badge.toLowerCase().includes('interactive') ? t('projects.statusLiveInteractive') : t('projects.statusLive')) : (study.badge || 'live');
+    const badgeText = isLive ? (study.badge && study.badge.toLowerCase().includes('interactive') ? 'live interactive' : 'live') : (study.badge || 'live');
     const dateText = study.date || 'Jan 2026';
     const slug = study.slug || study.id;
     const coverImage = study.image || (study.previewCards && study.previewCards[0] ? study.previewCards[0].image : '/assets/portfolio/leaya_screenshot_full.png');
-    const viewArrow = t('projects.viewProject');
+    const viewArrow = 'View Project →';
 
     return `
       <a href="/projects/${encodeURIComponent(slug)}" class="compact-project-card" data-category="${study.filterCategory || 'all'}" aria-label="View ${escapeHtml(getField(study, 'fullTitle') || study.fullTitle || study.title)}">

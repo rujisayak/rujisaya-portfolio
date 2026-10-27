@@ -201,33 +201,55 @@ router.get('/profile', async (req, res) => {
   }
 });
 
+const LEGACY_PROJECT_IDS = [
+  'data-analytics-dashboard-builder',
+  'cybersecurity-threat-intelligence',
+  'detection-rule-engine',
+  'case-management-system',
+  'ux-developer-handoff-case-studies',
+  'risk-management-dashboard'
+];
+
 // Projects / Case studies list with auto-sync and draft isolation
 const handleGetProjects = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
   const isPreview = isRequestPreview(req);
   try {
     const fallback = getFallbackData();
-    const fallbackStudies = fallback.caseStudies || [];
+    const cleanFallback = (fallback.caseStudies || []).filter(s => !LEGACY_PROJECT_IDS.includes(s.id));
     const db = await getDB();
     let list = null;
 
     if (db) {
-      list = await db.collection('case_studies').find({}).toArray();
-      const fallbackIds = new Set(fallbackStudies.map(s => s.id));
-      const needsFullSync = (!list || list.length === 0);
-      
-      if (needsFullSync && fallbackStudies.length > 0) {
-        await db.collection('case_studies').insertMany(
-          fallbackStudies.map(s => {
-            const { _id, ...rest } = s;
-            return { ...rest, createdAt: new Date(), updatedAt: new Date() };
-          })
-        );
-        list = await db.collection('case_studies').find({}).toArray();
+      // 1. Permanently delete legacy cybersecurity projects
+      try {
+        await db.collection('case_studies').deleteMany({ id: { $in: LEGACY_PROJECT_IDS } });
+      } catch (delErr) {
+        console.warn("Could not purge legacy projects:", delErr.message);
       }
+
+      list = await db.collection('case_studies').find({ id: { $nin: LEGACY_PROJECT_IDS } }).toArray();
+      const existingIds = new Set((list || []).map(s => s.id));
+
+      // 2. Ensure target projects (Leaya & Ami Booth Planner) exist in DB
+      for (const study of cleanFallback) {
+        if (!existingIds.has(study.id)) {
+          const { _id, ...clean } = study;
+          try {
+            await db.collection('case_studies').updateOne(
+              { id: study.id },
+              { $set: { ...clean, createdAt: new Date(), updatedAt: new Date() } },
+              { upsert: true }
+            );
+          } catch (upsertErr) {
+            console.warn("Could not upsert project:", upsertErr.message);
+          }
+        }
+      }
+      list = await db.collection('case_studies').find({ id: { $nin: LEGACY_PROJECT_IDS } }).toArray();
     }
 
-    const sourceList = (list && list.length > 0) ? list : fallbackStudies;
+    const sourceList = (list && list.length > 0) ? list : cleanFallback;
 
     // Filter and format based on preview vs published
     if (isPreview) {
@@ -250,7 +272,7 @@ const handleGetProjects = async (req, res) => {
     }
   } catch (err) {
     console.error("Error in /case-studies:", err);
-    res.json(getFallbackData().caseStudies || []);
+    res.json((getFallbackData().caseStudies || []).filter(s => !LEGACY_PROJECT_IDS.includes(s.id)));
   }
 };
 
@@ -259,6 +281,9 @@ const handleGetSingleProject = async (req, res) => {
   const isPreview = isRequestPreview(req);
   try {
     const { id } = req.params;
+    if (LEGACY_PROJECT_IDS.includes(id)) {
+      return res.status(404).json({ error: "Project not found" });
+    }
     let item = null;
 
     try {
