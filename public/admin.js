@@ -524,14 +524,17 @@ document.getElementById('cmsBtnPublish')?.addEventListener('click', async () => 
   }
 });
 
-async function saveSectionDraft(section, silent = false) {
-  let draftData = null;
-  if (section === 'siteSettings') draftData = collectSiteSettings();
-  else if (section === 'hero') draftData = collectHero();
-  else if (section === 'about') draftData = collectAbout();
-  else if (section === 'resume') draftData = collectResume();
-  else if (section === 'contact') draftData = collectContact();
+function collectSectionData(section) {
+  if (section === 'siteSettings') return collectSiteSettings();
+  if (section === 'hero') return collectHero();
+  if (section === 'about') return collectAbout();
+  if (section === 'resume') return collectResume();
+  if (section === 'contact') return collectContact();
+  return null;
+}
 
+async function saveSectionDraft(section, silent = false) {
+  const draftData = collectSectionData(section);
   if (!draftData) return false;
 
   try {
@@ -556,12 +559,13 @@ async function saveSectionDraft(section, silent = false) {
 }
 
 async function publishSection(section) {
+  const content = collectSectionData(section);
   const note = `Update ${tabTitles[section] || section} content`;
   try {
     const res = await fetch(`/api/admin/content/${section}/publish`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ note })
+      body: JSON.stringify({ note, content })
     });
     const data = await res.json();
     if (res.ok && data.success) {
@@ -728,13 +732,14 @@ async function saveCurrentProjectDraft(silent = false) {
 
 async function publishCurrentProject() {
   if (!currentProject) return;
+  const projectData = collectProjectForm();
   const note = `Publish ${currentProject.id}`;
 
   try {
     const res = await fetch(`/api/admin/projects/${currentProject.id}/publish`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ note })
+      body: JSON.stringify({ note, projectData })
     });
     const data = await res.json();
     if (res.ok && data.success) {

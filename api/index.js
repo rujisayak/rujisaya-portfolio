@@ -25,24 +25,89 @@ const ADMIN_USER = process.env.ADMIN_USERNAME || 'toeyruji';
 
 let cachedClient = null;
 let cachedDb = null;
+let autoSeeded = false;
 
-async function getDB() {
-  if (!MongoClient) return null;
-  if (cachedDb) return cachedDb;
-  if (!MONGODB_URI) return null;
-  try {
-    if (!cachedClient) {
-      cachedClient = new MongoClient(MONGODB_URI, {
-        maxPoolSize: 10,
-        serverSelectionTimeoutMS: 5000
-      });
-      await cachedClient.connect();
+async function getDB(forceFresh = false) {
+  if (!MongoClient || !MONGODB_URI) return null;
+
+  if (!forceFresh && cachedClient && cachedDb) {
+    try {
+      await cachedDb.command({ ping: 1 });
+      return cachedDb;
+    } catch (e) {
+      console.warn("Cached DB connection invalid (" + e.message + "). Reconnecting...");
+      try {
+        await cachedClient.close();
+      } catch (_) {}
+      cachedClient = null;
+      cachedDb = null;
     }
-    cachedDb = cachedClient.db(DB_NAME);
+  }
+
+  if (forceFresh && cachedClient) {
+    try {
+      await cachedClient.close();
+    } catch (_) {}
+    cachedClient = null;
+    cachedDb = null;
+  }
+
+  try {
+    const client = new MongoClient(MONGODB_URI, {
+      maxPoolSize: 10,
+      minPoolSize: 0,
+      serverSelectionTimeoutMS: 5000,
+      connectTimeoutMS: 5000,
+      socketTimeoutMS: 20000
+    });
+    await client.connect();
+    const db = client.db(DB_NAME);
+    await db.command({ ping: 1 });
+    cachedClient = client;
+    cachedDb = db;
+
+    if (!autoSeeded) {
+      autoSeeded = true;
+      ensureCMSContentSeeded(db).catch(err => {
+        console.warn("Initial cms_content seeding warning:", err.message);
+      });
+    }
+
     return cachedDb;
   } catch (err) {
     console.error("MongoDB Atlas connection error:", err.message);
+    cachedClient = null;
+    cachedDb = null;
     return null;
+  }
+}
+
+async function ensureCMSContentSeeded(db) {
+  try {
+    const count = await db.collection('cms_content').countDocuments();
+    if (count === 0) {
+      const fallback = getFallbackData();
+      const sections = ['siteSettings', 'hero', 'about', 'resume', 'contact'];
+      for (const sec of sections) {
+        if (fallback[sec]) {
+          await db.collection('cms_content').updateOne(
+            { _id: sec },
+            {
+              $set: {
+                published: fallback[sec].published || {},
+                draft: fallback[sec].draft || fallback[sec].published || {},
+                version: fallback[sec].version || 1,
+                updatedAt: new Date()
+              }
+            },
+            { upsert: true }
+          );
+        }
+      }
+      console.log("Auto-seeded cms_content sections into MongoDB successfully.");
+    }
+  } catch (err) {
+    console.warn("Auto-seed error:", err.message);
   }
 }
 
