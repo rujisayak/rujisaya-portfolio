@@ -231,7 +231,7 @@ async function loadSectionContent(section) {
 function getVal(v, fallback = '') {
   if (v === null || v === undefined) return fallback;
   if (typeof v === 'string') return v;
-  if (typeof v === 'object') return v.th || v.en || fallback;
+  if (typeof v === 'object') return v.en || v.th || fallback;
   return String(v);
 }
 
@@ -634,12 +634,13 @@ function populateProjectForm(p) {
   document.getElementById('proj-bento-zoom-img').value = d.featureZoom?.image || '';
   document.getElementById('proj-bento-brandColor').value = d.brandColor || '#4DA6FF';
 
-  // 5-part narrative
-  document.getElementById('proj-narrative-problem').value = getVal(d.problem);
-  document.getElementById('proj-narrative-resp').value = getVal(d.responsibilities);
-  document.getElementById('proj-narrative-approach').value = getVal(d.uxApproach);
-  document.getElementById('proj-narrative-decisions').value = getVal(d.keyDecisions);
-  document.getElementById('proj-narrative-collab').value = getVal(d.devCollaboration);
+  // 5-part narrative (Prefer English)
+  document.getElementById('proj-summary').value = d.summary_en || getVal(d.summary) || d.summary_th || '';
+  document.getElementById('proj-narrative-problem').value = d.problem_en || getVal(d.problem) || d.problem_th || '';
+  document.getElementById('proj-narrative-resp').value = d.responsibilities_en || getVal(d.responsibilities) || d.responsibilities_th || '';
+  document.getElementById('proj-narrative-approach').value = d.uxApproach_en || getVal(d.uxApproach) || d.uxApproach_th || '';
+  document.getElementById('proj-narrative-decisions').value = d.keyDecisions_en || getVal(d.keyDecisions) || d.keyDecisions_th || '';
+  document.getElementById('proj-narrative-collab').value = d.devCollaboration_en || getVal(d.devCollaboration) || d.devCollaboration_th || '';
 
   // Update preview button URL
   const previewBtn = document.getElementById('cmsBtnPreview');

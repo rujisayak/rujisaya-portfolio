@@ -972,23 +972,24 @@ let lastFocusedElement = null;
 let currentProjectDetailStudy = null;
 
 // ==========================================================================
-// Field & CMS Content Helpers
+// Field & CMS Content Helpers (Strict English Mode)
 // ==========================================================================
-const currentLang = 'th';
+const currentLang = 'en';
 
 function getField(obj, fieldName) {
   if (!obj) return '';
-  if (typeof obj[fieldName] === 'string' && obj[fieldName]) return obj[fieldName];
+  if (obj[fieldName + '_en']) return obj[fieldName + '_en'];
   if (typeof obj[fieldName] === 'object' && obj[fieldName]) {
-    return obj[fieldName].th || obj[fieldName].en || '';
+    return obj[fieldName].en || obj[fieldName].th || '';
   }
-  return obj[fieldName + '_th'] || obj[fieldName + '_en'] || obj[fieldName] || '';
+  if (typeof obj[fieldName] === 'string' && obj[fieldName]) return obj[fieldName];
+  return obj[fieldName + '_th'] || '';
 }
 
 function getVal(item, fallback = '') {
   if (item === null || item === undefined) return fallback;
   if (typeof item === 'string') return item;
-  if (typeof item === 'object') return item.th || item.en || fallback;
+  if (typeof item === 'object') return item.en || item.th || fallback;
   return String(item);
 }
 
