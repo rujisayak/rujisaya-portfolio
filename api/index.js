@@ -78,10 +78,32 @@ const router = express.Router();
 
 // Health check
 router.get('/health', async (req, res) => {
-  const db = await getDB();
+  let dbStatus = 'disconnected';
+  let dbError = null;
+  let writeStatus = null;
+  try {
+    const db = await getDB();
+    if (db) {
+      await db.command({ ping: 1 });
+      dbStatus = 'connected';
+      try {
+        await db.collection('_probe').updateOne({ _id: 'health' }, { $set: { t: new Date() } }, { upsert: true });
+        writeStatus = 'write-ok';
+      } catch (we) {
+        writeStatus = 'write-err: ' + we.message;
+      }
+    } else {
+      dbStatus = 'null-db';
+    }
+  } catch (err) {
+    dbStatus = 'err';
+    dbError = err.message;
+  }
   res.json({
     status: 'ok',
-    database: db ? 'connected' : 'fallback-mode',
+    database: dbStatus,
+    dbError,
+    writeStatus,
     timestamp: new Date()
   });
 });
@@ -295,7 +317,7 @@ router.post('/contact', async (req, res) => {
     });
   } catch (err) {
     console.error("Error in /contact:", err);
-    res.status(500).json({ error: "Failed to send message. Please try again." });
+    res.status(500).json({ error: "Failed to send message: " + err.message });
   }
 });
 
