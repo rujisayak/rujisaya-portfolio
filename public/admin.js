@@ -228,31 +228,30 @@ async function loadSectionContent(section) {
   }
 }
 
+function getVal(v, fallback = '') {
+  if (v === null || v === undefined) return fallback;
+  if (typeof v === 'string') return v;
+  if (typeof v === 'object') return v.th || v.en || fallback;
+  return String(v);
+}
+
 // 1. Site Settings Populate
 function populateSiteSettings(d) {
-  document.getElementById('settings-defaultLang').value = d.defaultLang || 'en';
   document.getElementById('settings-primaryColor').value = d.primaryColor || '#231815';
   document.getElementById('settings-primaryColorText').value = d.primaryColor || '#231815';
-  document.getElementById('settings-title-en').value = d.siteTitle?.en || '';
-  document.getElementById('settings-title-th').value = d.siteTitle?.th || '';
-  document.getElementById('settings-desc-en').value = d.metaDescription?.en || '';
-  document.getElementById('settings-desc-th').value = d.metaDescription?.th || '';
+  document.getElementById('settings-title').value = getVal(d.siteTitle);
+  document.getElementById('settings-desc').value = getVal(d.metaDescription);
   document.getElementById('settings-favicon').value = d.favicon || '';
   document.getElementById('settings-ogImage').value = d.ogImage || '';
 }
 
 function collectSiteSettings() {
+  const title = document.getElementById('settings-title').value;
+  const desc = document.getElementById('settings-desc').value;
   return {
-    defaultLang: document.getElementById('settings-defaultLang').value,
     primaryColor: document.getElementById('settings-primaryColor').value,
-    siteTitle: {
-      en: document.getElementById('settings-title-en').value,
-      th: document.getElementById('settings-title-th').value
-    },
-    metaDescription: {
-      en: document.getElementById('settings-desc-en').value,
-      th: document.getElementById('settings-desc-th').value
-    },
+    siteTitle: { en: title, th: title },
+    metaDescription: { en: desc, th: desc },
     favicon: document.getElementById('settings-favicon').value,
     ogImage: document.getElementById('settings-ogImage').value
   };
@@ -262,22 +261,17 @@ function collectSiteSettings() {
 function populateHero(d) {
   document.getElementById('hero-cursiveScript').value = d.cursiveScript || 'UX UI';
   document.getElementById('hero-chunkyTitle').value = d.chunkyTitle || 'portfolio';
-  document.getElementById('hero-year-en').value = d.yearLabel?.en || 'by Toeyruji';
-  document.getElementById('hero-year-th').value = d.yearLabel?.th || 'โดย เตยรุจิ';
-  document.getElementById('hero-bio-en').value = d.bioLead?.en || '';
-  document.getElementById('hero-bio-th').value = d.bioLead?.th || '';
+  document.getElementById('hero-year').value = getVal(d.yearLabel, 'by Toeyruji');
+  document.getElementById('hero-bio').value = getVal(d.bioLead);
 
   // Stats
   const statsWrap = document.getElementById('heroStatsContainer');
   statsWrap.innerHTML = '';
   const stats = Array.isArray(d.stats) ? d.stats : [];
-  stats.forEach((s, idx) => {
+  stats.forEach((s) => {
     const row = document.createElement('div');
-    row.className = 'cms-grid-2 mb-2';
-    row.innerHTML = `
-      <input type="text" class="cms-input hero-stat-en" value="${escapeHtml(s.en || '')}" placeholder="Stat pill EN">
-      <input type="text" class="cms-input hero-stat-th" value="${escapeHtml(s.th || '')}" placeholder="Stat pill TH">
-    `;
+    row.className = 'mb-2';
+    row.innerHTML = `<input type="text" class="cms-input hero-stat" value="${escapeHtml(getVal(s))}" placeholder="Stat highlight">`;
     statsWrap.appendChild(row);
   });
 
@@ -285,45 +279,35 @@ function populateHero(d) {
   const linksWrap = document.getElementById('heroMiniLinksContainer');
   linksWrap.innerHTML = '';
   const links = Array.isArray(d.miniLinks) ? d.miniLinks : [];
-  links.forEach((l, idx) => {
+  links.forEach((l) => {
     const row = document.createElement('div');
-    row.className = 'cms-grid-2 mb-2';
-    row.innerHTML = `
-      <input type="text" class="cms-input hero-link-en" value="${escapeHtml(l.en || '')}" placeholder="Link label EN">
-      <input type="text" class="cms-input hero-link-th" value="${escapeHtml(l.th || '')}" placeholder="Link label TH">
-    `;
+    row.className = 'mb-2';
+    row.innerHTML = `<input type="text" class="cms-input hero-link" value="${escapeHtml(getVal(l))}" placeholder="Mini Link label">`;
     linksWrap.appendChild(row);
   });
 }
 
 function collectHero() {
   const stats = [];
-  document.querySelectorAll('#heroStatsContainer .cms-grid-2').forEach(row => {
-    stats.push({
-      en: row.querySelector('.hero-stat-en').value,
-      th: row.querySelector('.hero-stat-th').value
-    });
+  document.querySelectorAll('#heroStatsContainer .hero-stat').forEach(input => {
+    const val = input.value;
+    stats.push({ en: val, th: val });
   });
 
   const miniLinks = [];
-  document.querySelectorAll('#heroMiniLinksContainer .cms-grid-2').forEach(row => {
-    miniLinks.push({
-      en: row.querySelector('.hero-link-en').value,
-      th: row.querySelector('.hero-link-th').value
-    });
+  document.querySelectorAll('#heroMiniLinksContainer .hero-link').forEach(input => {
+    const val = input.value;
+    miniLinks.push({ en: val, th: val });
   });
+
+  const year = document.getElementById('hero-year').value;
+  const bio = document.getElementById('hero-bio').value;
 
   return {
     cursiveScript: document.getElementById('hero-cursiveScript').value,
     chunkyTitle: document.getElementById('hero-chunkyTitle').value,
-    yearLabel: {
-      en: document.getElementById('hero-year-en').value,
-      th: document.getElementById('hero-year-th').value
-    },
-    bioLead: {
-      en: document.getElementById('hero-bio-en').value,
-      th: document.getElementById('hero-bio-th').value
-    },
+    yearLabel: { en: year, th: year },
+    bioLead: { en: bio, th: bio },
     stats,
     miniLinks,
     ctaButtons: currentLoadedData.hero?.draft?.ctaButtons || [
@@ -337,25 +321,21 @@ function collectHero() {
 function populateAbout(d) {
   document.getElementById('about-avatar').value = d.avatar || '/assets/avatar_square.png';
   document.getElementById('aboutAvatarPreview').src = d.avatar || '/assets/avatar_square.png';
-  document.getElementById('about-greeting-en').value = d.greeting?.en || "Hi, I'm Toey!";
-  document.getElementById('about-greeting-th').value = d.greeting?.th || "สวัสดีค่ะ เตยเองนะคะ!";
-  document.getElementById('about-bio-en').value = d.bioParagraph?.en || '';
-  document.getElementById('about-bio-th').value = d.bioParagraph?.th || '';
+  document.getElementById('about-greeting').value = getVal(d.greeting, "Hi, I'm Toey!");
+  document.getElementById('about-bio').value = getVal(d.bioParagraph);
 
   // Specialties
   const specWrap = document.getElementById('aboutSpecialtiesContainer');
   specWrap.innerHTML = '';
   (d.specialties || []).forEach(s => {
     const box = document.createElement('div');
-    box.className = 'cms-bilingual-box';
+    box.className = 'cms-bilingual-box mb-2';
     box.innerHTML = `
-      <div class="cms-grid-2 mb-2">
-        <input type="text" class="cms-input spec-title-en font-bold" value="${escapeHtml(s.title?.en || '')}" placeholder="Specialty Title EN">
-        <input type="text" class="cms-input spec-title-th font-bold" value="${escapeHtml(s.title?.th || '')}" placeholder="Specialty Title TH">
+      <div class="mb-2">
+        <input type="text" class="cms-input spec-title font-bold" value="${escapeHtml(getVal(s.title))}" placeholder="Specialty Title">
       </div>
-      <div class="cms-grid-2">
-        <textarea class="cms-textarea spec-desc-en" rows="2" placeholder="Description EN">${escapeHtml(s.desc?.en || '')}</textarea>
-        <textarea class="cms-textarea spec-desc-th" rows="2" placeholder="Description TH">${escapeHtml(s.desc?.th || '')}</textarea>
+      <div>
+        <textarea class="cms-textarea spec-desc" rows="2" placeholder="Specialty Description">${escapeHtml(getVal(s.desc))}</textarea>
       </div>
     `;
     specWrap.appendChild(box);
@@ -369,11 +349,8 @@ function populateAbout(d) {
   skillsWrap.innerHTML = '';
   (d.skills || []).forEach(sk => {
     const row = document.createElement('div');
-    row.className = 'cms-grid-2 mb-2';
-    row.innerHTML = `
-      <input type="text" class="cms-input skill-en" value="${escapeHtml(sk.en || '')}">
-      <input type="text" class="cms-input skill-th" value="${escapeHtml(sk.th || '')}">
-    `;
+    row.className = 'mb-2';
+    row.innerHTML = `<input type="text" class="cms-input skill-item" value="${escapeHtml(getVal(sk))}" placeholder="Skill">`;
     skillsWrap.appendChild(row);
   });
 }
@@ -381,17 +358,13 @@ function populateAbout(d) {
 function renderAboutExperience(expList) {
   const expWrap = document.getElementById('aboutExperienceContainer');
   expWrap.innerHTML = '';
-  expList.forEach((e, idx) => {
+  expList.forEach((e) => {
     const row = document.createElement('div');
-    row.className = 'cms-bilingual-box exp-row';
+    row.className = 'cms-bilingual-box exp-row mb-2';
     row.innerHTML = `
       <div class="cms-grid-2 mb-2">
-        <input type="text" class="cms-input exp-period-en" value="${escapeHtml(e.period?.en || '')}" placeholder="Period EN (e.g. 2023 — Present)">
-        <input type="text" class="cms-input exp-period-th" value="${escapeHtml(e.period?.th || '')}" placeholder="Period TH">
-      </div>
-      <div class="cms-grid-2 mb-2">
-        <input type="text" class="cms-input exp-role-en font-bold" value="${escapeHtml(e.role?.en || '')}" placeholder="Role & Company EN">
-        <input type="text" class="cms-input exp-role-th font-bold" value="${escapeHtml(e.role?.th || '')}" placeholder="Role & Company TH">
+        <input type="text" class="cms-input exp-period" value="${escapeHtml(getVal(e.period))}" placeholder="Period (e.g. 2023 — Present)">
+        <input type="text" class="cms-input exp-role font-bold" value="${escapeHtml(getVal(e.role))}" placeholder="Role & Company">
       </div>
       <button type="button" class="cms-btn-xs cms-btn-danger mt-1" onclick="this.closest('.exp-row').remove()">Remove</button>
     `;
@@ -402,15 +375,11 @@ function renderAboutExperience(expList) {
 document.getElementById('aboutBtnAddExp')?.addEventListener('click', () => {
   const expWrap = document.getElementById('aboutExperienceContainer');
   const row = document.createElement('div');
-  row.className = 'cms-bilingual-box exp-row';
+  row.className = 'cms-bilingual-box exp-row mb-2';
   row.innerHTML = `
     <div class="cms-grid-2 mb-2">
-      <input type="text" class="cms-input exp-period-en" placeholder="Period EN (e.g. 2024 — Present)">
-      <input type="text" class="cms-input exp-period-th" placeholder="Period TH">
-    </div>
-    <div class="cms-grid-2 mb-2">
-      <input type="text" class="cms-input exp-role-en font-bold" placeholder="Role & Company EN">
-      <input type="text" class="cms-input exp-role-th font-bold" placeholder="Role & Company TH">
+      <input type="text" class="cms-input exp-period" placeholder="Period (e.g. 2024 — Present)">
+      <input type="text" class="cms-input exp-role font-bold" placeholder="Role & Company">
     </div>
     <button type="button" class="cms-btn-xs cms-btn-danger mt-1" onclick="this.closest('.exp-row').remove()">Remove</button>
   `;
@@ -420,50 +389,37 @@ document.getElementById('aboutBtnAddExp')?.addEventListener('click', () => {
 function collectAbout() {
   const specialties = [];
   document.querySelectorAll('#aboutSpecialtiesContainer .cms-bilingual-box').forEach(box => {
+    const title = box.querySelector('.spec-title').value;
+    const desc = box.querySelector('.spec-desc').value;
     specialties.push({
-      title: {
-        en: box.querySelector('.spec-title-en').value,
-        th: box.querySelector('.spec-title-th').value
-      },
-      desc: {
-        en: box.querySelector('.spec-desc-en').value,
-        th: box.querySelector('.spec-desc-th').value
-      }
+      title: { en: title, th: title },
+      desc: { en: desc, th: desc }
     });
   });
 
   const experience = [];
   document.querySelectorAll('#aboutExperienceContainer .exp-row').forEach(row => {
+    const period = row.querySelector('.exp-period').value;
+    const role = row.querySelector('.exp-role').value;
     experience.push({
-      period: {
-        en: row.querySelector('.exp-period-en').value,
-        th: row.querySelector('.exp-period-th').value
-      },
-      role: {
-        en: row.querySelector('.exp-role-en').value,
-        th: row.querySelector('.exp-role-th').value
-      }
+      period: { en: period, th: period },
+      role: { en: role, th: role }
     });
   });
 
   const skills = [];
-  document.querySelectorAll('#aboutSkillsContainer .cms-grid-2').forEach(row => {
-    skills.push({
-      en: row.querySelector('.skill-en').value,
-      th: row.querySelector('.skill-th').value
-    });
+  document.querySelectorAll('#aboutSkillsContainer .skill-item').forEach(input => {
+    const val = input.value;
+    skills.push({ en: val, th: val });
   });
+
+  const greeting = document.getElementById('about-greeting').value;
+  const bio = document.getElementById('about-bio').value;
 
   return {
     avatar: document.getElementById('about-avatar').value,
-    greeting: {
-      en: document.getElementById('about-greeting-en').value,
-      th: document.getElementById('about-greeting-th').value
-    },
-    bioParagraph: {
-      en: document.getElementById('about-bio-en').value,
-      th: document.getElementById('about-bio-th').value
-    },
+    greeting: { en: greeting, th: greeting },
+    bioParagraph: { en: bio, th: bio },
     specialties,
     experience,
     skills
@@ -474,43 +430,33 @@ function collectAbout() {
 function populateResume(d) {
   document.getElementById('resume-pdf-url').value = d.resumePdfUrl || '/Rujisaya Resume.pdf';
   document.getElementById('resume-deck-url').value = d.portfolioPdfUrl || '/PortfolioRujisaya.pdf';
-  document.getElementById('resume-title-en').value = d.title?.en || 'Resume & Portfolio Deck';
-  document.getElementById('resume-title-th').value = d.title?.th || 'เอกสารเรซูเม่ & พอร์ตโฟลิโอฉบับเต็ม';
-  document.getElementById('resume-desc-en').value = d.description?.en || '';
-  document.getElementById('resume-desc-th').value = d.description?.th || '';
+  document.getElementById('resume-title').value = getVal(d.title, 'Resume & Portfolio Deck');
+  document.getElementById('resume-desc').value = getVal(d.description);
 
   const checkWrap = document.getElementById('resumeChecklistContainer');
   checkWrap.innerHTML = '';
   (d.checklists || []).forEach(c => {
     const row = document.createElement('div');
-    row.className = 'cms-grid-2 mb-2';
-    row.innerHTML = `
-      <input type="text" class="cms-input check-en" value="${escapeHtml(c.en || '')}">
-      <input type="text" class="cms-input check-th" value="${escapeHtml(c.th || '')}">
-    `;
+    row.className = 'mb-2';
+    row.innerHTML = `<input type="text" class="cms-input check-item" value="${escapeHtml(getVal(c))}" placeholder="Credential point">`;
     checkWrap.appendChild(row);
   });
 }
 
 function collectResume() {
   const checklists = [];
-  document.querySelectorAll('#resumeChecklistContainer .cms-grid-2').forEach(row => {
-    checklists.push({
-      en: row.querySelector('.check-en').value,
-      th: row.querySelector('.check-th').value
-    });
+  document.querySelectorAll('#resumeChecklistContainer .check-item').forEach(input => {
+    const val = input.value;
+    checklists.push({ en: val, th: val });
   });
 
+  const title = document.getElementById('resume-title').value;
+  const desc = document.getElementById('resume-desc').value;
+
   return {
-    pretitle: { en: "CREDENTIALS", th: "ประวัติและข้อมูลวิชาชีพ" },
-    title: {
-      en: document.getElementById('resume-title-en').value,
-      th: document.getElementById('resume-title-th').value
-    },
-    description: {
-      en: document.getElementById('resume-desc-en').value,
-      th: document.getElementById('resume-desc-th').value
-    },
+    pretitle: { en: "CREDENTIALS", th: "CREDENTIALS" },
+    title: { en: title, th: title },
+    description: { en: desc, th: desc },
     resumePdfUrl: document.getElementById('resume-pdf-url').value,
     portfolioPdfUrl: document.getElementById('resume-deck-url').value,
     previewImage: "/assets/resume_preview.png",
@@ -523,27 +469,21 @@ function populateContact(d) {
   document.getElementById('contact-email').value = d.email || 'rujisaya1002@gmail.com';
   document.getElementById('contact-phone').value = d.phone || '(+66) 85 472 2195';
   document.getElementById('contact-line').value = d.lineId || 'baitoeyrujisaya';
-  document.getElementById('contact-loc-en').value = d.location?.en || 'Bangkok, Thailand (On-site / Remote / Hybrid)';
-  document.getElementById('contact-loc-th').value = d.location?.th || 'กรุงเทพมหานคร, ประเทศไทย (On-site / Remote / Hybrid)';
-  document.getElementById('contact-sub-en').value = d.subtitle?.en || '';
-  document.getElementById('contact-sub-th').value = d.subtitle?.th || '';
+  document.getElementById('contact-loc').value = getVal(d.location, 'Bangkok, Thailand (On-site / Remote / Hybrid)');
+  document.getElementById('contact-sub').value = getVal(d.subtitle);
 }
 
 function collectContact() {
+  const loc = document.getElementById('contact-loc').value;
+  const sub = document.getElementById('contact-sub').value;
   return {
-    pretitle: { en: "DIRECT INQUIRIES // GET IN TOUCH", th: "ติดต่อโดยตรง // สอบถามข้อมูล" },
-    title: { en: "Let's Connect", th: "มาร่วมงานกัน" },
-    subtitle: {
-      en: document.getElementById('contact-sub-en').value,
-      th: document.getElementById('contact-sub-th').value
-    },
+    pretitle: { en: "DIRECT INQUIRIES // GET IN TOUCH", th: "DIRECT INQUIRIES // GET IN TOUCH" },
+    title: { en: "Let's Connect", th: "Let's Connect" },
+    subtitle: { en: sub, th: sub },
     email: document.getElementById('contact-email').value,
     phone: document.getElementById('contact-phone').value,
     lineId: document.getElementById('contact-line').value,
-    location: {
-      en: document.getElementById('contact-loc-en').value,
-      th: document.getElementById('contact-loc-th').value
-    },
+    location: { en: loc, th: loc },
     socialLinks: [
       { label: "GitHub", url: "https://github.com/rujisayak" }
     ]
@@ -616,10 +556,7 @@ async function saveSectionDraft(section, silent = false) {
 }
 
 async function publishSection(section) {
-  const notePrompt = prompt(`Enter a release note for publishing ${tabTitles[section]}:`, `Update ${section} content`);
-  if (notePrompt === null) return; // User cancelled
-  const note = notePrompt.trim() || `Update ${section} content`;
-
+  const note = `Update ${tabTitles[section] || section} content`;
   try {
     const res = await fetch(`/api/admin/content/${section}/publish`, {
       method: 'POST',
@@ -653,7 +590,7 @@ async function loadProjectsList() {
     allProjects.forEach(p => {
       const opt = document.createElement('option');
       opt.value = p.id;
-      opt.textContent = `${p.displayTitle_en || p.title || p.id} [${p.status || 'published'}]`;
+      opt.textContent = `${getVal(p.displayTitle, p.id)} [${p.status || 'published'}]`;
       selector.appendChild(opt);
     });
 
@@ -674,24 +611,19 @@ async function loadProjectsList() {
 
 function populateProjectForm(p) {
   const d = p.draft || p;
-  document.getElementById('currentProjectTitleHeader').textContent = d.displayTitle_en || d.title || d.id;
+  document.getElementById('currentProjectTitleHeader').textContent = getVal(d.displayTitle, d.id);
   document.getElementById('projectStatusBadge').textContent = `● Status: ${(p.status || 'published').toUpperCase()}`;
   document.getElementById('projectStatusBadge').className = p.status === 'draft' ? 'cms-status-badge cms-status-dirty' : 'cms-status-badge cms-status-clean';
 
   document.getElementById('proj-id').value = d.id || '';
   document.getElementById('proj-num').value = d.projectNum || 1;
   document.getElementById('proj-featured').value = d.featured ? 'true' : 'false';
-  document.getElementById('proj-displayTitle-en').value = d.displayTitle_en || d.displayTitle || '';
-  document.getElementById('proj-displayTitle-th').value = d.displayTitle_th || d.displayTitle || '';
-  document.getElementById('proj-shortSubtitle-en').value = d.shortSubtitle_en || d.shortSubtitle || '';
-  document.getElementById('proj-shortSubtitle-th').value = d.shortSubtitle_th || d.shortSubtitle || '';
   document.getElementById('proj-liveUrl').value = d.liveUrl || '';
   document.getElementById('proj-githubUrl').value = d.githubUrl || '';
   document.getElementById('proj-image').value = d.image || '';
   document.getElementById('proj-mobileImage').value = d.mobileImage || d.mobileScreen || '';
   document.getElementById('proj-tags').value = Array.isArray(d.tags) ? d.tags.join(', ') : '';
-  document.getElementById('proj-summary-en').value = d.summary_en || d.summary || '';
-  document.getElementById('proj-summary-th').value = d.summary_th || d.summary || '';
+  document.getElementById('proj-summary').value = getVal(d.summary);
 
   // Bento Card Config
   const bentoScreens = d.multiScreens || [];
@@ -703,16 +635,11 @@ function populateProjectForm(p) {
   document.getElementById('proj-bento-brandColor').value = d.brandColor || '#4DA6FF';
 
   // 5-part narrative
-  document.getElementById('proj-narrative-problem-en').value = d.problem_en || d.problem || '';
-  document.getElementById('proj-narrative-problem-th').value = d.problem_th || d.problem || '';
-  document.getElementById('proj-narrative-resp-en').value = d.responsibilities_en || d.responsibilities || '';
-  document.getElementById('proj-narrative-resp-th').value = d.responsibilities_th || d.responsibilities || '';
-  document.getElementById('proj-narrative-approach-en').value = d.uxApproach_en || d.uxApproach || '';
-  document.getElementById('proj-narrative-approach-th').value = d.uxApproach_th || d.uxApproach || '';
-  document.getElementById('proj-narrative-decisions-en').value = d.keyDecisions_en || d.keyDecisions || '';
-  document.getElementById('proj-narrative-decisions-th').value = d.keyDecisions_th || d.keyDecisions || '';
-  document.getElementById('proj-narrative-collab-en').value = d.devCollaboration_en || d.devCollaboration || '';
-  document.getElementById('proj-narrative-collab-th').value = d.devCollaboration_th || d.devCollaboration || '';
+  document.getElementById('proj-narrative-problem').value = getVal(d.problem);
+  document.getElementById('proj-narrative-resp').value = getVal(d.responsibilities);
+  document.getElementById('proj-narrative-approach').value = getVal(d.uxApproach);
+  document.getElementById('proj-narrative-decisions').value = getVal(d.keyDecisions);
+  document.getElementById('proj-narrative-collab').value = getVal(d.devCollaboration);
 
   // Update preview button URL
   const previewBtn = document.getElementById('cmsBtnPreview');
@@ -722,29 +649,29 @@ function populateProjectForm(p) {
 function collectProjectForm() {
   const tagsStr = document.getElementById('proj-tags').value;
   const tags = tagsStr.split(',').map(s => s.trim()).filter(Boolean);
-
   const existing = currentProject ? (currentProject.draft || currentProject) : {};
+
+  const summary = document.getElementById('proj-summary').value;
+  const problem = document.getElementById('proj-narrative-problem').value;
+  const resp = document.getElementById('proj-narrative-resp').value;
+  const approach = document.getElementById('proj-narrative-approach').value;
+  const decisions = document.getElementById('proj-narrative-decisions').value;
+  const collab = document.getElementById('proj-narrative-collab').value;
 
   return {
     ...existing,
     id: document.getElementById('proj-id').value.trim(),
     projectNum: Number(document.getElementById('proj-num').value) || 1,
     featured: document.getElementById('proj-featured').value === 'true',
-    displayTitle_en: document.getElementById('proj-displayTitle-en').value,
-    displayTitle_th: document.getElementById('proj-displayTitle-th').value,
-    displayTitle: document.getElementById('proj-displayTitle-en').value,
-    shortSubtitle_en: document.getElementById('proj-shortSubtitle-en').value,
-    shortSubtitle_th: document.getElementById('proj-shortSubtitle-th').value,
-    shortSubtitle: document.getElementById('proj-shortSubtitle-en').value,
     liveUrl: document.getElementById('proj-liveUrl').value,
     githubUrl: document.getElementById('proj-githubUrl').value,
     image: document.getElementById('proj-image').value,
     mobileImage: document.getElementById('proj-mobileImage').value,
     mobileScreen: document.getElementById('proj-mobileImage').value,
     tags,
-    summary_en: document.getElementById('proj-summary-en').value,
-    summary_th: document.getElementById('proj-summary-th').value,
-    summary: document.getElementById('proj-summary-en').value,
+    summary,
+    summary_th: summary,
+    summary_en: summary,
     multiScreens: [
       { title: "Screen 1", image: document.getElementById('proj-bento-screen0-img').value },
       { title: "Screen 2", image: document.getElementById('proj-bento-screen1-img').value },
@@ -755,16 +682,21 @@ function collectProjectForm() {
       image: document.getElementById('proj-bento-zoom-img').value
     },
     brandColor: document.getElementById('proj-bento-brandColor').value,
-    problem_en: document.getElementById('proj-narrative-problem-en').value,
-    problem_th: document.getElementById('proj-narrative-problem-th').value,
-    responsibilities_en: document.getElementById('proj-narrative-resp-en').value,
-    responsibilities_th: document.getElementById('proj-narrative-resp-th').value,
-    uxApproach_en: document.getElementById('proj-narrative-approach-en').value,
-    uxApproach_th: document.getElementById('proj-narrative-approach-th').value,
-    keyDecisions_en: document.getElementById('proj-narrative-decisions-en').value,
-    keyDecisions_th: document.getElementById('proj-narrative-decisions-th').value,
-    devCollaboration_en: document.getElementById('proj-narrative-collab-en').value,
-    devCollaboration_th: document.getElementById('proj-narrative-collab-th').value
+    problem,
+    problem_th: problem,
+    problem_en: problem,
+    responsibilities: resp,
+    responsibilities_th: resp,
+    responsibilities_en: resp,
+    uxApproach: approach,
+    uxApproach_th: approach,
+    uxApproach_en: approach,
+    keyDecisions: decisions,
+    keyDecisions_th: decisions,
+    keyDecisions_en: decisions,
+    devCollaboration: collab,
+    devCollaboration_th: collab,
+    devCollaboration_en: collab
   };
 }
 
@@ -795,9 +727,7 @@ async function saveCurrentProjectDraft(silent = false) {
 
 async function publishCurrentProject() {
   if (!currentProject) return;
-  const notePrompt = prompt(`Enter release note for publishing "${currentProject.id}":`, `Publish ${currentProject.id}`);
-  if (notePrompt === null) return;
-  const note = notePrompt.trim() || `Publish ${currentProject.id}`;
+  const note = `Publish ${currentProject.id}`;
 
   try {
     const res = await fetch(`/api/admin/projects/${currentProject.id}/publish`, {

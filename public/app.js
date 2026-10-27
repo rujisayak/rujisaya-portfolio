@@ -972,498 +972,29 @@ let lastFocusedElement = null;
 let currentProjectDetailStudy = null;
 
 // ==========================================================================
-// Centralized Bilingual Translation System (EN / TH)
+// Field & CMS Content Helpers
 // ==========================================================================
-const TRANSLATIONS = {
-  en: {
-    brand: {
-      role: "UX/UI Designer"
-    },
-    nav: {
-      home: "Home",
-      projects: "Projects",
-      about: "About Me",
-      resume: "Resume",
-      activities: "Activities",
-      contact: "Let's Connect",
-      language: "Language:"
-    },
-    hero: {
-      miniUx: "enterprise ux",
-      miniPortfolio: "portfolio",
-      miniHandoff: "developer handoff",
-      chunkyTitle: "portfolio",
-      byToey: "by Toeyruji",
-      folderProjects: "projects",
-      folderAbout: "about me",
-      folderResume: "resume",
-      folderActivities: "activities",
-      folderContact: "contact",
-      bioLead: "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
-      stat1: "⚡️ 2+ Years CyberSec UX",
-      stat2: "🎓 3.73 First Class Honors (IT)",
-      stat3: "🤝 End-to-End: UX Flows to Dev Handoff",
-      exploreProjects: "explore projects",
-      downloadResume: "download resume (pdf)"
-    },
-    projects: {
-      folderLabel: "projects",
-      allProjectsFolderLabel: "all projects",
-      title: "projects",
-      allProjectsTitle: "all projects",
-      subtitle: "interactive web applications and enterprise platforms I designed & developed",
-      allSubtitle: "archive of interactive web applications, SaaS platforms, and digital product designs",
-      searchPlaceholder: "Search by name, category, or keyword...",
-      filterAll: "★ all projects",
-      filterEnterprise: "enterprise saas & hr",
-      filterCreator: "creator economy & events",
-      showingProjects: "showing {count} of {total} projects",
-      showingCount: "showing {count} projects",
-      noResults: "No projects found matching your search.",
-      viewProject: "View Project →",
-      showAll: "Show All Projects",
-      backToHome: "← Back to Home",
-      statusLive: "live",
-      statusLiveInteractive: "live interactive"
-    },
-    about: {
-      badge: "about me",
-      greeting: "Hi, I'm Toey!",
-      mainParagraph: "I design web interfaces for desktop and complex systems. In my work, I combine Adaptive and Responsive design techniques. I place a strong emphasis on usability and overall user experience.",
-      specHeading: "What I specialize in:",
-      spec1Title: "Enterprise & Cybersecurity UX",
-      spec1Desc: " — creating complex software workflows (detection rule logic builders, threat portals, and SIEM monitoring dashboards).",
-      spec2Title: "Design Systems & Developer Handoff",
-      spec2Desc: " — component tokens, detailed UI flow blueprints, validation & error state design, and API parameter alignment in Figma.",
-      spec3Title: "Usability Evaluation & QA",
-      spec3Desc: " — internal prototype testing, heuristic usability reviews, and beta feedback loops with backend engineers.",
-      colExperience: "Experience",
-      colSkills: "Skills",
-      colContacts: "Contacts",
-      expRole1: "UX/UI Designer, Security Pitch Co., Ltd.",
-      expPeriod1: "2023 — Present",
-      expRole2: "UX/UI Intern, Security Pitch Co., Ltd.",
-      expPeriod2: "2023 (Jan — Apr)",
-      expEdu: "B.Sc. Information Technology (GPA 3.73, First Class Honors)",
-      expEduPeriod: "2019 — 2023",
-      skill1: "Product & System Design",
-      skill2: "Design Systems & Component Tokens",
-      skill3: "Backend UI Flow Documentation",
-      skill4: "Heuristic Usability Review & QA",
-      skill5: "Figma, Adobe XD, Photoshop, Illustrator",
-      contactLine: "LINE: baitoeyrujisaya",
-      contactLocation: "Bangkok, Thailand"
-    },
-    resume: {
-      pretitle: "CREDENTIALS",
-      title: "Resume & Portfolio Deck",
-      desc: "View the complete summary of my professional experience, education, skills, and design portfolio. Available for immediate download in PDF format.",
-      btnResume: "Download Resume (PDF)",
-      btnPortfolio: "Full Portfolio Deck (12 Pages)",
-      check1: "2+ Years Cybersecurity Dashboard Experience",
-      check2: "First Class Honors in IT (Suan Dusit University)",
-      check3: "Proven Developer Handoff & UI Flow Documentation",
-      overlay: "Click to Open PDF ↗"
-    },
-    activities: {
-      pretitle: "BEYOND THE CANVAS // LIFE & INSPIRATION",
-      title: "Activities & Life Moments",
-      subtitle: "A visual contact sheet outside the screen — live stadium concerts, spatial art exhibitions, cafe explorations, cute companions, and creative sparks that fuel my work.",
-      tabAll: "All Moments",
-      tabConcerts: "01 // Live Music",
-      tabCreative: "02 // Art & Design",
-      tabLifestyle: "03 // Lifestyle & Cafes",
-      tabPets: "04 // Companions",
-      scrapbookBanner: "STUDIO SCRAPBOOK // PINNED MEMORIES",
-      dragHint: "Drag & drop to rearrange",
-      zoom: "Zoom ↗",
-      note: "★ note"
-    },
-    contact: {
-      pretitle: "DIRECT INQUIRIES // GET IN TOUCH",
-      title: "Let's Connect",
-      subtitle: "I am always open to discussing enterprise UX/UI roles, complex software challenges, and creative collaborations.",
-      labelEmail: "Email Address",
-      labelPhone: "Phone",
-      labelLine: "LINE ID",
-      labelLocation: "Location",
-      locationVal: "Bangkok, Thailand (On-site / Remote / Hybrid)",
-      formTitle: "Send a Direct Message",
-      formDesc: "Messages submitted here are saved directly into the MongoDB Atlas database.",
-      fieldName: "Your Name *",
-      fieldEmail: "Your Email *",
-      fieldSubject: "Subject",
-      fieldMessage: "Message *",
-      placeholderName: "e.g. Sarah Jenkins",
-      placeholderEmail: "e.g. sarah@company.com",
-      placeholderSubject: "e.g. UX/UI Designer Position / Project Collaboration",
-      placeholderMessage: "Hello Toey, we are interested in your cybersecurity UX experience...",
-      btnSend: "Send Message",
-      btnSending: "Sending...",
-      successMsg: "Thank you! Your message has been sent successfully.",
-      errorMsg: "Could not send message. Please try again or contact me directly via email."
-    },
-    detail: {
-      backProjects: "← Back to All Projects",
-      projectPrefix: "project",
-      liveDemo: "Live Demo",
-      github: "GitHub",
-      highlightsTitle: "Project Highlights",
-      styleGuideTitle: "Style Guide",
-      typoColorTitle: "Typography & Color System",
-      paletteCount: "{count} Palette Swatches",
-      roleLabel: "Role",
-      usersLabel: "Target Users",
-      solutionLabel: "Key Solution",
-      suitableForTitle: "This Platform Suitable For",
-      multiMenuBadge: "✔ Full Multi-Menu Workflow",
-      summaryHeading: "Built for Scalability & Seamless UX",
-      specResponsive: "Responsive UI",
-      specCustom: "100% Custom System",
-      specPixel: "Pixel Perfect",
-      specInteractive: "Interactive State",
-      narrativeTitle: "Deep UX Research & Developer Handoff Narrative",
-      readStory: "Read Case Study Story ↓",
-      hideStory: "Hide Case Study Story ↑",
-      secProblem: "01 // Problem & Operational Challenges",
-      secResp: "02 // Personal Scope & Responsibilities",
-      secDecisions: "03 // Key UX Decisions & Trade-offs",
-      secDev: "04 // Developer Collaboration & State Specifications",
-      secOutcome: "05 // Qualitative Outcomes & Impact",
-      engineeringSynergy: "Engineering Synergy:",
-      btnOpenApp: "Open Live Production App ↗",
-      nextProjectBadge: "Next Project",
-      viewNextProject: "View Next Project",
-      backDirectory: "Back to All Projects Directory"
-    },
-    footer: {
-      subtext: "Product & UX/UI Designer • Enterprise & Cybersecurity Focus",
-      backToTop: "Back to top ↑",
-      copyToast: "Copied to clipboard!",
-      copyBtn: "Copy",
-      copiedBtn: "Copied!"
-    }
-  },
-  th: {
-    brand: {
-      role: "UX/UI Designer"
-    },
-    nav: {
-      home: "หน้าแรก",
-      projects: "ผลงาน",
-      about: "เกี่ยวกับฉัน",
-      resume: "เรซูเม่",
-      activities: "กิจกรรม & ไลฟ์สไตล์",
-      contact: "ติดต่อ",
-      language: "ภาษา:"
-    },
-    hero: {
-      miniUx: "ออกแบบระบบ enterprise",
-      miniPortfolio: "พอร์ตโฟลิโอ",
-      miniHandoff: "ส่งมอบงานนักพัฒนา",
-      chunkyTitle: "portfolio",
-      byToey: "โดย เตยรุจิ",
-      folderProjects: "ผลงาน",
-      folderAbout: "เกี่ยวกับฉัน",
-      folderResume: "เรซูเม่",
-      folderActivities: "กิจกรรม",
-      folderContact: "ติดต่อ",
-      bioLead: "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ",
-      stat1: "⚡️ ประสบการณ์ CyberSec UX 2+ ปี",
-      stat2: "🎓 เกียรตินิยมอันดับ 1 IT (3.73)",
-      stat3: "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff",
-      exploreProjects: "สำรวจผลงาน",
-      downloadResume: "ดาวน์โหลดเรซูเม่ (PDF)"
-    },
-    projects: {
-      folderLabel: "ผลงานเด่น",
-      allProjectsFolderLabel: "ผลงานทั้งหมด",
-      title: "projects",
-      allProjectsTitle: "all projects",
-      subtitle: "เว็บแอปพลิเคชันและแพลตฟอร์มระดับองค์กรที่ฉันออกแบบและร่วมพัฒนา",
-      allSubtitle: "คลังผลงานเว็บแอปพลิเคชัน แพลตฟอร์ม SaaS และการออกแบบผลิตภัณฑ์ดิจิทัล",
-      searchPlaceholder: "ค้นหาตามชื่อ, หมวดหมู่, หรือคำสำคัญ...",
-      filterAll: "★ ผลงานทั้งหมด",
-      filterEnterprise: "enterprise saas & hr",
-      filterCreator: "creator economy & events",
-      showingProjects: "กำลังแสดง {count} จากทั้งหมด {total} โปรเจกต์",
-      showingCount: "กำลังแสดง {count} โปรเจกต์",
-      noResults: "ไม่พบโปรเจกต์ที่ตรงกับคำค้นหาของคุณ",
-      viewProject: "ดูรายละเอียดโปรเจกต์ →",
-      showAll: "ดูผลงานทั้งหมด",
-      backToHome: "← กลับหน้าหลัก",
-      statusLive: "ใช้งานได้จริง",
-      statusLiveInteractive: "ระบบจำลองอินเทอร์แอคทีฟ"
-    },
-    about: {
-      badge: "เกี่ยวกับฉัน",
-      greeting: "สวัสดีค่ะ เตยเองนะคะ!",
-      mainParagraph: "ฉันออกแบบอินเทอร์เฟซสำหรับเดสก์ท็อปและระบบงานที่มีความซับซ้อน โดยผสานเทคนิคการออกแบบทั้ง Adaptive และ Responsive เข้าด้วยกัน ให้ความสำคัญสูงสุดกับความง่ายในการใช้งานและประสบการณ์ที่ดีของผู้ใช้",
-      specHeading: "ความเชี่ยวชาญพิเศษของฉัน:",
-      spec1Title: "Enterprise & Cybersecurity UX",
-      spec1Desc: " — ออกแบบเวิร์กโฟลว์ซอฟต์แวร์ระดับองค์กร (ระบบสร้าง Detection Rule, พอร์ทัลจัดการภัยคุกคาม และแดชบอร์ดมอนิเตอร์ SIEM)",
-      spec2Title: "Design Systems & Developer Handoff",
-      spec2Desc: " — วางระบบ Component Tokens, แผนผัง UI Flow อย่างละเอียด, ออกแบบ Error State และประสานค่าพารามิเตอร์ API ใน Figma",
-      spec3Title: "Usability Evaluation & QA",
-      spec3Desc: " — ทดสอบ Prototype ภายใน, ตรวจสอบความยากง่ายตามหลัก Heuristic และรวบรวมข้อเสนอแนะช่วง Beta ร่วมกับนักพัฒนา",
-      colExperience: "ประสบการณ์",
-      colSkills: "ทักษะความสามารถ",
-      colContacts: "ช่องทางติดต่อ",
-      expRole1: "UX/UI Designer, บริษัท ซีเคียวริตี้ พิทช์ จำกัด",
-      expPeriod1: "2023 — ปัจจุบัน",
-      expRole2: "นักศึกษาฝึกงาน UX/UI, บริษัท ซีเคียวริตี้ พิทช์ จำกัด",
-      expPeriod2: "2023 (ม.ค. — เม.ย.)",
-      expEdu: "วท.บ. เทคโนโลยีสารสนเทศ (เกียรตินิยมอันดับ 1, GPA 3.73)",
-      expEduPeriod: "2019 — 2023",
-      skill1: "การออกแบบผลิตภัณฑ์ & สถาปัตยกรรมระบบ",
-      skill2: "Design Systems & Component Tokens",
-      skill3: "เอกสารผังการทำงานสำหรับทีม Backend",
-      skill4: "ตรวจสอบการใช้งาน Heuristic & QA",
-      skill5: "Figma, Adobe XD, Photoshop, Illustrator",
-      contactLine: "LINE: baitoeyrujisaya",
-      contactLocation: "กรุงเทพมหานคร, ประเทศไทย"
-    },
-    resume: {
-      pretitle: "ประวัติและข้อมูลวิชาชีพ",
-      title: "เอกสารเรซูเม่ & พอร์ตโฟลิโอฉบับเต็ม",
-      desc: "ดูสรุปประสบการณ์การทำงาน การศึกษา ทักษะ และผลงานออกแบบฉบับเต็ม พร้อมดาวน์โหลดในรูปแบบไฟล์ PDF ได้ทันที",
-      btnResume: "ดาวน์โหลดเรซูเม่ (PDF)",
-      btnPortfolio: "พอร์ตโฟลิโอฉบับเต็ม (12 หน้า)",
-      check1: "ประสบการณ์ออกแบบแดชบอร์ด Cybersecurity 2+ ปี",
-      check2: "เกียรตินิยมอันดับ 1 สาขา IT (มหาวิทยาลัยสวนดุสิต)",
-      check3: "ความเชี่ยวชาญการทำเอกสารส่งมอบงาน (Developer Handoff) และ UI Flow",
-      overlay: "คลิกเพื่อเปิดดูไฟล์ PDF ↗"
-    },
-    activities: {
-      pretitle: "นอกเหนือจากหน้าจอ // การใช้ชีวิต & แรงบันดาลใจ",
-      title: "กิจกรรม & บันทึกเรื่องราวชีวิต",
-      subtitle: "ภาพบันทึกความทรงจำนอกหน้าจอ — คอนเสิร์ตสดในสเตเดียม, นิทรรศการศิลปะ, การไปคาเฟ่, สัตว์เลี้ยงตัวโปรด และประกายความคิดสร้างสรรค์ที่เติมพลังให้งานออกแบบ",
-      tabAll: "ช่วงเวลาทั้งหมด",
-      tabConcerts: "01 // คอนเสิร์ต & ดนตรีสด",
-      tabCreative: "02 // ศิลปะ & ดีไซน์",
-      tabLifestyle: "03 // ไลฟ์สไตล์ & คาเฟ่",
-      tabPets: "04 // เพื่อนตัวน้อย",
-      scrapbookBanner: "📌 บอร์ดบันทึกภาพถ่าย // ความทรงจำที่ปักหมุดไว้",
-      dragHint: "✥ ลากและวางเพื่อจัดเรียงรูปภาพ",
-      zoom: "ซูม ↗",
-      note: "★ โน้ต"
-    },
-    contact: {
-      pretitle: "ติดต่อโดยตรง // สอบถามข้อมูล",
-      title: "มาร่วมงานกัน",
-      subtitle: "ยินดีเปิดรับโอกาสการร่วมงานตำแหน่ง Enterprise UX/UI ความท้าทายในระบบซอฟต์แวร์ และโปรเจกต์สร้างสรรค์เสมอค่ะ",
-      labelEmail: "อีเมล",
-      labelPhone: "เบอร์โทรศัพท์",
-      labelLine: "LINE ID",
-      labelLocation: "สถานที่ทำงาน",
-      locationVal: "กรุงเทพมหานคร, ประเทศไทย (On-site / Remote / Hybrid)",
-      formTitle: "ส่งข้อความถึงฉันโดยตรง",
-      formDesc: "ข้อความที่ส่งจะถูกบันทึกเข้าสู่ฐานข้อมูล MongoDB Atlas โดยตรง",
-      fieldName: "ชื่อของคุณ *",
-      fieldEmail: "อีเมลของคุณ *",
-      fieldSubject: "หัวข้อ",
-      fieldMessage: "ข้อความ *",
-      placeholderName: "เช่น วรัญญา สุขใจ",
-      placeholderEmail: "เช่น waranya@company.com",
-      placeholderSubject: "เช่น สนใจร่วมงานตำแหน่ง UX/UI Designer / โปรเจกต์ความร่วมมือ",
-      placeholderMessage: "สวัสดีค่ะคุณเตย สนใจพูดคุยเกี่ยวกับประสบการณ์ Enterprise UX...",
-      btnSend: "ส่งข้อความ",
-      btnSending: "กำลังส่ง...",
-      successMsg: "ขอบคุณค่ะ! ข้อความของคุณถูกส่งเรียบร้อยแล้ว",
-      errorMsg: "ไม่สามารถส่งข้อความได้ กรุณาลองใหม่อีกครั้ง หรือติดต่อทางอีเมลโดยตรง"
-    },
-    detail: {
-      backProjects: "← กลับไปหน้ารวมผลงาน",
-      projectPrefix: "โปรเจกต์ที่",
-      liveDemo: "ดูระบบจริง (Live Demo)",
-      github: "GitHub",
-      highlightsTitle: "จุดเด่นของระบบ",
-      styleGuideTitle: "คู่มือสไตล์และการออกแบบ",
-      typoColorTitle: "ระบบตัวอักษรและชุดสี",
-      paletteCount: "{count} พาเลทสี",
-      roleLabel: "บทบาท",
-      usersLabel: "ผู้ใช้งานเป้าหมาย",
-      solutionLabel: "โซลูชันสำคัญ",
-      suitableForTitle: "แพลตฟอร์มนี้เหมาะสำหรับ",
-      multiMenuBadge: "✔ เวิร์กโฟลว์ครบทุกเมนูและระบบงาน",
-      summaryHeading: "ออกแบบเพื่อรองรับการขยายตัว & มอบ UX ที่ลื่นไหล",
-      specResponsive: "หน้าจอ Responsive",
-      specCustom: "ระบบปรับแต่งได้ 100%",
-      specPixel: "ละเอียดระดับพิกเซล",
-      specInteractive: "จำลองสถานะสมบูรณ์",
-      narrativeTitle: "เจาะลึกกระบวนการวิจัย UX & การส่งมอบงานให้นักพัฒนา",
-      readStory: "อ่านเรื่องราวการออกแบบ ↓",
-      hideStory: "ซ่อนเรื่องราว ↑",
-      secProblem: "01 // ปัญหาและความท้าทายในการดำเนินงาน",
-      secResp: "02 // ขอบเขตหน้าที่และความรับผิดชอบส่วนตัว",
-      secDecisions: "03 // การตัดสินใจเชิง UX และข้อแลกเปลี่ยนสำคัญ",
-      secDev: "04 // การทำงานร่วมกับนักพัฒนา & การระบุสถานะระบบ",
-      secOutcome: "05 // ผลลัพธ์เชิงคุณภาพและผลกระทบของระบบ",
-      engineeringSynergy: "การทำงานร่วมกับทีมวิศวกรรม:",
-      btnOpenApp: "เปิดใช้งานเว็บแอปจริง ↗",
-      nextProjectBadge: "โปรเจกต์ถัดไป",
-      viewNextProject: "ดูโปรเจกต์ถัดไป",
-      backDirectory: "กลับไปยังคลังผลงานทั้งหมด"
-    },
-    footer: {
-      subtext: "นักออกแบบ Product & UX/UI • ผู้เชี่ยวชาญ Enterprise & Cybersecurity",
-      backToTop: "กลับขึ้นด้านบน ↑",
-      copyToast: "คัดลอกลงคลิปบอร์ดแล้ว!",
-      copyBtn: "คัดลอก",
-      copiedBtn: "คัดลอกแล้ว!"
-    }
-  }
-};
-
-let currentLang = 'en';
+const currentLang = 'th';
 
 function getField(obj, fieldName) {
   if (!obj) return '';
-  if (currentLang === 'th') {
-    return obj[fieldName + '_th'] || obj[fieldName] || '';
+  if (typeof obj[fieldName] === 'string' && obj[fieldName]) return obj[fieldName];
+  if (typeof obj[fieldName] === 'object' && obj[fieldName]) {
+    return obj[fieldName].th || obj[fieldName].en || '';
   }
-  return obj[fieldName + '_en'] || obj[fieldName] || '';
+  return obj[fieldName + '_th'] || obj[fieldName + '_en'] || obj[fieldName] || '';
+}
+
+function getVal(item, fallback = '') {
+  if (item === null || item === undefined) return fallback;
+  if (typeof item === 'string') return item;
+  if (typeof item === 'object') return item.th || item.en || fallback;
+  return String(item);
 }
 
 function t(key, params) {
-  const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
-  const parts = key.split('.');
-  let val = dict;
-  for (const part of parts) {
-    if (val && typeof val === 'object' && part in val) {
-      val = val[part];
-    } else {
-      val = TRANSLATIONS.en;
-      for (const p of parts) {
-        if (val && typeof val === 'object' && p in val) {
-          val = val[p];
-        } else {
-          return key;
-        }
-      }
-      break;
-    }
-  }
-  if (typeof val === 'string' && params) {
-    return val.replace(/\{(\w+)\}/g, (_, k) => params[k] !== undefined ? params[k] : `{${k}}`);
-  }
-  return typeof val === 'string' ? val : key;
+  return key;
 }
-
-function getInitialLanguage() {
-  try {
-    const saved = localStorage.getItem('preferred_lang');
-    if (saved === 'th' || saved === 'en') {
-      return saved;
-    }
-  } catch (e) {
-    console.warn('localStorage inaccessible, falling back to English default:', e);
-  }
-  return 'en';
-}
-
-function setLanguage(lang) {
-  if (lang !== 'en' && lang !== 'th') lang = 'en';
-  currentLang = lang;
-  
-  try {
-    localStorage.setItem('preferred_lang', lang);
-  } catch (e) {
-    // safe fallback
-  }
-  
-  document.documentElement.lang = lang;
-  
-  // Update toggle buttons active state
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    const btnLang = btn.getAttribute('data-lang');
-    const isActive = btnLang === lang;
-    btn.classList.toggle('active', isActive);
-    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-  });
-  
-  // Apply data-i18n to DOM elements
-  applyTranslations();
-  
-  // Update dynamic case studies
-  if (typeof allCaseStudies !== 'undefined' && allCaseStudies.length > 0) {
-    const isHomePage = !document.body.classList.contains('page-projects-archive') && !document.getElementById('projectSearchInput');
-    if (isHomePage) {
-      const featured = allCaseStudies.filter(s => s.featured);
-      renderCaseStudies(featured.length > 0 ? featured : allCaseStudies);
-    } else {
-      if (typeof applyCurrentFilter === 'function') {
-        applyCurrentFilter();
-      }
-    }
-  }
-  
-  // Update project detail page if present
-  if (currentProjectDetailStudy && typeof hydrateProjectDetailView === 'function') {
-    hydrateProjectDetailView(currentProjectDetailStudy);
-  }
-  
-  // Update activities corkboard if present
-  if (typeof allActivities !== 'undefined' && allActivities.length > 0 && typeof renderActivities === 'function') {
-    renderActivities(allActivities);
-  }
-}
-
-function applyTranslations() {
-  // Elements with data-i18n
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    const translated = t(key);
-    if (translated.includes('<') || translated.includes('&')) {
-      el.innerHTML = translated;
-    } else {
-      el.textContent = translated;
-    }
-  });
-
-  // Placeholder
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    el.placeholder = t(key);
-  });
-
-  // Aria label
-  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
-    const key = el.getAttribute('data-i18n-aria-label');
-    el.setAttribute('aria-label', t(key));
-  });
-
-  // Title attribute
-  document.querySelectorAll('[data-i18n-title]').forEach(el => {
-    const key = el.getAttribute('data-i18n-title');
-    el.setAttribute('title', t(key));
-  });
-
-  // Update projects count meta on projects archive page if present
-  const countMeta = document.getElementById('projectsCountMeta');
-  if (countMeta && typeof allCaseStudies !== 'undefined') {
-    countMeta.textContent = t('projects.showingCount', { count: allCaseStudies.length });
-  }
-
-  // Update accordion toggle text if present
-  const detailsEl = document.querySelector('.bento-ux-deepdive-details');
-  const toggleBtn = document.getElementById('uxAccordionToggleBtn') || document.querySelector('.summary-toggle-btn');
-  if (detailsEl && toggleBtn) {
-    toggleBtn.textContent = detailsEl.open ? t('detail.hideStory') : t('detail.readStory');
-  }
-}
-
-function initLanguageToggleEvents() {
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.lang-btn');
-    if (!btn) return;
-    const targetLang = btn.getAttribute('data-lang');
-    if (targetLang && (targetLang === 'en' || targetLang === 'th')) {
-      setLanguage(targetLang);
-    }
-  });
-}
-
 
 // Global Progress & Refresh Toast Helpers
 function setTopProgress(pct) {
@@ -1502,8 +1033,6 @@ function hideRefreshStatus(doneText) {
 
 document.addEventListener('DOMContentLoaded', () => {
   setTopProgress(65);
-  initLanguageToggleEvents();
-  setLanguage(getInitialLanguage());
   initNavigation();
   initCopyables();
   initContactForm();
@@ -1541,9 +1070,9 @@ async function syncCMSContent() {
         if (!content) return;
 
         if (sec === 'siteSettings') {
-          const siteTitle = (currentLang === 'th' ? content.siteTitle?.th : content.siteTitle?.en) || content.siteTitle?.en;
+          const siteTitle = getVal(content.siteTitle);
           if (siteTitle) document.title = siteTitle;
-          const metaDesc = (currentLang === 'th' ? content.metaDescription?.th : content.metaDescription?.en) || content.metaDescription?.en;
+          const metaDesc = getVal(content.metaDescription);
           if (metaDesc) {
             document.querySelector('meta[name="description"]')?.setAttribute('content', metaDesc);
           }
@@ -1552,112 +1081,91 @@ async function syncCMSContent() {
           }
         } else if (sec === 'hero') {
           if (content.cursiveScript) {
-            document.querySelectorAll('.hero-cursive-script').forEach(el => el.textContent = content.cursiveScript);
+            document.querySelectorAll('.hero-cursive-script').forEach(el => el.textContent = getVal(content.cursiveScript));
           }
           if (content.chunkyTitle) {
-            TRANSLATIONS.en.hero.chunkyTitle = content.chunkyTitle;
-            TRANSLATIONS.th.hero.chunkyTitle = content.chunkyTitle;
+            document.querySelectorAll('.hero-chunky-title').forEach(el => el.textContent = getVal(content.chunkyTitle));
           }
           if (content.yearLabel) {
-            if (content.yearLabel.en) TRANSLATIONS.en.hero.byToey = content.yearLabel.en;
-            if (content.yearLabel.th) TRANSLATIONS.th.hero.byToey = content.yearLabel.th;
+            document.querySelectorAll('.hero-year-label').forEach(el => el.textContent = getVal(content.yearLabel));
           }
           if (content.bioLead) {
-            if (content.bioLead.en) TRANSLATIONS.en.hero.bioLead = content.bioLead.en;
-            if (content.bioLead.th) TRANSLATIONS.th.hero.bioLead = content.bioLead.th;
+            document.querySelectorAll('.hero-bio-lead').forEach(el => el.innerHTML = getVal(content.bioLead));
           }
           if (Array.isArray(content.stats)) {
-            if (content.stats[0]?.en) TRANSLATIONS.en.hero.stat1 = content.stats[0].en;
-            if (content.stats[0]?.th) TRANSLATIONS.th.hero.stat1 = content.stats[0].th;
-            if (content.stats[1]?.en) TRANSLATIONS.en.hero.stat2 = content.stats[1].en;
-            if (content.stats[1]?.th) TRANSLATIONS.th.hero.stat2 = content.stats[1].th;
-            if (content.stats[2]?.en) TRANSLATIONS.en.hero.stat3 = content.stats[2].en;
-            if (content.stats[2]?.th) TRANSLATIONS.th.hero.stat3 = content.stats[2].th;
+            const statPills = document.querySelectorAll('.hero-stats-row .stat-pill');
+            content.stats.forEach((s, idx) => {
+              if (statPills[idx]) statPills[idx].textContent = getVal(s);
+            });
           }
           if (Array.isArray(content.miniLinks)) {
-            if (content.miniLinks[0]?.en) TRANSLATIONS.en.hero.miniUx = content.miniLinks[0].en;
-            if (content.miniLinks[0]?.th) TRANSLATIONS.th.hero.miniUx = content.miniLinks[0].th;
-            if (content.miniLinks[1]?.en) TRANSLATIONS.en.hero.miniPortfolio = content.miniLinks[1].en;
-            if (content.miniLinks[1]?.th) TRANSLATIONS.th.hero.miniPortfolio = content.miniLinks[1].th;
-            if (content.miniLinks[2]?.en) TRANSLATIONS.en.hero.miniHandoff = content.miniLinks[2].en;
-            if (content.miniLinks[2]?.th) TRANSLATIONS.th.hero.miniHandoff = content.miniLinks[2].th;
+            const miniEls = document.querySelectorAll('.desktop-mini-link');
+            content.miniLinks.forEach((m, idx) => {
+              if (miniEls[idx]) miniEls[idx].textContent = getVal(m);
+            });
           }
         } else if (sec === 'about') {
-          if (content.greeting?.en) TRANSLATIONS.en.about.greeting = content.greeting.en;
-          if (content.greeting?.th) TRANSLATIONS.th.about.greeting = content.greeting.th;
-          if (content.bioParagraph?.en) TRANSLATIONS.en.about.mainParagraph = content.bioParagraph.en;
-          if (content.bioParagraph?.th) TRANSLATIONS.th.about.mainParagraph = content.bioParagraph.th;
-          if (Array.isArray(content.specialties)) {
-            if (content.specialties[0]) {
-              TRANSLATIONS.en.about.spec1Title = content.specialties[0].title?.en || TRANSLATIONS.en.about.spec1Title;
-              TRANSLATIONS.th.about.spec1Title = content.specialties[0].title?.th || TRANSLATIONS.th.about.spec1Title;
-              TRANSLATIONS.en.about.spec1Desc = content.specialties[0].desc?.en ? (" — " + content.specialties[0].desc.en) : TRANSLATIONS.en.about.spec1Desc;
-              TRANSLATIONS.th.about.spec1Desc = content.specialties[0].desc?.th ? (" — " + content.specialties[0].desc.th) : TRANSLATIONS.th.about.spec1Desc;
-            }
-            if (content.specialties[1]) {
-              TRANSLATIONS.en.about.spec2Title = content.specialties[1].title?.en || TRANSLATIONS.en.about.spec2Title;
-              TRANSLATIONS.th.about.spec2Title = content.specialties[1].title?.th || TRANSLATIONS.th.about.spec2Title;
-              TRANSLATIONS.en.about.spec2Desc = content.specialties[1].desc?.en ? (" — " + content.specialties[1].desc.en) : TRANSLATIONS.en.about.spec2Desc;
-              TRANSLATIONS.th.about.spec2Desc = content.specialties[1].desc?.th ? (" — " + content.specialties[1].desc.th) : TRANSLATIONS.th.about.spec2Desc;
-            }
-            if (content.specialties[2]) {
-              TRANSLATIONS.en.about.spec3Title = content.specialties[2].title?.en || TRANSLATIONS.en.about.spec3Title;
-              TRANSLATIONS.th.about.spec3Title = content.specialties[2].title?.th || TRANSLATIONS.th.about.spec3Title;
-              TRANSLATIONS.en.about.spec3Desc = content.specialties[2].desc?.en ? (" — " + content.specialties[2].desc.en) : TRANSLATIONS.en.about.spec3Desc;
-              TRANSLATIONS.th.about.spec3Desc = content.specialties[2].desc?.th ? (" — " + content.specialties[2].desc.th) : TRANSLATIONS.th.about.spec3Desc;
-            }
+          if (content.greeting) {
+            document.querySelectorAll('.about-cursive-greeting').forEach(el => el.textContent = getVal(content.greeting));
           }
-          if (Array.isArray(content.experience)) {
-            if (content.experience[0]) {
-              TRANSLATIONS.en.about.expRole1 = content.experience[0].role?.en || TRANSLATIONS.en.about.expRole1;
-              TRANSLATIONS.th.about.expRole1 = content.experience[0].role?.th || TRANSLATIONS.th.about.expRole1;
-              TRANSLATIONS.en.about.expPeriod1 = content.experience[0].period?.en || TRANSLATIONS.en.about.expPeriod1;
-              TRANSLATIONS.th.about.expPeriod1 = content.experience[0].period?.th || TRANSLATIONS.th.about.expPeriod1;
-            }
-            if (content.experience[1]) {
-              TRANSLATIONS.en.about.expRole2 = content.experience[1].role?.en || TRANSLATIONS.en.about.expRole2;
-              TRANSLATIONS.th.about.expRole2 = content.experience[1].role?.th || TRANSLATIONS.th.about.expRole2;
-              TRANSLATIONS.en.about.expPeriod2 = content.experience[1].period?.en || TRANSLATIONS.en.about.expPeriod2;
-              TRANSLATIONS.th.about.expPeriod2 = content.experience[1].period?.th || TRANSLATIONS.th.about.expPeriod2;
-            }
-            if (content.experience[2]) {
-              TRANSLATIONS.en.about.expEdu = content.experience[2].role?.en || TRANSLATIONS.en.about.expEdu;
-              TRANSLATIONS.th.about.expEdu = content.experience[2].role?.th || TRANSLATIONS.th.about.expEdu;
-              TRANSLATIONS.en.about.expEduPeriod = content.experience[2].period?.en || TRANSLATIONS.en.about.expEduPeriod;
-              TRANSLATIONS.th.about.expEduPeriod = content.experience[2].period?.th || TRANSLATIONS.th.about.expEduPeriod;
-            }
-          }
-          if (Array.isArray(content.skills)) {
-            content.skills.forEach((sk, i) => {
-              const k = `skill${i + 1}`;
-              if (TRANSLATIONS.en.about[k] !== undefined) {
-                TRANSLATIONS.en.about[k] = sk.en || TRANSLATIONS.en.about[k];
-                TRANSLATIONS.th.about[k] = sk.th || TRANSLATIONS.th.about[k];
-              }
-            });
+          if (content.bioParagraph) {
+            document.querySelectorAll('.about-main-p').forEach(el => el.innerHTML = getVal(content.bioParagraph));
           }
           if (content.avatar) {
             document.querySelectorAll('img[src*="avatar_square.png"], .about-portrait-img').forEach(img => {
               img.src = content.avatar;
             });
           }
+          if (Array.isArray(content.specialties)) {
+            const specList = document.querySelector('.spec-list');
+            if (specList) {
+              specList.innerHTML = content.specialties.map(s => `
+                <li>
+                  <span class="spec-sparkle">✦</span>
+                  <strong>${getVal(s.title)}</strong> — ${getVal(s.desc)}
+                </li>
+              `).join('');
+            }
+          }
+          if (Array.isArray(content.experience)) {
+            const expCol = document.querySelector('.about-bottom-tri-row .about-col:nth-child(1)');
+            if (expCol) {
+              const heading = expCol.querySelector('.about-col-heading')?.outerHTML || '<h4 class="about-col-heading">Experience</h4>';
+              expCol.innerHTML = heading + content.experience.map(e => `
+                <div class="col-item">
+                  <span class="col-period">${getVal(e.period)}</span>
+                  <span class="col-role">${getVal(e.role)}</span>
+                </div>
+              `).join('');
+            }
+          }
+          if (Array.isArray(content.skills)) {
+            const skillCol = document.querySelector('.about-bottom-tri-row .about-col:nth-child(2)');
+            if (skillCol) {
+              const heading = skillCol.querySelector('.about-col-heading')?.outerHTML || '<h4 class="about-col-heading">Skills</h4>';
+              skillCol.innerHTML = heading + content.skills.map(sk => `
+                <div class="col-item-text">${getVal(sk)}</div>
+              `).join('');
+            }
+          }
         } else if (sec === 'resume') {
-          if (content.title?.en) TRANSLATIONS.en.resume.title = content.title.en;
-          if (content.title?.th) TRANSLATIONS.th.resume.title = content.title.th;
-          if (content.description?.en) TRANSLATIONS.en.resume.desc = content.description.en;
-          if (content.description?.th) TRANSLATIONS.th.resume.desc = content.description.th;
+          if (content.title) {
+            const el = document.querySelector('#resume .section-title');
+            if (el) el.textContent = getVal(content.title);
+          }
+          if (content.description) {
+            const el = document.querySelector('#resume .resume-text');
+            if (el) el.textContent = getVal(content.description);
+          }
           if (Array.isArray(content.checklists)) {
-            if (content.checklists[0]) {
-              TRANSLATIONS.en.resume.check1 = content.checklists[0].en || TRANSLATIONS.en.resume.check1;
-              TRANSLATIONS.th.resume.check1 = content.checklists[0].th || TRANSLATIONS.th.resume.check1;
-            }
-            if (content.checklists[1]) {
-              TRANSLATIONS.en.resume.check2 = content.checklists[1].en || TRANSLATIONS.en.resume.check2;
-              TRANSLATIONS.th.resume.check2 = content.checklists[1].th || TRANSLATIONS.th.resume.check2;
-            }
-            if (content.checklists[2]) {
-              TRANSLATIONS.en.resume.check3 = content.checklists[2].en || TRANSLATIONS.en.resume.check3;
-              TRANSLATIONS.th.resume.check3 = content.checklists[2].th || TRANSLATIONS.th.resume.check3;
+            const checkContainer = document.querySelector('#resume .resume-checklist');
+            if (checkContainer) {
+              checkContainer.innerHTML = content.checklists.map(c => `
+                <div class="check-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>${getVal(c)}</span>
+                </div>
+              `).join('');
             }
           }
           if (content.resumePdfUrl) {
@@ -1667,28 +1175,33 @@ async function syncCMSContent() {
             document.querySelectorAll('a[href*="PortfolioRujisaya.pdf"]').forEach(a => a.href = content.portfolioPdfUrl);
           }
         } else if (sec === 'contact') {
-          if (content.title?.en) TRANSLATIONS.en.contact.title = content.title.en;
-          if (content.title?.th) TRANSLATIONS.th.contact.title = content.title.th;
-          if (content.subtitle?.en) TRANSLATIONS.en.contact.subtitle = content.subtitle.en;
-          if (content.subtitle?.th) TRANSLATIONS.th.contact.subtitle = content.subtitle.th;
-          if (content.location?.en) TRANSLATIONS.en.contact.locationVal = content.location.en;
-          if (content.location?.th) TRANSLATIONS.th.contact.locationVal = content.location.th;
+          if (content.title) {
+            const el = document.querySelector('.contact-headline');
+            if (el) el.textContent = getVal(content.title);
+          }
+          if (content.subtitle) {
+            const el = document.querySelector('.contact-subheadline');
+            if (el) el.textContent = getVal(content.subtitle);
+          }
+          if (content.location) {
+            document.querySelectorAll('.contact-location-text').forEach(el => el.textContent = getVal(content.location));
+          }
           if (content.email) {
             document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
               a.href = `mailto:${content.email}`;
               a.textContent = content.email;
             });
             document.querySelectorAll('.contact-email-text').forEach(el => el.textContent = content.email);
+            document.querySelectorAll('[data-copy*="@"]').forEach(el => el.setAttribute('data-copy', content.email));
           }
           if (content.phone) {
             document.querySelectorAll('a[href^="tel:"]').forEach(a => {
               a.href = `tel:${content.phone.replace(/[^0-9+]/g, '')}`;
               a.textContent = content.phone;
             });
+            document.querySelectorAll('.contact-phone-text').forEach(el => el.textContent = content.phone);
           }
           if (content.lineId) {
-            TRANSLATIONS.en.about.contactLine = `LINE: ${content.lineId}`;
-            TRANSLATIONS.th.about.contactLine = `LINE: ${content.lineId}`;
             document.querySelectorAll('.contact-line-text').forEach(el => el.textContent = content.lineId);
           }
         }
@@ -1696,8 +1209,6 @@ async function syncCMSContent() {
         console.warn(`Could not sync ${sec}:`, secErr);
       }
     }));
-
-    applyTranslations();
   } catch (e) {
     console.warn("CMS content sync failed:", e);
   }

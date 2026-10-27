@@ -156,17 +156,10 @@
           <div class="cms-card">
             <div class="cms-card-header">
               <h3>General Configuration & Global Metadata</h3>
-              <p>Manage site-wide settings, default language for new visitors, and SEO meta tags.</p>
+              <p>Manage site-wide settings and SEO meta tags.</p>
             </div>
             <div class="cms-card-body">
               <div class="cms-grid-2">
-                <div class="cms-form-group">
-                  <label>Default Visitor Language</label>
-                  <select id="settings-defaultLang" class="cms-input">
-                    <option value="en">English (Default)</option>
-                    <option value="th">Thai (ไทย)</option>
-                  </select>
-                </div>
                 <div class="cms-form-group">
                   <label>Primary Theme Color</label>
                   <div class="cms-color-row">
@@ -174,50 +167,25 @@
                     <input type="text" id="settings-primaryColorText" value="#231815" class="cms-input">
                   </div>
                 </div>
-              </div>
-
-              <!-- BILINGUAL TITLE & DESC -->
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang">EN</span>
-                  <h4>Website Meta Title (English)</h4>
-                </div>
-                <input type="text" id="settings-title-en" class="cms-input" placeholder="Rujisaya Kuekool — UX/UI Designer">
-              </div>
-
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang cms-pill-th">TH</span>
-                  <h4>Website Meta Title (Thai)</h4>
-                </div>
-                <input type="text" id="settings-title-th" class="cms-input" placeholder="รุจิสยา เกื้อกูล — UX/UI Designer">
-              </div>
-
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang">EN</span>
-                  <h4>SEO Meta Description (English)</h4>
-                </div>
-                <textarea id="settings-desc-en" class="cms-textarea" rows="3"></textarea>
-              </div>
-
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang cms-pill-th">TH</span>
-                  <h4>SEO Meta Description (Thai)</h4>
-                </div>
-                <textarea id="settings-desc-th" class="cms-textarea" rows="3"></textarea>
-              </div>
-
-              <div class="cms-grid-2">
                 <div class="cms-form-group">
                   <label>Favicon URL</label>
                   <input type="text" id="settings-favicon" class="cms-input" value="/assets/avatar_square.png">
                 </div>
-                <div class="cms-form-group">
-                  <label>Social Sharing Image (OG Image)</label>
-                  <input type="text" id="settings-ogImage" class="cms-input" value="/assets/portfolio/leaya_screenshot_full.png">
-                </div>
+              </div>
+
+              <div class="cms-form-group">
+                <label>Website Meta Title</label>
+                <input type="text" id="settings-title" class="cms-input" placeholder="Rujisaya Kuekool — UX/UI Designer">
+              </div>
+
+              <div class="cms-form-group">
+                <label>SEO Meta Description</label>
+                <textarea id="settings-desc" class="cms-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="cms-form-group">
+                <label>Social Sharing Image (OG Image)</label>
+                <input type="text" id="settings-ogImage" class="cms-input" value="/assets/portfolio/leaya_screenshot_full.png">
               </div>
             </div>
           </div>
@@ -242,31 +210,14 @@
                 </div>
               </div>
 
-              <div class="cms-grid-2">
-                <div class="cms-form-group">
-                  <label>Year / Subtitle (EN)</label>
-                  <input type="text" id="hero-year-en" class="cms-input" value="by Toeyruji">
-                </div>
-                <div class="cms-form-group">
-                  <label>Year / Subtitle (TH)</label>
-                  <input type="text" id="hero-year-th" class="cms-input" value="โดย เตยรุจิ">
-                </div>
+              <div class="cms-form-group">
+                <label>Year / Subtitle Label</label>
+                <input type="text" id="hero-year" class="cms-input" value="by Toeyruji">
               </div>
 
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang">EN</span>
-                  <h4>Bio Lead Paragraph (English - HTML supported)</h4>
-                </div>
-                <textarea id="hero-bio-en" class="cms-textarea" rows="3"></textarea>
-              </div>
-
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang cms-pill-th">TH</span>
-                  <h4>Bio Lead Paragraph (Thai - HTML supported)</h4>
-                </div>
-                <textarea id="hero-bio-th" class="cms-textarea" rows="3"></textarea>
+              <div class="cms-form-group">
+                <label>Bio Lead Paragraph (HTML supported)</label>
+                <textarea id="hero-bio" class="cms-textarea" rows="3"></textarea>
               </div>
 
               <div class="cms-divider"></div>
@@ -297,26 +248,14 @@
                   </div>
                 </div>
                 <div class="cms-form-group">
-                  <label>Greeting Title (EN / TH)</label>
-                  <input type="text" id="about-greeting-en" class="cms-input mb-2" placeholder="Hi, I'm Toey!">
-                  <input type="text" id="about-greeting-th" class="cms-input" placeholder="สวัสดีค่ะ เตยเองนะคะ!">
+                  <label>Greeting Title</label>
+                  <input type="text" id="about-greeting" class="cms-input" placeholder="Hi, I'm Toey!">
                 </div>
               </div>
 
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang">EN</span>
-                  <h4>About Paragraph (English)</h4>
-                </div>
-                <textarea id="about-bio-en" class="cms-textarea" rows="3"></textarea>
-              </div>
-
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang cms-pill-th">TH</span>
-                  <h4>About Paragraph (Thai)</h4>
-                </div>
-                <textarea id="about-bio-th" class="cms-textarea" rows="3"></textarea>
+              <div class="cms-form-group">
+                <label>About Paragraph</label>
+                <textarea id="about-bio" class="cms-textarea" rows="3"></textarea>
               </div>
 
               <div class="cms-divider"></div>
@@ -329,7 +268,7 @@
               <button id="aboutBtnAddExp" class="cms-btn cms-btn-outline mt-2">+ Add Experience Item</button>
 
               <div class="cms-divider"></div>
-              <h4>Key Skills (Bilingual Tags)</h4>
+              <h4>Key Skills</h4>
               <div id="aboutSkillsContainer"></div>
             </div>
           </div>
@@ -431,20 +370,9 @@
                 <input type="text" id="proj-tags" class="cms-input" placeholder="React 18, TypeScript, Tailwind CSS, RBAC">
               </div>
 
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang">EN</span>
-                  <h4>Project Executive Summary (English)</h4>
-                </div>
-                <textarea id="proj-summary-en" class="cms-textarea" rows="3"></textarea>
-              </div>
-
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang cms-pill-th">TH</span>
-                  <h4>Project Executive Summary (Thai)</h4>
-                </div>
-                <textarea id="proj-summary-th" class="cms-textarea" rows="3"></textarea>
+              <div class="cms-form-group">
+                <label>Project Executive Summary</label>
+                <textarea id="proj-summary" class="cms-textarea" rows="3"></textarea>
               </div>
 
               <!-- SECTION B: 4-CARD BENTO SHOWCASE SPECIFICATION -->
@@ -504,76 +432,31 @@
               <!-- 01 Problem -->
               <div class="cms-narrative-group">
                 <h5>01 // Operational Problem & Business Challenges</h5>
-                <div class="cms-grid-2">
-                  <div>
-                    <label class="cms-lang-sub">English</label>
-                    <textarea id="proj-narrative-problem-en" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                  <div>
-                    <label class="cms-lang-sub">Thai (ไทย)</label>
-                    <textarea id="proj-narrative-problem-th" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                </div>
+                <textarea id="proj-narrative-problem" class="cms-textarea" rows="4"></textarea>
               </div>
 
               <!-- 02 Responsibilities -->
               <div class="cms-narrative-group">
                 <h5>02 // Personal Scope & Responsibilities</h5>
-                <div class="cms-grid-2">
-                  <div>
-                    <label class="cms-lang-sub">English</label>
-                    <textarea id="proj-narrative-resp-en" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                  <div>
-                    <label class="cms-lang-sub">Thai (ไทย)</label>
-                    <textarea id="proj-narrative-resp-th" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                </div>
+                <textarea id="proj-narrative-resp" class="cms-textarea" rows="4"></textarea>
               </div>
 
               <!-- 03 Approach -->
               <div class="cms-narrative-group">
                 <h5>03 // UX Approach & Architecture</h5>
-                <div class="cms-grid-2">
-                  <div>
-                    <label class="cms-lang-sub">English</label>
-                    <textarea id="proj-narrative-approach-en" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                  <div>
-                    <label class="cms-lang-sub">Thai (ไทย)</label>
-                    <textarea id="proj-narrative-approach-th" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                </div>
+                <textarea id="proj-narrative-approach" class="cms-textarea" rows="4"></textarea>
               </div>
 
               <!-- 04 Decisions -->
               <div class="cms-narrative-group">
                 <h5>04 // Key UX Decisions & Trade-offs</h5>
-                <div class="cms-grid-2">
-                  <div>
-                    <label class="cms-lang-sub">English</label>
-                    <textarea id="proj-narrative-decisions-en" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                  <div>
-                    <label class="cms-lang-sub">Thai (ไทย)</label>
-                    <textarea id="proj-narrative-decisions-th" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                </div>
+                <textarea id="proj-narrative-decisions" class="cms-textarea" rows="4"></textarea>
               </div>
 
               <!-- 05 Dev Collaboration & Outcomes -->
               <div class="cms-narrative-group">
                 <h5>05 // Developer Collaboration & Measurable Outcomes</h5>
-                <div class="cms-grid-2">
-                  <div>
-                    <label class="cms-lang-sub">English</label>
-                    <textarea id="proj-narrative-collab-en" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                  <div>
-                    <label class="cms-lang-sub">Thai (ไทย)</label>
-                    <textarea id="proj-narrative-collab-th" class="cms-textarea" rows="4"></textarea>
-                  </div>
-                </div>
+                <textarea id="proj-narrative-collab" class="cms-textarea" rows="4"></textarea>
               </div>
 
             </div>
@@ -599,31 +482,14 @@
                 </div>
               </div>
 
-              <div class="cms-grid-2">
-                <div class="cms-form-group">
-                  <label>Section Title (EN)</label>
-                  <input type="text" id="resume-title-en" class="cms-input" value="Resume & Portfolio Deck">
-                </div>
-                <div class="cms-form-group">
-                  <label>Section Title (TH)</label>
-                  <input type="text" id="resume-title-th" class="cms-input" value="เอกสารเรซูเม่ & พอร์ตโฟลิโอฉบับเต็ม">
-                </div>
+              <div class="cms-form-group">
+                <label>Section Title</label>
+                <input type="text" id="resume-title" class="cms-input" value="Resume & Portfolio Deck">
               </div>
 
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang">EN</span>
-                  <h4>Description (English)</h4>
-                </div>
-                <textarea id="resume-desc-en" class="cms-textarea" rows="2"></textarea>
-              </div>
-
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang cms-pill-th">TH</span>
-                  <h4>Description (Thai)</h4>
-                </div>
-                <textarea id="resume-desc-th" class="cms-textarea" rows="2"></textarea>
+              <div class="cms-form-group">
+                <label>Description</label>
+                <textarea id="resume-desc" class="cms-textarea" rows="2"></textarea>
               </div>
 
               <div class="cms-divider"></div>
@@ -674,31 +540,14 @@
                 </div>
               </div>
 
-              <div class="cms-grid-2">
-                <div class="cms-form-group">
-                  <label>Location (EN)</label>
-                  <input type="text" id="contact-loc-en" class="cms-input" value="Bangkok, Thailand (On-site / Remote / Hybrid)">
-                </div>
-                <div class="cms-form-group">
-                  <label>Location (TH)</label>
-                  <input type="text" id="contact-loc-th" class="cms-input" value="กรุงเทพมหานคร, ประเทศไทย (On-site / Remote / Hybrid)">
-                </div>
+              <div class="cms-form-group">
+                <label>Location</label>
+                <input type="text" id="contact-loc" class="cms-input" value="Bangkok, Thailand (On-site / Remote / Hybrid)">
               </div>
 
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang">EN</span>
-                  <h4>Invitation Subtitle (English)</h4>
-                </div>
-                <textarea id="contact-sub-en" class="cms-textarea" rows="2"></textarea>
-              </div>
-
-              <div class="cms-bilingual-box">
-                <div class="cms-bilingual-header">
-                  <span class="cms-pill-lang cms-pill-th">TH</span>
-                  <h4>Invitation Subtitle (Thai)</h4>
-                </div>
-                <textarea id="contact-sub-th" class="cms-textarea" rows="2"></textarea>
+              <div class="cms-form-group">
+                <label>Invitation Subtitle</label>
+                <textarea id="contact-sub" class="cms-textarea" rows="2"></textarea>
               </div>
             </div>
           </div>
