@@ -10,7 +10,7 @@ try {
   console.warn("MongoDB module load skipped (running in resilient static fallback mode):", e.message);
 }
 const path = require('path');
-const createCMSRouter = require('./cms.js');
+const createCMSRouter = require('../lib/cms.js');
 
 const app = express();
 app.use(cors());
