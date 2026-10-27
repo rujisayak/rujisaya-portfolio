@@ -10,6 +10,11 @@ app.get('/projects', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'projects.html'));
 });
 
+// Admin dashboard route
+app.get(['/admin', '/admin/'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
 // Specific route for /projects/:slug detail page
 app.get('/projects/:slug', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'project-detail.html'));

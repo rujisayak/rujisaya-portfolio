@@ -1512,11 +1512,110 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursorRoaming();
   initProjectDetailPage();
   
-  Promise.allSettled([loadPortfolioData(), loadActivitiesData()]).then(() => {
+  Promise.allSettled([loadPortfolioData(), loadActivitiesData(), syncCMSContent()]).then(() => {
     setTopProgress(100);
     hideRefreshStatus('✓ Ready');
   });
 });
+
+async function syncCMSContent() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const isPreview = urlParams.get('preview') === 'true' || urlParams.get('draft') === 'true';
+  const previewQuery = isPreview ? '?preview=true' : '';
+
+  if (isPreview) {
+    renderPreviewBanner();
+  }
+
+  try {
+    const sections = ['siteSettings', 'hero', 'about', 'resume', 'contact'];
+    await Promise.all(sections.map(async (sec) => {
+      try {
+        const res = await fetch(`/api/content/${sec}${previewQuery}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        const content = data.content;
+        if (!content) return;
+
+        if (sec === 'hero') {
+          if (content.cursiveScript) {
+            TRANSLATIONS.en.hero.cursiveScript = content.cursiveScript;
+            TRANSLATIONS.th.hero.cursiveScript = content.cursiveScript;
+          }
+          if (content.chunkyTitle) {
+            TRANSLATIONS.en.hero.chunkyTitle = content.chunkyTitle;
+            TRANSLATIONS.th.hero.chunkyTitle = content.chunkyTitle;
+          }
+          if (content.yearLabel) {
+            if (content.yearLabel.en) TRANSLATIONS.en.hero.byToey = content.yearLabel.en;
+            if (content.yearLabel.th) TRANSLATIONS.th.hero.byToey = content.yearLabel.th;
+          }
+          if (content.bioLead) {
+            if (content.bioLead.en) TRANSLATIONS.en.hero.bioLead = content.bioLead.en;
+            if (content.bioLead.th) TRANSLATIONS.th.hero.bioLead = content.bioLead.th;
+          }
+          if (Array.isArray(content.stats)) {
+            if (content.stats[0]?.en) TRANSLATIONS.en.hero.stat1 = content.stats[0].en;
+            if (content.stats[0]?.th) TRANSLATIONS.th.hero.stat1 = content.stats[0].th;
+            if (content.stats[1]?.en) TRANSLATIONS.en.hero.stat2 = content.stats[1].en;
+            if (content.stats[1]?.th) TRANSLATIONS.th.hero.stat2 = content.stats[1].th;
+            if (content.stats[2]?.en) TRANSLATIONS.en.hero.stat3 = content.stats[2].en;
+            if (content.stats[2]?.th) TRANSLATIONS.th.hero.stat3 = content.stats[2].th;
+          }
+        } else if (sec === 'about') {
+          if (content.greeting?.en) TRANSLATIONS.en.about.title = content.greeting.en;
+          if (content.greeting?.th) TRANSLATIONS.th.about.title = content.greeting.th;
+          if (content.bioParagraph?.en) TRANSLATIONS.en.about.bio1 = content.bioParagraph.en;
+          if (content.bioParagraph?.th) TRANSLATIONS.th.about.bio1 = content.bioParagraph.th;
+          if (content.avatar) {
+            document.querySelectorAll('img[src*="avatar_square.png"]').forEach(img => {
+              img.src = content.avatar;
+            });
+          }
+        } else if (sec === 'resume') {
+          if (content.title?.en) TRANSLATIONS.en.resume.title = content.title.en;
+          if (content.title?.th) TRANSLATIONS.th.resume.title = content.title.th;
+          if (content.description?.en) TRANSLATIONS.en.resume.desc = content.description.en;
+          if (content.description?.th) TRANSLATIONS.th.resume.desc = content.description.th;
+          if (content.resumePdfUrl) {
+            document.querySelectorAll('a[href*="Resume.pdf"]').forEach(a => a.href = content.resumePdfUrl);
+          }
+          if (content.portfolioPdfUrl) {
+            document.querySelectorAll('a[href*="PortfolioRujisaya.pdf"]').forEach(a => a.href = content.portfolioPdfUrl);
+          }
+        } else if (sec === 'contact') {
+          if (content.subtitle?.en) TRANSLATIONS.en.contact.subtitle = content.subtitle.en;
+          if (content.subtitle?.th) TRANSLATIONS.th.contact.subtitle = content.subtitle.th;
+          if (content.email) {
+            document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+              a.href = `mailto:${content.email}`;
+              a.textContent = content.email;
+            });
+          }
+        }
+      } catch (secErr) {
+        console.warn(`Could not sync ${sec}:`, secErr);
+      }
+    }));
+
+    applyTranslations();
+  } catch (e) {
+    console.warn("CMS content sync failed:", e);
+  }
+}
+
+function renderPreviewBanner() {
+  if (document.getElementById('cmsPreviewBanner')) return;
+  const banner = document.createElement('div');
+  banner.id = 'cmsPreviewBanner';
+  banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#D97706;color:#FFFFFF;font-family:Plus Jakarta Sans,sans-serif;font-size:0.85rem;font-weight:600;padding:8px 16px;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 2px 10px rgba(0,0,0,0.15);';
+  banner.innerHTML = `
+    <span>👁️ <strong>Draft Preview Mode</strong> — You are viewing unreleased draft content.</span>
+    <a href="/admin" style="color:#FFF;background:rgba(0,0,0,0.25);padding:3px 10px;border-radius:4px;text-decoration:none;font-size:0.78rem;">Return to CMS ↗</a>
+  `;
+  document.body.appendChild(banner);
+  document.body.style.paddingTop = '38px';
+}
 
 // Mobile Nav & Scroll Spy
 function initNavigation() {
@@ -1681,7 +1780,10 @@ async function loadPortfolioData() {
   initProjectsSearch();
 
   try {
-    const res = await fetch('/api/case-studies');
+    const urlParams = new URLSearchParams(window.location.search);
+    const isPreview = urlParams.get('preview') === 'true' || urlParams.get('draft') === 'true';
+    const previewQuery = isPreview ? '?preview=true' : '';
+    const res = await fetch(`/api/case-studies${previewQuery}`);
     if (res.ok) {
       const liveData = await res.json();
       if (Array.isArray(liveData) && liveData.length > 0) {
@@ -2075,6 +2177,20 @@ function initProjectDetailPage() {
   if (study) {
     currentProjectDetailStudy = study;
     hydrateProjectDetailView(study);
+  }
+
+  const isPreview = urlParams.get('preview') === 'true' || urlParams.get('draft') === 'true';
+  if (isPreview) {
+    renderPreviewBanner();
+    fetch(`/api/case-studies/${slug}?preview=true`)
+      .then(res => res.ok ? res.json() : null)
+      .then(draftStudy => {
+        if (draftStudy) {
+          currentProjectDetailStudy = draftStudy;
+          hydrateProjectDetailView(draftStudy);
+        }
+      })
+      .catch(e => console.warn("Could not fetch draft project detail:", e));
   }
 }
 
@@ -2661,7 +2777,10 @@ async function loadActivitiesData() {
   initActivityFilters();
 
   try {
-    const res = await fetch('/api/activities');
+    const urlParams = new URLSearchParams(window.location.search);
+    const isPreview = urlParams.get('preview') === 'true' || urlParams.get('draft') === 'true';
+    const previewQuery = isPreview ? '?preview=true' : '';
+    const res = await fetch(`/api/activities${previewQuery}`);
     if (res.ok) {
       const liveData = await res.json();
       if (Array.isArray(liveData) && liveData.length > 0) {

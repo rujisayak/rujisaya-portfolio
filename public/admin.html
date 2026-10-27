@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio CMS — Admin Dashboard</title>
+  <link rel="icon" href="/assets/avatar_square.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body class="cms-body">
+  <!-- Toast Container -->
+  <div id="cmsToastContainer" class="cms-toast-container" aria-live="polite"></div>
+
+  <!-- AUTH SCREEN (When not logged in) -->
+  <div id="loginScreen" class="cms-login-screen">
+    <div class="cms-login-card">
+      <div class="cms-login-brand">
+        <div class="cms-avatar-badge">
+          <img src="/assets/avatar_square.png" alt="Rujisaya Avatar" class="cms-login-avatar">
+          <span class="cms-avatar-glow"></span>
+        </div>
+        <h1 class="cms-login-title">Portfolio CMS</h1>
+        <p class="cms-login-subtitle">Rujisaya Kuekool — Single-Admin Control System</p>
+      </div>
+
+      <form id="loginForm" class="cms-login-form">
+        <div id="loginError" class="cms-alert-danger" style="display: none;"></div>
+        
+        <div class="cms-form-group">
+          <label for="loginUsername">Admin Username</label>
+          <div class="cms-input-icon-wrap">
+            <input type="text" id="loginUsername" name="username" placeholder="Username" autocomplete="username" required autofocus>
+          </div>
+        </div>
+
+        <div class="cms-form-group">
+          <label for="loginPassword">Master Password</label>
+          <div class="cms-input-icon-wrap">
+            <input type="password" id="loginPassword" name="password" placeholder="••••••••••••" autocomplete="current-password" required>
+          </div>
+        </div>
+
+        <button type="submit" id="loginSubmitBtn" class="cms-btn cms-btn-primary cms-btn-full">
+          <span class="btn-text">Authenticate & Enter CMS</span>
+          <span class="btn-spinner" style="display: none;">Authenticating...</span>
+        </button>
+
+        <div class="cms-login-footer">
+          <span>🔒 Protected by secure JWT & HTTP-Only cookies</span>
+          <a href="/" target="_blank" class="cms-login-site-link">View Public Portfolio ↗</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAIN CMS APP (When authenticated) -->
+  <div id="adminApp" class="cms-app" style="display: none;">
+    <!-- SIDEBAR -->
+    <aside class="cms-sidebar">
+      <div class="cms-sidebar-header">
+        <div class="cms-sidebar-brand">
+          <img src="/assets/avatar_square.png" alt="Avatar" class="cms-sidebar-avatar">
+          <div>
+            <div class="cms-brand-name">Toeyruji CMS</div>
+            <div class="cms-brand-badge">UX/UI Admin</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="cms-nav">
+        <div class="cms-nav-group-title">Site Architecture</div>
+        <button class="cms-nav-item active" data-tab="siteSettings">
+          <span class="nav-icon">⚙️</span>
+          <span>Site Settings & SEO</span>
+        </button>
+        <button class="cms-nav-item" data-tab="hero">
+          <span class="nav-icon">🏠</span>
+          <span>Hero & Homepage</span>
+        </button>
+        <button class="cms-nav-item" data-tab="about">
+          <span class="nav-icon">👤</span>
+          <span>About & Credentials</span>
+        </button>
+        <button class="cms-nav-item" data-tab="projects">
+          <span class="nav-icon">📁</span>
+          <span>Projects & Showcase</span>
+        </button>
+        <button class="cms-nav-item" data-tab="resume">
+          <span class="nav-icon">📜</span>
+          <span>Resume Deck</span>
+        </button>
+        <button class="cms-nav-item" data-tab="activities">
+          <span class="nav-icon">📌</span>
+          <span>Activities (Corkboard)</span>
+        </button>
+        <button class="cms-nav-item" data-tab="contact">
+          <span class="nav-icon">📬</span>
+          <span>Contact Information</span>
+        </button>
+
+        <div class="cms-nav-group-title">System & Media</div>
+        <button class="cms-nav-item" data-tab="media">
+          <span class="nav-icon">🖼️</span>
+          <span>Media Library</span>
+        </button>
+        <button class="cms-nav-item" data-tab="revisions">
+          <span class="nav-icon">🕒</span>
+          <span>Revision History</span>
+        </button>
+        <button class="cms-nav-item" data-tab="sync">
+          <span class="nav-icon">💾</span>
+          <span>Export & Sync Fallback</span>
+        </button>
+      </nav>
+
+      <div class="cms-sidebar-footer">
+        <div class="cms-user-info">
+          <div class="cms-user-indicator"></div>
+          <span id="cmsAdminUserLabel">toeyruji</span>
+        </div>
+        <button id="cmsLogoutBtn" class="cms-btn-logout" title="Sign Out">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- MAIN STAGE -->
+    <main class="cms-main">
+      <!-- TOP ACTION BAR -->
+      <header class="cms-topbar">
+        <div class="cms-topbar-title-wrap">
+          <h2 id="cmsCurrentTabTitle" class="cms-section-title">Site Settings & SEO</h2>
+          <div class="cms-workflow-status">
+            <span id="cmsDraftBadge" class="cms-status-badge cms-status-clean">✓ In Sync with Published</span>
+          </div>
+        </div>
+
+        <div class="cms-topbar-actions">
+          <button id="cmsBtnSaveDraft" class="cms-btn cms-btn-secondary">
+            💾 Save Draft
+          </button>
+          <a id="cmsBtnPreview" href="/?preview=true" target="_blank" class="cms-btn cms-btn-outline">
+            👁️ Preview Live Site ↗
+          </a>
+          <button id="cmsBtnPublish" class="cms-btn cms-btn-publish">
+            🚀 Publish Now ✓
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB CONTENT PANELS -->
+      <div class="cms-content-scroll">
+        <!-- 1. SITE SETTINGS & SEO -->
+        <section id="panel-siteSettings" class="cms-panel active">
+          <div class="cms-card">
+            <div class="cms-card-header">
+              <h3>General Configuration & Global Metadata</h3>
+              <p>Manage site-wide settings, default language for new visitors, and SEO meta tags.</p>
+            </div>
+            <div class="cms-card-body">
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Default Visitor Language</label>
+                  <select id="settings-defaultLang" class="cms-input">
+                    <option value="en">English (Default)</option>
+                    <option value="th">Thai (ไทย)</option>
+                  </select>
+                </div>
+                <div class="cms-form-group">
+                  <label>Primary Theme Color</label>
+                  <div class="cms-color-row">
+                    <input type="color" id="settings-primaryColor" value="#231815" class="cms-color-picker">
+                    <input type="text" id="settings-primaryColorText" value="#231815" class="cms-input">
+                  </div>
+                </div>
+              </div>
+
+              <!-- BILINGUAL TITLE & DESC -->
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang">EN</span>
+                  <h4>Website Meta Title (English)</h4>
+                </div>
+                <input type="text" id="settings-title-en" class="cms-input" placeholder="Rujisaya Kuekool — UX/UI Designer">
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang cms-pill-th">TH</span>
+                  <h4>Website Meta Title (Thai)</h4>
+                </div>
+                <input type="text" id="settings-title-th" class="cms-input" placeholder="รุจิสยา เกื้อกูล — UX/UI Designer">
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang">EN</span>
+                  <h4>SEO Meta Description (English)</h4>
+                </div>
+                <textarea id="settings-desc-en" class="cms-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang cms-pill-th">TH</span>
+                  <h4>SEO Meta Description (Thai)</h4>
+                </div>
+                <textarea id="settings-desc-th" class="cms-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Favicon URL</label>
+                  <input type="text" id="settings-favicon" class="cms-input" value="/assets/avatar_square.png">
+                </div>
+                <div class="cms-form-group">
+                  <label>Social Sharing Image (OG Image)</label>
+                  <input type="text" id="settings-ogImage" class="cms-input" value="/assets/portfolio/leaya_screenshot_full.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. HERO & HOMEPAGE -->
+        <section id="panel-hero" class="cms-panel">
+          <div class="cms-card">
+            <div class="cms-card-header">
+              <h3>Homepage Hero Typography & Bio</h3>
+              <p>Configure the introductory headline, badges, and primary action buttons.</p>
+            </div>
+            <div class="cms-card-body">
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Cursive Script</label>
+                  <input type="text" id="hero-cursiveScript" class="cms-input" value="UX UI">
+                </div>
+                <div class="cms-form-group">
+                  <label>Chunky Title</label>
+                  <input type="text" id="hero-chunkyTitle" class="cms-input" value="portfolio">
+                </div>
+              </div>
+
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Year / Subtitle (EN)</label>
+                  <input type="text" id="hero-year-en" class="cms-input" value="by Toeyruji">
+                </div>
+                <div class="cms-form-group">
+                  <label>Year / Subtitle (TH)</label>
+                  <input type="text" id="hero-year-th" class="cms-input" value="โดย เตยรุจิ">
+                </div>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang">EN</span>
+                  <h4>Bio Lead Paragraph (English - HTML supported)</h4>
+                </div>
+                <textarea id="hero-bio-en" class="cms-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang cms-pill-th">TH</span>
+                  <h4>Bio Lead Paragraph (Thai - HTML supported)</h4>
+                </div>
+                <textarea id="hero-bio-th" class="cms-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="cms-divider"></div>
+              <h4>Hero Stats Pills (3 Highlights)</h4>
+              <div id="heroStatsContainer"></div>
+
+              <div class="cms-divider"></div>
+              <h4>Mini Links (Pill Badges Above Hero)</h4>
+              <div id="heroMiniLinksContainer"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. ABOUT & CREDENTIALS -->
+        <section id="panel-about" class="cms-panel">
+          <div class="cms-card">
+            <div class="cms-card-header">
+              <h3>About Section & Professional Specializations</h3>
+              <p>Update personal bio, career specialties, work history, and skill badges.</p>
+            </div>
+            <div class="cms-card-body">
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Avatar Image URL</label>
+                  <div class="cms-avatar-preview-wrap">
+                    <img id="aboutAvatarPreview" src="/assets/avatar_square.png" alt="Preview" class="cms-preview-thumb">
+                    <input type="text" id="about-avatar" class="cms-input" value="/assets/avatar_square.png">
+                  </div>
+                </div>
+                <div class="cms-form-group">
+                  <label>Greeting Title (EN / TH)</label>
+                  <input type="text" id="about-greeting-en" class="cms-input mb-2" placeholder="Hi, I'm Toey!">
+                  <input type="text" id="about-greeting-th" class="cms-input" placeholder="สวัสดีค่ะ เตยเองนะคะ!">
+                </div>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang">EN</span>
+                  <h4>About Paragraph (English)</h4>
+                </div>
+                <textarea id="about-bio-en" class="cms-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang cms-pill-th">TH</span>
+                  <h4>About Paragraph (Thai)</h4>
+                </div>
+                <textarea id="about-bio-th" class="cms-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="cms-divider"></div>
+              <h4>Core Specializations (3 Pillars)</h4>
+              <div id="aboutSpecialtiesContainer"></div>
+
+              <div class="cms-divider"></div>
+              <h4>Experience & Career Timeline</h4>
+              <div id="aboutExperienceContainer"></div>
+              <button id="aboutBtnAddExp" class="cms-btn cms-btn-outline mt-2">+ Add Experience Item</button>
+
+              <div class="cms-divider"></div>
+              <h4>Key Skills (Bilingual Tags)</h4>
+              <div id="aboutSkillsContainer"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. PROJECTS & CASE STUDIES -->
+        <section id="panel-projects" class="cms-panel">
+          <div class="cms-projects-toolbar">
+            <div class="cms-project-selector-wrap">
+              <label for="projectSelector">Select Project to Edit:</label>
+              <select id="projectSelector" class="cms-select-project"></select>
+            </div>
+            <div class="cms-project-toolbar-btns">
+              <button id="btnNewProject" class="cms-btn cms-btn-primary">+ Add New Project</button>
+              <button id="btnDeleteProject" class="cms-btn cms-btn-danger">Delete Project</button>
+            </div>
+          </div>
+
+          <div class="cms-card mt-3">
+            <div class="cms-card-header">
+              <div class="cms-project-header-row">
+                <div>
+                  <h3 id="currentProjectTitleHeader">Project Details</h3>
+                  <p id="currentProjectSubHeader">Configure case study metadata, 4-Card Bento showcase, and 5-part narrative.</p>
+                </div>
+                <div class="cms-project-status-row">
+                  <span id="projectStatusBadge" class="cms-status-badge">● Published</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cms-card-body">
+              <!-- SECTION A: CORE METADATA -->
+              <h4 class="cms-subsection-title">1. Core Metadata & Identifiers</h4>
+              <div class="cms-grid-3">
+                <div class="cms-form-group">
+                  <label>Project ID / Slug (URL)</label>
+                  <input type="text" id="proj-id" class="cms-input" placeholder="e.g. ami-booth-planner">
+                </div>
+                <div class="cms-form-group">
+                  <label>Project Number</label>
+                  <input type="number" id="proj-num" class="cms-input" value="1">
+                </div>
+                <div class="cms-form-group">
+                  <label>Featured on Homepage?</label>
+                  <select id="proj-featured" class="cms-input">
+                    <option value="true">Yes (Show on Homepage)</option>
+                    <option value="false">No (Archive only)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Display Title (EN)</label>
+                  <input type="text" id="proj-displayTitle-en" class="cms-input" placeholder="Ami Booth Planner 🎨">
+                </div>
+                <div class="cms-form-group">
+                  <label>Display Title (TH)</label>
+                  <input type="text" id="proj-displayTitle-th" class="cms-input" placeholder="Ami Booth Planner 🎨">
+                </div>
+              </div>
+
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Short Subtitle (EN)</label>
+                  <input type="text" id="proj-shortSubtitle-en" class="cms-input">
+                </div>
+                <div class="cms-form-group">
+                  <label>Short Subtitle (TH)</label>
+                  <input type="text" id="proj-shortSubtitle-th" class="cms-input">
+                </div>
+              </div>
+
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Live Demo URL (with ?demo=true)</label>
+                  <input type="text" id="proj-liveUrl" class="cms-input" placeholder="https://app.vercel.app/?demo=true">
+                </div>
+                <div class="cms-form-group">
+                  <label>GitHub Repository URL</label>
+                  <input type="text" id="proj-githubUrl" class="cms-input" placeholder="https://github.com/rujisayak/...">
+                </div>
+              </div>
+
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Desktop Preview Image URL</label>
+                  <input type="text" id="proj-image" class="cms-input" placeholder="/assets/portfolio/...">
+                </div>
+                <div class="cms-form-group">
+                  <label>Mobile Responsive Image URL (True 9:19.5 View)</label>
+                  <input type="text" id="proj-mobileImage" class="cms-input" placeholder="/assets/portfolio/...-mobile.png">
+                </div>
+              </div>
+
+              <div class="cms-form-group">
+                <label>Tech & Domain Tags (Comma Separated)</label>
+                <input type="text" id="proj-tags" class="cms-input" placeholder="React 18, TypeScript, Tailwind CSS, RBAC">
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang">EN</span>
+                  <h4>Project Executive Summary (English)</h4>
+                </div>
+                <textarea id="proj-summary-en" class="cms-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang cms-pill-th">TH</span>
+                  <h4>Project Executive Summary (Thai)</h4>
+                </div>
+                <textarea id="proj-summary-th" class="cms-textarea" rows="3"></textarea>
+              </div>
+
+              <!-- SECTION B: 4-CARD BENTO SHOWCASE SPECIFICATION -->
+              <div class="cms-divider"></div>
+              <h4 class="cms-subsection-title">2. Strict 4-Card Bento Showcase Grid</h4>
+              <p class="cms-sub-text">Customize the visual showcase displayed on the project detail page.</p>
+
+              <!-- Card 1 -->
+              <div class="cms-bento-card-config">
+                <h5>Card 1 (Top-Left): Angled Laptop Split-Screen + "Perfect For" Tags</h5>
+                <div class="cms-grid-2">
+                  <div class="cms-form-group">
+                    <label>Left Screen View Image</label>
+                    <input type="text" id="proj-bento-screen0-img" class="cms-input" placeholder="/assets/portfolio/...">
+                  </div>
+                  <div class="cms-form-group">
+                    <label>Right Screen View Image</label>
+                    <input type="text" id="proj-bento-screen1-img" class="cms-input" placeholder="/assets/portfolio/...">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="cms-bento-card-config">
+                <h5>Card 2 (Top-Right): Giant Watermark Title + Core Feature Zoom</h5>
+                <div class="cms-grid-2">
+                  <div class="cms-form-group">
+                    <label>Watermark Header Title (Uppercase)</label>
+                    <input type="text" id="proj-bento-watermark" class="cms-input" placeholder="e.g. SMART ENGINE">
+                  </div>
+                  <div class="cms-form-group">
+                    <label>Core Feature Zoom Image</label>
+                    <input type="text" id="proj-bento-zoom-img" class="cms-input" placeholder="/assets/portfolio/...">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 & 4 -->
+              <div class="cms-bento-card-config">
+                <h5>Card 3 & 4: Design Tokens & Key Impact Highlights</h5>
+                <div class="cms-grid-2">
+                  <div class="cms-form-group">
+                    <label>Primary Brand Glow Color</label>
+                    <input type="text" id="proj-bento-brandColor" class="cms-input" placeholder="#4DA6FF">
+                  </div>
+                  <div class="cms-form-group">
+                    <label>Screen 3 & 4 Feature Images</label>
+                    <input type="text" id="proj-bento-screen2-img" class="cms-input" placeholder="/assets/portfolio/...">
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECTION C: 5-PART UX NARRATIVE STORY -->
+              <div class="cms-divider"></div>
+              <h4 class="cms-subsection-title">3. 5-Part Deep UX Research & Developer Handoff Narrative</h4>
+              
+              <!-- 01 Problem -->
+              <div class="cms-narrative-group">
+                <h5>01 // Operational Problem & Business Challenges</h5>
+                <div class="cms-grid-2">
+                  <div>
+                    <label class="cms-lang-sub">English</label>
+                    <textarea id="proj-narrative-problem-en" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                  <div>
+                    <label class="cms-lang-sub">Thai (ไทย)</label>
+                    <textarea id="proj-narrative-problem-th" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 02 Responsibilities -->
+              <div class="cms-narrative-group">
+                <h5>02 // Personal Scope & Responsibilities</h5>
+                <div class="cms-grid-2">
+                  <div>
+                    <label class="cms-lang-sub">English</label>
+                    <textarea id="proj-narrative-resp-en" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                  <div>
+                    <label class="cms-lang-sub">Thai (ไทย)</label>
+                    <textarea id="proj-narrative-resp-th" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 03 Approach -->
+              <div class="cms-narrative-group">
+                <h5>03 // UX Approach & Architecture</h5>
+                <div class="cms-grid-2">
+                  <div>
+                    <label class="cms-lang-sub">English</label>
+                    <textarea id="proj-narrative-approach-en" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                  <div>
+                    <label class="cms-lang-sub">Thai (ไทย)</label>
+                    <textarea id="proj-narrative-approach-th" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 04 Decisions -->
+              <div class="cms-narrative-group">
+                <h5>04 // Key UX Decisions & Trade-offs</h5>
+                <div class="cms-grid-2">
+                  <div>
+                    <label class="cms-lang-sub">English</label>
+                    <textarea id="proj-narrative-decisions-en" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                  <div>
+                    <label class="cms-lang-sub">Thai (ไทย)</label>
+                    <textarea id="proj-narrative-decisions-th" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 05 Dev Collaboration & Outcomes -->
+              <div class="cms-narrative-group">
+                <h5>05 // Developer Collaboration & Measurable Outcomes</h5>
+                <div class="cms-grid-2">
+                  <div>
+                    <label class="cms-lang-sub">English</label>
+                    <textarea id="proj-narrative-collab-en" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                  <div>
+                    <label class="cms-lang-sub">Thai (ไทย)</label>
+                    <textarea id="proj-narrative-collab-th" class="cms-textarea" rows="4"></textarea>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. RESUME DECK -->
+        <section id="panel-resume" class="cms-panel">
+          <div class="cms-card">
+            <div class="cms-card-header">
+              <h3>Resume & Portfolio Deck Downloads</h3>
+              <p>Manage download links, PDF assets, and credential summary points.</p>
+            </div>
+            <div class="cms-card-body">
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Resume PDF Download URL</label>
+                  <input type="text" id="resume-pdf-url" class="cms-input" value="/Rujisaya Resume.pdf">
+                </div>
+                <div class="cms-form-group">
+                  <label>Full Portfolio Deck PDF URL</label>
+                  <input type="text" id="resume-deck-url" class="cms-input" value="/PortfolioRujisaya.pdf">
+                </div>
+              </div>
+
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Section Title (EN)</label>
+                  <input type="text" id="resume-title-en" class="cms-input" value="Resume & Portfolio Deck">
+                </div>
+                <div class="cms-form-group">
+                  <label>Section Title (TH)</label>
+                  <input type="text" id="resume-title-th" class="cms-input" value="เอกสารเรซูเม่ & พอร์ตโฟลิโอฉบับเต็ม">
+                </div>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang">EN</span>
+                  <h4>Description (English)</h4>
+                </div>
+                <textarea id="resume-desc-en" class="cms-textarea" rows="2"></textarea>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang cms-pill-th">TH</span>
+                  <h4>Description (Thai)</h4>
+                </div>
+                <textarea id="resume-desc-th" class="cms-textarea" rows="2"></textarea>
+              </div>
+
+              <div class="cms-divider"></div>
+              <h4>Credentials Checklist (3 Points)</h4>
+              <div id="resumeChecklistContainer"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. ACTIVITIES (CORKBOARD) -->
+        <section id="panel-activities" class="cms-panel">
+          <div class="cms-card">
+            <div class="cms-card-header">
+              <div class="cms-project-header-row">
+                <div>
+                  <h3>16 Corkboard Moments</h3>
+                  <p>Curate lifestyle moments, design workshops, and community activities.</p>
+                </div>
+                <button id="btnPublishActivities" class="cms-btn cms-btn-publish">Publish Activities</button>
+              </div>
+            </div>
+            <div class="cms-card-body">
+              <div id="activitiesListContainer" class="cms-activities-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. CONTACT INFORMATION -->
+        <section id="panel-contact" class="cms-panel">
+          <div class="cms-card">
+            <div class="cms-card-header">
+              <h3>Contact Details & Availability</h3>
+              <p>Manage your direct inquiry email, phone, location, and social links.</p>
+            </div>
+            <div class="cms-card-body">
+              <div class="cms-grid-3">
+                <div class="cms-form-group">
+                  <label>Email Address</label>
+                  <input type="email" id="contact-email" class="cms-input" value="rujisaya1002@gmail.com">
+                </div>
+                <div class="cms-form-group">
+                  <label>Phone Number</label>
+                  <input type="text" id="contact-phone" class="cms-input" value="(+66) 85 472 2195">
+                </div>
+                <div class="cms-form-group">
+                  <label>LINE ID</label>
+                  <input type="text" id="contact-line" class="cms-input" value="baitoeyrujisaya">
+                </div>
+              </div>
+
+              <div class="cms-grid-2">
+                <div class="cms-form-group">
+                  <label>Location (EN)</label>
+                  <input type="text" id="contact-loc-en" class="cms-input" value="Bangkok, Thailand (On-site / Remote / Hybrid)">
+                </div>
+                <div class="cms-form-group">
+                  <label>Location (TH)</label>
+                  <input type="text" id="contact-loc-th" class="cms-input" value="กรุงเทพมหานคร, ประเทศไทย (On-site / Remote / Hybrid)">
+                </div>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang">EN</span>
+                  <h4>Invitation Subtitle (English)</h4>
+                </div>
+                <textarea id="contact-sub-en" class="cms-textarea" rows="2"></textarea>
+              </div>
+
+              <div class="cms-bilingual-box">
+                <div class="cms-bilingual-header">
+                  <span class="cms-pill-lang cms-pill-th">TH</span>
+                  <h4>Invitation Subtitle (Thai)</h4>
+                </div>
+                <textarea id="contact-sub-th" class="cms-textarea" rows="2"></textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. MEDIA LIBRARY -->
+        <section id="panel-media" class="cms-panel">
+          <div class="cms-card">
+            <div class="cms-card-header">
+              <h3>Media Library & Asset Manager</h3>
+              <p>Upload UI screenshots, diagrams, and vector assets. Manage bilingual alt text for accessibility.</p>
+            </div>
+            <div class="cms-card-body">
+              <!-- DROPZONE -->
+              <div id="mediaDropzone" class="cms-dropzone">
+                <div class="cms-dropzone-inner">
+                  <span class="cms-dropzone-icon">📁</span>
+                  <h4>Drag & Drop Files Here, or Click to Browse</h4>
+                  <p>Supports PNG, JPG, WebP, SVG, and PDF (Max 15MB)</p>
+                  <input type="file" id="mediaFileInput" accept="image/*,application/pdf" style="display: none;">
+                </div>
+              </div>
+
+              <!-- GALLERY -->
+              <div class="cms-divider"></div>
+              <h4>Uploaded Assets</h4>
+              <div id="mediaGalleryContainer" class="cms-media-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. REVISION HISTORY -->
+        <section id="panel-revisions" class="cms-panel">
+          <div class="cms-card">
+            <div class="cms-card-header">
+              <h3>Snapshot Revisions & 1-Click Rollback</h3>
+              <p>Every time you publish, a snapshot is archived here. You can revert any section or project instantly.</p>
+            </div>
+            <div class="cms-card-body">
+              <div class="cms-revision-filter-row">
+                <label for="revisionSectionFilter">Filter Revisions by Section:</label>
+                <select id="revisionSectionFilter" class="cms-input" style="max-width: 250px;">
+                  <option value="hero">Hero & Homepage</option>
+                  <option value="siteSettings">Site Settings</option>
+                  <option value="about">About & Credentials</option>
+                  <option value="resume">Resume Deck</option>
+                  <option value="contact">Contact Information</option>
+                </select>
+              </div>
+
+              <div id="revisionsTableContainer" class="cms-table-wrap mt-3"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. EXPORT & SYNC FALLBACK -->
+        <section id="panel-sync" class="cms-panel">
+          <div class="cms-card">
+            <div class="cms-card-header">
+              <h3>Database Continuity & Static Fallback Sync</h3>
+              <p>Ensure zero-downtime offline continuity by keeping local fallback JSON files synchronized with published data.</p>
+            </div>
+            <div class="cms-card-body">
+              <div class="cms-sync-status-box">
+                <div class="cms-sync-indicator-row">
+                  <span class="cms-status-dot online"></span>
+                  <div>
+                    <h4 id="syncDbStatusText">System Status: Resilient Mode</h4>
+                    <p>Fallback file: <code>db/cmsInitialData.json</code> is active and validated.</p>
+                  </div>
+                </div>
+                <button id="btnExportFallback" class="cms-btn cms-btn-primary mt-3">
+                  💾 Export & Sync Fallback Seed Now
+                </button>
+              </div>
+
+              <div class="cms-divider"></div>
+              <h4>Download Content Snapshot</h4>
+              <p>Download the entire current CMS state as a timestamped backup JSON file for your local archives.</p>
+              <button id="btnDownloadBackupJson" class="cms-btn cms-btn-outline mt-2">
+                📥 Download CMS JSON Backup
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

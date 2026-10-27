@@ -1,0 +1,2935 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-10-27T04:16:57.731Z",
+  "siteSettings": {
+    "published": {
+      "siteTitle": {
+        "en": "Rujisaya Kuekool — UX/UI Designer",
+        "th": "รุจิสยา เกื้อกูล — UX/UI Designer"
+      },
+      "metaDescription": {
+        "en": "Designing intuitive enterprise experiences for complex systems, turning technical requirements and data-heavy workflows into clear, scalable interfaces.",
+        "th": "ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน"
+      },
+      "favicon": "/assets/avatar_square.png",
+      "ogImage": "/assets/portfolio/leaya_screenshot_full.png",
+      "primaryColor": "#231815",
+      "accentColor": "#4DA6FF",
+      "defaultLang": "en"
+    },
+    "draft": {
+      "siteTitle": {
+        "en": "Rujisaya Kuekool — UX/UI Designer",
+        "th": "รุจิสยา เกื้อกูล — UX/UI Designer"
+      },
+      "metaDescription": {
+        "en": "Designing intuitive enterprise experiences for complex systems, turning technical requirements and data-heavy workflows into clear, scalable interfaces.",
+        "th": "ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน"
+      },
+      "favicon": "/assets/avatar_square.png",
+      "ogImage": "/assets/portfolio/leaya_screenshot_full.png",
+      "primaryColor": "#231815",
+      "accentColor": "#4DA6FF",
+      "defaultLang": "en"
+    }
+  },
+  "hero": {
+    "published": {
+      "miniLinks": [
+        {
+          "en": "enterprise ux",
+          "th": "ออกแบบระบบ enterprise"
+        },
+        {
+          "en": "portfolio",
+          "th": "พอร์ตโฟลิโอ"
+        },
+        {
+          "en": "developer handoff",
+          "th": "ส่งมอบงานนักพัฒนา"
+        }
+      ],
+      "cursiveScript": "UX UI",
+      "chunkyTitle": "portfolio",
+      "yearLabel": {
+        "en": "by Toeyruji",
+        "th": "โดย เตยรุจิ"
+      },
+      "bioLead": {
+        "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+        "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+      },
+      "stats": [
+        {
+          "en": "⚡️ 2+ Years CyberSec UX",
+          "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+        },
+        {
+          "en": "🎓 3.73 First Class Honors (IT)",
+          "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+        },
+        {
+          "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+          "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+        }
+      ],
+      "ctaButtons": [
+        {
+          "en": "explore projects",
+          "th": "สำรวจผลงาน",
+          "url": "#projects",
+          "type": "primary"
+        },
+        {
+          "en": "download resume (pdf)",
+          "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+          "url": "/Rujisaya Resume.pdf",
+          "type": "secondary"
+        }
+      ]
+    },
+    "draft": {
+      "miniLinks": [
+        {
+          "en": "enterprise ux",
+          "th": "ออกแบบระบบ enterprise"
+        },
+        {
+          "en": "portfolio",
+          "th": "พอร์ตโฟลิโอ"
+        },
+        {
+          "en": "developer handoff",
+          "th": "ส่งมอบงานนักพัฒนา"
+        }
+      ],
+      "cursiveScript": "UX UI",
+      "chunkyTitle": "portfolio",
+      "yearLabel": {
+        "en": "by Toeyruji",
+        "th": "โดย เตยรุจิ"
+      },
+      "bioLead": {
+        "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+        "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+      },
+      "stats": [
+        {
+          "en": "⚡️ 2+ Years CyberSec UX",
+          "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+        },
+        {
+          "en": "🎓 3.73 First Class Honors (IT)",
+          "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+        },
+        {
+          "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+          "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+        }
+      ],
+      "ctaButtons": [
+        {
+          "en": "explore projects",
+          "th": "สำรวจผลงาน",
+          "url": "#projects",
+          "type": "primary"
+        },
+        {
+          "en": "download resume (pdf)",
+          "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+          "url": "/Rujisaya Resume.pdf",
+          "type": "secondary"
+        }
+      ]
+    },
+    "version": 9
+  },
+  "about": {
+    "published": {
+      "greeting": {
+        "en": "Hi, I'm Toey!",
+        "th": "สวัสดีค่ะ เตยเองนะคะ!"
+      },
+      "avatar": "/assets/avatar_square.png",
+      "bioParagraph": {
+        "en": "I design web interfaces for desktop and complex systems. In my work, I combine Adaptive and Responsive design techniques. I place a strong emphasis on usability and overall user experience.",
+        "th": "ฉันออกแบบอินเทอร์เฟซสำหรับเดสก์ท็อปและระบบงานที่มีความซับซ้อน โดยผสานเทคนิคการออกแบบทั้ง Adaptive และ Responsive เข้าด้วยกัน ให้ความสำคัญสูงสุดกับความง่ายในการใช้งานและประสบการณ์ที่ดีของผู้ใช้"
+      },
+      "specialties": [
+        {
+          "title": {
+            "en": "Enterprise & Cybersecurity UX",
+            "th": "Enterprise & Cybersecurity UX"
+          },
+          "desc": {
+            "en": "creating complex software workflows (detection rule logic builders, threat portals, and SIEM monitoring dashboards).",
+            "th": "ออกแบบเวิร์กโฟลว์ซอฟต์แวร์ระดับองค์กร (ระบบสร้าง Detection Rule, พอร์ทัลจัดการภัยคุกคาม และแดชบอร์ดมอนิเตอร์ SIEM)"
+          }
+        },
+        {
+          "title": {
+            "en": "Design Systems & Developer Handoff",
+            "th": "Design Systems & Developer Handoff"
+          },
+          "desc": {
+            "en": "component tokens, detailed UI flow blueprints, validation & error state design, and API parameter alignment in Figma.",
+            "th": "วางระบบ Component Tokens, แผนผัง UI Flow อย่างละเอียด, ออกแบบ Error State และประสานค่าพารามิเตอร์ API ใน Figma"
+          }
+        },
+        {
+          "title": {
+            "en": "Usability Evaluation & QA",
+            "th": "Usability Evaluation & QA"
+          },
+          "desc": {
+            "en": "internal prototype testing, heuristic usability reviews, and beta feedback loops with backend engineers.",
+            "th": "ทดสอบ Prototype ภายใน, ตรวจสอบความยากง่ายตามหลัก Heuristic และรวบรวมข้อเสนอแนะช่วง Beta ร่วมกับนักพัฒนา"
+          }
+        }
+      ],
+      "experience": [
+        {
+          "period": {
+            "en": "2023 — Present",
+            "th": "2023 — ปัจจุบัน"
+          },
+          "role": {
+            "en": "UX/UI Designer, Security Pitch Co., Ltd.",
+            "th": "UX/UI Designer, บริษัท ซีเคียวริตี้ พิทช์ จำกัด"
+          }
+        },
+        {
+          "period": {
+            "en": "2023 (Jan — Apr)",
+            "th": "2023 (ม.ค. — เม.ย.)"
+          },
+          "role": {
+            "en": "UX/UI Intern, Security Pitch Co., Ltd.",
+            "th": "นักศึกษาฝึกงาน UX/UI, บริษัท ซีเคียวริตี้ พิทช์ จำกัด"
+          }
+        },
+        {
+          "period": {
+            "en": "2019 — 2023",
+            "th": "2019 — 2023"
+          },
+          "role": {
+            "en": "B.Sc. Information Technology (GPA 3.73, First Class Honors)",
+            "th": "วท.บ. เทคโนโลยีสารสนเทศ (เกียรตินิยมอันดับ 1, GPA 3.73)"
+          }
+        }
+      ],
+      "skills": [
+        {
+          "en": "Product & System Design",
+          "th": "การออกแบบผลิตภัณฑ์ & สถาปัตยกรรมระบบ"
+        },
+        {
+          "en": "Design Systems & Component Tokens",
+          "th": "Design Systems & Component Tokens"
+        },
+        {
+          "en": "Backend UI Flow Documentation",
+          "th": "เอกสารผังการทำงานสำหรับทีม Backend"
+        },
+        {
+          "en": "Heuristic Usability Review & QA",
+          "th": "ตรวจสอบการใช้งาน Heuristic & QA"
+        },
+        {
+          "en": "Figma, Adobe XD, Photoshop, Illustrator",
+          "th": "Figma, Adobe XD, Photoshop, Illustrator"
+        }
+      ]
+    },
+    "draft": {
+      "greeting": {
+        "en": "Hi, I'm Toey!",
+        "th": "สวัสดีค่ะ เตยเองนะคะ!"
+      },
+      "avatar": "/assets/avatar_square.png",
+      "bioParagraph": {
+        "en": "I design web interfaces for desktop and complex systems. In my work, I combine Adaptive and Responsive design techniques. I place a strong emphasis on usability and overall user experience.",
+        "th": "ฉันออกแบบอินเทอร์เฟซสำหรับเดสก์ท็อปและระบบงานที่มีความซับซ้อน โดยผสานเทคนิคการออกแบบทั้ง Adaptive และ Responsive เข้าด้วยกัน ให้ความสำคัญสูงสุดกับความง่ายในการใช้งานและประสบการณ์ที่ดีของผู้ใช้"
+      },
+      "specialties": [
+        {
+          "title": {
+            "en": "Enterprise & Cybersecurity UX",
+            "th": "Enterprise & Cybersecurity UX"
+          },
+          "desc": {
+            "en": "creating complex software workflows (detection rule logic builders, threat portals, and SIEM monitoring dashboards).",
+            "th": "ออกแบบเวิร์กโฟลว์ซอฟต์แวร์ระดับองค์กร (ระบบสร้าง Detection Rule, พอร์ทัลจัดการภัยคุกคาม และแดชบอร์ดมอนิเตอร์ SIEM)"
+          }
+        },
+        {
+          "title": {
+            "en": "Design Systems & Developer Handoff",
+            "th": "Design Systems & Developer Handoff"
+          },
+          "desc": {
+            "en": "component tokens, detailed UI flow blueprints, validation & error state design, and API parameter alignment in Figma.",
+            "th": "วางระบบ Component Tokens, แผนผัง UI Flow อย่างละเอียด, ออกแบบ Error State และประสานค่าพารามิเตอร์ API ใน Figma"
+          }
+        },
+        {
+          "title": {
+            "en": "Usability Evaluation & QA",
+            "th": "Usability Evaluation & QA"
+          },
+          "desc": {
+            "en": "internal prototype testing, heuristic usability reviews, and beta feedback loops with backend engineers.",
+            "th": "ทดสอบ Prototype ภายใน, ตรวจสอบความยากง่ายตามหลัก Heuristic และรวบรวมข้อเสนอแนะช่วง Beta ร่วมกับนักพัฒนา"
+          }
+        }
+      ],
+      "experience": [
+        {
+          "period": {
+            "en": "2023 — Present",
+            "th": "2023 — ปัจจุบัน"
+          },
+          "role": {
+            "en": "UX/UI Designer, Security Pitch Co., Ltd.",
+            "th": "UX/UI Designer, บริษัท ซีเคียวริตี้ พิทช์ จำกัด"
+          }
+        },
+        {
+          "period": {
+            "en": "2023 (Jan — Apr)",
+            "th": "2023 (ม.ค. — เม.ย.)"
+          },
+          "role": {
+            "en": "UX/UI Intern, Security Pitch Co., Ltd.",
+            "th": "นักศึกษาฝึกงาน UX/UI, บริษัท ซีเคียวริตี้ พิทช์ จำกัด"
+          }
+        },
+        {
+          "period": {
+            "en": "2019 — 2023",
+            "th": "2019 — 2023"
+          },
+          "role": {
+            "en": "B.Sc. Information Technology (GPA 3.73, First Class Honors)",
+            "th": "วท.บ. เทคโนโลยีสารสนเทศ (เกียรตินิยมอันดับ 1, GPA 3.73)"
+          }
+        }
+      ],
+      "skills": [
+        {
+          "en": "Product & System Design",
+          "th": "การออกแบบผลิตภัณฑ์ & สถาปัตยกรรมระบบ"
+        },
+        {
+          "en": "Design Systems & Component Tokens",
+          "th": "Design Systems & Component Tokens"
+        },
+        {
+          "en": "Backend UI Flow Documentation",
+          "th": "เอกสารผังการทำงานสำหรับทีม Backend"
+        },
+        {
+          "en": "Heuristic Usability Review & QA",
+          "th": "ตรวจสอบการใช้งาน Heuristic & QA"
+        },
+        {
+          "en": "Figma, Adobe XD, Photoshop, Illustrator",
+          "th": "Figma, Adobe XD, Photoshop, Illustrator"
+        }
+      ]
+    }
+  },
+  "resume": {
+    "published": {
+      "pretitle": {
+        "en": "CREDENTIALS",
+        "th": "ประวัติและข้อมูลวิชาชีพ"
+      },
+      "title": {
+        "en": "Resume & Portfolio Deck",
+        "th": "เอกสารเรซูเม่ & พอร์ตโฟลิโอฉบับเต็ม"
+      },
+      "description": {
+        "en": "View the complete summary of my professional experience, education, skills, and design portfolio. Available for immediate download in PDF format.",
+        "th": "ดูสรุปประสบการณ์การทำงาน การศึกษา ทักษะ และผลงานออกแบบฉบับเต็ม พร้อมดาวน์โหลดในรูปแบบไฟล์ PDF ได้ทันที"
+      },
+      "resumePdfUrl": "/Rujisaya Resume.pdf",
+      "portfolioPdfUrl": "/PortfolioRujisaya.pdf",
+      "previewImage": "/assets/resume_preview.png",
+      "checklists": [
+        {
+          "en": "2+ Years Cybersecurity Dashboard Experience",
+          "th": "ประสบการณ์ออกแบบแดชบอร์ด Cybersecurity 2+ ปี"
+        },
+        {
+          "en": "First Class Honors in IT (Suan Dusit University)",
+          "th": "เกียรตินิยมอันดับ 1 สาขา IT (มหาวิทยาลัยสวนดุสิต)"
+        },
+        {
+          "en": "Proven Developer Handoff & UI Flow Documentation",
+          "th": "ความเชี่ยวชาญการทำเอกสารส่งมอบงาน (Developer Handoff) และ UI Flow"
+        }
+      ]
+    },
+    "draft": {
+      "pretitle": {
+        "en": "CREDENTIALS",
+        "th": "ประวัติและข้อมูลวิชาชีพ"
+      },
+      "title": {
+        "en": "Resume & Portfolio Deck",
+        "th": "เอกสารเรซูเม่ & พอร์ตโฟลิโอฉบับเต็ม"
+      },
+      "description": {
+        "en": "View the complete summary of my professional experience, education, skills, and design portfolio. Available for immediate download in PDF format.",
+        "th": "ดูสรุปประสบการณ์การทำงาน การศึกษา ทักษะ และผลงานออกแบบฉบับเต็ม พร้อมดาวน์โหลดในรูปแบบไฟล์ PDF ได้ทันที"
+      },
+      "resumePdfUrl": "/Rujisaya Resume.pdf",
+      "portfolioPdfUrl": "/PortfolioRujisaya.pdf",
+      "previewImage": "/assets/resume_preview.png",
+      "checklists": [
+        {
+          "en": "2+ Years Cybersecurity Dashboard Experience",
+          "th": "ประสบการณ์ออกแบบแดชบอร์ด Cybersecurity 2+ ปี"
+        },
+        {
+          "en": "First Class Honors in IT (Suan Dusit University)",
+          "th": "เกียรตินิยมอันดับ 1 สาขา IT (มหาวิทยาลัยสวนดุสิต)"
+        },
+        {
+          "en": "Proven Developer Handoff & UI Flow Documentation",
+          "th": "ความเชี่ยวชาญการทำเอกสารส่งมอบงาน (Developer Handoff) และ UI Flow"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "published": {
+      "pretitle": {
+        "en": "DIRECT INQUIRIES // GET IN TOUCH",
+        "th": "ติดต่อโดยตรง // สอบถามข้อมูล"
+      },
+      "title": {
+        "en": "Let's Connect",
+        "th": "มาร่วมงานกัน"
+      },
+      "subtitle": {
+        "en": "I am always open to discussing enterprise UX/UI roles, complex software challenges, and creative collaborations.",
+        "th": "ยินดีเปิดรับโอกาสการร่วมงานตำแหน่ง Enterprise UX/UI ความท้าทายในระบบซอฟต์แวร์ และโปรเจกต์สร้างสรรค์เสมอค่ะ"
+      },
+      "email": "rujisaya1002@gmail.com",
+      "phone": "(+66) 85 472 2195",
+      "lineId": "baitoeyrujisaya",
+      "location": {
+        "en": "Bangkok, Thailand (On-site / Remote / Hybrid)",
+        "th": "กรุงเทพมหานคร, ประเทศไทย (On-site / Remote / Hybrid)"
+      },
+      "socialLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/rujisayak"
+        }
+      ]
+    },
+    "draft": {
+      "pretitle": {
+        "en": "DIRECT INQUIRIES // GET IN TOUCH",
+        "th": "ติดต่อโดยตรง // สอบถามข้อมูล"
+      },
+      "title": {
+        "en": "Let's Connect",
+        "th": "มาร่วมงานกัน"
+      },
+      "subtitle": {
+        "en": "I am always open to discussing enterprise UX/UI roles, complex software challenges, and creative collaborations.",
+        "th": "ยินดีเปิดรับโอกาสการร่วมงานตำแหน่ง Enterprise UX/UI ความท้าทายในระบบซอฟต์แวร์ และโปรเจกต์สร้างสรรค์เสมอค่ะ"
+      },
+      "email": "rujisaya1002@gmail.com",
+      "phone": "(+66) 85 472 2195",
+      "lineId": "baitoeyrujisaya",
+      "location": {
+        "en": "Bangkok, Thailand (On-site / Remote / Hybrid)",
+        "th": "กรุงเทพมหานคร, ประเทศไทย (On-site / Remote / Hybrid)"
+      },
+      "socialLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/rujisayak"
+        }
+      ]
+    }
+  },
+  "caseStudies": [
+    {
+      "id": "leave-wfh-management",
+      "projectNum": 1,
+      "displayTitle": "Leaya 🐾",
+      "fullTitle": "Leaya - All-in-One Employee Management Platform",
+      "shortSubtitle": "Empowering enterprise teams with interactive HR SaaS solutions.",
+      "category": "enterprise saas & hr tech",
+      "filterCategory": "enterprise",
+      "badge": "live interactive",
+      "badgeType": "live",
+      "featured": true,
+      "date": "Jan 2026",
+      "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
+      "image": "/assets/portfolio/leaya_screenshot_full.png",
+      "liveUrl": "https://leave-wfh-management.vercel.app/?demo=true",
+      "githubUrl": "https://github.com/rujisayak",
+      "tags": [
+        "Enterprise SaaS",
+        "HR Operations",
+        "RBAC Simulation",
+        "TypeScript",
+        "Tailwind CSS",
+        "React 18"
+      ],
+      "previewCards": [
+        {
+          "title": "Interactive Dashboard",
+          "date": "Jan 2026",
+          "image": "/assets/portfolio/leaya_screenshot_full.png",
+          "type": "laptop"
+        },
+        {
+          "title": "Attendance & RBAC Matrix",
+          "date": "Oct 2025",
+          "image": "/assets/portfolio/leave_wfh_screenshot.png",
+          "type": "card"
+        }
+      ],
+      "techStack": [
+        {
+          "name": "React 18",
+          "type": "react"
+        },
+        {
+          "name": "Figma",
+          "type": "figma"
+        },
+        {
+          "name": "Tailwind CSS",
+          "type": "tailwind"
+        },
+        {
+          "name": "TypeScript",
+          "type": "typescript"
+        }
+      ],
+      "pillars": [
+        {
+          "icon": "dashboard",
+          "label": "Interactive Dashboard"
+        },
+        {
+          "icon": "users",
+          "label": "Seamless HR Flow"
+        },
+        {
+          "icon": "analytics",
+          "label": "Team Analytics"
+        },
+        {
+          "icon": "workflows",
+          "label": "Automated Workflows"
+        }
+      ],
+      "highlights": [
+        {
+          "icon": "link",
+          "label": "100% Custom Components"
+        },
+        {
+          "icon": "analytics",
+          "label": "Interactive Analytics"
+        },
+        {
+          "icon": "database",
+          "label": "Complex Data Handling"
+        },
+        {
+          "icon": "uiux",
+          "label": "Seamless UI/UX"
+        },
+        {
+          "icon": "security",
+          "label": "Secure Data Flow"
+        },
+        {
+          "icon": "templates",
+          "label": "30+ Screen Templates"
+        }
+      ],
+      "styleGuide": {
+        "headingFont": "Leaya Bold",
+        "bodyFont": "Inter",
+        "palette": [
+          {
+            "name": "Warm Cream",
+            "hex": "#FAF7F2"
+          },
+          {
+            "name": "Dark Espresso",
+            "hex": "#231815"
+          },
+          {
+            "name": "Emerald Green",
+            "hex": "#10B981"
+          },
+          {
+            "name": "Accent Blue",
+            "hex": "#3B82F6"
+          },
+          {
+            "name": "Muted Slate",
+            "hex": "#64748B"
+          }
+        ]
+      },
+      "featureZoom": {
+        "title": "Automated Pro-rata Thai Labor Vacation Engine",
+        "description": "คำนวณโควตาวันลาพักร้อน Year 0 และ Year 1+ อัตโนมัติตามวันเริ่มงานและวันผ่านทดลองงาน พร้อมจำลองสิทธิ์ 3 บทบาท (Employee, Manager, HR Admin)",
+        "tags": [
+          {
+            "label": "Role",
+            "value": "End-to-End Product Designer"
+          },
+          {
+            "label": "Target Users",
+            "value": "HR, Managers & Hybrid Teams"
+          },
+          {
+            "label": "Key Solution",
+            "value": "Pro-rata Vacation & Weekly Matrix"
+          }
+        ],
+        "image": "/assets/portfolio/leaya_screenshot_full.png"
+      },
+      "multiScreens": [
+        {
+          "title": "Employee & Team Dashboard",
+          "image": "/assets/portfolio/leaya_screen_dashboard.png",
+          "desc": "Real-time leave balance, WFH quotas and monthly office tracking"
+        },
+        {
+          "title": "Team Attendance Matrix",
+          "image": "/assets/portfolio/leaya_screen_matrix.png",
+          "desc": "Weekly in-office vs remote team schedule and headcount planning"
+        },
+        {
+          "title": "Vacation Calculation Engine",
+          "image": "/assets/portfolio/leaya_screen_rules.png",
+          "desc": "Thai labor law pro-rata calculation rules and policy compliance"
+        },
+        {
+          "title": "HR Master Data & Directory",
+          "image": "/assets/portfolio/leaya_screen_masterdata.png",
+          "desc": "Enterprise employee directory, role permissions and organizational units"
+        }
+      ],
+      "role": "End-to-End Product Designer & Front-End Architecture",
+      "targetUsers": "พนักงานทั่วไป (ยื่นใบลา/ขอ WFH), หัวหน้าทีม/ผู้จัดการ (คิวอนุมัติ & Team Matrix), ฝ่ายบุคคล/HR (ทะเบียนพนักงาน & คำนวณโควตา)",
+      "duration": "Enterprise Project (2025–2026)",
+      "designGoal": "Design Goal: ปรับเปลี่ยนกระบวนการลางานและขอสลับวัน WFH ที่ซับซ้อนให้กลายเป็นระบบ 3-Role RBAC Portal ที่เข้าใจง่าย พร้อมคำนวณโควตาพักร้อน Pro-rate ตามกฎหมายแรงงานไทยแบบเรียลไทม์",
+      "problem": "การจัดการวันลาและสลับวัน WFH ในองค์กรแบบไฮบริดมักติดปัญหาความคลุมเครือของสูตรคำนวณสิทธิ์พักร้อนตามวันเริ่มงานและวันผ่านโปร รวมถึงความเสี่ยงที่ทีมจะขาดคนในวันจันทร์หรือศุกร์เนื่องจากไม่มีตารางสรุป Headcount เข้าออฟฟิศจริง",
+      "responsibilities": "ออกแบบสถาปัตยกรรมข้อมูล (IA), พัฒนาระบบ User Roles (Employee / Manager / HR Super Admin), ออกแบบ Weekly Attendance Matrix และพัฒนาระบบคำนวณสิทธิ์พักร้อนแบบ Pro-rata",
+      "uxApproach": "ออกแบบให้มี \"RBAC Simulation Bar\" ด้านบน เพื่อให้ผู้มีส่วนได้ส่วนเสียและผู้ตรวจงานสามารถสลับทดลองสิทธิ์ได้ทันที พร้อม Live Vacation Calculator Preview ในฟอร์มเพิ่มพนักงานใหม่",
+      "keyDecisions": "1) RBAC Simulation Switcher: ให้ทดสอบระบบได้ทั้ง 3 มุมมองโดยไม่ต้องล็อกอินหลายบัญชี\n2) Weekly Hybrid Attendance Matrix: สรุปยอดคนเข้าออฟฟิศจริงแต่ละวัน (Daily Headcount) เพื่อป้องกันคนไม่พอ\n3) Thai Labor Law Formula Engine: คำนวณวันลา Year 0 อัตโนมัติ (เช่น ผ่านโปรหลัง 1 ก.ย. ได้สิทธิ์ทันที)",
+      "devCollaboration": "พัฒนาด้วย React 18, TypeScript, Tailwind CSS และ Lucide Icons โดยกำหนด Strict TypeScript Interfaces สำหรับสถานะคำขอ (Status Enums) และสูตรการคำนวณเพื่อรองรับการต่อยอดเป็นโปรดักชัน",
+      "outcomeLearnings": "สร้างประสบการณ์ใช้งานที่ชัดเจน ลดความผิดพลาดในการคำนวณวันลาของฝ่ายบุคคล และช่วยให้หัวหน้างานตัดสินใจอนุมัติได้อย่างรวดเร็วผ่านข้อมูลที่โปร่งใส",
+      "keyFeatures": [
+        "ระบบจำลองสิทธิ์ 3 ระดับ (Employee, Manager, HR Admin) สลับมุมมองได้ทันที",
+        "ตารางเมทริกซ์ทีมประจำสัปดาห์ (Team Weekly Attendance Matrix) พร้อมสรุปยอด Headcount รายวัน",
+        "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
+        "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
+        "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
+      ],
+      "mobileImage": "/assets/portfolio/leaya_screen_mobile.png",
+      "mobileScreen": "/assets/portfolio/leaya_screen_mobile.png",
+      "demoUrl": "https://leave-wfh-management.vercel.app/?demo=true",
+      "displayTitle_en": "Leaya 🐾",
+      "displayTitle_th": "Leaya 🐾",
+      "fullTitle_en": "Leaya - All-in-One Employee Management Platform",
+      "fullTitle_th": "Leaya - ระบบบริหารจัดการวันลาและสลับวัน WFH ครบวงจร",
+      "shortSubtitle_en": "Empowering enterprise teams with interactive HR SaaS solutions.",
+      "shortSubtitle_th": "ยกระดับการทำงานขององค์กรด้วยโซลูชัน HR SaaS ที่ใช้งานง่ายและมีประสิทธิภาพ",
+      "category_en": "enterprise saas & hr tech",
+      "category_th": "ระบบ Enterprise SaaS & HR",
+      "summary_th": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
+      "summary_en": "Modern SaaS employee leave and WFH swap management dashboard supporting Thai labor regulations, designed with Role-Based Access Control (RBAC) and automated pro-rata vacation calculation engines.",
+      "targetUsers_th": "พนักงานทั่วไป (ยื่นใบลา/ขอ WFH), หัวหน้าทีม/ผู้จัดการ (คิวอนุมัติ & Team Matrix), ฝ่ายบุคคล/HR (ทะเบียนพนักงาน & คำนวณโควตา)",
+      "targetUsers_en": "Employees (submit leave/swap requests), Team Managers (approval queue & attendance matrix), HR Admins (employee directory & vacation quota calculation)",
+      "designGoal_th": "Design Goal: ปรับเปลี่ยนกระบวนการลางานและขอสลับวัน WFH ที่ซับซ้อนให้กลายเป็นระบบ 3-Role RBAC Portal ที่เข้าใจง่าย พร้อมคำนวณโควตาพักร้อน Pro-rate ตามกฎหมายแรงงานไทยแบบเรียลไทม์",
+      "designGoal_en": "Design Goal: Transform cumbersome manual leave and WFH swap workflows into an intuitive 3-role RBAC portal with real-time Thai labor law pro-rata vacation calculations.",
+      "problem_th": "การจัดการวันลาและสลับวัน WFH ในองค์กรแบบไฮบริดมักติดปัญหาความคลุมเครือของสูตรคำนวณสิทธิ์พักร้อนตามวันเริ่มงานและวันผ่านโปร รวมถึงความเสี่ยงที่ทีมจะขาดคนในวันจันทร์หรือศุกร์เนื่องจากไม่มีตารางสรุป Headcount เข้าออฟฟิศจริง",
+      "problem_en": "Managing leave and WFH swaps in hybrid organizations frequently suffers from ambiguous pro-rata formulas based on start dates/probation, coupled with headcount shortage risks on peak days (Mondays/Fridays) due to missing real-time office attendance visibility.",
+      "responsibilities_th": "ออกแบบสถาปัตยกรรมข้อมูล (IA), พัฒนาระบบ User Roles (Employee / Manager / HR Super Admin), ออกแบบ Weekly Attendance Matrix และพัฒนาระบบคำนวณสิทธิ์พักร้อนแบบ Pro-rata",
+      "responsibilities_en": "Designed Information Architecture (IA), developed Role-Based Access Control simulations (Employee / Manager / HR Super Admin), created the Weekly Attendance Matrix, and built the Thai labor law pro-rata calculation engine.",
+      "uxApproach_th": "ออกแบบให้มี \"RBAC Simulation Bar\" ด้านบน เพื่อให้ผู้มีส่วนได้ส่วนเสียและผู้ตรวจงานสามารถสลับทดลองสิทธิ์ได้ทันที พร้อม Live Vacation Calculator Preview ในฟอร์มเพิ่มพนักงานใหม่",
+      "uxApproach_en": "Integrated an interactive RBAC Simulation Bar at the top to let stakeholders switch permissions instantly, paired with a live vacation calculation preview inside the employee creation modal.",
+      "keyDecisions_th": "1) RBAC Simulation Switcher: ให้ทดสอบระบบได้ทั้ง 3 มุมมองโดยไม่ต้องล็อกอินหลายบัญชี\n2) Weekly Hybrid Attendance Matrix: สรุปยอดคนเข้าออฟฟิศจริงแต่ละวัน (Daily Headcount) เพื่อป้องกันคนไม่พอ\n3) Thai Labor Law Formula Engine: คำนวณวันลา Year 0 อัตโนมัติ (เช่น ผ่านโปรหลัง 1 ก.ย. ได้สิทธิ์ทันที)",
+      "keyDecisions_en": "1) RBAC Simulation Switcher: Instant testing across 3 roles without relogging.\n2) Weekly Hybrid Attendance Matrix: Daily office headcount summary preventing understaffing.\n3) Thai Labor Law Formula Engine: Automated Year 0 leave quotas based on probation dates.",
+      "devCollaboration_th": "พัฒนาด้วย React 18, TypeScript, Tailwind CSS และ Lucide Icons โดยกำหนด Strict TypeScript Interfaces สำหรับสถานะคำขอ (Status Enums) และสูตรการคำนวณเพื่อรองรับการต่อยอดเป็นโปรดักชัน",
+      "devCollaboration_en": "Engineered with React 18, TypeScript, Tailwind CSS, and Lucide Icons with strict TypeScript interfaces for request status enums and formula engines for rapid production integration.",
+      "outcomeLearnings_th": "สร้างประสบการณ์ใช้งานที่ชัดเจน ลดความผิดพลาดในการคำนวณวันลาของฝ่ายบุคคล และช่วยให้หัวหน้างานตัดสินใจอนุมัติได้อย่างรวดเร็วผ่านข้อมูลที่โปร่งใส",
+      "outcomeLearnings_en": "Delivered a frictionless user experience that eliminated manual HR vacation calculation errors and accelerated manager approval workflows through transparent data visualization.",
+      "keyFeatures_th": [
+        "ระบบจำลองสิทธิ์ 3 ระดับ (Employee, Manager, HR Admin) สลับมุมมองได้ทันที",
+        "ตารางเมทริกซ์ทีมประจำสัปดาห์ (Team Weekly Attendance Matrix) พร้อมสรุปยอด Headcount รายวัน",
+        "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
+        "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
+        "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
+      ],
+      "keyFeatures_en": [
+        "3-Level RBAC simulation (Employee, Manager, HR Admin) with instant view switching",
+        "Team Weekly Attendance Matrix with real-time daily headcount tracking",
+        "Automated pro-rata vacation calculation engine compliant with Thai labor regulations",
+        "WFH day swapping paired with mandatory office compensation day & sick leave requests",
+        "Interactive Preview Sandbox: Test leave creation and role permissions safely in session"
+      ],
+      "status": "published",
+      "draft": {
+        "id": "leave-wfh-management",
+        "projectNum": 1,
+        "displayTitle": "Leaya 🐾",
+        "fullTitle": "Leaya - All-in-One Employee Management Platform",
+        "shortSubtitle": "Empowering enterprise teams with interactive HR SaaS solutions.",
+        "category": "enterprise saas & hr tech",
+        "filterCategory": "enterprise",
+        "badge": "live interactive",
+        "badgeType": "live",
+        "featured": true,
+        "date": "Jan 2026",
+        "summary": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
+        "image": "/assets/portfolio/leaya_screenshot_full.png",
+        "liveUrl": "https://leave-wfh-management.vercel.app/?demo=true",
+        "githubUrl": "https://github.com/rujisayak",
+        "tags": [
+          "Enterprise SaaS",
+          "HR Operations",
+          "RBAC Simulation",
+          "TypeScript",
+          "Tailwind CSS",
+          "React 18"
+        ],
+        "previewCards": [
+          {
+            "title": "Interactive Dashboard",
+            "date": "Jan 2026",
+            "image": "/assets/portfolio/leaya_screenshot_full.png",
+            "type": "laptop"
+          },
+          {
+            "title": "Attendance & RBAC Matrix",
+            "date": "Oct 2025",
+            "image": "/assets/portfolio/leave_wfh_screenshot.png",
+            "type": "card"
+          }
+        ],
+        "techStack": [
+          {
+            "name": "React 18",
+            "type": "react"
+          },
+          {
+            "name": "Figma",
+            "type": "figma"
+          },
+          {
+            "name": "Tailwind CSS",
+            "type": "tailwind"
+          },
+          {
+            "name": "TypeScript",
+            "type": "typescript"
+          }
+        ],
+        "pillars": [
+          {
+            "icon": "dashboard",
+            "label": "Interactive Dashboard"
+          },
+          {
+            "icon": "users",
+            "label": "Seamless HR Flow"
+          },
+          {
+            "icon": "analytics",
+            "label": "Team Analytics"
+          },
+          {
+            "icon": "workflows",
+            "label": "Automated Workflows"
+          }
+        ],
+        "highlights": [
+          {
+            "icon": "link",
+            "label": "100% Custom Components"
+          },
+          {
+            "icon": "analytics",
+            "label": "Interactive Analytics"
+          },
+          {
+            "icon": "database",
+            "label": "Complex Data Handling"
+          },
+          {
+            "icon": "uiux",
+            "label": "Seamless UI/UX"
+          },
+          {
+            "icon": "security",
+            "label": "Secure Data Flow"
+          },
+          {
+            "icon": "templates",
+            "label": "30+ Screen Templates"
+          }
+        ],
+        "styleGuide": {
+          "headingFont": "Leaya Bold",
+          "bodyFont": "Inter",
+          "palette": [
+            {
+              "name": "Warm Cream",
+              "hex": "#FAF7F2"
+            },
+            {
+              "name": "Dark Espresso",
+              "hex": "#231815"
+            },
+            {
+              "name": "Emerald Green",
+              "hex": "#10B981"
+            },
+            {
+              "name": "Accent Blue",
+              "hex": "#3B82F6"
+            },
+            {
+              "name": "Muted Slate",
+              "hex": "#64748B"
+            }
+          ]
+        },
+        "featureZoom": {
+          "title": "Automated Pro-rata Thai Labor Vacation Engine",
+          "description": "คำนวณโควตาวันลาพักร้อน Year 0 และ Year 1+ อัตโนมัติตามวันเริ่มงานและวันผ่านทดลองงาน พร้อมจำลองสิทธิ์ 3 บทบาท (Employee, Manager, HR Admin)",
+          "tags": [
+            {
+              "label": "Role",
+              "value": "End-to-End Product Designer"
+            },
+            {
+              "label": "Target Users",
+              "value": "HR, Managers & Hybrid Teams"
+            },
+            {
+              "label": "Key Solution",
+              "value": "Pro-rata Vacation & Weekly Matrix"
+            }
+          ],
+          "image": "/assets/portfolio/leaya_screenshot_full.png"
+        },
+        "multiScreens": [
+          {
+            "title": "Employee & Team Dashboard",
+            "image": "/assets/portfolio/leaya_screen_dashboard.png",
+            "desc": "Real-time leave balance, WFH quotas and monthly office tracking"
+          },
+          {
+            "title": "Team Attendance Matrix",
+            "image": "/assets/portfolio/leaya_screen_matrix.png",
+            "desc": "Weekly in-office vs remote team schedule and headcount planning"
+          },
+          {
+            "title": "Vacation Calculation Engine",
+            "image": "/assets/portfolio/leaya_screen_rules.png",
+            "desc": "Thai labor law pro-rata calculation rules and policy compliance"
+          },
+          {
+            "title": "HR Master Data & Directory",
+            "image": "/assets/portfolio/leaya_screen_masterdata.png",
+            "desc": "Enterprise employee directory, role permissions and organizational units"
+          }
+        ],
+        "role": "End-to-End Product Designer & Front-End Architecture",
+        "targetUsers": "พนักงานทั่วไป (ยื่นใบลา/ขอ WFH), หัวหน้าทีม/ผู้จัดการ (คิวอนุมัติ & Team Matrix), ฝ่ายบุคคล/HR (ทะเบียนพนักงาน & คำนวณโควตา)",
+        "duration": "Enterprise Project (2025–2026)",
+        "designGoal": "Design Goal: ปรับเปลี่ยนกระบวนการลางานและขอสลับวัน WFH ที่ซับซ้อนให้กลายเป็นระบบ 3-Role RBAC Portal ที่เข้าใจง่าย พร้อมคำนวณโควตาพักร้อน Pro-rate ตามกฎหมายแรงงานไทยแบบเรียลไทม์",
+        "problem": "การจัดการวันลาและสลับวัน WFH ในองค์กรแบบไฮบริดมักติดปัญหาความคลุมเครือของสูตรคำนวณสิทธิ์พักร้อนตามวันเริ่มงานและวันผ่านโปร รวมถึงความเสี่ยงที่ทีมจะขาดคนในวันจันทร์หรือศุกร์เนื่องจากไม่มีตารางสรุป Headcount เข้าออฟฟิศจริง",
+        "responsibilities": "ออกแบบสถาปัตยกรรมข้อมูล (IA), พัฒนาระบบ User Roles (Employee / Manager / HR Super Admin), ออกแบบ Weekly Attendance Matrix และพัฒนาระบบคำนวณสิทธิ์พักร้อนแบบ Pro-rata",
+        "uxApproach": "ออกแบบให้มี \"RBAC Simulation Bar\" ด้านบน เพื่อให้ผู้มีส่วนได้ส่วนเสียและผู้ตรวจงานสามารถสลับทดลองสิทธิ์ได้ทันที พร้อม Live Vacation Calculator Preview ในฟอร์มเพิ่มพนักงานใหม่",
+        "keyDecisions": "1) RBAC Simulation Switcher: ให้ทดสอบระบบได้ทั้ง 3 มุมมองโดยไม่ต้องล็อกอินหลายบัญชี\n2) Weekly Hybrid Attendance Matrix: สรุปยอดคนเข้าออฟฟิศจริงแต่ละวัน (Daily Headcount) เพื่อป้องกันคนไม่พอ\n3) Thai Labor Law Formula Engine: คำนวณวันลา Year 0 อัตโนมัติ (เช่น ผ่านโปรหลัง 1 ก.ย. ได้สิทธิ์ทันที)",
+        "devCollaboration": "พัฒนาด้วย React 18, TypeScript, Tailwind CSS และ Lucide Icons โดยกำหนด Strict TypeScript Interfaces สำหรับสถานะคำขอ (Status Enums) และสูตรการคำนวณเพื่อรองรับการต่อยอดเป็นโปรดักชัน",
+        "outcomeLearnings": "สร้างประสบการณ์ใช้งานที่ชัดเจน ลดความผิดพลาดในการคำนวณวันลาของฝ่ายบุคคล และช่วยให้หัวหน้างานตัดสินใจอนุมัติได้อย่างรวดเร็วผ่านข้อมูลที่โปร่งใส",
+        "keyFeatures": [
+          "ระบบจำลองสิทธิ์ 3 ระดับ (Employee, Manager, HR Admin) สลับมุมมองได้ทันที",
+          "ตารางเมทริกซ์ทีมประจำสัปดาห์ (Team Weekly Attendance Matrix) พร้อมสรุปยอด Headcount รายวัน",
+          "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
+          "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
+          "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
+        ],
+        "mobileImage": "/assets/portfolio/leaya_screen_mobile.png",
+        "mobileScreen": "/assets/portfolio/leaya_screen_mobile.png",
+        "demoUrl": "https://leave-wfh-management.vercel.app/?demo=true",
+        "displayTitle_en": "Leaya 🐾",
+        "displayTitle_th": "Leaya 🐾",
+        "fullTitle_en": "Leaya - All-in-One Employee Management Platform",
+        "fullTitle_th": "Leaya - ระบบบริหารจัดการวันลาและสลับวัน WFH ครบวงจร",
+        "shortSubtitle_en": "Empowering enterprise teams with interactive HR SaaS solutions.",
+        "shortSubtitle_th": "ยกระดับการทำงานขององค์กรด้วยโซลูชัน HR SaaS ที่ใช้งานง่ายและมีประสิทธิภาพ",
+        "category_en": "enterprise saas & hr tech",
+        "category_th": "ระบบ Enterprise SaaS & HR",
+        "summary_th": "ระบบบริหารจัดการวันลาและสลับวัน Work From Home (WFH) สไตล์ Modern SaaS Dashboard รองรับภาษาไทยสมบูรณ์แบบ ออกแบบตามหลัก Role-Based Access Control (RBAC) พร้อมระบบคำนวณสิทธิ์วันลาพักร้อนอัตโนมัติตามอายุงานและสูตร Pro-rate กฎหมายแรงงานไทย",
+        "summary_en": "Modern SaaS employee leave and WFH swap management dashboard supporting Thai labor regulations, designed with Role-Based Access Control (RBAC) and automated pro-rata vacation calculation engines.",
+        "targetUsers_th": "พนักงานทั่วไป (ยื่นใบลา/ขอ WFH), หัวหน้าทีม/ผู้จัดการ (คิวอนุมัติ & Team Matrix), ฝ่ายบุคคล/HR (ทะเบียนพนักงาน & คำนวณโควตา)",
+        "targetUsers_en": "Employees (submit leave/swap requests), Team Managers (approval queue & attendance matrix), HR Admins (employee directory & vacation quota calculation)",
+        "designGoal_th": "Design Goal: ปรับเปลี่ยนกระบวนการลางานและขอสลับวัน WFH ที่ซับซ้อนให้กลายเป็นระบบ 3-Role RBAC Portal ที่เข้าใจง่าย พร้อมคำนวณโควตาพักร้อน Pro-rate ตามกฎหมายแรงงานไทยแบบเรียลไทม์",
+        "designGoal_en": "Design Goal: Transform cumbersome manual leave and WFH swap workflows into an intuitive 3-role RBAC portal with real-time Thai labor law pro-rata vacation calculations.",
+        "problem_th": "การจัดการวันลาและสลับวัน WFH ในองค์กรแบบไฮบริดมักติดปัญหาความคลุมเครือของสูตรคำนวณสิทธิ์พักร้อนตามวันเริ่มงานและวันผ่านโปร รวมถึงความเสี่ยงที่ทีมจะขาดคนในวันจันทร์หรือศุกร์เนื่องจากไม่มีตารางสรุป Headcount เข้าออฟฟิศจริง",
+        "problem_en": "Managing leave and WFH swaps in hybrid organizations frequently suffers from ambiguous pro-rata formulas based on start dates/probation, coupled with headcount shortage risks on peak days (Mondays/Fridays) due to missing real-time office attendance visibility.",
+        "responsibilities_th": "ออกแบบสถาปัตยกรรมข้อมูล (IA), พัฒนาระบบ User Roles (Employee / Manager / HR Super Admin), ออกแบบ Weekly Attendance Matrix และพัฒนาระบบคำนวณสิทธิ์พักร้อนแบบ Pro-rata",
+        "responsibilities_en": "Designed Information Architecture (IA), developed Role-Based Access Control simulations (Employee / Manager / HR Super Admin), created the Weekly Attendance Matrix, and built the Thai labor law pro-rata calculation engine.",
+        "uxApproach_th": "ออกแบบให้มี \"RBAC Simulation Bar\" ด้านบน เพื่อให้ผู้มีส่วนได้ส่วนเสียและผู้ตรวจงานสามารถสลับทดลองสิทธิ์ได้ทันที พร้อม Live Vacation Calculator Preview ในฟอร์มเพิ่มพนักงานใหม่",
+        "uxApproach_en": "Integrated an interactive RBAC Simulation Bar at the top to let stakeholders switch permissions instantly, paired with a live vacation calculation preview inside the employee creation modal.",
+        "keyDecisions_th": "1) RBAC Simulation Switcher: ให้ทดสอบระบบได้ทั้ง 3 มุมมองโดยไม่ต้องล็อกอินหลายบัญชี\n2) Weekly Hybrid Attendance Matrix: สรุปยอดคนเข้าออฟฟิศจริงแต่ละวัน (Daily Headcount) เพื่อป้องกันคนไม่พอ\n3) Thai Labor Law Formula Engine: คำนวณวันลา Year 0 อัตโนมัติ (เช่น ผ่านโปรหลัง 1 ก.ย. ได้สิทธิ์ทันที)",
+        "keyDecisions_en": "1) RBAC Simulation Switcher: Instant testing across 3 roles without relogging.\n2) Weekly Hybrid Attendance Matrix: Daily office headcount summary preventing understaffing.\n3) Thai Labor Law Formula Engine: Automated Year 0 leave quotas based on probation dates.",
+        "devCollaboration_th": "พัฒนาด้วย React 18, TypeScript, Tailwind CSS และ Lucide Icons โดยกำหนด Strict TypeScript Interfaces สำหรับสถานะคำขอ (Status Enums) และสูตรการคำนวณเพื่อรองรับการต่อยอดเป็นโปรดักชัน",
+        "devCollaboration_en": "Engineered with React 18, TypeScript, Tailwind CSS, and Lucide Icons with strict TypeScript interfaces for request status enums and formula engines for rapid production integration.",
+        "outcomeLearnings_th": "สร้างประสบการณ์ใช้งานที่ชัดเจน ลดความผิดพลาดในการคำนวณวันลาของฝ่ายบุคคล และช่วยให้หัวหน้างานตัดสินใจอนุมัติได้อย่างรวดเร็วผ่านข้อมูลที่โปร่งใส",
+        "outcomeLearnings_en": "Delivered a frictionless user experience that eliminated manual HR vacation calculation errors and accelerated manager approval workflows through transparent data visualization.",
+        "keyFeatures_th": [
+          "ระบบจำลองสิทธิ์ 3 ระดับ (Employee, Manager, HR Admin) สลับมุมมองได้ทันที",
+          "ตารางเมทริกซ์ทีมประจำสัปดาห์ (Team Weekly Attendance Matrix) พร้อมสรุปยอด Headcount รายวัน",
+          "ระบบคำนวณวันลาพักร้อนอัตโนมัติตามสูตร Pro-rate กฎหมายแรงงานไทย",
+          "รองรับการขอสลับวัน WFH แบบจับคู่วันชดเชยเข้าออฟฟิศ และยื่นใบลาป่วย/ลากิจ",
+          "Interactive Preview Sandbox: ทดลองสร้างใบลาและทดสอบสิทธิ์ได้แบบ Session-only"
+        ],
+        "keyFeatures_en": [
+          "3-Level RBAC simulation (Employee, Manager, HR Admin) with instant view switching",
+          "Team Weekly Attendance Matrix with real-time daily headcount tracking",
+          "Automated pro-rata vacation calculation engine compliant with Thai labor regulations",
+          "WFH day swapping paired with mandatory office compensation day & sick leave requests",
+          "Interactive Preview Sandbox: Test leave creation and role permissions safely in session"
+        ]
+      }
+    },
+    {
+      "id": "ami-booth-planner",
+      "projectNum": 2,
+      "displayTitle": "Ami Booth Planner 🎨",
+      "fullTitle": "Ami Booth Planner - All-in-One Creator Event Platform",
+      "shortSubtitle": "Empowering indie creators & illustrators to organize events, detect date conflicts, and manage booth budgets seamlessly.",
+      "category": "creator economy & events",
+      "filterCategory": "creator",
+      "badge": "live interactive",
+      "badgeType": "live",
+      "featured": true,
+      "date": "Jan 2026",
+      "summary": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
+      "image": "/assets/portfolio/ami_booth_calendar.png",
+      "liveUrl": "https://ami-booth-planner.vercel.app/?demo=true",
+      "githubUrl": "https://github.com/rujisayak",
+      "tags": [
+        "Creator Economy",
+        "Event Operations",
+        "Material UI v6",
+        "React 18",
+        "MongoDB Atlas",
+        "Date Conflict"
+      ],
+      "previewCards": [
+        {
+          "title": "Event Schedule & Calendar",
+          "date": "Jan 2026",
+          "image": "/assets/portfolio/ami_booth_calendar.png",
+          "type": "laptop"
+        },
+        {
+          "title": "Date Conflict & Budget Ledger",
+          "date": "Oct 2025",
+          "image": "/assets/portfolio/ami_booth_screenshot_full.png",
+          "type": "card"
+        }
+      ],
+      "techStack": [
+        {
+          "name": "React 18",
+          "type": "react"
+        },
+        {
+          "name": "Figma",
+          "type": "figma"
+        },
+        {
+          "name": "Material UI v6",
+          "type": "mui"
+        },
+        {
+          "name": "MongoDB Atlas",
+          "type": "mongodb"
+        }
+      ],
+      "pillars": [
+        {
+          "icon": "dashboard",
+          "label": "Calendar Conflict Detection"
+        },
+        {
+          "icon": "users",
+          "label": "Partial Acceptance Flow"
+        },
+        {
+          "icon": "analytics",
+          "label": "Budget Separation"
+        },
+        {
+          "icon": "workflows",
+          "label": "Cloud & Demo Sync"
+        }
+      ],
+      "highlights": [
+        {
+          "icon": "link",
+          "label": "100% Custom Components"
+        },
+        {
+          "icon": "analytics",
+          "label": "Smart Conflict Alerts"
+        },
+        {
+          "icon": "database",
+          "label": "Partial Day Acceptance"
+        },
+        {
+          "icon": "uiux",
+          "label": "Pastel Pink Design System"
+        },
+        {
+          "icon": "security",
+          "label": "Secure Cloud & Sandbox"
+        },
+        {
+          "icon": "templates",
+          "label": "20+ Creator Workflows"
+        }
+      ],
+      "styleGuide": {
+        "headingFont": "Ami Display",
+        "bodyFont": "Inter",
+        "palette": [
+          {
+            "name": "Blush White",
+            "hex": "#FFF0F5"
+          },
+          {
+            "name": "Dark Espresso",
+            "hex": "#231815"
+          },
+          {
+            "name": "Pastel Rose",
+            "hex": "#FF6B8B"
+          },
+          {
+            "name": "Lilac Purple",
+            "hex": "#8B5CF6"
+          },
+          {
+            "name": "Golden Honey",
+            "hex": "#F59E0B"
+          }
+        ]
+      },
+      "featureZoom": {
+        "title": "Smart Date Conflict & Partial Acceptance Engine",
+        "description": "ระบบตรวจจับวันสมัคร วันประกาศผล และวันจัดบูธที่ชนกันแบบเรียลไทม์ พร้อมรองรับงานหลายวันที่ได้รับการคัดเลือกเพียงบางวัน โดยคำนวณงบประมาณแยกตามวันที่ยืนยันจริง",
+        "tags": [
+          {
+            "label": "Role",
+            "value": "UX/UI Designer & Full-Stack Developer"
+          },
+          {
+            "label": "Target Users",
+            "value": "Illustrators, Comic Artists & Craft Brands"
+          },
+          {
+            "label": "Key Solution",
+            "value": "Conflict Detection & Budget Ledger"
+          }
+        ],
+        "image": "/assets/portfolio/ami_booth_calendar.png"
+      },
+      "multiScreens": [
+        {
+          "title": "Overview Dashboard",
+          "image": "/assets/portfolio/ami_screen_dashboard.png",
+          "desc": "Visual event dashboard with status badges and quick actions"
+        },
+        {
+          "title": "Month Grid Calendar & Conflict Alerts",
+          "image": "/assets/portfolio/ami_screen_calendar.png",
+          "desc": "Visual monthly schedule with real-time conflict badges"
+        },
+        {
+          "title": "Booth Applications & Partial Acceptance",
+          "image": "/assets/portfolio/ami_screen_applications.png",
+          "desc": "Application workflow with partial day acceptance tracking"
+        },
+        {
+          "title": "Event Budget & Fee Ledger",
+          "image": "/assets/portfolio/ami_screen_budget.png",
+          "desc": "Outstanding booth fees, payment tracking and revenue calculations"
+        }
+      ],
+      "role": "UX/UI Designer & Full-Stack Developer",
+      "targetUsers": "นักวาดภาพประกอบ (Illustrators), นักเขียนการ์ตูน, ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",
+      "duration": "Creator SaaS Project (2025–2026)",
+      "designGoal": "Design Goal: เปลี่ยนการจดตารางบูธในกระดาษและ Excel ที่กระจัดกระจาย ให้กลายเป็นระบบ Dashboard ธีม Pastel Pink ที่มีระบบเตือนรอบเวลาชนกันและคำนวณค่าบูธแยกรายวันได้อย่างแม่นยำ",
+      "problem": "ครีเอเตอร์ต้องสมัครงานอีเวนต์หลายสิบงานต่อปี ซึ่งมีทั้งวันเปิดรับสมัคร วันประกาศผล และวันจัดงานที่คาบเกี่ยวกันบ่อยครั้ง โดยเฉพาะงานหลายวันที่อาจได้รับการคัดเลือกเพียง 1 วัน (Partial Acceptance) ทำให้คำนวณค่าใช้จ่ายและวางแผนวันไปออกบูธผิดพลาด",
+      "responsibilities": "ทำ User Research กับกลุ่มครีเอเตอร์, ออกแบบ Design System ธีมสี Pastel Pink โดยอ้างอิง Component Patterns จาก Devias Kit Pro, ออกแบบระบบ Smart Date Conflict Algorithm และพัฒนาฟูลสแต็กเชื่อมต่อ MongoDB Atlas",
+      "uxApproach": "ออกแบบมุมมองปฏิทิน 2 รูปแบบ (Month Grid & Agenda) แยกสีชัดเจนระหว่างวันสมัคร วันประกาศผล และวันจัดบูธจริง พร้อมแถบแจ้งเตือนเมื่อมีงานชนกัน (Date Conflict Detection)",
+      "keyDecisions": "1) Partial Acceptance Support: รองรับผลการสมัครแยกรายวัน โดยระบบจะนับเฉพาะวันที่ได้บูธเข้าปฏิทินจริงและคำนวณค่าบูธตามวันที่ได้รับคัดเลือกเท่านั้น\n2) Budget Separation: แยกค่าบูธค้างชำระ ยอดที่ชำระแล้ว และค่าใช้จ่ายที่อาจเกิดขึ้นจากใบสมัครที่รอผลออกจากกัน ไม่นับซ้ำซ้อน\n3) Preview Demo vs Cloud Auth: ผู้เยี่ยมชมสามารถทดลองสร้างงานในโหมด Demo Sandbox ได้อย่างปลอดภัย โดยระบบจะซิงค์และบันทึกลง MongoDB Atlas เฉพาะเมื่อล็อกอินด้วยอีเมลผู้ดูแล",
+      "devCollaboration": "พัฒนาด้วย React 18, Material UI (MUI v6), Emotion, Node.js REST API และ MongoDB Atlas พร้อมระบบ Offline Fallback ด้วย LocalStorage",
+      "outcomeLearnings": "ช่วยให้ครีเอเตอร์วางแผนตารางออกบูธล่วงหน้าได้โดยไม่พลาดวันสำคัญ ประหยัดเวลาจัดการใบสมัครได้กว่า 70% และป้องกันปัญหาการจองบูธซ้อนในวันเดียวกัน",
+      "keyFeatures": [
+        "ระบบตรวจจับรอบเวลาจัดบูธชนกัน (Smart Date Conflict Detection)",
+        "ปฏิทินตารางงานแบบ Month Grid และ Agenda แยกสีตามช่วงเวลาสำคัญ",
+        "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
+        "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
+        "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
+      ],
+      "mobileImage": "/assets/portfolio/ami_screen_mobile.png",
+      "mobileScreen": "/assets/portfolio/ami_screen_mobile.png",
+      "demoUrl": "https://ami-booth-planner.vercel.app/?demo=true",
+      "displayTitle_en": "Ami Booth Planner 🎨",
+      "displayTitle_th": "Ami Booth Planner 🎨",
+      "fullTitle_en": "Ami Booth Planner - All-in-One Creator Event Platform",
+      "fullTitle_th": "Ami Booth Planner - เว็บแอปจัดการอีเวนต์และออกบูธสำหรับครีเอเตอร์",
+      "shortSubtitle_en": "Empowering indie creators & illustrators to organize events, detect date conflicts, and manage booth budgets seamlessly.",
+      "shortSubtitle_th": "ช่วยเหลือนักวาดและครีเอเตอร์อิสระในการจัดตารางออกบูธ ตรวจจับวันชน และบริหารงบประมาณอย่างเป็นระบบ",
+      "category_en": "creator economy & events",
+      "category_th": "ครีเอเตอร์ & การจัดการอีเวนต์",
+      "summary_th": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
+      "summary_en": "Web application for comic artists, illustrators, sticker creators, and craft brands to manage every step of event exhibitions — from event discovery and application tracking to smart conflict alerts and real-time ledger management.",
+      "targetUsers_th": "นักวาดภาพประกอบ (Illustrators), นักเขียนการ์ตูน, ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",
+      "targetUsers_en": "Illustrators, Comic Artists, Sticker Creators, and Indie Craft Brands",
+      "designGoal_th": "Design Goal: เปลี่ยนการจดตารางบูธในกระดาษและ Excel ที่กระจัดกระจาย ให้กลายเป็นระบบ Dashboard ธีม Pastel Pink ที่มีระบบเตือนรอบเวลาชนกันและคำนวณค่าบูธแยกรายวันได้อย่างแม่นยำ",
+      "designGoal_en": "Design Goal: Transform scattered booth schedules from paper and spreadsheets into an intuitive Pastel Pink dashboard with smart date conflict detection and day-by-day fee calculations.",
+      "problem_th": "ครีเอเตอร์ต้องสมัครงานอีเวนต์หลายสิบงานต่อปี ซึ่งมีทั้งวันเปิดรับสมัคร วันประกาศผล และวันจัดงานที่คาบเกี่ยวกันบ่อยครั้ง โดยเฉพาะงานหลายวันที่อาจได้รับการคัดเลือกเพียง 1 วัน (Partial Acceptance) ทำให้คำนวณค่าใช้จ่ายและวางแผนวันไปออกบูธผิดพลาด",
+      "problem_en": "Independent artists often apply to multiple concurrent conventions across different organizers with overlapping dates, resulting in double bookings, forfeited non-refundable deposit fees, and scattered budget spreadsheets.",
+      "responsibilities_th": "ทำ User Research กับกลุ่มครีเอเตอร์, ออกแบบ Design System ธีมสี Pastel Pink โดยอ้างอิง Component Patterns จาก Devias Kit Pro, ออกแบบระบบ Smart Date Conflict Algorithm และพัฒนาฟูลสแต็กเชื่อมต่อ MongoDB Atlas",
+      "responsibilities_en": "Conducted user research with creators, designed Pastel Pink design system with Devias Kit Pro patterns, designed smart date conflict algorithm, and developed full-stack app with MongoDB Atlas.",
+      "uxApproach_th": "ออกแบบมุมมองปฏิทิน 2 รูปแบบ (Month Grid & Agenda) แยกสีชัดเจนระหว่างวันสมัคร วันประกาศผล และวันจัดบูธจริง พร้อมแถบแจ้งเตือนเมื่อมีงานชนกัน (Date Conflict Detection)",
+      "uxApproach_en": "Crafted Month Grid and Agenda calendar views with color-coded phases (application, result, booth dates) paired with active alert banners for overlapping dates.",
+      "keyDecisions_th": "1) Partial Acceptance Support: รองรับผลการสมัครแยกรายวัน โดยระบบจะนับเฉพาะวันที่ได้บูธเข้าปฏิทินจริงและคำนวณค่าบูธตามวันที่ได้รับคัดเลือกเท่านั้น\n2) Budget Separation: แยกค่าบูธค้างชำระ ยอดที่ชำระแล้ว และค่าใช้จ่ายที่อาจเกิดขึ้นจากใบสมัครที่รอผลออกจากกัน ไม่นับซ้ำซ้อน\n3) Preview Demo vs Cloud Auth: ผู้เยี่ยมชมสามารถทดลองสร้างงานในโหมด Demo Sandbox ได้อย่างปลอดภัย โดยระบบจะซิงค์และบันทึกลง MongoDB Atlas เฉพาะเมื่อล็อกอินด้วยอีเมลผู้ดูแล",
+      "keyDecisions_en": "1) Partial Acceptance Support: Independent tracking for multi-day events where only specific days are accepted.\n2) Budget Separation: Clear separation between projected application fees and confirmed operational booth expenses.\n3) Preview Demo vs Cloud Auth: Guests can explore the full sandbox safely without database mutations.",
+      "devCollaboration_th": "พัฒนาด้วย React 18, Material UI (MUI v6), Emotion, Node.js REST API และ MongoDB Atlas พร้อมระบบ Offline Fallback ด้วย LocalStorage",
+      "devCollaboration_en": "Built with React 18, Material UI (MUI v6), Emotion, Node.js REST API, and MongoDB Atlas with offline LocalStorage fallback.",
+      "outcomeLearnings_th": "ช่วยให้ครีเอเตอร์วางแผนตารางออกบูธล่วงหน้าได้โดยไม่พลาดวันสำคัญ ประหยัดเวลาจัดการใบสมัครได้กว่า 70% และป้องกันปัญหาการจองบูธซ้อนในวันเดียวกัน",
+      "outcomeLearnings_en": "Creators reduced scheduling conflicts to zero, saved over 70% of application planning time, and eliminated double-booking mistakes.",
+      "keyFeatures_th": [
+        "ระบบตรวจจับรอบเวลาจัดบูธชนกัน (Smart Date Conflict Detection)",
+        "ปฏิทินตารางงานแบบ Month Grid และ Agenda แยกสีตามช่วงเวลาสำคัญ",
+        "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
+        "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
+        "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
+      ],
+      "keyFeatures_en": [
+        "Smart Date Conflict Detection engine for overlapping convention dates",
+        "Visual Month Grid and Agenda calendar color-coded by milestone phases",
+        "Partial day acceptance handling with automated pro-rated booth cost calculation",
+        "Comprehensive budget ledger separating confirmed debts from pending applications",
+        "Sandbox demo mode for visitors with verified cloud sync for administrators"
+      ],
+      "status": "published",
+      "draft": {
+        "id": "ami-booth-planner",
+        "projectNum": 2,
+        "displayTitle": "Ami Booth Planner 🎨",
+        "fullTitle": "Ami Booth Planner - All-in-One Creator Event Platform",
+        "shortSubtitle": "Empowering indie creators & illustrators to organize events, detect date conflicts, and manage booth budgets seamlessly.",
+        "category": "creator economy & events",
+        "filterCategory": "creator",
+        "badge": "live interactive",
+        "badgeType": "live",
+        "featured": true,
+        "date": "Jan 2026",
+        "summary": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
+        "image": "/assets/portfolio/ami_booth_calendar.png",
+        "liveUrl": "https://ami-booth-planner.vercel.app/?demo=true",
+        "githubUrl": "https://github.com/rujisayak",
+        "tags": [
+          "Creator Economy",
+          "Event Operations",
+          "Material UI v6",
+          "React 18",
+          "MongoDB Atlas",
+          "Date Conflict"
+        ],
+        "previewCards": [
+          {
+            "title": "Event Schedule & Calendar",
+            "date": "Jan 2026",
+            "image": "/assets/portfolio/ami_booth_calendar.png",
+            "type": "laptop"
+          },
+          {
+            "title": "Date Conflict & Budget Ledger",
+            "date": "Oct 2025",
+            "image": "/assets/portfolio/ami_booth_screenshot_full.png",
+            "type": "card"
+          }
+        ],
+        "techStack": [
+          {
+            "name": "React 18",
+            "type": "react"
+          },
+          {
+            "name": "Figma",
+            "type": "figma"
+          },
+          {
+            "name": "Material UI v6",
+            "type": "mui"
+          },
+          {
+            "name": "MongoDB Atlas",
+            "type": "mongodb"
+          }
+        ],
+        "pillars": [
+          {
+            "icon": "dashboard",
+            "label": "Calendar Conflict Detection"
+          },
+          {
+            "icon": "users",
+            "label": "Partial Acceptance Flow"
+          },
+          {
+            "icon": "analytics",
+            "label": "Budget Separation"
+          },
+          {
+            "icon": "workflows",
+            "label": "Cloud & Demo Sync"
+          }
+        ],
+        "highlights": [
+          {
+            "icon": "link",
+            "label": "100% Custom Components"
+          },
+          {
+            "icon": "analytics",
+            "label": "Smart Conflict Alerts"
+          },
+          {
+            "icon": "database",
+            "label": "Partial Day Acceptance"
+          },
+          {
+            "icon": "uiux",
+            "label": "Pastel Pink Design System"
+          },
+          {
+            "icon": "security",
+            "label": "Secure Cloud & Sandbox"
+          },
+          {
+            "icon": "templates",
+            "label": "20+ Creator Workflows"
+          }
+        ],
+        "styleGuide": {
+          "headingFont": "Ami Display",
+          "bodyFont": "Inter",
+          "palette": [
+            {
+              "name": "Blush White",
+              "hex": "#FFF0F5"
+            },
+            {
+              "name": "Dark Espresso",
+              "hex": "#231815"
+            },
+            {
+              "name": "Pastel Rose",
+              "hex": "#FF6B8B"
+            },
+            {
+              "name": "Lilac Purple",
+              "hex": "#8B5CF6"
+            },
+            {
+              "name": "Golden Honey",
+              "hex": "#F59E0B"
+            }
+          ]
+        },
+        "featureZoom": {
+          "title": "Smart Date Conflict & Partial Acceptance Engine",
+          "description": "ระบบตรวจจับวันสมัคร วันประกาศผล และวันจัดบูธที่ชนกันแบบเรียลไทม์ พร้อมรองรับงานหลายวันที่ได้รับการคัดเลือกเพียงบางวัน โดยคำนวณงบประมาณแยกตามวันที่ยืนยันจริง",
+          "tags": [
+            {
+              "label": "Role",
+              "value": "UX/UI Designer & Full-Stack Developer"
+            },
+            {
+              "label": "Target Users",
+              "value": "Illustrators, Comic Artists & Craft Brands"
+            },
+            {
+              "label": "Key Solution",
+              "value": "Conflict Detection & Budget Ledger"
+            }
+          ],
+          "image": "/assets/portfolio/ami_booth_calendar.png"
+        },
+        "multiScreens": [
+          {
+            "title": "Overview Dashboard",
+            "image": "/assets/portfolio/ami_screen_dashboard.png",
+            "desc": "Visual event dashboard with status badges and quick actions"
+          },
+          {
+            "title": "Month Grid Calendar & Conflict Alerts",
+            "image": "/assets/portfolio/ami_screen_calendar.png",
+            "desc": "Visual monthly schedule with real-time conflict badges"
+          },
+          {
+            "title": "Booth Applications & Partial Acceptance",
+            "image": "/assets/portfolio/ami_screen_applications.png",
+            "desc": "Application workflow with partial day acceptance tracking"
+          },
+          {
+            "title": "Event Budget & Fee Ledger",
+            "image": "/assets/portfolio/ami_screen_budget.png",
+            "desc": "Outstanding booth fees, payment tracking and revenue calculations"
+          }
+        ],
+        "role": "UX/UI Designer & Full-Stack Developer",
+        "targetUsers": "นักวาดภาพประกอบ (Illustrators), นักเขียนการ์ตูน, ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",
+        "duration": "Creator SaaS Project (2025–2026)",
+        "designGoal": "Design Goal: เปลี่ยนการจดตารางบูธในกระดาษและ Excel ที่กระจัดกระจาย ให้กลายเป็นระบบ Dashboard ธีม Pastel Pink ที่มีระบบเตือนรอบเวลาชนกันและคำนวณค่าบูธแยกรายวันได้อย่างแม่นยำ",
+        "problem": "ครีเอเตอร์ต้องสมัครงานอีเวนต์หลายสิบงานต่อปี ซึ่งมีทั้งวันเปิดรับสมัคร วันประกาศผล และวันจัดงานที่คาบเกี่ยวกันบ่อยครั้ง โดยเฉพาะงานหลายวันที่อาจได้รับการคัดเลือกเพียง 1 วัน (Partial Acceptance) ทำให้คำนวณค่าใช้จ่ายและวางแผนวันไปออกบูธผิดพลาด",
+        "responsibilities": "ทำ User Research กับกลุ่มครีเอเตอร์, ออกแบบ Design System ธีมสี Pastel Pink โดยอ้างอิง Component Patterns จาก Devias Kit Pro, ออกแบบระบบ Smart Date Conflict Algorithm และพัฒนาฟูลสแต็กเชื่อมต่อ MongoDB Atlas",
+        "uxApproach": "ออกแบบมุมมองปฏิทิน 2 รูปแบบ (Month Grid & Agenda) แยกสีชัดเจนระหว่างวันสมัคร วันประกาศผล และวันจัดบูธจริง พร้อมแถบแจ้งเตือนเมื่อมีงานชนกัน (Date Conflict Detection)",
+        "keyDecisions": "1) Partial Acceptance Support: รองรับผลการสมัครแยกรายวัน โดยระบบจะนับเฉพาะวันที่ได้บูธเข้าปฏิทินจริงและคำนวณค่าบูธตามวันที่ได้รับคัดเลือกเท่านั้น\n2) Budget Separation: แยกค่าบูธค้างชำระ ยอดที่ชำระแล้ว และค่าใช้จ่ายที่อาจเกิดขึ้นจากใบสมัครที่รอผลออกจากกัน ไม่นับซ้ำซ้อน\n3) Preview Demo vs Cloud Auth: ผู้เยี่ยมชมสามารถทดลองสร้างงานในโหมด Demo Sandbox ได้อย่างปลอดภัย โดยระบบจะซิงค์และบันทึกลง MongoDB Atlas เฉพาะเมื่อล็อกอินด้วยอีเมลผู้ดูแล",
+        "devCollaboration": "พัฒนาด้วย React 18, Material UI (MUI v6), Emotion, Node.js REST API และ MongoDB Atlas พร้อมระบบ Offline Fallback ด้วย LocalStorage",
+        "outcomeLearnings": "ช่วยให้ครีเอเตอร์วางแผนตารางออกบูธล่วงหน้าได้โดยไม่พลาดวันสำคัญ ประหยัดเวลาจัดการใบสมัครได้กว่า 70% และป้องกันปัญหาการจองบูธซ้อนในวันเดียวกัน",
+        "keyFeatures": [
+          "ระบบตรวจจับรอบเวลาจัดบูธชนกัน (Smart Date Conflict Detection)",
+          "ปฏิทินตารางงานแบบ Month Grid และ Agenda แยกสีตามช่วงเวลาสำคัญ",
+          "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
+          "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
+          "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
+        ],
+        "mobileImage": "/assets/portfolio/ami_screen_mobile.png",
+        "mobileScreen": "/assets/portfolio/ami_screen_mobile.png",
+        "demoUrl": "https://ami-booth-planner.vercel.app/?demo=true",
+        "displayTitle_en": "Ami Booth Planner 🎨",
+        "displayTitle_th": "Ami Booth Planner 🎨",
+        "fullTitle_en": "Ami Booth Planner - All-in-One Creator Event Platform",
+        "fullTitle_th": "Ami Booth Planner - เว็บแอปจัดการอีเวนต์และออกบูธสำหรับครีเอเตอร์",
+        "shortSubtitle_en": "Empowering indie creators & illustrators to organize events, detect date conflicts, and manage booth budgets seamlessly.",
+        "shortSubtitle_th": "ช่วยเหลือนักวาดและครีเอเตอร์อิสระในการจัดตารางออกบูธ ตรวจจับวันชน และบริหารงบประมาณอย่างเป็นระบบ",
+        "category_en": "creator economy & events",
+        "category_th": "ครีเอเตอร์ & การจัดการอีเวนต์",
+        "summary_th": "เว็บแอปพลิเคชันสำหรับนักวาดการ์ตูน ภาพประกอบ ครีเอเตอร์สติกเกอร์ และแบรนด์คราฟต์ ช่วยจัดการทุกขั้นตอนของการออกบูธ ตั้งแต่ค้นพบงาน สมัครงาน ตรวจจับรอบเวลาชนกัน (Conflict Alert) คำนวณงบประมาณ และติดตามตารางงานที่ยืนยันแล้ว",
+        "summary_en": "Web application for comic artists, illustrators, sticker creators, and craft brands to manage every step of event exhibitions — from event discovery and application tracking to smart conflict alerts and real-time ledger management.",
+        "targetUsers_th": "นักวาดภาพประกอบ (Illustrators), นักเขียนการ์ตูน, ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์ และแบรนด์คราฟต์ขนาดเล็ก",
+        "targetUsers_en": "Illustrators, Comic Artists, Sticker Creators, and Indie Craft Brands",
+        "designGoal_th": "Design Goal: เปลี่ยนการจดตารางบูธในกระดาษและ Excel ที่กระจัดกระจาย ให้กลายเป็นระบบ Dashboard ธีม Pastel Pink ที่มีระบบเตือนรอบเวลาชนกันและคำนวณค่าบูธแยกรายวันได้อย่างแม่นยำ",
+        "designGoal_en": "Design Goal: Transform scattered booth schedules from paper and spreadsheets into an intuitive Pastel Pink dashboard with smart date conflict detection and day-by-day fee calculations.",
+        "problem_th": "ครีเอเตอร์ต้องสมัครงานอีเวนต์หลายสิบงานต่อปี ซึ่งมีทั้งวันเปิดรับสมัคร วันประกาศผล และวันจัดงานที่คาบเกี่ยวกันบ่อยครั้ง โดยเฉพาะงานหลายวันที่อาจได้รับการคัดเลือกเพียง 1 วัน (Partial Acceptance) ทำให้คำนวณค่าใช้จ่ายและวางแผนวันไปออกบูธผิดพลาด",
+        "problem_en": "Independent artists often apply to multiple concurrent conventions across different organizers with overlapping dates, resulting in double bookings, forfeited non-refundable deposit fees, and scattered budget spreadsheets.",
+        "responsibilities_th": "ทำ User Research กับกลุ่มครีเอเตอร์, ออกแบบ Design System ธีมสี Pastel Pink โดยอ้างอิง Component Patterns จาก Devias Kit Pro, ออกแบบระบบ Smart Date Conflict Algorithm และพัฒนาฟูลสแต็กเชื่อมต่อ MongoDB Atlas",
+        "responsibilities_en": "Conducted user research with creators, designed Pastel Pink design system with Devias Kit Pro patterns, designed smart date conflict algorithm, and developed full-stack app with MongoDB Atlas.",
+        "uxApproach_th": "ออกแบบมุมมองปฏิทิน 2 รูปแบบ (Month Grid & Agenda) แยกสีชัดเจนระหว่างวันสมัคร วันประกาศผล และวันจัดบูธจริง พร้อมแถบแจ้งเตือนเมื่อมีงานชนกัน (Date Conflict Detection)",
+        "uxApproach_en": "Crafted Month Grid and Agenda calendar views with color-coded phases (application, result, booth dates) paired with active alert banners for overlapping dates.",
+        "keyDecisions_th": "1) Partial Acceptance Support: รองรับผลการสมัครแยกรายวัน โดยระบบจะนับเฉพาะวันที่ได้บูธเข้าปฏิทินจริงและคำนวณค่าบูธตามวันที่ได้รับคัดเลือกเท่านั้น\n2) Budget Separation: แยกค่าบูธค้างชำระ ยอดที่ชำระแล้ว และค่าใช้จ่ายที่อาจเกิดขึ้นจากใบสมัครที่รอผลออกจากกัน ไม่นับซ้ำซ้อน\n3) Preview Demo vs Cloud Auth: ผู้เยี่ยมชมสามารถทดลองสร้างงานในโหมด Demo Sandbox ได้อย่างปลอดภัย โดยระบบจะซิงค์และบันทึกลง MongoDB Atlas เฉพาะเมื่อล็อกอินด้วยอีเมลผู้ดูแล",
+        "keyDecisions_en": "1) Partial Acceptance Support: Independent tracking for multi-day events where only specific days are accepted.\n2) Budget Separation: Clear separation between projected application fees and confirmed operational booth expenses.\n3) Preview Demo vs Cloud Auth: Guests can explore the full sandbox safely without database mutations.",
+        "devCollaboration_th": "พัฒนาด้วย React 18, Material UI (MUI v6), Emotion, Node.js REST API และ MongoDB Atlas พร้อมระบบ Offline Fallback ด้วย LocalStorage",
+        "devCollaboration_en": "Built with React 18, Material UI (MUI v6), Emotion, Node.js REST API, and MongoDB Atlas with offline LocalStorage fallback.",
+        "outcomeLearnings_th": "ช่วยให้ครีเอเตอร์วางแผนตารางออกบูธล่วงหน้าได้โดยไม่พลาดวันสำคัญ ประหยัดเวลาจัดการใบสมัครได้กว่า 70% และป้องกันปัญหาการจองบูธซ้อนในวันเดียวกัน",
+        "outcomeLearnings_en": "Creators reduced scheduling conflicts to zero, saved over 70% of application planning time, and eliminated double-booking mistakes.",
+        "keyFeatures_th": [
+          "ระบบตรวจจับรอบเวลาจัดบูธชนกัน (Smart Date Conflict Detection)",
+          "ปฏิทินตารางงานแบบ Month Grid และ Agenda แยกสีตามช่วงเวลาสำคัญ",
+          "รองรับผลการสมัครแบบ Partial Acceptance แยกรายวันพร้อมคำนวณค่าบูธให้อัตโนมัติ",
+          "ระบบบริหารงบประมาณ (Budget Summary) แยกยอดหนี้จริงและยอดที่อาจเกิดขึ้น",
+          "ปลอดภัยด้วยระบบ Demo Mode สำหรับคนทั่วไป และ Cloud Sync สำหรับผู้ใช้อีเมลที่ยืนยันแล้ว"
+        ],
+        "keyFeatures_en": [
+          "Smart Date Conflict Detection engine for overlapping convention dates",
+          "Visual Month Grid and Agenda calendar color-coded by milestone phases",
+          "Partial day acceptance handling with automated pro-rated booth cost calculation",
+          "Comprehensive budget ledger separating confirmed debts from pending applications",
+          "Sandbox demo mode for visitors with verified cloud sync for administrators"
+        ]
+      }
+    }
+  ],
+  "activities": [
+    {
+      "id": "act-live-photobooth-strip",
+      "order": 1,
+      "type": "photobooth-strip",
+      "category": "concerts",
+      "categoryLabel": "01 // Live Music",
+      "title": "Live Stadium Moments",
+      "caption": "Electric atmosphere, sea of lightsticks & unforgettable concert memories.",
+      "date": "'25 - '26 Tour",
+      "accent": "washi-tape",
+      "tapeColor": "tape-kraft",
+      "rotation": -2,
+      "images": [
+        "/images/activity/20250222_165920.jpg",
+        "/images/activity/20250222_214416.jpg",
+        "/images/activity/20260606_231053.jpg"
+      ],
+      "image": "/images/activity/20250222_214416.jpg",
+      "stripLabel": "LIVE STADIUM MOMENTS ● 2025-2026",
+      "tag": "Photobooth Strip",
+      "posAll": {
+        "top": "9%",
+        "left": "3%",
+        "rotate": -2.5,
+        "zIndex": 4
+      },
+      "posFiltered": {
+        "top": "16%",
+        "left": "18%",
+        "rotate": -2.5,
+        "zIndex": 5
+      },
+      "title_th": "ช่วงเวลาคอนเสิร์ตสดในสเตเดียม",
+      "caption_th": "บรรยากาศเปี่ยมพลัง ทะเลแท่งไฟ และความทรงจำคอนเสิร์ตที่ไม่เคยลืม",
+      "title_en": "Live Stadium Moments",
+      "caption_en": "Electric atmosphere, sea of lightsticks & unforgettable concert memories.",
+      "status": "published",
+      "draft": {
+        "id": "act-live-photobooth-strip",
+        "order": 1,
+        "type": "photobooth-strip",
+        "category": "concerts",
+        "categoryLabel": "01 // Live Music",
+        "title": "Live Stadium Moments",
+        "caption": "Electric atmosphere, sea of lightsticks & unforgettable concert memories.",
+        "date": "'25 - '26 Tour",
+        "accent": "washi-tape",
+        "tapeColor": "tape-kraft",
+        "rotation": -2,
+        "images": [
+          "/images/activity/20250222_165920.jpg",
+          "/images/activity/20250222_214416.jpg",
+          "/images/activity/20260606_231053.jpg"
+        ],
+        "image": "/images/activity/20250222_214416.jpg",
+        "stripLabel": "LIVE STADIUM MOMENTS ● 2025-2026",
+        "tag": "Photobooth Strip",
+        "posAll": {
+          "top": "9%",
+          "left": "3%",
+          "rotate": -2.5,
+          "zIndex": 4
+        },
+        "posFiltered": {
+          "top": "16%",
+          "left": "18%",
+          "rotate": -2.5,
+          "zIndex": 5
+        },
+        "title_th": "ช่วงเวลาคอนเสิร์ตสดในสเตเดียม",
+        "caption_th": "บรรยากาศเปี่ยมพลัง ทะเลแท่งไฟ และความทรงจำคอนเสิร์ตที่ไม่เคยลืม",
+        "title_en": "Live Stadium Moments",
+        "caption_en": "Electric atmosphere, sea of lightsticks & unforgettable concert memories."
+      }
+    },
+    {
+      "id": "act-live-photobooth-print",
+      "order": 2,
+      "type": "polaroid",
+      "category": "concerts",
+      "categoryLabel": "01 // Live Music",
+      "title": "Concert Photobooth Memories",
+      "caption": "Preserved photobooth strip with favorite stage companions 📸",
+      "date": "Mar 2025",
+      "image": "/images/activity/20250303_193800.jpg",
+      "accent": "washi-tape",
+      "tapeColor": "tape-mint",
+      "rotation": 2.5,
+      "tag": "Photobooth Print",
+      "posAll": {
+        "top": "12%",
+        "left": "16%",
+        "rotate": 4.5,
+        "zIndex": 6
+      },
+      "posFiltered": {
+        "top": "14%",
+        "left": "38%",
+        "rotate": 4,
+        "zIndex": 6
+      },
+      "title_th": "ความทรงจำโฟโต้บูธคอนเสิร์ต",
+      "caption_th": "ภาพถ่ายสตริปโฟโต้บูธพร้อมเพื่อนร่วมเชียร์บนสเตจคนโปรด 📸",
+      "title_en": "Concert Photobooth Memories",
+      "caption_en": "Preserved photobooth strip with favorite stage companions 📸",
+      "status": "published",
+      "draft": {
+        "id": "act-live-photobooth-print",
+        "order": 2,
+        "type": "polaroid",
+        "category": "concerts",
+        "categoryLabel": "01 // Live Music",
+        "title": "Concert Photobooth Memories",
+        "caption": "Preserved photobooth strip with favorite stage companions 📸",
+        "date": "Mar 2025",
+        "image": "/images/activity/20250303_193800.jpg",
+        "accent": "washi-tape",
+        "tapeColor": "tape-mint",
+        "rotation": 2.5,
+        "tag": "Photobooth Print",
+        "posAll": {
+          "top": "12%",
+          "left": "16%",
+          "rotate": 4.5,
+          "zIndex": 6
+        },
+        "posFiltered": {
+          "top": "14%",
+          "left": "38%",
+          "rotate": 4,
+          "zIndex": 6
+        },
+        "title_th": "ความทรงจำโฟโต้บูธคอนเสิร์ต",
+        "caption_th": "ภาพถ่ายสตริปโฟโต้บูธพร้อมเพื่อนร่วมเชียร์บนสเตจคนโปรด 📸",
+        "title_en": "Concert Photobooth Memories",
+        "caption_en": "Preserved photobooth strip with favorite stage companions 📸"
+      }
+    },
+    {
+      "id": "act-live-merch-seats",
+      "order": 3,
+      "type": "polaroid",
+      "category": "concerts",
+      "categoryLabel": "01 // Live Music",
+      "title": "Arena Seats & Official Merch",
+      "caption": "Cheering slogans, lightsticks & ready for the stage lights 🎫",
+      "date": "Mar 2025",
+      "image": "/images/activity/20250309_214202.jpg",
+      "accent": "red-pushpin",
+      "rotation": -1.8,
+      "tag": "Concert",
+      "posAll": {
+        "top": "60%",
+        "left": "2%",
+        "rotate": -4,
+        "zIndex": 8
+      },
+      "posFiltered": {
+        "top": "22%",
+        "left": "58%",
+        "rotate": -3.5,
+        "zIndex": 7
+      },
+      "title_th": "ที่นั่งอารีน่า & สินค้าออฟฟิเชียล",
+      "caption_th": "สโลแกนเชียร์ แท่งไฟ และความพร้อมสู่แสงสปอตไลต์บนเวที 🎫",
+      "title_en": "Arena Seats & Official Merch",
+      "caption_en": "Cheering slogans, lightsticks & ready for the stage lights 🎫",
+      "status": "published",
+      "draft": {
+        "id": "act-live-merch-seats",
+        "order": 3,
+        "type": "polaroid",
+        "category": "concerts",
+        "categoryLabel": "01 // Live Music",
+        "title": "Arena Seats & Official Merch",
+        "caption": "Cheering slogans, lightsticks & ready for the stage lights 🎫",
+        "date": "Mar 2025",
+        "image": "/images/activity/20250309_214202.jpg",
+        "accent": "red-pushpin",
+        "rotation": -1.8,
+        "tag": "Concert",
+        "posAll": {
+          "top": "60%",
+          "left": "2%",
+          "rotate": -4,
+          "zIndex": 8
+        },
+        "posFiltered": {
+          "top": "22%",
+          "left": "58%",
+          "rotate": -3.5,
+          "zIndex": 7
+        },
+        "title_th": "ที่นั่งอารีน่า & สินค้าออฟฟิเชียล",
+        "caption_th": "สโลแกนเชียร์ แท่งไฟ และความพร้อมสู่แสงสปอตไลต์บนเวที 🎫",
+        "title_en": "Arena Seats & Official Merch",
+        "caption_en": "Cheering slogans, lightsticks & ready for the stage lights 🎫"
+      }
+    },
+    {
+      "id": "act-live-tickets",
+      "order": 4,
+      "type": "polaroid",
+      "category": "concerts",
+      "categoryLabel": "01 // Live Music",
+      "title": "Keepsake Tickets & Wristband",
+      "caption": "Physical concert passes, wristbands & artist photocards collected 🎟️",
+      "date": "Aug 2025",
+      "image": "/images/activity/20250816_171251.jpg",
+      "accent": "washi-tape",
+      "tapeColor": "tape-gold",
+      "rotation": 2,
+      "tag": "Ticket Stub",
+      "posAll": {
+        "top": "46%",
+        "left": "12%",
+        "rotate": 5.5,
+        "zIndex": 7
+      },
+      "posFiltered": {
+        "top": "50%",
+        "left": "42%",
+        "rotate": 3,
+        "zIndex": 8
+      },
+      "title_th": "บัตรคอนเสิร์ต & สายรัดข้อมือของสะสม",
+      "caption_th": "บัตรกระดาษของแท้ สายรัดข้อมือ และโฟโต้การ์ดศิลปินที่สะสมไว้ 🎟️",
+      "title_en": "Keepsake Tickets & Wristband",
+      "caption_en": "Physical concert passes, wristbands & artist photocards collected 🎟️",
+      "status": "published",
+      "draft": {
+        "id": "act-live-tickets",
+        "order": 4,
+        "type": "polaroid",
+        "category": "concerts",
+        "categoryLabel": "01 // Live Music",
+        "title": "Keepsake Tickets & Wristband",
+        "caption": "Physical concert passes, wristbands & artist photocards collected 🎟️",
+        "date": "Aug 2025",
+        "image": "/images/activity/20250816_171251.jpg",
+        "accent": "washi-tape",
+        "tapeColor": "tape-gold",
+        "rotation": 2,
+        "tag": "Ticket Stub",
+        "posAll": {
+          "top": "46%",
+          "left": "12%",
+          "rotate": 5.5,
+          "zIndex": 7
+        },
+        "posFiltered": {
+          "top": "50%",
+          "left": "42%",
+          "rotate": 3,
+          "zIndex": 8
+        },
+        "title_th": "บัตรคอนเสิร์ต & สายรัดข้อมือของสะสม",
+        "caption_th": "บัตรกระดาษของแท้ สายรัดข้อมือ และโฟโต้การ์ดศิลปินที่สะสมไว้ 🎟️",
+        "title_en": "Keepsake Tickets & Wristband",
+        "caption_en": "Physical concert passes, wristbands & artist photocards collected 🎟️"
+      }
+    },
+    {
+      "id": "act-art-desk-setup",
+      "order": 5,
+      "type": "polaroid",
+      "category": "creative",
+      "categoryLabel": "02 // Art & Design",
+      "title": "Miniature Workspace Art",
+      "caption": "Creative workspace, miniature architecture & daily inspiration ✨",
+      "date": "Oct 2024",
+      "image": "/images/activity/12c8b489-167f-484f-b7aa-6974858e6e99.jpg",
+      "accent": "washi-tape",
+      "tapeColor": "tape-kraft",
+      "rotation": 1.8,
+      "tag": "Desk Setup",
+      "posAll": {
+        "top": "65%",
+        "left": "20%",
+        "rotate": -2,
+        "zIndex": 10
+      },
+      "posFiltered": {
+        "top": "48%",
+        "left": "30%",
+        "rotate": 2.5,
+        "zIndex": 7
+      },
+      "title_th": "ศิลปะโต๊ะทำงานมุมจำลอง",
+      "caption_th": "พื้นที่สร้างสรรค์ สถาปัตยกรรมจิ๋ว และแรงบันดาลใจในทุกวัน ✨",
+      "title_en": "Miniature Workspace Art",
+      "caption_en": "Creative workspace, miniature architecture & daily inspiration ✨",
+      "status": "published",
+      "draft": {
+        "id": "act-art-desk-setup",
+        "order": 5,
+        "type": "polaroid",
+        "category": "creative",
+        "categoryLabel": "02 // Art & Design",
+        "title": "Miniature Workspace Art",
+        "caption": "Creative workspace, miniature architecture & daily inspiration ✨",
+        "date": "Oct 2024",
+        "image": "/images/activity/12c8b489-167f-484f-b7aa-6974858e6e99.jpg",
+        "accent": "washi-tape",
+        "tapeColor": "tape-kraft",
+        "rotation": 1.8,
+        "tag": "Desk Setup",
+        "posAll": {
+          "top": "65%",
+          "left": "20%",
+          "rotate": -2,
+          "zIndex": 10
+        },
+        "posFiltered": {
+          "top": "48%",
+          "left": "30%",
+          "rotate": 2.5,
+          "zIndex": 7
+        },
+        "title_th": "ศิลปะโต๊ะทำงานมุมจำลอง",
+        "caption_th": "พื้นที่สร้างสรรค์ สถาปัตยกรรมจิ๋ว และแรงบันดาลใจในทุกวัน ✨",
+        "title_en": "Miniature Workspace Art",
+        "caption_en": "Creative workspace, miniature architecture & daily inspiration ✨"
+      }
+    },
+    {
+      "id": "act-art-journal-stickers",
+      "order": 6,
+      "type": "polaroid",
+      "category": "creative",
+      "categoryLabel": "02 // Art & Design",
+      "title": "Art Journal & Sticker Stash",
+      "caption": "Curating colorful sticker sheets, typography & sketch notes 🎨",
+      "date": "Dec 2024",
+      "image": "/images/activity/20241218_091403.jpg",
+      "accent": "washi-tape",
+      "tapeColor": "tape-rose",
+      "rotation": -2.8,
+      "tag": "Art Journal",
+      "posAll": {
+        "top": "9%",
+        "left": "28%",
+        "rotate": -3.5,
+        "zIndex": 5
+      },
+      "posFiltered": {
+        "top": "16%",
+        "left": "28%",
+        "rotate": -3.5,
+        "zIndex": 5
+      },
+      "title_th": "สมุดบันทึกศิลปะ & คอลเลกชันสติกเกอร์",
+      "caption_th": "สะสมแผ่นสติกเกอร์สีสัน งานไทโปกราฟี และภาพสเก็ตช์ไอเดีย 🎨",
+      "title_en": "Art Journal & Sticker Stash",
+      "caption_en": "Curating colorful sticker sheets, typography & sketch notes 🎨",
+      "status": "published",
+      "draft": {
+        "id": "act-art-journal-stickers",
+        "order": 6,
+        "type": "polaroid",
+        "category": "creative",
+        "categoryLabel": "02 // Art & Design",
+        "title": "Art Journal & Sticker Stash",
+        "caption": "Curating colorful sticker sheets, typography & sketch notes 🎨",
+        "date": "Dec 2024",
+        "image": "/images/activity/20241218_091403.jpg",
+        "accent": "washi-tape",
+        "tapeColor": "tape-rose",
+        "rotation": -2.8,
+        "tag": "Art Journal",
+        "posAll": {
+          "top": "9%",
+          "left": "28%",
+          "rotate": -3.5,
+          "zIndex": 5
+        },
+        "posFiltered": {
+          "top": "16%",
+          "left": "28%",
+          "rotate": -3.5,
+          "zIndex": 5
+        },
+        "title_th": "สมุดบันทึกศิลปะ & คอลเลกชันสติกเกอร์",
+        "caption_th": "สะสมแผ่นสติกเกอร์สีสัน งานไทโปกราฟี และภาพสเก็ตช์ไอเดีย 🎨",
+        "title_en": "Art Journal & Sticker Stash",
+        "caption_en": "Curating colorful sticker sheets, typography & sketch notes 🎨"
+      }
+    },
+    {
+      "id": "act-art-neon-exhibition",
+      "order": 7,
+      "type": "polaroid",
+      "category": "creative",
+      "categoryLabel": "02 // Art & Design",
+      "title": "Immersive Neon Exhibition",
+      "caption": "Spatial light installations, sensory gradients & modern visuals 💜",
+      "date": "Mar 2025",
+      "image": "/images/activity/20250304_231241.jpg",
+      "accent": "date-stamp",
+      "dateStamp": "'25 03 04",
+      "pinType": "silver-pushpin",
+      "rotation": 1.5,
+      "tag": "Exhibition",
+      "posAll": {
+        "top": "38%",
+        "left": "24%",
+        "rotate": 3.5,
+        "zIndex": 9
+      },
+      "posFiltered": {
+        "top": "14%",
+        "left": "52%",
+        "rotate": 3.5,
+        "zIndex": 6
+      },
+      "title_th": "นิทรรศการแสงนีออนเสมือนจริง",
+      "caption_th": "งานจัดแสดงแสงไฟ กราเดียนต์ความรู้สึก และมุมมองภาพสมัยใหม่ 💜",
+      "title_en": "Immersive Neon Exhibition",
+      "caption_en": "Spatial light installations, sensory gradients & modern visuals 💜",
+      "status": "published",
+      "draft": {
+        "id": "act-art-neon-exhibition",
+        "order": 7,
+        "type": "polaroid",
+        "category": "creative",
+        "categoryLabel": "02 // Art & Design",
+        "title": "Immersive Neon Exhibition",
+        "caption": "Spatial light installations, sensory gradients & modern visuals 💜",
+        "date": "Mar 2025",
+        "image": "/images/activity/20250304_231241.jpg",
+        "accent": "date-stamp",
+        "dateStamp": "'25 03 04",
+        "pinType": "silver-pushpin",
+        "rotation": 1.5,
+        "tag": "Exhibition",
+        "posAll": {
+          "top": "38%",
+          "left": "24%",
+          "rotate": 3.5,
+          "zIndex": 9
+        },
+        "posFiltered": {
+          "top": "14%",
+          "left": "52%",
+          "rotate": 3.5,
+          "zIndex": 6
+        },
+        "title_th": "นิทรรศการแสงนีออนเสมือนจริง",
+        "caption_th": "งานจัดแสดงแสงไฟ กราเดียนต์ความรู้สึก และมุมมองภาพสมัยใหม่ 💜",
+        "title_en": "Immersive Neon Exhibition",
+        "caption_en": "Spatial light installations, sensory gradients & modern visuals 💜"
+      }
+    },
+    {
+      "id": "act-art-collectibles",
+      "order": 8,
+      "type": "polaroid",
+      "category": "creative",
+      "categoryLabel": "02 // Art & Design",
+      "title": "Character Toys & Collectibles",
+      "caption": "Playful character figurines, blind boxes & stationery haul 🧸",
+      "date": "Jun 2026",
+      "image": "/images/activity/20260613_103655.jpg",
+      "accent": "paperclip",
+      "rotation": -2.2,
+      "tag": "Collectibles",
+      "posAll": {
+        "top": "52%",
+        "left": "34%",
+        "rotate": -4.5,
+        "zIndex": 6
+      },
+      "posFiltered": {
+        "top": "46%",
+        "left": "50%",
+        "rotate": -4,
+        "zIndex": 8
+      },
+      "title_th": "ของเล่นคาแรกเตอร์ & ฟิกเกอร์สะสม",
+      "caption_th": "ฟิกเกอร์คาแรกเตอร์สดใส กล่องสุ่ม และเครื่องเขียนน่ารัก 🧸",
+      "title_en": "Character Toys & Collectibles",
+      "caption_en": "Playful character figurines, blind boxes & stationery haul 🧸",
+      "status": "published",
+      "draft": {
+        "id": "act-art-collectibles",
+        "order": 8,
+        "type": "polaroid",
+        "category": "creative",
+        "categoryLabel": "02 // Art & Design",
+        "title": "Character Toys & Collectibles",
+        "caption": "Playful character figurines, blind boxes & stationery haul 🧸",
+        "date": "Jun 2026",
+        "image": "/images/activity/20260613_103655.jpg",
+        "accent": "paperclip",
+        "rotation": -2.2,
+        "tag": "Collectibles",
+        "posAll": {
+          "top": "52%",
+          "left": "34%",
+          "rotate": -4.5,
+          "zIndex": 6
+        },
+        "posFiltered": {
+          "top": "46%",
+          "left": "50%",
+          "rotate": -4,
+          "zIndex": 8
+        },
+        "title_th": "ของเล่นคาแรกเตอร์ & ฟิกเกอร์สะสม",
+        "caption_th": "ฟิกเกอร์คาแรกเตอร์สดใส กล่องสุ่ม และเครื่องเขียนน่ารัก 🧸",
+        "title_en": "Character Toys & Collectibles",
+        "caption_en": "Playful character figurines, blind boxes & stationery haul 🧸"
+      }
+    },
+    {
+      "id": "act-life-mirror-fit",
+      "order": 9,
+      "type": "polaroid",
+      "category": "lifestyle",
+      "categoryLabel": "03 // Lifestyle & Cafes",
+      "title": "Casual Fit Check",
+      "caption": "Everyday casual style & city walk mood 🪞",
+      "date": "Dec 2024",
+      "image": "/images/activity/20241218_124441.jpg",
+      "accent": "washi-tape",
+      "tapeColor": "tape-kraft",
+      "rotation": 2.6,
+      "tag": "Fit Check",
+      "posAll": {
+        "top": "10%",
+        "left": "42%",
+        "rotate": 3,
+        "zIndex": 4
+      },
+      "posFiltered": {
+        "top": "14%",
+        "left": "20%",
+        "rotate": 3,
+        "zIndex": 5
+      },
+      "title_th": "เช็กความพร้อมลุคลำลอง",
+      "caption_th": "สไตล์สบายๆ ในวันปกติและบรรยากาศเดินเล่นในเมือง 🪞",
+      "title_en": "Casual Fit Check",
+      "caption_en": "Everyday casual style & city walk mood 🪞",
+      "status": "published",
+      "draft": {
+        "id": "act-life-mirror-fit",
+        "order": 9,
+        "type": "polaroid",
+        "category": "lifestyle",
+        "categoryLabel": "03 // Lifestyle & Cafes",
+        "title": "Casual Fit Check",
+        "caption": "Everyday casual style & city walk mood 🪞",
+        "date": "Dec 2024",
+        "image": "/images/activity/20241218_124441.jpg",
+        "accent": "washi-tape",
+        "tapeColor": "tape-kraft",
+        "rotation": 2.6,
+        "tag": "Fit Check",
+        "posAll": {
+          "top": "10%",
+          "left": "42%",
+          "rotate": 3,
+          "zIndex": 4
+        },
+        "posFiltered": {
+          "top": "14%",
+          "left": "20%",
+          "rotate": 3,
+          "zIndex": 5
+        },
+        "title_th": "เช็กความพร้อมลุคลำลอง",
+        "caption_th": "สไตล์สบายๆ ในวันปกติและบรรยากาศเดินเล่นในเมือง 🪞",
+        "title_en": "Casual Fit Check",
+        "caption_en": "Everyday casual style & city walk mood 🪞"
+      }
+    },
+    {
+      "id": "act-life-cafe-mirror",
+      "order": 10,
+      "type": "polaroid",
+      "category": "lifestyle",
+      "categoryLabel": "03 // Lifestyle & Cafes",
+      "title": "Afternoon Cafe Hopping",
+      "caption": "Finding calm neighborhood corners, warm espresso & friendly air ☕",
+      "date": "Dec 2024",
+      "image": "/images/activity/20241230_164035.jpg",
+      "accent": "yellow-pushpin",
+      "rotation": -1.8,
+      "tag": "Cafe",
+      "posAll": {
+        "top": "36%",
+        "left": "46%",
+        "rotate": -3,
+        "zIndex": 8
+      },
+      "posFiltered": {
+        "top": "48%",
+        "left": "24%",
+        "rotate": -2.5,
+        "zIndex": 8
+      },
+      "title_th": "ฮอปปิ้งคาเฟ่ยามบ่าย",
+      "caption_th": "หามุมสงบในย่านโปรด กาแฟเอสเปรสโซ่อุ่นๆ และบรรยากาศเป็นมิตร ☕",
+      "title_en": "Afternoon Cafe Hopping",
+      "caption_en": "Finding calm neighborhood corners, warm espresso & friendly air ☕",
+      "status": "published",
+      "draft": {
+        "id": "act-life-cafe-mirror",
+        "order": 10,
+        "type": "polaroid",
+        "category": "lifestyle",
+        "categoryLabel": "03 // Lifestyle & Cafes",
+        "title": "Afternoon Cafe Hopping",
+        "caption": "Finding calm neighborhood corners, warm espresso & friendly air ☕",
+        "date": "Dec 2024",
+        "image": "/images/activity/20241230_164035.jpg",
+        "accent": "yellow-pushpin",
+        "rotation": -1.8,
+        "tag": "Cafe",
+        "posAll": {
+          "top": "36%",
+          "left": "46%",
+          "rotate": -3,
+          "zIndex": 8
+        },
+        "posFiltered": {
+          "top": "48%",
+          "left": "24%",
+          "rotate": -2.5,
+          "zIndex": 8
+        },
+        "title_th": "ฮอปปิ้งคาเฟ่ยามบ่าย",
+        "caption_th": "หามุมสงบในย่านโปรด กาแฟเอสเปรสโซ่อุ่นๆ และบรรยากาศเป็นมิตร ☕",
+        "title_en": "Afternoon Cafe Hopping",
+        "caption_en": "Finding calm neighborhood corners, warm espresso & friendly air ☕"
+      }
+    },
+    {
+      "id": "act-life-peace-portrait",
+      "order": 11,
+      "type": "polaroid",
+      "category": "lifestyle",
+      "categoryLabel": "03 // Lifestyle & Cafes",
+      "title": "Always High Spirits",
+      "caption": "Always bringing positive energy, smiles & endless curiosity ✌️",
+      "date": "Jan 2025",
+      "image": "/images/activity/20250107_114103.jpg",
+      "accent": "sticky-note",
+      "rotation": 1.2,
+      "tag": "Portrait",
+      "posAll": {
+        "top": "34%",
+        "left": "58%",
+        "rotate": 5,
+        "zIndex": 5
+      },
+      "posFiltered": {
+        "top": "14%",
+        "left": "62%",
+        "rotate": 4,
+        "zIndex": 7
+      },
+      "title_th": "พลังบวกและรอยยิ้มเสมอ",
+      "caption_th": "ส่งต่อพลังงานด้านบวก รอยยิ้ม และความกระตือรือร้นที่ไม่สิ้นสุด ✌️",
+      "title_en": "Always High Spirits",
+      "caption_en": "Always bringing positive energy, smiles & endless curiosity ✌️",
+      "status": "published",
+      "draft": {
+        "id": "act-life-peace-portrait",
+        "order": 11,
+        "type": "polaroid",
+        "category": "lifestyle",
+        "categoryLabel": "03 // Lifestyle & Cafes",
+        "title": "Always High Spirits",
+        "caption": "Always bringing positive energy, smiles & endless curiosity ✌️",
+        "date": "Jan 2025",
+        "image": "/images/activity/20250107_114103.jpg",
+        "accent": "sticky-note",
+        "rotation": 1.2,
+        "tag": "Portrait",
+        "posAll": {
+          "top": "34%",
+          "left": "58%",
+          "rotate": 5,
+          "zIndex": 5
+        },
+        "posFiltered": {
+          "top": "14%",
+          "left": "62%",
+          "rotate": 4,
+          "zIndex": 7
+        },
+        "title_th": "พลังบวกและรอยยิ้มเสมอ",
+        "caption_th": "ส่งต่อพลังงานด้านบวก รอยยิ้ม และความกระตือรือร้นที่ไม่สิ้นสุด ✌️",
+        "title_en": "Always High Spirits",
+        "caption_en": "Always bringing positive energy, smiles & endless curiosity ✌️"
+      }
+    },
+    {
+      "id": "act-life-weekend-smile",
+      "order": 12,
+      "type": "polaroid",
+      "category": "lifestyle",
+      "categoryLabel": "03 // Lifestyle & Cafes",
+      "title": "Weekend Warmth & Smiles",
+      "caption": "Clear weekend sunshine & recharging creative design energy ✨",
+      "date": "Feb 2025",
+      "image": "/images/activity/20250201_120421.jpg",
+      "accent": "washi-tape",
+      "tapeColor": "tape-mint",
+      "rotation": -2.4,
+      "tag": "Lifestyle",
+      "posAll": {
+        "top": "8%",
+        "left": "55%",
+        "rotate": -4,
+        "zIndex": 3
+      },
+      "posFiltered": {
+        "top": "12%",
+        "left": "42%",
+        "rotate": -3.5,
+        "zIndex": 6
+      },
+      "title_th": "ความอบอุ่นและรอยยิ้มวันหยุด",
+      "caption_th": "แสงแดดสดใสในวันหยุดสุดสัปดาห์ เติมพลังให้งานออกแบบ ✨",
+      "title_en": "Weekend Warmth & Smiles",
+      "caption_en": "Clear weekend sunshine & recharging creative design energy ✨",
+      "status": "published",
+      "draft": {
+        "id": "act-life-weekend-smile",
+        "order": 12,
+        "type": "polaroid",
+        "category": "lifestyle",
+        "categoryLabel": "03 // Lifestyle & Cafes",
+        "title": "Weekend Warmth & Smiles",
+        "caption": "Clear weekend sunshine & recharging creative design energy ✨",
+        "date": "Feb 2025",
+        "image": "/images/activity/20250201_120421.jpg",
+        "accent": "washi-tape",
+        "tapeColor": "tape-mint",
+        "rotation": -2.4,
+        "tag": "Lifestyle",
+        "posAll": {
+          "top": "8%",
+          "left": "55%",
+          "rotate": -4,
+          "zIndex": 3
+        },
+        "posFiltered": {
+          "top": "12%",
+          "left": "42%",
+          "rotate": -3.5,
+          "zIndex": 6
+        },
+        "title_th": "ความอบอุ่นและรอยยิ้มวันหยุด",
+        "caption_th": "แสงแดดสดใสในวันหยุดสุดสัปดาห์ เติมพลังให้งานออกแบบ ✨",
+        "title_en": "Weekend Warmth & Smiles",
+        "caption_en": "Clear weekend sunshine & recharging creative design energy ✨"
+      }
+    },
+    {
+      "id": "act-life-japanese-table",
+      "order": 13,
+      "type": "polaroid",
+      "category": "lifestyle",
+      "categoryLabel": "03 // Lifestyle & Cafes",
+      "title": "Delicious Warm Dinner Spread",
+      "caption": "Hearty meal with good friends after a productive week 🍱",
+      "date": "Feb 2025",
+      "image": "/images/activity/20250221_194859.jpg",
+      "accent": "date-stamp",
+      "dateStamp": "'25 02 21",
+      "pinType": "red-pushpin",
+      "rotation": 2.2,
+      "tag": "Food & Cafe",
+      "posAll": {
+        "top": "62%",
+        "left": "44%",
+        "rotate": 4.5,
+        "zIndex": 7
+      },
+      "posFiltered": {
+        "top": "46%",
+        "left": "44%",
+        "rotate": 3.5,
+        "zIndex": 9
+      },
+      "title_th": "มื้อเย็นแสนอบอุ่นและอร่อย",
+      "caption_th": "มื้ออาหารแสนอร่อยร่วมกับเพื่อนสนิทหลังสัปดาห์ทำงานที่เต็มที่ 🍱",
+      "title_en": "Delicious Warm Dinner Spread",
+      "caption_en": "Hearty meal with good friends after a productive week 🍱",
+      "status": "published",
+      "draft": {
+        "id": "act-life-japanese-table",
+        "order": 13,
+        "type": "polaroid",
+        "category": "lifestyle",
+        "categoryLabel": "03 // Lifestyle & Cafes",
+        "title": "Delicious Warm Dinner Spread",
+        "caption": "Hearty meal with good friends after a productive week 🍱",
+        "date": "Feb 2025",
+        "image": "/images/activity/20250221_194859.jpg",
+        "accent": "date-stamp",
+        "dateStamp": "'25 02 21",
+        "pinType": "red-pushpin",
+        "rotation": 2.2,
+        "tag": "Food & Cafe",
+        "posAll": {
+          "top": "62%",
+          "left": "44%",
+          "rotate": 4.5,
+          "zIndex": 7
+        },
+        "posFiltered": {
+          "top": "46%",
+          "left": "44%",
+          "rotate": 3.5,
+          "zIndex": 9
+        },
+        "title_th": "มื้อเย็นแสนอบอุ่นและอร่อย",
+        "caption_th": "มื้ออาหารแสนอร่อยร่วมกับเพื่อนสนิทหลังสัปดาห์ทำงานที่เต็มที่ 🍱",
+        "title_en": "Delicious Warm Dinner Spread",
+        "caption_en": "Hearty meal with good friends after a productive week 🍱"
+      }
+    },
+    {
+      "id": "act-life-flower-bouquet",
+      "order": 14,
+      "type": "polaroid",
+      "category": "lifestyle",
+      "categoryLabel": "03 // Lifestyle & Cafes",
+      "title": "Pastel Bloom Palette",
+      "caption": "Fresh flower bouquet & natural color gradient inspiration 💐",
+      "date": "Mar 2026",
+      "image": "/images/activity/20260319_194927.jpg",
+      "accent": "rose-washi-tape",
+      "tapeColor": "tape-rose",
+      "rotation": -1.6,
+      "tag": "Color Inspo",
+      "posAll": {
+        "top": "62%",
+        "left": "56%",
+        "rotate": -3,
+        "zIndex": 9
+      },
+      "posFiltered": {
+        "top": "48%",
+        "left": "60%",
+        "rotate": -3,
+        "zIndex": 10
+      },
+      "title_th": "พาเลทสีพาสเทลดอกไม้สด",
+      "caption_th": "ช่อดอกไม้สดและแรงบันดาลใจเฉดสีกราเดียนต์จากธรรมชาติ 💐",
+      "title_en": "Pastel Bloom Palette",
+      "caption_en": "Fresh flower bouquet & natural color gradient inspiration 💐",
+      "status": "published",
+      "draft": {
+        "id": "act-life-flower-bouquet",
+        "order": 14,
+        "type": "polaroid",
+        "category": "lifestyle",
+        "categoryLabel": "03 // Lifestyle & Cafes",
+        "title": "Pastel Bloom Palette",
+        "caption": "Fresh flower bouquet & natural color gradient inspiration 💐",
+        "date": "Mar 2026",
+        "image": "/images/activity/20260319_194927.jpg",
+        "accent": "rose-washi-tape",
+        "tapeColor": "tape-rose",
+        "rotation": -1.6,
+        "tag": "Color Inspo",
+        "posAll": {
+          "top": "62%",
+          "left": "56%",
+          "rotate": -3,
+          "zIndex": 9
+        },
+        "posFiltered": {
+          "top": "48%",
+          "left": "60%",
+          "rotate": -3,
+          "zIndex": 10
+        },
+        "title_th": "พาเลทสีพาสเทลดอกไม้สด",
+        "caption_th": "ช่อดอกไม้สดและแรงบันดาลใจเฉดสีกราเดียนต์จากธรรมชาติ 💐",
+        "title_en": "Pastel Bloom Palette",
+        "caption_en": "Fresh flower bouquet & natural color gradient inspiration 💐"
+      }
+    },
+    {
+      "id": "act-pet-festive-supervisor",
+      "order": 15,
+      "type": "polaroid",
+      "category": "pets",
+      "categoryLabel": "04 // Companions",
+      "title": "Festive Supervisor 🐾",
+      "caption": "Festive supervisor 🐾 Keeping watch over every design pixel.",
+      "date": "Dec 2024",
+      "image": "/images/activity/20241220_203058.jpg",
+      "accent": "yellow-pushpin",
+      "rotation": -2.6,
+      "tag": "Cat Companion",
+      "posAll": {
+        "top": "12%",
+        "left": "70%",
+        "rotate": 5.5,
+        "zIndex": 4
+      },
+      "posFiltered": {
+        "top": "28%",
+        "left": "32%",
+        "rotate": -3.5,
+        "zIndex": 5
+      },
+      "title_th": "หัวหน้างานตัวจริงช่วงเทศกาล 🐾",
+      "caption_th": "หัวหน้างานขนฟู 🐾 คอยจับตาดูทุกพิกเซลของงานออกแบบอย่างใกล้ชิด",
+      "title_en": "Festive Supervisor 🐾",
+      "caption_en": "Festive supervisor 🐾 Keeping watch over every design pixel.",
+      "status": "published",
+      "draft": {
+        "id": "act-pet-festive-supervisor",
+        "order": 15,
+        "type": "polaroid",
+        "category": "pets",
+        "categoryLabel": "04 // Companions",
+        "title": "Festive Supervisor 🐾",
+        "caption": "Festive supervisor 🐾 Keeping watch over every design pixel.",
+        "date": "Dec 2024",
+        "image": "/images/activity/20241220_203058.jpg",
+        "accent": "yellow-pushpin",
+        "rotation": -2.6,
+        "tag": "Cat Companion",
+        "posAll": {
+          "top": "12%",
+          "left": "70%",
+          "rotate": 5.5,
+          "zIndex": 4
+        },
+        "posFiltered": {
+          "top": "28%",
+          "left": "32%",
+          "rotate": -3.5,
+          "zIndex": 5
+        },
+        "title_th": "หัวหน้างานตัวจริงช่วงเทศกาล 🐾",
+        "caption_th": "หัวหน้างานขนฟู 🐾 คอยจับตาดูทุกพิกเซลของงานออกแบบอย่างใกล้ชิด",
+        "title_en": "Festive Supervisor 🐾",
+        "caption_en": "Festive supervisor 🐾 Keeping watch over every design pixel."
+      }
+    },
+    {
+      "id": "act-pet-design-assistant",
+      "order": 16,
+      "type": "polaroid",
+      "category": "pets",
+      "categoryLabel": "04 // Companions",
+      "title": "My Little Design Assistant 🐱",
+      "caption": "My little design assistant 🐱 taking an essential power nap.",
+      "date": "Jan 2025",
+      "image": "/images/activity/1736163183500.jpg",
+      "accent": "washi-tape",
+      "tapeColor": "tape-mint",
+      "rotation": 2.2,
+      "tag": "Cat Companion",
+      "posAll": {
+        "top": "48%",
+        "left": "72%",
+        "rotate": -3.5,
+        "zIndex": 8
+      },
+      "posFiltered": {
+        "top": "26%",
+        "left": "52%",
+        "rotate": 4,
+        "zIndex": 6
+      },
+      "title_th": "ผู้ช่วยดีไซเนอร์ตัวน้อย 🐱",
+      "caption_th": "ผู้ช่วยดีไซเนอร์ตัวจิ๋ว 🐱 กำลังพักสายตาและนอนชาร์จพลังคนเก่ง",
+      "title_en": "My Little Design Assistant 🐱",
+      "caption_en": "My little design assistant 🐱 taking an essential power nap.",
+      "status": "published",
+      "draft": {
+        "id": "act-pet-design-assistant",
+        "order": 16,
+        "type": "polaroid",
+        "category": "pets",
+        "categoryLabel": "04 // Companions",
+        "title": "My Little Design Assistant 🐱",
+        "caption": "My little design assistant 🐱 taking an essential power nap.",
+        "date": "Jan 2025",
+        "image": "/images/activity/1736163183500.jpg",
+        "accent": "washi-tape",
+        "tapeColor": "tape-mint",
+        "rotation": 2.2,
+        "tag": "Cat Companion",
+        "posAll": {
+          "top": "48%",
+          "left": "72%",
+          "rotate": -3.5,
+          "zIndex": 8
+        },
+        "posFiltered": {
+          "top": "26%",
+          "left": "52%",
+          "rotate": 4,
+          "zIndex": 6
+        },
+        "title_th": "ผู้ช่วยดีไซเนอร์ตัวน้อย 🐱",
+        "caption_th": "ผู้ช่วยดีไซเนอร์ตัวจิ๋ว 🐱 กำลังพักสายตาและนอนชาร์จพลังคนเก่ง",
+        "title_en": "My Little Design Assistant 🐱",
+        "caption_en": "My little design assistant 🐱 taking an essential power nap."
+      }
+    }
+  ],
+  "mediaLibrary": [
+    {
+      "id": "media-avatar",
+      "filename": "avatar_square.png",
+      "url": "/assets/avatar_square.png",
+      "mimeType": "image/png",
+      "size": 154000,
+      "altText": {
+        "en": "Rujisaya Portrait",
+        "th": "รูปโปรไฟล์ รุจิสยา"
+      },
+      "uploadedAt": "2026-10-27T03:57:26.867Z"
+    },
+    {
+      "id": "media-leaya-full",
+      "filename": "leaya_screenshot_full.png",
+      "url": "/assets/portfolio/leaya_screenshot_full.png",
+      "mimeType": "image/png",
+      "size": 420000,
+      "altText": {
+        "en": "Leaya Dashboard Overview",
+        "th": "ภาพรวมแดชบอร์ด Leaya"
+      },
+      "uploadedAt": "2026-10-27T03:57:26.867Z"
+    },
+    {
+      "id": "media-ami-dashboard",
+      "filename": "ami_screen_dashboard.png",
+      "url": "/assets/portfolio/ami_screen_dashboard.png",
+      "mimeType": "image/png",
+      "size": 380000,
+      "altText": {
+        "en": "Ami Booth Planner Dashboard",
+        "th": "แดชบอร์ดภาพรวม Ami Booth Planner"
+      },
+      "uploadedAt": "2026-10-27T03:57:26.867Z"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "rev_hero_1793074616614",
+      "section": "hero",
+      "version": 8,
+      "snapshot": {
+        "miniLinks": [
+          {
+            "en": "enterprise ux",
+            "th": "ออกแบบระบบ enterprise"
+          },
+          {
+            "en": "portfolio",
+            "th": "พอร์ตโฟลิโอ"
+          },
+          {
+            "en": "developer handoff",
+            "th": "ส่งมอบงานนักพัฒนา"
+          }
+        ],
+        "cursiveScript": "UX UI",
+        "chunkyTitle": "portfolio",
+        "yearLabel": {
+          "en": "by Toeyruji",
+          "th": "โดย เตยรุจิ"
+        },
+        "bioLead": {
+          "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+          "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+        },
+        "stats": [
+          {
+            "en": "⚡️ 2+ Years CyberSec UX",
+            "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+          },
+          {
+            "en": "🎓 3.73 First Class Honors (IT)",
+            "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+          },
+          {
+            "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+            "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+          }
+        ],
+        "ctaButtons": [
+          {
+            "en": "explore projects",
+            "th": "สำรวจผลงาน",
+            "url": "#projects",
+            "type": "primary"
+          },
+          {
+            "en": "download resume (pdf)",
+            "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+            "url": "/Rujisaya Resume.pdf",
+            "type": "secondary"
+          }
+        ]
+      },
+      "author": "toeyruji",
+      "note": "Rolled back to revision rev_hero_1793074615872",
+      "publishedAt": "2026-10-27T04:16:56.614Z"
+    },
+    {
+      "id": "rev_hero_1793074615872",
+      "section": "hero",
+      "version": 7,
+      "snapshot": {
+        "miniLinks": [
+          {
+            "en": "enterprise ux",
+            "th": "ออกแบบระบบ enterprise"
+          },
+          {
+            "en": "portfolio",
+            "th": "พอร์ตโฟลิโอ"
+          },
+          {
+            "en": "developer handoff",
+            "th": "ส่งมอบงานนักพัฒนา"
+          }
+        ],
+        "cursiveScript": "UX UI",
+        "chunkyTitle": "portfolio",
+        "yearLabel": {
+          "en": "by Toeyruji",
+          "th": "โดย เตยรุจิ"
+        },
+        "bioLead": {
+          "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+          "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+        },
+        "stats": [
+          {
+            "en": "⚡️ 2+ Years CyberSec UX",
+            "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+          },
+          {
+            "en": "🎓 3.73 First Class Honors (IT)",
+            "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+          },
+          {
+            "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+            "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+          }
+        ],
+        "ctaButtons": [
+          {
+            "en": "explore projects",
+            "th": "สำรวจผลงาน",
+            "url": "#projects",
+            "type": "primary"
+          },
+          {
+            "en": "download resume (pdf)",
+            "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+            "url": "/Rujisaya Resume.pdf",
+            "type": "secondary"
+          }
+        ]
+      },
+      "author": "toeyruji",
+      "note": "Automated E2E Test Release",
+      "publishedAt": "2026-10-27T04:16:55.870Z",
+      "_id": "6ae025b75321a0900a680540"
+    },
+    {
+      "id": "rev_hero_1793074575351",
+      "section": "hero",
+      "version": 6,
+      "snapshot": {
+        "miniLinks": [
+          {
+            "en": "enterprise ux",
+            "th": "ออกแบบระบบ enterprise"
+          },
+          {
+            "en": "portfolio",
+            "th": "พอร์ตโฟลิโอ"
+          },
+          {
+            "en": "developer handoff",
+            "th": "ส่งมอบงานนักพัฒนา"
+          }
+        ],
+        "cursiveScript": "UX UI",
+        "chunkyTitle": "portfolio",
+        "yearLabel": {
+          "en": "by Toeyruji",
+          "th": "โดย เตยรุจิ"
+        },
+        "bioLead": {
+          "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+          "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+        },
+        "stats": [
+          {
+            "en": "⚡️ 2+ Years CyberSec UX",
+            "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+          },
+          {
+            "en": "🎓 3.73 First Class Honors (IT)",
+            "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+          },
+          {
+            "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+            "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+          }
+        ],
+        "ctaButtons": [
+          {
+            "en": "explore projects",
+            "th": "สำรวจผลงาน",
+            "url": "#projects",
+            "type": "primary"
+          },
+          {
+            "en": "download resume (pdf)",
+            "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+            "url": "/Rujisaya Resume.pdf",
+            "type": "secondary"
+          }
+        ]
+      },
+      "author": "toeyruji",
+      "note": "Rolled back to revision rev_hero_1793074574497",
+      "publishedAt": "2026-10-27T04:16:15.351Z"
+    },
+    {
+      "id": "rev_hero_1793074574497",
+      "section": "hero",
+      "version": 5,
+      "snapshot": {
+        "miniLinks": [
+          {
+            "en": "enterprise ux",
+            "th": "ออกแบบระบบ enterprise"
+          },
+          {
+            "en": "portfolio",
+            "th": "พอร์ตโฟลิโอ"
+          },
+          {
+            "en": "developer handoff",
+            "th": "ส่งมอบงานนักพัฒนา"
+          }
+        ],
+        "cursiveScript": "UX UI",
+        "chunkyTitle": "portfolio",
+        "yearLabel": {
+          "en": "by Toeyruji",
+          "th": "โดย เตยรุจิ"
+        },
+        "bioLead": {
+          "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+          "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+        },
+        "stats": [
+          {
+            "en": "⚡️ 2+ Years CyberSec UX",
+            "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+          },
+          {
+            "en": "🎓 3.73 First Class Honors (IT)",
+            "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+          },
+          {
+            "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+            "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+          }
+        ],
+        "ctaButtons": [
+          {
+            "en": "explore projects",
+            "th": "สำรวจผลงาน",
+            "url": "#projects",
+            "type": "primary"
+          },
+          {
+            "en": "download resume (pdf)",
+            "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+            "url": "/Rujisaya Resume.pdf",
+            "type": "secondary"
+          }
+        ]
+      },
+      "author": "toeyruji",
+      "note": "Automated E2E Test Release",
+      "publishedAt": "2026-10-27T04:16:14.492Z",
+      "_id": "6ae0258e5321a0900a68053f"
+    },
+    {
+      "id": "rev_hero_1793074551593",
+      "section": "hero",
+      "version": 4,
+      "snapshot": {
+        "miniLinks": [
+          {
+            "en": "enterprise ux",
+            "th": "ออกแบบระบบ enterprise"
+          },
+          {
+            "en": "portfolio",
+            "th": "พอร์ตโฟลิโอ"
+          },
+          {
+            "en": "developer handoff",
+            "th": "ส่งมอบงานนักพัฒนา"
+          }
+        ],
+        "cursiveScript": "UX UI",
+        "chunkyTitle": "portfolio",
+        "yearLabel": {
+          "en": "by Toeyruji",
+          "th": "โดย เตยรุจิ"
+        },
+        "bioLead": {
+          "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+          "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+        },
+        "stats": [
+          {
+            "en": "⚡️ 2+ Years CyberSec UX",
+            "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+          },
+          {
+            "en": "🎓 3.73 First Class Honors (IT)",
+            "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+          },
+          {
+            "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+            "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+          }
+        ],
+        "ctaButtons": [
+          {
+            "en": "explore projects",
+            "th": "สำรวจผลงาน",
+            "url": "#projects",
+            "type": "primary"
+          },
+          {
+            "en": "download resume (pdf)",
+            "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+            "url": "/Rujisaya Resume.pdf",
+            "type": "secondary"
+          }
+        ]
+      },
+      "author": "toeyruji",
+      "note": "Rolled back to revision rev_hero_1793074550854",
+      "publishedAt": "2026-10-27T04:15:51.593Z"
+    },
+    {
+      "id": "rev_hero_1793074550854",
+      "section": "hero",
+      "version": 3,
+      "snapshot": {
+        "miniLinks": [
+          {
+            "en": "enterprise ux",
+            "th": "ออกแบบระบบ enterprise"
+          },
+          {
+            "en": "portfolio",
+            "th": "พอร์ตโฟลิโอ"
+          },
+          {
+            "en": "developer handoff",
+            "th": "ส่งมอบงานนักพัฒนา"
+          }
+        ],
+        "cursiveScript": "UX UI",
+        "chunkyTitle": "portfolio",
+        "yearLabel": {
+          "en": "by Toeyruji",
+          "th": "โดย เตยรุจิ"
+        },
+        "bioLead": {
+          "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+          "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+        },
+        "stats": [
+          {
+            "en": "⚡️ 2+ Years CyberSec UX",
+            "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+          },
+          {
+            "en": "🎓 3.73 First Class Honors (IT)",
+            "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+          },
+          {
+            "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+            "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+          }
+        ],
+        "ctaButtons": [
+          {
+            "en": "explore projects",
+            "th": "สำรวจผลงาน",
+            "url": "#projects",
+            "type": "primary"
+          },
+          {
+            "en": "download resume (pdf)",
+            "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+            "url": "/Rujisaya Resume.pdf",
+            "type": "secondary"
+          }
+        ]
+      },
+      "author": "toeyruji",
+      "note": "Automated E2E Test Release",
+      "publishedAt": "2026-10-27T04:15:50.852Z",
+      "_id": "6ae025765321a0900a68053e"
+    },
+    {
+      "id": "rev_hero_1793073996570",
+      "section": "hero",
+      "version": 2,
+      "snapshot": {
+        "miniLinks": [
+          {
+            "en": "enterprise ux",
+            "th": "ออกแบบระบบ enterprise"
+          },
+          {
+            "en": "portfolio",
+            "th": "พอร์ตโฟลิโอ"
+          },
+          {
+            "en": "developer handoff",
+            "th": "ส่งมอบงานนักพัฒนา"
+          }
+        ],
+        "cursiveScript": "UX UI",
+        "chunkyTitle": "portfolio",
+        "yearLabel": {
+          "en": "by Toeyruji",
+          "th": "โดย เตยรุจิ"
+        },
+        "bioLead": {
+          "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+          "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+        },
+        "stats": [
+          {
+            "en": "⚡️ 2+ Years CyberSec UX",
+            "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+          },
+          {
+            "en": "🎓 3.73 First Class Honors (IT)",
+            "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+          },
+          {
+            "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+            "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+          }
+        ],
+        "ctaButtons": [
+          {
+            "en": "explore projects",
+            "th": "สำรวจผลงาน",
+            "url": "#projects",
+            "type": "primary"
+          },
+          {
+            "en": "download resume (pdf)",
+            "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+            "url": "/Rujisaya Resume.pdf",
+            "type": "secondary"
+          }
+        ]
+      },
+      "author": "toeyruji",
+      "note": "Rolled back to revision rev_hero_1793073996561",
+      "publishedAt": "2026-10-27T04:06:36.570Z"
+    },
+    {
+      "id": "rev_hero_1793073996561",
+      "section": "hero",
+      "version": 1,
+      "snapshot": {
+        "miniLinks": [
+          {
+            "en": "enterprise ux",
+            "th": "ออกแบบระบบ enterprise"
+          },
+          {
+            "en": "portfolio",
+            "th": "พอร์ตโฟลิโอ"
+          },
+          {
+            "en": "developer handoff",
+            "th": "ส่งมอบงานนักพัฒนา"
+          }
+        ],
+        "cursiveScript": "UX UI",
+        "chunkyTitle": "portfolio",
+        "yearLabel": {
+          "en": "by Toeyruji",
+          "th": "โดย เตยรุจิ"
+        },
+        "bioLead": {
+          "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — UX/UI Designer. I design intuitive enterprise experiences for complex systems, turning dense technical requirements and data-heavy workflows into clear, scalable interfaces.",
+          "th": "สวัสดีค่ะ ฉันชื่อ <strong>รุจิสยา (เตย)</strong> — UX/UI Designer ผู้ออกแบบประสบการณ์การใช้งานระบบ Enterprise ที่มีความซับซ้อน เปลี่ยนข้อกำหนดทางเทคนิคและเวิร์กโฟลว์ข้อมูลขนาดใหญ่ ให้เป็นอินเทอร์เฟซที่ใช้งานง่าย ชัดเจน และพร้อมขยายขีดความสามารถ"
+        },
+        "stats": [
+          {
+            "en": "⚡️ 2+ Years CyberSec UX",
+            "th": "⚡️ ประสบการณ์ CyberSec UX 2+ ปี"
+          },
+          {
+            "en": "🎓 3.73 First Class Honors (IT)",
+            "th": "🎓 เกียรตินิยมอันดับ 1 IT (3.73)"
+          },
+          {
+            "en": "🤝 End-to-End: UX Flows to Dev Handoff",
+            "th": "🤝 ครบวงจร: จาก UX Flows สู่ Dev Handoff"
+          }
+        ],
+        "ctaButtons": [
+          {
+            "en": "explore projects",
+            "th": "สำรวจผลงาน",
+            "url": "#projects",
+            "type": "primary"
+          },
+          {
+            "en": "download resume (pdf)",
+            "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+            "url": "/Rujisaya Resume.pdf",
+            "type": "secondary"
+          }
+        ]
+      },
+      "author": "toeyruji",
+      "note": "Test publishing draft",
+      "publishedAt": "2026-10-27T04:06:36.559Z",
+      "_id": "6ae0234c46ea06a8eed4883b"
+    }
+  ]
+}
