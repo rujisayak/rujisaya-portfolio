@@ -26,9 +26,17 @@ const ADMIN_USER = process.env.ADMIN_USERNAME || 'toeyruji';
 let cachedClient = null;
 let cachedDb = null;
 let autoSeeded = false;
+let lastDbError = null;
 
 async function getDB(forceFresh = false) {
-  if (!MongoClient || !MONGODB_URI) return null;
+  if (!MongoClient) {
+    lastDbError = 'MongoClient module not loaded';
+    return null;
+  }
+  if (!MONGODB_URI) {
+    lastDbError = 'MONGODB_URI is not set';
+    return null;
+  }
 
   if (!forceFresh && cachedClient && cachedDb) {
     try {
@@ -65,6 +73,7 @@ async function getDB(forceFresh = false) {
     await db.command({ ping: 1 });
     cachedClient = client;
     cachedDb = db;
+    lastDbError = null;
 
     if (!autoSeeded) {
       autoSeeded = true;
@@ -75,6 +84,7 @@ async function getDB(forceFresh = false) {
 
     return cachedDb;
   } catch (err) {
+    lastDbError = "Atlas connection error: " + err.message;
     console.error("MongoDB Atlas connection error:", err.message);
     cachedClient = null;
     cachedDb = null;
@@ -159,15 +169,16 @@ router.get('/health', async (req, res) => {
       }
     } else {
       dbStatus = 'null-db';
+      dbError = lastDbError;
     }
   } catch (err) {
     dbStatus = 'err';
-    dbError = err.message;
+    dbError = err.message || lastDbError;
   }
   res.json({
     status: 'ok',
     database: dbStatus,
-    dbError,
+    dbError: dbError || lastDbError,
     writeStatus,
     timestamp: new Date()
   });
