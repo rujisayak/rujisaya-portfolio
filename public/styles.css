@@ -3826,10 +3826,16 @@ button {
 /* Featured Projects Grid (Home Page: 2x2 Grid, up to 4 projects) */
 .featured-projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  max-width: 1100px;
+  max-width: 1240px;
   margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .featured-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* All Projects Directory Grid (Scalable 3-column grid for 100+ projects) */
@@ -3838,6 +3844,12 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .compact-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Compact Project Card (UI8 / Dribbble Marketplace Aesthetic) */

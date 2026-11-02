@@ -458,6 +458,247 @@ const FALLBACK_CASE_STUDIES = [
       "Comprehensive budget ledger separating confirmed debts from pending applications",
       "Sandbox demo mode for visitors with verified cloud sync for administrators"
     ]
+  },
+  {
+    "id": "ami-pos",
+    "projectNum": 3,
+    "displayTitle": "Ami POS ⚡️",
+    "fullTitle": "Ami POS - Event-Driven Inventory & Overhead Cost Allocation",
+    "shortSubtitle": "Event-driven creator POS with multi-booth inventory allocation, barcode generator, and automated overhead cost calculation.",
+    "category": "creator economy & pos",
+    "filterCategory": "creator",
+    "badge": "live interactive",
+    "badgeType": "live",
+    "featured": true,
+    "date": "Feb 2026",
+    "summary": "ระบบ Point of Sale และบริหารจัดการงานออกบูธสำหรับครีเอเตอร์ รองรับการจัดสรรสต็อกแยกตามงาน (Event-Driven Inventory Allocation) คำนวณกระจายต้นทุนแฝงของงานบูธลงในสินค้าแต่ละชิ้นแบบเรียลไทม์ (Overhead Cost Allocation) พร้อมระบบแคชเชียร์คิดเงินความเร็วสูง ระบบโปรโมชั่นบันเดิล และเครื่องมือสร้างบาร์โค้ดสั่งพิมพ์สติกเกอร์ติดหน้าซองสินค้า",
+    "image": "/assets/portfolio/ami_pos_screenshot_full.png",
+    "mobileImage": "/assets/portfolio/ami_pos_screen_mobile.png",
+    "mobileScreen": "/assets/portfolio/ami_pos_screen_mobile.png",
+    "liveUrl": "https://ami-pos.vercel.app/?demo=true",
+    "demoUrl": "https://ami-pos.vercel.app/?demo=true",
+    "githubUrl": "https://github.com/rujisayak",
+    "tags": [
+      "Creator Economy",
+      "Event-Driven POS",
+      "Inventory Allocation",
+      "React 18",
+      "Material UI v6",
+      "Cost Analysis"
+    ],
+    "previewCards": [
+      {
+        "title": "Interactive POS Dashboard",
+        "date": "Feb 2026",
+        "image": "/assets/portfolio/ami_pos_screenshot_full.png",
+        "type": "laptop"
+      },
+      {
+        "title": "Cashier & Inventory Management",
+        "date": "Jan 2026",
+        "image": "/assets/portfolio/ami_pos_screen_mobile.png",
+        "type": "card"
+      }
+    ],
+    "techStack": [
+      {
+        "name": "React 18",
+        "type": "react"
+      },
+      {
+        "name": "Figma",
+        "type": "figma"
+      },
+      {
+        "name": "Material UI v6",
+        "type": "mui"
+      },
+      {
+        "name": "TypeScript",
+        "type": "typescript"
+      }
+    ],
+    "pillars": [
+      {
+        "icon": "dashboard",
+        "label": "Overhead Cost Allocation"
+      },
+      {
+        "icon": "users",
+        "label": "High-Speed Cashier Flow"
+      },
+      {
+        "icon": "analytics",
+        "label": "Real-time Sales & Margins"
+      },
+      {
+        "icon": "workflows",
+        "label": "Multi-Booth Stock Sync"
+      }
+    ],
+    "highlights": [
+      {
+        "icon": "link",
+        "label": "100% Custom Components"
+      },
+      {
+        "icon": "analytics",
+        "label": "Amortized Overhead Engine"
+      },
+      {
+        "icon": "database",
+        "label": "Event-Driven Stock Deduction"
+      },
+      {
+        "icon": "uiux",
+        "label": "Modern Slate & Violet UI"
+      },
+      {
+        "icon": "security",
+        "label": "Instant Barcode Printing"
+      },
+      {
+        "icon": "templates",
+        "label": "Dynamic Promotion Bundles"
+      }
+    ],
+    "styleGuide": {
+      "headingFont": "Plus Jakarta Sans",
+      "bodyFont": "Inter",
+      "palette": [
+        {
+          "name": "Royal Violet",
+          "hex": "#7C3AED"
+        },
+        {
+          "name": "Deep Slate",
+          "hex": "#0F172A"
+        },
+        {
+          "name": "Soft Lavender",
+          "hex": "#EDE9FE"
+        },
+        {
+          "name": "Emerald Profit",
+          "hex": "#10B981"
+        },
+        {
+          "name": "Surface White",
+          "hex": "#FFFFFF"
+        }
+      ]
+    },
+    "featureZoom": {
+      "title": "Amortized Overhead Cost & Event-Driven Inventory Engine",
+      "description": "คำนวณและกระจายต้นทุนแฝงของงานบูธ (ค่าเช่าที่พัก ค่าเดินทาง ค่าจองบูธ) เฉลี่ยลงในสินค้าแต่ละชิ้นแบบอัตโนมัติ เพื่อให้ครีเอเตอร์ทราบกำไรสุทธิที่แท้จริง พร้อมระบบตัดสต็อกแยกรายบูธ",
+      "tags": [
+        {
+          "label": "Role",
+          "value": "End-to-End Product Designer & Architect"
+        },
+        {
+          "label": "Target Users",
+          "value": "Indie Creators, Illustrators & Event Sellers"
+        },
+        {
+          "label": "Key Solution",
+          "value": "Overhead Allocation & High-Speed POS"
+        }
+      ],
+      "image": "/assets/portfolio/ami_pos_screenshot_full.png"
+    },
+    "multiScreens": [
+      {
+        "title": "Performance Dashboard & Analytics",
+        "image": "/assets/portfolio/ami_pos_screenshot_full.png",
+        "desc": "Real-time revenue, gross vs net profits, AOV and overhead absorption breakdown"
+      },
+      {
+        "title": "Mobile Cashier & Quick POS View",
+        "image": "/assets/portfolio/ami_pos_screen_mobile.png",
+        "desc": "Responsive touch-friendly mobile POS terminal for on-the-go festival transactions"
+      },
+      {
+        "title": "Products & Automated Barcode Generator",
+        "image": "/assets/portfolio/ami_pos_screenshot_full.png",
+        "desc": "SKU catalog management with standard 50x30mm thermal label sticker printing"
+      },
+      {
+        "title": "Booth Planner & Inventory Sync",
+        "image": "/assets/portfolio/ami_pos_screenshot_full.png",
+        "desc": "Event-driven stock allocation with automated amortized expense per item"
+      }
+    ],
+    "role": "End-to-End Product Designer & Front-End Architecture",
+    "targetUsers": "นักวาดภาพประกอบ (Illustrators), ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์, แบรนด์คราฟต์ และครีเอเตอร์ที่ออกบูธขายสินค้าตามงานอีเวนต์",
+    "duration": "Creator SaaS Project (2025–2026)",
+    "designGoal": "Design Goal: พัฒนาระบบ POS สำหรับครีเอเตอร์ออกบูธที่เชื่อมโยงการบริหารสต็อกและการจัดสรรต้นทุนแฝง (Overhead Cost Allocation) เข้ากับระบบแคชเชียร์ขายหน้าร้าน พร้อมรองรับโปรโมชั่นบันเดิลและการยิงบาร์โค้ด",
+    "problem": "การออกบูธของครีเอเตอร์มักประสบปัญหาไม่ทราบกำไรสุทธิที่แท้จริง เนื่องจากมีต้นทุนแฝงสูง (ค่าเดินทาง, ค่าที่พัก, ค่าธรรมเนียมบูธ) ที่ไม่ได้ถูกนำมาคำนวณต่อชิ้น และการจัดการสต็อกที่ปะปนกันระหว่างสต็อกหลักกับสต็อกที่แบ่งไปขายตามงานอีเวนต์ต่างๆ ทำให้สินค้าขาดหรือนับสต็อกผิดพลาด",
+    "responsibilities": "วิเคราะห์ปัญหาเวิร์กโฟลว์การขายหน้าบูธของกลุ่มศิลปิน, ออกแบบสถาปัตยกรรมข้อมูล (Information Architecture) สำหรับการกระจายต้นทุนแฝง, ออกแบบ UI สไตล์ Modern Slate & Violet Dashboard ด้วย Material UI และพัฒนาฟูลฟังก์ชัน Sandbox Demo Mode",
+    "uxApproach": "ออกแบบอินเทอร์เฟซ 2 โหมดหลัก: หน้า Dashboard แสดงภาพรวมการเงินและอัตราการซึมซับต้นทุนแฝง (Overhead Absorption) และหน้า POS Register ที่เน้นความเร็วในการคิดเงิน เพิ่มสินค้าเข้าตะกร้าอย่างรวดเร็ว รองรับคีย์ลัดและโปรโมชั่นบันเดิลอัตโนมัติ",
+    "keyDecisions": "1) Event-Driven Overhead Allocation: ระบบเฉลี่ยค่าใช้จ่ายรวมของงานบูธกระจายลงในต้นทุนสินค้าแต่ละชิ้นที่นำมาจัดสรรโดยอัตโนมัติ\n2) Smart Bundle Discounts: รองรับโปรโมชั่น ซื้อ X แถม Y โดยคำนวณหักส่วนลดเป็นมูลค่าของชิ้นที่แถม พร้อมตัดสต็อกจริงครบทุกหน่วย\n3) Interactive In-Memory Sandbox: ผู้ใช้งานสามารถทดลองยิงบาร์โค้ด จำลองการขาย และปรับสต็อกได้ทันทีในโหมด Demo โดยไม่ต้องเชื่อมต่อฐานข้อมูลจริง",
+    "devCollaboration": "พัฒนาด้วย React 18, Vite, Material UI (MUI v6), Emotion, TypeScript และ Lucide Icons พร้อมระบบจำลองแคชเชียร์และ Local Data Layer",
+    "outcomeLearnings": "ช่วยให้ครีเอเตอร์ทราบต้นทุนต่อหน่วยที่แท้จริง ตัดสต็อกสินค้าแยกรายบูธได้อย่างแม่นยำ 100% และลดเวลาในการคิดเงินหน้าบูธช่วงเวลาพีคได้กว่า 65%",
+    "keyFeatures": [
+      "ระบบจัดสรรต้นทุนแฝงของงานบูธกระจายลงในสินค้าแต่ละชิ้นอัตโนมัติ (Overhead Cost Allocation)",
+      "ระบบตัดสต็อกสินค้าแยกรายบูธตามคำสั่งซื้อ (Event-Driven Inventory Deduction)",
+      "หน้าจอแคชเชียร์ POS ความเร็วสูง รองรับการค้นหาด่วนและเครื่องยิงบาร์โค้ด",
+      "ระบบโปรโมชั่นและส่วนลดบันเดิลอัจฉริยะ (ซื้อ X แถม Y, ขั้นต่ำ)",
+      "เครื่องมือสร้างบาร์โค้ดและคำสั่งพิมพ์สติกเกอร์ 50x30 มม. ติดหน้าซองสินค้า",
+      "โหมด Sandbox Demo สำหรับทดลองใช้งานโดยไม่กระทบฐานข้อมูลจริง"
+    ],
+    "displayTitle_en": "Ami POS ⚡️",
+    "displayTitle_th": "Ami POS ⚡️",
+    "fullTitle_en": "Ami POS - Event-Driven Inventory & Overhead Cost Allocation",
+    "fullTitle_th": "Ami POS - ระบบจัดการสต็อกและต้นทุนแฝงงานอีเวนต์สำหรับครีเอเตอร์",
+    "shortSubtitle_en": "Event-driven creator POS with multi-booth inventory allocation, barcode generator, and automated overhead cost calculation.",
+    "shortSubtitle_th": "ระบบ POS และคลังสินค้าสำหรับครีเอเตอร์ออกบูธ พร้อมคำนวณต้นทุนแฝงและตัดสต็อกแยกรายบูธอัตโนมัติ",
+    "category_en": "creator economy & pos",
+    "category_th": "ครีเอเตอร์ & ระบบ POS งานอีเวนต์",
+    "summary_th": "ระบบ Point of Sale และบริหารจัดการงานออกบูธสำหรับครีเอเตอร์ รองรับการจัดสรรสต็อกแยกตามงาน (Event-Driven Inventory Allocation) คำนวณกระจายต้นทุนแฝงของงานบูธลงในสินค้าแต่ละชิ้นแบบเรียลไทม์ (Overhead Cost Allocation) พร้อมระบบแคชเชียร์คิดเงินความเร็วสูง ระบบโปรโมชั่นบันเดิล และเครื่องมือสร้างบาร์โค้ดสั่งพิมพ์สติกเกอร์ติดหน้าซองสินค้า",
+    "summary_en": "An event-driven creator Point of Sale & booth inventory platform designed to automate overhead expense amortization per item, manage decentralized multi-event stock pools, and streamline rapid checkout with dynamic bundle discounts.",
+    "targetUsers_th": "นักวาดภาพประกอบ (Illustrators), ศิลปินทำของกุ๊กกิ๊ก/สติกเกอร์, แบรนด์คราฟต์ และครีเอเตอร์ที่ออกบูธขายสินค้าตามงานอีเวนต์",
+    "targetUsers_en": "Illustrators, Comic Artists, Indie Merch Creators, and Pop-up Event Sellers",
+    "designGoal_th": "Design Goal: พัฒนาระบบ POS สำหรับครีเอเตอร์ออกบูธที่เชื่อมโยงการบริหารสต็อกและการจัดสรรต้นทุนแฝง (Overhead Cost Allocation) เข้ากับระบบแคชเชียร์ขายหน้าร้าน พร้อมรองรับโปรโมชั่นบันเดิลและการยิงบาร์โค้ด",
+    "designGoal_en": "Design Goal: Build an end-to-end POS system tailored for pop-up creator events that ties event overhead expenses directly into unit costs, protects master stock pools, and speeds up festival checkout.",
+    "problem_th": "การออกบูธของครีเอเตอร์มักประสบปัญหาไม่ทราบกำไรสุทธิที่แท้จริง เนื่องจากมีต้นทุนแฝงสูง (ค่าเดินทาง, ค่าที่พัก, ค่าธรรมเนียมบูธ) ที่ไม่ได้ถูกนำมาคำนวณต่อชิ้น และการจัดการสต็อกที่ปะปนกันระหว่างสต็อกหลักกับสต็อกที่แบ่งไปขายตามงานอีเวนต์ต่างๆ ทำให้สินค้าขาดหรือนับสต็อกผิดพลาด",
+    "problem_en": "Independent artists and event sellers face massive hidden overheads (booth rent, hotel, transport) that are rarely factored into per-unit profitability, coupled with inventory shrinkage caused by mingling main stock with event batches.",
+    "responsibilities_th": "วิเคราะห์ปัญหาเวิร์กโฟลว์การขายหน้าบูธของกลุ่มศิลปิน, ออกแบบสถาปัตยกรรมข้อมูล (Information Architecture) สำหรับการกระจายต้นทุนแฝง, ออกแบบ UI สไตล์ Modern Slate & Violet Dashboard ด้วย Material UI และพัฒนาฟูลฟังก์ชัน Sandbox Demo Mode",
+    "responsibilities_en": "Conducted workflow discovery with convention sellers, designed overhead amortization IA, built a high-density Slate & Violet dashboard with Material UI, and engineered an interactive in-memory demo sandbox.",
+    "uxApproach_th": "ออกแบบอินเทอร์เฟซ 2 โหมดหลัก: หน้า Dashboard แสดงภาพรวมการเงินและอัตราการซึมซับต้นทุนแฝง (Overhead Absorption) และหน้า POS Register ที่เน้นความเร็วในการคิดเงิน เพิ่มสินค้าเข้าตะกร้าอย่างรวดเร็ว รองรับคีย์ลัดและโปรโมชั่นบันเดิลอัตโนมัติ",
+    "uxApproach_en": "Structured two primary focal modes: an executive Dashboard visualizing absorbed overhead vs net profit, and a rapid POS Register prioritizing sub-second item addition, barcode scanner inputs, and automatic bundle discount triggers.",
+    "keyDecisions_th": "1) Event-Driven Overhead Allocation: ระบบเฉลี่ยค่าใช้จ่ายรวมของงานบูธกระจายลงในต้นทุนสินค้าแต่ละชิ้นที่นำมาจัดสรรโดยอัตโนมัติ\n2) Smart Bundle Discounts: รองรับโปรโมชั่น ซื้อ X แถม Y โดยคำนวณหักส่วนลดเป็นมูลค่าของชิ้นที่แถม พร้อมตัดสต็อกจริงครบทุกหน่วย\n3) Interactive In-Memory Sandbox: ผู้ใช้งานสามารถทดลองยิงบาร์โค้ด จำลองการขาย และปรับสต็อกได้ทันทีในโหมด Demo โดยไม่ต้องเชื่อมต่อฐานข้อมูลจริง",
+    "keyDecisions_en": "1) Event-Driven Overhead Allocation: Automatically calculate total event overhead (booth fee + travel) divided by allocated units to compute true net margin.\n2) Smart Bundle Logic: Dynamic Buy X Get Y Free discounts that accurately deduct free item values on receipts while depleting true inventory quantities.\n3) Zero-Barrier Sandbox Mode: Instant in-memory demo allowing recruiters and visitors to simulate full cashier sales without database credentials.",
+    "devCollaboration_th": "พัฒนาด้วย React 18, Vite, Material UI (MUI v6), Emotion, TypeScript และ Lucide Icons พร้อมระบบจำลองแคชเชียร์และ Local Data Layer",
+    "devCollaboration_en": "Engineered with React 18, Vite, Material UI v6, Emotion, TypeScript, and Lucide Icons with in-memory cashier simulation.",
+    "outcomeLearnings_th": "ช่วยให้ครีเอเตอร์ทราบต้นทุนต่อหน่วยที่แท้จริง ตัดสต็อกสินค้าแยกรายบูธได้อย่างแม่นยำ 100% และลดเวลาในการคิดเงินหน้าบูธช่วงเวลาพีคได้กว่า 65%",
+    "outcomeLearnings_en": "Empowered creators with crystal-clear per-item net profit visibility, 100% accurate multi-event stock reconciliation, and over 65% faster festival checkout speeds during peak hours.",
+    "keyFeatures_th": [
+      "ระบบจัดสรรต้นทุนแฝงของงานบูธกระจายลงในสินค้าแต่ละชิ้นอัตโนมัติ (Overhead Cost Allocation)",
+      "ระบบตัดสต็อกสินค้าแยกรายบูธตามคำสั่งซื้อ (Event-Driven Inventory Deduction)",
+      "หน้าจอแคชเชียร์ POS ความเร็วสูง รองรับการค้นหาด่วนและเครื่องยิงบาร์โค้ด",
+      "ระบบโปรโมชั่นและส่วนลดบันเดิลอัจฉริยะ (ซื้อ X แถม Y, ขั้นต่ำ)",
+      "เครื่องมือสร้างบาร์โค้ดและคำสั่งพิมพ์สติกเกอร์ 50x30 มม. ติดหน้าซองสินค้า",
+      "โหมด Sandbox Demo สำหรับทดลองใช้งานโดยไม่กระทบฐานข้อมูลจริง"
+    ],
+    "keyFeatures_en": [
+      "Automated per-item event overhead cost allocation & amortization engine",
+      "Event-driven inventory allocation preventing main stock de-synchronization",
+      "High-speed POS cashier register with instant search and barcode scanner support",
+      "Intelligent promotional bundle discount calculations (Buy X Get Y, spend tiers)",
+      "Built-in barcode generator with thermal label sticker printing (50x30mm)",
+      "Full interactive sandbox demo mode for friction-free visitor testing"
+    ],
+    "status": "published",
+    "draft": {
+      "displayTitle": "Ami POS ⚡️",
+      "fullTitle": "Ami POS - Event-Driven Inventory & Overhead Cost Allocation",
+      "shortSubtitle": "Event-driven creator POS with multi-booth inventory allocation, barcode generator, and automated overhead cost calculation.",
+      "category": "creator economy & pos",
+      "summary": "ระบบ Point of Sale และบริหารจัดการงานออกบูธสำหรับครีเอเตอร์ รองรับการจัดสรรสต็อกแยกตามงาน (Event-Driven Inventory Allocation) คำนวณกระจายต้นทุนแฝงของงานบูธลงในสินค้าแต่ละชิ้นแบบเรียลไทม์ (Overhead Cost Allocation) พร้อมระบบแคชเชียร์คิดเงินความเร็วสูง ระบบโปรโมชั่นบันเดิล และเครื่องมือสร้างบาร์โค้ดสั่งพิมพ์สติกเกอร์ติดหน้าซองสินค้า",
+      "liveUrl": "https://ami-pos.vercel.app/?demo=true",
+      "demoUrl": "https://ami-pos.vercel.app/?demo=true"
+    }
   }
 ];
 
@@ -1818,7 +2059,8 @@ function findProjectBySlug(slug) {
   return allCaseStudies.find(item => {
     if (item.id === s || (item.slug && item.slug === s)) return true;
     if (s === 'leaya' && item.id === 'leave-wfh-management') return true;
-    if (s === 'ami' && item.id === 'ami-booth-planner') return true;
+    if ((s === 'ami' || s === 'booth' || s === 'ami-booth') && item.id === 'ami-booth-planner') return true;
+    if ((s === 'pos' || s === 'ami-pos') && item.id === 'ami-pos') return true;
     return item.id.includes(s) || (item.slug && item.slug.includes(s));
   });
 }
@@ -1865,16 +2107,22 @@ function initProjectDetailPage() {
 function getProjectShowcaseData(study) {
   if (!study) return null;
 
-  const isAmi = (study.id === 'ami-booth-planner' || (study.slug && study.slug.includes('ami')));
+  const isPos = (study.id === 'ami-pos' || (study.slug && study.slug === 'ami-pos') || (study.id && study.id.includes('pos')));
+  const isAmi = !isPos && (study.id === 'ami-booth-planner' || (study.slug && study.slug.includes('ami')));
   const isLeaya = (study.id === 'leave-wfh-management' || (study.slug && (study.slug.includes('leave') || study.slug.includes('leaya'))));
 
   // 1. Accent Theme Glow
-  const themeGlow = isAmi ? 'theme-glow-ami' : (isLeaya ? 'theme-glow-leaya' : 'theme-glow-default');
+  const themeGlow = isPos ? 'theme-glow-ami' : (isAmi ? 'theme-glow-ami' : (isLeaya ? 'theme-glow-leaya' : 'theme-glow-default'));
 
   // 2. Multi-Menu Screens (Strictly 4 Distinct Views)
   let s0, s1, s2, s3;
 
-  if (isAmi) {
+  if (isPos) {
+    s0 = { title: currentLang === 'th' ? "แดชบอร์ดภาพรวม & ยอดขาย" : "Sales Dashboard & Analytics", image: "/assets/portfolio/ami_pos_screenshot_full.png", desc: "Real-time Revenue, Gross vs Net Profits" };
+    s1 = { title: currentLang === 'th' ? "ระบบแคชเชียร์มือถือความเร็วสูง" : "Mobile POS Cashier", image: "/assets/portfolio/ami_pos_screen_mobile.png", desc: "Touch-friendly Fast Checkout & Cash Drawer" };
+    s2 = { title: currentLang === 'th' ? "ระบบจัดสรรสต็อกรายบูธ" : "Event Inventory Allocation", image: "/assets/portfolio/ami_pos_screenshot_full.png", desc: "Multi-Booth Stock Deduction & Sync" };
+    s3 = { title: currentLang === 'th' ? "คำนวณกระจายต้นทุนแฝง" : "Overhead Cost Allocation", image: "/assets/portfolio/ami_pos_screenshot_full.png", desc: "Automated Booth Cost Amortization" };
+  } else if (isAmi) {
     s0 = { title: currentLang === 'th' ? "แดชบอร์ดภาพรวม" : "Dashboard Overview", image: "/assets/portfolio/ami_screen_dashboard.png", desc: "Overview & Quick Actions" };
     s1 = { title: currentLang === 'th' ? "ปฏิทินวางแผนอีเวนต์" : "Calendar Planner", image: "/assets/portfolio/ami_screen_calendar.png", desc: "Month Grid Schedule & Date Conflicts" };
     s2 = { title: currentLang === 'th' ? "ระบบติดตามการสมัคร" : "Applications View", image: "/assets/portfolio/ami_screen_applications.png", desc: "Conflict Detection & Partial Acceptance" };
@@ -1909,35 +2157,45 @@ function getProjectShowcaseData(study) {
   }
 
   // 3. Card 1 Config
-  const card1Title = isAmi
-    ? (currentLang === 'th' ? "เหมาะเป็นพิเศษสำหรับนักวาดและคนจัดอีเวนต์" : "Perfect Solution For Indie Creators & Event Planners")
-    : (isLeaya ? (currentLang === 'th' ? "เหมาะเป็นพิเศษสำหรับทีมองค์กรและฝ่ายบุคคล" : "Perfect Solution For Enterprise Teams & HR Operations") : (currentLang === 'th' ? `เหมาะเป็นพิเศษสำหรับ ${(getField(study, 'targetUsers') || 'ทีมสมัยใหม่').split(/[,&]/)[0].trim()}` : `Perfect Solution For ${(getField(study, 'targetUsers') || 'Modern Teams').split(/[,&]/)[0].trim()}`));
+  const card1Title = isPos
+    ? (currentLang === 'th' ? "เหมาะเป็นพิเศษสำหรับครีเอเตอร์และผู้ค้าขายงานอีเวนต์" : "Perfect Solution For Indie Creators & Event Sellers")
+    : (isAmi
+      ? (currentLang === 'th' ? "เหมาะเป็นพิเศษสำหรับนักวาดและคนจัดอีเวนต์" : "Perfect Solution For Indie Creators & Event Planners")
+      : (isLeaya ? (currentLang === 'th' ? "เหมาะเป็นพิเศษสำหรับทีมองค์กรและฝ่ายบุคคล" : "Perfect Solution For Enterprise Teams & HR Operations") : (currentLang === 'th' ? `เหมาะเป็นพิเศษสำหรับ ${(getField(study, 'targetUsers') || 'ทีมสมัยใหม่').split(/[,&]/)[0].trim()}` : `Perfect Solution For ${(getField(study, 'targetUsers') || 'Modern Teams').split(/[,&]/)[0].trim()}`)));
   
-  const card1Tags = isAmi
-    ? (currentLang === 'th' ? ["ตารางปฏิทิน", "ตรวจจับวันชน", "รับผลแบบแยกวัน", "งบประมาณค่าบูธ", "& อื่นๆ อีกมากมาย..."] : ["Calendar Grid", "Conflict Alerts", "Partial Acceptance", "Booth Budget", "& Many more..."])
-    : (isLeaya 
-        ? (currentLang === 'th' ? ["สูตร Pro-rata", "RBAC Matrix", "ยอดเข้าออฟฟิศ", "ประวัติการลา", "& อื่นๆ อีกมากมาย..."] : ["Pro-rata Engine", "RBAC Matrix", "Weekly Attendance", "Leave Ledger", "& Many more..."])
-        : (study.tags && study.tags.length ? [...study.tags.slice(0, 4), (currentLang === 'th' ? "& อื่นๆ อีกมากมาย..." : "& Many more...")] : (currentLang === 'th' ? ["ผังเวิร์กโฟลว์", "ระบบปรับแต่งได้", "ซิงค์คลาวด์", "& อื่นๆ อีกมากมาย..."] : ["Workflow UI", "Custom System", "Cloud Sync", "& Many more..."])));
+  const card1Tags = isPos
+    ? (currentLang === 'th' ? ["จัดสรรสต็อกรายบูธ", "คำนวณต้นทุนแฝง", "คิดเงินความเร็วสูง", "บาร์โค้ดสติกเกอร์", "& อื่นๆ อีกมากมาย..."] : ["Multi-Booth Inventory", "Overhead Amortization", "Fast Cashier Flow", "Barcode Generator", "& Many more..."])
+    : (isAmi
+      ? (currentLang === 'th' ? ["ตารางปฏิทิน", "ตรวจจับวันชน", "รับผลแบบแยกวัน", "งบประมาณค่าบูธ", "& อื่นๆ อีกมากมาย..."] : ["Calendar Grid", "Conflict Alerts", "Partial Acceptance", "Booth Budget", "& Many more..."])
+      : (isLeaya 
+          ? (currentLang === 'th' ? ["สูตร Pro-rata", "RBAC Matrix", "ยอดเข้าออฟฟิศ", "ประวัติการลา", "& อื่นๆ อีกมากมาย..."] : ["Pro-rata Engine", "RBAC Matrix", "Weekly Attendance", "Leave Ledger", "& Many more..."])
+          : (study.tags && study.tags.length ? [...study.tags.slice(0, 4), (currentLang === 'th' ? "& อื่นๆ อีกมากมาย..." : "& Many more...")] : (currentLang === 'th' ? ["ผังเวิร์กโฟลว์", "ระบบปรับแต่งได้", "ซิงค์คลาวด์", "& อื่นๆ อีกมากมาย..."] : ["Workflow UI", "Custom System", "Cloud Sync", "& Many more..."]))));
 
   // 4. Card 2 Config
-  const card2Watermark = isAmi 
-    ? (currentLang === 'th' ? "ตรวจจับวันชน" : "DATE CONFLICT") 
-    : (isLeaya ? (currentLang === 'th' ? "ระบบคำนวณวันลา" : "VACATION ENGINE") : (getField(study, 'displayTitle') || study.title || "SMART ENGINE").toUpperCase().slice(0, 16));
+  const card2Watermark = isPos
+    ? (currentLang === 'th' ? "คำนวณต้นทุนแฝง" : "OVERHEAD ENGINE")
+    : (isAmi 
+      ? (currentLang === 'th' ? "ตรวจจับวันชน" : "DATE CONFLICT") 
+      : (isLeaya ? (currentLang === 'th' ? "ระบบคำนวณวันลา" : "VACATION ENGINE") : (getField(study, 'displayTitle') || study.title || "SMART ENGINE").toUpperCase().slice(0, 16)));
 
   const cleanDomain = (study.liveUrl || '')
     .replace(/^https?:\/\//, '')
     .split('?')[0]
     .replace(/\/$/, '');
   const card2Url = cleanDomain 
-    ? cleanDomain + (isAmi ? '/calendar' : '/vacation-engine')
+    ? cleanDomain + (isPos ? '/analytics' : (isAmi ? '/calendar' : '/vacation-engine'))
     : 'app.internal/features';
 
-  const card2WidgetTitle = isAmi ? (currentLang === 'th' ? "ตรวจจับวันชน" : "Conflict Detection") : (isLeaya ? (currentLang === 'th' ? "เมทริกซ์การเข้างาน" : "Attendance Matrix") : (currentLang === 'th' ? "โมดูลหลัก" : "Core Module"));
+  const card2WidgetTitle = isPos
+    ? (currentLang === 'th' ? "คำนวณต้นทุนแฝง" : "Overhead Allocation")
+    : (isAmi ? (currentLang === 'th' ? "ตรวจจับวันชน" : "Conflict Detection") : (isLeaya ? (currentLang === 'th' ? "เมทริกซ์การเข้างาน" : "Attendance Matrix") : (currentLang === 'th' ? "โมดูลหลัก" : "Core Module")));
 
   // 5. Card 3 Config
-  let card3Tags = isAmi 
-    ? (currentLang === 'th' ? ["นักวาดภาพประกอบ", "นักเขียนการ์ตูน", "แบรนด์คราฟต์", "ผู้จัดงานอีเวนต์"] : ["Illustrators", "Comic Creators", "Craft Brands", "Event Organizers"]) 
-    : (isLeaya ? (currentLang === 'th' ? ["ฝ่ายบุคคล & HR", "หัวหน้าทีม", "พนักงานไฮบริด", "ทีมองค์กร"] : ["HR & People Ops", "Team Managers", "Hybrid Employees", "Enterprise Teams"]) : []);
+  let card3Tags = isPos
+    ? (currentLang === 'th' ? ["ครีเอเตอร์ & ศิลปิน", "ผู้ค้าขายงานอีเวนต์", "ร้านค้าป๊อปอัพ", "สตูดิโองานคราฟต์"] : ["Indie Creators", "Event Sellers", "Pop-up Shops", "Craft Studios"])
+    : (isAmi 
+      ? (currentLang === 'th' ? ["นักวาดภาพประกอบ", "นักเขียนการ์ตูน", "แบรนด์คราฟต์", "ผู้จัดงานอีเวนต์"] : ["Illustrators", "Comic Creators", "Craft Brands", "Event Organizers"]) 
+      : (isLeaya ? (currentLang === 'th' ? ["ฝ่ายบุคคล & HR", "หัวหน้าทีม", "พนักงานไฮบริด", "ทีมองค์กร"] : ["HR & People Ops", "Team Managers", "Hybrid Employees", "Enterprise Teams"]) : []));
 
   if (!card3Tags.length && study.targetUsers) {
     const rawTarget = getField(study, 'targetUsers');
@@ -1952,11 +2210,11 @@ function getProjectShowcaseData(study) {
   }
 
   // 6. Card 4 Config
-  const brandLogo = isAmi ? "🎨" : (isLeaya ? "🐾" : "⚡");
-  const brandName = isAmi ? "Ami Booth Planner" : (isLeaya ? "Leaya HR Portal" : (getField(study, 'displayTitle') || study.title || "Interactive App"));
+  const brandLogo = isPos ? "⚡️" : (isAmi ? "🎨" : (isLeaya ? "🐾" : "⚡"));
+  const brandName = isPos ? "Ami POS" : (isAmi ? "Ami Booth Planner" : (isLeaya ? "Leaya HR Portal" : (getField(study, 'displayTitle') || study.title || "Interactive App")));
   const toolBadge = (study.techStack && study.techStack.length >= 2)
     ? `${study.techStack[0].name} / ${study.techStack[1].name} • ${currentLang === 'th' ? "ระบบงานครบวงจร" : "Full System"}`
-    : (isAmi ? (currentLang === 'th' ? "React / MUI • ระบบงานอีเวนต์ครบวงจร" : "React / MUI • Full Event System") : (currentLang === 'th' ? "Next.js / React • ระบบงาน HR ครบวงจร" : "Next.js / React • Full HR System"));
+    : (isPos ? (currentLang === 'th' ? "React / MUI • ระบบงานขายครบวงจร" : "React / MUI • Full POS System") : (isAmi ? (currentLang === 'th' ? "React / MUI • ระบบงานอีเวนต์ครบวงจร" : "React / MUI • Full Event System") : (currentLang === 'th' ? "Next.js / React • ระบบงาน HR ครบวงจร" : "Next.js / React • Full HR System")));
 
   return {
     themeGlow,
@@ -2217,7 +2475,8 @@ function hydrateProjectDetailView(study) {
   }
 
   // Update 3-Column Info Strip
-  const isAmi = (study.id === 'ami-booth-planner' || (study.slug && study.slug.includes('ami')));
+  const isPos = (study.id === 'ami-pos' || (study.slug && study.slug === 'ami-pos') || (study.id && study.id.includes('pos')));
+  const isAmi = !isPos && (study.id === 'ami-booth-planner' || (study.slug && study.slug.includes('ami')));
 
   const infoRole = document.getElementById('infoStripRole');
   if (infoRole) {
@@ -2225,15 +2484,19 @@ function hydrateProjectDetailView(study) {
   }
   const infoUsers = document.getElementById('infoStripUsers');
   if (infoUsers) {
-    infoUsers.textContent = isAmi 
-      ? (currentLang === 'th' ? "นักวาดภาพประกอบ, นักเขียนการ์ตูน & แบรนด์คราฟต์" : "Illustrators, Comic Artists & Craft Brands") 
-      : (currentLang === 'th' ? "ฝ่ายบุคคล, ผู้จัดการ & ทีมทำงานไฮบริด" : "HR, Managers & Hybrid Teams");
+    infoUsers.textContent = isPos
+      ? (currentLang === 'th' ? "ครีเอเตอร์, นักวาด & ผู้ค้าขายงานอีเวนต์" : "Indie Creators, Illustrators & Event Sellers")
+      : (isAmi 
+        ? (currentLang === 'th' ? "นักวาดภาพประกอบ, นักเขียนการ์ตูน & แบรนด์คราฟต์" : "Illustrators, Comic Artists & Craft Brands") 
+        : (currentLang === 'th' ? "ฝ่ายบุคคล, ผู้จัดการ & ทีมทำงานไฮบริด" : "HR, Managers & Hybrid Teams"));
   }
   const infoSolution = document.getElementById('infoStripSolution');
   if (infoSolution) {
-    infoSolution.textContent = isAmi 
-      ? (currentLang === 'th' ? "ระบบตรวจจับวันชน & จัดการงบประมาณรายวัน" : "Smart Date Conflict & Partial Acceptance Engine") 
-      : (currentLang === 'th' ? "ระบบคำนวณวันลา Pro-rata & เมทริกซ์การเข้างาน" : "Pro-rata Vacation Engine & Weekly Attendance Matrix");
+    infoSolution.textContent = isPos
+      ? (currentLang === 'th' ? "ระบบจัดสรรสต็อกรายบูธ & คำนวณต้นทุนแฝง" : "Overhead Cost Allocation & Event-Driven Inventory")
+      : (isAmi 
+        ? (currentLang === 'th' ? "ระบบตรวจจับวันชน & จัดการงบประมาณรายวัน" : "Smart Date Conflict & Partial Acceptance Engine") 
+        : (currentLang === 'th' ? "ระบบคำนวณวันลา Pro-rata & เมทริกซ์การเข้างาน" : "Pro-rata Vacation Engine & Weekly Attendance Matrix"));
   }
 
   // Render 4-Card Bento Visual Showcase Grid (PlanIQ 2x2 Composition)
