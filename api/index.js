@@ -124,6 +124,37 @@ async function ensureCMSContentSeeded(db) {
         { $set: { 'published.favicon': '/assets/favicon.svg', 'draft.favicon': '/assets/favicon.svg' } }
       );
     } catch (_) {}
+
+    // Ensure hero & about sections sync to latest positioning (Version 2)
+    try {
+      const fallback = getFallbackData();
+      if (fallback.hero) {
+        await db.collection('cms_content').updateOne(
+          { _id: 'hero', 'published.version': { $ne: 2 } },
+          {
+            $set: {
+              published: fallback.hero.published,
+              draft: fallback.hero.draft || fallback.hero.published,
+              version: 2,
+              updatedAt: new Date()
+            }
+          }
+        );
+      }
+      if (fallback.about) {
+        await db.collection('cms_content').updateOne(
+          { _id: 'about', 'published.version': { $ne: 2 } },
+          {
+            $set: {
+              published: fallback.about.published,
+              draft: fallback.about.draft || fallback.about.published,
+              version: 2,
+              updatedAt: new Date()
+            }
+          }
+        );
+      }
+    } catch (_) {}
   } catch (err) {
     console.warn("Auto-seed error:", err.message);
   }

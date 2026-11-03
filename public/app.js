@@ -1400,18 +1400,44 @@ async function syncCMSContent() {
             }
           }
           if (Array.isArray(content.experience)) {
-            const expCol = document.querySelector('.about-bottom-tri-row .about-col:nth-child(1)');
+            const expCol = document.querySelector('.about-meta-row .about-col:nth-child(1), .about-bottom-tri-row .about-col:nth-child(1)');
             if (expCol) {
-              const heading = expCol.querySelector('.about-col-heading')?.outerHTML || '<h4 class="about-col-heading">Experience</h4>';
+              const heading = '<h4 class="about-col-heading">Experience</h4>';
               expCol.innerHTML = heading + content.experience.map(e => `
                 <div class="col-item">
                   <span class="col-period">${getVal(e.period)}</span>
                   <span class="col-role">${getVal(e.role)}</span>
+                  ${e.company ? `<span class="col-sub">${getVal(e.company)}</span>` : ''}
                 </div>
               `).join('');
             }
           }
-          if (Array.isArray(content.skills)) {
+          if (Array.isArray(content.education)) {
+            const eduCol = document.querySelector('.about-meta-row .about-col:nth-child(2)');
+            if (eduCol) {
+              const heading = '<h4 class="about-col-heading">Education</h4>';
+              eduCol.innerHTML = heading + content.education.map(ed => `
+                <div class="col-item">
+                  <span class="col-period">${getVal(ed.period)}</span>
+                  <span class="col-role">${getVal(ed.degree)}</span>
+                  ${ed.honors ? `<span class="col-sub">${getVal(ed.honors)}</span>` : ''}
+                </div>
+              `).join('');
+            }
+          }
+          if (Array.isArray(content.skillCategories)) {
+            const skillsGrid = document.querySelector('.about-skills-grid');
+            if (skillsGrid) {
+              skillsGrid.innerHTML = content.skillCategories.map(cat => `
+                <div class="skill-category-card">
+                  <h5 class="skill-cat-title"><span class="skill-cat-icon">✦</span> ${escapeHtml(getVal(cat.category))}</h5>
+                  <div class="skill-chips-wrap">
+                    ${(cat.skills || []).map(sk => `<span class="skill-chip${getVal(cat.category).toLowerCase().includes('tool') ? ' tool-chip' : ''}">${escapeHtml(sk)}</span>`).join('')}
+                  </div>
+                </div>
+              `).join('');
+            }
+          } else if (Array.isArray(content.skills)) {
             const skillCol = document.querySelector('.about-bottom-tri-row .about-col:nth-child(2)');
             if (skillCol) {
               const heading = skillCol.querySelector('.about-col-heading')?.outerHTML || '<h4 class="about-col-heading">Skills</h4>';

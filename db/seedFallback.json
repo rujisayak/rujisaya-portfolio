@@ -1278,5 +1278,463 @@
       "title_en": "My Little Design Assistant 🐱",
       "caption_en": "My little design assistant 🐱 taking an essential power nap."
     }
-  ]
+  ],
+  "hero": {
+    "published": {
+      "version": 2,
+      "miniLinks": [
+        {
+          "en": "Enterprise UX",
+          "th": "ออกแบบระบบองค์กร"
+        },
+        {
+          "en": "Cybersecurity UX",
+          "th": "ออกแบบระบบความปลอดภัยไซเบอร์"
+        },
+        {
+          "en": "AI-Assisted Development",
+          "th": "พัฒนาเว็บไซต์ด้วย AI"
+        }
+      ],
+      "cursiveScript": "UX UI",
+      "chunkyTitle": "portfolio",
+      "yearLabel": {
+        "en": "by Toeyruji",
+        "th": "โดย เตยรุจิ"
+      },
+      "bioLead": {
+        "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — a UX/UI Designer with 3+ years of experience designing enterprise applications and cybersecurity platforms. I transform complex business requirements, technical workflows, and data-heavy interfaces into intuitive, structured, and scalable user experiences. Beyond design, I leverage AI-assisted tools to turn ideas and prototypes into functional web applications, bridging the gap between user needs, system requirements, and development.",
+        "th": "สวัสดีค่ะ เราชื่อ <strong>รุจิสยา (เตย)</strong> เป็น UX/UI Designer ที่มีประสบการณ์กว่า 3 ปีในการออกแบบแอปพลิเคชันสำหรับองค์กรและแพลตฟอร์มด้านความปลอดภัยไซเบอร์ เรามุ่งเปลี่ยนความต้องการทางธุรกิจ ข้อกำหนดทางเทคนิค และขั้นตอนการทำงานที่ซับซ้อน ให้กลายเป็นประสบการณ์ใช้งานที่เข้าใจง่าย เป็นระบบ และรองรับการขยายตัวในอนาคต นอกจากนี้ เรายังนำ AI เข้ามาช่วยต่อยอดจากแนวคิดและต้นแบบการออกแบบไปสู่เว็บแอปพลิเคชันที่ใช้งานได้จริง เชื่อมโยงความต้องการของผู้ใช้เข้ากับข้อกำหนดของระบบและการพัฒนา"
+      },
+      "stats": [
+        {
+          "en": "⚡️ 3+ Years UX/UI Design",
+          "th": "⚡️ ประสบการณ์ UX/UI กว่า 3 ปี"
+        },
+        {
+          "en": "🎓 3.73 GPA · First Class Honors",
+          "th": "🎓 เกียรตินิยมอันดับ 1 · GPA 3.73"
+        },
+        {
+          "en": "🤖 AI-Assisted Design & Development",
+          "th": "🤖 ออกแบบและพัฒนาเว็บไซต์ด้วย AI"
+        }
+      ],
+      "ctaButtons": [
+        {
+          "en": "explore projects",
+          "th": "สำรวจผลงาน",
+          "url": "#projects",
+          "type": "primary"
+        },
+        {
+          "en": "download resume (pdf)",
+          "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+          "url": "/Rujisaya Resume.pdf",
+          "type": "secondary"
+        }
+      ]
+    },
+    "draft": {
+      "version": 2,
+      "miniLinks": [
+        {
+          "en": "Enterprise UX",
+          "th": "ออกแบบระบบองค์กร"
+        },
+        {
+          "en": "Cybersecurity UX",
+          "th": "ออกแบบระบบความปลอดภัยไซเบอร์"
+        },
+        {
+          "en": "AI-Assisted Development",
+          "th": "พัฒนาเว็บไซต์ด้วย AI"
+        }
+      ],
+      "cursiveScript": "UX UI",
+      "chunkyTitle": "portfolio",
+      "yearLabel": {
+        "en": "by Toeyruji",
+        "th": "โดย เตยรุจิ"
+      },
+      "bioLead": {
+        "en": "Hi, I'm <strong>Rujisaya (Toey)</strong> — a UX/UI Designer with 3+ years of experience designing enterprise applications and cybersecurity platforms. I transform complex business requirements, technical workflows, and data-heavy interfaces into intuitive, structured, and scalable user experiences. Beyond design, I leverage AI-assisted tools to turn ideas and prototypes into functional web applications, bridging the gap between user needs, system requirements, and development.",
+        "th": "สวัสดีค่ะ เราชื่อ <strong>รุจิสยา (เตย)</strong> เป็น UX/UI Designer ที่มีประสบการณ์กว่า 3 ปีในการออกแบบแอปพลิเคชันสำหรับองค์กรและแพลตฟอร์มด้านความปลอดภัยไซเบอร์ เรามุ่งเปลี่ยนความต้องการทางธุรกิจ ข้อกำหนดทางเทคนิค และขั้นตอนการทำงานที่ซับซ้อน ให้กลายเป็นประสบการณ์ใช้งานที่เข้าใจง่าย เป็นระบบ และรองรับการขยายตัวในอนาคต นอกจากนี้ เรายังนำ AI เข้ามาช่วยต่อยอดจากแนวคิดและต้นแบบการออกแบบไปสู่เว็บแอปพลิเคชันที่ใช้งานได้จริง เชื่อมโยงความต้องการของผู้ใช้เข้ากับข้อกำหนดของระบบและการพัฒนา"
+      },
+      "stats": [
+        {
+          "en": "⚡️ 3+ Years UX/UI Design",
+          "th": "⚡️ ประสบการณ์ UX/UI กว่า 3 ปี"
+        },
+        {
+          "en": "🎓 3.73 GPA · First Class Honors",
+          "th": "🎓 เกียรตินิยมอันดับ 1 · GPA 3.73"
+        },
+        {
+          "en": "🤖 AI-Assisted Design & Development",
+          "th": "🤖 ออกแบบและพัฒนาเว็บไซต์ด้วย AI"
+        }
+      ],
+      "ctaButtons": [
+        {
+          "en": "explore projects",
+          "th": "สำรวจผลงาน",
+          "url": "#projects",
+          "type": "primary"
+        },
+        {
+          "en": "download resume (pdf)",
+          "th": "ดาวน์โหลดเรซูเม่ (PDF)",
+          "url": "/Rujisaya Resume.pdf",
+          "type": "secondary"
+        }
+      ]
+    }
+  },
+  "about": {
+    "published": {
+      "version": 2,
+      "greeting": {
+        "en": "Hi, I'm Toey!",
+        "th": "สวัสดีค่ะ เตยเองนะคะ!"
+      },
+      "avatar": "/assets/avatar_square.png",
+      "bioParagraph": {
+        "en": "I specialize in designing intuitive web interfaces for enterprise applications and complex systems. My approach combines Adaptive and Responsive design principles with a strong focus on usability, accessibility, and consistent user experiences. I simplify complex workflows and technical information into clear, structured interfaces that meet both user needs and business requirements. By incorporating AI into my design and development workflow, I can also bring concepts to life through functional prototypes and real-world web applications.",
+        "th": "เรามุ่งเน้นการออกแบบส่วนติดต่อผู้ใช้สำหรับเว็บแอปพลิเคชันระดับองค์กรและระบบที่มีความซับซ้อน โดยผสานแนวคิดการออกแบบแบบ Adaptive และ Responsive เข้ากับการให้ความสำคัญกับความง่ายในการใช้งาน การเข้าถึง และความสม่ำเสมอของประสบการณ์ผู้ใช้ เรามุ่งเปลี่ยนขั้นตอนการทำงานและข้อมูลทางเทคนิคที่ซับซ้อนให้กลายเป็นหน้าจอที่เข้าใจง่าย เป็นระบบ และตอบโจทย์ทั้งผู้ใช้และเป้าหมายทางธุรกิจ พร้อมนำ AI เข้ามาช่วยต่อยอดกระบวนการออกแบบและพัฒนา เพื่อเปลี่ยนแนวคิดให้กลายเป็นต้นแบบและเว็บแอปพลิเคชันที่ใช้งานได้จริง"
+      },
+      "specialties": [
+        {
+          "title": {
+            "en": "01. Enterprise & Cybersecurity UX",
+            "th": "01. Enterprise & Cybersecurity UX"
+          },
+          "desc": {
+            "en": "Designing complex enterprise software workflows, including detection rule logic builders, threat intelligence portals, and SIEM monitoring dashboards.",
+            "th": "ออกแบบระบบซอฟต์แวร์สำหรับองค์กรและแพลตฟอร์มด้านความปลอดภัยไซเบอร์ รวมถึงระบบสร้าง Detection Rules, Threat Intelligence Portals และ SIEM Monitoring Dashboards"
+          }
+        },
+        {
+          "title": {
+            "en": "02. Design Systems & Developer Handoff",
+            "th": "02. Design Systems & Developer Handoff"
+          },
+          "desc": {
+            "en": "Creating reusable components, design tokens, detailed UI flow specifications, validation and error states, and aligning API interaction requirements with development teams.",
+            "th": "ออกแบบ Component ที่นำกลับมาใช้ซ้ำได้ จัดทำ Design Tokens, UI Flow Specifications, Validation และ Error States รวมถึงประสานรายละเอียดการทำงานของ API กับทีมพัฒนา"
+          }
+        },
+        {
+          "title": {
+            "en": "03. AI-Assisted Design & Development",
+            "th": "03. AI-Assisted Design & Development"
+          },
+          "desc": {
+            "en": "Leveraging AI tools to analyze requirements, explore UI concepts, generate design components, create interactive prototypes, build web interfaces, and develop functional web applications.",
+            "th": "ประยุกต์ใช้ AI เพื่อช่วยวิเคราะห์ Requirement สำรวจแนวทางการออกแบบ UI สร้าง Component และ Interactive Prototype พัฒนา Web Interface และต่อยอดไปสู่เว็บแอปพลิเคชันที่ใช้งานได้จริง"
+          }
+        },
+        {
+          "title": {
+            "en": "04. Usability Evaluation & QA",
+            "th": "04. Usability Evaluation & QA"
+          },
+          "desc": {
+            "en": "Conducting internal prototype testing, heuristic usability reviews, UI validation, and continuous improvements through collaboration with development teams.",
+            "th": "ทดสอบต้นแบบภายใน ประเมินความง่ายในการใช้งานตามหลัก Heuristic ตรวจสอบ UI และปรับปรุงคุณภาพการใช้งานอย่างต่อเนื่องร่วมกับทีมพัฒนา"
+          }
+        }
+      ],
+      "experience": [
+        {
+          "period": {
+            "en": "May 2023 — Present",
+            "th": "พ.ค. 2023 — ปัจจุบัน"
+          },
+          "role": {
+            "en": "UX/UI Designer",
+            "th": "UX/UI Designer"
+          },
+          "company": {
+            "en": "Security Pitch Co., Ltd.",
+            "th": "Security Pitch Co., Ltd."
+          }
+        },
+        {
+          "period": {
+            "en": "Jan 2023 — Apr 2023",
+            "th": "ม.ค. 2023 — เม.ย. 2023"
+          },
+          "role": {
+            "en": "UX/UI Intern",
+            "th": "UX/UI Intern"
+          },
+          "company": {
+            "en": "Security Pitch Co., Ltd.",
+            "th": "Security Pitch Co., Ltd."
+          }
+        }
+      ],
+      "education": [
+        {
+          "period": {
+            "en": "2019 — 2023",
+            "th": "2019 — 2023"
+          },
+          "degree": {
+            "en": "Bachelor of Science in Information Technology",
+            "th": "วิทยาศาสตรบัณฑิต เทคโนโลยีสารสนเทศ"
+          },
+          "honors": {
+            "en": "GPA: 3.73 · First Class Honors",
+            "th": "เกียรตินิยมอันดับ 1 · GPA 3.73"
+          }
+        }
+      ],
+      "skillCategories": [
+        {
+          "category": {
+            "en": "UX & Product Design",
+            "th": "UX & Product Design"
+          },
+          "skills": [
+            "UX/UI Design",
+            "User Flow & Information Architecture",
+            "Requirement Analysis",
+            "Wireframing & Interactive Prototyping",
+            "Adaptive & Responsive Design",
+            "Usability Evaluation & Heuristic Review"
+          ]
+        },
+        {
+          "category": {
+            "en": "Enterprise & System Design",
+            "th": "Enterprise & System Design"
+          },
+          "skills": [
+            "Enterprise UX",
+            "Cybersecurity Platform Design",
+            "Data-Driven Dashboard Design",
+            "Design Systems & Component Tokens",
+            "UI Flow & Interaction Specifications",
+            "Validation & Error State Design",
+            "Developer Handoff",
+            "API Requirement Alignment"
+          ]
+        },
+        {
+          "category": {
+            "en": "AI-Assisted Design & Development",
+            "th": "AI-Assisted Design & Development"
+          },
+          "skills": [
+            "AI-Assisted UX/UI Design",
+            "AI-Assisted Requirement Analysis",
+            "AI-Powered Prototyping",
+            "AI-Assisted Design System Generation",
+            "AI-Assisted Frontend Development",
+            "AI-Assisted Code Generation & Refinement",
+            "AI-Assisted UI Validation"
+          ]
+        },
+        {
+          "category": {
+            "en": "Web Development & Deployment",
+            "th": "Web Development & Deployment"
+          },
+          "skills": [
+            "Web Interface Implementation",
+            "Responsive Web Development",
+            "Website Deployment",
+            "Website Maintenance & Optimization"
+          ]
+        },
+        {
+          "category": {
+            "en": "Tools",
+            "th": "Tools"
+          },
+          "skills": [
+            "Figma",
+            "Adobe XD",
+            "Adobe Photoshop",
+            "Adobe Illustrator",
+            "AI Development Tools"
+          ]
+        }
+      ]
+    },
+    "draft": {
+      "version": 2,
+      "greeting": {
+        "en": "Hi, I'm Toey!",
+        "th": "สวัสดีค่ะ เตยเองนะคะ!"
+      },
+      "avatar": "/assets/avatar_square.png",
+      "bioParagraph": {
+        "en": "I specialize in designing intuitive web interfaces for enterprise applications and complex systems. My approach combines Adaptive and Responsive design principles with a strong focus on usability, accessibility, and consistent user experiences. I simplify complex workflows and technical information into clear, structured interfaces that meet both user needs and business requirements. By incorporating AI into my design and development workflow, I can also bring concepts to life through functional prototypes and real-world web applications.",
+        "th": "เรามุ่งเน้นการออกแบบส่วนติดต่อผู้ใช้สำหรับเว็บแอปพลิเคชันระดับองค์กรและระบบที่มีความซับซ้อน โดยผสานแนวคิดการออกแบบแบบ Adaptive และ Responsive เข้ากับการให้ความสำคัญกับความง่ายในการใช้งาน การเข้าถึง และความสม่ำเสมอของประสบการณ์ผู้ใช้ เรามุ่งเปลี่ยนขั้นตอนการทำงานและข้อมูลทางเทคนิคที่ซับซ้อนให้กลายเป็นหน้าจอที่เข้าใจง่าย เป็นระบบ และตอบโจทย์ทั้งผู้ใช้และเป้าหมายทางธุรกิจ พร้อมนำ AI เข้ามาช่วยต่อยอดกระบวนการออกแบบและพัฒนา เพื่อเปลี่ยนแนวคิดให้กลายเป็นต้นแบบและเว็บแอปพลิเคชันที่ใช้งานได้จริง"
+      },
+      "specialties": [
+        {
+          "title": {
+            "en": "01. Enterprise & Cybersecurity UX",
+            "th": "01. Enterprise & Cybersecurity UX"
+          },
+          "desc": {
+            "en": "Designing complex enterprise software workflows, including detection rule logic builders, threat intelligence portals, and SIEM monitoring dashboards.",
+            "th": "ออกแบบระบบซอฟต์แวร์สำหรับองค์กรและแพลตฟอร์มด้านความปลอดภัยไซเบอร์ รวมถึงระบบสร้าง Detection Rules, Threat Intelligence Portals และ SIEM Monitoring Dashboards"
+          }
+        },
+        {
+          "title": {
+            "en": "02. Design Systems & Developer Handoff",
+            "th": "02. Design Systems & Developer Handoff"
+          },
+          "desc": {
+            "en": "Creating reusable components, design tokens, detailed UI flow specifications, validation and error states, and aligning API interaction requirements with development teams.",
+            "th": "ออกแบบ Component ที่นำกลับมาใช้ซ้ำได้ จัดทำ Design Tokens, UI Flow Specifications, Validation และ Error States รวมถึงประสานรายละเอียดการทำงานของ API กับทีมพัฒนา"
+          }
+        },
+        {
+          "title": {
+            "en": "03. AI-Assisted Design & Development",
+            "th": "03. AI-Assisted Design & Development"
+          },
+          "desc": {
+            "en": "Leveraging AI tools to analyze requirements, explore UI concepts, generate design components, create interactive prototypes, build web interfaces, and develop functional web applications.",
+            "th": "ประยุกต์ใช้ AI เพื่อช่วยวิเคราะห์ Requirement สำรวจแนวทางการออกแบบ UI สร้าง Component และ Interactive Prototype พัฒนา Web Interface และต่อยอดไปสู่เว็บแอปพลิเคชันที่ใช้งานได้จริง"
+          }
+        },
+        {
+          "title": {
+            "en": "04. Usability Evaluation & QA",
+            "th": "04. Usability Evaluation & QA"
+          },
+          "desc": {
+            "en": "Conducting internal prototype testing, heuristic usability reviews, UI validation, and continuous improvements through collaboration with development teams.",
+            "th": "ทดสอบต้นแบบภายใน ประเมินความง่ายในการใช้งานตามหลัก Heuristic ตรวจสอบ UI และปรับปรุงคุณภาพการใช้งานอย่างต่อเนื่องร่วมกับทีมพัฒนา"
+          }
+        }
+      ],
+      "experience": [
+        {
+          "period": {
+            "en": "May 2023 — Present",
+            "th": "พ.ค. 2023 — ปัจจุบัน"
+          },
+          "role": {
+            "en": "UX/UI Designer",
+            "th": "UX/UI Designer"
+          },
+          "company": {
+            "en": "Security Pitch Co., Ltd.",
+            "th": "Security Pitch Co., Ltd."
+          }
+        },
+        {
+          "period": {
+            "en": "Jan 2023 — Apr 2023",
+            "th": "ม.ค. 2023 — เม.ย. 2023"
+          },
+          "role": {
+            "en": "UX/UI Intern",
+            "th": "UX/UI Intern"
+          },
+          "company": {
+            "en": "Security Pitch Co., Ltd.",
+            "th": "Security Pitch Co., Ltd."
+          }
+        }
+      ],
+      "education": [
+        {
+          "period": {
+            "en": "2019 — 2023",
+            "th": "2019 — 2023"
+          },
+          "degree": {
+            "en": "Bachelor of Science in Information Technology",
+            "th": "วิทยาศาสตรบัณฑิต เทคโนโลยีสารสนเทศ"
+          },
+          "honors": {
+            "en": "GPA: 3.73 · First Class Honors",
+            "th": "เกียรตินิยมอันดับ 1 · GPA 3.73"
+          }
+        }
+      ],
+      "skillCategories": [
+        {
+          "category": {
+            "en": "UX & Product Design",
+            "th": "UX & Product Design"
+          },
+          "skills": [
+            "UX/UI Design",
+            "User Flow & Information Architecture",
+            "Requirement Analysis",
+            "Wireframing & Interactive Prototyping",
+            "Adaptive & Responsive Design",
+            "Usability Evaluation & Heuristic Review"
+          ]
+        },
+        {
+          "category": {
+            "en": "Enterprise & System Design",
+            "th": "Enterprise & System Design"
+          },
+          "skills": [
+            "Enterprise UX",
+            "Cybersecurity Platform Design",
+            "Data-Driven Dashboard Design",
+            "Design Systems & Component Tokens",
+            "UI Flow & Interaction Specifications",
+            "Validation & Error State Design",
+            "Developer Handoff",
+            "API Requirement Alignment"
+          ]
+        },
+        {
+          "category": {
+            "en": "AI-Assisted Design & Development",
+            "th": "AI-Assisted Design & Development"
+          },
+          "skills": [
+            "AI-Assisted UX/UI Design",
+            "AI-Assisted Requirement Analysis",
+            "AI-Powered Prototyping",
+            "AI-Assisted Design System Generation",
+            "AI-Assisted Frontend Development",
+            "AI-Assisted Code Generation & Refinement",
+            "AI-Assisted UI Validation"
+          ]
+        },
+        {
+          "category": {
+            "en": "Web Development & Deployment",
+            "th": "Web Development & Deployment"
+          },
+          "skills": [
+            "Web Interface Implementation",
+            "Responsive Web Development",
+            "Website Deployment",
+            "Website Maintenance & Optimization"
+          ]
+        },
+        {
+          "category": {
+            "en": "Tools",
+            "th": "Tools"
+          },
+          "skills": [
+            "Figma",
+            "Adobe XD",
+            "Adobe Photoshop",
+            "Adobe Illustrator",
+            "AI Development Tools"
+          ]
+        }
+      ]
+    }
+  }
 }
